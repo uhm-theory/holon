@@ -40,10 +40,10 @@ $$
 | Кибернетика-II | Наблюдатель | $\varphi(\Gamma) \approx \Gamma$ | $D$, $L$ |
 | Кибернетика-III | Социальные системы | $\mathbb{H}_{1 \otimes \ldots \otimes n}$ | $D$, $L$, $U$ |
 | [Автопоэзис](/docs/reference/glossary#связанные-теории) | Самопроизводство | [(AP)](/docs/core/foundations/axiom-septicity): $\varphi(\Gamma^*) = \Gamma^*$ | $A$, $S$, $D$, $L$ |
-| [IIT](/docs/reference/glossary#связанные-теории) | Интегрированная информация | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $U$, $E$ |
-| [FEP](/docs/reference/glossary#связанные-теории) | Свободная энергия | [Жизнеспособность](/docs/core/dynamics/viability) | $D$, $O$, $S$ |
+| [Теория интегрированной информации (IIT)](/docs/reference/glossary#связанные-теории) | Интегрированная информация | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $U$, $E$ |
+| [Принцип свободной энергии (FEP)](/docs/reference/glossary#связанные-теории) | Свободная энергия | [Жизнеспособность](/docs/core/dynamics/viability) | $D$, $O$, $S$ |
 | Панпротопсихизм | Прото-ментальное | [L0-интериорность](/docs/proofs/interiority-hierarchy#уровень-0-интериорность-interiority) | $E$ (частично) |
-| [Conscious Realism](/docs/reference/glossary#связанные-теории) | Сознательные агенты | L2-Голоном (гипотеза) | $A$, $S$, $D$, $L$, $E$ |
+| [Сознательный реализм Хоффмана](/docs/reference/glossary#связанные-теории) | Сознательные агенты | L2-Голоном (гипотеза) | $A$, $S$, $D$, $L$, $E$ |
 | **КК** | Полная когерентность | [Все 7 измерений](/docs/core/structure/dimensions) | $A$, $S$, $D$, $L$, $E$, $O$, $U$ |
 
 ## Кибернетика первого порядка (Wiener)
@@ -337,9 +337,9 @@ $$
 
 ---
 
-## Conscious Realism Хоффмана: категорный анализ
+## Сознательный реализм Хоффмана: категорный анализ
 
-### Теория сознательных агентов (Hoffman, Prakash)
+### Теория сознательных агентов (Хоффман, Пракаш)
 
 **Основная идея:** Сознательные агенты (Conscious Agents, CA) — фундаментальные сущности. Пространство-время и физические объекты — **интерфейс**, а не реальность.
 
@@ -351,7 +351,7 @@ $$
 \mathrm{Ob}(\mathbf{ConsAgents}) := \{(X, G, P, D, A, W) \mid \text{структура CA}\}
 $$
 
-где согласно Hoffman & Prakash (2014):
+где согласно Хоффману и Пракашу (2014):
 - $X$ — пространство опытов (experiences)
 - $G$ — пространство действий
 - $P: W \times X \to X$ — функция восприятия (perception)
@@ -387,9 +387,9 @@ $$
 \mathrm{Fitness}(P) > \mathrm{Fitness}(P_{\text{veridical}})
 $$
 
-### Функтор из УГМ в Conscious Realism
+### Функтор из УГМ в сознательный реализм
 
-**Теорема (Hoffman-Holon соответствие):**
+**Теорема (соответствие Хоффман-Голоном):**
 
 Существует функтор:
 
@@ -416,7 +416,7 @@ $$
 
 ### Ключевые отличия
 
-| Аспект | Hoffman | УГМ |
+| Аспект | Хоффман | УГМ |
 |--------|---------|-----|
 | Фундаментальная сущность | CA (абстрактный) | [Голоном](/docs/core/structure/holon) $\mathbb{H}$ (конкретный) |
 | Мир $W$ | Строится из CA | [Окружение](/docs/core/dynamics/evolution) $E$ — часть $\mathbb{H}$ |
@@ -498,7 +498,7 @@ graph TB
 | IIT | $F_{\mathrm{IIT}}: \mathbf{IIT} \to \mathbf{Hol}$ | Нет | Да | Проекция |
 | FEP | $F_{\mathrm{FEP}}: \mathbf{FEP} \to \mathbf{Hol}$ | Нет | Да | Проекция |
 | Панпротопсихизм | $\iota_{\mathrm{L0}}: \mathbf{Pan}_{\mathrm{proto}} \hookrightarrow \mathbf{Hol}$ | Да (на L0) | Да | Вложение |
-| Conscious Realism | $F_{\mathrm{Hoffman}}: \mathbf{Hol}_{\mathrm{L2}} \to \mathbf{ConsAgents}$ | ? | ? | Гипотеза |
+| Сознательный реализм (Хоффман) | $F_{\mathrm{Hoffman}}: \mathbf{Hol}_{\mathrm{L2}} \to \mathbf{ConsAgents}$ | ? | ? | Гипотеза |
 
 ## Практические следствия
 
@@ -665,5 +665,5 @@ $$
 - [Эволюция](/docs/core/dynamics/evolution) — динамика $d\Gamma/dt$
 - [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $C$
-- [Глоссарий](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT, Conscious Realism
+- [Глоссарий](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT, сознательный реализм
 - [Теорема минимальности](/docs/proofs/theorem-minimality-7) — доказательство $\dim(\mathcal{H}) = 7$
