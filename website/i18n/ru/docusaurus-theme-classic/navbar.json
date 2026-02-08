@@ -1,0 +1,22 @@
+{
+  "logo.alt": {
+    "message": "UHM Theory Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Теория": {
+    "message": "Теория",
+    "description": "Navbar item with label Теория"
+  },
+  "item.label.Доказательства": {
+    "message": "Доказательства",
+    "description": "Navbar item with label Доказательства"
+  },
+  "item.label.Приложения": {
+    "message": "Приложения",
+    "description": "Navbar item with label Приложения"
+  },
+  "item.label.Справочник": {
+    "message": "Справочник",
+    "description": "Navbar item with label Справочник"
+  }
+}

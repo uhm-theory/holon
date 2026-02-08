@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.theory.category.Основания": {
+    "message": "Основания",
+    "description": "The label for category 'Основания' in sidebar 'theory'"
+  },
+  "sidebar.theory.category.Структура реальности": {
+    "message": "Структура реальности",
+    "description": "The label for category 'Структура реальности' in sidebar 'theory'"
+  },
+  "sidebar.theory.category.Семь измерений": {
+    "message": "Семь измерений",
+    "description": "The label for category 'Семь измерений' in sidebar 'theory'"
+  },
+  "sidebar.theory.category.Динамика": {
+    "message": "Динамика",
+    "description": "The label for category 'Динамика' in sidebar 'theory'"
+  },
+  "sidebar.theory.category.Сознание": {
+    "message": "Сознание",
+    "description": "The label for category 'Сознание' in sidebar 'theory'"
+  },
+  "sidebar.theory.category.Космология": {
+    "message": "Космология",
+    "description": "The label for category 'Космология' in sidebar 'theory'"
+  },
+  "sidebar.theory.category.Этика и смысл": {
+    "message": "Этика и смысл",
+    "description": "The label for category 'Этика и смысл' in sidebar 'theory'"
+  },
+  "sidebar.proofs.category.Формальные доказательства": {
+    "message": "Формальные доказательства",
+    "description": "The label for category 'Формальные доказательства' in sidebar 'proofs'"
+  },
+  "sidebar.proofs.category.Формальная спецификация": {
+    "message": "Формальная спецификация",
+    "description": "The label for category 'Формальная спецификация' in sidebar 'proofs'"
+  },
+  "sidebar.applied.category.Когерентная кибернетика": {
+    "message": "Когерентная кибернетика",
+    "description": "The label for category 'Когерентная кибернетика' in sidebar 'applied'"
+  },
+  "sidebar.applied.category.Исследования": {
+    "message": "Исследования",
+    "description": "The label for category 'Исследования' in sidebar 'applied'"
+  }
+}

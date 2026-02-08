@@ -1,0 +1,82 @@
+{
+  "link.title.Теория": {
+    "message": "Теория",
+    "description": "The title of the footer links column with title=Теория in the footer"
+  },
+  "link.title.Формализация": {
+    "message": "Формализация",
+    "description": "The title of the footer links column with title=Формализация in the footer"
+  },
+  "link.title.Приложения": {
+    "message": "Приложения",
+    "description": "The title of the footer links column with title=Приложения in the footer"
+  },
+  "link.title.Справочник": {
+    "message": "Справочник",
+    "description": "The title of the footer links column with title=Справочник in the footer"
+  },
+  "link.item.label.Введение": {
+    "message": "Введение",
+    "description": "The label of footer link with label=Введение linking to /docs/intro"
+  },
+  "link.item.label.Аксиома Ω": {
+    "message": "Аксиома Ω",
+    "description": "The label of footer link with label=Аксиома Ω linking to /docs/core/foundations/axiom-omega"
+  },
+  "link.item.label.Голоном и 7 измерений": {
+    "message": "Голоном и 7 измерений",
+    "description": "The label of footer link with label=Голоном и 7 измерений linking to /docs/core/structure/holon"
+  },
+  "link.item.label.Динамика": {
+    "message": "Динамика",
+    "description": "The label of footer link with label=Динамика linking to /docs/core/dynamics/evolution"
+  },
+  "link.item.label.Сознание": {
+    "message": "Сознание",
+    "description": "The label of footer link with label=Сознание linking to /docs/core/consciousness/qualia"
+  },
+  "link.item.label.Минимальность dim=7": {
+    "message": "Минимальность dim=7",
+    "description": "The label of footer link with label=Минимальность dim=7 linking to /docs/proofs/theorem-minimality-7"
+  },
+  "link.item.label.Категорный формализм": {
+    "message": "Категорный формализм",
+    "description": "The label of footer link with label=Категорный формализм linking to /docs/proofs/categorical-formalism"
+  },
+  "link.item.label.Формализация φ": {
+    "message": "Формализация φ",
+    "description": "The label of footer link with label=Формализация φ linking to /docs/proofs/formalization-phi"
+  },
+  "link.item.label.Спецификация": {
+    "message": "Спецификация",
+    "description": "The label of footer link with label=Спецификация linking to /docs/formal/specification"
+  },
+  "link.item.label.Когерентная Кибернетика": {
+    "message": "Когерентная Кибернетика",
+    "description": "The label of footer link with label=Когерентная Кибернетика linking to /docs/applied/coherence-cybernetics/axiomatics"
+  },
+  "link.item.label.Модельная теория": {
+    "message": "Модельная теория",
+    "description": "The label of footer link with label=Модельная теория linking to /docs/applied/coherence-cybernetics/model-theory"
+  },
+  "link.item.label.Исследования": {
+    "message": "Исследования",
+    "description": "The label of footer link with label=Исследования linking to /docs/applied/research/poincare-perelman"
+  },
+  "link.item.label.Глоссарий": {
+    "message": "Глоссарий",
+    "description": "The label of footer link with label=Глоссарий linking to /docs/reference/glossary"
+  },
+  "link.item.label.Нотация": {
+    "message": "Нотация",
+    "description": "The label of footer link with label=Нотация linking to /docs/reference/notation"
+  },
+  "link.item.label.Фальсифицируемость": {
+    "message": "Фальсифицируемость",
+    "description": "The label of footer link with label=Фальсифицируемость linking to /docs/reference/falsifiability"
+  },
+  "copyright": {
+    "message": "© 2026 UHM Theory.",
+    "description": "The footer copyright"
+  }
+}
