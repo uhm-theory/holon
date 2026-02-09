@@ -71,10 +71,18 @@ $$
 $$
 
 где:
-- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации, зависящая от E-когерентности
-- $\Gamma_{\text{target}}$ — целевое состояние (аттрактор)
+- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации, зависящая от E-когерентности (см. ниже)
+- $\Gamma_{\text{target}} = \varphi(\Gamma)$ — целевое состояние, определяемое [оператором самомоделирования](../consciousness/self-observation#оператор-самомоделирования-φ)
 - $\Theta(x)$ — функция Хевисайда: $\Theta(x) = 1$ при $x > 0$, иначе $0$
 - $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — градиент свободной энергии (см. ниже)
+
+**E-когерентность:**
+
+$$
+\mathrm{Coh}_E(\Gamma) := \frac{1}{n \cdot P_E}, \quad P_E = \mathrm{Tr}(\rho_E^2), \quad \rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)
+$$
+
+где $n = \mathrm{rank}(\rho_E)$. Диапазон: $\mathrm{Coh}_E \in [1/n, 1]$. Высокая E-когерентность означает распределённую (не локализованную) структуру опыта.
 
 #### Свободная энергия и градиент ΔF
 

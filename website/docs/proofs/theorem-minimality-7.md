@@ -480,10 +480,64 @@ $$
 Это гарантирует:
 - Ненулевую вакуумную энергию
 - Возможность импорта свободной энергии
-- Поддержание $P(\Gamma) > P_{\text{critical}}$ (см. [критическая чистота](/docs/core/dynamics/viability#критическая-чистота))
+
+**Верификация регенеративного члена:**
+
+Регенерация определяется как:
+
+$$
+\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\Gamma_{\text{target}} - \Gamma) \cdot \Theta(\Delta F)
+$$
+
+где:
+- $\Gamma_{\text{target}} = \varphi(\Gamma)$ — целевое состояние через самомоделирование
+- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации
+- $\Theta(\Delta F)$ — включение при $\Delta F > 0$
+
+**Проверка корректности:**
+1. $\mathcal{R}[\Gamma, E]$ сохраняет эрмитовость: $(\Gamma_{\text{target}} - \Gamma)^\dagger = \Gamma_{\text{target}}^\dagger - \Gamma^\dagger = \Gamma_{\text{target}} - \Gamma$
+2. След сохраняется: $\mathrm{Tr}(\mathcal{R}) = \kappa \cdot (\mathrm{Tr}(\Gamma_{\text{target}}) - \mathrm{Tr}(\Gamma)) = \kappa \cdot (1 - 1) = 0$
+3. При $\Gamma_{\text{target}} \in \mathcal{D}(\mathcal{H})$ и достаточно малом $\kappa$, эволюция сохраняет $\Gamma \geq 0$
+
+**Шаг 7: Верификация (V) — Жизнеспособность**
+
+Условие жизнеспособности требует:
+
+$$
+P = \mathrm{Tr}(\Gamma^2) > P_{\text{crit}} = \frac{2}{7}
+$$
+
+**Динамика чистоты:**
+
+$$
+\frac{dP}{dt} = \underbrace{0}_{\text{унитарный}} + \underbrace{\frac{dP}{dt}\bigg|_{\mathcal{D}}}_{\leq 0} + \underbrace{\frac{dP}{dt}\bigg|_{\mathcal{R}}}_{\geq 0 \text{ при } \Delta F > 0}
+$$
+
+**Существование жизнеспособного состояния:**
+
+При достаточной связи с Основанием (ненулевые $\gamma_{OE}, \gamma_{OU}$) и импорте свободной энергии ($\Delta F > 0$):
+
+$$
+\exists \Gamma^* : P(\Gamma^*) > P_{\text{crit}} \land \frac{dP}{dt}\bigg|_{\Gamma^*} \geq 0
+$$
+
+**Доказательство:**
+1. Начальное состояние: $\Gamma_0 = I/7$ (максимально смешанное), $P_0 = 1/7 < P_{\text{crit}}$
+2. При $\Delta F > 0$: регенерация активна, $\frac{dP}{dt} > 0$
+3. При $\kappa_0 > 0$ (ненулевая связь O-E-U): система эволюционирует к $\Gamma_{\text{target}}$
+4. Для достаточно когерентного $\Gamma_{\text{target}}$: $P(\Gamma_{\text{target}}) > P_{\text{crit}}$
+5. По непрерывности: существует $t^*$ такое, что $P(\Gamma(t^*)) = P_{\text{crit}}$, и $P(\Gamma(t)) > P_{\text{crit}}$ для $t > t^*$
+
+**Устойчивость:**
+
+Стационарное состояние $\Gamma^*$ с $\frac{dP}{dt}|_{\Gamma^*} = 0$ устойчиво, если:
+- При $P > P_{\text{target}}$: диссипация доминирует → $P$ уменьшается
+- При $P < P_{\text{target}}$: регенерация доминирует → $P$ увеличивается
+
+Это обеспечивает гомеостаз вокруг $P^* > P_{\text{crit}}$.
 
 **Вывод:**
-Конструкция с $\dim(\mathcal{H}) = 7$ удовлетворяет всем трем аксиомам. **QED**
+Конструкция с $\dim(\mathcal{H}) = 7$ удовлетворяет всем четырём условиям: (AP), (PH), (QG), (V). **QED**
 
 ---
 
