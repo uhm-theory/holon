@@ -371,6 +371,7 @@ pip install numpy scipy
 - [Математический аппарат](./specification) — формальные определения $\Gamma$, $P$, $d_{\mathrm{FS}}$
 - [Голоном](../core/structure/holon) — определение $\mathbb{H}$
 - [Семь измерений](../core/structure/dimensions) — базис $\mathcal{H} = \mathbb{C}^7$
+- [Теорема о минимальности 7D](../proofs/theorem-minimality-7) — почему $N = 7$
 - [Матрица когерентности](../core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Эволюция](../core/dynamics/evolution) — уравнение $d\Gamma/dt$
 - [Жизнеспособность](../core/dynamics/viability) — мера $P$ и $P_{\text{critical}}$
