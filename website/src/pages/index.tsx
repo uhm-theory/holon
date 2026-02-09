@@ -371,7 +371,7 @@ function MatrixSection() {
             <ul className={styles.matrixProperties}>
               <li><strong>Чистота:</strong> P = Tr(Γ²) ∈ [1/7, 1]</li>
               <li><strong>Энтропия:</strong> S = -Tr(Γ log Γ)</li>
-              <li><strong>Жизнеспособность:</strong> P &gt; P<sub>critical</sub> ≈ 0.3</li>
+              <li><strong>Жизнеспособность:</strong> P &gt; P<sub>critical</sub> = 2/7 ≈ 0.286</li>
             </ul>
           </div>
           <div className={styles.matrixVisual}>

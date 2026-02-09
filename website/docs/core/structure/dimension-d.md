@@ -79,7 +79,7 @@ $$
 $$
 
 - Может увеличивать $P$ (регенерация)
-- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации, где $\kappa_0$ — [структурный анзац](../../foundations/axiom-septicity#структурный-анзац-kappa0)
+- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации, где $\kappa_0$ — [структурный анзац](../foundations/axiom-septicity#структурный-анзац-kappa0)
 - $\Theta(\Delta F)$ — требует положительного градиента свободной энергии
 
 ## Типы динамики
