@@ -76,7 +76,7 @@
     "description": "The label of footer link with label=Фальсифицируемость linking to /docs/reference/falsifiability"
   },
   "copyright": {
-    "message": "© 2026 UHM Theory.",
+    "message": "© 2026 Maxim Sereda. Theory: CC BY-SA 4.0 | Code: MIT",
     "description": "The footer copyright"
   }
 }
