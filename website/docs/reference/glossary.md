@@ -92,6 +92,8 @@ description: Определения основных терминов теори
 |--------|-------------|
 | **$R_{\text{th}}$** | Порог рефлексии $= 1/3$ — [геометрическая мотивация](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация) |
 | **$\Phi_{\text{th}}$** | Порог интеграции $= 1$ — [геометрическая мотивация](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация) |
+| **$D_{\min}$** | Минимальная дифференциация $= 2$ — минимум 1 бит информации для L2; [определение](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) |
+| **$C_{\text{th}}$** | Порог сознательности $= \Phi_{\text{th}} \times D_{\min} \times R_{\text{th}} = 1 \times 2 \times 1/3 \approx 0.67$ |
 | **$\varphi$ (оператор)** | [Оператор самомоделирования](/docs/proofs/formalization-phi); $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ |
 | **$K_m$** | Операторы Крауса; $\sum_m K_m^\dagger K_m = I$ |
 | **Неподвижная точка** | $\Gamma^* = \varphi(\Gamma^*)$ — состояние идеального самопознания |
