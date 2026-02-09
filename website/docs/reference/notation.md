@@ -216,7 +216,7 @@ $$
 | $\mathcal{V}$ | [Область жизнеспособности](/docs/core/dynamics/viability) |
 | $\mathrm{VIT}$ | Тензор целостности жизнеспособности (Viability Integrity Tensor) |
 | $\kappa(\Gamma)$ | Скорость регенерации (функция состояния) |
-| $\kappa_0$ | Базовая скорость регенерации |
+| $\kappa_0$ | Базовая скорость регенерации — [структурный анзац](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
 | $\mathrm{Coh}_E$ | $E$-когерентность |
 | $P_{\text{critical}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий) |
 | $\theta_i$ | Пороги компонент стресса |

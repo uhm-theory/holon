@@ -167,7 +167,7 @@ description: Определения основных терминов теори
 | **$\mathcal{V}$** | [Область жизнеспособности](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > P_{\text{critical}}\}$ |
 | **$\mathrm{VIT}$** | Viability Integrity Tensor — тензор целостности жизнеспособности |
 | **$\sigma_{\mathrm{sys}}$** | Тензор напряжений системы $\in \mathbb{R}^7$ |
-| **$\kappa$** | Скорость регенерации; $\kappa = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ |
+| **$\kappa$** | Скорость регенерации; $\kappa = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, где $\kappa_0$ — [структурный анзац](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
 | **$\mathrm{Coh}_E$** | $E$-когерентность; $\mathrm{Coh}_E = (\sum\lambda)^2 / (n \cdot \sum\lambda^2)$ |
 | **No-Zombie** | [Теорема](/docs/applied/coherence-cybernetics/theorems#теорема-81-необходимость-интериорности-no-zombie) о невозможности жизнеспособных зомби |
 | **$\mathbf{Hol}$** | Категория Голономов с CPTP-морфизмами |

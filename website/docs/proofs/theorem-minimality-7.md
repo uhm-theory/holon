@@ -491,7 +491,7 @@ $$
 
 где:
 - $\Gamma_{\text{target}} = \varphi(\Gamma)$ — целевое состояние через самомоделирование
-- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации
+- $\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации, где $\kappa_0$ — [структурный анзац](../core/foundations/axiom-septicity#структурный-анзац-kappa0)
 - $\Theta(\Delta F)$ — включение при $\Delta F > 0$
 
 **Проверка корректности:**
