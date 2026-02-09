@@ -234,7 +234,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} UHM Theory.`,
+      copyright: `© 2024-${new Date().getFullYear()} Maxim Sereda. Theory: CC BY-SA 4.0 | Code: MIT`,
     },
     prism: {
       theme: prismThemes.github,
