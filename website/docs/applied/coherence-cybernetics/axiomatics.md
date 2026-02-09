@@ -99,7 +99,7 @@ $$
 | 3 | $D$ | [Динамика](/docs/core/structure/dimension-d) | Изменяться | Унитарный $U(t)$ |
 | 4 | $L$ | [Логика](/docs/core/structure/dimension-l) | Согласовывать | Коммутатор $[\cdot,\cdot]$ |
 | 5 | $E$ | [Опыт](/docs/core/structure/dimension-e) | Переживать | Матрица плотности $\rho_E$ |
-| 6 | $O$ | [Основание](/docs/core/structure/dimension-o) | Питать | Вакуум $|0\rangle$ |
+| 6 | $O$ | [Основание](/docs/core/structure/dimension-o) | Питать | Вакуум $\vert 0\rangle$ |
 | 7 | $U$ | [Единство](/docs/core/structure/dimension-u) | Интегрировать | След $\mathrm{Tr}$ |
 
 ### Уравнение эволюции (следствие из QG)
