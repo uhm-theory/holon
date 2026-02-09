@@ -134,7 +134,7 @@ $$
 
 3. **Абсолютные квалиа:** Вопрос о существовании контекстно-независимых квалиа остаётся открытым.
 
-4. **Пороги [L2](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia):** Значения $R_{\text{th}} = 0.3$, $\Phi_{\text{th}} = 1.0$ — [эмпирические](/docs/proofs/interiority-hierarchy#обоснование-порогов), не теоретические.
+4. **Пороги [L2](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia):** Значения $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ — [геометрически мотивированы](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация).
 
 ### Категориальные Границы
 

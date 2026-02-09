@@ -4,6 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const theoryVersion = require('./package.json').version as string;
+
 // GitHub Pages deployment configuration
 // Set these environment variables in GitHub Actions:
 // - GH_PAGES_URL: https://<username>.github.io
@@ -116,6 +119,11 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {
+          type: 'html',
+          position: 'left',
+          value: `<span class="navbar-version">v${theoryVersion}</span>`,
+        },
         {
           type: 'docSidebar',
           sidebarId: 'theory',

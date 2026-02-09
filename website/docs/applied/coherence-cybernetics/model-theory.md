@@ -90,8 +90,9 @@ $$
 | $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{critical}} \land dP/dt > -\varepsilon_{\text{death}}$ |
 | $I(\mathrm{compose})$ | Тензорное произведение + взаимодействие |
 
-:::note Эмпирические константы
-Значения $P_{\text{critical}} \approx 0.3$ и $\varepsilon_{\text{death}}$ определены [эмпирически](/docs/core/dynamics/viability#условие-смерти), не выведены из аксиом.
+:::info Выведенные и эмпирические константы
+- $P_{\text{critical}} = 2/7 \approx 0.286$ — [теорема](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий)
+- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада, см. [определение](./definitions#жизнеспособность)
 :::
 
 ## Корректность и полнота
@@ -192,7 +193,7 @@ $$
 
 где:
 - $\mathrm{Obj} = \{\rho : \rho^\dagger = \rho, \rho \geq 0, \mathrm{Tr}(\rho) = 1\}$
-- $\mathrm{Mor}(\rho_1, \rho_2) = \{\Phi : \mathrm{CPTP}, \Phi(\rho_1) = \rho_2\}$
+- $\mathrm{Mor}(\rho_1, \rho_2) = \{\Psi : \mathrm{CPTP}, \Psi(\rho_1) = \rho_2\}$
 
 CPTP = Completely Positive Trace-Preserving (квантовые каналы).
 
@@ -253,7 +254,7 @@ $$
 ---
 
 **Связанные документы:**
-- [Аксиоматика](./axiomatics) — аксиомы Ω и (AP+PH+QG)
+- [Аксиоматика](./axiomatics) — аксиомы Ω и Септичности
 - [Теоремы](./theorems) — формальные результаты КК
 - [Определения](./definitions) — базовые определения КК
 - [Категорный формализм](/docs/proofs/categorical-formalism) — категории $\mathbf{Hol}$, $\mathbf{DensityMat}$, $\mathbf{Exp}$

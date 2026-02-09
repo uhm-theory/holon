@@ -102,10 +102,10 @@ $$
 [Голоном](/docs/core/structure/holon) жизнеспособен, если:
 
 $$
-P > P_{\text{critical}} \approx 0.3
+P > P_{\text{critical}} = \frac{2}{7} \approx 0.286
 $$
 
-При $P < P_{\text{critical}}$ система входит в необратимый распад (см. [условие смерти](/docs/core/dynamics/viability#условие-смерти)).
+При $P < P_{\text{critical}}$ система входит в необратимый распад (см. [условие смерти](/docs/core/dynamics/viability#условие-смерти) и [критерий критической чистоты](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий)).
 
 ## Экспериенциальное пространство
 

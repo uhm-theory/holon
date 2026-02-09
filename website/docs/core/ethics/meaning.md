@@ -118,7 +118,7 @@ $$
 Смерть — [распад когерентности](../dynamics/viability#условие-смерти) ниже критического порога:
 
 $$
-P(\Gamma) < P_{\text{critical}} \approx 0.3, \quad \frac{dP}{dt} < 0 \quad \Rightarrow \quad P \to \frac{1}{7}
+P(\Gamma) < P_{\text{critical}} = \frac{2}{7}, \quad \frac{dP}{dt} < 0 \quad \Rightarrow \quad P \to \frac{1}{7}
 $$
 
 При этом $\Gamma \to I_7/7$ — [максимально смешанное состояние](../dynamics/coherence-matrix#максимально-смешанное-состояние). Информация не исчезает, а **рассеивается** в окружение.

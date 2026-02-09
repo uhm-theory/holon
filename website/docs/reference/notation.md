@@ -10,7 +10,7 @@ description: Математические обозначения теории У
 В теории УГМ некоторые символы имеют несколько значений в зависимости от контекста:
 - $D$ — [измерение Динамики](/docs/core/structure/dimension-d) **vs** $D_{\text{diff}}$ — [мера дифференциации](/docs/core/consciousness/self-observation#мера-сознательности-c)
 - $\mathcal{H}$ — гильбертово пространство **vs** $H$ — гамильтониан
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) **vs** $\Phi$ — CPTP-канал (морфизм в $\mathbf{DensityMat}$)
+- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ). Для обозначения произвольных CPTP-каналов используется $\Psi$
 - $R$ — [мера рефлексии](/docs/core/consciousness/self-observation#мера-рефлексии-r) **vs** $\mathcal{R}$ — регенеративный член
 - $\mathcal{C}$ — пространство контекстов **vs** $C$ — [мера сознательности](/docs/core/consciousness/self-observation#мера-сознательности-c)
 
@@ -96,7 +96,7 @@ $$
 | $\rho_E$ | Редуцированная матрица плотности измерения Опыта |
 | $\lambda_i$ | Собственное значение $\Gamma$ (интенсивность) |
 | $\vert q_i\rangle$ | Собственный вектор $\Gamma$ (качество) |
-| $[|q\rangle]$ | Класс эквивалентности в $\mathbb{P}(\mathcal{H}_E)$ |
+| $[\vert q\rangle]$ | Класс эквивалентности в $\mathbb{P}(\mathcal{H}_E)$ |
 | $\mathbb{P}(\mathcal{H}_E)$ | [Проективное пространство](/docs/formal/specification#проективное-пространство-качеств) качеств |
 | $d_{\mathrm{FS}}$ | [Метрика Фубини-Штуди](/docs/formal/specification#метрика-фубини-штуди) |
 
@@ -112,7 +112,7 @@ $$
 | Мера | Формула | Диапазон |
 |------|---------|----------|
 | [Интеграция $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $\Phi(\Gamma) = \dfrac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}$ | $[0, +\infty)$ |
-| [Дифференциация $D_{\text{diff}}$](/docs/core/consciousness/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \mathrm{rank}(\rho_E)$ | $\{1, 2, \ldots, 7\}$ |
+| [Дифференциация $D_{\text{diff}}$](/docs/core/consciousness/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \exp(S_{vN}(\rho_E))$ | $[1, 7]$ |
 | [Рефлексия $R$](/docs/core/consciousness/self-observation#мера-рефлексии-r) | $R(\Gamma) = 1 - \dfrac{\|\Gamma - \varphi(\Gamma)\|_F^2}{\|\Gamma\|_F^2}$ | $[0, 1]$ |
 | [Сознательность $C$](/docs/core/consciousness/self-observation#мера-сознательности-c) | $C(\Gamma) = \Phi \times D_{\text{diff}} \times R$ | $[0, +\infty)$ |
 
@@ -145,12 +145,12 @@ $$
 | L1 | $\mathrm{PG}(S)$ — Феноменальная геометрия | $\Phi(\Gamma) > 0$ |
 | L2 | Когнитивные квалиа | $R \geq R_{\text{th}}$ и $\Phi \geq \Phi_{\text{th}}$ |
 
-**Пороговые значения** ([обоснование](/docs/proofs/interiority-hierarchy#обоснование-порогов)):
+**Пороговые значения** ([геометрическая мотивация](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация)):
 
 | Порог | Значение | Статус |
 |-------|----------|--------|
-| $R_{\text{th}}$ | $0.3$ | Эмпирический |
-| $\Phi_{\text{th}}$ | $1.0$ | Эмпирический |
+| $R_{\text{th}}$ | $1/3$ | Геометрическая мотивация |
+| $\Phi_{\text{th}}$ | $1$ | Геометрическая мотивация |
 
 ## Тензор напряжений
 
@@ -206,7 +206,7 @@ $$
 | $\kappa(\Gamma)$ | Скорость регенерации (функция состояния) |
 | $\kappa_0$ | Базовая скорость регенерации |
 | $\mathrm{Coh}_E$ | $E$-когерентность |
-| $P_{\text{critical}}$ | Критическая чистота $\approx 0.3$ — см. [условие смерти](/docs/core/dynamics/viability#условие-смерти) |
+| $P_{\text{critical}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий) |
 | $\theta_i$ | Пороги компонент стресса |
 | $D_{\mathrm{KL}}$ | Расхождение Кульбака-Лейблера: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |
 

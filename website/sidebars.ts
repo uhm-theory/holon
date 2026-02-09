@@ -89,6 +89,7 @@ const sidebars: SidebarsConfig = {
         'proofs/formalization-phi',
         'proofs/categorical-formalism',
         'proofs/interiority-hierarchy',
+        'proofs/physics-correspondence',
       ],
     },
     {

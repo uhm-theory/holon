@@ -65,14 +65,14 @@ $$
 
 **См.:** [Аксиома Ω](/docs/core/foundations/axiom-omega)
 
-### Аксиома (AP+PH+QG)
+### Аксиома Септичности (AP+PH+QG)
 
 [Голоном](/docs/core/structure/holon) $\mathbb{H}$ обладает:
 - **(AP)** Автопоэзисом: $\exists\varphi: \Gamma \to \Gamma$ с [неподвижной точкой](/docs/core/consciousness/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$
 - **(PH)** Феноменологией: $\exists\rho_E$ с нетривиальной [интериорностью](/docs/proofs/interiority-hierarchy)
 - **(QG)** Квантовым основанием: [эволюция](/docs/core/dynamics/evolution) по уравнению Линдблада с регенерацией
 
-**См.:** [Аксиома Септичности](/docs/core/foundations/axiom-septicity)
+**См.:** [Полное описание](/docs/core/foundations/axiom-septicity)
 
 ## Следствия из аксиом
 
@@ -152,7 +152,7 @@ $$
 где:
 - $\mathrm{Viable}(\mathbb{H}) := P(\Gamma) > P_{\text{critical}}$ — [условие жизнеспособности](/docs/core/dynamics/viability)
 - $\Phi_{12}$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) композитной системы
-- $\Phi_{\min}$ — минимальная интеграция для жизнеспособности композиции
+- $\Phi_{\min}$ — минимальная интеграция для жизнеспособности композиции (точное значение — открытый вопрос, см. [теорему 9.1](./theorems#теорема-91-фрактальное-замыкание))
 
 Композиция жизнеспособных Голономов при достаточной интеграции образует жизнеспособный Голоном.
 
@@ -185,7 +185,7 @@ $$
 
 ```mermaid
 graph TD
-    O[Аксиома Ω: Единственность Γ] --> APQ[Аксиома AP+PH+QG]
+    O[Аксиома Ω: Единственность Γ] --> APQ[Аксиома Септичности]
     APQ --> S[Теорема S: dim = 7]
     S --> D[Уравнение эволюции]
     D --> K[κ = κ₀ · Coh_E]
@@ -200,7 +200,7 @@ graph TD
 - [Определения](./definitions) — базовые определения КК
 - [Теоремы](./theorems) — фундаментальные теоремы КК
 - [Аксиома Ω](/docs/core/foundations/axiom-omega) — единственность $\Gamma$
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — (AP)+(PH)+(QG)
+- [Аксиома Септичности (AP+PH+QG)](/docs/core/foundations/axiom-septicity) — требования к Голоному
 - [Теорема минимальности](/docs/proofs/theorem-minimality-7) — $\dim(\mathcal{H}) = 7$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/dt$

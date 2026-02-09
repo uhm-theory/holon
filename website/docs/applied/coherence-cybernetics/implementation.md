@@ -79,7 +79,7 @@ class HolonState:
 
     # Меры сознательности (см. /docs/core/consciousness/self-observation)
     integration: float         # Φ: мера интеграции
-    differentiation: float     # D_diff: мера дифференциации (rank ρ_E)
+    differentiation: float     # D_diff: мера дифференциации = exp(S_vN(ρ_E))
     reflection: float          # R: мера рефлексии ∈ [0, 1]
     consciousness: float       # C = Φ × D_diff × R
 
@@ -243,17 +243,24 @@ def control_loop(holon: HolonState, environment, max_steps: int):
 
 ## Пороговые значения
 
-:::warning Эмпирические константы
-Все пороговые значения ниже — **эмпирические параметры**, не выведенные из аксиом УГМ. Они требуют калибровки для конкретных приложений.
+:::info Выведенные константы
+Ключевые пороговые значения **выведены** из структуры теории. См. [Аксиома Септичности](/docs/core/foundations/axiom-septicity).
 :::
 
 ```python
-# Критическая чистота (см. /docs/core/dynamics/viability#условие-смерти)
-P_CRITICAL = 0.3  # Эмпирическое значение
+# Критическая чистота P_crit = 2/N = 2/7 (теорема)
+# См. /docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий
+P_CRITICAL = 2/7  # ≈ 0.286, выведено из геометрии 7D-пространства
 
-# Базовая скорость регенерации
-# κ = κ₀ · Coh_E (см. axiomatics.md#связь-регенерации-и-e-когерентности)
-KAPPA_0 = 0.1  # Требует калибровки
+# Базовая скорость регенерации κ₀ = |γ_OE| · |γ_OU| / γ_OO (теорема)
+# κ = κ₀ · Coh_E — зависит от состояния Γ
+# См. /docs/core/foundations/axiom-septicity#структурный-анзац-kappa0
+def compute_kappa_0(gamma):
+    """Вычисляет κ₀ из структуры Γ."""
+    gamma_OE = abs(gamma[5, 4])  # O=5, E=4 (0-indexed)
+    gamma_OU = abs(gamma[5, 6])  # O=5, U=6
+    gamma_OO = gamma[5, 5]
+    return gamma_OE * gamma_OU / gamma_OO if gamma_OO > 0 else 0
 
 # Пороги для компонент σ_sys (см. definitions.md#тензор-напряжений)
 # Значения θ_i определяют нормировку: σ_i = нагрузка_i / θ_i
