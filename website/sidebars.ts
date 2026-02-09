@@ -122,6 +122,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Исследования',
       items: [
+        'applied/research/measurement-protocol',
         'applied/research/poincare-perelman',
         'applied/research/poincare-extended',
       ],
