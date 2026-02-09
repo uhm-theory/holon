@@ -1,41 +1,71 @@
-# Website
+# UHM Theory Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation website for **Unitary Holonomic Monism (UHM)** — a formal theory of reality and consciousness.
+
+## Overview
+
+UHM describes the structure, dynamics, and phenomenology of reality through a single mathematical object — the Coherence Matrix (Γ).
+
+Key concepts:
+- **Holon** — minimal self-sufficient unit of reality
+- **7 Dimensions** — A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Experience), O (Ground), U (Unity)
+- **Interiority Hierarchy** — L0 (interiority) → L1 (phenomenal geometry) → L2 (cognitive qualia)
+- **Viability** — condition for system existence: P > P_crit = 2/7
 
 ## Installation
 
 ```bash
-yarn
+npm install
 ```
 
-## Local Development
+## Development
 
 ```bash
-yarn start
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Opens a local development server at `http://localhost:3000`. Changes are reflected live.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Generates static content in the `build` directory.
 
 ## Deployment
 
-Using SSH:
+The site is deployed to GitHub Pages via GitHub Actions (see `.github/workflows/deploy.yml`).
 
+Manual deployment:
 ```bash
-USE_SSH=true yarn deploy
+GIT_USER=<username> npm run deploy
 ```
 
-Not using SSH:
+## Project Structure
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
+```
+docs/
+├── core/                 # Core theory
+│   ├── foundations/      # Axioms Ω and Septicity
+│   ├── structure/        # Holon and 7 dimensions
+│   ├── dynamics/         # Evolution equations
+│   └── consciousness/    # Interiority hierarchy
+├── proofs/               # Formal proofs and theorems
+├── applied/              # Applications (Coherence Cybernetics)
+├── formal/               # Mathematical specification
+└── reference/            # Glossary, notation, falsifiability
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## License
+
+- **Documentation (theory)**: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Code**: [MIT](https://opensource.org/licenses/MIT)
+
+See [LICENSE](../LICENSE) for details.
+
+## Links
+
+- Website: https://holon.sh
+- Theory version: 0.1.3
