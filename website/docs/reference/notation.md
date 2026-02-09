@@ -218,7 +218,7 @@ $$
 | $\kappa(\Gamma)$ | Скорость регенерации (функция состояния) |
 | $\kappa_0$ | Базовая скорость регенерации — [структурный анзац](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
 | $\mathrm{Coh}_E$ | $E$-когерентность |
-| $P_{\text{critical}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий) |
+| $P_{\text{critical}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/proofs/theorem-purity-critical) |
 | $\theta_i$ | Пороги компонент стресса |
 | $D_{\mathrm{KL}}$ | Расхождение Кульбака-Лейблера: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |
 

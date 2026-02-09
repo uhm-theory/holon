@@ -248,8 +248,8 @@ def control_loop(holon: HolonState, environment, max_steps: int):
 :::
 
 ```python
-# Критическая чистота P_crit = 2/N = 2/7 (теорема)
-# См. /docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий
+# Критическая чистота P_crit = 2/N = 2/7 (теорема, доказано 5 независимыми путями)
+# См. /docs/proofs/theorem-purity-critical
 P_CRITICAL = 2/7  # ≈ 0.286, выведено из геометрии 7D-пространства
 
 # Базовая скорость регенерации κ₀ = |γ_OE| · |γ_OU| / γ_OO (теорема)

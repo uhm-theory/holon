@@ -171,7 +171,7 @@ description: Определения основных терминов теори
 | **$\mathrm{Coh}_E$** | $E$-когерентность; $\mathrm{Coh}_E = (\sum\lambda)^2 / (n \cdot \sum\lambda^2)$ |
 | **No-Zombie** | [Теорема](/docs/applied/coherence-cybernetics/theorems#теорема-81-необходимость-интериорности-no-zombie) о невозможности жизнеспособных зомби |
 | **$\mathbf{Hol}$** | Категория Голономов с CPTP-морфизмами |
-| **$P_{\text{critical}}$** | Критическая чистота $= 2/7 \approx 0.286$ — [геометрический критерий](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий) |
+| **$P_{\text{critical}}$** | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/proofs/theorem-purity-critical) (доказано 5 независимыми путями) |
 
 ---
 

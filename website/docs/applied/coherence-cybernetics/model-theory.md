@@ -91,7 +91,7 @@ $$
 | $I(\mathrm{compose})$ | Тензорное произведение + взаимодействие |
 
 :::info Выведенные и эмпирические константы
-- $P_{\text{critical}} = 2/7 \approx 0.286$ — [теорема](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий)
+- $P_{\text{critical}} = 2/7 \approx 0.286$ — [теорема](/docs/proofs/theorem-purity-critical)
 - $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада, см. [определение](./definitions#жизнеспособность)
 :::
 

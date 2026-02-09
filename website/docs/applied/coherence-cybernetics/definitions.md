@@ -288,7 +288,7 @@ $$
 $$
 
 где:
-- $P_{\text{crit}} = 2/7 \approx 0.286$ — [геометрический критерий](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий)
+- $P_{\text{crit}} = 2/7 \approx 0.286$ — [теорема о критической чистоте](/docs/proofs/theorem-purity-critical)
 - $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада
 - $\tau_{\text{char}}$ — характерное время системы (единица измерения динамики)
 

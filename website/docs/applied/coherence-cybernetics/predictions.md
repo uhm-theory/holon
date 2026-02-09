@@ -131,7 +131,7 @@ $$
 :::info Выведенные пороги
 | Параметр | Значение | Определение |
 |----------|----------|-------------|
-| $P_{\text{critical}}$ | $= 2/7 \approx 0.286$ | [Критическая чистота](/docs/core/foundations/axiom-septicity#критическая-чистота-геометрический-критерий) |
+| $P_{\text{critical}}$ | $= 2/7 \approx 0.286$ | [Теорема о критической чистоте](/docs/proofs/theorem-purity-critical) |
 | $R_{\text{th}}$ | $= 1/3 \approx 0.333$ | [Порог рефлексии](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация) для L2 |
 | $\Phi_{\text{th}}$ | $= 1$ (точно) | [Порог интеграции](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация) для L2 |
 

@@ -86,6 +86,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'proofs/theorem-minimality-7',
+        'proofs/theorem-purity-critical',
         'proofs/formalization-phi',
         'proofs/categorical-formalism',
         'proofs/interiority-hierarchy',
@@ -123,8 +124,8 @@ const sidebars: SidebarsConfig = {
       label: 'Исследования',
       items: [
         'applied/research/measurement-protocol',
+        'applied/research/engineering-insights',
         'applied/research/poincare-perelman',
-        'applied/research/poincare-extended',
       ],
     },
   ],
