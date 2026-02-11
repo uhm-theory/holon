@@ -89,7 +89,7 @@ $$
 | $V_O$ | [Оператор сдвига времени](/docs/core/structure/dimension-o#оператор-сдвига-v_o) | $V_O^N = \mathbb{1}$, $V_O H_O V_O^\dagger = H_O + \omega_0 \mathbb{1}$ |
 | $\mathcal{A}_O$ | [C*-алгебра часов](/docs/core/structure/dimension-o#c-алгебра-часов-a_o) | $\mathcal{A}_O = C^*(H_O, V_O) \cong M_N(\mathbb{C})$ |
 | $H_{\text{int}}$ | [Гамильтониан взаимодействия](/docs/core/foundations/axiom-omega#гамильтониан-взаимодействия) | Связь O с E и U |
-| $\hat{C}$ | [Constraint Page-Wootters](/docs/core/foundations/axiom-omega#свойство-2) | $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\text{int}}$ |
+| $\hat{C}$ | [Ограничение Page-Wootters](/docs/core/foundations/axiom-omega#свойство-2) | $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\text{int}}$ |
 | $\mathcal{H}_{total}$ | Глобальное пространство | $\mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$, $\dim = 42$ |
 | $\omega_0$ | Фундаментальная частота | Базовая частота часов O |
 | $\vert\tau_n\rangle$ | Базис часов | Собственные состояния $V_O$ |

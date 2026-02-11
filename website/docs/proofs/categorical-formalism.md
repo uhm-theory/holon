@@ -1454,7 +1454,7 @@ $\mathbf{Sh}_\infty(\mathbf{Exp})$ — категория ∞-пучков на 
                     G                           F
 DensityMat_C  ──────────► DensityMat  ────────────► Exp
     │                         │                      │
-    │ constraint              │ CPTP                 │ induced
+    │ ограничение             │ CPTP                 │ induced
     ▼                         ▼                      ▼
 DensityMat_C  ──────────► DensityMat  ────────────► Exp
 

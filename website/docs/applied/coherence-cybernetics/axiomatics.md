@@ -67,7 +67,7 @@ $$
 |---|---------|--------------|
 | 1 | ∞-Топос | $\mathcal{E} := \text{Sh}_\infty(\mathcal{C})$ — примитив; см. [топология Гротендика](/docs/core/foundations/axiom-omega#топология-гротендика) |
 | 2 | Конечномерность | $\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$ |
-| 3 | Constraint | $\hat{C} \cdot \Gamma = 0$ (Page-Wootters) |
+| 3 | Ограничение | $\hat{C} \cdot \Gamma = 0$ (Page-Wootters) |
 | 4 | Терминальный объект | $\forall \Gamma, \exists! f: \Gamma \to T$ |
 | 5 | Вариационный принцип | $\varphi = \arg\min \mathbb{E}[K + D_{KL}]$ |
 | 6 | Стратификация | $X = \bigsqcup_\alpha S_\alpha$, $S_0 = \{T\}$ |

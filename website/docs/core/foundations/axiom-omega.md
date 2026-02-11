@@ -349,7 +349,7 @@ $$e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^* + O(\delta\ta
 
 1. Пространство часов $\mathcal{H}_O := \text{span}\{|\tau_k\rangle : k \in \mathbb{Z}_N\}$ — орбита ▷-действия
 2. Глобальное состояние $\Gamma_{total}$ удовлетворяет ограничению: $\hat{C} \cdot \Gamma_{total} = 0$
-3. Constraint $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{rest} + H_{int}$
+3. Ограничение $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{rest} + H_{int}$
 
 **Теорема (Согласованность с ▷):**
 
@@ -432,7 +432,7 @@ $$
 
 ---
 
-### Свойство 2: Constraint (Page-Wootters) {#свойство-2}
+### Свойство 2: Ограничение (Page-Wootters) {#свойство-2}
 
 :::note Свойство 2 (Ограничение Page-Wootters)
 Для всех объектов $\Gamma \in \text{Ob}(\mathcal{C})$:
@@ -441,7 +441,7 @@ $$
 \hat{C} \cdot \Gamma = 0
 $$
 
-где полный constraint:
+где полное ограничение:
 
 $$
 \hat{C} := H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}
@@ -943,7 +943,7 @@ $$
 где:
 - $\mathcal{A}_O = C^*(H_O, V_O) \cong M_7(\mathbb{C})$ — алгебра часов
 - $\mathcal{H} = \mathbb{C}^{42}$ — полное пространство
-- $\hat{C}$ — constraint как «оператор Дирака»
+- $\hat{C}$ — ограничение как «оператор Дирака»
 
 ### Стратифицированная метрика Конна
 

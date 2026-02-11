@@ -355,7 +355,7 @@ $$
 
 3. **Тензорная структура:** $\mathcal{H} \cong \mathcal{H}_O \otimes \mathcal{H}_{rest}$ (постулируемый изоморфизм)
 
-4. **Constraint:** $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{rest} + H_{int}$, где $H_O = \omega_0 \cdot T$ (генератор ▷)
+4. **Ограничение:** $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{rest} + H_{int}$, где $H_O = \omega_0 \cdot T$ (генератор ▷)
 
 5. **Условные состояния:** $\Gamma(\tau) = \text{Tr}_O[(|\tau\rangle\langle\tau| \otimes \mathbb{1}) \cdot \Gamma_{total}] / p(\tau)$
 
@@ -374,7 +374,7 @@ $$\Gamma(\tau_{n+1}) = \triangleright^*(\Gamma(\tau_n)) + O(H_{int})$$
 
 (c) Измерение O определяется как $\dim(\mathcal{H}_O) = N$ (орбита ▷-действия). По конструкции, $\mathcal{H}_O$ — пространство часов
 
-(d) Constraint $\hat{C} \cdot \Gamma = 0$ следует из требования инвариантности относительно глобального сдвига времени:
+(d) Ограничение $\hat{C} \cdot \Gamma = 0$ следует из требования инвариантности относительно глобального сдвига времени:
 $$[T \otimes \mathbb{1} + \mathbb{1} \otimes T', \Gamma_{total}] = 0$$
 
 (e) Формула условных состояний — стандартное следствие тензорной структуры
@@ -460,7 +460,7 @@ $$
 | Оператор сдвига | $V_O = \sum_{k=0}^{5} \vert k+1\rangle\langle k\vert + \vert 0\rangle\langle 6\vert$ | [dimension-o#оператор-сдвига-v_o](/docs/core/structure/dimension-o#оператор-сдвига-v_o) |
 | C*-алгебра часов | $\mathcal{A}_O = C^*(H_O, V_O) \cong M_7(\mathbb{C})$ | [dimension-o#c-алгебра-часов-a_o](/docs/core/structure/dimension-o#c-алгебра-часов-a_o) |
 | Гамильтониан взаимодействия | $H_{int} = \lambda_E(a_O^\dagger \otimes \vert E\rangle\langle E\vert + h.c.) + \ldots$ | [axiom-omega#гамильтониан-взаимодействия](/docs/core/foundations/axiom-omega#гамильтониан-взаимодействия) |
-| Полный constraint | $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}$ | [axiom-omega#свойство-2](/docs/core/foundations/axiom-omega#свойство-2) |
+| Полное ограничение | $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}$ | [axiom-omega#свойство-2](/docs/core/foundations/axiom-omega#свойство-2) |
 | Эффективный гамильтониан | $H_{eff}(\tau) = H_{6D} + \langle\tau\vert H_{int}\vert\tau\rangle_O$ | [evolution#вывод-h_eff](/docs/core/dynamics/evolution#вывод-h_eff) |
 
 ### 3.7 Дискретность времени для конечных систем {#дискретность-времени}
@@ -974,7 +974,7 @@ $$
                     G                           F
 DensityMat_C  ──────────► DensityMat  ────────────► Exp
     │                         │                      │
-    │ constraint              │ CPTP                 │ induced
+    │ ограничение             │ CPTP                 │ induced
     ▼                         ▼                      ▼
 DensityMat_C  ──────────► DensityMat  ────────────► Exp
 

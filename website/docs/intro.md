@@ -46,7 +46,7 @@ graph TB
 | № | Свойство | Формулировка |
 |---|----------|--------------|
 | 1 | **[Конечномерность](./core/foundations/axiom-omega#свойство-1)** | $\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$ |
-| 2 | **[Constraint](./core/foundations/axiom-omega#свойство-2)** | $\hat{C} \cdot \Gamma = 0$ (Page-Wootters) |
+| 2 | **[Ограничение](./core/foundations/axiom-omega#свойство-2)** | $\hat{C} \cdot \Gamma = 0$ (Page-Wootters) |
 | 3 | **[Терминальный объект](./core/foundations/axiom-omega#свойство-3)** | $\forall \Gamma, \exists! f: \Gamma \to T$ |
 | 4 | **[Вариационный принцип](./core/foundations/axiom-omega#свойство-4)** | $\varphi = \arg\min \mathbb{E}[K + D_{KL}]$ |
 | 5 | **[Стратификация](./core/foundations/axiom-omega#свойство-5)** | $X = \bigsqcup_\alpha S_\alpha$, $S_0 = \{T\}$ |
