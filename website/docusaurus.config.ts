@@ -154,35 +154,56 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Теория',
+          title: 'Основы',
           items: [
             {
-              label: 'Введение',
+              label: 'Введение в теорию',
               to: '/docs/intro',
             },
             {
-              label: 'Аксиома Ω',
+              label: 'Аксиома Ω⁷ — единый примитив',
               to: '/docs/core/foundations/axiom-omega',
             },
             {
-              label: 'Голоном и 7 измерений',
+              label: 'Голоном — единица бытия',
               to: '/docs/core/structure/holon',
             },
             {
-              label: 'Динамика',
-              to: '/docs/core/dynamics/evolution',
-            },
-            {
-              label: 'Сознание',
-              to: '/docs/core/consciousness/interiority',
+              label: 'Семь измерений',
+              to: '/docs/core/structure/dimensions',
             },
           ],
         },
         {
-          title: 'Формализация',
+          title: 'Динамика и Сознание',
           items: [
             {
-              label: 'Минимальность dim=7',
+              label: 'Матрица когерентности Γ',
+              to: '/docs/core/dynamics/coherence-matrix',
+            },
+            {
+              label: 'Эмерджентное время',
+              to: '/docs/proofs/emergent-time',
+            },
+            {
+              label: 'Жизнеспособность и P_crit',
+              to: '/docs/core/dynamics/viability',
+            },
+            {
+              label: 'Иерархия интериорности',
+              to: '/docs/proofs/interiority-hierarchy',
+            },
+            {
+              label: 'Этика и свобода',
+              to: '/docs/core/ethics/freedom',
+            },
+          ],
+        },
+        {
+          title: 'Доказательства',
+          items: [
+            {
+              label: 'Теорема S: dim = 7',
               to: '/docs/proofs/theorem-minimality-7',
             },
             {
@@ -190,12 +211,12 @@ const config: Config = {
               to: '/docs/proofs/categorical-formalism',
             },
             {
-              label: 'Формализация φ',
+              label: 'Оператор φ',
               to: '/docs/proofs/formalization-phi',
             },
             {
-              label: 'Спецификация',
-              to: '/docs/formal/specification',
+              label: 'Физические соответствия',
+              to: '/docs/proofs/physics-correspondence',
             },
           ],
         },
@@ -203,29 +224,16 @@ const config: Config = {
           title: 'Приложения',
           items: [
             {
-              label: 'Когерентная Кибернетика',
+              label: 'Когерентная кибернетика',
               to: '/docs/applied/coherence-cybernetics/axiomatics',
             },
             {
-              label: 'Модельная теория',
-              to: '/docs/applied/coherence-cybernetics/model-theory',
+              label: 'Протокол измерения Γ',
+              to: '/docs/applied/research/measurement-protocol',
             },
-            {
-              label: 'Исследования',
-              to: '/docs/applied/research/poincare-perelman',
-            },
-          ],
-        },
-        {
-          title: 'Справочник',
-          items: [
             {
               label: 'Глоссарий',
               to: '/docs/reference/glossary',
-            },
-            {
-              label: 'Нотация',
-              to: '/docs/reference/notation',
             },
             {
               label: 'Фальсифицируемость',
@@ -234,7 +242,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© 2024-${new Date().getFullYear()} UHM Theory v${theoryVersion}. Theory: CC BY-SA 4.0 | Code: MIT`,
+      copyright: `© 2024-${new Date().getFullYear()} UHM Theory. Теория: CC BY-SA 4.0 | Код: MIT`,
     },
     prism: {
       theme: prismThemes.github,

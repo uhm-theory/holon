@@ -75,6 +75,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'core/ethics/foundations',
         'core/ethics/meaning',
+        'core/ethics/freedom',
       ],
     },
   ],
@@ -87,6 +88,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'proofs/theorem-minimality-7',
         'proofs/theorem-purity-critical',
+        'proofs/emergent-time',
         'proofs/formalization-phi',
         'proofs/categorical-formalism',
         'proofs/interiority-hierarchy',

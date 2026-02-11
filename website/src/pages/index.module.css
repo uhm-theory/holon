@@ -59,10 +59,18 @@
 }
 
 .heroSubtitle {
-  font-size: 1.1rem;
-  color: var(--ifm-color-emphasis-700);
-  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 1rem;
   line-height: 1.6;
+  font-weight: 500;
+}
+
+.heroDescription {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 2rem;
+  line-height: 1.7;
 }
 
 .heroMath {
@@ -656,5 +664,99 @@
 }
 
 [data-theme='dark'] .coherenceLine {
+  opacity: 0.5;
+}
+
+/* === Новая визуализация: Самозамыкающаяся структура === */
+
+/* Свечение источника — единый примитив */
+.sourceGlow {
+  animation: sourcePulse 8s ease-in-out infinite;
+}
+
+@keyframes sourcePulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Слой связей когерентности */
+.coherenceLayer {
+  pointer-events: none;
+}
+
+.coherenceLink {
+  transition: opacity 0.5s ease;
+}
+
+/* Слой потоков */
+.flowsLayer {
+  pointer-events: none;
+}
+
+.flowPath {
+  transition: opacity 0.3s ease;
+}
+
+/* Движущиеся частицы — стрела времени */
+.flowParticle {
+  offset-rotate: 0deg;
+  filter: blur(0.5px);
+}
+
+/* Центральное ядро */
+.coreGroup {
+  transition: transform 0.1s ease-out;
+}
+
+.coreOuter {
+  transition: opacity 0.3s ease;
+}
+
+.coreInner {
+  transition: all 0.3s ease;
+}
+
+.coreSymbol {
+  fill: white;
+  font-size: 32px;
+  font-weight: 300;
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-family: 'Times New Roman', serif;
+}
+
+/* Граница системы */
+.boundaryRing {
+  /* Без вращения — пунктир создаёт достаточную динамику */
+}
+
+/* Внутреннее кольцо когерентности */
+.innerRing {
+  transition: opacity 0.5s ease;
+}
+
+/* Точки когерентности на кольце */
+.coherencePoint {
+  transition: r 0.3s ease, opacity 0.3s ease;
+}
+
+/* Темная тема */
+[data-theme='dark'] .sourceGlow {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .flowPath {
+  opacity: 0.7;
+}
+
+[data-theme='dark'] .coreInner {
+  fill: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .innerRing {
+  opacity: 0.15;
+}
+
+[data-theme='dark'] .coherencePoint {
   opacity: 0.5;
 }

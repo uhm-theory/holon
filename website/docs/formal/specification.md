@@ -73,15 +73,17 @@ $$
 
 ## Уравнение эволюции
 
-См. [Эволюция](/docs/core/dynamics/evolution) для полного описания.
+См. [Эволюция](/docs/core/dynamics/evolution) для полного описания. Время τ — [эмерджентное внутреннее время](/docs/proofs/emergent-time).
 
 $$
-\frac{d\Gamma}{dt} = -i[H, \Gamma] + \underbrace{\sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)}_{\mathcal{D}[\Gamma]} + \mathcal{R}[\Gamma, E]
+\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \underbrace{\sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)}_{\mathcal{D}[\Gamma]} + \mathcal{R}[\Gamma, E]
 $$
 
 где:
-- $-i[H, \Gamma]$ — унитарная (гамильтонова) эволюция
-- $\mathcal{D}[\Gamma]$ — диссипативный член ([декогеренция](/docs/core/dynamics/evolution#2-диссипативный-член))
+- $\tau$ — [внутреннее время](/docs/proofs/emergent-time), возникающее из корреляций с измерением O
+- $H_{eff}$ — эффективный гамильтониан из ограничения Page-Wootters
+- $-i[H_{eff}, \Gamma]$ — унитарная (гамильтонова) эволюция
+- $\mathcal{D}[\Gamma]$ — диссипативный член ([декогеренция](/docs/core/dynamics/evolution#логический-лиувиллиан))
 - $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
 - $L_k$ — операторы Линдблада
 - $\gamma_k \geq 0$ — скорости декогеренции
@@ -102,10 +104,10 @@ $$
 [Голоном](/docs/core/structure/holon) жизнеспособен, если:
 
 $$
-P > P_{\text{critical}} = \frac{2}{7} \approx 0.286
+P > P_{\text{crit}} = \frac{2}{7} \approx 0.286
 $$
 
-При $P < P_{\text{critical}}$ система входит в необратимый распад (см. [условие смерти](/docs/core/dynamics/viability#условие-смерти) и [теорему о критической чистоте](/docs/proofs/theorem-purity-critical)).
+При $P < P_{\text{crit}}$ система входит в необратимый распад (см. [условие смерти](/docs/core/dynamics/viability#условие-смерти) и [теорему о критической чистоте](/docs/proofs/theorem-purity-critical)).
 
 ## Экспериенциальное пространство
 
@@ -235,6 +237,20 @@ $$
 
 **Представление Крауса:** $\Phi$ — CPTP $\Leftrightarrow \exists\{K_i\}: \Phi(\rho) = \sum_i K_i \rho K_i^\dagger$, $\sum_i K_i^\dagger K_i = I$
 
+:::info CPTP-структура регенерации
+Регенеративный оператор УГМ является CPTP-каналом:
+
+$$
+\mathcal{R}_\alpha(\rho) = (1-\alpha)\rho + \alpha\varphi(\rho)
+$$
+
+с $\alpha = \kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \Delta\tau \in [0,1]$. Представление Крауса: $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$.
+
+**Условие корректности:** $\alpha < 1 \Leftrightarrow \Delta\tau < 1/\kappa_{\max}$.
+
+См. [сохранение положительности](/docs/core/dynamics/evolution#сохранение-положительности).
+:::
+
 См. [Формализация оператора φ](/docs/proofs/formalization-phi) для деталей CPTP-каналов.
 
 ### Функтор опыта
@@ -253,6 +269,62 @@ $$
 *Доказательство:*
 1. $F(\mathrm{id}_\rho) = \mathrm{id}_{F(\rho)}$ ✓
 2. $F(\Psi \circ \Phi) = F(\Psi) \circ F(\Phi)$ ✓
+
+## Топология Гротендика {#топология-гротендика}
+
+Для построения ∞-топоса $\mathbf{Sh}_\infty(\mathcal{C})$ необходимо явно задать топологию Гротендика на базовой категории.
+
+### Метрика Бюреса
+
+**Определение:**
+
+$$
+d_B(\Gamma_1, \Gamma_2) := \sqrt{2\left(1 - \sqrt{F(\Gamma_1, \Gamma_2)}\right)}
+$$
+
+где $F(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2$ — fidelity (верность).
+
+**Свойства:**
+- $d_B \in [0, \sqrt{2}]$
+- $d_B(\Gamma, \Gamma) = 0$
+- Монотонность: $d_B(\Phi(\rho), \Phi(\sigma)) \leq d_B(\rho, \sigma)$ для CPTP $\Phi$
+- Риманова метрика на многообразии матриц плотности
+
+### Bures-покрытия
+
+**Определение (Сайт DensityMat):**
+
+Семейство морфизмов $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ образует **покрытие** объекта $\Gamma$, если:
+
+$$
+\forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Phi_i(B_B(\Gamma_i, \epsilon))
+$$
+
+**Аксиомы сайта:**
+
+1. **Идентичность:** $\{\mathrm{id}_\Gamma\}$ покрывает $\Gamma$
+2. **Стабильность:** Pullback покрытия — покрытие
+3. **Транзитивность:** Композиция покрытий — покрытие
+
+### Связь с ∞-топосом
+
+Суперскрипт "loc" в определении $\mathbf{Sh}_\infty(\mathcal{C})^{loc}$ означает локализацию относительно Bures-покрытий:
+
+$$
+F \text{ — пучок} \Leftrightarrow F(X) \xrightarrow{\sim} \lim_{\{U \to X\} \in \text{Cov}(X)} F(U)
+$$
+
+**Классификатор подобъектов:**
+
+$$
+\Omega := \mathcal{O}(\mathcal{C}, d_B)
+$$
+
+— решётка открытых множеств в Bures-топологии.
+
+См. [Категорный формализм: Топология Гротендика](/docs/proofs/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp) для полной спецификации.
+
+---
 
 ### Теорема о невозможности спектрального функтора
 
@@ -325,11 +397,12 @@ $$
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
 - [Семь измерений](/docs/core/structure/dimensions) — базис $\mathcal{H}$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Эволюция](/docs/core/dynamics/evolution) — динамика $d\Gamma/dt$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{critical}}$
+- [Эволюция](/docs/core/dynamics/evolution) — динамика $d\Gamma(\tau)/d\tau$
+- [Эмерджентное время](/docs/proofs/emergent-time) — вывод τ из структуры Γ
+- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $C$, $D_{\text{diff}}$
 - [Измерение Единства](/docs/core/structure/dimension-u) — мера $\Phi$
 - [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
-- [Категорный формализм](/docs/proofs/categorical-formalism) — функтор $F$
+- [Категорный формализм](/docs/proofs/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
 - [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
 - [Вычислительная реализация](./computational) — Python-код

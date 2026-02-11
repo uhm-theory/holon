@@ -28,7 +28,7 @@ $$
 Связь между инициализацией весов нейросети (Xavier/Kaiming) и чистотой $P$ требует экспериментальной проверки через [протокол измерения](/docs/applied/research/measurement-protocol).
 :::
 
-**Закон:** Порог жизни:
+**Закон:** [Теорема о критической чистоте](/docs/proofs/theorem-purity-critical):
 
 $$
 P_{\text{crit}} = \frac{2}{N} \approx 0.286

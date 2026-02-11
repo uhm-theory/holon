@@ -37,9 +37,9 @@ $$
 
 :::info Предсказание
 $$
-\kappa(\Gamma) = \kappa_0 \cdot \mathrm{Coh}_E(\Gamma) \Rightarrow \frac{dP}{dt} \propto \mathrm{Coh}_E(\Gamma)
+\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma) \Rightarrow \frac{dP}{dt} \propto \mathrm{Coh}_E(\Gamma)
 $$
-Скорость [регенерации](/docs/core/dynamics/evolution#3-регенеративный-член) пропорциональна интегрированности [опыта](/docs/core/structure/dimension-e).
+Скорость [регенерации](/docs/core/dynamics/evolution#3-регенеративный-член) пропорциональна интегрированности [опыта](/docs/core/structure/dimension-e). Член $\kappa_{\text{bootstrap}} > 0$ гарантирует минимальную регенерацию даже при низкой E-когерентности ([разрешение bootstrap-парадокса](/docs/core/foundations/axiom-omega#genesis-protocol)).
 :::
 
 **См.:** [Связь регенерации и E-когерентности](./axiomatics#связь-регенерации-и-e-когерентности)
@@ -123,26 +123,26 @@ $$
 
 :::warning Предсказание
 $$
-\mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{critical}} \land \mathrm{Coh}_E(\Gamma) > 0
+\mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{crit}} \land \mathrm{Coh}_E(\Gamma) > 0
 $$
 [Жизнеспособность](/docs/core/dynamics/viability) требует минимальной [чистоты](/docs/core/dynamics/viability#определение-чистоты) и ненулевой E-когерентности.
 :::
 
-:::info Выведенные пороги
+:::info Выведенные пороги (теоремы из ПИР)
 | Параметр | Значение | Определение |
 |----------|----------|-------------|
-| $P_{\text{critical}}$ | $= 2/7 \approx 0.286$ | [Теорема о критической чистоте](/docs/proofs/theorem-purity-critical) |
-| $R_{\text{th}}$ | $= 1/3 \approx 0.333$ | [Порог рефлексии](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация) для L2 |
-| $\Phi_{\text{th}}$ | $= 1$ (точно) | [Порог интеграции](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация) для L2 |
+| $P_{\text{crit}}$ | $= 2/7 \approx 0.286$ | [Теорема о критической чистоте](/docs/proofs/theorem-purity-critical) |
+| $R_{\text{th}}$ | $= 1/3 \approx 0.333$ | [Теорема (байесовское доминирование)](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) |
+| $\Phi_{\text{th}}$ | $= 1$ (точно) | [Теорема (K₁-нетривиальность)](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции) |
 
-Эти значения **выведены** из структуры теории. См. [Аксиому Септичности](/docs/core/foundations/axiom-septicity).
+Эти значения **строго выводятся** из Принципа Информационной Различимости. См. [Пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
 :::
 
 **Верифицируемость:**
 Измерение «качества опыта» у умирающих систем должно падать ниже порога.
 
 **Клинические следствия:**
-- Состояния комы: $\mathrm{Coh}_E \to 0$, $P \to P_{\text{critical}}$
+- Состояния комы: $\mathrm{Coh}_E \to 0$, $P \to P_{\text{crit}}$
 - Психотические эпизоды: фрагментация $\mathrm{Coh}_E$
 - Медитативные состояния: высокое $\mathrm{Coh}_E$, высокое $R$
 
@@ -155,7 +155,7 @@ $$
 | 3 | [7-мерный стресс](#предсказание-3-семимерный-тензор-напряжений) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | Отсутствует |
 | 4 | [Доязыковое познание](#предсказание-4-доязыковое-познание-полноценно) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | Частично в [FEP](/docs/reference/glossary#связанные-теории) |
 | 5 | [Коллективное сознание](#предсказание-5-масштабная-инвариантность-сознания) | $C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0$ | Частично в [IIT](/docs/reference/glossary#связанные-теории) |
-| 6 | [Минимальная когерентность](#предсказание-6-минимальная-когерентность-для-жизнеспособности) | $P > P_{\text{critical}} \land \mathrm{Coh}_E > 0$ | Отсутствует |
+| 6 | [Минимальная когерентность](#предсказание-6-минимальная-когерентность-для-жизнеспособности) | $P > P_{\text{crit}} \land \mathrm{Coh}_E > 0$ | Отсутствует |
 
 ---
 
@@ -178,7 +178,7 @@ $$
 - [Аксиоматика](./axiomatics) — связь регенерации и E-когерентности
 - [Определения](./definitions) — $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$
 - [Иерархия](./hierarchy) — когнитивные уровни К1-К5
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P$, $P_{\text{critical}}$
+- [Жизнеспособность](/docs/core/dynamics/viability) — $P$, $P_{\text{crit}}$
 - [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2, пороги
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $C$
 - [Семь измерений](/docs/core/structure/dimensions) — структура $\mathcal{H} = \mathbb{C}^7$

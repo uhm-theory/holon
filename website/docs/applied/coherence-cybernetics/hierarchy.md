@@ -144,6 +144,7 @@ $$
 | Компоненты сети | Измерения $A$, $S$, $D$, $L$ |
 | Структурное сопряжение | Взаимодействие Голонома с окружением $E$ |
 | Операциональное замыкание | Инвариантность структуры при [жизнеспособности](/docs/core/dynamics/viability) |
+| — | [L-унификация](./axiomatics#l-унификация-вывод-l_k-из-ω): $L_k = \sqrt{\chi_{S_k}}$ |
 
 **Добавляется:**
 - Операциональное замыкание (неподвижная точка $\varphi$)
@@ -153,6 +154,7 @@ $$
 - Феноменология ([E-измерение](/docs/core/structure/dimension-e) как фундаментальное)
 - Квантовое основание [(QG)](/docs/core/foundations/axiom-septicity)
 - Формальная динамика (нет аналога уравнения эволюции)
+- **Логическое происхождение динамики** (L-унификация в УГМ выводит диссипацию из структуры Ω)
 
 ## Теория интегрированной информации (IIT)
 
@@ -395,7 +397,7 @@ $$
 
 **Доказательство:**
 
-L2 требует $R \geq R_{\text{th}} = 1/3$ и $\Phi \geq \Phi_{\text{th}} = 1$ ([теоремы](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация)).
+L2 требует $R \geq R_{\text{th}} = 1/3$ и $\Phi \geq \Phi_{\text{th}} = 1$ ([теоремы из ПИР](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
 
 Для [суб-Голонома](/docs/reference/glossary#таксономия-конфигураций-γ) (например, электрона):
 
@@ -615,7 +617,7 @@ graph TB
 | Ограничение | Формула | Связь с УГМ |
 |-------------|---------|-------------|
 | F1 Компактность | $\lVert\Gamma\rVert_F \leq R_{\max}$ | $\mathrm{Tr}(\Gamma) = 1$ |
-| F2 Диссипативность | $\dot{W} \leq -\alpha W + \gamma(\lVert e\rVert)$ | [$\mathcal{D}[\Gamma]$](/docs/core/dynamics/evolution#2-диссипативный-член) |
+| F2 Диссипативность | $\dot{W} \leq -\alpha W + \gamma(\lVert e\rVert)$ | [$\mathcal{D}[\Gamma]$](/docs/core/dynamics/evolution#логический-лиувиллиан) |
 | F3 Невырожденность | $\lambda_{\min}(\Gamma) \geq \varepsilon$ | [Жизнеспособность](/docs/core/dynamics/viability) |
 | F4 Рефлексивное сжатие | $\lVert\varphi(\Gamma_1) - \varphi(\Gamma_2)\rVert_F \leq k \lVert\Gamma_1 - \Gamma_2\rVert_F$, $k < 1$ | [Теорема 7.2](./theorems#теорема-72-неподвижная-точка-рефлексии) |
 | F5-F9 | ... | Требуют формализации |
@@ -687,9 +689,9 @@ $$
 
 | Эмоция | Сигнатура через [чистоту](/docs/core/dynamics/viability#определение-чистоты) $P$ |
 |--------|-----------|
-| Страх | $P \to P_{\text{critical}}$ (приближение к границе $\partial \mathcal{V}$) |
+| Страх | $P \to P_{\text{crit}}$ (приближение к границе $\partial \mathcal{V}$) |
 | Облегчение | $dP/dt > 0$ после угрозы |
-| Удовлетворение | $P \gg P_{\text{critical}}$, $dP/dt \approx 0$ |
+| Удовлетворение | $P \gg P_{\text{crit}}$, $dP/dt \approx 0$ |
 | Фрустрация | $P$ низкая, $\nabla_a P \approx 0$ (нет градиента действий) |
 
 **К3 (Категории):**
@@ -727,18 +729,20 @@ $$
 ---
 
 **Связанные документы:**
-- [Аксиоматика](./axiomatics) — аксиомы Ω и Септичности
-- [Определения](./definitions) — базовые определения КК
-- [Теоремы](./theorems) — формальные результаты
-- [Реализация](./implementation) — практическое применение
+- [Аксиоматика](./axiomatics) — L-унификация, E-акцентуация, аксиомы Ω и Септичности
+- [Определения](./definitions) — базовые определения КК, связь формализмов
+- [Теоремы](./theorems) — формальные результаты (включая усиление через L-унификацию)
+- [Реализация](./implementation) — вычислительная реализация, калибровка
+- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — иерархия зависимостей Ω → χ_S → L_k → ℒ_Ω → φ
 - [Категорный формализм](/docs/proofs/categorical-formalism) — функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$
 - [Семь измерений](/docs/core/structure/dimensions) — структура $\mathcal{H} = \mathbb{C}^7$
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
 - [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
 - [Измерение Опыта](/docs/core/structure/dimension-e) — $\rho_E$ и экспериенциальное содержание
-- [Жизнеспособность](/docs/core/dynamics/viability) — чистота $P$ и $P_{\text{critical}}$
+- [Жизнеспособность](/docs/core/dynamics/viability) — чистота $P$ и $P_{\text{crit}}$
 - [Эволюция](/docs/core/dynamics/evolution) — динамика $d\Gamma/dt$
-- [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
+- [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы, теорема E-акцентуации
+- [Конструктивные алгоритмы](/docs/formal/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление L_k из Ω
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $C$
 - [Глоссарий](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT, сознательный реализм
 - [Теорема минимальности](/docs/proofs/theorem-minimality-7) — доказательство $\dim(\mathcal{H}) = 7$

@@ -16,6 +16,18 @@ description: Базовые определения Кибернетики Ког
 - L0, L1, L2 — [уровни интериорности](/docs/proofs/interiority-hierarchy)
 :::
 
+:::info Два формализма
+Кибернетика Когерентности работает в **минимальном 7D-формализме** ($\mathcal{H} = \mathbb{C}^7$), где все операции определены непосредственно.
+
+Для операций, требующих тензорной структуры (частичный след $\mathrm{Tr}_{-E}$, композиция Голономов $\otimes$), используется **расширенный формализм** ($\mathcal{H} = \mathbb{C}^{42}$ с тензорной структурой).
+
+**Связь формализмов:**
+- $\iota: \mathbb{C}^7 \hookrightarrow \mathbb{C}^{42}$ — вложение (выбор «слайса»)
+- $\pi: \mathbb{C}^{42} \to \mathbb{C}^7$ — проекция (глобальное описание)
+
+**См.:** [Связь формализмов](/docs/core/dynamics/coherence-matrix#согласование-формализмов)
+:::
+
 ## Голоном
 
 **Определение (Голоном):**
@@ -128,7 +140,7 @@ $$
 
 где $|\psi\rangle \sim |\phi\rangle \Leftrightarrow |\psi\rangle = c|\phi\rangle$ для $c \in \mathbb{C}^*$.
 
-**Метрика Фубини-Штуди:**
+**[Метрика Фубини-Штуди](/docs/formal/specification#метрика-фубини-штуди):**
 
 $$
 d_{\mathrm{FS}}([|\psi\rangle], [|\phi\rangle]) := \arccos(|\langle\psi|\phi\rangle|) \in [0, \pi/2]
@@ -143,16 +155,39 @@ $$
 
 **Определение ($E$-когерентность):**
 
+:::warning Исправленное определение
+Предыдущая формула $\mathrm{Coh}_E = 1/(n \cdot P_E)$ была математически некорректна — она давала $\mathrm{Coh}_E = 1$ для всех нормированных состояний, не различая чистые и смешанные.
+:::
+
 $$
-\mathrm{Coh}_E(\Gamma) := \frac{(\sum_k \lambda_k)^2}{n \cdot \sum_k \lambda_k^2}
+\mathrm{Coh}_E(\Gamma) := P_E = \mathrm{Tr}(\rho_E^2)
 $$
 
-где $\lambda_k$ — собственные значения $\rho_E$, $n$ — число ненулевых собственных значений.
+где $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — редуцированная матрица плотности E-измерения.
+
+:::note Минимальный формализм (7D)
+В минимальном формализме ($\mathcal{H} = \mathbb{C}^7$) частичный след не определён. Используется приближение:
+
+$$
+\mathrm{Coh}_E(\Gamma) \approx \gamma_{EE} + 2\sqrt{\sum_{i \neq E} |\gamma_{Ei}|^2}
+$$
+
+где $\gamma_{EE}$ — диагональный элемент (населённость E), $\gamma_{Ei}$ — когерентности с E.
+:::
 
 **Свойства:**
-- $\mathrm{Coh}_E \in [1/n, 1]$
-- $\mathrm{Coh}_E = 1$ — единственный доминирующий $E$-компонент
-- $\mathrm{Coh}_E = 1/n$ — фрагментированная $E$-проекция
+- $\mathrm{Coh}_E \in [1/N, 1]$ для N-мерной системы
+- $\mathrm{Coh}_E = 1$ — чистое E-состояние (максимальная когерентность)
+- $\mathrm{Coh}_E = 1/N$ — полностью смешанное (минимальная когерентность)
+
+**Связь с L-унификацией:**
+
+E-когерентность связана с характеристическим морфизмом E-подобъекта:
+$$
+\mathrm{Coh}_E(\Gamma) = \mathrm{Tr}(\chi_E(\Gamma) \cdot \chi_E(\Gamma)^\dagger)
+$$
+
+где $\chi_E: \Gamma \to \Omega$ — [характеристический морфизм](/docs/core/foundations/axiom-omega#характеристические-морфизмы-и-l_k).
 
 ## Оператор самомоделирования (CPTP)
 
@@ -269,12 +304,12 @@ $$
 | L1 | $\mathrm{PG}(S)$ — Феноменальная геометрия | $(\mathbb{P}(\mathcal{H}_E), d_{\mathrm{FS}}, \rho_E)$, где $\Phi > 0$ |
 | L2 | Когнитивные квалиа | $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ |
 
-:::info Выведенные пороги
-Значения $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ **выведены** из структуры теории:
-- $R_{\text{th}} = 1/3$ — минимальная точность самомодели для различения «себя» от случайного состояния
-- $\Phi_{\text{th}} = 1$ — баланс когерентностей и диагонали
+:::info Выведенные пороги (теоремы из ПИР)
+Значения $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ **строго выводятся** из Принципа Информационной Различимости:
+- $R_{\text{th}} = 1/3$ — порог байесовского доминирования самомодели
+- $\Phi_{\text{th}} = 1$ — порог K₁-нетривиальности C*-алгебры
 
-**См.:** [Теорема о порогах L2](/docs/core/foundations/axiom-septicity#пороги-l2-геометрическая-мотивация)
+**См.:** [Теоремы о порогах L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)
 :::
 
 ## Жизнеспособность
@@ -284,7 +319,7 @@ $$
 См. [Жизнеспособность](/docs/core/dynamics/viability) для полного описания.
 
 $$
-\mathrm{Viable}(\mathbb{H}) := P(\Gamma) > P_{\text{critical}} \land \frac{dP}{dt} > -\varepsilon_{\text{death}}
+\mathrm{Viable}(\mathbb{H}) := P(\Gamma) > P_{\text{crit}} \land \frac{dP}{dt} > -\varepsilon_{\text{death}}
 $$
 
 где:
@@ -321,8 +356,8 @@ $$
 
 **Топология:**
 - $\mathcal{V} \subset \mathcal{L}(\mathcal{H})$ — открытое множество
-- $\partial\mathcal{V} = \{\Gamma : P(\Gamma) = P_{\text{critical}}\}$ — граница
-- $\mathrm{int}(\mathcal{V}) = \{\Gamma : P(\Gamma) > P_{\text{critical}}\}$ — внутренность
+- $\partial\mathcal{V} = \{\Gamma : P(\Gamma) = P_{\text{crit}}\}$ — граница
+- $\mathrm{int}(\mathcal{V}) = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$ — внутренность
 
 ## Тензор напряжений
 
@@ -363,7 +398,7 @@ $$
 ## Эквивалентность условий
 
 $$
-\mathrm{Viable}(\Gamma) \Leftrightarrow P(\Gamma) > P_{\text{critical}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
+\mathrm{Viable}(\Gamma) \Leftrightarrow P(\Gamma) > P_{\text{crit}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
 
 ## Композиция Голономов
@@ -446,13 +481,15 @@ $$
 ---
 
 **Связанные документы:**
-- [Аксиоматика](./axiomatics) — основания КК
+- [Аксиоматика](./axiomatics) — основания КК (включая L-унификацию)
 - [Теоремы](./theorems) — формальные результаты КК
+- [Реализация](./implementation) — вычислительная реализация
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{critical}}$
+- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$ и связь формализмов
+- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $D_{\text{diff}}$, $C$
 - [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
 - [Теорема о минимальности 7D](/docs/proofs/theorem-minimality-7) — почему именно 7 измерений
 - [Категорный формализм](/docs/proofs/categorical-formalism) — функтор $F$, категория $\mathbf{Exp}$
 - [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
+- [Конструктивные алгоритмы](/docs/formal/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление $\chi_S$, $L_k$, $\mathcal{L}_\Omega$, $\varphi$

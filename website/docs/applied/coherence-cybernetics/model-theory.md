@@ -87,11 +87,11 @@ $$
 | $I(\text{sort } \Gamma)$ | $\{M \in \mathbb{C}^{7 \times 7} : M^\dagger = M, M \geq 0, \mathrm{Tr}(M) = 1\}$ |
 | $I(P)(M)$ | $\mathrm{Tr}(M^2)$ |
 | $I(\mathrm{evolve})(M, t)$ | Решение [уравнения Линдблада](/docs/core/dynamics/evolution) |
-| $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{critical}} \land dP/dt > -\varepsilon_{\text{death}}$ |
+| $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{crit}} \land dP/dt > -\varepsilon_{\text{death}}$ |
 | $I(\mathrm{compose})$ | Тензорное произведение + взаимодействие |
 
 :::info Выведенные и эмпирические константы
-- $P_{\text{critical}} = 2/7 \approx 0.286$ — [теорема](/docs/proofs/theorem-purity-critical)
+- $P_{\text{crit}} = 2/7 \approx 0.286$ — [теорема](/docs/proofs/theorem-purity-critical)
 - $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада, см. [определение](./definitions#жизнеспособность)
 :::
 
@@ -262,7 +262,7 @@ $$
 - [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{critical}}$
+- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
 - [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/dt$
 - [Семь измерений](/docs/core/structure/dimensions) — структура $\mathcal{H} = \mathbb{C}^7$
 - [Глоссарий](/docs/reference/glossary) — терминология и связанные теории
