@@ -21,8 +21,10 @@ interface Dimension {
 
 // Новая визуализация: Самозамыкающаяся структура
 // Демонстрирует: единый примитив, самомоделирование, 7 измерений, когерентность, стрелу времени
+// Вращение по часовой стрелке символизирует необратимость времени (arrow of time)
 function SelfReflectingVisualization() {
   const cx = 250, cy = 250;
+  const rotationSpeed = 2; // градусов в секунду — очень медленное вращение
   const [time, setTime] = useState(0);
   const animationRef = useRef<number | undefined>(undefined);
   const startTimeRef = useRef<number>(Date.now());
@@ -91,9 +93,7 @@ function SelfReflectingVisualization() {
     const endY = cy + Math.sin(returnAngle) * innerRadius;
 
     return {
-      path: `M ${startX} ${startY}
-             Q ${ctrl1X} ${ctrl1Y} ${farX} ${farY}
-             Q ${ctrl2X} ${ctrl2Y} ${endX} ${endY}`,
+      path: `M ${startX} ${startY} Q ${ctrl1X} ${ctrl1Y} ${farX} ${farY} Q ${ctrl2X} ${ctrl2Y} ${endX} ${endY}`,
       phaseOffset,
       speedVariation,
       farX,
@@ -206,40 +206,43 @@ function SelfReflectingVisualization() {
         className={styles.sourceGlow}
       />
 
-      {/* Плавное внутреннее кольцо когерентности */}
-      <g className={styles.coherenceLayer}>
-        {generateInnerRing()}
-        {generateCoherencePoints()}
-      </g>
+      {/* Вращающаяся группа — стрела времени (движение только вперёд) */}
+      <g
+        style={{
+          transform: `rotate(${time * rotationSpeed}deg)`,
+          transformOrigin: `${cx}px ${cy}px`
+        }}
+      >
+        {/* Плавное внутреннее кольцо когерентности */}
+        <g className={styles.coherenceLayer}>
+          {generateInnerRing()}
+          {generateCoherencePoints()}
+        </g>
 
-      {/* 7 самозамыкающихся потоков — самомоделирование */}
-      <g className={styles.flowsLayer}>
-        {flows.map((flow, i) => (
-          <g key={`flow-${i}`}>
-            {/* Основной поток */}
+        {/* 7 самозамыкающихся потоков — самомоделирование */}
+        <g className={styles.flowsLayer}>
+        {flows.map((flow, i) => {
+          // Волна пульсации, проходящая по лепесткам последовательно
+          const phaseShift = i * (Math.PI * 2 / 7);
+          const pulseWave = Math.sin(time * 0.8 + phaseShift);
+          const opacity = 0.5 + pulseWave * 0.25;
+          const strokeWidth = 2 + pulseWave * 0.8;
+
+          return (
             <path
+              key={`flow-${i}`}
               d={flow.path}
               fill="none"
               stroke="var(--ifm-color-primary)"
-              strokeWidth={2.5}
+              strokeWidth={strokeWidth}
               strokeLinecap="round"
-              opacity={0.6 + Math.sin(time * 0.5 + i * 0.9) * 0.2}
+              opacity={opacity}
               className={styles.flowPath}
               filter="url(#softGlow2)"
             />
-            {/* Движущаяся точка — стрела времени */}
-            <circle
-              r={4}
-              fill="var(--ifm-color-primary)"
-              opacity={0.8}
-              className={styles.flowParticle}
-              style={{
-                offsetPath: `path('${flow.path}')`,
-                offsetDistance: `${((time * 15 + i * 14.3) % 100)}%`,
-              } as React.CSSProperties}
-            />
-          </g>
-        ))}
+          );
+        })}
+        </g>
       </g>
 
       {/* Центральное ядро — терминальный объект T / источник */}
@@ -616,7 +619,7 @@ const docSections: DocSection[] = [
   {
     title: 'Кибернетика',
     description: 'Инженерные приложения',
-    link: '/docs/applied/coherence-cybernetics/axiomatics',
+    link: '/docs/applied/coherence-cybernetics/introduction',
     items: ['Протокол измерения для ИИ', 'Теорема о невозможности зомби', 'Регенерация и когерентность'],
   },
 ];

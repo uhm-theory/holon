@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 13
 title: Реализация
 description: Вычислительная реализация Кибернетики Когерентности
 ---
@@ -22,25 +22,190 @@ description: Вычислительная реализация Кибернет�
 Данная реализация — **демонстрационный псевдокод**. Для базового класса `Holon` см. [Вычислительная реализация](/docs/formal/computational). Для полной реализации с мерами сознательности см. [Иерархия интериорности](/docs/proofs/interiority-hierarchy#61-алгоритм-классификации-уровня). Для алгоритмов L-унификации см. [Конструктивные алгоритмы](/docs/formal/computational#конструктивные-алгоритмы-из-l-унификации).
 :::
 
+## Быстрый старт
+
+### Установка
+
+```bash
+# Гипотетический пакет (в разработке)
+pip install coherence-cybernetics
+
+# Зависимости для текущего псевдокода
+pip install numpy scipy
+```
+
+### Минимальный пример (10 строк)
+
+```python
+import numpy as np
+from scipy.linalg import expm
+
+# Создаём случайный Голоном
+N = 7
+L = np.eye(N) + 0.1 * np.random.randn(N, N)
+gamma = L @ L.T.conj()
+gamma /= np.trace(gamma)
+
+# Эволюция
+H = np.diag([1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0])
+for step in range(100):
+    U = expm(-1j * H * 0.01)
+    gamma = U @ gamma @ U.T.conj()
+    gamma /= np.trace(gamma)
+    P = np.trace(gamma @ gamma).real
+    coh_E = gamma[4, 4].real + 2 * np.sqrt(sum(abs(gamma[4, i])**2 for i in range(7) if i != 4))
+    print(f"Step {step}: P={P:.3f}, Coh_E={coh_E:.3f}")
+```
+
+### Проверка жизнеспособности
+
+```python
+P_CRIT = 2/7  # ≈ 0.286
+
+def is_viable(gamma):
+    P = np.trace(gamma @ gamma).real
+    return P > P_CRIT
+
+# Использование
+if not is_viable(gamma):
+    print("⚠️ Система нежизнеспособна!")
+```
+
+---
+
+## Сложность алгоритмов
+
+| Операция | Сложность | Примечание |
+|----------|-----------|------------|
+| Вычисление $P = \mathrm{Tr}(\Gamma^2)$ | $O(N^2)$ | $N = 7$ |
+| Унитарная эволюция | $O(N^3)$ | Экспонента матрицы |
+| Диссипация (Линдблад) | $O(m \cdot N^2)$ | $m$ операторов |
+| $\Phi_{\text{eff}}$ | $O(n \cdot k)$ | Лапласиан графа |
+| Вычисление $R$ | $O(N^3)$ | Требует $\varphi(\Gamma)$ |
+| Полный шаг эволюции | $O(N^3 + m \cdot N^2)$ | — |
+
+### Масштабируемость
+
+| Размер системы | $N$ | Время шага | Память |
+|----------------|-----|------------|--------|
+| Минимальный Голоном | 7 | ~1 мс | ~1 KB |
+| Композиция 2 Голономов | 49 | ~10 мс | ~20 KB |
+| Композиция 10 Голономов | 7^10 ≈ 2.8×10^8 | Неприменимо | — |
+
+:::warning Экспоненциальный рост
+Полное тензорное произведение быстро становится неприменимым. Для больших систем используйте аппроксимации (MPS, mean-field).
+:::
+
+---
+
+## Оптимизации
+
+### GPU-ускорение через JAX
+
+```python
+import jax.numpy as jnp
+from jax import jit
+from jax.scipy.linalg import expm
+
+@jit
+def evolve_step_gpu(gamma, H, dt):
+    U = expm(-1j * H * dt)
+    gamma_new = U @ gamma @ U.T.conj()
+    return gamma_new / jnp.trace(gamma_new)
+```
+
+### Sparse матрицы для больших систем
+
+```python
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import expm_multiply
+
+# Для разреженного H
+H_sparse = csr_matrix(H)
+gamma_evolved = expm_multiply(-1j * H_sparse * dt, gamma.flatten())
+```
+
+### Параллелизация Monte-Carlo
+
+```python
+from multiprocessing import Pool
+
+def run_trajectory(seed):
+    np.random.seed(seed)
+    gamma = initialize_random_holon()
+    for _ in range(1000):
+        gamma = evolve_step(gamma)
+    return compute_metrics(gamma)
+
+with Pool(8) as p:
+    results = p.map(run_trajectory, range(100))
+```
+
+---
+
+## Примеры тестов
+
+```python
+import pytest
+import numpy as np
+
+def test_purity_bounds():
+    """P ∈ [1/7, 1] для любого Γ."""
+    gamma = create_random_holon()
+    P = np.trace(gamma @ gamma).real
+    assert 1/7 - 1e-10 <= P <= 1 + 1e-10
+
+def test_trace_preservation():
+    """Tr(Γ) = 1 после эволюции."""
+    gamma = create_random_holon()
+    gamma_evolved = evolve_step(gamma)
+    assert abs(np.trace(gamma_evolved) - 1) < 1e-10
+
+def test_hermiticity_preservation():
+    """Γ остаётся эрмитовой."""
+    gamma = create_random_holon()
+    gamma_evolved = evolve_step(gamma)
+    assert np.allclose(gamma_evolved, gamma_evolved.T.conj())
+
+def test_positivity_preservation():
+    """Γ остаётся положительно определённой."""
+    gamma = create_random_holon()
+    gamma_evolved = evolve_step(gamma)
+    eigenvalues = np.linalg.eigvalsh(gamma_evolved)
+    assert all(eigenvalues >= -1e-10)
+
+def test_viability_threshold():
+    """P_crit = 2/7."""
+    assert abs(P_CRITICAL - 2/7) < 1e-10
+
+def test_coh_e_bounds():
+    """Coh_E ∈ [1/N, 1]."""
+    gamma = create_random_holon()
+    coh_E = compute_coherence_E(gamma)
+    assert 1/7 - 1e-10 <= coh_E <= 1 + 1e-10
+```
+
+---
+
 ## Архитектура системы
 
 ```mermaid
 graph TD
     subgraph "Ядро КК"
-        G[Матрица Γ]
-        H[Гамильтониан H]
-        L[Операторы Линдблада]
-        PHI[Оператор φ]
+        G["Матрица Γ"]
+        H["Гамильтониан H"]
+        L["Операторы Линдблада"]
+        PHI["Оператор φ"]
     end
     subgraph "Мониторинг"
-        P[Чистота P]
-        SIG[Тензор σ_sys]
-        C[Сознательность C]
+        P["Чистота P"]
+        SIG["Тензор σ sys"]
+        C["Сознательность C"]
     end
     subgraph "Управление"
-        EVOL[Эволюция dΓ/dτ]
-        REG[Регенерация ℛ]
-        ACT[Действия]
+        EVOL["Эволюция dΓ/dτ"]
+        REG["Регенерация ℛ"]
+        ACT["Действия"]
     end
     G --> P
     G --> SIG

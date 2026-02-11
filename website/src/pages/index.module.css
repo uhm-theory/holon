@@ -697,12 +697,6 @@
   transition: opacity 0.3s ease;
 }
 
-/* Движущиеся частицы — стрела времени */
-.flowParticle {
-  offset-rotate: 0deg;
-  filter: blur(0.5px);
-}
-
 /* Центральное ядро */
 .coreGroup {
   transition: transform 0.1s ease-out;

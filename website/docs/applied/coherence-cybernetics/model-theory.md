@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 11
 title: Теория моделей
 description: Формальная спецификация и категорная семантика КК
 ---
@@ -147,6 +147,10 @@ $$
 | $\alpha$ | $(\mathbb{H}_1 \otimes \mathbb{H}_2) \otimes \mathbb{H}_3 \cong \mathbb{H}_1 \otimes (\mathbb{H}_2 \otimes \mathbb{H}_3)$ |
 | $\sigma$ | $\mathbb{H}_1 \otimes \mathbb{H}_2 \cong \mathbb{H}_2 \otimes \mathbb{H}_1$ |
 
+:::note О моноидальной единице
+$\mathbb{H}_{\text{unit}}$ с $\Gamma = I/7$ имеет $P(I/7) = 1/7 < P_{\text{crit}} = 2/7$, что формально нарушает условие жизнеспособности. Это **не дефект** категорной структуры: моноидальная единица — формальный элемент для определения изоморфизмов $\mathbb{H} \otimes \mathbb{H}_{\text{unit}} \cong \mathbb{H}$, а не физический Голоном. Жизнеспособные Голономы образуют **полную подкатегорию** $\mathbf{Hol}_{\mathcal{V}} \subset \mathbf{Hol}$.
+:::
+
 ### Функтор в IIT
 
 **Определение:**
@@ -159,7 +163,7 @@ $$
 
 где:
 - $X = \mathrm{discretize}(S)$ — дискретизация состояния
-- $p(x) = |\langle x|\Gamma|x \rangle|^2$ — вероятностное распределение
+- $p(x) = \langle x|\Gamma|x \rangle$ — вероятностное распределение (⟨x|Γ|x⟩ уже вещественно и неотрицательно для эрмитовой положительно полуопределённой Γ)
 - $\Phi(X) = \Phi(\Gamma)$ — [интегрированная информация](/docs/core/structure/dimension-u#мера-интеграции-φ)
 
 ### Функтор в FEP
@@ -240,7 +244,7 @@ $$
 1. **Структуру** феноменального пространства ([L1](/docs/proofs/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): метрика Фубини-Штуди)
 2. **Отношения** между качествами (L1: изоморфизм с $\mathbb{P}(\mathcal{H}_E)$)
 3. **Динамику** опыта ([уравнение эволюции](/docs/core/dynamics/evolution))
-4. **Условия** сознательности ([L2](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$)
+4. **Условия** сознательности ([L2](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
 5. **Необходимость** интериорности ([L0](/docs/proofs/interiority-hierarchy#уровень-0-интериорность-interiority)) для жизнеспособности ([Теорема 8.1](./theorems#теорема-81-необходимость-интериорности-no-zombie))
 
 ### Что теория не объясняет
