@@ -9,26 +9,14 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
-// 7 измерений УГМ
-const DIMENSIONS = [
-  { symbol: 'A', name: 'Артикуляция' },
-  { symbol: 'S', name: 'Структура' },
-  { symbol: 'D', name: 'Динамика' },
-  { symbol: 'L', name: 'Логика' },
-  { symbol: 'E', name: 'Опыт' },
-  { symbol: 'O', name: 'Основание' },
-  { symbol: 'U', name: 'Единство' },
-];
-
 /**
  * Оккультно-техногенная визуализация УГМ
  *
  * Предельный фундаментализм:
- * - Vesica Piscis — порождение формы из пересечения
- * - Emergence — частицы стягиваются из пустоты к центру
- * - Фрактальность — мини-гептаграммы в вершинах
  * - Гептаграмма {7/3} — священная звезда семи измерений
+ * - Фрактальность — мини-гептаграммы в вершинах (самоподобие)
  * - Лучи от центра — потоки самомоделирования (φ)
+ * - ∞ в центре — бесконечность как источник
  * - Вращение — стрела времени
  */
 function CoherenceVisualization() {
@@ -55,8 +43,7 @@ function CoherenceVisualization() {
   const rotationSpeed = 1.5;
   const coreR = 35;           // ядро ∞
   const innerR = 65;          // внутреннее кольцо
-  const starR = 105;          // радиус гептаграммы
-  const labelR = 145;         // подписи
+  const starR = 125;          // радиус гептаграммы (лучи)
   const boundaryR = 170;      // граница
 
   // Дыхание системы
@@ -166,66 +153,6 @@ function CoherenceVisualization() {
     return arcs;
   };
 
-  // Vesica Piscis — порождение формы из пересечения двух кругов
-  const renderVesicaPiscis = () => {
-    const r = boundaryR * 0.7 * breath;
-    const offset = r * 0.5; // смещение центров для пересечения
-    const pulse = Math.sin(time * 0.2) * 0.03;
-    const opacity = 0.06 + pulse;
-
-    return (
-      <g>
-        <circle cx={cx - offset} cy={cy} r={r}
-          fill="none"
-          stroke="var(--ifm-color-primary)"
-          strokeWidth={0.5}
-          opacity={opacity}
-        />
-        <circle cx={cx + offset} cy={cy} r={r}
-          fill="none"
-          stroke="var(--ifm-color-primary)"
-          strokeWidth={0.5}
-          opacity={opacity}
-        />
-      </g>
-    );
-  };
-
-  // Emergence — частицы стягиваются из пустоты к центру
-  const renderEmergence = () => {
-    const particles: JSX.Element[] = [];
-    const numParticles = 21; // 3 × 7
-
-    for (let i = 0; i < numParticles; i++) {
-      // Каждая частица имеет свой цикл
-      const cycle = 12; // секунд на полный путь
-      const phase = (i / numParticles) * cycle;
-      const t = ((time + phase) % cycle) / cycle; // 0 → 1
-
-      // Спиральное движение внутрь
-      const angle = (i / numParticles) * Math.PI * 2 + time * 0.1;
-      const startR = boundaryR * 1.3;
-      const endR = coreR * 0.8;
-      const r = startR - (startR - endR) * t;
-
-      const x = cx + Math.cos(angle + t * 2) * r;
-      const y = cy + Math.sin(angle + t * 2) * r;
-
-      // Исчезает к центру и появляется на краю
-      const opacity = Math.sin(t * Math.PI) * 0.25;
-      const size = 1 + (1 - t) * 1.5;
-
-      particles.push(
-        <circle key={`particle-${i}`}
-          cx={x} cy={y} r={size}
-          fill="var(--ifm-color-primary)"
-          opacity={opacity}
-        />
-      );
-    }
-    return particles;
-  };
-
   // Мини-гептаграммы в вершинах (фрактальность)
   const renderMiniHeptagrams = () => {
     const elements: JSX.Element[] = [];
@@ -301,39 +228,6 @@ function CoherenceVisualization() {
         strokeWidth={1}
         opacity={0.2}
       />
-
-      {/* Подписи измерений — статичные, не вращаются */}
-      <g className={styles.labelsLayer}>
-        {DIMENSIONS.map((dim, i) => {
-          const baseA = (i * 360 / 7) - 90;
-          const a = (baseA + time * rotationSpeed) * Math.PI / 180;
-          const r = labelR * breath;
-          const x = cx + Math.cos(a) * r;
-          const y = cy + Math.sin(a) * r;
-
-          return (
-            <g key={`label-${i}`}>
-              <circle cx={x} cy={y} r={11}
-                fill="var(--ifm-background-color)" opacity={0.9} />
-              <circle cx={x} cy={y} r={11}
-                fill="none"
-                stroke="var(--ifm-color-primary)"
-                strokeWidth={1}
-                opacity={0.4} />
-              <text x={x} y={y}
-                className={styles.dimensionLabel}
-                textAnchor="middle"
-                dominantBaseline="central"
-                style={{
-                  fontSize: '10px',
-                  fontWeight: 500
-                }}>
-                {dim.symbol}
-              </text>
-            </g>
-          );
-        })}
-      </g>
 
       {/* Вращающаяся группа */}
       <g style={{
