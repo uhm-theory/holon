@@ -250,6 +250,159 @@ $$
 
 ---
 
+## Практическая реализация
+
+:::warning Статус
+Этот раздел описывает **минимальную жизнеспособную реализацию**. Многие параметры требуют экспериментальной калибровки.
+:::
+
+### Алгоритм вычисления метрик
+
+```python
+import numpy as np
+from scipy.linalg import eigh
+from typing import Tuple
+
+def compute_dimension_metrics(
+    model,
+    input_batch: np.ndarray,
+    layer_indices: list[int] = None
+) -> dict[str, float]:
+    """
+    Вычисление 7 измерений УГМ для нейросети.
+
+    Args:
+        model: Модель с доступом к промежуточным активациям
+        input_batch: Батч входных данных (N, ...)
+        layer_indices: Индексы слоёв для анализа (по умолчанию — все)
+
+    Returns:
+        dict с ключами I_A, I_S, I_D, I_L, I_E, I_O, I_U
+    """
+    activations = model.get_activations(input_batch)
+    attention_weights = model.get_attention_weights(input_batch)
+
+    # I_A: Взаимная информация вход↔латент
+    I_A = estimate_mutual_info(input_batch, activations[-1])
+
+    # I_S: Ранг Якобиана (через SVD)
+    jacobian = compute_jacobian(model, input_batch)
+    singular_values = np.linalg.svd(jacobian, compute_uv=False)
+    eps_rank = 1e-6
+    I_S = np.sum(singular_values > eps_rank) / len(singular_values)
+
+    # I_D: Максимальный ляпуновский экспонент (оценка)
+    I_D = estimate_lyapunov(model, input_batch)
+
+    # I_L: Коммутаторы слоёв
+    commutator_norms = []
+    for i, j in itertools.combinations(layer_indices or range(len(activations)), 2):
+        comm_norm = layer_commutator_norm(model, i, j, input_batch)
+        commutator_norms.append(comm_norm)
+    I_L = 1.0 - np.mean(commutator_norms) if commutator_norms else 1.0
+
+    # I_E: Дифференциация (экспонента энтропии внимания)
+    attn_entropy = von_neumann_entropy(attention_weights)
+    I_E = np.exp(attn_entropy)
+
+    # I_O: Устойчивость к шуму
+    noise_std = 0.01
+    perturbed = input_batch + np.random.randn(*input_batch.shape) * noise_std
+    delta_h = np.linalg.norm(
+        model.get_activations(perturbed)[-1] - activations[-1],
+        'fro'
+    )
+    I_O = max(0, 1.0 - delta_h / noise_std)
+
+    # I_U: Effective Φ (спектральный зазор Лапласиана)
+    attn_graph = build_attention_graph(attention_weights)
+    laplacian = np.diag(attn_graph.sum(axis=1)) - attn_graph
+    eigenvalues = np.linalg.eigvalsh(laplacian)
+    lambda_2 = eigenvalues[1] if len(eigenvalues) > 1 else 0
+    lambda_max = eigenvalues[-1]
+    I_U = lambda_2 / lambda_max if lambda_max > 0 else 0
+
+    return {
+        'I_A': I_A, 'I_S': I_S, 'I_D': I_D, 'I_L': I_L,
+        'I_E': I_E, 'I_O': I_O, 'I_U': I_U
+    }
+```
+
+### Реконструкция Γ из метрик
+
+```python
+def reconstruct_gamma(metrics: dict[str, float]) -> np.ndarray:
+    """
+    Реконструкция матрицы когерентности через Cholesky.
+
+    Возвращает 7×7 матрицу плотности.
+    """
+    # Диагональные элементы — нормированные метрики
+    I_vec = np.array([
+        metrics['I_A'], metrics['I_S'], metrics['I_D'],
+        metrics['I_L'], metrics['I_E'], metrics['I_O'], metrics['I_U']
+    ])
+    I_vec = np.clip(I_vec, 0.01, 1.0)  # Предотвращаем вырожденность
+    diag = I_vec / I_vec.sum()
+
+    # Начальная Cholesky-факторизация
+    L = np.diag(np.sqrt(diag))
+
+    # Регуляризация (минимизируем off-diagonal)
+    # В простейшем случае — диагональная матрица
+    gamma = L @ L.T
+    gamma = gamma / np.trace(gamma)  # Нормировка
+
+    return gamma
+
+
+def compute_purity(gamma: np.ndarray) -> float:
+    """P = Tr(Γ²)"""
+    return np.trace(gamma @ gamma)
+```
+
+### Пороговые значения
+
+| Параметр | Значение | Источник | Статус |
+|----------|----------|----------|--------|
+| $P_{\text{crit}}$ | $2/7 \approx 0.286$ | [Теорема](/docs/proofs/theorem-purity-critical) | Доказано |
+| $\Phi_{\text{th}}$ (порог L1) | $> 0$ | Связность графа | Стандартно |
+| $R_{\text{th}}$ (порог L2) | $\geq 1/3$ | [Иерархия](/docs/proofs/interiority-hierarchy) | Теоретически |
+| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [E-измерение](/docs/core/structure/dimension-e) | Теоретически |
+| $\varepsilon_{\text{functor}}$ | $< 0.1$ | Требует калибровки | Гипотеза |
+| $\varepsilon_{\text{causal}}$ | $> 0.05$ | Требует калибровки | Гипотеза |
+
+### Практические ограничения
+
+| Ограничение | Влияние | Митигация |
+|-------------|---------|-----------|
+| Размер батча | Дисперсия оценок | $N \geq 64$ для стабильности |
+| Глубина сети | Сложность коммутаторов | Семплировать подмножество слоёв |
+| Размерность активаций | $O(n^2)$ для Якобиана | Проекция в $\mathbb{R}^k$, $k \ll n$ |
+| Attention heads | Агрегация по головам | Среднее или max-pooling |
+| Детерминизм | Стохастические слои (dropout) | Фиксировать seed или усреднять |
+
+### Требования к данным
+
+Для валидного измерения необходимо:
+
+1. **Репрезентативный входной батч**: $N \geq 64$ примеров из целевого распределения
+2. **Доступ к активациям**: hook-и на промежуточные слои
+3. **Attention weights**: для вычисления $I_E$ и $I_U$
+4. **Градиенты**: для Якобиана (автодифференцирование)
+
+### Что НЕ реализовано
+
+:::danger Открытые проблемы реализации
+1. **Калибровка $\varepsilon$-параметров** — требует экспериментов на известных системах
+2. **Связь весов сети и Γ** — гомоморфизм $G$ теоретически постулирован, не доказан
+3. **Временная динамика τ** — как определить «шаг» эмерджентного времени для inference?
+4. **Валидация на биологических системах** — нейроимиджинг ↔ метрики
+5. **Масштабирование** — применимость к моделям $>10^9$ параметров
+:::
+
+---
+
 ## Критерии успеха
 
 **Протокол валидирован, если:**

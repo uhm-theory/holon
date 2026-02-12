@@ -92,9 +92,11 @@ graph TD
 |---------|-------------------|---------|
 | ∞-Топос | Единственность примитива | $\mathcal{E} := \text{Sh}_\infty(\mathcal{C})$ |
 | Ограничение | Эмерджентное время τ | $\hat{C} \cdot \Gamma = 0$ |
-| Вариационный принцип | Форма φ | $\varphi = \arg\min \mathbb{E}[K + D_{KL}]$ |
+| Самомоделирование | Форма φ | $\varphi \dashv i$ (сопряжение)* |
 | Терминальный объект | Направленность эволюции | $\forall \Gamma, \exists! f: \Gamma \to T$ |
 | Стратификация | Иерархия сложности | $X = \bigsqcup_\alpha S_\alpha$ |
+
+*Вариационная форма — теорема о свойствах категориально определённого φ.
 
 ## Аксиоматическая база
 
@@ -110,8 +112,10 @@ graph TD
 | 2 | Конечномерность | $\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$ |
 | 3 | Ограничение | $\hat{C} \cdot \Gamma = 0$ (Page-Wootters) |
 | 4 | Терминальный объект | $\forall \Gamma, \exists! f: \Gamma \to T$ |
-| 5 | Вариационный принцип | $\varphi = \arg\min \mathbb{E}[K + D_{KL}]$ |
+| 5 | Самомоделирование | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty$ (сопряжение)* |
 | 6 | Стратификация | $X = \bigsqcup_\alpha S_\alpha$, $S_0 = \{T\}$ |
+
+*Вариационная форма $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ — **теорема**, не определение.
 | 7 | Унивалентность | $(A \simeq B) \simeq (A = B)$ |
 
 **См.:** [Аксиома Ω⁷](/docs/core/foundations/axiom-omega)

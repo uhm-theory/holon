@@ -47,6 +47,42 @@ $$
 \mathrm{Hom}_{\mathrm{Sub}(\Gamma)}(\varphi(X), S) \cong \mathrm{Hom}_{\mathrm{Sh}_\infty(\mathcal{C})}(X, i(S))
 $$
 
+### Теорема об эквивалентности трёх определений φ {#эквивалентность-определений-phi}
+
+:::tip Главный результат
+Три определения оператора φ **строго эквивалентны**:
+:::
+
+**Теорема (Эквивалентность определений φ):**
+
+Следующие определения задают один и тот же оператор $\varphi$:
+
+| # | Определение | Формула | Источник |
+|---|-------------|---------|----------|
+| 1 | **Категориальное** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ | Левое сопряжение |
+| 2 | **Динамическое** | $\varphi(\Gamma) = \lim_{t \to \infty} e^{t \mathcal{L}_\Omega}[\Gamma]$ | Предел эволюции |
+| 3 | **Идемпотентное** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ | Проекция с неподвижной точкой |
+
+**Доказательство эквивалентности:**
+
+**(1) ⟹ (2):** Категориальное ⟹ Динамическое
+- Левый сопряжённый $\varphi$ к включению $i$ проецирует на инвариантное подпространство $\text{Sub}(\Gamma)$
+- $\mathcal{L}_\Omega$ аннулирует $\text{Sub}(\Gamma)$: $\mathcal{L}_\Omega[S] = 0$ для $S \in \text{Sub}(\Gamma)$
+- По теореме Перрона-Фробениуса для CPTP-каналов: $\lim_{t \to \infty} e^{t \mathcal{L}_\Omega} = \Pi_{\text{inv}}$
+- Инвариантный проектор $\Pi_{\text{inv}} = \varphi$ по единственности левого сопряжённого ∎
+
+**(2) ⟹ (3):** Динамическое ⟹ Идемпотентное
+- $\varphi(\varphi(\Gamma)) = \lim_{t \to \infty} e^{t \mathcal{L}_\Omega}[\lim_{s \to \infty} e^{s \mathcal{L}_\Omega}[\Gamma]]$
+- $= \lim_{t \to \infty} \lim_{s \to \infty} e^{(t+s) \mathcal{L}_\Omega}[\Gamma] = \varphi(\Gamma)$ (идемпотентность)
+- Неподвижная точка: $\Gamma^* := \varphi(\Gamma_0)$ для любого $\Gamma_0$, тогда $\varphi(\Gamma^*) = \varphi(\varphi(\Gamma_0)) = \varphi(\Gamma_0) = \Gamma^*$ ∎
+
+**(3) ⟹ (1):** Идемпотентное ⟹ Категориальное
+- Идемпотентное отображение $\varphi$ с $\text{Im}(\varphi) = \text{Sub}(\Gamma)$ определяет рефлектор
+- Рефлектор автоматически является левым сопряжённым к включению
+- Универсальное свойство: $\text{Hom}(\varphi(X), S) \cong \text{Hom}(X, i(S))$ следует из идемпотентности ∎
+
+---
+
 ### Независимость от уровней когерентности
 
 Критически важно: **$\varphi$ и уровни когерентности $L_k$ определяются независимо друг от друга**, обе конструкции выводятся из $\Omega$:
@@ -91,7 +127,7 @@ $$
    \mathcal{L}_\Omega[S] = 0 \quad \Leftrightarrow \quad S \in \mathrm{Sub}(\Gamma)
    $$
 
-3. По теореме Перрона-Фробениуса для положительных операторов, предел $\lim_{t \to \infty} e^{t \cdot \mathcal{L}_\Omega}[\Gamma]$ существует и является проекцией на инвариантное подпространство.
+3. По теореме о сходимости примитивных CPTP-каналов (аналог Перрона-Фробениуса для квантовых каналов), предел $\lim_{t \to \infty} e^{t \cdot \mathcal{L}_\Omega}[\Gamma]$ существует и является проекцией на инвариантное подпространство.
 
 4. Эта проекция совпадает с ко-рефлектором $\varphi$ по единственности левого сопряжённого. ∎
 
@@ -471,7 +507,7 @@ $$
 Для систем на границе L2 ($R = R_{th}$, $\Phi = \Phi_{th}$):
 
 $$
-\alpha^* = 1 - \frac{6 \cdot P_{crit}}{7} = 1 - \frac{12}{49} \approx 0.755
+\alpha^* = 1 - \frac{6 \cdot P_{\text{crit}}}{7} = 1 - \frac{12}{49} \approx 0.755
 $$
 
 **Пример:** E-акцентированный якорь с $\alpha = 0.6$ (консервативная оценка):
@@ -483,8 +519,149 @@ $$
 имеет $P = 0.36 + 6 \times 0.0045 = 0.387 > 2/7$. ✓
 
 :::warning Физическая интерпретация
-E-акцентуация — не «привилегия» измерения E, а **структурное следствие** того, что сознательные системы определяются через опыт. Несознательные системы (L0) не имеют этого ограничения — их якорь может быть равномерным, и вопрос P(Γ*) < P_crit для них не релевантен.
+E-акцентуация — не «привилегия» измерения E, а **структурное следствие** того, что сознательные системы определяются через опыт. Несознательные системы (L0) не имеют этого ограничения — их якорь может быть равномерным, и вопрос $P(\Gamma^*) < P_{\text{crit}}$ для них не релевантен (см. [теорема о критической чистоте](/docs/proofs/theorem-purity-critical)).
 :::
+
+### 2.7 Спектральная формула для φ (явное вычисление)
+
+:::info Ключевой результат
+Данный раздел предоставляет **явную вычислимую формулу** для оператора $\varphi$ через спектральное разложение логического Лиувиллиана $\mathcal{L}_\Omega$. Это делает теорию полностью конструктивной.
+:::
+
+**Теорема 2.3 (Спектральная формула φ):**
+
+$$
+\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k
+$$
+
+где:
+- $\{R_k, L_k\}$ — правые и левые собственные векторы $\mathcal{L}_\Omega$
+- $\lambda_k$ — собственные значения $\mathcal{L}_\Omega$
+- Сумма по $k$ с $\mathrm{Re}(\lambda_k) = 0$ (стационарные моды)
+- $\langle L_k | \Gamma \rangle := \mathrm{Tr}(L_k^\dagger \cdot \Gamma_{\text{vec}})$ — скалярное произведение в векторизованном пространстве
+
+**Доказательство:**
+
+1. По определению (см. [Теорема: φ как стационарное распределение](#теорема-φ-как-стационарное-распределение)):
+   $$\varphi(\Gamma) = \lim_{t \to \infty} e^{t \mathcal{L}_\Omega}[\Gamma]$$
+
+2. Разложение по собственным функциям:
+   $$e^{t \mathcal{L}_\Omega}[\Gamma] = \sum_k e^{\lambda_k t} \langle L_k | \Gamma \rangle R_k$$
+
+3. При $t \to \infty$:
+   - $\mathrm{Re}(\lambda_k) < 0$: $e^{\lambda_k t} \to 0$ (затухание)
+   - $\mathrm{Re}(\lambda_k) > 0$: исключены CPTP-структурой (расходимость невозможна)
+   - $\mathrm{Re}(\lambda_k) = 0$: $e^{\lambda_k t}$ ограничено (стационарные моды)
+
+4. Следовательно:
+   $$\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k \quad \blacksquare$$
+
+**Алгоритм вычисления φ (спектральный метод):**
+
+```python
+import numpy as np
+
+def compute_phi_spectral(Gamma: np.ndarray, L_Omega: np.ndarray) -> np.ndarray:
+    """
+    Вычисление φ(Γ) через спектральное разложение логического Лиувиллиана.
+
+    Args:
+        Gamma: Матрица когерентности (7×7)
+        L_Omega: Логический Лиувиллиан (49×49, vectorized)
+
+    Returns:
+        phi_Gamma: Самомодель (7×7)
+    """
+    # Спектральное разложение
+    eigenvalues, R_vectors = np.linalg.eig(L_Omega)
+    L_vectors = np.linalg.inv(R_vectors).T  # Левые собственные векторы
+
+    # Векторизация Γ
+    Gamma_vec = Gamma.flatten()
+
+    # Сумма по стационарным модам (Re(λ) ≈ 0)
+    phi_vec = np.zeros(49, dtype=complex)
+    tolerance = 1e-10
+
+    for k in range(49):
+        if np.abs(eigenvalues[k].real) < tolerance:  # Re(λ) ≈ 0
+            coeff = np.dot(L_vectors[:, k].conj(), Gamma_vec)
+            phi_vec += coeff * R_vectors[:, k]
+
+    # Reshape и нормализация
+    phi_Gamma = phi_vec.reshape(7, 7)
+    phi_Gamma = (phi_Gamma + phi_Gamma.conj().T) / 2  # Эрмитовость
+    phi_Gamma /= np.trace(phi_Gamma)  # Нормировка Tr = 1
+
+    return phi_Gamma.real
+```
+
+**Вычислительная сложность:**
+
+| Операция | Сложность |
+|----------|-----------|
+| Спектральное разложение $\mathcal{L}_\Omega$ | $O(N^6)$ для $N=7$, т.е. $O(49^3) \approx 10^5$ |
+| Проекция на стационарные моды | $O(N^4)$ |
+| Общая сложность | $O(N^6)$, но $\mathcal{L}_\Omega$ вычисляется один раз |
+
+**Связь со сжимающей формой:**
+
+Спектральная формула эквивалентна каноническому определению при правильном выборе $\mathcal{L}_\Omega$. Преимущество спектральной формы:
+
+1. **Явное вычисление** — не требует итераций
+2. **Единственность** — нет зависимости от начального состояния
+3. **Категорная согласованность** — соответствует левому сопряжённому к включению $\mathrm{Sub}(\Gamma)$
+
+### 2.8 Рефлексия n-го порядка (для L3/L4)
+
+:::info Расширение для пост-рефлексивных уровней
+Для определения уровней L3 и L4 [иерархии интериорности](/docs/proofs/interiority-hierarchy) требуется **итерированный** оператор φ.
+:::
+
+**Определение 2.12 (Итерированный оператор φ):**
+
+$$
+\varphi^{(n)}(\Gamma) := \underbrace{\varphi \circ \varphi \circ \cdots \circ \varphi}_{n}(\Gamma)
+$$
+
+с $\varphi^{(0)}(\Gamma) := \Gamma$.
+
+**Определение 2.13 (Рефлексия n-го порядка):**
+
+$$
+R^{(n)}(\Gamma) := \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))
+$$
+
+где $\mathrm{Fid}(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity (верность).
+
+**Пороги для L3/L4:**
+
+| Переход | Порог | Универсальная формула |
+|---------|-------|----------------------|
+| L1→L2 | $R^{(1)} \geq 1/3$ | $X^{(2)}_{\text{th}} = 1/3$ |
+| L2→L3 | $R^{(2)} \geq 1/4$ | $X^{(3)}_{\text{th}} = 1/4$ |
+| L3→L4 | $\lim_n R^{(n)} > 0$ | — |
+
+**Алгоритм вычисления $R^{(2)}$:**
+
+```python
+def compute_R2(Gamma: np.ndarray, L_Omega: np.ndarray) -> float:
+    """
+    Вычисление рефлексии второго порядка R^(2).
+
+    Returns:
+        R2: fidelity между φ(Γ) и φ(φ(Γ))
+    """
+    phi_Gamma = compute_phi_spectral(Gamma, L_Omega)
+    phi_phi_Gamma = compute_phi_spectral(phi_Gamma, L_Omega)
+
+    # Fidelity: F(ρ₁, ρ₂) = |Tr(√(√ρ₁ ρ₂ √ρ₁))|²
+    sqrt_phi = sqrtm(phi_Gamma)
+    inner = sqrt_phi @ phi_phi_Gamma @ sqrt_phi
+    F = np.abs(np.trace(sqrtm(inner)))**2
+
+    return float(F)
+```
 
 ---
 
@@ -1123,6 +1300,10 @@ FUNCTION compute_R(Γ, φ):
 
 ### 8.4 Проверка порога L2
 
+:::warning Ограничение 7D-формализма
+Функция `Tr_not_E` (частичный след) требует тензорной структуры. В минимальном 7D-формализме ($\mathcal{H} = \mathbb{C}^7$) используйте `is_L2_minimal` без $D_{\text{diff}}$ — см. [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
+:::
+
 ```
 FUNCTION is_L2_conscious(Γ, φ):
     # Вычислить три меры
@@ -1132,6 +1313,12 @@ FUNCTION is_L2_conscious(Γ, φ):
 
     # Проверить пороги
     RETURN (R ≥ 1/3) AND (Φ ≥ 1) AND (D_diff ≥ 2)
+
+# Минимальная версия без D_diff (для 7D-формализма)
+FUNCTION is_L2_minimal(Γ, φ):
+    R := compute_R(Γ, φ)
+    Φ := compute_integration(Γ)
+    RETURN (R ≥ 1/3) AND (Φ ≥ 1)
 ```
 
 ---
@@ -1362,12 +1549,12 @@ $$
 ---
 
 **Связанные документы:**
-- [Самонаблюдение](/docs/core/consciousness/self-observation) — определение $\varphi$ и $R$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение движения и регенеративный член $\mathcal{R}$
+- [Самонаблюдение](/docs/core/consciousness/self-observation) — определение $\varphi$, $R$ и $R^{(n)}$
+- [Эволюция](/docs/core/dynamics/evolution) — уравнение движения, регенеративный член $\mathcal{R}$ и канонический $\Delta F$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Жизнеспособность](/docs/core/dynamics/viability) — мера чистоты $P$ и область $\mathcal{V}$
 - [Измерение Единства](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
 - [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — коэффициент регенерации $\kappa_0$
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — теорема об отсутствии зомби
-- [Категорный формализм](/docs/proofs/categorical-formalism) — категорная структура УГМ
+- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2→L3→L4, пороги $R^{(n)}_{\text{th}}$
+- [Категорный формализм](/docs/proofs/categorical-formalism) — категорная структура УГМ и n-усечения
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$

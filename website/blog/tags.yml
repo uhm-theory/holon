@@ -1,19 +1,29 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+philosophy:
+  label: Философия
+  permalink: /philosophy
+  description: Философские основания теории
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+consciousness:
+  label: Сознание
+  permalink: /consciousness
+  description: Теория сознания и интериорности
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+paninteriorism:
+  label: Панинтериоризм
+  permalink: /paninteriorism
+  description: Когерентный категорный панинтериоризм
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+theory:
+  label: Теория
+  permalink: /theory
+  description: Теоретические основы УГМ
+
+mathematics:
+  label: Математика
+  permalink: /mathematics
+  description: Математический аппарат теории
+
+applications:
+  label: Приложения
+  permalink: /applications
+  description: Практические приложения теории

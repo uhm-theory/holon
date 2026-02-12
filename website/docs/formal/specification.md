@@ -232,10 +232,10 @@ $$
 $$
 
 $$
-\mathrm{Mor}_{\mathbf{DM}}(\rho_1, \rho_2) = \{\Phi : \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H}) \mid \Phi \text{ — CPTP}, \Phi(\rho_1) = \rho_2\}
+\mathrm{Mor}_{\mathbf{DM}}(\rho_1, \rho_2) = \{\Psi : \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H}) \mid \Psi \text{ — CPTP}, \Psi(\rho_1) = \rho_2\}
 $$
 
-**Представление Крауса:** $\Phi$ — CPTP $\Leftrightarrow \exists\{K_i\}: \Phi(\rho) = \sum_i K_i \rho K_i^\dagger$, $\sum_i K_i^\dagger K_i = I$
+**Представление Крауса:** $\Psi$ — CPTP $\Leftrightarrow \exists\{K_i\}: \Psi(\rho) = \sum_i K_i \rho K_i^\dagger$, $\sum_i K_i^\dagger K_i = I$
 
 :::info CPTP-структура регенерации
 Регенеративный оператор УГМ является CPTP-каналом:
@@ -287,17 +287,17 @@ $$
 **Свойства:**
 - $d_B \in [0, \sqrt{2}]$
 - $d_B(\Gamma, \Gamma) = 0$
-- Монотонность: $d_B(\Phi(\rho), \Phi(\sigma)) \leq d_B(\rho, \sigma)$ для CPTP $\Phi$
+- Монотонность: $d_B(\Psi(\rho), \Psi(\sigma)) \leq d_B(\rho, \sigma)$ для CPTP $\Psi$
 - Риманова метрика на многообразии матриц плотности
 
 ### Bures-покрытия
 
 **Определение (Сайт DensityMat):**
 
-Семейство морфизмов $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ образует **покрытие** объекта $\Gamma$, если:
+Семейство морфизмов $\{\Psi_i: \Gamma_i \to \Gamma\}_{i \in I}$ образует **покрытие** объекта $\Gamma$, если:
 
 $$
-\forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Phi_i(B_B(\Gamma_i, \epsilon))
+\forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Psi_i(B_B(\Gamma_i, \epsilon))
 $$
 
 **Аксиомы сайта:**
@@ -353,6 +353,46 @@ $$
 
 где $\varphi$ — [оператор самомоделирования](/docs/proofs/formalization-phi), $\|\cdot\|_F$ — норма Фробениуса.
 
+### Рефлексия высших порядков $R^{(n)}$
+
+См. [Рефлексия высших порядков](/docs/proofs/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) и [Иерархия интериорности](/docs/proofs/interiority-hierarchy).
+
+$$
+R^{(n)}(\Gamma) := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma)) \in [0, 1]
+$$
+
+где:
+- $\varphi^{(k)}$ — $k$-кратное применение оператора самомоделирования
+- $F(\rho, \sigma)$ — fidelity (квантовая верность)
+
+**Интерпретация:** $R^{(n)}$ измеряет согласованность между последовательными уровнями самомоделирования.
+
+**Связь с уровнями интериорности:**
+- L2 требует $R = R^{(1)} \geq 1/3$
+- L3 требует $R^{(2)} \geq 1/4$
+- L4 требует $\lim_n R^{(n)} > 0$ (бесконечная рекурсивность)
+
+### Универсальная формула порогов рефлексии
+
+Пороги **рефлексии** следуют единой закономерности (байесовское доминирование над $n+1$ альтернативами):
+
+$$
+R^{(n)}_{\mathrm{th}} = \frac{1}{n+1}
+$$
+
+| Переход | Мера | Порог | Вывод |
+|---------|------|-------|-------|
+| L0→L1 | $\Phi$ | $> 0$ | Структурное условие (любая интеграция) |
+| L1→L2 | $R, \Phi, D_{\text{diff}}$ | $1/3, 1, 2$ | $R$: байесовское; $\Phi$: K-теория |
+| L2→L3 | $R^{(2)}$ | $1/4$ | $1/(3+1)$ |
+| L3→L4 | $\lim R^{(n)}$ | $> 0$ | стабилизация Постникова |
+
+:::note Происхождение порогов
+- **$R_{\text{th}} = 1/3$** — [байесовское доминирование](/docs/proofs/interiority-hierarchy#теорема-44-унификация-порогов) над 3 альтернативами
+- **$\Phi_{\text{th}} = 1$** — [K₁-нетривиальность C*-алгебры](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции) (топологическое условие)
+- **$D_{\text{diff}} \geq 2$** — минимальная дифференциация опыта
+:::
+
 ### Мера интеграции
 
 См. [Измерение Единства: Мера интеграции Φ](/docs/core/structure/dimension-u#мера-интеграции-φ).
@@ -404,5 +444,5 @@ $$
 - [Измерение Единства](/docs/core/structure/dimension-u) — мера $\Phi$
 - [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
 - [Категорный формализм](/docs/proofs/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
+- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2→L3→L4 и n-усечения ∞-группоида
 - [Вычислительная реализация](./computational) — Python-код

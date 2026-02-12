@@ -12,7 +12,8 @@ description: Математические обозначения теории У
 - $\mathcal{H}$ — гильбертово пространство **vs** $H$ — гамильтониан
 - $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ). Для обозначения произвольных CPTP-каналов используется $\Psi$
 - $R$ — [мера рефлексии](/docs/core/consciousness/self-observation#мера-рефлексии-r) **vs** $\mathcal{R}$ — регенеративный член
-- $\mathcal{C}$ — пространство контекстов **vs** $C$ — [мера сознательности](/docs/core/consciousness/self-observation#мера-сознательности-c)
+- $\mathcal{C}$ — примитивная категория (Аксиома Ω⁷) **vs** $C$ — [мера сознательности](/docs/core/consciousness/self-observation#мера-сознательности-c). Пространство контекстов в категории Exp обозначается $\Gamma_{-E}$
+- $\gamma_{ij}$ — элементы матрицы когерентности **vs** $\gamma_k$ — скорости декогеренции в диссипаторе Линдблада (в разных документах)
 
 Контекст обычно делает значение однозначным.
 :::
@@ -188,18 +189,22 @@ $$
 
 См. [Иерархия интериорности](/docs/proofs/interiority-hierarchy) для формальных условий и доказательств.
 
-| Уровень | Обозначение | Условие |
-|---------|-------------|---------|
-| L0 | $\mathrm{Int}(S)$ — Интериорность | $\Gamma \neq I/7$ (не максимально смешанное) |
-| L1 | $\mathrm{PG}(S)$ — Феноменальная геометрия | $\Phi(\Gamma) > 0$ |
-| L2 | Когнитивные квалиа | $R \geq R_{\text{th}}$ и $\Phi \geq \Phi_{\text{th}}$ |
+| Уровень | Обозначение | Условие | n-усечение |
+|---------|-------------|---------|------------|
+| L0 | $\mathrm{Int}(S)$ — Интериорность | $\exists \rho_E$ | $\tau_{\leq 0}$ |
+| L1 | $\mathrm{PG}(S)$ — Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ |
+| L2 | Когнитивные квалиа | $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ |
+| L3 | Сетевое сознание | $R^{(2)} \geq R^{(2)}_{\text{th}}$ (метастабильно) | $\tau_{\leq 3}$ |
+| L4 | Унитарное сознание | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ |
 
-**Пороговые значения** ([строго выводятся из ПИР](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)):
+**Пороговые значения** ([строго выводятся из ПИР](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод) и [обоснования порогов](/docs/proofs/interiority-hierarchy#обоснование-порогов)):
 
 | Порог | Значение | Статус |
 |-------|----------|--------|
 | $R_{\text{th}}$ | $1/3$ | ✅ Теорема (байесовское доминирование) |
 | $\Phi_{\text{th}}$ | $1$ | ✅ Теорема (K₁-нетривиальность) |
+| $R^{(2)}_{\text{th}}$ | $1/4$ | ✅ Теорема (порог L3) |
+| $X^{(n)}_{\text{th}}$ | $1/(n+1)$ | ✅ Универсальная формула |
 
 ## Тензор напряжений
 
@@ -223,15 +228,26 @@ $$
 
 См. [Топология Гротендика](/docs/core/foundations/axiom-omega#топология-гротендика) и [Категорный формализм](/docs/proofs/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp).
 
-**Метрика Бюреса:**
+**Метрика Бюреса (канонический вид):**
 $$
-d_B(\Gamma_1, \Gamma_2) = \sqrt{2\left(1 - \sqrt{F(\Gamma_1, \Gamma_2)}\right)}
+d_B(\Gamma_1, \Gamma_2) = \arccos\left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right) = \arccos(\sqrt{F})
 $$
 
 **Fidelity (верность):**
 $$
 F(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2
 $$
+
+:::note Две формы метрики Бюреса
+УГМ использует **обе формы** в зависимости от контекста:
+
+| Форма | Формула | Применение |
+|-------|---------|------------|
+| **Угловая** | $d_B^{angle} = \arccos(\sqrt{F})$ | Геометрические теоремы ([эмерджентное время](/docs/proofs/emergent-time#41-метрика-бурес)) |
+| **Хордовая** | $d_B^{chord} = \sqrt{2(1-\sqrt{F})}$ | Вычисления, [ΔF](/docs/core/dynamics/evolution#каноническое-delta-f), [спецификация](/docs/formal/specification#топология-гротендика) |
+
+**Связь:** $d_B^{chord} = \sqrt{2(1 - \cos(d_B^{angle}))} \approx \sqrt{2} \cdot d_B^{angle}$ для малых расстояний.
+:::
 
 **Bures-шар:**
 $$
@@ -327,9 +343,9 @@ $$
 | $I_S$ | Структура | Ранг Якобиана | $I_S = \mathrm{rank}_\varepsilon(J_f) / \dim(\mathbf{h})$ |
 | $I_D$ | Динамика | Ляпуновский экспонент | $I_D = \max_i \lambda_i^{\text{Lyap}}$ (нормированный) |
 | $I_L$ | Логика | Коммутаторы слоёв | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ |
-| $I_E$ | Опыт | Effective Φ | $I_E = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ |
+| $I_E$ | Опыт | Дифференциация (энтропия) | $I_E = D_{\text{diff}}^{\text{approx}} = \exp(S_{vN}(\rho_{\text{attn}}))$ — [см. измерение E](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) |
 | $I_O$ | Основание | Устойчивость к шуму | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ |
-| $I_U$ | Единство | Синхронизация слоёв | $I_U = \mathrm{mean}(\cos(\mathbf{h}^{(l)}, \mathbf{h}^{(l+1)}))$ |
+| $I_U$ | Единство | Effective Φ (интеграция) | $I_U = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ — [см. измерение U](/docs/core/structure/dimension-u#мера-интеграции-φ) |
 
 **Связь с Γ:** Диагональные элементы $\gamma_{ii} \approx I_i^2$ (эмпирическая калибровка).
 
@@ -344,6 +360,6 @@ $$
 - [Эмерджентное время](/docs/proofs/emergent-time) — вывод τ из структуры Γ
 - [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $D_{\text{diff}}$, $C$
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
+- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Категорный формализм](/docs/proofs/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
 - [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы

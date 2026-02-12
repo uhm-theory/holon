@@ -667,19 +667,19 @@
   opacity: 0.5;
 }
 
-/* === Новая визуализация: Самозамыкающаяся структура === */
+/* === Концептуальная визуализация УГМ === */
 
-/* Свечение источника — единый примитив */
-.sourceGlow {
-  animation: sourcePulse 8s ease-in-out infinite;
+/* Фоновое свечение — единство системы */
+.backgroundGlow {
+  animation: bgPulse 10s ease-in-out infinite;
 }
 
-@keyframes sourcePulse {
-  0%, 100% { opacity: 0.8; }
+@keyframes bgPulse {
+  0%, 100% { opacity: 0.9; }
   50% { opacity: 1; }
 }
 
-/* Слой связей когерентности */
+/* Слой связей когерентности (γ_ij) */
 .coherenceLayer {
   pointer-events: none;
 }
@@ -688,69 +688,85 @@
   transition: opacity 0.5s ease;
 }
 
-/* Слой потоков */
-.flowsLayer {
+/* Слой лепестков (измерения) */
+.petalsLayer {
   pointer-events: none;
 }
 
-.flowPath {
+.petalPath {
+  transition: opacity 0.3s ease, stroke-width 0.3s ease;
+}
+
+/* E-измерение выделено (якорь сознательных систем) */
+.petalE {
+  stroke: var(--ifm-color-primary-light) !important;
+}
+
+/* Подписи измерений */
+.labelsLayer {
+  pointer-events: none;
+}
+
+.dimensionLabel {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--ifm-color-primary);
+  opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
-/* Центральное ядро */
+/* E-измерение ярче */
+.dimensionLabelE {
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+/* Центральное ядро Γ */
 .coreGroup {
   transition: transform 0.1s ease-out;
 }
 
-.coreOuter {
-  transition: opacity 0.3s ease;
-}
-
-.coreInner {
+.coreCircle {
   transition: all 0.3s ease;
 }
 
 .coreSymbol {
   fill: white;
-  font-size: 32px;
-  font-weight: 300;
-  text-anchor: middle;
-  dominant-baseline: central;
-  font-family: 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-family: 'Times New Roman', 'STIX Two Math', serif;
 }
 
 /* Граница системы */
 .boundaryRing {
-  /* Без вращения — пунктир создаёт достаточную динамику */
+  animation: boundaryRotate 60s linear infinite;
+  transform-origin: center;
 }
 
-/* Внутреннее кольцо когерентности */
-.innerRing {
-  transition: opacity 0.5s ease;
-}
-
-/* Точки когерентности на кольце */
-.coherencePoint {
-  transition: r 0.3s ease, opacity 0.3s ease;
+@keyframes boundaryRotate {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 48; }
 }
 
 /* Темная тема */
-[data-theme='dark'] .sourceGlow {
-  opacity: 0.6;
-}
-
-[data-theme='dark'] .flowPath {
+[data-theme='dark'] .backgroundGlow {
   opacity: 0.7;
 }
 
-[data-theme='dark'] .coreInner {
+[data-theme='dark'] .petalPath {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .coreCircle {
   fill: var(--ifm-color-primary-light);
 }
 
-[data-theme='dark'] .innerRing {
-  opacity: 0.15;
+[data-theme='dark'] .dimensionLabel {
+  fill: var(--ifm-color-primary-light);
+  opacity: 0.6;
 }
 
-[data-theme='dark'] .coherencePoint {
-  opacity: 0.5;
+[data-theme='dark'] .coherenceLink {
+  opacity: 0.1;
 }
