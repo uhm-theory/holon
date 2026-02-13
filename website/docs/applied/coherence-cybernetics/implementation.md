@@ -171,7 +171,7 @@ def test_hermiticity_preservation():
     assert np.allclose(gamma_evolved, gamma_evolved.T.conj())
 
 def test_positivity_preservation():
-    """Γ остаётся положительно определённой."""
+    """Γ остаётся положительно полуопределённой."""
     gamma = create_random_holon()
     gamma_evolved = evolve_step(gamma)
     eigenvalues = np.linalg.eigvalsh(gamma_evolved)
@@ -256,7 +256,7 @@ class HolonState:
     stress_tensor: np.ndarray  # σ_sys ∈ ℝ⁷: [σ_A, σ_S, σ_D, σ_L, σ_E, σ_O, σ_U]
 
     # Жизнеспособность
-    viable: bool               # P > P_critical ∧ dP/dt > -ε
+    viable: bool               # P > P_critical ∧ dP/dτ > -ε
     margin: float              # 1 - max(σ_sys)
 ```
 
@@ -356,7 +356,8 @@ def compute_coherence_E(gamma: np.ndarray) -> float:
     E = 4  # Индекс измерения Experience
     gamma_EE = np.real(gamma[E, E])
     coherence_sum = sum(np.abs(gamma[E, i])**2 for i in range(7) if i != E)
-    return gamma_EE + 2 * np.sqrt(coherence_sum)
+    result = gamma_EE + 2 * np.sqrt(coherence_sum)
+    return np.clip(result, 1/7, 1.0)
 
 
 def compute_target_state(gamma: np.ndarray, environment) -> np.ndarray:
@@ -946,7 +947,7 @@ class CoherenceCyberneticsAgent:
 - [Определения](./definitions) — $\sigma_{\mathrm{sys}}$, $\mathrm{Coh}_E$, $C$
 - [Аксиоматика](./axiomatics) — L-унификация, связь $\kappa$ и $\mathrm{Coh}_E$
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — протокол калибровки $\omega_0$, $\lambda_m$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/dt$
+- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
 - [Эмерджентное время](/docs/proofs/emergent-time) — вывод τ из структуры $\Gamma$
 - [Жизнеспособность](/docs/core/dynamics/viability) — условие $P > P_{\text{crit}}$
 - [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $C$

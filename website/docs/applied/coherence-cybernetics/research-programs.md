@@ -103,11 +103,11 @@ graph TD
 | F1 Компактность | $\lVert\Gamma\rVert_F \leq R_{\max}$ | $\mathrm{Tr}(\Gamma) = 1$ |
 | F2 Диссипативность | $\dot{W} \leq -\alpha W + \gamma(\lVert e\rVert)$ | [$\mathcal{D}[\Gamma]$](/docs/core/dynamics/evolution#логический-лиувиллиан) |
 | F3 Невырожденность | $\lambda_{\min}(\Gamma) \geq \varepsilon$ | [Жизнеспособность](/docs/core/dynamics/viability) |
-| F4 Рефлексивное сжатие | $\lVert\varphi(\Gamma_1) - \varphi(\Gamma_2)\rVert_F \leq k \lVert\Gamma_1 - \Gamma_2\rVert_F$, $k < 1$ | [Теорема 7.2](./theorems#теорема-72-неподвижная-точка-рефлексии) |
+| F4 Рефлексивное сжатие | $\lVert\varphi(\Gamma_1) - \varphi(\Gamma_2)\rVert_F \leq k \lVert\Gamma_1 - \Gamma_2\rVert_F$, $k < 1$ | [Теорема 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) |
 | F5 Причинное замыкание | Выходы зависят только от внутренних состояний | [A-измерение](/docs/core/structure/dimension-a) |
-| F6 Временная связность | $\Gamma(t+dt)$ зависит от $\Gamma(t)$ | [Эволюция](/docs/core/dynamics/evolution) |
+| F6 Временная связность | $\Gamma(\tau+d\tau)$ зависит от $\Gamma(\tau)$ | [Эволюция](/docs/core/dynamics/evolution) |
 | F7 Энергетический баланс | Приток ≥ Отток в среднем | [O-измерение](/docs/core/structure/dimension-o) |
-| F8 Информационная ёмкость | Ограниченное число различимых состояний | $\dim(\mathcal{H}) = 7$ |
+| F8 Информационная ёмкость | Ограниченное число различимых состояний | $\dim(\mathcal{H}) = 7$ ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) |
 | F9 Структурная стабильность | Малые возмущения → малые изменения | Топология $\mathcal{V}$ |
 | F10 E-когерентность | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | [Аксиоматика](./axiomatics#связь-регенерации-и-e-когерентности) |
 
@@ -148,7 +148,7 @@ $$
 | Q1 | Вывод F1-F10 из аксиом Ω⁷ | Открыт | [Аксиоматика](./axiomatics) |
 | Q2 | Полнота набора F1-F10 | Открыт | — |
 | Q3 | Эквивалентность $\mathbf{Hol}_{\mathrm{L2}} \simeq \mathbf{ConsAgents}$ | Гипотеза | [Панпсихизм](./panpsychism-analysis#теорема-об-эквивалентности-гипотеза) |
-| Q4 | Формализация связи K1-K5 ↔ L0-L4 | Открыт | [Когнитивная иерархия](./cognitive-hierarchy) (K1-K5 → L0-L2; L3-L4 не охвачены) |
+| Q4 | Формализация связи K1-K5 ↔ L0-L4 | Открыт | [Когнитивная иерархия](./cognitive-hierarchy) (K1-K5 → L0-L4) |
 | Q5 | Вычисление $\Phi_{\min}$ для композиции | Открыт | [Теорема 9.1](./theorems#теорема-91-фрактальное-замыкание) |
 
 ### Экспериментальные

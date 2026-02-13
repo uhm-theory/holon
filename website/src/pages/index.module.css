@@ -512,16 +512,16 @@
 
 .matrixContainer {
   text-align: center;
+  position: relative;
 }
 
 .matrixGrid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 40px);
   gap: 2px;
   background: var(--ifm-color-emphasis-300);
   border-radius: 8px;
   overflow: hidden;
-  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -530,9 +530,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-family: 'Exo 2', sans-serif;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .matrixCell:hover {
@@ -551,7 +552,32 @@
 }
 
 .cellValue {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+}
+
+.matrixTooltip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  margin-top: -8px;
+  background: var(--ifm-color-emphasis-900);
+  color: var(--ifm-color-emphasis-100);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.matrixTooltip strong {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.8rem;
 }
 
 .matrixCaption {

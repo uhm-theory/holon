@@ -87,6 +87,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'proofs/theorem-minimality-7',
+        'proofs/theorem-octonionic-derivation',
         'proofs/theorem-purity-critical',
         'proofs/emergent-time',
         'proofs/formalization-phi',

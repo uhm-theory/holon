@@ -26,7 +26,7 @@ $$
 $$
 :::
 
-**См.:** [Теорема 8.1](./theorems#теорема-81-необходимость-интериорности-no-zombie)
+**См.:** [Теорема 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie)
 
 **Верифицируемость:**
 Если будет создана искусственная система, демонстрирующая устойчивое самоподдержание без какой-либо внутренней структуры [опыта](/docs/core/structure/dimension-e), КК будет фальсифицирована.
@@ -37,7 +37,7 @@ $$
 
 :::info Предсказание
 $$
-\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma) \Rightarrow \frac{dP}{dt} \propto \mathrm{Coh}_E(\Gamma)
+\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma) \Rightarrow \frac{dP}{d\tau} \propto \mathrm{Coh}_E(\Gamma)
 $$
 Скорость [регенерации](/docs/core/dynamics/evolution#3-регенеративный-член) пропорциональна интегрированности [опыта](/docs/core/structure/dimension-e). Член $\kappa_{\text{bootstrap}} > 0$ гарантирует минимальную регенерацию даже при низкой E-когерентности ([разрешение bootstrap-парадокса](/docs/core/foundations/axiom-omega#genesis-protocol)).
 :::
@@ -56,7 +56,7 @@ $$
 $$
 \sigma_{\mathrm{sys}}(\Gamma) = [\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U]^T \in \mathbb{R}^7
 $$
-Все напряжения системы классифицируются в [7 категорий](/docs/core/structure/dimensions), соответствующих измерениям.
+Все напряжения системы классифицируются в [7 категорий](/docs/core/structure/dimensions) ([обоснование числа 7](/docs/core/foundations/axiom-omega#октонионная-структура)), соответствующих измерениям.
 
 **Статус:** Это **следствие модели**, а не независимое предсказание. 7 категорий определяются структурой теории. Эмпирический вопрос: адекватно ли это разбиение описывает реальные системы?
 :::

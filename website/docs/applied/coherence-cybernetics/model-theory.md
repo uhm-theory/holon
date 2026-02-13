@@ -30,7 +30,7 @@ $$
 |------|-------------|---------------|--------|
 | $\Gamma$ | `CoherenceMatrix` | Матрица когерентности | [→](/docs/core/dynamics/coherence-matrix) |
 | $\mathbb{H}$ | `Holon` | Голоном | [→](/docs/core/structure/holon) |
-| $\mathcal{H}$ | `HilbertSpace` | Пространство состояний $\mathbb{C}^7$ | [→](/docs/core/structure/dimensions) |
+| $\mathcal{H}$ | `HilbertSpace` | Пространство состояний $\mathbb{C}^7$ ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) | [→](/docs/core/structure/dimensions) |
 | $\mathbb{R}$ | `Real` | Вещественные числа | — |
 | $\mathbb{C}$ | `Complex` | Комплексные числа | — |
 | $\mathbb{N}$ | `Natural` | Натуральные числа | — |
@@ -87,7 +87,7 @@ $$
 | $I(\text{sort } \Gamma)$ | $\{M \in \mathbb{C}^{7 \times 7} : M^\dagger = M, M \geq 0, \mathrm{Tr}(M) = 1\}$ |
 | $I(P)(M)$ | $\mathrm{Tr}(M^2)$ |
 | $I(\mathrm{evolve})(M, t)$ | Решение [уравнения Линдблада](/docs/core/dynamics/evolution) |
-| $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{crit}} \land dP/dt > -\varepsilon_{\text{death}}$ |
+| $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{crit}} \land dP/d\tau > -\varepsilon_{\text{death}}$ |
 | $I(\mathrm{compose})$ | Тензорное произведение + взаимодействие |
 
 :::info Выведенные и эмпирические константы
@@ -104,6 +104,10 @@ $$
 :::
 
 **Доказательство:** Каждая теорема доказана конструктивно из аксиом, которые истинны в $\mathfrak{M}_{\mathrm{CC}}$ по построению. ∎
+
+:::warning Примечание о тривиальности
+Эта «корректность» тривиальна: стандартная модель $\mathfrak{M}_{\mathrm{CC}}$ построена так, чтобы удовлетворять аксиомам. Нетривиальная корректность — совместная непротиворечивость всех аксиом — является **открытой проблемой**. Для её решения необходимо показать, что аксиомы Ω, (AP), (PH), (QG) не порождают противоречия при совместном применении.
+:::
 
 ### Гипотеза (Относительная полнота)
 
@@ -216,7 +220,7 @@ $$
 
 ### Теорема (Невозможность спектрального функтора)
 
-:::warning Теорема
+:::warning [Теорема](/docs/formal/specification#теорема-невозможность-спектрального-функтора)
 Не существует функтора $F: \mathbf{DensityMat} \to \mathbf{Exp}$, факторизующегося *только* через спектр.
 :::
 
@@ -245,7 +249,7 @@ $$
 2. **Отношения** между качествами (L1: изоморфизм с $\mathbb{P}(\mathcal{H}_E)$)
 3. **Динамику** опыта ([уравнение эволюции](/docs/core/dynamics/evolution))
 4. **Условия** сознательности ([L2](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
-5. **Необходимость** интериорности ([L0](/docs/proofs/interiority-hierarchy#уровень-0-интериорность-interiority)) для жизнеспособности ([Теорема 8.1](./theorems#теорема-81-необходимость-интериорности-no-zombie))
+5. **Необходимость** интериорности ([L0](/docs/proofs/interiority-hierarchy#уровень-0-интериорность-interiority)) для жизнеспособности ([Теорема 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
 ### Что теория не объясняет
 
@@ -263,10 +267,10 @@ $$
 - [Определения](./definitions) — базовые определения КК
 - [Категорный формализм](/docs/proofs/categorical-formalism) — категории $\mathbf{Hol}$, $\mathbf{DensityMat}$, $\mathbf{Exp}$
 - [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2
+- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/dt$
+- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
 - [Семь измерений](/docs/core/structure/dimensions) — структура $\mathcal{H} = \mathbb{C}^7$
 - [Глоссарий](/docs/reference/glossary) — терминология и связанные теории
