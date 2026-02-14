@@ -3,11 +3,13 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 /**
  * UHM Theory Documentation Sidebars
  *
- * Four main sections:
- * - theory: Core UHM theory (foundations, structure, dynamics, consciousness, cosmology, ethics)
- * - proofs: Formal proofs and mathematical specification
+ * Six main sections:
+ * - theory: Core UHM theory (foundations, structure, dynamics, operators, categories, cosmology, ethics)
+ * - consciousness: Consciousness section (foundations, hierarchy, phenomenology, states, subjects, comparative, ethics-meaning)
+ * - proofs: Formal proofs organized by domain (minimality, dynamics, categorical, consciousness, physics)
+ * - physics: Physical correspondences (QM, gauge symmetry, particle physics, gravity, cosmology, dual aspect)
  * - applied: Applications (Coherence Cybernetics, Research)
- * - reference: Glossary, notation, falsifiability
+ * - reference: Glossary, notation, falsifiability, specification, computational, status registry
  */
 const sidebars: SidebarsConfig = {
   theory: [
@@ -41,6 +43,7 @@ const sidebars: SidebarsConfig = {
             'core/structure/dimension-u',
           ],
         },
+        'core/structure/symbolic-systems',
       ],
     },
     {
@@ -50,15 +53,29 @@ const sidebars: SidebarsConfig = {
         'core/dynamics/coherence-matrix',
         'core/dynamics/evolution',
         'core/dynamics/viability',
+        'core/dynamics/gap-thermodynamics',
+        'core/dynamics/gap-dynamics',
+        'core/dynamics/gap-operator',
+        'core/dynamics/gap-phase-diagram',
+        'core/dynamics/composite-systems',
       ],
     },
     {
       type: 'category',
-      label: 'Сознание',
+      label: 'Операторы',
       items: [
-        'core/consciousness/self-observation',
-        'core/consciousness/interiority',
-        'core/consciousness/hard-problem',
+        'core/operators/phi-operator',
+        'core/operators/lindblad-operators',
+        'core/operators/emergent-time',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Категорный формализм',
+      items: [
+        'core/categories/functor-f',
+        'core/categories/category-exp',
+        'core/categories/category-hol',
       ],
     },
     {
@@ -69,13 +86,76 @@ const sidebars: SidebarsConfig = {
         'core/cosmology/spacetime',
       ],
     },
+  ],
+
+  consciousness: [
+    'consciousness/overview',
+    {
+      type: 'category',
+      label: 'Математические основания',
+      collapsed: false,
+      items: [
+        'consciousness/foundations/two-aspect-monism',
+        'consciousness/foundations/interiority-theory',
+        'consciousness/foundations/self-observation',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Иерархия L0→L4',
+      items: [
+        'consciousness/hierarchy/interiority-hierarchy',
+        'consciousness/hierarchy/gap-characterization',
+        'consciousness/hierarchy/swallowtail-transitions',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Структура опыта',
+      items: [
+        'consciousness/phenomenology/qualia-structure',
+        'consciousness/phenomenology/emotional-taxonomy',
+        'consciousness/phenomenology/temporal-consciousness',
+        'consciousness/phenomenology/intentionality',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Состояния сознания',
+      items: [
+        'consciousness/states/altered-states',
+        'consciousness/states/unconscious',
+        'consciousness/states/attention-memory',
+        'consciousness/states/pathological',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Субъекты сознания',
+      items: [
+        'consciousness/subjects/pre-linguistic',
+        'consciousness/subjects/animal-consciousness',
+        'consciousness/subjects/ai-consciousness',
+        'consciousness/subjects/collective-consciousness',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Сравнение теорий',
+      items: [
+        'consciousness/comparative/consciousness-theories',
+        'consciousness/comparative/panpsychism-analysis',
+        'consciousness/comparative/cognitive-hierarchy',
+      ],
+    },
     {
       type: 'category',
       label: 'Этика и смысл',
       items: [
-        'core/ethics/foundations',
-        'core/ethics/meaning',
-        'core/ethics/freedom',
+        'consciousness/ethics-meaning/value-consciousness',
+        'consciousness/ethics-meaning/meaning',
+        'consciousness/ethics-meaning/freedom',
+        'consciousness/ethics-meaning/death-continuity',
       ],
     },
   ],
@@ -83,25 +163,113 @@ const sidebars: SidebarsConfig = {
   proofs: [
     {
       type: 'category',
-      label: 'Формальные доказательства',
+      label: 'Минимальность',
       collapsed: false,
       items: [
-        'proofs/theorem-minimality-7',
-        'proofs/theorem-octonionic-derivation',
-        'proofs/theorem-purity-critical',
-        'proofs/emergent-time',
-        'proofs/formalization-phi',
-        'proofs/categorical-formalism',
-        'proofs/interiority-hierarchy',
-        'proofs/physics-correspondence',
+        'proofs/minimality/theorem-minimality-7',
+        'proofs/minimality/theorem-octonionic-derivation',
       ],
     },
     {
       type: 'category',
-      label: 'Формальная спецификация',
+      label: 'Динамика',
       items: [
-        'formal/specification',
-        'formal/computational',
+        'proofs/dynamics/theorem-purity-critical',
+        'proofs/dynamics/emergent-time',
+        'proofs/dynamics/fep-derivation',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Категорные доказательства',
+      items: [
+        'proofs/categorical/categorical-formalism',
+        'proofs/categorical/formalization-phi',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Сознание',
+      items: [
+        'proofs/consciousness/interiority-hierarchy',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Физика',
+      items: [
+        'proofs/physics/physics-correspondence',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Gap',
+      items: [
+        'proofs/gap/fano-channel',
+        'proofs/gap/lambda-budget',
+      ],
+    },
+  ],
+
+  physics: [
+    'physics/overview',
+    {
+      type: 'category',
+      label: 'Квантовая механика',
+      items: [
+        'physics/quantum-mechanics/qm-reduction',
+        'physics/quantum-mechanics/measurement',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Калибровочные симметрии',
+      items: [
+        'physics/gauge-symmetry/g2-structure',
+        'physics/gauge-symmetry/standard-model',
+        'physics/gauge-symmetry/fano-selection-rules',
+        'physics/gauge-symmetry/confinement',
+        'physics/gauge-symmetry/noether-charges',
+        'physics/gauge-symmetry/rg-flow',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Физика частиц',
+      items: [
+        'physics/particle-physics/fermion-generations',
+        'physics/particle-physics/ckm-matrix',
+        'physics/particle-physics/yukawa-hierarchy',
+        'physics/particle-physics/higgs-sector',
+        'physics/particle-physics/neutrino-masses',
+        'physics/particle-physics/susy',
+        'physics/particle-physics/proton-decay',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Гравитация',
+      items: [
+        'physics/gravity/emergent-geometry',
+        'physics/gravity/einstein-equations',
+        'physics/gravity/cosmological-constant',
+        'physics/gravity/quantum-gravity',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Космология (физика)',
+      items: [
+        'physics/cosmology-phys/dark-matter',
+        'physics/cosmology-phys/berry-phase',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Дуальный аспект',
+      items: [
+        'physics/dual-aspect/gap-semantics',
+        'physics/dual-aspect/zeta-regularization',
       ],
     },
   ],
@@ -113,18 +281,83 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'applied/coherence-cybernetics/introduction',
-        'applied/coherence-cybernetics/axiomatics',
-        'applied/coherence-cybernetics/definitions',
-        'applied/coherence-cybernetics/theorems',
-        'applied/coherence-cybernetics/cybernetics-history',
-        'applied/coherence-cybernetics/consciousness-theories',
-        'applied/coherence-cybernetics/panpsychism-analysis',
-        'applied/coherence-cybernetics/cognitive-hierarchy',
-        'applied/coherence-cybernetics/research-programs',
-        'applied/coherence-cybernetics/predictions',
-        'applied/coherence-cybernetics/model-theory',
-        'applied/coherence-cybernetics/applications',
-        'applied/coherence-cybernetics/implementation',
+        {
+          type: 'category',
+          label: 'Формальные основания',
+          items: [
+            'applied/coherence-cybernetics/axiomatics',
+            'applied/coherence-cybernetics/definitions',
+            'applied/coherence-cybernetics/theorems',
+            'applied/coherence-cybernetics/model-theory',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Алгебра Gap-оператора',
+          items: [
+            'applied/coherence-cybernetics/gap-algebra',
+            'applied/coherence-cybernetics/bifurcation',
+            'applied/coherence-cybernetics/non-markovian',
+            'applied/coherence-cybernetics/model-systems',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Вариационная структура',
+          items: [
+            'applied/coherence-cybernetics/lagrangian',
+            'applied/coherence-cybernetics/variational',
+            'applied/coherence-cybernetics/effective-temperature',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Топологическая защита',
+          items: [
+            'applied/coherence-cybernetics/topological-protection',
+            'applied/coherence-cybernetics/phase-diagram-cc',
+            'applied/coherence-cybernetics/goldstone-modes',
+            'applied/coherence-cybernetics/g2-noether-cc',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Контекст и сравнение',
+          items: [
+            'applied/coherence-cybernetics/cybernetics-history',
+            {
+              type: 'link',
+              label: '→ Теории сознания',
+              href: '/docs/consciousness/comparative/consciousness-theories',
+            },
+            {
+              type: 'link',
+              label: '→ Панпсихизм',
+              href: '/docs/consciousness/comparative/panpsychism-analysis',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Предсказания и программы',
+          items: [
+            'applied/coherence-cybernetics/predictions',
+            {
+              type: 'link',
+              label: '→ Когнитивная иерархия',
+              href: '/docs/consciousness/comparative/cognitive-hierarchy',
+            },
+            'applied/coherence-cybernetics/research-programs',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Приложения и реализация',
+          items: [
+            'applied/coherence-cybernetics/applications',
+            'applied/coherence-cybernetics/implementation',
+          ],
+        },
       ],
     },
     {
@@ -134,6 +367,8 @@ const sidebars: SidebarsConfig = {
         'applied/research/measurement-protocol',
         'applied/research/engineering-insights',
         'applied/research/poincare-perelman',
+        'applied/research/gap-diagnostics',
+        'applied/research/symbolic-correspondence',
       ],
     },
   ],
@@ -142,6 +377,9 @@ const sidebars: SidebarsConfig = {
     'reference/glossary',
     'reference/notation',
     'reference/falsifiability',
+    'reference/specification',
+    'reference/computational',
+    'reference/status-registry',
   ],
 };
 

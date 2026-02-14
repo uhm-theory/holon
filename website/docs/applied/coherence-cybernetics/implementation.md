@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 24
 title: Реализация
 description: Вычислительная реализация Кибернетики Когерентности
 ---
@@ -13,13 +13,13 @@ description: Вычислительная реализация Кибернет�
 - `stress_tensor` ($\sigma_{\mathrm{sys}}$) — [тензор напряжений](./definitions#тензор-напряжений)
 - `coh_E` ($\mathrm{Coh}_E$) — [E-когерентность](./definitions#e-когерентность)
 - `kappa` ($\kappa$) — [скорость регенерации](./axiomatics#связь-регенерации-и-e-когерентности)
-- `phi` ($\varphi$) — [оператор самомоделирования](/docs/proofs/formalization-phi)
-- `differentiation` ($D_{\text{diff}}$) — [мера дифференциации](./definitions#меры-сознательности)
-- `reflection` ($R$) — [мера рефлексии](/docs/core/consciousness/self-observation#мера-рефлексии-r)
+- `phi` ($\varphi$) — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
+- `differentiation` ($D_{\text{diff}}$) — [мера дифференциации](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
+- `reflection` ($R$) — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
 :::
 
 :::warning Статус документа
-Данная реализация — **демонстрационный псевдокод**. Для базового класса `Holon` см. [Вычислительная реализация](/docs/formal/computational). Для полной реализации с мерами сознательности см. [Иерархия интериорности](/docs/proofs/interiority-hierarchy#61-алгоритм-классификации-уровня). Для алгоритмов L-унификации см. [Конструктивные алгоритмы](/docs/formal/computational#конструктивные-алгоритмы-из-l-унификации).
+Данная реализация — **демонстрационный псевдокод**. Для базового класса `Holon` см. [Вычислительная реализация](/docs/reference/computational). Для полной реализации с мерами сознательности см. [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy#61-алгоритм-классификации-уровня). Для алгоритмов L-унификации см. [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации).
 :::
 
 ## Быстрый старт
@@ -56,7 +56,7 @@ for step in range(100):
     gamma = U @ gamma @ U.T.conj()
     gamma /= np.trace(gamma)
     P = np.trace(gamma @ gamma).real
-    coh_E = gamma[4, 4].real + 2 * np.sqrt(sum(abs(gamma[4, i])**2 for i in range(7) if i != 4))
+    coh_E = (gamma[4, 4].real**2 + 2 * sum(abs(gamma[4, i])**2 for i in range(7) if i != 4)) / P
     print(f"Step {step}: P={P:.3f}, Coh_E={coh_E:.3f}")
 ```
 
@@ -135,10 +135,11 @@ from multiprocessing import Pool
 
 def run_trajectory(seed):
     np.random.seed(seed)
-    gamma = initialize_random_holon()
+    holon = initialize_holon({'random': True})
+    env = Environment({})
     for _ in range(1000):
-        gamma = evolve_step(gamma)
-    return compute_metrics(gamma)
+        holon = evolve_holon(holon, dt=0.01, environment=env)
+    return {'purity': holon.purity, 'entropy': holon.entropy}
 
 with Pool(8) as p:
     results = p.map(run_trajectory, range(100))
@@ -152,28 +153,43 @@ with Pool(8) as p:
 import pytest
 import numpy as np
 
+def _create_random_gamma(N=7):
+    """Вспомогательная функция: создаёт случайную Γ (для тестов)."""
+    L = np.eye(N, dtype=complex) + 0.1 * np.random.randn(N, N)
+    gamma = L @ L.conj().T
+    gamma /= np.trace(gamma)
+    return gamma
+
+def _evolve_one_step(gamma, dt=0.01):
+    """Вспомогательная функция: один шаг эволюции (для тестов)."""
+    state = initialize_holon({'random': False})
+    state.gamma = gamma.copy()
+    env = Environment({})
+    new_state = evolve_holon(state, dt, env)
+    return new_state.gamma
+
 def test_purity_bounds():
     """P ∈ [1/7, 1] для любого Γ."""
-    gamma = create_random_holon()
+    gamma = _create_random_gamma()
     P = np.trace(gamma @ gamma).real
     assert 1/7 - 1e-10 <= P <= 1 + 1e-10
 
 def test_trace_preservation():
     """Tr(Γ) = 1 после эволюции."""
-    gamma = create_random_holon()
-    gamma_evolved = evolve_step(gamma)
+    gamma = _create_random_gamma()
+    gamma_evolved = _evolve_one_step(gamma)
     assert abs(np.trace(gamma_evolved) - 1) < 1e-10
 
 def test_hermiticity_preservation():
     """Γ остаётся эрмитовой."""
-    gamma = create_random_holon()
-    gamma_evolved = evolve_step(gamma)
+    gamma = _create_random_gamma()
+    gamma_evolved = _evolve_one_step(gamma)
     assert np.allclose(gamma_evolved, gamma_evolved.T.conj())
 
 def test_positivity_preservation():
     """Γ остаётся положительно полуопределённой."""
-    gamma = create_random_holon()
-    gamma_evolved = evolve_step(gamma)
+    gamma = _create_random_gamma()
+    gamma_evolved = _evolve_one_step(gamma)
     eigenvalues = np.linalg.eigvalsh(gamma_evolved)
     assert all(eigenvalues >= -1e-10)
 
@@ -183,7 +199,7 @@ def test_viability_threshold():
 
 def test_coh_e_bounds():
     """Coh_E ∈ [1/N, 1]."""
-    gamma = create_random_holon()
+    gamma = _create_random_gamma()
     coh_E = compute_coherence_E(gamma)
     assert 1/7 - 1e-10 <= coh_E <= 1 + 1e-10
 ```
@@ -246,7 +262,7 @@ class HolonState:
     purity: float              # P = Tr(Γ²) ∈ [1/7, 1]
     entropy: float             # S_vN = -Tr(Γ log Γ) ∈ [0, log 7]
 
-    # Меры сознательности (см. /docs/core/consciousness/self-observation)
+    # Меры сознательности (см. /docs/consciousness/foundations/self-observation)
     integration: float         # Φ: мера интеграции
     differentiation: float     # D_diff: мера дифференциации = exp(S_vN(ρ_E)) — требует тензорной структуры!
     reflection: float          # R: мера рефлексии ∈ [0, 1]
@@ -263,7 +279,11 @@ class HolonState:
 ## Вывод операторов Линдблада из Ω
 
 :::info L-унификация в коде
-Операторы Линдблада $L_k$ **вычисляются** из субобъектного классификатора $\Omega$, а не задаются вручную. См. [Конструктивные алгоритмы](/docs/formal/computational#конструктивные-алгоритмы-из-l-унификации).
+Операторы Линдблада $L_k$ **вычисляются** из субобъектного классификатора $\Omega$, а не задаются вручную. См. [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации).
+:::
+
+:::note Упрощённые операторы Линдблада
+В данной реализации операторы Линдблада — **диагональные проекторы** $L_k = |k\rangle\langle k|$ (стандартная декогеренция в базисе измерений). Это **не** $G_2$-структурированные операторы из [Фано-канала](/docs/proofs/gap/fano-channel). Полная реализация с $G_2$-совместимыми операторами Линдблада (проекторы на Фано-триплеты) см. в [Конструктивных алгоритмах](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации).
 :::
 
 ```python
@@ -271,11 +291,14 @@ def compute_lindblad_from_omega(gamma: np.ndarray) -> list:
     """
     Вычисляет операторы Линдблада из структуры Ω.
 
+    УПРОЩЕНИЕ: Возвращает диагональные проекторы L_k = |k><k|.
+    Полная G₂-реализация использует Фано-линии (см. /docs/proofs/gap/fano-channel).
+
     Алгоритм:
     1. Вычислить характеристические морфизмы χ_S для атомов Ω
     2. L_k = √χ_{S_k} (корень из проектора)
 
-    См. /docs/formal/computational#конструктивные-алгоритмы-из-l-унификации
+    См. /docs/reference/computational#конструктивные-алгоритмы-из-l-унификации
     """
     N = gamma.shape[0]  # = 7
     lindblad_ops = []
@@ -295,18 +318,22 @@ def compute_lindblad_from_omega(gamma: np.ndarray) -> list:
 
 ## Алгоритм эволюции
 
-Реализация [уравнения эволюции](/docs/core/dynamics/evolution) с [эмерджентным внутренним временем](/docs/proofs/emergent-time) τ:
+Реализация [уравнения эволюции](/docs/core/dynamics/evolution) с [эмерджентным внутренним временем](/docs/proofs/dynamics/emergent-time) τ:
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
+
+:::warning Расщепление Ли-Троттера и положительность
+Эволюция реализована через **последовательное** применение унитарного, диссипативного и регенеративного членов (расщепление Ли-Троттера). При конечном шаге $dt$ это расщепление **не гарантирует** сохранение положительной полуопределённости $\Gamma \geq 0$. Для малых $dt$ ошибка порядка $O(dt^2)$. При больших шагах рекомендуется: (1) уменьшить $dt$, (2) добавить проекцию на конус $\Gamma \geq 0$ после каждого шага, или (3) использовать методы типа Рунге-Кутты для открытых квантовых систем.
+:::
 
 ```python
 def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
     """
     Один шаг эволюции по полному уравнению КК.
 
-    dt — шаг внутреннего времени τ (см. /docs/proofs/emergent-time)
+    dt — шаг внутреннего времени τ (см. /docs/proofs/dynamics/emergent-time)
 
     Три члена:
     1. Унитарный: -i[H_eff, Γ]  (см. /docs/core/dynamics/evolution#1-унитарный-член)
@@ -346,18 +373,21 @@ def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
 
 def compute_coherence_E(gamma: np.ndarray) -> float:
     """
-    E-когерентность (приближение для 7D): Coh_E(Γ) ≈ γ_EE + 2√(Σ_{i≠E}|γ_Ei|²)
+    E-когерентность (HS-проекция π_E, [Т]): Coh_E(Γ) = ‖π_E(Γ)‖²_HS / ‖Γ‖²_HS = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²).
 
     Мастер-определение: Coh_E := Tr(ρ_E²), где ρ_E = Tr_{-E}(Γ).
-    Приближение используется, т.к. partial trace не определён в 7D.
+    Множитель 2 — из эрмитовой симметрии: |γ_Ei|² = |γ_iE|².
+    Нормализация на Tr(Γ²) гарантирует Coh_E ∈ [1/7, 1].
 
     См. /docs/applied/coherence-cybernetics/definitions#e-когерентность
     """
     E = 4  # Индекс измерения Experience
-    gamma_EE = np.real(gamma[E, E])
+    gamma_EE_sq = np.real(gamma[E, E])**2
     coherence_sum = sum(np.abs(gamma[E, i])**2 for i in range(7) if i != E)
-    result = gamma_EE + 2 * np.sqrt(coherence_sum)
-    return np.clip(result, 1/7, 1.0)
+    purity = np.real(np.trace(gamma @ gamma))
+    if purity < 1e-12:
+        return 1/7
+    return np.clip((gamma_EE_sq + 2 * coherence_sum) / purity, 1/7, 1.0)
 
 
 def compute_target_state(gamma: np.ndarray, environment) -> np.ndarray:
@@ -367,7 +397,7 @@ def compute_target_state(gamma: np.ndarray, environment) -> np.ndarray:
     В упрощённой реализации: Γ_target = состояние с максимальной чистотой
     в направлении текущей конфигурации.
 
-    Полная реализация φ см. /docs/proofs/formalization-phi
+    Полная реализация φ см. /docs/proofs/categorical/formalization-phi
     """
     # Упрощение: используем спектральное разложение
     eigenvalues, eigenvectors = np.linalg.eigh(gamma)
@@ -727,7 +757,7 @@ class Environment:
 
 ```python
 # Критическая чистота P_crit = 2/N = 2/7 (теорема, выведено 5 методами из аксиом УГМ)
-# См. /docs/proofs/theorem-purity-critical
+# См. /docs/proofs/dynamics/theorem-purity-critical
 P_CRITICAL = 2/7  # ≈ 0.286, выведено из геометрии 7D-пространства
 
 # Базовая скорость регенерации κ₀ — категориальный вывод из сопряжения D_Ω ⊣ R
@@ -843,7 +873,7 @@ def initialize_holon(config) -> HolonState:
         hamiltonian=config.get('hamiltonian', default_hamiltonian),
         lindblad_ops=compute_lindblad_from_omega(gamma),
         # φ: оператор самомоделирования.
-        # Полная реализация — спектральная формула (/docs/proofs/formalization-phi).
+        # Полная реализация — спектральная формула (/docs/proofs/categorical/formalization-phi).
         # Приближение: φ проецирует на диагональ (стабильные моды).
         phi=lambda g: np.diag(np.diag(g)),
         purity=np.trace(gamma @ gamma).real,
@@ -907,7 +937,7 @@ class CoherenceCyberneticsAgent:
         """Обновление Γ на основе наблюдения (A-измерение)."""
         self.holon = update_from_observation(self.holon, observation)
 
-    def act(self) -> Action:
+    def act(self) -> tuple:
         """
         Выбор действия на основе σ_sys.
 
@@ -921,7 +951,7 @@ class CoherenceCyberneticsAgent:
         Рефлексивное обновление: вычисление R.
 
         R = 1 - ‖Γ - φ(Γ)‖²_F / ‖Γ‖²_F
-        См. /docs/core/consciousness/self-observation#мера-рефлексии-r
+        См. /docs/consciousness/foundations/self-observation#мера-рефлексии-r
         """
         phi_gamma = self.holon.phi(self.holon.gamma)
         gamma_norm_sq = np.linalg.norm(self.holon.gamma, 'fro') ** 2
@@ -941,15 +971,15 @@ class CoherenceCyberneticsAgent:
 ---
 
 **Связанные документы:**
-- [Вычислительная реализация](/docs/formal/computational) — базовый класс `Holon`
-- [Конструктивные алгоритмы](/docs/formal/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление $L_k$, $\mathcal{L}_\Omega$, $\varphi$
+- [Вычислительная реализация](/docs/reference/computational) — базовый класс `Holon`
+- [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление $L_k$, $\mathcal{L}_\Omega$, $\varphi$
 - [Теоремы](./theorems) — формальные основания
 - [Определения](./definitions) — $\sigma_{\mathrm{sys}}$, $\mathrm{Coh}_E$, $C$
 - [Аксиоматика](./axiomatics) — L-унификация, связь $\kappa$ и $\mathrm{Coh}_E$
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — протокол калибровки $\omega_0$, $\lambda_m$
 - [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
-- [Эмерджентное время](/docs/proofs/emergent-time) — вывод τ из структуры $\Gamma$
+- [Эмерджентное время](/docs/proofs/dynamics/emergent-time) — вывод τ из структуры $\Gamma$
 - [Жизнеспособность](/docs/core/dynamics/viability) — условие $P > P_{\text{crit}}$
-- [Самонаблюдение](/docs/core/consciousness/self-observation) — меры $R$, $\Phi$, $C$
-- [Формализация φ](/docs/proofs/formalization-phi) — CPTP-каналы
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy#61-алгоритм-классификации-уровня) — полная реализация
+- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $\Phi$, $C$
+- [Формализация φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
+- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy#61-алгоритм-классификации-уровня) — полная реализация

@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+title: "Функтор F: DensityMat → Exp"
+description: "Определение функтора F, связывающего физическое и экспериенциальное пространства"
+---
+
+# Функтор F: DensityMat → Exp
+
+:::info DRY: Мастер-определение функтора F
+Полная спецификация функтора F, включая доказательство функториальности, топосную структуру и расширения до 2-категорий — в [Категорном формализме](/docs/proofs/categorical/categorical-formalism).
+:::
+
+## Определение на объектах
+
+Функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$ отображает матрицу плотности $\rho \in \mathcal{D}(\mathcal{H})$ в точку экспериенциального пространства:
+
+$$
+F(\rho) = (\vec{s}(\rho), \, \vec{q}(\rho), \, c(\rho))
+$$
+
+где:
+- $\vec{s}(\rho) = (\lambda_1, \ldots, \lambda_N) \in \Delta^{N-1}$ — **спектр** (вероятностное распределение)
+- $\vec{q}(\rho) = (|\psi_1\rangle, \ldots, |\psi_N\rangle)$ — **качества** (собственные состояния в $\mathbb{P}(\mathcal{H}_E)$)
+- $c(\rho) \in \mathcal{C}$ — **контекст** (классический параметр)
+
+## Определение на морфизмах
+
+Для CPTP-канала $\Phi: \rho_1 \to \rho_2$:
+
+$$
+F(\Phi) = (T_{\Phi}, \, Q_{\Phi}, \, C_{\Phi})
+$$
+
+Компоненты преобразования определяются через разложение $\Phi$ на спектральное, качественное и контекстное действия.
+
+## Ключевые свойства
+
+:::tip Теорема: Функториальность F
+$F$ сохраняет композицию и тождества:
+- $F(\Psi \circ \Phi) = F(\Psi) \circ F(\Phi)$
+- $F(\text{id}_\rho) = \text{id}_{F(\rho)}$
+
+[Доказательство →](/docs/proofs/categorical/categorical-formalism#5-доказательство-функториальности) | Статус: **[Т]**
+:::
+
+:::tip Теорема: Феноменальная полнота
+Функтор $F$ **полон** (full): каждый морфизм в $\mathbf{Exp}$ реализуется физическим процессом.
+[Доказательство →](/docs/proofs/categorical/categorical-formalism#8-феноменальная-полнота) | Статус: **[Т]**
+:::
+
+## Связи
+
+- **Объекты:** [Категория DensityMat](/docs/core/categories/category-hol) → [Категория Exp](/docs/core/categories/category-exp)
+- **Расширения:** ∞-группоид $\mathbf{Exp}_\infty$ ([§10](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени))
+- **Полная спецификация:** [Категорный формализм](/docs/proofs/categorical/categorical-formalism)

@@ -13,6 +13,11 @@ paninteriorism:
   permalink: /paninteriorism
   description: Когерентный категорный панинтериоризм
 
+holonomy:
+  label: Голономия
+  permalink: /holonomy
+  description: Голономная структура и геометрия теории
+
 theory:
   label: Теория
   permalink: /theory

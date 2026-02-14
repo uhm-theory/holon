@@ -15,7 +15,7 @@ description: Топологическая аналогия для когнити
 :::note О нотации
 - $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
 - $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $P_{\text{crit}} = 2/N = 2/7$ — [критическая чистота](/docs/proofs/theorem-purity-critical)
+- $P_{\text{crit}} = 2/N = 2/7$ — [критическая чистота](/docs/proofs/dynamics/theorem-purity-critical)
 - $\mathcal{D}[\Gamma]$ — [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан)
 - $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
 - $\sigma_{\mathrm{sys}}$ — [тензор напряжений](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений)
@@ -81,7 +81,7 @@ $$
 ## Часть III: P_crit как топологический порог
 
 :::tip Ключевой инсайт
-Порог [$P_{\text{crit}} = 2/N$](/docs/proofs/theorem-purity-critical) в УГМ играет роль, аналогичную условию односвязности в теореме Пуанкаре: это **минимальное условие**, при котором система приобретает структурную идентичность.
+Порог [$P_{\text{crit}} = 2/N$](/docs/proofs/dynamics/theorem-purity-critical) в УГМ играет роль, аналогичную условию односвязности в теореме Пуанкаре: это **минимальное условие**, при котором система приобретает структурную идентичность.
 :::
 
 ### Аналогия: два типа порогов
@@ -261,7 +261,7 @@ $P_{\text{crit}} = 2/N$ — не «подогнанный параметр», а
 :::
 
 :::info 4. Размерность 7 — топологически оптимальна
-Минимальная размерность $N = 7$ (см. [Теорему S](/docs/proofs/theorem-minimality-7), [октонионное обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) обеспечивает:
+Минимальная размерность $N = 7$ (см. [Теорему S](/docs/proofs/minimality/theorem-minimality-7), [октонионное обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) обеспечивает:
 - Достаточно места для «хирургии» (реструктуризации)
 - Достаточно низкий порог ($P_{\text{crit}} \approx 0.29$) для гибкости
 - Достаточно высокий порог для устойчивости к шуму
@@ -365,9 +365,9 @@ graph TD
 ---
 
 **Связанные документы:**
-- [Теорема о критической чистоте](/docs/proofs/theorem-purity-critical) — доказательство $P_{\text{crit}} = 2/N$
+- [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical) — доказательство $P_{\text{crit}} = 2/N$
 - [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
 - [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и условия существования
-- [Теорема о минимальности 7D](/docs/proofs/theorem-minimality-7) — необходимость 7 измерений
+- [Теорема о минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — необходимость 7 измерений
 - [Тензор напряжений](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений) — $\sigma_{\mathrm{sys}}$
 - [Инженерные выводы](/docs/applied/research/engineering-insights) — практические следствия

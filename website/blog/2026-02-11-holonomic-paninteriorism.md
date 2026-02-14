@@ -240,9 +240,9 @@ L0 — дефиниционное следствие Аксиомы Ω: если
 ---
 
 **Связанные материалы:**
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — формальное описание уровней L0→L4
+- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — формальное описание уровней L0→L4
 - [Голоном](/docs/core/structure/holon) — определение самоподдерживающейся конфигурации
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — единственный примитив теории
 - [Жизнеспособность](/docs/core/dynamics/viability) — критический порог когерентности
-- [Самонаблюдение](/docs/core/consciousness/self-observation) — меры сознательности R, Φ, C
-- [Анализ панпсихизма](/docs/applied/coherence-cybernetics/panpsychism-analysis) — сравнение с IIT, GWT, панпсихизмом
+- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры сознательности R, Φ, C
+- [Анализ панпсихизма](/docs/consciousness/comparative/panpsychism-analysis) — сравнение с IIT, GWT, панпсихизмом

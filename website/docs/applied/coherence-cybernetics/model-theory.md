@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 5
 title: Теория моделей
 description: Формальная спецификация и категорная семантика КК
 ---
@@ -10,10 +10,10 @@ description: Формальная спецификация и категорна
 В этом документе:
 - $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
 - $\mathbb{H}$ — [Голоном](/docs/core/structure/holon)
-- $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical-formalism)
-- $\mathbf{DensityMat}$ — [категория матриц плотности](/docs/proofs/categorical-formalism#1-категория-densitymat)
-- $\mathbf{Exp}$ — [категория экспериенциальных состояний](/docs/proofs/categorical-formalism#2-категория-exp)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/formalization-phi)
+- $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism)
+- $\mathbf{DensityMat}$ — [категория матриц плотности](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat)
+- $\mathbf{Exp}$ — [категория экспериенциальных состояний](/docs/proofs/categorical/categorical-formalism#2-категория-exp)
+- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
 :::
 
 ## Сигнатура теории
@@ -45,14 +45,14 @@ $$
 | Функция | Сигнатура | Интерпретация | Ссылка |
 |---------|-----------|---------------|--------|
 | $P$ | $\Gamma \to [1/7, 1]$ | Чистота | [→](/docs/core/dynamics/viability#определение-чистоты) |
-| $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Энтропия фон Неймана | [→](./definitions#энтропия-фон-неймана) |
+| $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Энтропия фон Неймана | [→](/docs/reference/notation) |
 | $\mathrm{Coh}_E$ | $\Gamma \to [1/7, 1]$ | E-когерентность | [→](./definitions#e-когерентность) |
 | $\mathrm{Spec}$ | $\Gamma \to \mathrm{List}(\mathbb{R} \times \mathcal{H})$ | Спектр | — |
-| $\varphi$ | $\Gamma \to \Gamma$ | Оператор самомоделирования | [→](/docs/proofs/formalization-phi) |
-| $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Мера сознательности | [→](/docs/core/consciousness/self-observation#мера-сознательности-c) |
+| $\varphi$ | $\Gamma \to \Gamma$ | Оператор самомоделирования | [→](/docs/proofs/categorical/formalization-phi) |
+| $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Мера сознательности | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
 | $\Phi$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Мера интеграции | [→](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| $D_{\text{diff}}$ | $\Gamma \to \{1, 2, \ldots, 7\}$ | Мера дифференциации | [→](/docs/core/consciousness/self-observation#мера-сознательности-c) |
-| $R$ | $\Gamma \to [0,1]$ | Мера рефлексии | [→](/docs/core/consciousness/self-observation#мера-рефлексии-r) |
+| $D_{\text{diff}}$ | $\Gamma \to \{1, 2, \ldots, 7\}$ | Мера дифференциации | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| $R$ | $\Gamma \to [0,1]$ | Мера рефлексии | [→](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
 | $\sigma_{\mathrm{sys}}$ | $\Gamma \to \mathbb{R}^7$ | Тензор напряжений | [→](./definitions#тензор-напряжений) |
 | $\mathrm{compose}$ | $\mathrm{List}(\mathbb{H}) \to \mathbb{H}$ | Композиция Голономов | [→](./theorems#теорема-91-фрактальное-замыкание) |
 | $\mathrm{evolve}$ | $\Gamma \times \mathbb{R} \to \Gamma$ | Эволюция | [→](/docs/core/dynamics/evolution) |
@@ -63,8 +63,8 @@ $$
 | Предикат | Сигнатура | Интерпретация | Ссылка |
 |----------|-----------|---------------|--------|
 | $\mathrm{Viable}$ | $\mathbb{H} \to \mathrm{Bool}$ | Жизнеспособен | [→](/docs/core/dynamics/viability) |
-| $\mathrm{Conscious}$ | $\mathbb{H} \to \mathrm{Bool}$ | Сознателен (L2) | [→](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) |
-| $\mathrm{HasInteriority}$ | $\mathbb{H} \to \mathrm{Bool}$ | Имеет интериорность (L0) | [→](/docs/proofs/interiority-hierarchy#уровень-0-интериорность-interiority) |
+| $\mathrm{Conscious}$ | $\mathbb{H} \to \mathrm{Bool}$ | Сознателен (L2) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) |
+| $\mathrm{HasInteriority}$ | $\mathbb{H} \to \mathrm{Bool}$ | Имеет интериорность (L0) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority) |
 | $\mathrm{InV}$ | $\Gamma \to \mathrm{Bool}$ | В области $\mathcal{V}$ | [→](/docs/core/dynamics/viability#область-жизнеспособности) |
 
 ## Стандартная модель
@@ -91,8 +91,8 @@ $$
 | $I(\mathrm{compose})$ | Тензорное произведение + взаимодействие |
 
 :::info Выведенные и эмпирические константы
-- $P_{\text{crit}} = 2/7 \approx 0.286$ — [теорема](/docs/proofs/theorem-purity-critical)
-- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада, см. [определение](./definitions#жизнеспособность)
+- $P_{\text{crit}} = 2/7 \approx 0.286$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical)
+- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада, см. [жизнеспособность](/docs/core/dynamics/viability)
 :::
 
 ## Корректность и полнота
@@ -126,7 +126,7 @@ $$
 
 **Определение (Категория $\mathbf{Hol}$):**
 
-См. [Категорный формализм](/docs/proofs/categorical-formalism) для полного описания.
+См. [Категорный формализм](/docs/proofs/categorical/categorical-formalism) для полного описания.
 
 $$
 \mathrm{Ob}(\mathbf{Hol}) := \{\mathbb{H} : \mathbb{H} = \langle \Gamma, \mathcal{H}, H, \{L_k\}, E, \varphi \rangle, \mathrm{Viable}(\mathbb{H})\}
@@ -193,7 +193,7 @@ FEP — проекция на [D-измерение](/docs/core/structure/dimens
 
 **Определение (Категория $\mathbf{DensityMat}$):**
 
-См. [Категорный формализм](/docs/proofs/categorical-formalism#1-категория-densitymat) для полного описания.
+См. [Категорный формализм](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat) для полного описания.
 
 $$
 \mathbf{DensityMat} := (\mathrm{Obj}, \mathrm{Mor})
@@ -209,7 +209,7 @@ CPTP = Completely Positive Trace-Preserving (квантовые каналы).
 
 **Определение (Полный функтор опыта):**
 
-См. [Категория Exp](/docs/proofs/categorical-formalism#2-категория-exp) для полного описания.
+См. [Категория Exp](/docs/proofs/categorical/categorical-formalism#2-категория-exp) для полного описания.
 
 $$
 F_{\mathcal{Q}}: \mathbf{DensityMat} \to \mathbf{Exp}
@@ -220,7 +220,7 @@ $$
 
 ### Теорема (Невозможность спектрального функтора)
 
-:::warning [Теорема](/docs/formal/specification#теорема-невозможность-спектрального-функтора)
+:::warning [Теорема](/docs/reference/specification#теорема-невозможность-спектрального-функтора)
 Не существует функтора $F: \mathbf{DensityMat} \to \mathbf{Exp}$, факторизующегося *только* через спектр.
 :::
 
@@ -245,11 +245,11 @@ $$
 
 ### Что теория объясняет
 
-1. **Структуру** феноменального пространства ([L1](/docs/proofs/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): метрика Фубини-Штуди)
+1. **Структуру** феноменального пространства ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): метрика Фубини-Штуди)
 2. **Отношения** между качествами (L1: изоморфизм с $\mathbb{P}(\mathcal{H}_E)$)
 3. **Динамику** опыта ([уравнение эволюции](/docs/core/dynamics/evolution))
-4. **Условия** сознательности ([L2](/docs/proofs/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
-5. **Необходимость** интериорности ([L0](/docs/proofs/interiority-hierarchy#уровень-0-интериорность-interiority)) для жизнеспособности ([Теорема 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
+4. **Условия** сознательности ([L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
+5. **Необходимость** интериорности ([L0](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority)) для жизнеспособности ([Теорема 8.1 [Т]](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
 ### Что теория не объясняет
 
@@ -265,9 +265,9 @@ $$
 - [Аксиоматика](./axiomatics) — аксиомы Ω и Септичности
 - [Теоремы](./theorems) — формальные результаты КК
 - [Определения](./definitions) — базовые определения КК
-- [Категорный формализм](/docs/proofs/categorical-formalism) — категории $\mathbf{Hol}$, $\mathbf{DensityMat}$, $\mathbf{Exp}$
-- [Формализация оператора φ](/docs/proofs/formalization-phi) — CPTP-каналы
-- [Иерархия интериорности](/docs/proofs/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
+- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — категории $\mathbf{Hol}$, $\mathbf{DensityMat}$, $\mathbf{Exp}$
+- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
+- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$

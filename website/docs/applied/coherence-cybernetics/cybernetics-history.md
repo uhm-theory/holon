@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 17
 title: История кибернетики
 description: Отношение КК к кибернетикам I-II-III порядка
 ---
@@ -9,7 +9,7 @@ description: Отношение КК к кибернетикам I-II-III пор
 :::note О нотации
 В этом документе:
 - $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/formalization-phi)
+- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
 - $\mathbb{H}$ — [Голоном](/docs/core/structure/holon)
 - ASDLEOU — [семь измерений](/docs/core/structure/dimensions)
 :::
@@ -36,8 +36,8 @@ description: Отношение КК к кибернетикам I-II-III пор
 | [Автопоэзис](/docs/reference/glossary#связанные-теории) | Самопроизводство | [(AP)](/docs/core/foundations/axiom-septicity): $\varphi(\Gamma^*) = \Gamma^*$ | $A$, $S$, $D$, $L$ |
 | [IIT](/docs/reference/glossary#связанные-теории) | Интегрированная информация | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $U$, $E$ |
 | [FEP](/docs/reference/glossary#связанные-теории) | Свободная энергия | [Жизнеспособность](/docs/core/dynamics/viability) | $D$, $O$, $S$ |
-| [Панпсихизм](./panpsychism-analysis) | Ментальное как базовое | [Варианты](./panpsychism-analysis#варианты-панпсихизма): L0 (прото-), $(H, \rho_E)$ (Рассел) | $E$, $S$ |
-| [Сознательный реализм](./panpsychism-analysis#сознательный-реализм-хоффмана) | Сознательные агенты | L2-Голоном (гипотеза) | $A$, $S$, $D$, $L$, $E$ |
+| [Панпсихизм](/docs/consciousness/comparative/panpsychism-analysis) | Ментальное как базовое | [Варианты](/docs/consciousness/comparative/panpsychism-analysis#варианты-панпсихизма): L0 (прото-), $(H, \rho_E)$ (Рассел) | $E$, $S$ |
+| [Сознательный реализм](/docs/consciousness/comparative/panpsychism-analysis#сознательный-реализм-хоффмана) | Сознательные агенты | L2-Голоном (гипотеза) | $A$, $S$, $D$, $L$, $E$ |
 | **КК** | Полная когерентность | [Все 7 измерений](/docs/core/structure/dimensions) ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) | $A$, $S$, $D$, $L$, $E$, $O$, $U$ |
 
 ## Кибернетика первого порядка (Винер)
@@ -59,7 +59,7 @@ description: Отношение КК к кибернетикам I-II-III пор
 | Ошибка $e(t)$ | Отклонение от [жизнеспособности](/docs/core/dynamics/viability) |
 
 **Что теряется:**
-- [Самореференция](/docs/proofs/formalization-phi) ($\varphi$)
+- [Самореференция](/docs/proofs/categorical/formalization-phi) ($\varphi$)
 - Феноменология ([E-измерение](/docs/core/structure/dimension-e))
 - Регенерация ($\mathcal{R}[\Gamma, E]$)
 - 6 из 7 измерений
@@ -80,10 +80,10 @@ description: Отношение КК к кибернетикам I-II-III пор
 | фон Фёрстер | КК |
 |-------------|-----|
 | Наблюдатель $\in$ Система | $\varphi(\Gamma) \approx \Gamma$ |
-| Эпистемическое замыкание | [Неподвижная точка](/docs/core/consciousness/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$ |
+| Эпистемическое замыкание | [Неподвижная точка](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$ |
 
 **Добавляется:**
-- [Рефлексия](/docs/core/consciousness/self-observation#мера-рефлексии-r) (мера $R$)
+- [Рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) (мера $R$)
 - Эпистемическое замыкание через [измерение $L$](/docs/core/structure/dimension-l)
 
 **Что теряется:**
@@ -153,8 +153,8 @@ graph TD
 ---
 
 **Связанные документы:**
-- [Теории сознания](./consciousness-theories) — IIT, FEP, автопоэзис в контексте КК
-- [Панпсихизм](./panpsychism-analysis) — категорный анализ вариантов панпсихизма
+- [Теории сознания](/docs/consciousness/comparative/consciousness-theories) — IIT, FEP, автопоэзис в контексте КК
+- [Панпсихизм](/docs/consciousness/comparative/panpsychism-analysis) — категорный анализ вариантов панпсихизма
 - [Аксиоматика](./axiomatics) — формальные основания КК
 - [Теоремы](./theorems) — ключевые результаты
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$

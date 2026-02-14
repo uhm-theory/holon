@@ -147,6 +147,18 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'physics',
+          position: 'left',
+          label: 'Физика',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'consciousness',
+          position: 'left',
+          label: 'Сознание',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'applied',
           position: 'left',
           label: 'Приложения',
@@ -168,48 +180,52 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Основы',
+          title: 'Теория',
           items: [
             {
-              label: 'Введение в теорию',
+              label: 'Введение',
               to: '/docs/intro',
             },
             {
-              label: 'Аксиома Ω⁷ — единый примитив',
+              label: 'Аксиома Ω⁷',
               to: '/docs/core/foundations/axiom-omega',
             },
             {
-              label: 'Голоном — единица бытия',
+              label: 'Голоном и семь измерений',
               to: '/docs/core/structure/holon',
             },
-            {
-              label: 'Семь измерений',
-              to: '/docs/core/structure/dimensions',
-            },
-          ],
-        },
-        {
-          title: 'Динамика и Сознание',
-          items: [
             {
               label: 'Матрица когерентности Γ',
               to: '/docs/core/dynamics/coherence-matrix',
             },
             {
-              label: 'Эмерджентное время',
-              to: '/docs/proofs/emergent-time',
+              label: 'Gap-оператор',
+              to: '/docs/core/dynamics/gap-operator',
+            },
+          ],
+        },
+        {
+          title: 'Сознание',
+          items: [
+            {
+              label: 'Обзор',
+              to: '/docs/consciousness/overview',
             },
             {
-              label: 'Жизнеспособность и P_crit',
-              to: '/docs/core/dynamics/viability',
+              label: 'Самонаблюдение',
+              to: '/docs/consciousness/foundations/self-observation',
             },
             {
-              label: 'Иерархия интериорности',
-              to: '/docs/proofs/interiority-hierarchy',
+              label: 'Иерархия L0→L4',
+              to: '/docs/consciousness/hierarchy/interiority-hierarchy',
             },
             {
-              label: 'Этика и свобода',
-              to: '/docs/core/ethics/freedom',
+              label: 'Структура квалиа',
+              to: '/docs/consciousness/phenomenology/qualia-structure',
+            },
+            {
+              label: 'Состояния сознания',
+              to: '/docs/consciousness/states/altered-states',
             },
           ],
         },
@@ -217,41 +233,74 @@ const config: Config = {
           title: 'Доказательства',
           items: [
             {
-              label: 'Теорема S: dim = 7',
-              to: '/docs/proofs/theorem-minimality-7',
+              label: 'Минимальность dim = 7',
+              to: '/docs/proofs/minimality/theorem-minimality-7',
             },
             {
               label: 'Категорный формализм',
-              to: '/docs/proofs/categorical-formalism',
+              to: '/docs/proofs/categorical/categorical-formalism',
             },
             {
               label: 'Оператор φ',
-              to: '/docs/proofs/formalization-phi',
+              to: '/docs/proofs/categorical/formalization-phi',
             },
             {
-              label: 'Физические соответствия',
-              to: '/docs/proofs/physics-correspondence',
+              label: 'Эмерджентное время',
+              to: '/docs/proofs/dynamics/emergent-time',
+            },
+            {
+              label: 'Фано-канал',
+              to: '/docs/proofs/gap/fano-channel',
             },
           ],
         },
         {
-          title: 'Приложения',
+          title: 'Физика',
+          items: [
+            {
+              label: 'Обзор соответствий',
+              to: '/docs/physics/overview',
+            },
+            {
+              label: 'G₂-структура',
+              to: '/docs/physics/gauge-symmetry/g2-structure',
+            },
+            {
+              label: 'Физика частиц',
+              to: '/docs/physics/particle-physics/fermion-generations',
+            },
+            {
+              label: 'Гравитация',
+              to: '/docs/physics/gravity/emergent-geometry',
+            },
+            {
+              label: 'Космологическая постоянная',
+              to: '/docs/physics/gravity/cosmological-constant',
+            },
+          ],
+        },
+        {
+          title: 'Приложения и Справочник',
           items: [
             {
               label: 'Когерентная кибернетика',
-              to: '/docs/applied/coherence-cybernetics/axiomatics',
+              to: '/docs/applied/coherence-cybernetics/introduction',
             },
             {
               label: 'Протокол измерения Γ',
               to: '/docs/applied/research/measurement-protocol',
             },
             {
-              label: 'Глоссарий',
-              to: '/docs/reference/glossary',
-            },
-            {
               label: 'Фальсифицируемость',
               to: '/docs/reference/falsifiability',
+            },
+            {
+              label: 'Реестр статусов',
+              to: '/docs/reference/status-registry',
+            },
+            {
+              label: 'Глоссарий',
+              to: '/docs/reference/glossary',
             },
           ],
         },
