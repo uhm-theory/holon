@@ -548,6 +548,7 @@ $$\rho_E \neq 0 \quad \Rightarrow \quad \text{PT-нарушение в Gap} \qua
 | Gap-семантика | Лагранжиан $L_{\mathrm{Gap}}$; определение $\mathrm{Gap}(i,j)$ | [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) |
 | Дзета-регуляризация | Регуляризация расходящихся рядов в Gap-динамике | [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization) |
 | Эмерджентное время | Page-Wootters механизм и O-измерение | [Эмерджентное время](/docs/core/operators/emergent-time) |
+| Теорема единственности | $G_2$ — максимальная калибровочная группа [Т]; обратная задача корректна (Лемма G2); 14 зарядов — основа корректности обратной задачи | [Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem) |
 | Операторы Линдблада | Фано-структурированные $L_p^{\mathrm{Fano}}$; CPTP-каналы | [Операторы Линдблада](/docs/core/operators/lindblad-operators) |
 | Иерархия интериорности | Уровни L0--L4 и степень $G_2$-нарушения $\alpha^*$ | [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) |
 

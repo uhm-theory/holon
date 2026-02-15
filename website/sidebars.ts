@@ -178,6 +178,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'proofs/categorical/categorical-formalism',
         'proofs/categorical/formalization-phi',
+        'proofs/categorical/uniqueness-theorem',
       ],
     },
     {

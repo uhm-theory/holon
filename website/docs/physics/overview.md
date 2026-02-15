@@ -87,6 +87,14 @@ description: Полная карта физических результатов
 
 ### Безупречно строгие теоремы [Т]
 
+:::tip Теорема: $G_2$-ригидность голономного представления [Т]
+**Подробнее:** [Теорема единственности](/docs/proofs/categorical/uniqueness-theorem)
+
+Голономное представление $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ **единственно** с точностью до калибровочной группы $G_2 = \mathrm{Aut}(\mathbb{O})$. Пространство физических состояний $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ имеет $\dim = 48 - 14 = 34$. Обратная задача (восстановление $\Gamma$ из наблюдений) корректно поставлена [Т].
+
+**См.:** [G₂-структура](/docs/physics/gauge-symmetry/g2-structure), [Операторы Линдблада](/docs/core/operators/lindblad-operators#g2-ковариантность)
+:::
+
 :::tip Теорема: $SU(3)_C \subset G_2$ разложение $14 \to 8 + 3 + \bar{3}$
 **Подробнее:** [Стандартная модель из G₂](/docs/physics/gauge-symmetry/standard-model)
 

@@ -193,6 +193,7 @@ $$
 | **Стрела времени** | Коллапс страт: $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | [Т] | [Теорема](./proofs/dynamics/emergent-time#10-стратификационное-время) |
 | **Критическая чистота** | $P_{\text{crit}} = 2/N = 2/7$ | [Т] | [Теорема](./proofs/dynamics/theorem-purity-critical) |
 | **Необходимость интериорности** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [Т] | [Теорема 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
+| **$G_2$-ригидность** | Голономное представление единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 физических параметра | [Т] | [Теорема](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
 
 :::note Легенда статусов
 - **[Т] СТРОГО** — математически доказано без дополнительных допущений
@@ -237,5 +238,6 @@ $$
 | **[Сознание](/docs/consciousness/foundations/self-observation)** | Иерархия L0→L1→L2→L3→L4 |
 | **[Эмерджентное время](./proofs/dynamics/emergent-time)** | Page-Wootters, стратификационное время |
 | **[Категорный формализм](./proofs/categorical/categorical-formalism)** | ∞-топос, производные категории, IC-когомологии |
+| **[Теорема единственности](./proofs/categorical/uniqueness-theorem)** | G₂-ригидность: 34 физических параметра |
 | **[Глоссарий](./reference/glossary)** | Определения терминов |
 | **[Нотация](./reference/notation)** | Математические обозначения |
