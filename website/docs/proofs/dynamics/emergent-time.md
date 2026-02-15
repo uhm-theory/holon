@@ -1262,7 +1262,7 @@ $$
 - [Измерение D (Динамика)](/docs/core/structure/dimension-d) — связь с внутренним временем
 - [Измерение O (Основание)](/docs/core/structure/dimension-o) — роль внутренних часов
 - [Эволюция Γ](/docs/core/dynamics/evolution) — уравнение с внутренним временем
-- [Пространство-время](/docs/core/cosmology/spacetime) — эмерджентная геометрия
+- [Пространство-время](/docs/core/foundations/spacetime) — эмерджентная геометрия
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — ∞-группоид и ∞-топос
 - [Критическая чистота](/docs/proofs/dynamics/theorem-purity-critical) — связь P_crit с временем
 - [Жизнеспособность](/docs/core/dynamics/viability) — временна́я интерпретация

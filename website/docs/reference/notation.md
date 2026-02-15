@@ -49,14 +49,14 @@ description: Математические обозначения теории У
 
 | Символ | Значение | Определение |
 |--------|----------|-------------|
-| $X$ | [Базовое пространство](/docs/core/cosmology/spacetime#базовое-пространство) | $X = \|N(\mathcal{C})\|$ — геометрическая реализация нерва категории |
-| $N(\mathcal{C})$ | [Нерв категории](/docs/core/cosmology/spacetime#нерв-категории) | Симплициальное множество: n-симплексы = композируемые цепочки морфизмов |
+| $X$ | [Базовое пространство](/docs/core/foundations/spacetime#базовое-пространство) | $X = \|N(\mathcal{C})\|$ — геометрическая реализация нерва категории |
+| $N(\mathcal{C})$ | [Нерв категории](/docs/core/foundations/spacetime#нерв-категории) | Симплициальное множество: n-симплексы = композируемые цепочки морфизмов |
 | $T$ | [Терминальный объект](/docs/core/foundations/axiom-omega#свойство-3) | $T = \Gamma^*$ — глобальный аттрактор; $\forall\Gamma, \exists! f: \Gamma \to T$ |
-| $S_\alpha$ | [Страта](/docs/core/cosmology/spacetime#стратификация-x) | Компонента стратификации $X = \bigsqcup_\alpha S_\alpha$; $S_0 = \{T\}$ |
-| $d_{strat}$ | [Стратифицированная метрика](/docs/core/cosmology/spacetime#метрика-конна) | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ |
+| $S_\alpha$ | [Страта](/docs/core/foundations/spacetime#стратификация-x) | Компонента стратификации $X = \bigsqcup_\alpha S_\alpha$; $S_0 = \{T\}$ |
+| $d_{strat}$ | [Стратифицированная метрика](/docs/core/foundations/spacetime#метрика-конна) | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ |
 | $\text{Link}(T)$ | Линк терминального объекта | $\text{Link}(T) \cong S^6$ — 6-сфера |
 | $H^*(X)$ | [Когомологии](/docs/core/foundations/consequences#когомологический-монизм) | $H^n(X, \mathcal{F}) = 0$ для $n > 0$ (монизм) |
-| $H^*_{loc}(X,T)$ | [Локальные когомологии](/docs/core/cosmology/spacetime#локально-глобальная-дихотомия) | $H^*_{loc}(X,T) \cong \tilde{H}^{*-1}(S^6) \neq 0$ (физика) |
+| $H^*_{loc}(X,T)$ | [Локальные когомологии](/docs/core/foundations/spacetime#локально-глобальная-дихотомия) | $H^*_{loc}(X,T) \cong \tilde{H}^{*-1}(S^6) \neq 0$ (физика) |
 | $D^b(X)$ | [Производная категория](/docs/proofs/categorical/categorical-formalism#производные-категории) | Ограниченная производная категория пучков на X |
 | $IC(S_\alpha)$ | IC-пучок | Intersection cohomology пучок страты $S_\alpha$ |
 

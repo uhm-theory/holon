@@ -4,7 +4,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  * UHM Theory Documentation Sidebars
  *
  * Six main sections:
- * - theory: Core UHM theory (foundations, structure, dynamics, operators, categories, cosmology, ethics)
+ * - theory: Core UHM theory (foundations, structure, dynamics, operators, categories)
  * - consciousness: Consciousness section (foundations, hierarchy, phenomenology, states, subjects, comparative, ethics-meaning)
  * - proofs: Formal proofs organized by domain (minimality, dynamics, categorical, consciousness, physics)
  * - physics: Physical correspondences (QM, gauge symmetry, particle physics, gravity, cosmology, dual aspect)
@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
         'core/foundations/axiom-omega',
         'core/foundations/axiom-septicity',
         'core/foundations/consequences',
+        'core/foundations/spacetime',
       ],
     },
     {
@@ -76,14 +77,6 @@ const sidebars: SidebarsConfig = {
         'core/categories/functor-f',
         'core/categories/category-exp',
         'core/categories/category-hol',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Космология',
-      items: [
-        'core/cosmology/origin',
-        'core/cosmology/spacetime',
       ],
     },
   ],
@@ -260,6 +253,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Космология (физика)',
       items: [
+        'physics/cosmology-phys/origin',
         'physics/cosmology-phys/dark-matter',
         'physics/cosmology-phys/berry-phase',
       ],

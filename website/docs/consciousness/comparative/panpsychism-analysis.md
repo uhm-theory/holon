@@ -277,7 +277,7 @@ $$
 |--------|---------|-----|
 | Фундаментальная сущность | CA (абстрактный) | [Голоном](/docs/core/structure/holon) $\mathbb{H}$ (конкретный) |
 | Мир $W$ | Строится из CA | [Окружение](/docs/core/dynamics/evolution) $E$ — часть $\mathbb{H}$ |
-| Пространство-время | Интерфейс | [Эмерджентно](/docs/core/cosmology/spacetime) из $\Gamma$ |
+| Пространство-время | Интерфейс | [Эмерджентно](/docs/core/foundations/spacetime) из $\Gamma$ |
 | Композиция | Не полностью формализована | $\mathbb{H}_1 \otimes \mathbb{H}_2$ с [теоремой 9.1](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) |
 | Динамика | Цикл P-D-A | [Уравнение эволюции](/docs/core/dynamics/evolution) |
 

@@ -832,7 +832,7 @@ $$
 - [Теорема S](../../proofs/minimality/theorem-minimality-7) — доказательство минимальности 7D
 - [Голоном](../structure/holon) — иерархическое определение
 - [Измерение O (Основание)](../structure/dimension-o) — роль внутренних часов
-- [Пространство-время](../cosmology/spacetime) — эмерджентная геометрия
+- [Пространство-время](./spacetime) — эмерджентная геометрия
 - [Категорный формализм](../../proofs/categorical/categorical-formalism) — ∞-группоид и ∞-топос
 - [Иерархия интериорности](../../proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Соответствие с физикой](../../proofs/physics/physics-correspondence) — связь с КМ, ОТО и Стандартной моделью

@@ -694,7 +694,7 @@ $$
 | **Квантовая механика** | Частный случай при $R \to 0$ (Ω тривиализируется) | [Т] Доказано | §3 |
 | **Уравнение Шрёдингера** | $\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff},\Gamma]$ | [Т] Доказано | Теорема 3.1 |
 | **Уравнение Линдблада** | $\mathcal{L}_\Omega[\Gamma]$ — логический Лиувиллиан из Ω | [Т] Формализовано | [evolution.md](/docs/core/dynamics/evolution) |
-| **Термодинамика** | $dS_{vN}/dt \geq 0$ из структуры ℒ_Ω | [Т] Доказано | [spacetime.md](/docs/core/cosmology/spacetime#стрела-времени) |
+| **Термодинамика** | $dS_{vN}/dt \geq 0$ из структуры ℒ_Ω | [Т] Доказано | [spacetime.md](/docs/core/foundations/spacetime#стрела-времени) |
 | **Декогеренция** | Логическая неопределённость относительно Ω | [Т] Формализовано | §2.3 |
 | **Запрет сигнализации** | $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [Т] Доказано | §8, Теорема 8.1 |
 | **Ансамблевая независимость** | Эволюция определена на $\Gamma$, не на $\vert\psi\rangle$ | [Т] Доказано | §8.5 |
@@ -802,7 +802,7 @@ $\dim(\mathcal{H}_{total}) = 42 = 7 \times 6$ в УГМ. В M-теории: $42 
 - [Измерение O](/docs/core/structure/dimension-o) — алгебра часов $H_O$, $V_O$, $\mathcal{A}_O$
 - [Измерение L](/docs/core/structure/dimension-l) — логическое измерение, L = Ω ∩ Γ
 - [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление χ_S, L_k, ℒ_Ω
-- [Пространство-время](/docs/core/cosmology/spacetime) — эмерджентность
+- [Пространство-время](/docs/core/foundations/spacetime) — эмерджентность
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор F, $\mathbf{Exp}^{disc}_\infty$
 - [Теорема минимальности](/docs/proofs/minimality/theorem-minimality-7) — доказательство 7D
 - [Кибернетика Когерентности](/docs/applied/coherence-cybernetics/axiomatics) — L-унификация в КК

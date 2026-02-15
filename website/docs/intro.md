@@ -233,7 +233,7 @@ $$
 | **[Следствия](./core/foundations/consequences)** | Когомологический монизм, локально-глобальная дихотомия |
 | **[Структура](./core/structure/holon)** | Голоном и 7 измерений |
 | **[Динамика](./core/dynamics/evolution)** | Уравнения эволюции с терминальным объектом T |
-| **[Пространство-время](./core/cosmology/spacetime)** | Базовое пространство X, метрика d_strat |
+| **[Пространство-время](./core/foundations/spacetime)** | Базовое пространство X, метрика d_strat |
 | **[Сознание](/docs/consciousness/foundations/self-observation)** | Иерархия L0→L1→L2→L3→L4 |
 | **[Эмерджентное время](./proofs/dynamics/emergent-time)** | Page-Wootters, стратификационное время |
 | **[Категорный формализм](./proofs/categorical/categorical-formalism)** | ∞-топос, производные категории, IC-когомологии |

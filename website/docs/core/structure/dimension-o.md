@@ -246,7 +246,7 @@ $$
 
 ## Связь с Источником
 
-Измерение $O$ связывает каждый Голоном с изначальным состоянием реальности — [Источником (☉)](../cosmology/origin#источник):
+Измерение $O$ связывает каждый Голоном с изначальным состоянием реальности — [Источником (☉)](/docs/physics/cosmology-phys/origin#источник):
 
 $$
 \Gamma_{\odot} = |\psi_{\odot}\rangle\langle\psi_{\odot}|, \quad |\psi_{\odot}\rangle = \frac{1}{\sqrt{7}} \sum_{i \in \{A,S,D,L,E,O,U\}} |i\rangle
@@ -330,7 +330,7 @@ graph LR
 - [Единство (U)](./dimension-u) — следующее измерение
 - [Теорема об эмерджентном времени](../../proofs/dynamics/emergent-time) — O как внутренние часы
 - [Аксиома Ω⁷](../foundations/axiom-omega) — пять аксиом с Page-Wootters
-- [Происхождение](../cosmology/origin) — Источник и космогенез
+- [Происхождение](/docs/physics/cosmology-phys/origin) — Источник и космогенез
 - [Жизнеспособность](../dynamics/viability) — условия существования
-- [Пространство-время](../cosmology/spacetime) — эмерджентная геометрия
+- [Пространство-время](../foundations/spacetime) — эмерджентная геометрия
 - [Математический аппарат](../../reference/specification) — формальные определения
