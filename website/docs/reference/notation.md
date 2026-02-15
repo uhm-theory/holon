@@ -165,8 +165,8 @@ $$
 | [Дифференциация $D_{\text{diff}}$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \exp(S_{vN}(\rho_E))$ | $[1, 7]$ |
 | [Рефлексия $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | $R(\Gamma) = 1 - \dfrac{\|\Gamma - \varphi(\Gamma)\|_F^2}{\|\Gamma\|_F^2}$ | $[0, 1]$ |
 | [Сознательность $C$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $C(\Gamma) = \Phi \times D_{\text{diff}} \times R$ | $[0, +\infty)$ |
-| Свобода воли $\mathrm{Freedom}(\Gamma)$ | $\mathrm{Freedom}(\Gamma) = \pi_0(\mathrm{Map}(\Gamma, T))$ | $\mathbb{N}$ |
-| Энтропия свободы $S_{\text{freedom}}$ | Энтропия пространства свободы воли | $[0, +\infty)$ |
+| Свобода воли $\mathrm{Freedom}(\Gamma)$ **[Т]** | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, где $\mathcal{H}_\Gamma = \partial^2 \mathcal{F}/\partial\Gamma^2$ — [конечномерное определение](/docs/core/foundations/consequences#freedom-конечномерное). ∞-категорная мотивация: $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$ | $\{1, \ldots, 7\}$ |
+| Энтропия свободы $S_{\text{freedom}}$ | $S_{\text{freedom}} = \log(\text{Freedom}(\Gamma))$ | $[0, \log 7]$ |
 
 ## Оператор самомоделирования
 
@@ -283,7 +283,7 @@ $$
 | $\mathrm{Tr}(\cdot)$ | След матрицы |
 | $A^\dagger$ | Эрмитово сопряжение |
 | $\mathrm{Coh}_E$ | E-когерентность (HS-проекция $\pi_E$) **[Т]**, $\in [1/7, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection), [справка КК](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
-| ПИР | Принцип Информационной Различимости **[Т]** (T16) — [теорема](/docs/core/foundations/axiom-septicity#формулировка-пир), выводится из A1+A2 через семантику Крипке—Жуаля |
+| ПИР | Принцип Информационной Различимости **[О]** (T16) — [определение](/docs/core/foundations/axiom-septicity#формулировка-пир), встроенное в A1+A2: различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости |
 | $\varphi_{\text{coh}}$ | Когерентно-сохраняющее самомоделирование — обобщённый оператор φ, сохраняющий когерентности ([Фано-канал](/docs/proofs/gap/fano-channel)) |
 | $\kappa(\Gamma)$ | Коэффициент регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
 | $D_{\text{diff}}$ | Дифференцировочная размерность — число измерений, в которых $\Gamma$ отклоняется от $I/N$ |

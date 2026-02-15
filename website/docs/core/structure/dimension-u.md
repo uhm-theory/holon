@@ -72,7 +72,7 @@ $$
 R \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi \geq \Phi_{\text{th}} = 1
 $$
 
-где $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). Пороги определены через ПИР [Т] (T16): $P_{\text{crit}}$ — [Т], $R_{\text{th}}$ — [Т], $\Phi_{\text{th}}$ — [О]. См. [Пороги L2](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
+где $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). Пороги определены через ПИР [О] (T16): $P_{\text{crit}}$ — [Т], $R_{\text{th}}$ — [Т], $\Phi_{\text{th}}$ — [О]. См. [Пороги L2](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
 
 ### Определение: Порог интеграции Φ_th = 1 [О] {#теорема-порог-интеграции}
 

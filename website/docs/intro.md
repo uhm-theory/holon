@@ -194,6 +194,18 @@ $$
 | **Критическая чистота** | $P_{\text{crit}} = 2/N = 2/7$ | [Т] | [Теорема](./proofs/dynamics/theorem-purity-critical) |
 | **Необходимость интериорности** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [Т] | [Теорема 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
 | **$G_2$-ригидность** | Голономное представление единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 физических параметра | [Т] | [Теорема](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
+| **Единственность электрослабого сектора** | $SU(2)_L \times U(1)_Y$ — единственная конструкция rank 4 из $\kappa_0$ и аксиом A1–A5 | [Т] | [Теорема](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
+| **Ровно 3 поколения** | $N_{\text{gen}} = 3$: $\leq 3$ из swallowtail $A_4$ + $\geq 3$ из $(1,2,4) \subset \mathbb{Z}_7^*$ | [Т] | [Теорема](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
+| **Фано-отбор Юкавы** | $y_k = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$ через октонионные $f_{ijk}$ | [Т] | [Теорема](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
+| **Нестабильность Источника** | $\Gamma_\odot = I/7$ нестационарен: $F_0 \neq 0$, дрейф к $\rho^*$, самоусиление | [Т] | [Доказательство](./physics/cosmology-phys/origin#доказательство-нестабильности) |
+| **Свобода воли** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; монотонность под CPTP, $G_2$-инвариантность | [Т] | [Теорема](./core/foundations/consequences#freedom-конечномерное) |
+| **$A_4$-бифуркация** | Swallowtail из 3 параметров $(\kappa, \alpha, \Delta F)$ + $\mathbb{Z}_2$-симметрия пурити | [Т] | [Теорема](./consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация) |
+| **Gap-инъекция L-уровней** | $L(\Gamma_1) \neq L(\Gamma_2) \Rightarrow [\mathrm{Gap}(\Gamma_1)] \neq [\mathrm{Gap}(\Gamma_2)]$ | [Т] | [Теорема](./consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция) |
+| **Назначение поколений** | $k=1 \to$ 3-е [Т], $k=4 \to$ 2-е, $k=2 \to$ 1-е [Т] | [Т] | [Теорема](./physics/particle-physics/fermion-generations#thm-gen-4-1) |
+| **Суперпотенциал** | $W = \mu_W \sum f_{ijk}\Theta\Theta\Theta$ — единственный $G_2$-инвариантный (лемма Шура) | [Т] | [Теорема](./physics/particle-physics/susy#теорема-суперпотенциал) |
+| **Масса правых нейтрино** | $M_R \sim 2.9 \times 10^{14}$ ГэВ из PW-часов + жизнеспособности | [Т] | [Теорема](./physics/particle-physics/neutrino-masses#теорема-mr-из-gap) |
+| **3+1 из секторной декомпозиции** | $7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$; $\dim(\text{простр.}) = 3$ | [Т] | [Теорема](./core/foundations/spacetime#теорема-секторная-декомпозиция) |
+| **Секторная иерархия $\varepsilon$** | Однородный вакуум невозможен; $\bar{\varepsilon} \approx 0.023$ из секторной структуры | [С] | [Теорема](./core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) |
 
 :::note Легенда статусов
 - **[Т] СТРОГО** — математически доказано без дополнительных допущений
@@ -239,5 +251,10 @@ $$
 | **[Эмерджентное время](./proofs/dynamics/emergent-time)** | Page-Wootters, стратификационное время |
 | **[Категорный формализм](./proofs/categorical/categorical-formalism)** | ∞-топос, производные категории, IC-когомологии |
 | **[Теорема единственности](./proofs/categorical/uniqueness-theorem)** | G₂-ригидность: 34 физических параметра |
+| **[Стандартная модель](./physics/gauge-symmetry/standard-model)** | SM из G₂: электрослабый сектор [Т], 3 поколения [Т] |
+| **[Физика](/docs/physics/overview)** | Калибровочная симметрия, частицы, гравитация, космология |
+| **[Нейтринные массы](./physics/particle-physics/neutrino-masses)** | Seesaw из Gap, $M_R$ [Т], нормальная иерархия [Т] |
+| **[SUSY из $G_2$](./physics/particle-physics/susy)** | Суперпотенциал [Т] (Шур), суперпартнёрный спектр, гравитино |
+| **[Термодинамика Gap](./core/dynamics/gap-thermodynamics)** | Потенциал $V_{\text{Gap}}$, эффективная температура, секторная иерархия $\varepsilon$ |
 | **[Глоссарий](./reference/glossary)** | Определения терминов |
 | **[Нотация](./reference/notation)** | Математические обозначения |

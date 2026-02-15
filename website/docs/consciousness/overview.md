@@ -42,8 +42,8 @@ $$
 | Документ | Содержание | Ключевые результаты |
 |----------|------------|---------------------|
 | [Иерархия интериорности](./hierarchy/interiority-hierarchy) | Пять уровней | L0: $\Gamma \neq 0$ → L4: $\lim_n R^{(n)} > 0$ **[Т/С/О]** |
-| [Gap-характеристика уровней](./hierarchy/gap-characterization) | Gap-профили по уровням | Gap-сигнатуры L0–L4 **[С]** |
-| [Переходы ласточкин хвост](./hierarchy/swallowtail-transitions) | Катастрофы перехода между L | Бифуркации $A_4$ при L-переходах **[С]** |
+| [Gap-характеристика уровней](./hierarchy/gap-characterization) | Gap-профили по уровням | Gap-сигнатуры L0–L4 **[С]**, Gap-инъекция **[Т]** |
+| [Переходы ласточкин хвост](./hierarchy/swallowtail-transitions) | Катастрофы перехода между L | $A_4$-бифуркация (Арнольд) **[Т]** |
 
 ### [Структура опыта](./phenomenology/qualia-structure)
 
@@ -86,7 +86,7 @@ $$
 |----------|------------|---------------------|
 | [Этика УГМ](./ethics-meaning/value-consciousness) | Аксиология, эстетика, моральная теория | Благо $:= dP/d\tau > 0$ **[О]**, Золотое правило из $\Gamma_{\text{composite}}$ **[С]** |
 | [Смысл существования](./ethics-meaning/meaning) | Телеология и смысл в Γ-пространстве | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ **[И]** |
-| [Свобода воли](./ethics-meaning/freedom) | Свобода через ∞-категории | $\mathrm{Freedom}(\Gamma) = \lvert\text{Mor}_1(\Gamma, T)\rvert$ **[О]** |
+| [Свобода воли](./ethics-meaning/freedom) | Свобода через гессиан свободной энергии | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[Т]** |
 | [Смерть и непрерывность](./ethics-meaning/death-continuity) | Что происходит при $P \to 0$ | Теорема о необратимости при $P < P_{\text{crit}}$ **[Т]** |
 
 ## Цепочки вывода от аксиом
