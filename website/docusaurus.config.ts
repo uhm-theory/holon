@@ -305,7 +305,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© 2024-${new Date().getFullYear()} UHM Theory. Теория: CC BY-SA 4.0 | Код: MIT`,
+      copyright: `© 2024-${new Date().getFullYear()} UHM Theory. Теория: CC BY-NC-SA 4.0 | Код: MIT`,
     },
     prism: {
       theme: prismThemes.github,
