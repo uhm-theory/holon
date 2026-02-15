@@ -13,7 +13,7 @@ slug: /consciousness/comparative/consciousness-theories
 - $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
 - $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
 - $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
-- $\rho_E$ — редуцированная матрица плотности [измерения Опыта](/docs/core/structure/dimension-e)
+- $\rho_E$ — редуцированная матрица плотности [измерения Интериорности](/docs/core/structure/dimension-e)
 - $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism)
 :::
 
@@ -106,7 +106,7 @@ $\Phi^{\mathrm{IIT}}$ и $\Phi(\Gamma)$ — **разные математиче�
 
 В классическом пределе (диагональные матрицы плотности $\Gamma = \mathrm{diag}(p)$):
 $$
-\mathcal{F}_{УГМ} = S_{vN} + D_{KL} \xrightarrow{\text{classical}} H(q) + D_{KL}(q \| p) = F_{FEP}
+\mathcal{F}_{\text{УГМ}} = S_{vN} + D_{KL} \xrightarrow{\text{classical}} H(q) + D_{KL}(q \| p) = F_{FEP}
 $$
 
 Это строго доказанное соответствие, а не концептуальная аналогия.

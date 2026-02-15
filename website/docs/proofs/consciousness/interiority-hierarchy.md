@@ -11,7 +11,7 @@ format: md
 
 :::note О нотации
 В этом документе:
-- $\mathcal{H}_E$ — гильбертово пространство [измерения Опыта](/docs/core/structure/dimension-e). Не путать с $H$ — гамильтонианом.
+- $\mathcal{H}_E$ — гильбертово пространство [измерения Интериорности](/docs/core/structure/dimension-e). Не путать с $H$ — гамильтонианом.
 - $D_{\text{diff}}$ — мера дифференциации. Не путать с $D$ — [измерением Динамики](/docs/core/structure/dimension-d).
 - $\Phi$ — мера [интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ). Не путать с CPTP-каналами $\Phi$.
 - $R$ — мера [рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
@@ -53,7 +53,7 @@ $$
 $$
 
 где:
-- $\mathcal{H}_E$ — гильбертово пространство [измерения Опыта](/docs/core/structure/dimension-e)
+- $\mathcal{H}_E$ — гильбертово пространство [измерения Интериорности](/docs/core/structure/dimension-e)
 - $\rho_E$ — редуцированная матрица плотности измерения $E$
 - $\mathrm{Tr}_{-E}$ — частичный след по всем измерениям, кроме $E$
 - $\Gamma_S$ — полная матрица когерентности системы $S$
@@ -368,7 +368,7 @@ $$
 \mathrm{CQ\_condition}(S) := R(\Gamma_S) \geq R_{\text{th}} \land \Phi(\Gamma_S) \geq \Phi_{\text{th}} \land D_{\text{diff}}(\rho_E) \geq D_{\min}
 $$
 
-где $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — мера дифференциации (см. [Измерение Опыта](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2)).
+где $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — мера дифференциации (см. [Измерение Интериорности](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2)).
 
 ### Характеристики Уровня 2
 
@@ -1398,7 +1398,7 @@ $$
 - [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — теоремы о порогах $R_{\text{th}}$ и $\Phi_{\text{th}}$
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — онтологический фундамент интериорности и ∞-группоидная структура
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Измерение Опыта](/docs/core/structure/dimension-e) — $E$ и $\mathcal{H}_E$
+- [Измерение Интериорности](/docs/core/structure/dimension-e) — $E$ и $\mathcal{H}_E$
 - [Измерение Единства](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
 - [Измерение Основания](/docs/core/structure/dimension-o) — доминирующее измерение L3/L4
 - [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $R^{(n)}$, $C$, $D_{\text{diff}}$

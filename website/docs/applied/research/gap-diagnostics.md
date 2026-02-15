@@ -41,7 +41,7 @@ Gap как математическая мера ($|\sin\theta|$) определ
 | $\gamma_{SS}$ | [Структура](/docs/core/structure/dimension-s) | Физическая устойчивость | Ощущение стабильности |
 | $\gamma_{DD}$ | [Динамика](/docs/core/structure/dimension-d) | Наблюдаемая активность | Ощущение энергии |
 | $\gamma_{LL}$ | [Логика](/docs/core/structure/dimension-l) | Когнитивная производительность | Ощущение ясности мысли |
-| $\gamma_{EE}$ | [Опыт](/docs/core/structure/dimension-e) | Эмоциональная реактивность | Глубина переживания |
+| $\gamma_{EE}$ | [Интериорность](/docs/core/structure/dimension-e) | Эмоциональная реактивность | Глубина переживания |
 | $\gamma_{OO}$ | [Основание](/docs/core/structure/dimension-o) | Жизненная сила | Ощущение укоренённости |
 | $\gamma_{UU}$ | [Единство](/docs/core/structure/dimension-u) | Поведенческая интегрированность | Ощущение целостности |
 

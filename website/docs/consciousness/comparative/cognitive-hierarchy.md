@@ -11,7 +11,7 @@ slug: /consciousness/comparative/cognitive-hierarchy
 В этом документе:
 - $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
 - $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $\rho_E$ — редуцированная матрица плотности [измерения Опыта](/docs/core/structure/dimension-e)
+- $\rho_E$ — редуцированная матрица плотности [измерения Интериорности](/docs/core/structure/dimension-e)
 - $\mathcal{E}$ — оператор [эволюции](/docs/core/dynamics/evolution)
 - L0, L1, L2, L3, L4 — [уровни интериорности](/docs/proofs/consciousness/interiority-hierarchy)
 - K1-K5 — когнитивные уровни (определены ниже)

@@ -42,7 +42,7 @@ $$
 | $S$ | [Структура](/docs/core/structure/dimension-s) | Удерживать |
 | $D$ | [Динамика](/docs/core/structure/dimension-d) | Изменяться |
 | $L$ | [Логика](/docs/core/structure/dimension-l) | Согласовывать |
-| $E$ | [Опыт](/docs/core/structure/dimension-e) | Переживать |
+| $E$ | [Интериорность](/docs/core/structure/dimension-e) | Переживать |
 | $O$ | [Основание](/docs/core/structure/dimension-o) | Питать |
 | $U$ | [Единство](/docs/core/structure/dimension-u) | Интегрировать |
 

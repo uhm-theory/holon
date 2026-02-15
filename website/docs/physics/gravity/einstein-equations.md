@@ -425,7 +425,7 @@ $$
 
 ## 8. Модельная система: алекситимия $\to$ инсайт
 
-Для канала S$\leftrightarrow$E (Структура $\leftrightarrow$ Опыт) с параметрами типичной системы L2 ($P \approx 0.5$): $\mu^2 \approx 16.6$, $\lambda_3 \approx 73.8$, $\lambda_4 \approx 27.7$.
+Для канала S$\leftrightarrow$E (Структура $\leftrightarrow$ Интериорность) с параметрами типичной системы L2 ($P \approx 0.5$): $\mu^2 \approx 16.6$, $\lambda_3 \approx 73.8$, $\lambda_4 \approx 27.7$.
 
 Три физических минимума:
 

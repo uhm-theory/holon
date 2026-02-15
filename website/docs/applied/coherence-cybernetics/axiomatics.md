@@ -133,7 +133,7 @@ $$
 где:
 - $\kappa_{\text{bootstrap}}$ — **минимальная регенерация** из структуры сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$
 - $\kappa_0$ — базовая скорость регенерации, [категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$
-- $\mathrm{Coh}_E(\Gamma) \in [1/N, 1]$ — [когерентность измерения Опыта](./definitions#e-когерентность)
+- $\mathrm{Coh}_E(\Gamma) \in [1/N, 1]$ — [когерентность измерения Интериорности](./definitions#e-когерентность)
 
 :::info Bootstrap-механизм
 Член $\kappa_{\text{bootstrap}} > 0$ **разрешает bootstrap-парадокс**: система с низким $\mathrm{Coh}_E$ всё равно имеет минимальную регенерацию, позволяющую выйти из низко-когерентного состояния.

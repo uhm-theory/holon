@@ -1132,18 +1132,10 @@ Bootstrap-регенерации $\kappa_{\text{bootstrap}}$ **достаточ�
 
 ### Связь с E-когерентностью
 
-**Определение:** См. [мастер-определение E-когерентности](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) и [полное описание](/docs/applied/coherence-cybernetics/definitions#e-когерентность).
+**Определение [Т]:** E-когерентность определяется через [HS-проекцию](/docs/core/foundations/axiom-septicity#hs-projection) (каноническая формула, см. [мастер-определение](/docs/core/foundations/axiom-septicity#coh-e-canonical)):
 
 $$
-\mathrm{Coh}_E(\Gamma) := P_E = \mathrm{Tr}(\rho_E^2)
-$$
-
-где $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — редуцированная матрица плотности E-измерения.
-
-**В 7D-формализме** E-когерентность определяется через [HS-проекцию](/docs/core/foundations/axiom-septicity#hs-projection) **[Т]**:
-
-$$
-\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}
+\mathrm{Coh}_E(\Gamma) := \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}
 $$
 
 **Диапазон значений:**

@@ -8,7 +8,7 @@ slug: /consciousness/phenomenology/temporal-consciousness
 # Субъективное Время
 
 :::note О нотации
-- $\gamma_{OE}$ — когерентность между [Основанием (O)](/docs/core/structure/dimension-o) и [Опытом (E)](/docs/core/structure/dimension-e)
+- $\gamma_{OE}$ — когерентность между [Основанием (O)](/docs/core/structure/dimension-o) и [Интериорностью (E)](/docs/core/structure/dimension-e)
 - $\gamma_{OO}$, $\gamma_{EE}$ — населённости измерений O и E
 - $\tau$ — [эмерджентное время](/docs/core/operators/emergent-time), выведенное из структуры категории $\mathcal{C}$
 - $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability#определение-чистоты)
@@ -30,7 +30,7 @@ $$
 $$
 
 где:
-- $|\gamma_{OE}|$ — модуль когерентности между Основанием и Опытом
+- $|\gamma_{OE}|$ — модуль когерентности между Основанием и Интериорностью
 - $\gamma_{OO}$ — населённость измерения Основания
 
 Диапазон: $\mathcal{T} \in [0, 1]$ (из неравенства Коши-Шварца: $|\gamma_{OE}|^2 \leq \gamma_{OO} \gamma_{EE}$, при $\gamma_{EE} \leq 1$).
@@ -72,7 +72,7 @@ $$
 \Gamma(\tau_n) = \frac{\mathrm{Tr}_O\!\left[(|\tau_n\rangle\langle\tau_n|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{\text{total}}\right]}{p(\tau_n)}
 $$
 
-Когерентность $\gamma_{OE}$ определяет, насколько **E-компонента корреляции** с часами O нетривиальна. Если $\gamma_{OE} = 0$, то измерение Опыта «отключено» от часов — субъективное время не регистрируется.
+Когерентность $\gamma_{OE}$ определяет, насколько **E-компонента корреляции** с часами O нетривиальна. Если $\gamma_{OE} = 0$, то измерение Интериорности «отключено» от часов — субъективное время не регистрируется.
 
 ## Состояния потока (Flow) {#flow}
 

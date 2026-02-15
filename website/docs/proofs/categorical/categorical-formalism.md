@@ -2590,7 +2590,7 @@ $$
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — 5 аксиом категорного формализма
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$ и 7 измерений
-- [Измерение Опыта](/docs/core/structure/dimension-e) — $E$ и $\mathcal{H}_E$
+- [Измерение Интериорности](/docs/core/structure/dimension-e) — $E$ и $\mathcal{H}_E$
 - [Измерение Основания](/docs/core/structure/dimension-o) — O как внутренние часы
 - [Пространство-время](/docs/core/foundations/spacetime) — эмерджентная геометрия
 - [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы

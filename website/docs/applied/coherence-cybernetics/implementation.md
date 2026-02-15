@@ -474,7 +474,7 @@ def compute_stress_tensor(gamma: np.ndarray, environment) -> np.ndarray:
     # σ_L: Логика
     sigma[3] = compute_viability_uncertainty(gamma) / THETA_L
 
-    # σ_E: Опыт
+    # σ_E: Интериорность
     sigma[4] = (compute_self_model_error(gamma) +
                 compute_exp_fragmentation(gamma)) / THETA_E
 
@@ -822,7 +822,7 @@ THETA_A = 3.5   # Артикуляция — повышенный порог (д
 THETA_S = 2.0   # Структура — умеренный порог
 THETA_D = 1.0   # Динамика — базовый порог (через C_MAX)
 THETA_L = 1.0   # Логика — базовый порог
-THETA_E = 2.5   # Опыт — повышенный порог (допускает интенсивность опыта)
+THETA_E = 2.5   # Интериорность — повышенный порог (допускает интенсивность опыта)
 THETA_O = 1.0   # Основание — базовый порог
 THETA_U = 1.5   # Единство — умеренный порог
 

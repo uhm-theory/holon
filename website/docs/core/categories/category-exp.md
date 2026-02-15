@@ -26,7 +26,7 @@ $$
 
 где:
 - $\Delta^{N-1}$ — $(N-1)$-симплекс (спектры)
-- $\mathbb{P}(\mathcal{H}_E)$ — проективное пространство [измерения Опыта](/docs/core/structure/dimension-e)
+- $\mathbb{P}(\mathcal{H}_E)$ — проективное пространство [измерения Интериорности](/docs/core/structure/dimension-e)
 - $\mathcal{C}$ — пространство контекстов
 - $\Pi_1(\mathcal{E}_0)$ — фундаментальный группоид (история)
 

@@ -14,7 +14,7 @@ slug: /consciousness/comparative/panpsychism-analysis
 - $C$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
 - $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
 - $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\rho_E$ — редуцированная матрица плотности [измерения Опыта](/docs/core/structure/dimension-e)
+- $\rho_E$ — редуцированная матрица плотности [измерения Интериорности](/docs/core/structure/dimension-e)
 - L0, L1, L2, L3, L4 — [уровни интериорности](/docs/proofs/consciousness/interiority-hierarchy)
 - $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism)
 :::

@@ -74,7 +74,7 @@ $$
 | $\sigma_S$ | [Структура](/docs/core/structure/dimension-s) | Когнитивный | Сложность задачи |
 | $\sigma_D$ | [Динамика](/docs/core/structure/dimension-d) | Вычислительный | Дедлайны |
 | $\sigma_L$ | [Логика](/docs/core/structure/dimension-l) | Логический | Противоречия |
-| $\sigma_E$ | [Опыт](/docs/core/structure/dimension-e) | Экзистенциальный | Потеря смысла |
+| $\sigma_E$ | [Интериорность](/docs/core/structure/dimension-e) | Экзистенциальный | Потеря смысла |
 | $\sigma_O$ | [Основание](/docs/core/structure/dimension-o) | Ресурсный | Голод, истощение |
 | $\sigma_U$ | [Единство](/docs/core/structure/dimension-u) | Социальный | Изоляция |
 
