@@ -9,11 +9,11 @@ description: Математические обозначения теории У
 :::warning Потенциальные конфликты нотации
 В теории УГМ некоторые символы имеют несколько значений в зависимости от контекста:
 - $D$ — [измерение Динамики](/docs/core/structure/dimension-d) **vs** $D_{\text{diff}}$ — [мера дифференциации](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
-- $\mathcal{H}$ — гильбертово пространство **vs** $H$ — гамильтониан
+- $\mathcal{H}$ — гильбертово пространство **vs** $H$ — гамильтониан **vs** $\mathcal{H}_\Gamma$ — гессиан свободной энергии (в [Freedom](/docs/core/foundations/consequences#freedom-конечномерное))
 - $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ). Для обозначения произвольных CPTP-каналов используется $\Psi$
 - $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) **vs** $\mathcal{R}$ — регенеративный член
 - $\mathcal{C}$ — примитивная категория (Аксиома Ω⁷) **vs** $C$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c). Пространство контекстов в категории Exp обозначается $\Gamma_{-E}$
-- $\gamma_{ij}$ — элементы матрицы когерентности **vs** $\gamma_k$ — скорости декогеренции в диссипаторе Линдблада (в разных документах)
+- $\gamma_{ij}$ — элементы матрицы когерентности **vs** $\gamma_k$ — скорости декогеренции в диссипаторе Линдблада (в разных документах). **Рекомендация:** для скоростей декогеренции использовать $\Gamma_2$ (как в [Теореме 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
 Контекст обычно делает значение однозначным.
 :::
@@ -71,7 +71,7 @@ description: Математические обозначения теории У
 | $D$ | Динамика | Унитарная эволюция $U(\tau)$ | [→](/docs/core/structure/dimension-d) |
 | $L$ | Логика | Алгебра операторов | [→](/docs/core/structure/dimension-l) |
 | $E$ | Интериорность | Матрица плотности $\rho_E$ | [→](/docs/core/structure/dimension-e) |
-| $O$ | Основание | Вакуумное состояние $\vert 0\rangle$ | [→](/docs/core/structure/dimension-o) |
+| $O$ | Основание | Вакуумное состояние $\vert 0\rangle$, внутренние часы ([Page-Wootters](/docs/proofs/dynamics/emergent-time)) | [→](/docs/core/structure/dimension-o) |
 | $U$ | Единство | Операция следа $\mathrm{Tr}$ | [→](/docs/core/structure/dimension-u) |
 
 ## Базис пространства состояний
@@ -237,8 +237,12 @@ $$
 
 **Fidelity (верность):**
 $$
-F(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2
+\mathrm{Fid}(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2
 $$
+
+:::note Обозначение Fid vs F
+$\mathrm{Fid}$ используется для верности (fidelity) в контекстах, где $F$ может быть спутан с [функтором опыта](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах) $F: \mathbf{DensityMat} \to \mathbf{Exp}$. В формулах, где контекст однозначен, допускается обозначение $F$.
+:::
 
 :::note Две формы метрики Бюреса
 УГМ использует **обе формы** в зависимости от контекста:
@@ -275,7 +279,7 @@ $$
 | $\lVert\cdot\rVert_F$ | Норма Фробениуса: $\lVert A\rVert_F = \sqrt{\mathrm{Tr}(A^\dagger A)} = \sqrt{\sum_{ij} \lvert a_{ij}\rvert^2}$ |
 | $\lVert\cdot\rVert_\infty$ | Супремум-норма: $\lVert x\rVert_\infty = \max_i \lvert x_i\rvert$ |
 | $d_B(\cdot, \cdot)$ | Метрика Бюреса |
-| $F(\cdot, \cdot)$ | Fidelity (верность) |
+| $\mathrm{Fid}(\cdot, \cdot)$ / $F(\cdot, \cdot)$ | Fidelity (верность); $\mathrm{Fid}$ предпочтительно для отличия от функтора $F$ |
 | $B_B(\Gamma, r)$ | Bures-шар радиуса $r$ с центром $\Gamma$ |
 | $J_{Bures}$ | Функция Bures-покрытий (топология Гротендика) |
 | $\Theta(\cdot)$ | Функция Хевисайда |

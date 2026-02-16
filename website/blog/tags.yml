@@ -32,3 +32,23 @@ applications:
   label: Приложения
   permalink: /applications
   description: Практические приложения теории
+
+qualia:
+  label: Квалиа
+  permalink: /qualia
+  description: Феноменальные качества переживания
+
+phenomenology:
+  label: Феноменология
+  permalink: /phenomenology
+  description: Структура субъективного опыта
+
+Fano:
+  label: Плоскость Фано
+  permalink: /fano
+  description: Плоскость Фано PG(2,2) и октонионная структура
+
+Hamming:
+  label: Код Хэмминга
+  permalink: /hamming
+  description: Совершенный код H(7,4) и помехоустойчивость

@@ -159,7 +159,7 @@ $$
 \mathrm{Viable}(\Gamma) \Leftrightarrow P(\Gamma) > P_{\text{crit}} = \frac{2}{7} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
 
-**См.:** [Теорема 10.1](./theorems#теорема-101-эквивалентность-условий-т), [Жизнеспособность](/docs/core/dynamics/viability)
+**См.:** [Теорема 10.1](./theorems#теорема-101-эквивалентность-условий-с), [Жизнеспособность](/docs/core/dynamics/viability)
 
 ## Целевое состояние
 
