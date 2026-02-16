@@ -135,7 +135,7 @@ $$
 - $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m\,\Gamma\,P_m = \mathrm{diag}(\Gamma)$ — атомарный канал (из [формализации φ](/docs/proofs/categorical/formalization-phi))
 - $\mathcal{P}_{\text{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p\,\Gamma\,\Pi_p$ — Фано-канал
 - $\alpha \in [0, 1]$ — **параметр глубины декогеренции** (баланс атомарного и Фано-наблюдения)
-- $k = 1 - R$ — параметр сжатия, определяемый [мерой рефлексии](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R = \mathrm{Tr}(\Gamma\varphi(\Gamma))$ **[Т]** (Sol.77). Не является свободным параметром
+- $k = 1 - R$ — параметр сжатия, определяемый [мерой рефлексии](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$ **[Т]** (Sol.77). Не является свободным параметром
 - $\Gamma_{\text{anchor}}$ — якорное состояние
 
 $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ — выпуклая комбинация CPTP-каналов, следовательно CPTP.
