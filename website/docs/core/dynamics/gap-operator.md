@@ -112,6 +112,16 @@ $$
 $\mathcal{G}_{\text{total}}$ определяется как **полная** норма Фробениуса (с двойным учётом пар $(i,j)$ и $(j,i)$): $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = \sum_{i,j} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$. Множитель 2 обусловлен антисимметрией $\hat{\mathcal{G}}_{ji} = -\hat{\mathcal{G}}_{ij}$. Это обеспечивает согласованность с разложением чистоты $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ (теорема 4.1) и спектральной формулой $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ (теорема 3.1).
 :::
 
+#### Тождество с оператором Дирака (Sol.53) [Т] {#тождество-tr-d2}
+
+:::tip Следствие (Спектральное тождество)
+$$
+\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
+$$
+
+где $D_{\mathrm{int}}$ — [внутренний оператор Дирака](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [Т]) с элементами $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. Это тождество связывает суммарный Gap с коэффициентом $a_2$ [спектрального действия](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) и обосновывает вывод потенциала [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) из аксиом.
+:::
+
 **Доказательство.** (a) $\hat{\mathcal{G}}^T = \mathrm{Im}(\Gamma)^T$. Поскольку $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ (следствие эрмитовости), получаем $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$. (b) Стандартное свойство антисимметричных матриц нечётной размерности. (c) $\mathfrak{so}(7)$ — пространство антисимметричных $7 \times 7$ матриц. (d) $\|\hat{\mathcal{G}}\|_F^2 = \sum_{ij} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$ (множитель 2 от двойного учёта пар $(i,j)$ и $(j,i)$). $\square$
 
 ---
