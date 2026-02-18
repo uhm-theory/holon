@@ -47,12 +47,16 @@ $$
 
 1. **CPTP-канал:** $\varphi$ — полностью положительное, сохраняющее след отображение
 2. **Идемпотентность (идеального φ):** $\varphi \circ \varphi = \varphi$ — для идемпотентного определения (Определение 3). Каноническая форма $\varphi_{\text{coh}}$ с параметром сжатия $k = 1 - R < 1$ (Sol.77, [Т]) является **сжимающим** отображением (не идемпотентным); идемпотентная проекция — предел $\lim_{n\to\infty} \varphi_{\text{coh}}^n$
-3. **Монотонность чистоты:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ для базовой формы (декогеренция уменьшает чистоту); $P(\varphi_{\text{coh}}(\Gamma))$ зависит от параметра $\alpha$ — при $\alpha < 1$ Фано-компонента частично сохраняет когерентности. Неподвижная точка имеет $P(\Gamma^*) = P_{\text{crit}} = 2/7$
-4. **Неподвижная точка:** $\exists! \, \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$
+3. **Монотонность чистоты:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ для базовой формы (декогеренция уменьшает чистоту); $P(\varphi_{\text{coh}}(\Gamma))$ зависит от параметра $\alpha$ — при $\alpha < 1$ Фано-компонента частично сохраняет когерентности. Неподвижная точка канонической $\varphi_{\mathrm{coh}}$ имеет $P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$
+4. **Неподвижная точка:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$
 
-:::tip Теорема: Неподвижная точка φ
-$\exists! \, \Gamma^* \in \mathcal{D}(\mathbb{C}^7)$: $\varphi(\Gamma^*) = \Gamma^*$ с $P(\Gamma^*) = P_{\text{crit}} = 2/7$.
+:::tip Теорема: Неподвижная точка φ_coh
+$\exists! \, \Gamma^*_{\mathrm{coh}} \in \mathcal{D}(\mathbb{C}^7)$: $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ с $P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$.
 [Доказательство →](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) | Статус: **[Т]**
+:::
+
+:::warning Различие неподвижных точек
+$\Gamma^*_{\mathrm{coh}}$ (неподвижная точка $\varphi_{\mathrm{coh}}$, $P = 2/7$) **отличается** от $\rho^*_{\mathrm{diss}} = I/7$ (аттрактор диссипатора, $P = 1/7$). Каноническое определение [меры рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) использует $\rho^*_{\mathrm{diss}} = I/7$: $R = 1/(7P)$. Подробнее: [стратификация определений](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 :::
 
 ---
