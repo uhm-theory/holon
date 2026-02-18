@@ -72,3 +72,18 @@ ethics:
   label: Этика
   permalink: /ethics
   description: Этические следствия из формализма УГМ
+
+dynamics:
+  label: Динамика
+  permalink: /dynamics
+  description: Уравнение эволюции и динамика матрицы когерентности
+
+Lindblad:
+  label: Линдблад
+  permalink: /lindblad
+  description: Операторы Линдблада и диссипативная динамика
+
+thermodynamics:
+  label: Термодинамика
+  permalink: /thermodynamics
+  description: Термодинамические аспекты голономной динамики
