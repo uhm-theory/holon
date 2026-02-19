@@ -90,13 +90,13 @@ $$
 
 В частности, $H^7_{\text{loc}}(X, T) \cong \tilde{H}^6(S^6) \cong \mathbb{Z}$. Следовательно, локальная вакуумная энергия $\rho_{\text{vac}}(T) \neq 0$.
 
-**Шаг 3 (Определение знака из автопоэзиса).** Вблизи $T$ вакуумная энергия определяется балансом диссипации и регенерации в стационарном состоянии $\rho_*$ ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω) T-39a [Т]):
+**Шаг 3 (Определение знака из автопоэзиса).** Вблизи $T$ вакуумная энергия определяется балансом диссипации и регенерации в нетривиальном аттракторе $\rho^*_\Omega$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]):
 
 $$
-\rho_{\text{vac}}(T) = \kappa_0 \cdot \left[P(\rho_*) - P(I/7)\right] \cdot \omega_0
+\rho_{\text{vac}}(T) = \kappa_0 \cdot \left[P(\rho^*_\Omega) - P(I/7)\right] \cdot \omega_0
 $$
 
-где $\kappa_0 > 0$ [Т] ([T-44a](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0)), $P(\rho_*) > 2/7 > 1/7 = P(I/7)$ [Т] ([T-5](/docs/proofs/dynamics/theorem-purity-critical)) и $\omega_0 > 0$ — базовая частота ([A5](/docs/core/foundations/axiom-omega#pw-constraint)). Все три множителя **строго положительны**:
+где $\kappa_0 > 0$ [Т] ([T-44a](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0)), $P(\rho^*_\Omega) > 1/7 = P(I/7)$ [Т] ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)) и $\omega_0 > 0$ — базовая частота ([A5](/docs/core/foundations/axiom-omega#pw-constraint)). Все три множителя **строго положительны**:
 
 $$
 \rho_{\text{vac}}(T) > 0

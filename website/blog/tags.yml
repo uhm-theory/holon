@@ -78,6 +78,26 @@ dynamics:
   permalink: /dynamics
   description: Уравнение эволюции и динамика матрицы когерентности
 
+spacetime:
+  label: Пространство-время
+  permalink: /spacetime
+  description: Эмерджентное пространство-время из секторной декомпозиции
+
+dimensions:
+  label: Измерения
+  permalink: /dimensions
+  description: Семь измерений голонома и их физическая интерпретация
+
+spectral-triple:
+  label: Спектральная тройка
+  permalink: /spectral-triple
+  description: Конечная спектральная тройка и некоммутативная геометрия
+
+physics:
+  label: Физика
+  permalink: /physics
+  description: Физические предсказания и следствия теории УГМ
+
 Lindblad:
   label: Линдблад
   permalink: /lindblad

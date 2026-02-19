@@ -265,7 +265,7 @@ $$
 \mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
 $$
 
-где $\rho_*$ — единственное стационарное состояние, $\Delta F$ — градиент свободной энергии.
+где $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator)), $\Delta F$ — градиент свободной энергии.
 
 Без $O$:
 - Нет источника свободной энергии
@@ -506,7 +506,7 @@ $$
 
 Это реализуемо при:
 - $\kappa > \gamma_{\text{dissipation}}$ (регенерация превышает диссипацию)
-- $\rho_*$ определяется через примитивность $\mathcal{L}_\Omega$ [Т]
+- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель [Т] ([оператор φ](/docs/core/operators/phi-operator#определение))
 
 **Шаг 5: Верификация (PH) — Феноменология**
 
@@ -555,7 +555,7 @@ $$
 $$
 
 где:
-- $\rho_* = \varphi(\Gamma)$ — единственное стационарное состояние $\mathcal{L}_\Omega$ [Т] ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
 - $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т] (замещающий канал + бюресова оптимальность)
 - $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации [Т], $\kappa_0$ — [категориальный вывод](../../core/foundations/axiom-septicity#структурный-анзац-kappa0) из $\mathcal{D}_\Omega \dashv \mathcal{R}$
 - $\Theta(\Delta F)$ — термодинамический затвор [Т] (принцип Ландауэра)

@@ -67,7 +67,7 @@ $$
 
 где:
 - $\kappa(\Gamma) > 0$ — скорость регенерации [Т] ([категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- $\rho_*$ — единственное стационарное состояние $\mathcal{L}_\Omega$ [Т] ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
 - $\Theta(\Delta F)$ — термодинамический затвор [Т] (принцип Ландауэра)
 - $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — градиент свободной энергии
 
