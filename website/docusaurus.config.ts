@@ -159,9 +159,15 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'applied',
+          sidebarId: 'cybernetics',
           position: 'left',
-          label: 'Приложения',
+          label: 'Кибернетика',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'research',
+          position: 'left',
+          label: 'Исследования',
         },
         {
           type: 'docSidebar',
@@ -280,7 +286,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Приложения и Справочник',
+          title: 'Кибернетика',
           items: [
             {
               label: 'Когерентная кибернетика',
@@ -290,6 +296,11 @@ const config: Config = {
               label: 'Протокол измерения Γ',
               to: '/docs/applied/research/measurement-protocol',
             },
+          ],
+        },
+        {
+          title: 'Справочник',
+          items: [
             {
               label: 'Фальсифицируемость',
               to: '/docs/reference/falsifiability',

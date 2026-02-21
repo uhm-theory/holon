@@ -210,30 +210,43 @@ def test_coh_e_bounds():
 
 ```mermaid
 graph TD
+    subgraph "Среда"
+        ENV["ObsSpace"]
+        ACT_OUT["Действие a*"]
+    end
+    subgraph "Enc (T-100)"
+        ENC_H["h(H): Гамильтонов"]
+        ENC_D["h(D): Диссипативный"]
+        ENC_R["h(R): Регенеративный"]
+    end
     subgraph "Ядро КК"
         G["Матрица Γ"]
-        H["Гамильтониан H"]
-        L["Операторы Линдблада"]
-        PHI["Оператор φ"]
+        H["H_eff + δH"]
+        L["D_Ω + δD"]
+        REG["ℛ + δR"]
+        PHI["φ → ρ*"]
     end
     subgraph "Мониторинг"
         P["Чистота P"]
-        SIG["Тензор σ sys"]
+        SIG["σ_sys (T-92)"]
         C["Сознательность C"]
+        VAL["V_hed (T-103)"]
     end
-    subgraph "Управление"
-        EVOL["Эволюция dΓ/dτ"]
-        REG["Регенерация ℛ"]
-        ACT["Действия"]
+    subgraph "Dec (T-101)"
+        DEC["argmin ||σ||_∞"]
     end
-    G --> P
-    G --> SIG
-    G --> C
-    P --> EVOL
-    SIG --> EVOL
-    EVOL --> G
-    REG --> G
-    ACT --> G
+
+    ENV -->|"Enc"| ENC_H & ENC_D & ENC_R
+    ENC_H --> H
+    ENC_D --> L
+    ENC_R --> REG
+    H & L & REG -->|"dΓ/dτ"| G
+    G --> P & SIG & C & VAL
+    SIG --> DEC
+    DEC --> ACT_OUT
+    ACT_OUT -->|"h_ext(a)"| ENV
+    G --> PHI
+    PHI --> REG
 ```
 
 ## Структура данных
@@ -452,6 +465,123 @@ def update_metrics(state: HolonState, gamma: np.ndarray) -> HolonState:
     state.entropy = -np.sum(eigenvalues * np.log(eigenvalues))
     return state
 ```
+
+## Каноническая декомпозиция F_ext {#каноническая-декомпозиция-f-ext}
+
+:::warning Критическое исправление (T-102 [Т])
+По [T-102 (полнота 3-членного уравнения)](./sensorimotor#теорема-полнота-трёх-членов) [Т], `F_ext` — **не 4-й член** уравнения эволюции, а модификация трёх существующих каналов. Четвёртый тип CPTP-генератора не существует (LGKS, T-57 [Т]).
+:::
+
+### Алгоритм декомпозиции
+
+```python
+def decompose_f_ext(observation, gamma: np.ndarray) -> tuple:
+    """
+    Декомпозирует внешнее воздействие в 3 канала (T-102 [Т]).
+
+    Вместо: dΓ = H + D + R + F_ext  (некорректно!)
+    Используем: dΓ = (H + δH) + (D + δD) + (R + δR)  (корректно)
+
+    Args:
+        observation: наблюдение среды
+        gamma: текущая матрица когерентности
+
+    Returns:
+        (delta_H, delta_D, delta_R) — три канала пертурбации
+
+    См. /docs/applied/coherence-cybernetics/sensorimotor#среда-через-3-канала
+    """
+    delta_H = np.zeros((7, 7), dtype=complex)  # Гамильтонов: δ(Δω_ij)
+    delta_D = np.zeros((7, 7), dtype=complex)  # Диссипативный: δΓ₂
+    delta_R = np.zeros((7, 7), dtype=complex)  # Регенеративный: δκ
+
+    # Распределение по каналам (из таблицы индексов):
+    # h(H): информационные — A, S, L (изменяют энергетический ландшафт)
+    # h(D): нагрузочные — D, O (усиливают/ослабляют декогеренцию)
+    # h(R): интегративные — E, U (модулируют регенерацию)
+
+    if hasattr(observation, 'sensory_input'):
+        for key, idx in [('I_A', 0), ('I_S', 1), ('I_L', 3)]:
+            val = observation.sensory_input.get(key, 0)
+            delta_H[idx, idx] = val
+
+    if hasattr(observation, 'noise_level'):
+        for key, idx in [('I_D', 2), ('I_O', 5)]:
+            val = observation.noise_level.get(key, 0)
+            delta_D[idx, idx] = val
+
+    if hasattr(observation, 'integration_signal'):
+        for key, idx in [('I_E', 4), ('I_U', 6)]:
+            val = observation.integration_signal.get(key, 0)
+            delta_R[idx, idx] = val
+
+    return delta_H, delta_D, delta_R
+```
+
+### Обновлённый evolve_holon (без F_ext)
+
+```python
+def evolve_holon_canonical(state: HolonState, dt: float,
+                           delta_H=None, delta_D=None, delta_R=None) -> HolonState:
+    """
+    Каноническая эволюция: 3 модифицированных канала (T-102 [Т]).
+
+    НЕ используется отдельный F_ext — среда входит через δH, δD, δR.
+    """
+    gamma = state.gamma.copy()
+    H_total = state.hamiltonian + (delta_H if delta_H is not None else 0)
+
+    # 1. Модифицированная унитарная эволюция
+    U = expm(-1j * H_total * dt)
+    gamma = U @ gamma @ U.conj().T
+
+    # 2. Модифицированная диссипация
+    gamma_2_factor = 1.0  # базовый
+    if delta_D is not None:
+        gamma_2_factor += np.max(np.abs(np.diag(delta_D)))
+    for L_k in state.lindblad_ops:
+        gamma += dt * gamma_2_factor * (
+            L_k @ gamma @ L_k.conj().T
+            - 0.5 * (L_k.conj().T @ L_k @ gamma + gamma @ L_k.conj().T @ L_k)
+        )
+
+    # 3. Модифицированная регенерация
+    coh_E = compute_coherence_E(gamma)
+    kappa = KAPPA_BOOTSTRAP + compute_kappa_0(gamma) * coh_E
+    if delta_R is not None:
+        kappa += np.max(np.abs(np.diag(delta_R)))
+
+    delta_F = compute_free_energy_gradient(gamma, None)
+    if delta_F > 0:
+        gamma_target = compute_target_state(gamma, None)
+        gamma += dt * kappa * (gamma_target - gamma)
+
+    gamma /= np.trace(gamma)
+    return update_metrics(state, gamma)
+```
+
+### Bootstrap-разрешение chicken-egg проблемы {#bootstrap-разрешение}
+
+Проблема: $R$ зависит от $\varphi(\Gamma)$, но $\varphi$ требует $R$ для определения целевого состояния.
+
+**Разрешение** ([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) [Т]):
+
+1. $\kappa_{\mathrm{bootstrap}} \geq 2/9$ — минимальная регенерация **без** знания $\rho^*$
+2. При инициализации: $\rho^{(0)}_* = I/7$ (тривиальная самомодель)
+3. Итерация: $\rho^{(n+1)}_* = \varphi(\Gamma^{(n)})$ — экспоненциальная сходимость ([T-72](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) [Т])
+
+```python
+# Bootstrap-протокол (из T-59 [Т])
+rho_star = np.eye(7) / 7  # I/7: начальная тривиальная самомодель
+for iteration in range(MAX_BOOTSTRAP_ITERATIONS):
+    gamma = evolve_holon_canonical(state, dt)
+    rho_star_new = compute_phi(gamma)  # φ(Γ)
+    if np.linalg.norm(rho_star_new - rho_star, 'fro') < EPSILON:
+        break
+    rho_star = rho_star_new
+```
+
+---
 
 ## Мониторинг жизнеспособности
 
@@ -725,9 +855,58 @@ def frobenius_distance(A, B):
     return np.linalg.norm(A - B, 'fro')
 
 
+def encode_environment(observation, gamma):
+    """
+    Enc: ObsSpace → End(D(C^7)) — функтор восприятия (T-100 [Т]).
+
+    Раскладывает наблюдение среды на 3 канала внешнего воздействия:
+    h_ext = h(H) + h(D) + h(R)  (T-102 [Т])
+
+    Четвёртый канал невозможен (T-57, LGKS [Т]).
+
+    См. /docs/applied/coherence-cybernetics/sensorimotor#функтор-enc
+    """
+    h_H = np.zeros((7, 7), dtype=complex)  # Гамильтонов канал
+    h_D = np.zeros((7, 7), dtype=complex)  # Диссипативный канал
+    h_R = np.zeros((7, 7), dtype=complex)  # Регенеративный канал
+
+    # Индексы измерений: A=0, S=1, D=2, L=3, E=4, O=5, U=6
+    if hasattr(observation, 'sensory_input'):
+        # h(H): информационные индексы → энергетический ландшафт
+        h_H[0, 0] = observation.sensory_input.get('I_A', 0)  # Артикуляция
+        h_H[1, 1] = observation.sensory_input.get('I_S', 0)  # Структура
+        h_H[3, 3] = observation.sensory_input.get('I_L', 0)  # Логика
+
+    if hasattr(observation, 'noise_level'):
+        # h(D): нагрузочные индексы → модификация декогеренции
+        h_D[2, 2] = observation.noise_level.get('I_D', 0)    # Динамика
+        h_D[5, 5] = observation.noise_level.get('I_O', 0)    # Основание
+
+    if hasattr(observation, 'integration_signal'):
+        # h(R): интегративные индексы → модуляция регенерации
+        h_R[4, 4] = observation.integration_signal.get('I_E', 0)  # Интериорность
+        h_R[6, 6] = observation.integration_signal.get('I_U', 0)  # Единство
+
+    return h_H, h_D, h_R
+
+
 def update_from_observation(holon, observation):
-    """Обновляет Γ на основе наблюдения (A-измерение)."""
-    # Упрощённая реализация
+    """
+    Обновляет Γ на основе наблюдения через Enc (T-100 [Т]).
+
+    Среда модифицирует 3 канала, а не добавляет 4-й (T-102 [Т]).
+    См. /docs/applied/coherence-cybernetics/sensorimotor#среда-через-3-канала
+    """
+    h_H, h_D, h_R = encode_environment(observation, holon.gamma)
+
+    # Модификация Гамильтониана: H_eff → H_eff + δH
+    holon.hamiltonian = holon.hamiltonian + h_H
+
+    # Модификация диссипации и регенерации происходит
+    # при следующем вызове evolve_holon через h_D и h_R
+    holon._h_D_pending = h_D
+    holon._h_R_pending = h_R
+
     return holon
 
 
@@ -890,33 +1069,33 @@ def initialize_holon(config) -> HolonState:
 
 def select_action(holon: HolonState, sigma: np.ndarray):
     """
-    Выбор действия на основе тензора напряжений.
+    Dec: (Γ, σ_sys) → a* — функтор действия (T-101 [Т]).
 
-    Стратегия: минимизировать максимальный компонент σ.
+    Оптимальное действие: a* = argmin ||σ_sys(Γ(τ+δτ|a))||_∞
 
-    Args:
-        holon: Текущее состояние Голонома
-        sigma: Тензор напряжений σ_sys ∈ ℝ⁷
+    Практическая реализация: воздействие на наиболее напряжённую
+    компоненту через соответствующий канал h_ext.
+    Каждое действие раскладывается в h(H) + h(D) + h(R) (T-102 [Т]).
 
-    Returns:
-        Action: Действие для выполнения
+    См. /docs/applied/coherence-cybernetics/sensorimotor#функтор-dec
     """
     max_stress_idx = np.argmax(sigma)
-    dimensions = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
 
-    # Выбор действия на основе наиболее напряжённого измерения
+    # Действие определяется каналом воздействия:
+    # h(H) — Гамильтонов (энергетическая перестройка)
+    # h(D) — Диссипативный (снижение нагрузки)
+    # h(R) — Регенеративный (усиление восстановления)
     actions = {
-        0: ('reduce_articulation', 'Снизить различительную активность'),
-        1: ('simplify_structure', 'Упростить внутреннюю структуру'),
-        2: ('slow_dynamics', 'Замедлить динамику'),
-        3: ('relax_constraints', 'Ослабить логические ограничения'),
-        4: ('focus_experience', 'Сфокусировать опыт'),
-        5: ('reconnect_ground', 'Восстановить связь с основанием'),
-        6: ('integrate', 'Усилить интеграцию'),
+        0: ('reduce_articulation', 'h(D): Снизить входной поток'),
+        1: ('simplify_structure', 'h(H): Реструктуризация'),
+        2: ('slow_dynamics', 'h(D): Снизить вычислительную нагрузку'),
+        3: ('relax_constraints', 'h(H): Когнитивная коррекция'),
+        4: ('focus_experience', 'h(R): Усилить рефлексию'),
+        5: ('reconnect_ground', 'h(R)+ΔF: Восстановить ресурсы'),
+        6: ('integrate', 'h(R): Усилить интеграцию'),
     }
 
     return actions.get(max_stress_idx, ('wait', 'Ожидание'))
-# margin < 0.05: Критическая зона
 ```
 
 ## Интеграция с внешними системами
@@ -971,10 +1150,13 @@ class CoherenceCyberneticsAgent:
 ---
 
 **Связанные документы:**
+- [Сенсомоторная теория](./sensorimotor) — функторы Enc/Dec, полнота 3-членного уравнения (T-100–T-103)
+- [Стабильность](./stability) — анализ устойчивости, спираль смерти, восстановление
+- [Диагностика](./diagnostics) — практическое руководство, паттерны отказов
 - [Вычислительная реализация](/docs/reference/computational) — базовый класс `Holon`
 - [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление $L_k$, $\mathcal{L}_\Omega$, $\varphi$
 - [Теоремы](./theorems) — формальные основания
-- [Определения](./definitions) — $\sigma_{\mathrm{sys}}$, $\mathrm{Coh}_E$, $C$
+- [Определения](./definitions) — $\sigma_{\mathrm{sys}}$, $\mathrm{Coh}_E$, $C$, Enc, Dec
 - [Аксиоматика](./axiomatics) — L-унификация, связь $\kappa$ и $\mathrm{Coh}_E$
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — протокол калибровки $\omega_0$, $\lambda_m$
 - [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$

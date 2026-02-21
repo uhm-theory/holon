@@ -232,6 +232,17 @@ $$
 | **Параметр сжатия $k = 1 - R$** (T-62, Sol.77) | $k$ не свободен: $k = 1 - R$, $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$; адаптивное самомоделирование | [Т] | [Теорема](./consciousness/foundations/self-observation#теорема-k-из-r) |
 | **Алгоритм PW-реконструкции** (T-95, Sol.67) | 4-шаговая процедура $\Gamma \to \rho_E, D_{\text{diff}}, \sigma_L, C$ с нулевой ошибкой | [Т] | [Теорема](./core/structure/dimension-e#канонический-алгоритм-pw) |
 | **Структурное $\theta_{\mathrm{QCD}} = 0$** (T-99) | 7-шаговое доказательство: реальность $f_{ijk} \in \mathbb{R}$ (A1) + единственный вакуум (T-64) → $\theta_{\mathrm{QCD}} = 0$ точно. Аксион — чисто DM | [Т] | [Теорема](./physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd) |
+| **Кодирование среды** (T-100) | CPTP-функтор Enc: ObsSpace → End(D(C⁷)), единственный до G₂. 3-канальная декомпозиция из T-57 | [Т] | [Теорема](./applied/coherence-cybernetics/sensorimotor#теорема-кодирование-среды) |
+| **Оптимальное действие** (T-101) | $a^* = \arg\min \|\sigma_{\mathrm{sys}}\|_\infty$ — из T-92 (эквивалентность P и σ) | [Т] | [Теорема](./applied/coherence-cybernetics/sensorimotor#теорема-оптимальное-действие) |
+| **Полнота 3-членного уравнения** (T-102) | $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$, 4-й тип невозможен (из T-57 LGKS) | [Т] | [Теорема](./applied/coherence-cybernetics/sensorimotor#теорема-полнота-трёх-членов) |
+| **Гедоническая валентность** (T-103) | $\mathcal{V}_{\text{hed}} = dP/d\tau\|_{\mathcal{R}}$: формула [Т], наблюдаемость при L2 [Т] (T-77), феноменальная интерпретация [И] | [Т]+[И] | [Теорема](./applied/coherence-cybernetics/sensorimotor#теорема-гедоническая-валентность) |
+| **Радиус устойчивости** (T-104) | $r_{\text{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ (метрика Бюреса); наиболее опасный канал — $h^{(D)}$ | [Т] | [Теорема](./applied/coherence-cybernetics/stability#радиус-устойчивости) |
+| **Энергетический баланс Ландауэра** (T-105) | $\Delta F_{\min} = k_B T_{\text{eff}} \cdot \ln 2 \cdot \dot{S}_{\text{diss}}$; три метаболических режима | [Т] | [Теорема](./applied/coherence-cybernetics/stability#энергетический-баланс) |
+| **Информационная ёмкость Enc** (T-107) | $C_{\text{Enc}} \leq \log_2 7 \approx 2.81$ бит/наблюдение (граница Холево + T-102) | [Т] | [Теорема](./applied/coherence-cybernetics/sensorimotor#информационная-ёмкость) |
+| **Композициональность Enc/Dec** (T-108) | $\text{Enc}_{12} = \Phi_{\text{agg}} \circ (\text{Enc}_1 \otimes \text{Enc}_2)$ из T-100 + T-72 + T-58 | [Т] | [Теорема](./applied/coherence-cybernetics/sensorimotor#композициональность-enc-dec) |
+| **Информационная граница обучения** (T-109) | $n \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$, $\xi_{\text{QCB}} \leq \ln 7$ (квантовая граница Чернова + T-107) | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница) |
+| **Оптимальная граница обучения** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — три режима | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
+| **Минимальность N=7 для обучения** (T-113) | Обучение через регенерацию невозможно при $N < 7$; $N = 7$ Парето-оптимально | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
 
 :::note Легенда статусов
 - **[Т] СТРОГО** — математически доказано без дополнительных допущений

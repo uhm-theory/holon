@@ -8,7 +8,8 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  * - consciousness: Consciousness section (foundations, hierarchy, phenomenology, states, subjects, comparative, ethics-meaning)
  * - proofs: Formal proofs organized by domain (minimality, dynamics, categorical, consciousness, physics)
  * - physics: Physical correspondences (QM, gauge symmetry, particle physics, gravity, cosmology, dual aspect)
- * - applied: Applications (Coherence Cybernetics, Research)
+ * - cybernetics: Coherence Cybernetics (formal theory, operators, topology, predictions)
+ * - research: Applied research (measurement protocols, engineering, diagnostics)
  * - reference: Glossary, notation, falsifiability, specification, computational, status registry
  */
 const sidebars: SidebarsConfig = {
@@ -269,103 +270,104 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  applied: [
+  cybernetics: [
+    'applied/coherence-cybernetics/introduction',
     {
       type: 'category',
-      label: 'Когерентная кибернетика',
+      label: 'Формальные основания',
       collapsed: false,
       items: [
-        'applied/coherence-cybernetics/introduction',
+        'applied/coherence-cybernetics/axiomatics',
+        'applied/coherence-cybernetics/definitions',
+        'applied/coherence-cybernetics/theorems',
+        'applied/coherence-cybernetics/model-theory',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Алгебра Gap-оператора',
+      items: [
+        'applied/coherence-cybernetics/gap-algebra',
+        'applied/coherence-cybernetics/bifurcation',
+        'applied/coherence-cybernetics/non-markovian',
+        'applied/coherence-cybernetics/model-systems',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Вариационная структура',
+      items: [
+        'applied/coherence-cybernetics/lagrangian',
+        'applied/coherence-cybernetics/variational',
+        'applied/coherence-cybernetics/effective-temperature',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Топологическая защита',
+      items: [
+        'applied/coherence-cybernetics/topological-protection',
+        'applied/coherence-cybernetics/phase-diagram-cc',
+        'applied/coherence-cybernetics/goldstone-modes',
+        'applied/coherence-cybernetics/g2-noether-cc',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Контекст и сравнение',
+      items: [
+        'applied/coherence-cybernetics/cybernetics-history',
         {
-          type: 'category',
-          label: 'Формальные основания',
-          items: [
-            'applied/coherence-cybernetics/axiomatics',
-            'applied/coherence-cybernetics/definitions',
-            'applied/coherence-cybernetics/theorems',
-            'applied/coherence-cybernetics/model-theory',
-          ],
+          type: 'link',
+          label: '→ Теории сознания',
+          href: '/docs/consciousness/comparative/consciousness-theories',
         },
         {
-          type: 'category',
-          label: 'Алгебра Gap-оператора',
-          items: [
-            'applied/coherence-cybernetics/gap-algebra',
-            'applied/coherence-cybernetics/bifurcation',
-            'applied/coherence-cybernetics/non-markovian',
-            'applied/coherence-cybernetics/model-systems',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Вариационная структура',
-          items: [
-            'applied/coherence-cybernetics/lagrangian',
-            'applied/coherence-cybernetics/variational',
-            'applied/coherence-cybernetics/effective-temperature',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Топологическая защита',
-          items: [
-            'applied/coherence-cybernetics/topological-protection',
-            'applied/coherence-cybernetics/phase-diagram-cc',
-            'applied/coherence-cybernetics/goldstone-modes',
-            'applied/coherence-cybernetics/g2-noether-cc',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Контекст и сравнение',
-          items: [
-            'applied/coherence-cybernetics/cybernetics-history',
-            {
-              type: 'link',
-              label: '→ Теории сознания',
-              href: '/docs/consciousness/comparative/consciousness-theories',
-            },
-            {
-              type: 'link',
-              label: '→ Панпсихизм',
-              href: '/docs/consciousness/comparative/panpsychism-analysis',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Предсказания и программы',
-          items: [
-            'applied/coherence-cybernetics/predictions',
-            {
-              type: 'link',
-              label: '→ Когнитивная иерархия',
-              href: '/docs/consciousness/comparative/cognitive-hierarchy',
-            },
-            'applied/coherence-cybernetics/research-programs',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Приложения и реализация',
-          items: [
-            'applied/coherence-cybernetics/applications',
-            'applied/coherence-cybernetics/implementation',
-          ],
+          type: 'link',
+          label: '→ Панпсихизм',
+          href: '/docs/consciousness/comparative/panpsychism-analysis',
         },
       ],
     },
     {
       type: 'category',
-      label: 'Исследования',
+      label: 'Сенсомоторная теория и стабильность',
       items: [
-        'applied/research/measurement-protocol',
-        'applied/research/engineering-insights',
-        'applied/research/poincare-perelman',
-        'applied/research/gap-diagnostics',
-        'applied/research/symbolic-correspondence',
+        'applied/coherence-cybernetics/sensorimotor',
+        'applied/coherence-cybernetics/stability',
+        'applied/coherence-cybernetics/diagnostics',
+        'applied/coherence-cybernetics/learning-bounds',
       ],
     },
+    {
+      type: 'category',
+      label: 'Предсказания и программы',
+      items: [
+        'applied/coherence-cybernetics/predictions',
+        {
+          type: 'link',
+          label: '→ Когнитивная иерархия',
+          href: '/docs/consciousness/comparative/cognitive-hierarchy',
+        },
+        'applied/coherence-cybernetics/research-programs',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Приложения и реализация',
+      items: [
+        'applied/coherence-cybernetics/applications',
+        'applied/coherence-cybernetics/implementation',
+      ],
+    },
+  ],
+
+  research: [
+    'applied/research/measurement-protocol',
+    'applied/research/engineering-insights',
+    'applied/research/poincare-perelman',
+    'applied/research/gap-diagnostics',
+    'applied/research/symbolic-correspondence',
   ],
 
   reference: [
