@@ -181,7 +181,7 @@ $$
 E-когерентность **каузально увеличивает** стационарную чистоту. Это включает каузальное влияние на регенерацию, [динамику чистоты](/docs/core/dynamics/evolution#динамика-чистоты) и [свободную энергию](/docs/core/dynamics/evolution#каноническое-delta-f):
 
 $$
-\frac{\partial}{\partial \mathrm{Coh}_E}\!\left(\frac{dP}{d\tau}\bigg|_{\mathcal{R}}\right) = 2\kappa_0\,(f - P) \cdot \Theta(\Delta F) > 0 \quad \text{при } P < P_{\text{target}}
+\frac{\partial}{\partial \mathrm{Coh}_E}\!\left(\frac{dP}{d\tau}\bigg|_{\mathcal{R}}\right) = 2\kappa_0\,(f - P) \cdot g_V(P) > 0 \quad \text{при } P < P_{\text{target}}
 $$
 
 $\square_b$
@@ -520,7 +520,7 @@ $$
 Гедоническая валентность определяется производной чистоты по регенеративному каналу:
 
 $$
-\mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
+\mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
 Эпистемическая стратификация:
@@ -529,7 +529,7 @@ $$
 - **Феноменальная интерпретация** (связь с переживанием) — **[И]**
 :::
 
-**Доказательство.** Из [уравнения эволюции](/docs/core/dynamics/evolution): $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) + 2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])$. Гамильтонов член не меняет $P$. Подстановка $\mathcal{R} = \kappa(\Gamma)(\rho_* - \Gamma)\Theta(\Delta F)$ даёт формулу. $\blacksquare$
+**Доказательство.** Из [уравнения эволюции](/docs/core/dynamics/evolution): $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) + 2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])$. Гамильтонов член не меняет $P$. Подстановка $\mathcal{R} = \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$ даёт формулу. $\blacksquare$
 
 **См.:** [Сенсомоторная теория](./sensorimotor#теорема-гедоническая-валентность)
 

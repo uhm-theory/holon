@@ -245,7 +245,7 @@ $$
 \mathcal{R}_\alpha(\rho) = (1-\alpha)\rho + \alpha\varphi(\rho)
 $$
 
-с $\alpha = \kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \Delta\tau \in [0,1]$. Представление Крауса: $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$.
+с $\alpha = \kappa(\Gamma) \cdot g_V(P) \cdot \Delta\tau \in [0,1]$. Представление Крауса: $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$.
 
 **Условие корректности:** $\alpha < 1 \Leftrightarrow \Delta\tau < 1/\kappa_{\max}$.
 

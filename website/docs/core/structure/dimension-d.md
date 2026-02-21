@@ -96,14 +96,14 @@ $$
 **3. Регенеративная часть** [Т] (восстановление):
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
+\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 - Может увеличивать $P$ (регенерация)
 - Форма **полностью выведена** из аксиом A1–A5 + стандартной термодинамики ([вывод](../dynamics/evolution#вывод-формы-регенерации))
 - $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации [Т], $\kappa_0$ — [категориальный вывод](../foundations/axiom-septicity#структурный-анзац-kappa0)
 - $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т], $\rho_* = \varphi(\Gamma)$ — категориальная самомодель ([оператор φ](/docs/core/operators/phi-operator))
-- $\Theta(\Delta F)$ — термодинамический затвор из принципа Ландауэра [Т]
+- $g_V(P)$ — V-preservation gate [Т] (Ландауэр + V-инвариантность, [вывод](../dynamics/evolution#теорема-v-preservation-gate))
 - Нелинейность $\mathcal{R}$ по $\Gamma$ **не нарушает** запрет сигнализации — см. [доказательство](../dynamics/evolution#запрет-сигнализации)
 
 ## Типы динамики

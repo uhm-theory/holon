@@ -298,10 +298,10 @@ $$\forall \Gamma \in \mathcal{C}: \exists! f: \Gamma \to T$$
 
 ### Связь с функцией Хевисайда
 
-Функция $\Theta(\Delta F)$ в регенеративном члене — **не постулат**, а следствие:
+Затвор $g_V(P)$ в регенеративном члене (уточняющий $\Theta(\Delta F)$ из Ландауэра) — **не постулат**, а следствие:
 
 $$
-\mathcal{R}[\Gamma, E] \propto \Theta(\Delta F) \quad \Leftarrow \quad \text{термодинамика CPTP}
+\mathcal{R}[\Gamma, E] \propto g_V(P) \quad \Leftarrow \quad \text{термодинамика CPTP + V-preservation}
 $$
 
 ## Относительность

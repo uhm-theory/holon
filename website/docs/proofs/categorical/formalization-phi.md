@@ -1383,14 +1383,14 @@ FUNCTION is_L2_minimal(Γ, φ):
 [Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) уравнения эволюции $\Gamma$ **полностью выведен** из аксиом [Т]:
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
+\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 где:
 - $\kappa(\Gamma)$ — [коэффициент регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) [Т] (категориальный вывод из сопряжения)
 - $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
 - $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т] (замещающий канал + бюресова оптимальность)
-- $\Theta(\Delta F)$ — термодинамический затвор [Т] (принцип Ландауэра)
+- $g_V(P)$ — V-preservation gate [Т] (уточняет $\Theta(\Delta F)$ из Ландауэра, см. [эволюция](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 
 Полный вывод: [Эволюция → Вывод формы регенерации](/docs/core/dynamics/evolution#вывод-формы-регенерации).
 
@@ -1403,7 +1403,7 @@ $$
 При $\Gamma = \Gamma^* = \varphi(\Gamma^*)$ регенеративный член обращается в ноль:
 
 $$
-\mathcal{R}[\Gamma^*, E] = \kappa(\Gamma^*) \cdot (\varphi(\Gamma^*) - \Gamma^*) \cdot \Theta(\Delta F) = 0
+\mathcal{R}[\Gamma^*, E] = \kappa(\Gamma^*) \cdot (\varphi(\Gamma^*) - \Gamma^*) \cdot g_V(P) = 0
 $$
 
 **Доказательство:** $\varphi(\Gamma^*) = \Gamma^*$ по определению неподвижной точки. ∎
@@ -1662,7 +1662,7 @@ $$
 \mathrm{Tr}_A\left[\alpha \cdot ((\Phi_A \otimes \mathrm{id}_B)(\rho_{AB}) - \rho_{AB})\right] = 0
 $$
 
-**Следствие:** Регенеративный член $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot \Theta(\Delta F_A)$ автоматически удовлетворяет запрету сигнализации — вклад в $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ равен нулю.
+**Следствие:** Регенеративный член $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot g_V(P_A)$ автоматически удовлетворяет запрету сигнализации — вклад в $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ равен нулю.
 
 Полное доказательство: [Физическое соответствие — Запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
 

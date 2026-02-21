@@ -275,7 +275,7 @@ $$
 Полное уравнение эволюции:
 
 $$
-\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \underbrace{\kappa(\Gamma) \cdot (\varphi(\Gamma) - \Gamma) \cdot \Theta(\Delta F)}_{\mathcal{R}[\Gamma, E]}
+\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \underbrace{\kappa(\Gamma) \cdot (\varphi(\Gamma) - \Gamma) \cdot g_V(P)}_{\mathcal{R}[\Gamma, E]}
 $$
 
 :::info Интерпретация регенеративного члена
@@ -284,7 +284,7 @@ $$
 1. **$\varphi(\Gamma)$** — «модель себя», построенная через самоизмерение
 2. **$\varphi(\Gamma) - \Gamma$** — разница между моделью и реальностью (ошибка самомоделирования)
 3. **$\kappa(\Gamma)$** — темп коррекции (пропорционален когерентностям)
-4. **$\Theta(\Delta F)$** — термодинамический порог: коррекция возможна только при наличии свободной энергии
+4. **$g_V(P)$** — V-preservation gate (уточняет $\Theta(\Delta F)$ из Ландауэра): коррекция возможна только при $P > P_{\mathrm{crit}}$
 
 Живая система **постоянно измеряет себя** через $\varphi$ и **корректирует** своё состояние в направлении модели.
 :::
@@ -435,7 +435,7 @@ $$
 $$
 
 $$
-\Gamma_{regen} = \Gamma_{decoh} + \kappa \cdot (\Gamma_{model} - \Gamma_{decoh}) \cdot \Theta(\Delta F) \cdot \delta\tau
+\Gamma_{regen} = \Gamma_{decoh} + \kappa \cdot (\Gamma_{model} - \Gamma_{decoh}) \cdot g_V(P) \cdot \delta\tau
 $$
 
 ### 7.3 Условие самосогласованности
@@ -472,14 +472,14 @@ $$
 где каноническое расширение регенерации:
 
 $$
-\tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \text{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot \Theta(\Delta F_A)
+\tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \text{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot g_V(P_A)
 $$
 :::
 
 *Доказательство:*
 
 $$
-\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot \Theta(\Delta F_A) \cdot \left(\text{Tr}_A[(\varphi_A \otimes \text{id}_B)(\Gamma_{AB})] - \text{Tr}_A[\Gamma_{AB}]\right)
+\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot \left(\text{Tr}_A[(\varphi_A \otimes \text{id}_B)(\Gamma_{AB})] - \text{Tr}_A[\Gamma_{AB}]\right)
 $$
 
 Для CPTP-канала $\varphi_A$ с представлением Крауса $\varphi_A(\cdot) = \sum_m K_m (\cdot) K_m^\dagger$:
@@ -495,7 +495,7 @@ $$
 Следовательно:
 
 $$
-\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot \Theta(\Delta F_A) \cdot (\Gamma_B - \Gamma_B) = 0
+\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot (\Gamma_B - \Gamma_B) = 0
 $$
 
 $\blacksquare$
@@ -515,7 +515,7 @@ $\blacksquare$
 :::tip [Т] Теорема 8.2 (Ансамблевая независимость)
 Эволюция УГМ определена на матрице плотности $\Gamma$, а не на ансамблевом разложении. Два разных приготовления одного $\Gamma$ эволюционируют идентично.
 
-*Доказательство:* Все компоненты уравнения ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $\Theta(\Delta F)$) — функции от $\Gamma$, а не от конкретного разложения $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. $\blacksquare$
+*Доказательство:* Все компоненты уравнения ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) — функции от $\Gamma$, а не от конкретного разложения $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. $\blacksquare$
 :::
 
 ### 8.5 Вычислительное ограничение

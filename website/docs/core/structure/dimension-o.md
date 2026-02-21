@@ -27,7 +27,7 @@ description: Измерение VI — связь с источником
 :::tip Функциональная единственность O [Т]
 Измерение $O$ **необходимо и функционально единственно** по четырём независимым аргументам:
 
-1. **Из формы ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)$ требует источника с $\Delta F > 0$. [Доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+1. **Из формы ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ требует источника с $\Delta F > 0$ для $g_V > 0$. [Доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 2. **Категориальный (κ₀):** Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) требует $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. При удалении O: κ₀ не определён, сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ теряет структуру.
 3. **Из Page—Wootters (A5):** O — выделенное измерение для тензорной факторизации $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Без O: внутреннее время τ не определено.
 4. **Функциональная независимость [Т]:** Ни один другой математический объект (проектор, наблюдаемая, унитарный оператор, коммутатор, матрица плотности, след) не может выполнять функцию O (источника/часов).
@@ -62,14 +62,14 @@ $$
 Основание обеспечивает источник свободной энергии для **регенеративного члена** [Т] [уравнения эволюции](/docs/core/dynamics/evolution#3-регенеративный-член):
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
+\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 где:
 - $\kappa(\Gamma) > 0$ — скорость регенерации [Т] ([категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
 - $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
-- $\Theta(\Delta F)$ — термодинамический затвор [Т] (принцип Ландауэра)
-- $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — градиент свободной энергии
+- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [Т] ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — градиент свободной энергии (необходимое условие: $g_V > 0 \Rightarrow \Delta F > 0$)
 
 Полная форма $\mathcal{R}$ [выведена из аксиом](/docs/core/dynamics/evolution#вывод-формы-регенерации) — ни один компонент не постулируется.
 

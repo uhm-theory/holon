@@ -93,9 +93,10 @@ class Holon:
         - R[Γ, E]      : регенерация через связь с Основанием
 
     Регенеративный член [Т] (полностью выведен из аксиом):
-        R[Γ, E] = κ(Γ) · (ρ* - Γ) · Θ(ΔF)
+        R[Γ, E] = κ(Γ) · (ρ* - Γ) · g_V(P)
 
-    где скорость регенерации:
+    где g_V(P) = clamp((P - P_crit) / (P_opt - P_crit), 0, 1) — V-preservation gate [Т],
+    скорость регенерации:
         κ(Γ) = κ_bootstrap + κ₀ · Coh_E(Γ)
         κ_bootstrap = ‖η‖ > 0 (минимальная регенерация из единицы сопряжения,
                               требует калибровки для конкретной системы)
@@ -254,7 +255,7 @@ class Holon:
         Устанавливает целевое состояние ρ* (Gamma_target) для регенерации.
 
         В полной теории ρ* = φ(Γ) — категориальная самомодель текущего
-        состояния [Т]. Форма ℛ = κ·(ρ*−Γ)·Θ(ΔF) полностью
+        состояния [Т]. Форма ℛ = κ·(ρ*−Γ)·g_V(P) полностью
         выведена из аксиом [Т]. В упрощённой версии можно задать явно.
 
         Args:
@@ -270,11 +271,11 @@ class Holon:
         """
         Вычисляет регенеративный член R[Γ, E].
 
-        R[Γ, E] = κ(Γ) · (Γ_target - Γ) · Θ(ΔF)
+        R[Γ, E] = κ(Γ) · (Γ_target - Γ) · g_V(P)
 
         где:
             κ(Γ) = κ_bootstrap + κ₀ · Coh_E(Γ)
-            Θ(ΔF) = 1 если ΔF > 0, иначе 0 (функция Хевисайда)
+            g_V(P) = clamp((P - P_crit) / (P_opt - P_crit), 0, 1)
 
         κ_bootstrap > 0 гарантирует регенерацию при любом Coh_E,
         разрешая bootstrap-парадокс (см. Genesis Protocol).
@@ -286,8 +287,11 @@ class Holon:
         Returns:
             dΓ_regen: Вклад регенерации в изменение Γ
         """
-        # Θ(ΔF): регенерация только при положительном градиенте
-        if delta_F <= 0 or self.Gamma_target is None:
+        # g_V(P): V-preservation gate — регенерация только при P > P_crit
+        P = np.real(np.trace(self.Gamma @ self.Gamma))
+        P_OPT = 3/7
+        g_v = np.clip((P - self.P_CRIT) / (P_OPT - self.P_CRIT), 0.0, 1.0)
+        if g_v <= 0 or self.Gamma_target is None:
             return np.zeros_like(self.Gamma)
 
         # κ(Γ) = κ_bootstrap + κ₀ · Coh_E(Γ)
@@ -295,16 +299,16 @@ class Holon:
         coh_E = self.compute_e_coherence()
         kappa = self.KAPPA_BOOTSTRAP + kappa_0 * coh_E
 
-        # Условие корректности: α = κ·dτ < 1 для сохранения положительности
+        # Условие корректности: α = κ·g_V·dτ < 1 для сохранения положительности
         # См. теорему о CPTP-структуре регенерации в evolution.md
-        alpha = kappa * dtau
+        alpha = kappa * g_v * dtau
         if alpha >= 1.0:
             # Адаптивный шаг для гарантии положительности
-            dtau = 0.9 / kappa  # α = 0.9 < 1
-            alpha = kappa * dtau
+            dtau = 0.9 / (kappa * g_v)  # α = 0.9 < 1
+            alpha = kappa * g_v * dtau
 
-        # R[Γ, E] = κ · (Γ_target - Γ)
-        return kappa * (self.Gamma_target - self.Gamma) * dtau
+        # R[Γ, E] = κ · (Γ_target - Γ) · g_V(P)
+        return kappa * g_v * (self.Gamma_target - self.Gamma) * dtau
 
     def evolve(self, dtau, delta_F=0.0):
         """

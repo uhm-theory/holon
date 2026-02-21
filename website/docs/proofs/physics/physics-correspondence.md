@@ -602,7 +602,7 @@ $$
 Для составной системы $A \otimes B$, где $A$ — [автономный голоном](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема):
 
 $$
-\tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot \Theta(\Delta F_A)
+\tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot g_V(P_A)
 $$
 
 где $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$.
@@ -620,7 +620,7 @@ $$
 *Доказательство:*
 
 $$
-\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot \Theta(\Delta F_A) \cdot \left(\mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})] - \mathrm{Tr}_A[\Gamma_{AB}]\right)
+\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot \left(\mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})] - \mathrm{Tr}_A[\Gamma_{AB}]\right)
 $$
 
 Для CPTP-канала $\varphi_A$ с представлением Крауса $\varphi_A(\cdot) = \sum_m K_m (\cdot) K_m^\dagger$:
@@ -633,7 +633,7 @@ $$
 = \mathrm{Tr}_A\left[(\sum_m K_m^\dagger K_m \otimes I_B)\Gamma_{AB}\right] = \mathrm{Tr}_A[(I_A \otimes I_B)\Gamma_{AB}] = \Gamma_B
 $$
 
-Следовательно: $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot \Theta(\Delta F_A) \cdot (\Gamma_B - \Gamma_B) = 0$. ∎
+Следовательно: $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot (\Gamma_B - \Gamma_B) = 0$. ∎
 
 **[Т] Следствие 8.1 (Инвариантность относительно локальных операций).**
 
@@ -653,7 +653,7 @@ $$
 \frac{d\Gamma_B}{d\tau} = \mathrm{Tr}_A[\mathcal{L}_{lin}[\Gamma_{AB}]] + \mathcal{R}_B[\Gamma_B]
 $$
 
-где $\mathcal{R}_B[\Gamma_B] = \kappa_B(\Gamma_B) \cdot (\varphi_B(\Gamma_B) - \Gamma_B) \cdot \Theta(\Delta F_B)$ — зависит **только от локального состояния** $\Gamma_B$.
+где $\mathcal{R}_B[\Gamma_B] = \kappa_B(\Gamma_B) \cdot (\varphi_B(\Gamma_B) - \Gamma_B) \cdot g_V(P_B)$ — зависит **только от локального состояния** $\Gamma_B$.
 
 ### 8.4 Условия запрета сигнализации (NS1–NS3)
 
@@ -671,7 +671,7 @@ $$
 
 Эволюция УГМ определена на матрице плотности $\Gamma$, а не на ансамблевом разложении. Два разных приготовления одного $\Gamma$ эволюционируют идентично.
 
-*Доказательство:* Все компоненты уравнения ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $\Theta(\Delta F)$) — функции от $\Gamma$, а не от конкретного разложения $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. ∎
+*Доказательство:* Все компоненты уравнения ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) — функции от $\Gamma$, а не от конкретного разложения $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. ∎
 
 ### 8.6 Вычислительное ограничение {#86-вычислительное-ограничение}
 

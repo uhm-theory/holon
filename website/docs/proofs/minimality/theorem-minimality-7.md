@@ -262,10 +262,10 @@ $$
 Квантовое основание требует регенерацию [Т]:
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
+\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-где $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator)), $\Delta F$ — градиент свободной энергии.
+где $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator)), $g_V(P)$ — V-preservation gate.
 
 Без $O$:
 - Нет источника свободной энергии
@@ -469,7 +469,7 @@ $$
 $$
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F) \quad \text{(регенерация [Т])}
+\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P) \quad \text{(регенерация [Т])}
 $$
 
 **Шаг 4: Верификация (AP) — Автопоэзис**
@@ -551,14 +551,14 @@ $$
 Регенерация **полностью выведена** из аксиом ([вывод](/docs/core/dynamics/evolution#вывод-формы-регенерации)):
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
+\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 где:
 - $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
 - $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т] (замещающий канал + бюресова оптимальность)
 - $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации [Т], $\kappa_0$ — [категориальный вывод](../../core/foundations/axiom-septicity#структурный-анзац-kappa0) из $\mathcal{D}_\Omega \dashv \mathcal{R}$
-- $\Theta(\Delta F)$ — термодинамический затвор [Т] (принцип Ландауэра)
+- $g_V(P)$ — V-preservation gate [Т] (уточняет $\Theta(\Delta F)$ из Ландауэра, см. [эволюция](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 
 **Проверка корректности:**
 1. $\mathcal{R}[\Gamma, E]$ сохраняет эрмитовость: $(\rho_* - \Gamma)^\dagger = \rho_*^\dagger - \Gamma^\dagger = \rho_* - \Gamma$
@@ -813,7 +813,7 @@ $$
 
 **Доказательство:**
 
-**(А) Аргумент из формы ℛ.** Регенеративный член $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)$ **[Т]** ([вывод](/docs/core/dynamics/evolution#вывод-формы-регенерации)) и свободная энергия $\Delta F$, определённая канонически через метрику Бюреса (A2) **[Т]**, требуют источника с $\Delta F > 0$.
+**(А) Аргумент из формы ℛ.** Регенеративный член $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **[Т]** ([вывод](/docs/core/dynamics/evolution#вывод-формы-регенерации)) и V-preservation gate $g_V(P)$, определённый через чистоту и метрику Бюреса (A2) **[Т]**, требуют источника с $P > P_{\mathrm{crit}}$.
 
 **Лемма 7.4.2:** Свободная энергия может поступать только из состояния с **минимальной энтропией**.
 

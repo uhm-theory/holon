@@ -301,7 +301,7 @@ $$
 - $\theta_{ij}^{\text{target}} = \arg(\varphi(\Gamma)_{ij})$ — целевая фаза из [оператора самомоделирования](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ)
 :::
 
-**Происхождение:** Регенеративный член $\mathcal{L}_{\text{reg}}$ является **фазовой проекцией** полной формы $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot \Theta(\Delta F)$ [Т], где $\theta_{ij}^{\text{target}} = \arg((\rho_*)_{ij})$. Полная форма ℛ **выведена** из аксиом: направление $(\rho_* - \Gamma)$ — из CPTP-единственности замещающего канала и бюресовой оптимальности, затвор $\Theta(\Delta F)$ — из принципа Ландауэра. См. [Вывод формы регенерации](/docs/core/dynamics/evolution#вывод-формы-регенерации). Скорость $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ выводится из [категориального сопряжения](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) $\mathcal{D}_\Omega \dashv \mathcal{R}$.
+**Происхождение:** Регенеративный член $\mathcal{L}_{\text{reg}}$ является **фазовой проекцией** полной формы $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot g_V(P)$ [Т], где $\theta_{ij}^{\text{target}} = \arg((\rho_*)_{ij})$. Полная форма ℛ **выведена** из аксиом: направление $(\rho_* - \Gamma)$ — из CPTP-единственности замещающего канала и бюресовой оптимальности, затвор $g_V(P)$ — из принципа Ландауэра + V-preservation ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate)). См. [Вывод формы регенерации](/docs/core/dynamics/evolution#вывод-формы-регенерации). Скорость $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ выводится из [категориального сопряжения](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) $\mathcal{D}_\Omega \dashv \mathcal{R}$.
 
 **Ключевые свойства:**
 

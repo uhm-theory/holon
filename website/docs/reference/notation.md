@@ -119,16 +119,14 @@ $$
 
 **[Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) [Т]:**
 $$
-\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
+\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 где:
 - $\kappa(\Gamma) \geq 0$ — скорость регенерации [Т] (сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$)
 - $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
 - $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т]
-- $\Theta(\Delta F)$ — термодинамический затвор [Т] (Ландауэр)
-- $\Delta F$ — изменение свободной энергии
-- $\Theta$ — [функция Хевисайда](#специальные-обозначения)
+- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [Т] (Ландауэр + V-инвариантность, [вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 
 ## Коммутаторы и антикоммутаторы
 
@@ -345,7 +343,8 @@ $$
 | $P_{\text{crit}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) |
 | $\theta_i$ | Пороги компонент стресса |
 | $H_{\text{eff}}$ | Эффективный гамильтониан: $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau\vert H_{\text{int}}\vert\tau\rangle_O$ — возникает из ограничения Page-Wootters |
-| $\Theta(\Delta F)$ | Функция Хевисайда от изменения свободной энергии $\Delta F$; активирует регенерацию при $\Delta F > 0$ |
+| $g_V(P)$ | V-preservation gate: $\mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$; активирует регенерацию при $P > P_{\mathrm{crit}}$ ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate)) |
+| $\Theta(\Delta F)$ | Функция Хевисайда от изменения свободной энергии $\Delta F$; необходимое условие из принципа Ландауэра (уточнено $g_V(P)$) |
 | $\rho_*$ ($= \Gamma_{\text{target}}$) | Единственное стационарное состояние $\mathcal{L}_\Omega$ [Т]: $\rho_* = \varphi(\Gamma) = \lim_{\tau\to\infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ — цель регенерации |
 | $\omega_0$ | Фундаментальная частота часов — параметр вычислительного приближения; см. [κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
 | $D_{\mathrm{KL}}$ | Расхождение Кульбака-Лейблера: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |

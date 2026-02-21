@@ -177,7 +177,7 @@ $$
 
 **Доказательство.**
 
-Правая часть $f(\Gamma) = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)(\rho_* - \Gamma)\Theta(\Delta F)$, где:
+Правая часть $f(\Gamma) = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$, где:
 
 **(a) Липшицевость.** Линейные члены ($-i[H_{\mathrm{eff}}, \cdot]$, $\mathcal{D}_\Omega$) — липшицевы (линейные операторы на конечномерном пространстве). Нелинейный член:
 - $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, где $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — рациональная функция матричных элементов [Т]

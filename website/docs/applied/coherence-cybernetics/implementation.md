@@ -566,7 +566,7 @@ def evolve_holon_canonical(state: HolonState, dt: float,
 
 **Разрешение** ([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) [Т]):
 
-1. $\kappa_{\mathrm{bootstrap}} \geq 2/9$ — минимальная регенерация **без** знания $\rho^*$
+1. $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — минимальная регенерация **без** знания $\rho^*$ (T-59 [Т])
 2. При инициализации: $\rho^{(0)}_* = I/7$ (тривиальная самомодель)
 3. Итерация: $\rho^{(n+1)}_* = \varphi(\Gamma^{(n)})$ — экспоненциальная сходимость ([T-72](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) [Т])
 

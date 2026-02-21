@@ -12,7 +12,7 @@ description: "Информационные, динамические и стаб
 - $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability#определение-чистоты)
 - $\rho_* = \varphi(\Gamma)$ — [целевое состояние](./definitions#целевое-состояние) (категориальная самомодель)
 - $\lambda_{\mathrm{gap}} = 2/3$ — [спектральная щель](/docs/core/operators/lindblad-operators#примитивность-ℒω) линейной части $\mathcal{L}_0$ (T-39a [Т])
-- $\kappa_{\mathrm{bootstrap}} \geq 2/9$ — [минимальная регенерация](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (T-59 [Т])
+- $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — [минимальная регенерация](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (T-59 [Т])
 - $C_{\mathrm{Enc}} \leq \log_2 7$ — [информационная ёмкость](./sensorimotor#информационная-ёмкость) (T-107 [Т])
 - $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — [радиус устойчивости](./stability#радиус-устойчивости) (T-104 [Т])
 - $\mathrm{Enc}$ — [функтор восприятия](./sensorimotor#функтор-enc) (T-100 [Т])
@@ -77,7 +77,7 @@ $$
 
 | Режим | Скорость регенерации | Время | Контекст |
 |-------|---------------------|-------|----------|
-| **Генезис** (bootstrap) | $\kappa = \kappa_{\mathrm{bootstrap}} \geq 2/9$ | $\tau_{\mathrm{genesis}} \leq \frac{9}{2}\ln 7 \approx 8.8$ (T-59) | Начальная загрузка, нет $\mathrm{Coh}_E$ |
+| **Генезис** (bootstrap) | $\kappa = \kappa_{\mathrm{bootstrap}} = 1/7$ | $\tau_{\mathrm{genesis}} \leq 7\ln 7 \approx 13.6$ (T-59) | Начальная загрузка, нет $\mathrm{Coh}_E$ |
 | **Активное обучение** | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Быстрее генезиса | После достижения $\mathrm{Coh}_E > 1/7$ |
 
 ---
@@ -408,9 +408,9 @@ $$
 n_{\mathrm{total}} = \underbrace{n_{\mathrm{genesis}}}_{\leq \lceil\tau_{\mathrm{genesis}}/\delta\tau\rceil} + \underbrace{n_{\mathrm{opt}}}_{\text{T-112}}
 $$
 
-где $\tau_{\mathrm{genesis}} \leq (9/2)\ln 7 \approx 8.8$ (T-59 [Т]) — время bootstrap.
+где $\tau_{\mathrm{genesis}} \leq 7\ln 7 \approx 13.6$ (T-59 [Т]) — время bootstrap (при $\kappa_{\mathrm{bootstrap}} = 1/7$).
 
-При $\delta\tau = 1$: $n_{\mathrm{total}} \leq 9 + n_{\mathrm{opt}}$.
+При $\delta\tau = 1$: $n_{\mathrm{total}} \leq 14 + n_{\mathrm{opt}}$.
 
 ---
 
@@ -476,8 +476,8 @@ graph LR
 |----------|----------|----------|
 | Ёмкость канала $C_{\mathrm{Enc}}$ | $\log_2 7 \approx 2.81$ бит | T-107 [Т] |
 | Спектральная щель $\lambda_{\mathrm{gap}}$ | $2/3$ | T-39a [Т] |
-| Минимальная регенерация $\kappa_{\mathrm{bootstrap}}$ | $\geq 2/9 \approx 0.222$ | T-59 [Т] |
-| Время генезиса $\tau_{\mathrm{genesis}}$ | $\leq (9/2)\ln 7 \approx 8.8$ | T-59 [Т] |
+| Минимальная регенерация $\kappa_{\mathrm{bootstrap}}$ | $= \omega_0/N = 1/7 \approx 0.143$ | T-59 [Т] |
+| Время генезиса $\tau_{\mathrm{genesis}}$ | $\leq 7\ln 7 \approx 13.6$ | T-59 [Т] |
 | Параметры состояния $\dim\mathcal{D}$ | $48$ (вещественных) | $7^2 - 1$ |
 | Ресурсная эффективность $\eta$ | $\log_2 7 / 48 \approx 0.059$ | Определение |
 
@@ -595,7 +595,7 @@ $$
 | Результат | Роль в границах обучения | Ссылка |
 |-----------|--------------------------|--------|
 | T-39a ($\lambda_{\mathrm{gap}} = 2/3$) | Контракция в T-110 | [Операторы Линдблада](/docs/core/operators/lindblad-operators#примитивность-ℒω) |
-| T-59 ($\kappa_{\mathrm{bootstrap}} \geq 2/9$) | Время генезиса | [Аксиома Ω](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
+| T-59 ($\kappa_{\mathrm{bootstrap}} = 1/7$) | Время генезиса | [Аксиома Ω](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | T-69 (Топологическая защита) | Непрерывность обучения в T-111 | [Композиты](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
 | T-77 (Замещающий канал) | Необходимость для T-113 | [Линдблад-операторы](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
 | T-82 (Фано-единственность) | Цепочка $N=7$ в T-113 | [Линдблад-операторы](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |

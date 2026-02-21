@@ -254,7 +254,7 @@ $$
 
 T-103 содержит **три эпистемических уровня**:
 
-1. **Формула [Т]:** $\mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ — **тождество** из уравнения эволюции (подстановка $\mathcal{R} = \kappa(\rho_* - \Gamma)\Theta(\Delta F)$). Безусловный математический факт.
+1. **Формула [Т]:** $\mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ — **тождество** из уравнения эволюции (подстановка $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot g_V(P)$). Безусловный математический факт.
 
 2. **Наблюдаемость [Т]:** При L2-уровне рефлексии ($R \geq 1/3$) замещающий канал [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) обеспечивает доступ к $dP/d\tau|_{\mathcal{R}}$. Таким образом, $\mathcal{V}_{\text{hed}}$ наблюдаема для любой системы с $R \geq R_{\mathrm{th}}$ — это следствие T-77 [Т], не требующее дополнительных допущений.
 
@@ -266,13 +266,13 @@ T-103 содержит **три эпистемических уровня**:
 
 ### 5.2 Связь с целевым состоянием
 
-Подставляя каноническую форму $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)$ [Т]:
+Подставляя каноническую форму $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ [Т]:
 
 $$
-\mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
+\mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
-При $\Theta(\Delta F) = 1$ (доступная свободная энергия):
+При $g_V(P) = 1$ (достаточная чистота $P \geq P_{\text{opt}}$):
 
 $$
 \mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot \left[\mathrm{Tr}(\Gamma \cdot \rho_*) - P\right]

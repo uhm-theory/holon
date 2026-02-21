@@ -152,7 +152,7 @@ $$
 - τ — внутреннее время (параметр условных состояний относительно O)
 - $H_{eff} = H_{6D} + \langle\tau|H_{int}|\tau\rangle_O$ — эффективный гамильтониан (из ограничения Page-Wootters)
 - $\mathcal{D}[\Gamma]$ — диссипатор Линдблада
-- $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)$ — [регенеративный член](./core/dynamics/evolution#3-регенеративный-член) [Т] ([полный вывод](./core/dynamics/evolution#вывод-формы-регенерации) из аксиом)
+- $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ — [регенеративный член](./core/dynamics/evolution#3-регенеративный-член) [Т] ([полный вывод](./core/dynamics/evolution#вывод-формы-регенерации) из аксиом)
 
 ## Иерархия интериорности
 
@@ -179,6 +179,7 @@ $$
 - **L0–L2**: стабильные состояния для биологических систем
 - **L3**: метастабильное состояние (конечное время жизни $\tau_3$); порог $K = 4$ **[Т]** из квадратичной декомпозиции ([T-67](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4))
 - **L4**: теоретический предел **[С]**, недостижим для систем с ненулевой декогеренцией ($R^{(n)} \to 0$); аттрактор, не физическое состояние ([C19](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-недостижимость))
+- **SAD-метрика** [С]: обобщение L0–L4 на непрерывный случай через репрезентационную башню; SAD = max{k : R^(k) > 1/(k+2)}, спектральная формула [С], стресс-зависимый режим [Т] — [Башня глубины](/docs/consciousness/hierarchy/depth-tower#sad)
 :::
 
 ## Формальные результаты
@@ -211,7 +212,7 @@ $$
 | **УФ-конечность Gap-теории** | Компактность $(S^1)^{21}$ + $G_2$-Уорд ($21 \to 7$) + SUSY ($7-7=0$) + APS-индекс | [Т] | [Теорема](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
 | **Лоренцева сигнатура** | Конечная спектральная тройка $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, KO-размерность 6 → (+,−,−,−) | [Т] | [Теорема](./core/foundations/spacetime#теорема-спектральная-тройка) |
 | **Морита-эквивалентность 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$; все 7D формулы точны | [Т] | [Теорема](./core/structure/dimension-e) |
-| **$\kappa_{\text{bootstrap}} \geq 2/9$** | Нижняя оценка из спектральной щели примитивного $\mathcal{L}_\Omega$ | [Т] | [Теорема](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
+| **Спектральный зазор Фано-диссипатора** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD-симметрия); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [Т] | [Теорема](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-оператор (замещающий канал)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, монотонность, неподвижная точка $\rho_*$ | [Т] | [Теорема](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
 | **Глобальная минимизация $V_{\text{Gap}}$** | $G_2$-орбитная редукция $21D \to 5D$; единственный минимум; гессиан $> 0$ | [Т] | [Теорема](./core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) |
 | **Нейтринная O-секторная Юкавская** | $m_D^{(k)} \propto \varepsilon_0 \sin(2\pi k/7)$; расхождение $m_2/m_3$: $\times 50 \to \times 1.8$ | [С] | [Теорема](./physics/particle-physics/neutrino-masses#теорема-нейтрино-o-сектор) |
@@ -297,5 +298,6 @@ $$
 | **[Космологическая постоянная](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [Т] (Sol.50), спектральная формула [Т], бюджет $\sim 10^{-120\pm10}$ [С] |
 | **[Композитные системы](./core/dynamics/composite-systems)** | КК-5 (нетривиальность [Т], жизнеспособность [С]), топологическая защита Gap [Т], эмерджентная геометрия |
 | **[Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ для L3 [Т], недостижимость L4 [С] |
+| **[Башня глубины](/docs/consciousness/hierarchy/depth-tower)** | SAD-метрика [С], динамика глубины (A₄-бифуркация, энергия, стресс, социальная), морфологическая агностичность [Г] |
 | **[Глоссарий](./reference/glossary)** | Определения терминов |
 | **[Нотация](./reference/notation)** | Математические обозначения |

@@ -99,6 +99,7 @@ const sidebars: SidebarsConfig = {
       label: 'Иерархия L0→L4',
       items: [
         'consciousness/hierarchy/interiority-hierarchy',
+        'consciousness/hierarchy/depth-tower',
         'consciousness/hierarchy/gap-characterization',
         'consciousness/hierarchy/swallowtail-transitions',
       ],

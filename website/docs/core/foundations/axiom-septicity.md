@@ -657,7 +657,7 @@ $$
 \mathcal{R}_\alpha(\rho) := (1-\alpha)\rho + \alpha\varphi(\rho)
 $$
 
-где $\alpha = \kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \Delta\tau \in [0, 1]$.
+где $\alpha = \kappa(\Gamma) \cdot g_V(P) \cdot \Delta\tau \in [0, 1]$.
 
 **Представление Крауса:** Если $\varphi(\rho) = \sum_k K_k \rho K_k^\dagger$ — CPTP-канал, то $\mathcal{R}_\alpha$ также CPTP с операторами $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$.
 
@@ -881,7 +881,7 @@ $$
 - $H_{eff}$ — [эффективный гамильтониан](../dynamics/evolution#вывод-h_eff) из ограничения Page-Wootters
 - $-i[H_{eff}, \Gamma]$ — унитарная эволюция (сохраняет чистоту $P$)
 - $\mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)$ — диссипация Линдблада
-- $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)$ — регенерация [Т] ([полный вывод](../dynamics/evolution#вывод-формы-регенерации)), где $\Delta F$ — [градиент свободной энергии](../dynamics/evolution#каноническое-delta-f)
+- $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ — регенерация [Т] ([полный вывод](../dynamics/evolution#вывод-формы-регенерации)), где $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — [V-preservation gate](../dynamics/evolution#теорема-v-preservation-gate)
 
 **Целевое состояние $\rho_*$ [Т]**
 
@@ -892,7 +892,7 @@ $$
 где $\varphi(\Gamma)$ — [категориальная самомодель](/docs/core/operators/phi-operator) текущего состояния Γ (левый сопряжённый к включению подобъектов, CPTP-канал [Т]). Для каждого состояния $\Gamma$ самомодель $\varphi(\Gamma)$ **однозначно определена** категориальной структурой.
 
 :::note Интерпретация
-Регенерация — это процесс, при котором система восстанавливает когерентность, стремясь к $\rho_*$ — единственному аттрактору динамики. Направление $(\rho_* - \Gamma)$ является единственной CPTP-релаксацией (замещающий канал) и наискорейшим спуском в метрике Бюреса [Т]. Затвор $\Theta(\Delta F)$ следует из принципа Ландауэра [Т]. Полный вывод: [Эволюция → Вывод формы ℛ](../dynamics/evolution#вывод-формы-регенерации).
+Регенерация — это процесс, при котором система восстанавливает когерентность, стремясь к $\rho_*$ — единственному аттрактору динамики. Направление $(\rho_* - \Gamma)$ является единственной CPTP-релаксацией (замещающий канал) и наискорейшим спуском в метрике Бюреса [Т]. Затвор $g_V(P)$ выводится из принципа Ландауэра + V-preservation [Т] ([вывод](../dynamics/evolution#теорема-v-preservation-gate)). Полный вывод: [Эволюция → Вывод формы ℛ](../dynamics/evolution#вывод-формы-регенерации).
 :::
 
 ## Теорема S (Минимальность семимерности) {#теорема-s-семимерность--следствие-из-аксиомы}

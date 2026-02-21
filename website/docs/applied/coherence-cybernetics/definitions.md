@@ -390,7 +390,7 @@ $$
 Формула [Т] — тождество из уравнения эволюции:
 
 $$
-\mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot \Theta(\Delta F) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
+\mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
 Скорость изменения чистоты за счёт регенеративного члена. Знак определяет валентность:
