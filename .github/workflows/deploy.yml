@@ -32,6 +32,14 @@ jobs:
           cache: npm
           cache-dependency-path: website/package-lock.json
 
+      - name: Add swap space
+        run: |
+          sudo fallocate -l 8G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          free -h
+
       - name: Install dependencies
         run: npm ci
 
