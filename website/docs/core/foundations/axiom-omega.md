@@ -463,6 +463,18 @@ $$\Gamma(\tau_n) := \text{Tr}_O[(|\tau_n\rangle\langle\tau_n| \otimes \mathbb{1}
 
 #### Независимый вывод A5 из спектральной тройки {#a5-из-спектральной-тройки}
 
+#### Теорема T-116: PW Suzuki-Trotter [Т] {#теорема-pw-suzuki-trotter}
+
+PW-планирование с Suzuki-Trotter порядка $p$ имеет ошибку:
+
+$$\varepsilon(T) \leq C_p \cdot T \cdot (\delta\tau)^{2p+1}$$
+
+При $p = 2$, $\delta\tau = 0.01$, $T = 100$: $\varepsilon \leq 10^{-5}$.
+
+**Доказательство:** Разложение $\mathcal{L}_\Omega = \mathcal{L}_1 + \mathcal{L}_2$ (унитарная + диссипативно-регенеративная). Suzuki-Trotter 2-го порядка: $S_2(\delta\tau) = e^{\mathcal{L}_1 \delta\tau/2} \cdot e^{\mathcal{L}_2 \delta\tau} \cdot e^{\mathcal{L}_1 \delta\tau/2}$, ошибка $O((\delta\tau)^3)$ (BCH 3-го порядка). Конечномерность $\mathcal{L}_\Omega$ на $\mathcal{D}(\mathbb{C}^7)$ гарантирует $C_2 < \infty$. Рекурсия Судзуки обобщает на порядок $p$ с ошибкой $O((\delta\tau)^{2p+1})$. Усиливает T-60 (BCH $\leq 5\delta\tau$) до полиномиальной точности. ∎
+
+Спецификация: language-limits-preveal.md §4.4 | Статус: **[Т]**
+
 :::tip Замечание (T-87, Sol.68): A5 — следствие A1–A4 [Т]
 Аксиома A5 имеет независимый вывод из спектральной тройки T-53 **[Т]** ([пространство-время](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): алгебра $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ с KO-размерностью 6 однозначно определяет тензорное разложение $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$, а ограничение $\hat{C}\Gamma = 0$ следует из стационарности глобального состояния. Таким образом A5 — не независимый постулат, а следствие A1–A4. Доказательство: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → тензорная структура → PW-ограничение.
 :::
@@ -704,7 +716,7 @@ graph TD
 
     subgraph "Уровень 4: Производные объекты"
         Phi["φ ⊣ i: Sub(Γ) ↪ Sh_∞<br/>самомоделирование"]
-        Thresholds["P_crit, R_th, Φ_th<br/>(из ПИР)"]
+        Thresholds["P_crit, R_th, Φ_th<br/>([Т]; интерпретация ПИР)"]
     end
 
     Lang --> Primitive
@@ -1348,7 +1360,7 @@ graph TD
 
 **Производные теоремы:**
 - **ПИР:** Принцип информационной различимости — определение [О] (T16, встроено в A1+A2)
-- **Пороги:** $P_{crit} = 2/7$, $R_{th} = 1/3$, $\Phi_{th} = 1$ (из ПИР)
+- **Пороги:** $P_{crit} = 2/7$, $R_{th} = 1/3$, $\Phi_{th} = 1$ ([Т]; интерпретация через ПИР [О])
 - **Genesis Protocol**: κ_bootstrap > 0 из сопряжения D_Ω ⊣ R
 :::
 

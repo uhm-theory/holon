@@ -195,6 +195,7 @@ const sidebars: SidebarsConfig = {
       label: 'Физика',
       items: [
         'proofs/physics/physics-correspondence',
+        'proofs/physics/emergent-manifold',
       ],
     },
     {

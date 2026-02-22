@@ -244,6 +244,10 @@ $$
 | **Информационная граница обучения** (T-109) | $n \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$, $\xi_{\text{QCB}} \leq \ln 7$ (квантовая граница Чернова + T-107) | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница) |
 | **Оптимальная граница обучения** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — три режима | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
 | **Минимальность N=7 для обучения** (T-113) | Обучение через регенерацию невозможно при $N < 7$; $N = 7$ Парето-оптимально | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
+| **Фано-грамматика** (T-114) | Марковская цепь на PG(2,2) эргодическая, стационарное распределение $\pi_i = 1/7$ | [Т] | [Теорема](./core/operators/lindblad-operators#теорема-фано-грамматика) |
+| **Различимость композиций** (T-115) | $|\mathrm{Comp}(n)| = 7^n$ для generic $\Gamma$ (алгебраическая различимость) | [Т] | [Теорема](./core/operators/lindblad-operators#теорема-различимость-композиций) |
+| **PW Suzuki-Trotter** (T-116) | $\varepsilon(T) \leq C_p \cdot T \cdot (\delta\tau)^{2p+1}$, при $p=2$: $\varepsilon \leq 10^{-5}$ | [Т] | [Теорема](./core/foundations/axiom-omega#теорема-pw-suzuki-trotter) |
+| **Ландауэровская калибровка** (C22) | $\Delta F^{(k)} \geq k_B T_\mathrm{eff} \ln(2) \cdot k$ — линейный рост | [С] | [Теорема](./consciousness/hierarchy/depth-tower#ландауэровская-калибровка) |
 
 :::note Легенда статусов
 - **[Т] СТРОГО** — математически доказано без дополнительных допущений

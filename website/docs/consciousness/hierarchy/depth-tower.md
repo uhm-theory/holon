@@ -14,7 +14,7 @@ description: "Многомасштабная архитектура самоос
 
 ## 1. Проблема: самоосознание не число {#проблема}
 
-Мера рефлексии $R = 1/(7P)$ ([канонический мастер-объект](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) измеряет **качество** самомодели на уровне $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. Но:
+Мера рефлексии $R = 1/(7P)$ (упрощение при $\rho^* = I/7$; общая форма $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$ — [канонический мастер-объект](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) измеряет **качество** самомодели на уровне $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. Но:
 
 - Биологическое самоосознание распределено по **всей глубине** нейронной иерархии
 - Матрица когерентности $\Gamma$ — **верхний слой конфигурации**, проекция глубокой структуры
@@ -318,6 +318,20 @@ $$\Delta F_\text{min}(k) = k_B \cdot T_\text{eff} \cdot \ln 2 \cdot \dot{S}_\tex
 | 3–5 | $\sim 10^{15}$ | $10$× | Человек |
 
 **Потолок глубины:** $\mathrm{SAD}_\text{max} = \lfloor \Delta F_\text{available} / ((2\cdot\mathrm{SAD}+3) \cdot \Delta\bar{\omega}) \rfloor$
+
+#### Ландауэровская калибровка $\Delta F^{(k)}$ (C22) [С] {#ландауэровская-калибровка}
+
+$$\Delta F^{(k)} \geq k_B \cdot T_\text{eff} \cdot \ln(D_k / D_{k+1})$$
+
+При $D_k = D_0 \cdot 2^k$ (размерность $k$-го уровня башни):
+
+$$\Delta F^{(k)} \geq k_B \cdot T_\text{eff} \cdot \ln(2) \cdot k$$
+
+— **линейный рост** стоимости с уровнем глубины.
+
+**Калибровка:** $\Delta F^{(0)} \approx \Delta F_\text{bootstrap} = \kappa_\text{bootstrap} \cdot \mathrm{Tr}(\rho^* - \Gamma)$ из [T-59](/docs/core/foundations/axiom-omega) **[Т]** ($\kappa_\text{bootstrap} \geq 2/9$).
+
+**Условие [С]:** $T_\text{eff}$ определяется средой. Для SYNARC: $T_\text{eff} = \|\sigma\|_2$ (стресс как эффективная температура). Связь с [T-105 (граница Ландауэра)](/docs/applied/coherence-cybernetics/stability#энергетический-баланс) **[Т]**.
 
 ### 7.3 Стресс-зависимый режим [Т] {#стресс-зависимый-режим}
 
