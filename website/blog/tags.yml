@@ -132,3 +132,23 @@ viability:
   label: Жизнеспособность
   permalink: /viability
   description: Критический порог P_crit = 2/7 и область устойчивости
+
+minimality:
+  label: Минимальность
+  permalink: /minimality
+  description: Теорема о минимальности 7 измерений
+
+octonions:
+  label: Октонионы
+  permalink: /octonions
+  description: Октонионная алгебра и структура N=7
+
+Hurwitz:
+  label: Гурвиц
+  permalink: /hurwitz
+  description: Теорема Гурвица о нормированных алгебрах с делением
+
+G2:
+  label: G₂
+  permalink: /g2
+  description: Группа G₂ = Aut(𝕆) и калибровочная симметрия
