@@ -152,3 +152,18 @@ G2:
   label: G₂
   permalink: /g2
   description: Группа G₂ = Aut(𝕆) и калибровочная симметрия
+
+cosmology:
+  label: Космология
+  permalink: /cosmology
+  description: Космологические следствия теории УГМ
+
+vacuum:
+  label: Вакуум
+  permalink: /vacuum
+  description: Вакуумная энергия и космологическая постоянная
+
+Lawvere:
+  label: Ловер
+  permalink: /lawvere
+  description: Неполнота Ловера и самореференция
