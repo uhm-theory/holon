@@ -188,6 +188,10 @@ const sidebars: SidebarsConfig = {
       label: 'Сознание',
       items: [
         'proofs/consciousness/interiority-hierarchy',
+        'proofs/consciousness/conscious-window',
+        'proofs/consciousness/operationalization',
+        'proofs/consciousness/operational-closure',
+        'proofs/consciousness/substrate-closure',
       ],
     },
     {

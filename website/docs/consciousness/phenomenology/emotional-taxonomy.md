@@ -184,3 +184,4 @@ $$
 - [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4, условия для L2
 - [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) — 21-парная таксономия и $\gamma_{DE}$ как «аффекция»
 - [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — Gap(S,E) и фазовая диагностика
+- [T-147 [Т]: 30D-эмоциональное пространство](/docs/proofs/consciousness/operational-closure#t-147) — полная модель $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$, заменяющая скалярный $dP/d\tau$

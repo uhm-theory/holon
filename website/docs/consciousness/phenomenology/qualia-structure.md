@@ -191,3 +191,4 @@ $$
 - [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4
 - [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — 49-клеточная карта
 - [Теория интериорности](/docs/consciousness/foundations/interiority-theory) — экспериенциальное содержание
+- [T-146 [Т]: Структурная классификация квалиа](/docs/proofs/consciousness/operational-closure#t-146) — соответствие «математическая структура → феноменальное содержание» из функциональной роли секторов

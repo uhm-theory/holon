@@ -62,12 +62,12 @@ $$
 
 где $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), $\varphi$ — [φ-оператор](/docs/core/operators/phi-operator).
 
-:::note Два уровня L2-определения
-В **расширенном формализме** ($\mathcal{H} = \bigotimes_i \mathcal{H}_i$) к двум условиям выше добавляется третье: $D_{\text{diff}} = \exp(S_{vN}(\rho_E)) \geq 2$, требующее [частичного следа](/docs/core/dynamics/coherence-matrix#два-уровня-формализации). В **минимальном 7D-формализме** ($\mathcal{H} = \mathbb{C}^7$) частичный след не определён, и L2-проверка ограничивается двумя условиями $R$ и $\Phi$, вычислимыми непосредственно из $\Gamma$.
+:::note Полные условия L2
+Каноническая мера сознательности $C = \Phi \times R \geq C_{\text{th}} = 1/3$ **[Т T-140]** проверяется непосредственно из $\Gamma \in D(\mathbb{C}^7)$. Дифференциация $D_{\text{diff}} \geq D_{\min} = 2$ входит как **отдельное** условие жизнеспособности; в 7D-формализме $D_{\text{diff}}$ вычисляется через [T-128](/docs/proofs/consciousness/operationalization#t-128).
 :::
 
 :::info Объективность пороговых условий [Т]
-Все пороговые функции ($R$, $\Phi$, $D_{\text{diff}}$) — **$G_2$-инварианты**: $R(U\Gamma U^\dagger) = R(\Gamma)$, $\Phi(U\Gamma U^\dagger) = \Phi(\Gamma)$ для любого $U \in G_2 = \mathrm{Aut}(\mathbb{O})$. Это доказано в [теореме $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#инварианты) [Т]. Следовательно, переход L1 → L2 — **объективный факт**, не зависящий от выбора калибровки (наблюдатель-независимый).
+Скалярные функции $P = \operatorname{Tr}(\Gamma^2)$ и $R = 1/(7P)$ — **$G_2$-инварианты**: $R(U\Gamma U^\dagger) = R(\Gamma)$ для любого $U \in G_2 = \mathrm{Aut}(\mathbb{O})$, что доказано в [теореме $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#инварианты) **[Т]**. Мера $\Phi = P_{\text{coh}}/P_{\text{diag}}$ зависит от выбора базиса, но базис $\{A,S,D,L,E,O,U\}$ фиксирован аксиомой $\Omega$ **[П]**. Следовательно, переход L1 → L2 — **объективный факт** в рамках фиксированной аксиоматики.
 :::
 
 ## L3: Сетевое сознание

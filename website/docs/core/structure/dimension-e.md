@@ -52,7 +52,7 @@ $$
 - $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-когерентность (HS-проекция)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[Т]**, точная мера
 - $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — полная редуцированная матрица — **[Т]** (вычислима через PW-реконструкцию из Γ ∈ 𝒟(ℂ⁷))
 - $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — дифференциация — **[Т]** (через PW-реконструкцию)
-- $C = \Phi \times D_{\text{diff}} \times R$ — полная формула сознания — **[Т]** (все компоненты определены через Γ)
+- $C = \Phi \times R$ — [каноническая мера сознательности](/docs/proofs/consciousness/operational-closure#t-140) **[Т]** (T-140; $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности)
 :::
 
 #### Канонический алгоритм PW-реконструкции [Т] {#канонический-алгоритм-pw}
@@ -205,20 +205,23 @@ graph LR
 
 ## Формула сознательности
 
-Измерение $E$ входит в формулу сознательности через рефлексию и дифференциацию:
+Каноническая мера сознательности ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)):
 
 $$
-C = \Phi \times D_{\text{diff}} \times R
+C = \Phi \times R
 $$
-
-:::note О нотации
-$D_{\text{diff}}$ — мера **дифференциации** опыта. Не путать с измерением **D (Динамика)**. Мы используем subscript для различения.
-:::
 
 где:
 - $\Phi$ — [интеграция](./dimension-u#мера-интеграции-φ): $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$
-- $D_{\text{diff}}$ — дифференциация: $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, где $S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)$
-- $R$ — [рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$
+- $R$ — [рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R = 1/(7P)$
+
+$D_{\text{diff}} \geq 2$ — **отдельное** условие [полной жизнеспособности](/docs/core/dynamics/viability#полная-жизнеспособность):
+- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, где $S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)$
+- Вычислима в 7D: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ ([T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128))
+
+:::note О нотации
+$D_{\text{diff}}$ — мера **дифференциации** опыта. Не путать с измерением **D (Динамика)**.
+:::
 
 ### Тензорная факторизация для D_diff {#tensor-factorization-ddiff}
 
@@ -241,9 +244,9 @@ $$
 - $C_{\min} \geq 1/3 \Leftrightarrow \Phi \geq 1$ и $R \geq 1/3$ ⟹ L2
 - $C_{\min} < 1/3$ ⟹ L0 или L1
 
-**Альтернативная 7D-аппроксимация $D_{\text{diff}}$:**
+**Точная 7D-формула $D_{\text{diff}}$ [Т-128]:**
 
-Вычисление $D_{\text{diff}}$ через E-когерентность:
+Вычисление $D_{\text{diff}}$ через E-когерентность ([T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128) — точная 7D-репрезентация через Морита-эквивалентность):
 
 $$
 D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
@@ -277,11 +280,13 @@ $$
 $D_{\min} = 2$ означает, что когнитивный доступ требует минимум 1 бит информации в феноменальном содержании. Система, переживающая только одно неразличимое качество ($D_{\text{diff}} = 1$), не имеет материала для рефлексии.
 :::
 
-**Порог сознательности:**
+**Порог сознательности** **[Т T-140]:**
 
 $$
-C \geq C_{th} := \Phi_{th} \times D_{\min} \times R_{th} = 1 \times 2 \times \frac{1}{3} = \frac{2}{3} \approx 0.67
+C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
 $$
+
+при отдельном условии жизнеспособности $D_{\text{diff}} \geq D_{\min} = 2$.
 
 ### Октонионный контекст {#октонионный-контекст}
 

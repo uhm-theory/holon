@@ -436,7 +436,7 @@ $$
 См. [Самонаблюдение: Мера сознательности C](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
 
 $$
-C = \Phi \times D_{\text{diff}} \times R
+C = \Phi \times R
 $$
 
 ---
