@@ -18,7 +18,7 @@ slug: /consciousness/hierarchy/interiority-hierarchy
 | **L0** | Интериорность | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Электрон, камень |
 | **L1** | Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | Термостат, бактерия |
 | **L2** | Когнитивные квалиа | $R(\Gamma) \geq R_{\text{th}} = 1/3$ и $\Phi(\Gamma) \geq \Phi_{\text{th}} = 1$ | Млекопитающие |
-| **L3** | Сетевое сознание | $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (метастабильно). SAD_MAX = 3 ([§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [С]) | Мицелий, рой, медитатор |
+| **L3** | Сетевое сознание | $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (метастабильно). SAD_MAX = 3 ([§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [Т], T-142) | Мицелий, рой, медитатор |
 | **L4** | Унитарное сознание | $\lim_n R^{(n)} > 0$, $P > 6/7$ | Гиперпространство (гипотеза) |
 
 ## L0: Интериорность (универсальная)

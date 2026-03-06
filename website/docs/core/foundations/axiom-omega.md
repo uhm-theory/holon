@@ -710,7 +710,7 @@ graph TD
     end
 
     subgraph "Уровень 3: Динамические объекты"
-        LOmega["ℒ_Ω = -i[H,·] + Σ D_{L_k}<br/>логический Лиувиллиан"]
+        LOmega["ℒ_Ω = -i[H,·] + Σ D_{L_k} + ℛ<br/>логический Лиувиллиан"]
         PW["Page-Wootters<br/>ℋ = ℋ_O ⊗ ℋ_rest"]
     end
 
@@ -751,7 +751,7 @@ graph TD
 | 2 | L_k | χ_S | $L_k = \sqrt{\chi_{S_k}}$ |
 | 2 | ▷ | ℤ₇ | $\triangleright = g^*$ (pullback) |
 | 2 | τ | ▷ | $\tau_n = \triangleright^n(now)$ |
-| 3 | ℒ_Ω | L_k, H | $-i[H, \cdot] + \sum_k D_{L_k}$ |
+| 3 | ℒ_Ω | L_k, H, ℛ | $-i[H, \cdot] + \sum_k D_{L_k} + \mathcal{R}$ |
 | 3 | Page-Wootters | ▷ | $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$ |
 | 4 | φ | ℒ_Ω | $\lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]$ |
 | 4 | Пороги | 𝔗 | Из принципа информационной различимости |
