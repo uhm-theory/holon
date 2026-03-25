@@ -32,15 +32,20 @@ jobs:
           cache: npm
           cache-dependency-path: website/package-lock.json
 
-      - name: Add swap space
+      - name: Free disk space and add swap
         run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL 2>/dev/null || true
+          sudo docker image prune --all --force 2>/dev/null || true
           sudo swapoff /swapfile 2>/dev/null || true
           sudo rm -f /swapfile
-          sudo fallocate -l 16G /swapfile
+          sudo fallocate -l 20G /swapfile
           sudo chmod 600 /swapfile
           sudo mkswap /swapfile
           sudo swapon /swapfile
+          echo "Memory:"
           free -h
+          echo "Disk:"
+          df -h /
 
       - name: Install dependencies
         run: npm ci
@@ -48,7 +53,8 @@ jobs:
       - name: Build website
         run: npm run build
         env:
-          NODE_OPTIONS: "--max-old-space-size=10240"
+          NODE_OPTIONS: "--max-old-space-size=14336"
+          GENERATE_SOURCEMAP: "false"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
