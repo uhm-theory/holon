@@ -20,6 +20,7 @@ const sidebars: SidebarsConfig = {
       label: 'Основания',
       collapsed: false,
       items: [
+        'core/foundations/mathematical-foundations',
         'core/foundations/axiom-omega',
         'core/foundations/axiom-septicity',
         'core/foundations/consequences',
@@ -141,6 +142,8 @@ const sidebars: SidebarsConfig = {
         'consciousness/comparative/consciousness-theories',
         'consciousness/comparative/panpsychism-analysis',
         'consciousness/comparative/cognitive-hierarchy',
+        'consciousness/comparative/cognitome-anokhin',
+        'consciousness/comparative/general-systems-theory',
       ],
     },
     {
@@ -351,6 +354,8 @@ const sidebars: SidebarsConfig = {
       label: 'Предсказания и программы',
       items: [
         'applied/coherence-cybernetics/predictions',
+        'applied/coherence-cybernetics/philosophy',
+        'applied/coherence-cybernetics/comparison',
         {
           type: 'link',
           label: '→ Когнитивная иерархия',
@@ -364,6 +369,9 @@ const sidebars: SidebarsConfig = {
       label: 'Приложения и реализация',
       items: [
         'applied/coherence-cybernetics/applications',
+        'applied/coherence-cybernetics/interdisciplinary',
+        'applied/coherence-cybernetics/measurement',
+        'applied/coherence-cybernetics/exercises',
         'applied/coherence-cybernetics/implementation',
       ],
     },

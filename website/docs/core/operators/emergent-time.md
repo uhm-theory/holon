@@ -27,7 +27,7 @@ $$
 
 | # | Конструкция | Источник | Время |
 |---|-------------|----------|-------|
-| 1 | **Page-Wootters** | Корреляция с [O-измерением](/docs/core/structure/dimension-o) | $\tau_n = \langle\tau_n\lvert\rho\rvert\tau_n\rangle_O$ |
+| 1 | **Пейдж–Вуттерс** | Корреляция с [O-измерением](/docs/core/structure/dimension-o) | $\tau_n = \langle\tau_n\lvert\rho\rvert\tau_n\rangle_O$ |
 | 2 | **Информационно-геометрическое** | Метрика Бурес на $\mathcal{D}(\mathcal{H})$ | $ds^2_{\text{Bures}}$ |
 | 3 | **Категорное** | ∞-группоид путей $\text{Exp}_\infty$ | Цепи морфизмов |
 | 4 | **Стратификационное** | Коллапс страт к $T$ | $d_{\text{strat}}$ |
@@ -37,7 +37,7 @@ $$
 [Доказательство →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Статус: **[Т]**
 :::
 
-## Механизм Page-Wootters для УГМ {#page-wootters}
+## Механизм Пейдж–Вуттерс для УГМ {#page-wootters}
 
 [Измерение O (Основание)](/docs/core/structure/dimension-o) выполняет роль **внутренних часов**. Полная система разлагается:
 
@@ -47,7 +47,7 @@ $$
 
 где $\mathcal{H}_{6D} = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$.
 
-### Ограничение Page-Wootters {#constraint}
+### Ограничение Пейдж–Вуттерс {#constraint}
 
 Глобальное состояние $\Gamma_{total}$ удовлетворяет **ограничению** (аналогу уравнения Уилера-ДеВитта):
 

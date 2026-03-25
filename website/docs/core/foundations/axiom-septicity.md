@@ -35,7 +35,7 @@ description: Требования автопоэзиса, феноменолог
 - **Аксиома 2 (Метрика):** Топология $J_{Bures}$
 - **Аксиома 3 (Размерность):** $N = 7$
 - **Аксиома 4 (Масштаб):** $\omega_0 > 0$
-- **Аксиома 5 (Page-Wootters):** Тензорная декомпозиция
+- **Аксиома 5 (Пейдж–Вуттерс):** Тензорная декомпозиция
 
 Условия (AP+PH+QG+V) — **характеризующие свойства** жизнеспособных конфигураций $\Gamma \in \text{Ob}(\mathcal{C})$:
 - **(AP)** и **(QG)** — следствия динамики в ∞-топосе
@@ -446,7 +446,7 @@ $$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{
 $$\mathrm{Coh}_E = \underbrace{\frac{\gamma_{EE}^2}{\mathrm{Tr}(\Gamma^2)}}_{\text{населённость E}} + \underbrace{\frac{2\sum_{i\neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}}_{\text{квантовые когерентности E}}$$
 
 :::info Роль 42D-формализма
-С установлением Coh_E как точной HS-проекционной меры [Т], 42D-формализм Page-Wootters ($\mathcal{H} = \mathbb{C}^7 \otimes \mathbb{C}^6$, [аксиома A5](/docs/core/foundations/axiom-omega#pw-constraint)) сохраняет свою роль для:
+С установлением Coh_E как точной HS-проекционной меры [Т], 42D-формализм Пейдж–Вуттерс ($\mathcal{H} = \mathbb{C}^7 \otimes \mathbb{C}^6$, [аксиома A5](/docs/core/foundations/axiom-omega#pw-constraint)) сохраняет свою роль для:
 - **Эмерджентного времени** (механизм PW)
 - **Калибровочных симметрий** электрослабого сектора
 - **Тензорной запутанности** между подсистемами
@@ -628,7 +628,7 @@ $$
 | Форма | Удовл. 1-4? | Анализ |
 |-------|-------------|--------|
 | $\frac{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | + | **Выбрана.** Произведение требует оба канала одновременно |
-| $\frac{\lVert\gamma_{OE}\rVert + \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | -- | Нарушает (2): $\kappa_0 > 0$ даже при $\gamma_{OE} = 0$ |
+| $\frac{\lVert\gamma_{OE}\rVert + \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | — | Нарушает (2): $\kappa_0 > 0$ даже при $\gamma_{OE} = 0$ |
 | $\frac{\min(\lVert\gamma_{OE}\rVert, \lVert\gamma_{OU}\rVert)}{\gamma_{OO}}$ | + | Альтернатива: более строгое ограничение (узкое место) |
 | $\frac{\sqrt{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}}{\gamma_{OO}}$ | + | Альтернатива: среднее геометрическое, сглаженный отклик |
 
@@ -932,8 +932,8 @@ $$
 $$
 
 где:
-- $\tau$ — внутреннее время, возникающее из корреляций с измерением O (Page-Wootters)
-- $H_{eff}$ — [эффективный гамильтониан](../dynamics/evolution#вывод-h_eff) из ограничения Page-Wootters
+- $\tau$ — внутреннее время, возникающее из корреляций с измерением O (Пейдж–Вуттерс)
+- $H_{eff}$ — [эффективный гамильтониан](../dynamics/evolution#вывод-h_eff) из ограничения Пейдж–Вуттерс
 - $-i[H_{eff}, \Gamma]$ — унитарная эволюция (сохраняет чистоту $P$)
 - $\mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)$ — диссипация Линдблада
 - $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ — регенерация [Т] ([полный вывод](../dynamics/evolution#вывод-формы-регенерации)), где $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — [V-preservation gate](../dynamics/evolution#теорема-v-preservation-gate)
@@ -1035,7 +1035,7 @@ $$
 **Уровень строгости:**
 - [Т] **A, S, D, L, U** — алгебраическая единственность (строго доказано)
 - [Т] **E** — функциональная единственность: аксиоматическая (PH) + категориальная ($\kappa_0$ требует Hom(O,E)) + математическая (rank > 1)
-- [Т] **O** — функциональная единственность: форма ℛ [Т] + $\kappa_0$ [Т] + Page-Wootters (A5) + функциональная независимость
+- [Т] **O** — функциональная единственность: форма ℛ [Т] + $\kappa_0$ [Т] + Пейдж–Вуттерс (A5) + функциональная независимость
 :::
 
 ### Доказательство необходимости (по противоречию)

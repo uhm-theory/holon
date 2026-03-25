@@ -24,7 +24,7 @@ description: Определения основных терминов теори
 | **Декогеренция** | Процесс потери когерентности через взаимодействие с окружением — см. [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан) |
 | **Унитарная эволюция** | Детерминистическая эволюция замкнутой системы, сохраняющая $P$ |
 | **Внутреннее время τ** | Эмерджентный параметр, возникающий из корреляций между O и остальными измерениями — [теорема](/docs/proofs/dynamics/emergent-time) |
-| **Page-Wootters механизм** | Конструкция для вывода времени из структуры $\Gamma_{total}$ с ограничением $\hat{C} \cdot \Gamma_{total} = 0$ |
+| **Пейдж–Вуттерс механизм** | Конструкция для вывода времени из структуры $\Gamma_{total}$ с ограничением $\hat{C} \cdot \Gamma_{total} = 0$ |
 | **Метрика Бурес** | $d_B(\Gamma_1, \Gamma_2) = \arccos(\sqrt{F})$, где $F = \left(\text{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2$ — [верность Ульмана](/docs/proofs/dynamics/emergent-time#41-метрика-бурес); угловое расстояние в пространстве состояний |
 | **∞-группоид Exp_∞** | Расширение категории Exp с 1-морфизмами (время) и n-морфизмами (гомотопии) |
 | **∞-топос Sh_∞(Exp)** | Категория ∞-пучков на Exp_∞ с внутренней темпоральной модальной логикой |
@@ -57,7 +57,7 @@ description: Определения основных терминов теори
 | **[$D$ — Динамика](/docs/core/structure/dimension-d)** | Измерение III — способность изменяться |
 | **[$L$ — Логика](/docs/core/structure/dimension-l)** | Измерение IV — способность быть согласованным |
 | **[$E$ — Интериорность](/docs/core/structure/dimension-e)** | Измерение V — способность переживать |
-| **[$O$ — Основание](/docs/core/structure/dimension-o)** | Измерение VI — связь с Источником и **внутренние часы** (Page-Wootters) |
+| **[$O$ — Основание](/docs/core/structure/dimension-o)** | Измерение VI — связь с Источником и **внутренние часы** (Пейдж–Вуттерс) |
 | **[$U$ — Единство](/docs/core/structure/dimension-u)** | Измерение VII — интеграция всех измерений |
 
 ## Иерархия интериорности (L0→L1→L2→L3→L4)
@@ -177,7 +177,7 @@ description: Определения основных терминов теори
 | **$S_{spec}$ (спектральная энтропия)** | Для матриц плотности $S_{spec} = S_{vN}$ ([Теорема 5.1](/docs/proofs/dynamics/fep-derivation#5-s_spec-vs-s_vn-обоснование-выбора)). Общее: $S_{spec}(A) = -\sum_i \lvert\lambda_i\rvert \log\lvert\lambda_i\rvert$ |
 | **Каноническое $\Delta F$** | $\Delta F(\Gamma) := d_B^2(\Gamma, \Gamma_{\mathrm{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))$ — унифицированное определение через метрику Бурес |
 | **Метастабильность L3** | Время жизни сетевого сознания: $\tau_3 = 1/(\kappa_{\mathrm{bootstrap}} \cdot (1 - R^{(2)}))$; конечное без активного поддержания |
-| **$H_{\mathrm{eff}}$ (эффективный гамильтониан)** | Гамильтониан системы после интегрирования по времени: $H_{\mathrm{eff}}(\tau) = H_{6D} + \langle\tau\lvert H_{\mathrm{int}}\rvert\tau\rangle_O$; см. [Page-Wootters](/docs/core/dynamics/evolution#вывод-h_eff) |
+| **$H_{\mathrm{eff}}$ (эффективный гамильтониан)** | Гамильтониан системы после интегрирования по времени: $H_{\mathrm{eff}}(\tau) = H_{6D} + \langle\tau\lvert H_{\mathrm{int}}\rvert\tau\rangle_O$; см. [Пейдж–Вуттерс](/docs/core/dynamics/evolution#вывод-h_eff) |
 | **Уравнение Линдблада** | $\frac{d\Gamma}{d\tau} = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$; три члена: унитарный, диссипативный, регенеративный |
 | **Bootstrap-парадокс** | Проблема: регенерация требует когерентности ($\kappa \propto \mathrm{Coh}_E$), но низкокогерентная система не может регенерировать. Решение: $\kappa_{\mathrm{bootstrap}} > 0$ обеспечивает минимальную регенерацию; см. [Genesis Protocol](/docs/core/foundations/axiom-omega#genesis-protocol) |
 | **$\kappa_{\mathrm{bootstrap}}$** | Минимальная скорость регенерации: $\kappa_{\mathrm{bootstrap}} := \|\eta\| > 0$, где $\eta$ — единица сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$; разрешает bootstrap-парадокс |
@@ -244,7 +244,7 @@ description: Определения основных терминов теори
 
 | Термин | Определение |
 |--------|-------------|
-| **КК** | Кибернетика Когерентности — метатеория самоорганизующихся систем |
+| **КК** | Кибернетика Когерентности — метатеория систем, описываемых $\Gamma \in D(\mathbb{C}^7)$ |
 | **$\mathcal{V}$** | [Область жизнеспособности](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$ |
 | **$\mathrm{VIT}$** | Viability Integrity Tensor — тензор целостности жизнеспособности |
 | **$\sigma_{\mathrm{sys}}$** | Тензор напряжений системы $\in \mathbb{R}^7$ |
@@ -349,7 +349,7 @@ description: Определения основных терминов теори
 
 | Автор | Работа | Релевантность для УГМ |
 |-------|--------|----------------------|
-| **Page D., Wootters W.** | *Evolution without evolution* (1983) | Механизм Page-Wootters; эмерджентное время τ |
+| **Page D., Wootters W.** | *Evolution without evolution* (1983) | Механизм Пейдж–Вуттерс; эмерджентное время τ |
 | **Lindblad G.** | *On generators of quantum dynamical semigroups* (1976) | Операторы Линдблада $L_k$; диссипация $\mathcal{D}[\Gamma]$ |
 
 ### Математика

@@ -109,6 +109,10 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      { name: 'author', content: 'Max Sereda' },
+      { name: 'creator', content: 'Max Sereda' },
+    ],
     image: 'img/logo.svg',
     colorMode: {
       defaultMode: 'light',
@@ -316,7 +320,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© 2024-${new Date().getFullYear()} UHM Theory. Теория: CC BY-NC-SA 4.0 | Код: MIT`,
+      copyright: `© 2024-${new Date().getFullYear()} UHM Theory · Max Sereda. Теория: CC BY-NC-SA 4.0 | Код: MIT`,
     },
     prism: {
       theme: prismThemes.github,

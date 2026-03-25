@@ -179,7 +179,7 @@ $$\mathrm{Gap}(i,j) \leq \varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 
 
 Средняя когерентность $\bar{\varepsilon} = \frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij} \approx 0.023$, а максимум $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
 
-**Шаг 3 (O-сектор — необходимость Gap $\approx$ 1).** Механизм Page-Wootters (A5) требует, чтобы O-подсистема служила часами. Скорость течения времени (из [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) T-53 [Т]):
+**Шаг 3 (O-сектор — необходимость Gap $\approx$ 1).** Механизм Пейдж–Вуттерс (A5) требует, чтобы O-подсистема служила часами. Скорость течения времени (из [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) T-53 [Т]):
 
 $$\frac{d\tau}{d\sigma} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}$$
 

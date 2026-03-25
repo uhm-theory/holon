@@ -71,7 +71,7 @@ description: Математические обозначения теории У
 | $D$ | Динамика | Унитарная эволюция $U(\tau)$ | [→](/docs/core/structure/dimension-d) |
 | $L$ | Логика | Алгебра операторов | [→](/docs/core/structure/dimension-l) |
 | $E$ | Интериорность | Матрица плотности $\rho_E$ | [→](/docs/core/structure/dimension-e) |
-| $O$ | Основание | Вакуумное состояние $\vert 0\rangle$, внутренние часы ([Page-Wootters](/docs/proofs/dynamics/emergent-time)) | [→](/docs/core/structure/dimension-o) |
+| $O$ | Основание | Вакуумное состояние $\vert 0\rangle$, внутренние часы ([Пейдж–Вуттерс](/docs/proofs/dynamics/emergent-time)) | [→](/docs/core/structure/dimension-o) |
 | $U$ | Единство | Операция следа $\mathrm{Tr}$ | [→](/docs/core/structure/dimension-u) |
 
 ## Базис пространства состояний
@@ -82,7 +82,7 @@ $$
 
 Ортонормированность: $\langle i|j\rangle = \delta_{ij}$ для $i, j \in \{A, S, D, L, E, O, U\}$.
 
-## Алгебра часов (Page-Wootters)
+## Алгебра часов (Пейдж–Вуттерс)
 
 | Символ | Значение | Определение |
 |--------|----------|-------------|
@@ -90,7 +90,7 @@ $$
 | $V_O$ | [Оператор сдвига времени](/docs/core/structure/dimension-o#оператор-сдвига-v_o) | $V_O^N = \mathbb{1}$, $V_O H_O V_O^\dagger = H_O + \omega_0 \mathbb{1}$ |
 | $\mathcal{A}_O$ | [C*-алгебра часов](/docs/core/structure/dimension-o#c-алгебра-часов-a_o) | $\mathcal{A}_O = C^*(H_O, V_O) \cong M_N(\mathbb{C})$ |
 | $H_{\text{int}}$ | [Гамильтониан взаимодействия](/docs/core/foundations/axiom-omega#гамильтониан-взаимодействия) | Связь O с E и U |
-| $\hat{C}$ | [Ограничение Page-Wootters](/docs/core/foundations/axiom-omega#свойство-2) | $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\text{int}}$ |
+| $\hat{C}$ | [Ограничение Пейдж–Вуттерс](/docs/core/foundations/axiom-omega#свойство-2) | $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\text{int}}$ |
 | $\mathcal{H}_{total}$ | Глобальное пространство | $\mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$, $\dim = 42$ |
 | $\omega_0$ | Фундаментальная частота | Базовая частота часов O |
 | $\vert\tau_n\rangle$ | Базис часов | Собственные состояния $V_O$ |
@@ -110,7 +110,7 @@ $$
 -i[H_{\text{eff}}, \Gamma] = -i(H_{\text{eff}}\Gamma - \Gamma H_{\text{eff}})
 $$
 
-Здесь $H_{\text{eff}}$ — эффективный гамильтониан, возникающий из ограничения Page-Wootters.
+Здесь $H_{\text{eff}}$ — эффективный гамильтониан, возникающий из ограничения Пейдж–Вуттерс.
 
 **[Диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан):**
 $$
@@ -342,7 +342,7 @@ $$
 | $P_E$ | Чистота E-сектора (42D): $P_E = \mathrm{Tr}(\rho_E^2)$, где $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — **теоретическая конструкция**, определена только в расширенном 42D формализме ($\mathcal{H} = \mathbb{C}^{42}$). Формальная эквивалентность $\mathrm{Coh}_E \approx P_E$ — **структурная гипотеза [Г]** ([подробнее](/docs/applied/coherence-cybernetics/definitions#e-когерентность)) |
 | $P_{\text{crit}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) |
 | $\theta_i$ | Пороги компонент стресса |
-| $H_{\text{eff}}$ | Эффективный гамильтониан: $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau\vert H_{\text{int}}\vert\tau\rangle_O$ — возникает из ограничения Page-Wootters |
+| $H_{\text{eff}}$ | Эффективный гамильтониан: $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau\vert H_{\text{int}}\vert\tau\rangle_O$ — возникает из ограничения Пейдж–Вуттерс |
 | $g_V(P)$ | V-preservation gate: $\mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$; активирует регенерацию при $P > P_{\mathrm{crit}}$ ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate)) |
 | $\Theta(\Delta F)$ | Функция Хевисайда от изменения свободной энергии $\Delta F$; необходимое условие из принципа Ландауэра (уточнено $g_V(P)$) |
 | $\rho_*$ ($= \Gamma_{\text{target}}$) | Единственное стационарное состояние $\mathcal{L}_\Omega$ [Т]: $\rho_* = \varphi(\Gamma) = \lim_{\tau\to\infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ — цель регенерации |

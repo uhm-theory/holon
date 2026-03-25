@@ -274,10 +274,10 @@ $$
 
 **Физическое следствие:** Различие между «мёртвой» и «живой» материей — в структуре логического классификатора Ω: живые системы способны моделировать собственную логическую структуру.
 
-### 3.6 Дискретность времени и Page-Wootters
+### 3.6 Дискретность времени и Пейдж–Вуттерс
 
 :::info Связь с L-унификацией
-В [Аксиоме Ω⁷](/docs/core/foundations/axiom-omega) время **выводится** из [механизма Page-Wootters](/docs/proofs/dynamics/emergent-time) через **темпоральную модальность ▷** на классификаторе Ω.
+В [Аксиоме Ω⁷](/docs/core/foundations/axiom-omega) время **выводится** из [механизма Пейдж–Вуттерс](/docs/proofs/dynamics/emergent-time) через **темпоральную модальность ▷** на классификаторе Ω.
 
 $$
 \tau_n = \rhd^n(\text{now}), \quad n \in \mathbb{Z}_7
@@ -307,7 +307,7 @@ $$
 
 **Связь с 42D формализмом:**
 
-Полное пространство состояний Page-Wootters:
+Полное пространство состояний Пейдж–Вуттерс:
 $$
 \mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}, \quad \dim = 7 \times 6 = 42
 $$
@@ -690,7 +690,7 @@ $\dim(\mathcal{H}_{total}) = 42 = 7 \times 6$ в УГМ. В M-теории: $42 
 - [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — L-унификация: Ω → χ_S → L_k → ℒ_Ω → φ
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$, связь формализмов
 - [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma(\tau)/d\tau$ с выводом $H_{eff}$
-- [Эмерджентное время](/docs/proofs/dynamics/emergent-time) — механизм Page-Wootters, темпоральная модальность ▷
+- [Эмерджентное время](/docs/proofs/dynamics/emergent-time) — механизм Пейдж–Вуттерс, темпоральная модальность ▷
 - [Эмерджентное многообразие $M^4$](/docs/proofs/physics/emergent-manifold) — вывод $M^4$ из категорной структуры (T-117—T-121)
 - [Измерение O](/docs/core/structure/dimension-o) — алгебра часов $H_O$, $V_O$, $\mathcal{A}_O$
 - [Измерение L](/docs/core/structure/dimension-l) — логическое измерение, L = Ω ∩ Γ

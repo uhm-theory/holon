@@ -201,7 +201,7 @@ $$
 
 **(iii)** E-проекцию $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (из [Coh_E [Т]](/docs/core/foundations/axiom-septicity#hs-projection))
 
-**(iv)** Тензорную декомпозицию Page–Wootters $\mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$, выделяющую O (из A5)
+**(iv)** Тензорную декомпозицию Пейдж–Вуттерс $\mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$, выделяющую O (из A5)
 
 **(v)** Формулу регенерации $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, выделяющую $\{O, E, U\}$ (из [категориального вывода κ₀ [Т]](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
 :::
@@ -210,7 +210,7 @@ $$
 - (i): [L-унификация](/docs/core/foundations/axiom-omega#lk-из-omega) [Т] — атомы $S_k = |k\rangle\langle k|$ классификатора $\Omega$
 - (ii): Мост T15 [Т] — единственность BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
 - (iii): [Теорема HS-проекции](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [Т] — ортогональная проекция в пространстве Гильберта–Шмидта
-- (iv): Аксиома A5 (Page–Wootters) — явный постулат
+- (iv): Аксиома A5 (Пейдж–Вуттерс) — явный постулат
 - (v): Сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т] — формула $\kappa_0$ из [категориального вывода](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
 
 ### Лемма G4: Калибровочная группа = $G_2$ [Т] {#лемма-g4}
