@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: website/package-lock.json
 
@@ -54,7 +54,7 @@ jobs:
       - name: Build website
         run: npm run build
         env:
-          NODE_OPTIONS: "--max-old-space-size=16384 --max-semi-space-size=512"
+          NODE_OPTIONS: "--max-old-space-size=16384"
           GENERATE_SOURCEMAP: "false"
 
       - name: Upload artifact
