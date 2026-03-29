@@ -1,57 +1,5 @@
 <p align="center">
-  <svg viewBox="0 0 500 500" width="280" height="280" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
-        <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <circle cx="250" cy="250" r="170" fill="url(#bg)"/>
-    <polygon points="250,80 348,128 378,232 325,332 175,332 122,232 152,128" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.2"/>
-    <!-- Heptagram {7/3} -->
-    <line x1="250" y1="80" x2="325" y2="332" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="348" y1="128" x2="175" y2="332" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="378" y1="232" x2="152" y2="128" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="325" y1="332" x2="250" y2="80" stroke="#6366f1" stroke-width="0" opacity="0"/>
-    <line x1="175" y1="332" x2="348" y2="128" stroke="#6366f1" stroke-width="0" opacity="0"/>
-    <line x1="122" y1="232" x2="378" y2="232" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="152" y1="128" x2="325" y2="332" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="250" y1="80" x2="122" y2="232" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="348" y1="128" x2="175" y2="332" stroke="#6366f1" stroke-width="0" opacity="0"/>
-    <line x1="378" y1="232" x2="250" y2="80" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="325" y1="332" x2="152" y2="128" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="175" y1="332" x2="378" y2="232" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="122" y1="232" x2="348" y2="128" stroke="#6366f1" stroke-width="1.5" opacity="0.35"/>
-    <line x1="152" y1="128" x2="250" y2="80" stroke="#6366f1" stroke-width="0" opacity="0"/>
-    <!-- Rays from center -->
-    <line x1="250" y1="250" x2="250" y2="80" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <line x1="250" y1="250" x2="348" y2="128" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <line x1="250" y1="250" x2="378" y2="232" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <line x1="250" y1="250" x2="325" y2="332" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <line x1="250" y1="250" x2="175" y2="332" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <line x1="250" y1="250" x2="122" y2="232" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <line x1="250" y1="250" x2="152" y2="128" stroke="#6366f1" stroke-width="1.5" opacity="0.3"/>
-    <!-- Vertex nodes -->
-    <circle cx="250" cy="80" r="4" fill="#6366f1" opacity="0.7"/>
-    <circle cx="348" cy="128" r="4" fill="#6366f1" opacity="0.7"/>
-    <circle cx="378" cy="232" r="4" fill="#6366f1" opacity="0.7"/>
-    <circle cx="325" cy="332" r="4" fill="#6366f1" opacity="0.7"/>
-    <circle cx="175" cy="332" r="4" fill="#6366f1" opacity="0.7"/>
-    <circle cx="122" cy="232" r="4" fill="#6366f1" opacity="0.7"/>
-    <circle cx="152" cy="128" r="4" fill="#6366f1" opacity="0.7"/>
-    <!-- Core -->
-    <circle cx="250" cy="250" r="35" fill="#6366f1" opacity="0.15"/>
-    <circle cx="250" cy="250" r="25" fill="#6366f1" opacity="0.25"/>
-    <text x="250" y="250" text-anchor="middle" dominant-baseline="central" fill="#6366f1" font-size="28" opacity="0.8">∞</text>
-    <!-- Labels -->
-    <text x="250" y="68" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">A</text>
-    <text x="358" y="122" text-anchor="start" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">S</text>
-    <text x="388" y="236" text-anchor="start" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">D</text>
-    <text x="332" y="348" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">L</text>
-    <text x="168" y="348" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">E</text>
-    <text x="108" y="236" text-anchor="end" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">O</text>
-    <text x="142" y="122" text-anchor="end" fill="#6366f1" font-size="11" font-weight="bold" opacity="0.6">U</text>
-  </svg>
+  <img src="assets/heptagram.svg" width="280" height="280" alt="UHM Heptagram {7/3} — Seven dimensions of the Holon"/>
 </p>
 
 <h1 align="center">Unitary Holonomic Monism</h1>
