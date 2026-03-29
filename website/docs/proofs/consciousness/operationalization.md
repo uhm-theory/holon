@@ -430,3 +430,10 @@ $\blacksquare$
 - [Г]-90 → **[Т]** (коммутативность φ-башни, [T-150](/docs/proofs/consciousness/substrate-closure#t-150))
 - [Г]-91 → **[Т]** (генезис через средовое сопряжение, [T-148](/docs/proofs/consciousness/substrate-closure#t-148))
 - H3 → **ЗАКРЫТА** (T-130 + T-133)
+
+---
+
+**Связанные документы:**
+- [Операциональное замыкание](/docs/proofs/consciousness/operational-closure) — теоремы T-139–T-147: замыкание операциональных пробелов
+- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4, SAD и связь с φ-башней
+- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — мера рефлексии R и операциональный критерий

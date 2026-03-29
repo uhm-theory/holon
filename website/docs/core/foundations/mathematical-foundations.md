@@ -1224,3 +1224,9 @@ $$
 | Границы обучения | [Границы обучения](/docs/applied/coherence-cybernetics/learning-bounds) |
 
 Следующий шаг: [Аксиома Omega-7](./axiom-omega) — подробное изложение аксиоматики.
+
+---
+
+**Связанные документы:**
+- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос, классификатор подобъектов, терминальный объект
+- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — вывод κ₀, P_crit, категориальное сопряжение
