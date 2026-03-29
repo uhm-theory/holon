@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/heptagram.svg" width="280" height="280" alt="UHM Heptagram {7/3} — Seven dimensions of the Holon"/>
+  <img src="assets/heptagram.png" width="280" height="280" alt="UHM Heptagram {7/3} — Seven dimensions of the Holon"/>
 </p>
 
 <h1 align="center">Unitary Holonomic Monism</h1>
