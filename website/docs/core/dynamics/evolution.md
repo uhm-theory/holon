@@ -254,7 +254,7 @@ $$
 L_k^{\text{atom}} := |k\rangle\langle k|, \quad k = 0, \ldots, 6
 $$
 
-Каноническая форма (с учётом [Фано-структуры](/docs/core/operators/lindblad-operators#фано-структурированные-операторы)) комбинирует атомарные и Фано-операторы: $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$, где $\Pi_p$ — проекторы на Фано-линии PG(2,2). Мастер-определение: [Операторы Линдблада](/docs/core/operators/lindblad-operators).
+Каноническая форма (с учётом [Фано-структуры](/docs/core/operators/lindblad-operators#фано-операторы)) комбинирует атомарные и Фано-операторы: $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$, где $\Pi_p$ — проекторы на Фано-линии PG(2,2). Мастер-определение: [Операторы Линдблада](/docs/core/operators/lindblad-operators).
 :::
 
 **CPTP-условие:**
