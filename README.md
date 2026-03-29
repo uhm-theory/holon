@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/heptagram.png" width="280" height="280" alt="UHM Heptagram {7/3} — Seven dimensions of the Holon"/>
-</p>
-
 <h1 align="center">Unitary Holonomic Monism</h1>
 
 <p align="center">
@@ -119,4 +115,6 @@ NODE_OPTIONS="--max-old-space-size=16384" npm run build
 
 ## License
 
-MIT
+This work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit and distribute contributions under the same license.
