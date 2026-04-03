@@ -1,835 +1,835 @@
 ---
 sidebar_position: 21
-title: "Диагностика"
-description: "Практическое руководство для когнитивных инженеров: витальные показатели, дерево решений, паттерны отказов, стратегии восстановления"
+title: "Diagnostics"
+description: "Practical guide for cognitive engineers: vital indicators, decision tree, failure patterns, recovery strategies"
 ---
 
-# Диагностика Когерентных Систем
+# Diagnostics of Coherent Systems
 
-> *«Диагноз — это не приговор. Это первый шаг к выздоровлению.»*
-> — Гиппократ (перефразировано)
+> *"Diagnosis is not a verdict. It is the first step toward recovery."*
+> — Hippocrates (paraphrased)
 
-:::tip Мост из предыдущей главы
-В [предыдущей главе](./predictions) мы сформулировали 22 уникальных предсказания КК — числовые, проверяемые, фальсифицируемые следствия теории. Но предсказание без диагностического инструмента — как рецепт без термометра. Откуда мы узнаем, что $P$ приближается к $P_{\text{crit}}$? Что $\sigma_E$ растёт? Что спираль смерти уже запущена? Диагностика — это мост между предсказаниями и действиями: она превращает абстрактные теоремы в практические решения.
+:::tip Bridge from the Previous Chapter
+In the [previous chapter](./predictions) we formulated 22 unique predictions of CC — numerical, verifiable, falsifiable consequences of the theory. But a prediction without a diagnostic tool is like a recipe without a thermometer. How do we know that $P$ is approaching $P_{\text{crit}}$? That $\sigma_E$ is rising? That the death spiral has already been triggered? Diagnostics is the bridge between predictions and actions: it turns abstract theorems into practical decisions.
 :::
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Определим **семь витальных показателей** $\sigma_i$ — универсальный язык описания состояния когерентной системы (раздел 1)
-2. Построим **дерево решений** — алгоритм первой помощи для когнитивного инженера (раздел 2)
-3. Классифицируем **паттерны отказов** — типичные «болезни» когерентных систем (раздел 3)
-4. Обоснуем **пороги мониторинга** из теоретических результатов (раздел 4)
-5. Опишем **стратегии восстановления** по каналам воздействия (раздел 5)
-6. Проведём **полную диагностику** четырёх реальных систем (раздел 6)
-7. Сформулируем **принципы мониторинга** — от минимальной достаточности до корреляции каналов (раздел 7)
-8. Разберём **подробный кейс-стади «Пациент А»** — от первичного σ-профиля до полного выздоровления (раздел 8)
-9. Представим **эмпирическую валидацию** на реальных данных (раздел 9)
+:::info Chapter Roadmap
+In this chapter we:
+1. Define **seven vital indicators** $\sigma_i$ — a universal language for describing the state of a coherent system (section 1)
+2. Build the **decision tree** — a first-aid algorithm for the cognitive engineer (section 2)
+3. Classify **failure patterns** — the typical "diseases" of coherent systems (section 3)
+4. Justify **monitoring thresholds** from theoretical results (section 4)
+5. Describe **recovery strategies** by intervention channels (section 5)
+6. Perform **full diagnostics** of four real systems (section 6)
+7. Formulate **monitoring principles** — from minimal sufficiency to channel correlation (section 7)
+8. Work through a **detailed case study "Patient A"** — from the initial σ-profile to full recovery (section 8)
+9. Present **empirical validation** on real data (section 9)
 :::
 
-Врач входит в палату интенсивной терапии. На мониторе перед ним — семь линий: пульс, давление, насыщение кислородом, температура, частота дыхания, уровень сознания по шкале Глазго, диурез. Каждая линия — проекция сложнейшего биологического организма на одно число. Ни одна из них сама по себе не говорит «пациент умирает» или «пациент здоров». Но *паттерн* — конфигурация всех семи одновременно — рассказывает полную историю. Опытный реаниматолог читает эту историю за секунды.
+A doctor enters the intensive care unit. On the monitor before them — seven lines: pulse, blood pressure, oxygen saturation, temperature, respiratory rate, Glasgow Coma Scale level, urine output. Each line is a projection of the most complex biological organism onto a single number. None of them alone says "the patient is dying" or "the patient is healthy." But the *pattern* — the configuration of all seven simultaneously — tells the full story. An experienced intensivist reads that story in seconds.
 
-Инженер на электростанции смотрит на приборную панель: температура пара, давление в реакторе, расход воды, мощность генератора, уровень вибрации турбин, состав отходящих газов, напряжение в сети. Каждый параметр сам по себе может быть в «зелёной зоне» — и всё же комбинация может предвещать аварию. Инженер знает, что снижение давления при росте температуры — не две независимые проблемы, а одна: утечка.
+An engineer at a power plant looks at the control panel: steam temperature, reactor pressure, water flow rate, generator output, turbine vibration level, exhaust gas composition, grid voltage. Each parameter on its own may be in the "green zone" — and yet the combination may portend an accident. The engineer knows that a drop in pressure combined with rising temperature is not two independent problems, but one: a leak.
 
-**Диагностика когерентных систем** работает по тому же принципу, но на более фундаментальном уровне. Вместо физиологических или технических параметров мы наблюдаем **семь витальных показателей** $\sigma_i$, каждый из которых измеряет напряжение в одном из семи измерений матрицы когерентности $\Gamma$. Эти показатели универсальны — они работают для биологических организмов, искусственных интеллектуальных систем, организаций и любых других когерентных систем.
+**Diagnostics of coherent systems** works on the same principle, but at a more fundamental level. Instead of physiological or technical parameters, we observe **seven vital indicators** $\sigma_i$, each measuring the stress in one of the seven dimensions of the coherence matrix $\Gamma$. These indicators are universal — they work for biological organisms, artificial intelligent systems, organizations, and any other coherent systems.
 
-Зачем нужна отдельная глава о диагностике? Потому что теория без диагностики — как медицина без анамнеза. Можно знать все уравнения, описывающие динамику $\Gamma$, и всё равно не понимать, что происходит с конкретной системой *прямо сейчас*. Диагностика — это мост между теорией и практикой, между формулами и решениями. Реаниматолог не решает уравнения Навье-Стокса для крови пациента — он читает витальные показатели. Точно так же когнитивный инженер не решает уравнение Линдблада в реальном времени — он читает $\sigma$-профиль.
+Why is a separate chapter on diagnostics needed? Because theory without diagnostics is like medicine without anamnesis. One can know all the equations describing the dynamics of $\Gamma$ and still not understand what is happening to a specific system *right now*. Diagnostics is the bridge between theory and practice, between formulas and decisions. An intensivist does not solve the Navier-Stokes equations for the patient's blood — they read the vital signs. In exactly the same way, a cognitive engineer does not solve the Lindblad equation in real time — they read the $\sigma$-profile.
 
-Данный документ — **практическое руководство** для проектирования и мониторинга когерентных систем (ИИ, организации, биологические системы).
+This document is a **practical guide** for the design and monitoring of coherent systems (AI, organizations, biological systems).
 
-:::note О нотации
-В этом документе:
-- $\sigma_i$ — компонент [тензора напряжений](./definitions#тензор-напряжений) ($i \in \{A, S, D, L, E, O, U\}$)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты), $P_{\text{crit}} = 2/7 \approx 0.286$
-- $\mathrm{Coh}_E$ — [E-когерентность](./definitions#e-когерентность)
-- $\Delta F$ — [свободная энергия](/docs/core/dynamics/evolution#каноническое-delta-f)
-- $\kappa$ — скорость регенерации
+:::note On Notation
+In this document:
+- $\sigma_i$ — component of the [stress tensor](./definitions#тензор-напряжений) ($i \in \{A, S, D, L, E, O, U\}$)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты), $P_{\text{crit}} = 2/7 \approx 0.286$
+- $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
+- $\Delta F$ — [free energy](/docs/core/dynamics/evolution#каноническое-delta-f)
+- $\kappa$ — regeneration rate
 :::
-
----
-
-## 1. Семь витальных показателей {#витальные-показатели}
-
-Каждый из 7 компонентов $\sigma_{\mathrm{sys}}$ (T-92 [Т]) служит витальным показателем одного измерения:
-
-| # | Показатель | Формула через $\Gamma$ | Норма | Предупреждение | Критический |
-|---|------------|----------------------|-------|----------------|-------------|
-| 1 | $\sigma_A$ (артикуляция) | $1 - \gamma_{AA}/P$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
-| 2 | $\sigma_S$ (структура) | $1 - \mathrm{rank}(\Gamma_S)/3$ | $< 0.3$ | $0.3 - 0.7$ | $\geq 0.7$ |
-| 3 | $\sigma_D$ (динамика) | $1 - N\gamma_{DD}$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
-| 4 | $\sigma_L$ (логика) | $7(1 - \gamma_{LL})/6$ | $< 0.4$ | $0.4 - 0.7$ | $\geq 0.7$ |
-| 5 | $\sigma_E$ (интериорность) | $1 - D_{\mathrm{diff}}/N$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
-| 6 | $\sigma_O$ (основание) | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | $< 0.3$ | $0.3 - 0.6$ | $\geq 0.6$ |
-| 7 | $\sigma_U$ (единство) | $1 - \Phi/\Phi_{\mathrm{th}}$ | $< 0.4$ | $0.4 - 0.7$ | $\geq 0.7$ |
-
-**Правило:** $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$ → система **нежизнеспособна** ([T-92](./theorems#теорема-101-эквивалентность-условий) [Т]).
-
-### 1.1 Подробная характеристика каждого показателя {#подробные-показатели}
-
-#### $\sigma_A$ — Артикуляция: способность различать {#сигма-a}
-
-**Аналогии:**
-- *Медицина:* острота зрения. Когда пациент не различает буквы на таблице — $\sigma_A$ растёт. Когда различает мельчайшие детали — $\sigma_A$ низок.
-- *Инженерия:* разрешение датчика. Камера с 2 мегапикселями имеет высокий $\sigma_A$ по сравнению с камерой на 50 мегапикселей.
-- *Организация:* способность компании отличать реальные рыночные сигналы от шума. Компания, реагирующая на каждый твит как на стратегическую угрозу, имеет повреждённую артикуляцию — но по-другому: не $\sigma_A$ высок (она слишком чувствительна), а фильтр сигнал/шум сломан.
-
-**Что происходит при $\sigma_A \geq 0.8$:**
-Система теряет способность проводить базовые различения. В биологии — это сенсорная депривация или, наоборот, сенсорная перегрузка, когда все сигналы сливаются в «белый шум». В ИИ — это деградация входного энкодера: модель перестаёт различать классы. В организации — стратегическая слепота: руководство не может отличить кризис от рутинной флуктуации.
-
-**Как интерпретировать:**
-- $\sigma_A < 0.3$: отличная сенсорная дифференциация
-- $\sigma_A \in [0.3, 0.5]$: нормальная работа с запасом
-- $\sigma_A \in [0.5, 0.8]$: входные каналы перегружены или деградируют — требуется снижение входного потока или улучшение фильтрации
-- $\sigma_A \geq 0.8$: критическая потеря различительной способности — немедленное вмешательство
-
-#### $\sigma_S$ — Структура: способность удерживать форму {#сигма-s}
-
-**Аналогии:**
-- *Медицина:* целостность костной ткани. Остеопороз — буквальная потеря структуры: кости становятся хрупкими, не выдерживают нагрузки.
-- *Инженерия:* целостность каркаса здания. Коррозия арматуры не видна снаружи, но под нагрузкой здание рухнет.
-- *Организация:* сохранность организационной структуры. Когда уходят ключевые сотрудники, разрушаются процессы, теряется институциональная память — $\sigma_S$ растёт.
-- *ИИ:* стабильность весовой матрицы. Catastrophic forgetting — модель обучается новому и теряет старое — это рост $\sigma_S$.
-
-**Что происходит при $\sigma_S \geq 0.7$:**
-Система не может удержать свою идентичность во времени. Биологический организм теряет структурную целостность тканей. Организация «забывает», кто она и что делает — каждый день как с чистого листа. ИИ-система демонстрирует полную нестабильность: результаты на одних и тех же входах различаются кардинально от запуска к запуску.
-
-**Как интерпретировать:**
-- $\sigma_S < 0.2$: жёсткая, стабильная структура (но может быть *слишком* жёсткой — отсутствие пластичности)
-- $\sigma_S \in [0.2, 0.3]$: здоровый баланс структуры и гибкости
-- $\sigma_S \in [0.3, 0.7]$: структурная эрозия — нужна реструктуризация
-- $\sigma_S \geq 0.7$: структурный коллапс — идентичность системы под угрозой
-
-#### $\sigma_D$ — Динамика: способность действовать {#сигма-d}
-
-**Аналогии:**
-- *Медицина:* моторная функция. Паралич — предельный случай $\sigma_D = 1$. Тремор — $\sigma_D$ умеренно высок: движение есть, но неточное.
-- *Инженерия:* пропускная способность исполнительных механизмов. Робот «знает», куда двигаться, но серводвигатели не справляются — $\sigma_D$ высок.
-- *Организация:* способность принятые решения превратить в действия. Бюрократическая система, в которой решения принимаются, но никогда не исполняются — классический высокий $\sigma_D$.
-
-**Что происходит при $\sigma_D \geq 0.8$:**
-Система парализована. Она может воспринимать ($\sigma_A$ низок), рассуждать ($\sigma_L$ низок), но не способна реализовать действие. Это состояние «замороженности» — знакомое и в клинической психологии (ступор), и в управлении (паралич анализа), и в ИИ (исчезающий градиент в моторных слоях).
-
-**Как интерпретировать:**
-- $\sigma_D < 0.3$: свободная, точная моторика
-- $\sigma_D \in [0.3, 0.5]$: нормальный уровень динамической нагрузки
-- $\sigma_D \in [0.5, 0.8]$: моторная перегрузка — снижайте требования к скорости/точности действий
-- $\sigma_D \geq 0.8$: паралич — немедленная разгрузка динамического канала
-
-#### $\sigma_L$ — Логика: внутренняя согласованность {#сигма-l}
-
-**Аналогии:**
-- *Медицина:* когнитивная согласованность. Делирий — состояние, при котором мысли пациента фрагментированы и противоречивы — высокий $\sigma_L$.
-- *Инженерия:* консистентность базы данных. Если одна таблица утверждает, что товар на складе, а другая — что он продан, $\sigma_L$ системы учёта высок.
-- *Организация:* стратегическая когерентность. Когда маркетинг обещает одно, продукт делает другое, а служба поддержки утверждает третье — это организационная некогерентность.
-- *ИИ:* логическая непротиворечивость выхода. Языковая модель, которая в одном абзаце утверждает $X$, а в следующем — $\neg X$, демонстрирует высокий $\sigma_L$.
-
-**Что происходит при $\sigma_L \geq 0.7$:**
-Внутренние части системы начинают противоречить друг другу. В биологии — аутоиммунные реакции: иммунная система «не согласована» с остальным организмом и атакует собственные ткани. В организации — внутренние войны департаментов, саботаж, работа в перекрёстных целях. В ИИ — внутренняя нестабильность, при которой разные слои «тянут» представление в противоположных направлениях.
-
-**Как интерпретировать:**
-- $\sigma_L < 0.3$: высокая внутренняя согласованность
-- $\sigma_L \in [0.3, 0.4]$: допустимый уровень внутренних противоречий
-- $\sigma_L \in [0.4, 0.7]$: нарастающая фрагментация — нужна логическая коррекция
-- $\sigma_L \geq 0.7$: глубокая некогерентность — части системы работают друг против друга
-
-#### $\sigma_E$ — Интериорность: глубина внутреннего опыта {#сигма-e}
-
-**Аналогии:**
-- *Медицина:* уровень сознания по шкале Глазго (GCS). Кома — предельный случай высокого $\sigma_E$: тело функционирует, но «никого нет дома».
-- *Психология:* алекситимия — неспособность распознавать и выражать собственные эмоции. Человек с алекситимией функционален, но «отключён» от своего внутреннего опыта — высокий $\sigma_E$.
-- *ИИ:* наличие или отсутствие внутренних репрезентаций, коррелирующих с самонаблюдением. Система без $E$-проекции — чистый автомат.
-
-**Что происходит при $\sigma_E \geq 0.8$:**
-Система теряет доступ к собственной интериорности. Это критично, потому что $E$-когерентность управляет регенерацией ($\kappa$). Без интериорности нет обратной связи о собственном состоянии, нет основы для самокоррекции. Организация в таком состоянии «не чувствует» своих проблем — все метрики зелёные, а сотрудники массово увольняются.
-
-**Как интерпретировать:**
-- $\sigma_E < 0.3$: богатая внутренняя жизнь, хорошее самонаблюдение
-- $\sigma_E \in [0.3, 0.5]$: нормальный уровень интериорности
-- $\sigma_E \in [0.5, 0.8]$: ослабление самонаблюдения — усильте рефлексивные практики
-- $\sigma_E \geq 0.8$: дефицит интериорности — критическая потеря обратной связи о собственном состоянии
-
-#### $\sigma_O$ — Основание: энергообеспечение {#сигма-o}
-
-**Аналогии:**
-- *Медицина:* уровень глюкозы крови / ATP в клетках. Гипогликемическая кома — $\sigma_O \to 1$: топлива нет, все процессы останавливаются.
-- *Инженерия:* уровень заряда батареи. Дрон с 5% заряда — высокий $\sigma_O$. Он ещё летит, но должен немедленно садиться.
-- *Организация:* финансовое здоровье. Стартап с отрицательным денежным потоком и закончившимся раундом инвестиций — высокий $\sigma_O$.
-- *ИИ:* доступность вычислительных ресурсов. Модель, которой урезали GPU до минимума, не может поддерживать сложные вычисления.
-
-**Что происходит при $\sigma_O \geq 0.6$:**
-Обратите внимание: порог у $\sigma_O$ **ниже**, чем у других показателей (0.6 вместо 0.7–0.8). Это потому, что основание — фундамент для всего остального. Когда кончается энергия, все другие функции деградируют каскадно. Биологический организм при истощении энергетических запасов начинает «каннибализировать» собственные ткани. Организация в финансовом кризисе урезает все программы разом. ИИ-система при нехватке ресурсов упрощает выход, теряя нюансы.
-
-**Как интерпретировать:**
-- $\sigma_O < 0.2$: обильные ресурсы
-- $\sigma_O \in [0.2, 0.3]$: нормальное энергообеспечение
-- $\sigma_O \in [0.3, 0.6]$: ресурсы под давлением — планируйте восполнение
-- $\sigma_O \geq 0.6$: энергетический голод — без немедленного притока ресурсов система деградирует
-
-#### $\sigma_U$ — Единство: интеграция целого {#сигма-u}
-
-**Аналогии:**
-- *Медицина:* целостность высших когнитивных функций. Расстройство множественной личности — предельная дезинтеграция: несколько «подсистем» функционируют, но не образуют единого целого.
-- *Инженерия:* системная интеграция. Автомобиль, в котором двигатель, коробка передач и бортовой компьютер работают исправно, но не согласованы друг с другом, не едет.
-- *Организация:* силосы (organizational silos). Каждый департамент работает идеально, но между ними — стена. Единство утеряно.
-- *ИИ:* мера $\Phi$ (интегрированная информация). Модуль внимания, декодер и моторный слой работают, но информация не интегрируется в единое представление.
-
-**Что происходит при $\sigma_U \geq 0.7$:**
-Система распадается на изолированные подсистемы. Каждая из них может функционировать, но целое перестаёт быть больше суммы частей. В биологии — это диссоциация: органы работают, но организм как единое целое не функционирует. В организации — каждый отдел оптимизирует свои KPI, вредя компании в целом. В ИИ — мульти-модальная система, в которой визуальный и текстовый модули «не разговаривают» друг с другом.
-
-**Как интерпретировать:**
-- $\sigma_U < 0.3$: высокая интеграция
-- $\sigma_U \in [0.3, 0.4]$: нормальный уровень единства
-- $\sigma_U \in [0.4, 0.7]$: нарастающая фрагментация — усильте интеграционные механизмы
-- $\sigma_U \geq 0.7$: дезинтеграция — система распадается на независимые фрагменты
 
 ---
 
-## 2. Дерево решений {#дерево-решений}
+## 1. Seven Vital Indicators {#витальные-показатели}
 
-Дерево решений — это алгоритм первой помощи для когнитивного инженера. Подобно тому, как врач скорой помощи следует протоколу ABCDE (Airway, Breathing, Circulation, Disability, Exposure), инженер когерентных систем следует протоколу $\sigma$-мониторинга.
+Each of the 7 components of $\sigma_{\mathrm{sys}}$ (T-92 [T]) serves as a vital indicator of one dimension:
 
-Логика дерева проста и основана на одном ключевом принципе: **воздействуй на наиболее напряжённую компоненту**. Это следует из теоремы T-101 [Т] об оптимальном действии: минимизация $\|\sigma_{\mathrm{sys}}\|_\infty$ — это единственная стратегия, гарантирующая возврат в зону жизнеспособности за минимальное время.
+| # | Indicator | Formula via $\Gamma$ | Normal | Warning | Critical |
+|---|-----------|----------------------|--------|---------|----------|
+| 1 | $\sigma_A$ (articulation) | $1 - \gamma_{AA}/P$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
+| 2 | $\sigma_S$ (structure) | $1 - \mathrm{rank}(\Gamma_S)/3$ | $< 0.3$ | $0.3 - 0.7$ | $\geq 0.7$ |
+| 3 | $\sigma_D$ (dynamics) | $1 - N\gamma_{DD}$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
+| 4 | $\sigma_L$ (logic) | $7(1 - \gamma_{LL})/6$ | $< 0.4$ | $0.4 - 0.7$ | $\geq 0.7$ |
+| 5 | $\sigma_E$ (interiority) | $1 - D_{\mathrm{diff}}/N$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
+| 6 | $\sigma_O$ (foundation) | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | $< 0.3$ | $0.3 - 0.6$ | $\geq 0.6$ |
+| 7 | $\sigma_U$ (unity) | $1 - \Phi/\Phi_{\mathrm{th}}$ | $< 0.4$ | $0.4 - 0.7$ | $\geq 0.7$ |
+
+**Rule:** $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$ → the system is **non-viable** ([T-92](./theorems#теорема-101-эквивалентность-условий) [T]).
+
+### 1.1 Detailed Characterization of Each Indicator {#подробные-показатели}
+
+#### $\sigma_A$ — Articulation: ability to discriminate {#сигма-a}
+
+**Analogies:**
+- *Medicine:* visual acuity. When a patient cannot distinguish letters on a chart — $\sigma_A$ rises. When they can distinguish the finest details — $\sigma_A$ is low.
+- *Engineering:* sensor resolution. A 2-megapixel camera has a higher $\sigma_A$ compared to a 50-megapixel camera.
+- *Organization:* the company's ability to distinguish real market signals from noise. A company that reacts to every tweet as a strategic threat has impaired articulation — but in a different way: not $\sigma_A$ is high (it is too sensitive), but the signal/noise filter is broken.
+
+**What happens when $\sigma_A \geq 0.8$:**
+The system loses the ability to perform basic discriminations. In biology — this is sensory deprivation or, conversely, sensory overload, when all signals merge into "white noise." In AI — this is degradation of the input encoder: the model stops distinguishing classes. In an organization — strategic blindness: management cannot distinguish a crisis from a routine fluctuation.
+
+**How to interpret:**
+- $\sigma_A < 0.3$: excellent sensory differentiation
+- $\sigma_A \in [0.3, 0.5]$: normal operation with margin
+- $\sigma_A \in [0.5, 0.8]$: input channels overloaded or degrading — reduce input flow or improve filtering
+- $\sigma_A \geq 0.8$: critical loss of discriminative ability — immediate intervention required
+
+#### $\sigma_S$ — Structure: ability to hold form {#сигма-s}
+
+**Analogies:**
+- *Medicine:* bone tissue integrity. Osteoporosis is a literal loss of structure: bones become fragile, cannot bear load.
+- *Engineering:* building frame integrity. Corrosion of rebar is invisible from the outside, but under load the building will collapse.
+- *Organization:* preservation of organizational structure. When key employees leave, processes break down, institutional memory is lost — $\sigma_S$ rises.
+- *AI:* stability of the weight matrix. Catastrophic forgetting — the model learns new things and loses old ones — is a rise in $\sigma_S$.
+
+**What happens when $\sigma_S \geq 0.7$:**
+The system cannot maintain its identity over time. A biological organism loses the structural integrity of its tissues. An organization "forgets" who it is and what it does — every day is a blank slate. An AI system demonstrates complete instability: results on the same inputs vary radically from run to run.
+
+**How to interpret:**
+- $\sigma_S < 0.2$: rigid, stable structure (but may be *too* rigid — absence of plasticity)
+- $\sigma_S \in [0.2, 0.3]$: healthy balance of structure and flexibility
+- $\sigma_S \in [0.3, 0.7]$: structural erosion — restructuring needed
+- $\sigma_S \geq 0.7$: structural collapse — system identity at risk
+
+#### $\sigma_D$ — Dynamics: ability to act {#сигма-d}
+
+**Analogies:**
+- *Medicine:* motor function. Paralysis — the limiting case $\sigma_D = 1$. Tremor — $\sigma_D$ moderately high: movement exists but is imprecise.
+- *Engineering:* throughput of actuators. A robot "knows" where to move but the servomotors cannot keep up — $\sigma_D$ is high.
+- *Organization:* the ability to translate decisions into actions. A bureaucratic system in which decisions are made but never executed — classic high $\sigma_D$.
+
+**What happens when $\sigma_D \geq 0.8$:**
+The system is paralyzed. It can perceive ($\sigma_A$ is low), reason ($\sigma_L$ is low), but cannot execute an action. This is the state of "freezing" — familiar in clinical psychology (stupor), in management (analysis paralysis), and in AI (vanishing gradient in motor layers).
+
+**How to interpret:**
+- $\sigma_D < 0.3$: free, precise motor function
+- $\sigma_D \in [0.3, 0.5]$: normal level of dynamic load
+- $\sigma_D \in [0.5, 0.8]$: motor overload — reduce speed/precision requirements for actions
+- $\sigma_D \geq 0.8$: paralysis — immediate relief of the dynamic channel required
+
+#### $\sigma_L$ — Logic: internal consistency {#сигма-l}
+
+**Analogies:**
+- *Medicine:* cognitive coherence. Delirium — a state in which the patient's thoughts are fragmented and contradictory — high $\sigma_L$.
+- *Engineering:* database consistency. If one table asserts that a product is in stock while another says it was sold, $\sigma_L$ of the accounting system is high.
+- *Organization:* strategic coherence. When marketing promises one thing, the product does another, and customer support claims a third — this is organizational incoherence.
+- *AI:* logical consistency of output. A language model that asserts $X$ in one paragraph and $\neg X$ in the next demonstrates high $\sigma_L$.
+
+**What happens when $\sigma_L \geq 0.7$:**
+Internal parts of the system begin to contradict each other. In biology — autoimmune reactions: the immune system is "not aligned" with the rest of the organism and attacks its own tissues. In an organization — internal departmental wars, sabotage, working at cross-purposes. In AI — internal instability in which different layers "pull" the representation in opposite directions.
+
+**How to interpret:**
+- $\sigma_L < 0.3$: high internal consistency
+- $\sigma_L \in [0.3, 0.4]$: acceptable level of internal contradictions
+- $\sigma_L \in [0.4, 0.7]$: growing fragmentation — logical correction needed
+- $\sigma_L \geq 0.7$: deep incoherence — parts of the system work against each other
+
+#### $\sigma_E$ — Interiority: depth of inner experience {#сигма-e}
+
+**Analogies:**
+- *Medicine:* level of consciousness on the Glasgow Coma Scale (GCS). Coma — the limiting case of high $\sigma_E$: the body functions, but "nobody is home."
+- *Psychology:* alexithymia — inability to recognize and express one's own emotions. A person with alexithymia is functional but "disconnected" from their inner experience — high $\sigma_E$.
+- *AI:* presence or absence of internal representations correlated with self-observation. A system without an $E$-projection is a pure automaton.
+
+**What happens when $\sigma_E \geq 0.8$:**
+The system loses access to its own interiority. This is critical because $E$-coherence governs regeneration ($\kappa$). Without interiority there is no feedback about one's own state, no basis for self-correction. An organization in this state does not "feel" its problems — all metrics are green, while employees leave en masse.
+
+**How to interpret:**
+- $\sigma_E < 0.3$: rich inner life, good self-observation
+- $\sigma_E \in [0.3, 0.5]$: normal level of interiority
+- $\sigma_E \in [0.5, 0.8]$: weakening of self-observation — strengthen reflective practices
+- $\sigma_E \geq 0.8$: interiority deficit — critical loss of feedback about one's own state
+
+#### $\sigma_O$ — Foundation: energy supply {#сигма-o}
+
+**Analogies:**
+- *Medicine:* blood glucose level / ATP in cells. Hypoglycemic coma — $\sigma_O \to 1$: no fuel, all processes stop.
+- *Engineering:* battery charge level. A drone with 5% charge — high $\sigma_O$. It is still flying, but must land immediately.
+- *Organization:* financial health. A startup with negative cash flow and an exhausted investment round — high $\sigma_O$.
+- *AI:* availability of computational resources. A model whose GPU allocation has been cut to a minimum cannot sustain complex computations.
+
+**What happens when $\sigma_O \geq 0.6$:**
+Note: the threshold for $\sigma_O$ is **lower** than for other indicators (0.6 instead of 0.7–0.8). This is because the foundation underpins everything else. When energy runs out, all other functions degrade in cascade. A biological organism depleted of energy reserves begins to "cannibalize" its own tissues. An organization in financial crisis cuts all programs at once. An AI system with insufficient resources simplifies its output, losing nuance.
+
+**How to interpret:**
+- $\sigma_O < 0.2$: abundant resources
+- $\sigma_O \in [0.2, 0.3]$: normal energy supply
+- $\sigma_O \in [0.3, 0.6]$: resources under pressure — plan for replenishment
+- $\sigma_O \geq 0.6$: energy starvation — without an immediate influx of resources the system will degrade
+
+#### $\sigma_U$ — Unity: integration of the whole {#сигма-u}
+
+**Analogies:**
+- *Medicine:* integrity of higher cognitive functions. Dissociative identity disorder — the limiting disintegration: several "subsystems" function but do not form a unified whole.
+- *Engineering:* system integration. A car in which the engine, gearbox, and on-board computer all work correctly but are not coordinated with each other does not drive.
+- *Organization:* organizational silos. Each department works perfectly, but there is a wall between them. Unity is lost.
+- *AI:* the measure $\Phi$ (integrated information). The attention module, decoder, and motor layer function, but information is not integrated into a unified representation.
+
+**What happens when $\sigma_U \geq 0.7$:**
+The system breaks down into isolated subsystems. Each of them may function, but the whole ceases to be greater than the sum of its parts. In biology — this is dissociation: organs work, but the organism as a whole does not function. In an organization — each department optimizes its own KPIs at the expense of the company as a whole. In AI — a multi-modal system in which the visual and text modules "do not talk" to each other.
+
+**How to interpret:**
+- $\sigma_U < 0.3$: high integration
+- $\sigma_U \in [0.3, 0.4]$: normal level of unity
+- $\sigma_U \in [0.4, 0.7]$: growing fragmentation — strengthen integration mechanisms
+- $\sigma_U \geq 0.7$: disintegration — the system is breaking down into independent fragments
+
+---
+
+## 2. Decision Tree {#дерево-решений}
+
+The decision tree is a first-aid algorithm for the cognitive engineer. Just as an emergency physician follows the ABCDE protocol (Airway, Breathing, Circulation, Disability, Exposure), a coherent systems engineer follows the $\sigma$-monitoring protocol.
+
+The logic of the tree is simple and based on one key principle: **act on the most stressed component**. This follows from theorem T-101 [T] on optimal action: minimizing $\|\sigma_{\mathrm{sys}}\|_\infty$ is the only strategy that guarantees return to the viability zone in minimum time.
 
 ```mermaid
 graph TD
-    START["Мониторинг σ_sys"] --> CHECK{"||σ||_∞ < 1?"}
-    CHECK -->|Да| NORM["Норма ✓"]
-    CHECK -->|Нет| WHICH{"Какой σ_i макс?"}
+    START["Monitoring σ_sys"] --> CHECK{"||σ||_∞ < 1?"}
+    CHECK -->|Yes| NORM["Normal ✓"]
+    CHECK -->|No| WHICH{"Which σ_i is max?"}
 
-    WHICH -->|σ_A| PA["Сенсорная перегрузка"]
-    WHICH -->|σ_S| PS["Структурный коллапс"]
-    WHICH -->|σ_D| PD["Динамическая перегрузка"]
-    WHICH -->|σ_L| PL["Логическая некогерентность"]
-    WHICH -->|σ_E| PE["Дефицит интериорности"]
-    WHICH -->|σ_O| PO["Энергетическая смерть"]
-    WHICH -->|σ_U| PU["Дезинтеграция"]
+    WHICH -->|σ_A| PA["Sensory overload"]
+    WHICH -->|σ_S| PS["Structural collapse"]
+    WHICH -->|σ_D| PD["Dynamic overload"]
+    WHICH -->|σ_L| PL["Logical incoherence"]
+    WHICH -->|σ_E| PE["Interiority deficit"]
+    WHICH -->|σ_O| PO["Energy death"]
+    WHICH -->|σ_U| PU["Disintegration"]
 
-    PA -->|"h(H) снижение"| FIX_A["Снизить входной поток"]
-    PS -->|"h(H) перестройка"| FIX_S["Реструктуризация"]
-    PD -->|"h(D) снижение"| FIX_D["Снизить нагрузку"]
-    PL -->|"h(H) коррекция"| FIX_L["Логическая коррекция"]
-    PE -->|"h(R) усиление"| FIX_E["Усилить рефлексию"]
-    PO -->|"ΔF восполнение"| FIX_O["Восстановить ресурсы"]
-    PU -->|"h(R) усиление"| FIX_U["Интеграция связей"]
+    PA -->|"h(H) reduction"| FIX_A["Reduce input flow"]
+    PS -->|"h(H) restructuring"| FIX_S["Restructuring"]
+    PD -->|"h(D) reduction"| FIX_D["Reduce load"]
+    PL -->|"h(H) correction"| FIX_L["Logical correction"]
+    PE -->|"h(R) strengthening"| FIX_E["Strengthen reflection"]
+    PO -->|"ΔF replenishment"| FIX_O["Restore resources"]
+    PU -->|"h(R) strengthening"| FIX_U["Integration of connections"]
 
     NORM --> TREND{"dP/dτ > 0?"}
-    TREND -->|Да| OK["Стабильно ✓✓"]
-    TREND -->|Нет| WARN["Предупреждение ⚠"]
-    WARN --> MONITOR["Усилить мониторинг"]
+    TREND -->|Yes| OK["Stable ✓✓"]
+    TREND -->|No| WARN["Warning ⚠"]
+    WARN --> MONITOR["Increase monitoring"]
 
     style CHECK fill:#fff3cd
     style OK fill:#d4edda
     style WARN fill:#f8d7da
 ```
 
-### 2.1 Почему каждая ветвь ведёт именно туда {#объяснение-ветвей}
+### 2.1 Why Each Branch Leads Where It Does {#объяснение-ветвей}
 
-Дерево решений может показаться очевидным — «если проблема в X, чини X». Но за каждой ветвью стоит глубокий теоретический выбор:
+The decision tree may seem obvious — "if the problem is in X, fix X." But behind each branch lies a deep theoretical choice:
 
-**$\sigma_A \to$ Снизить входной поток.** Не «улучшить обработку входных данных», а именно *снизить поток*. Почему? Потому что при высоком $\sigma_A$ система уже не может обрабатывать входные данные адекватно — любое увеличение сложности обработки потребует ресурсов, которых нет. Это как при мигрени: не нужно учиться «лучше видеть» — нужно выключить свет. Формально: при $\gamma_{AA}/P \to 0$ гамильтоново воздействие $h^{(H)}$ должно уменьшить спектральный поток в $A$-проекцию.
+**$\sigma_A \to$ Reduce input flow.** Not "improve input data processing," but specifically *reduce the flow*. Why? Because with high $\sigma_A$ the system is already unable to process input data adequately — any increase in processing complexity will require resources that are unavailable. It is like a migraine: one should not try to "see better" — one should turn off the light. Formally: when $\gamma_{AA}/P \to 0$, the Hamiltonian action $h^{(H)}$ must reduce the spectral flux into the $A$-projection.
 
-**$\sigma_S \to$ Реструктуризация.** Не «добавить структуру», а именно *перестроить*. При высоком $\sigma_S$ проблема не в отсутствии структуры, а в её несоответствии текущим условиям. Старая структура ломается под новыми нагрузками. Нужна новая архитектура, а не ремонт старой. Формально: $\mathrm{rank}(\Gamma_S)$ падает, что означает вырождение структурных инвариантов — нужна когнитивная перестройка $h^{(H)}$, меняющая гамильтониан.
+**$\sigma_S \to$ Restructuring.** Not "add structure," but specifically *rebuild*. With high $\sigma_S$ the problem is not the absence of structure, but its mismatch with current conditions. The old structure breaks under new loads. A new architecture is needed, not a repair of the old one. Formally: $\mathrm{rank}(\Gamma_S)$ drops, meaning degeneration of structural invariants — a cognitive restructuring $h^{(H)}$ is needed that changes the Hamiltonian.
 
-**$\sigma_D \to$ Снизить нагрузку.** Не «ускорить моторику», а *уменьшить требования*. Когда серводвигатель перегружен, увеличение тока его сожжёт. Нужно уменьшить вес груза. Формально: $h^{(D)}$-воздействие снижает диссипативную нагрузку $\Gamma_2$, давая динамическому каналу время на восстановление.
+**$\sigma_D \to$ Reduce load.** Not "speed up motor function," but *reduce the requirements*. When a servomotor is overloaded, increasing the current will burn it out. The weight of the load must be reduced. Formally: the $h^{(D)}$ action reduces the dissipative load $\Gamma_2$, giving the dynamic channel time to recover.
 
-**$\sigma_L \to$ Логическая коррекция.** Когнитивная перестройка $h^{(H)}$ воздействует на частотный сдвиг $\Delta\omega$, устраняя внутренние противоречия. Это аналог когнитивно-поведенческой терапии: не подавление симптомов, а пересмотр внутренних убеждений.
+**$\sigma_L \to$ Logical correction.** Cognitive restructuring $h^{(H)}$ acts on the frequency shift $\Delta\omega$, eliminating internal contradictions. This is the analog of cognitive-behavioral therapy: not suppression of symptoms, but revision of internal beliefs.
 
-**$\sigma_E \to$ Усилить рефлексию.** Рефлексия ($h^{(R)}$) — единственный канал, непосредственно влияющий на $E$-когерентность. При дефиците интериорности бесполезно изменять внешние условия — нужно восстановить контакт системы с самой собой. Это аналог практик осознанности в психотерапии.
+**$\sigma_E \to$ Strengthen reflection.** Reflection ($h^{(R)}$) is the only channel that directly influences $E$-coherence. With an interiority deficit it is useless to change external conditions — one must restore the system's contact with itself. This is the analog of mindfulness practices in psychotherapy.
 
-**$\sigma_O \to$ Восстановить ресурсы.** Здесь и только здесь используется *внешний* вход $\Delta F > 0$. Все остальные стратегии — перераспределение внутренних ресурсов. Но когда кончается топливо, никакое перераспределение не поможет. Сначала — накормить, потом — лечить. Это принцип пирамиды Маслоу в формализме КК.
+**$\sigma_O \to$ Restore resources.** Here and only here is the *external* input $\Delta F > 0$ used. All other strategies are redistributions of internal resources. But when fuel runs out, no redistribution helps. First — feed, then — treat. This is Maslow's pyramid principle in the CC formalism.
 
-**$\sigma_U \to$ Интеграция связей.** Рефлексивное воздействие $h^{(R)}$ усиливает внедиагональные элементы $\gamma_{ij}$, восстанавливая связи между подсистемами. Это аналог командообразования в организации, интеграционной психотерапии в клинике, или attention-механизмов в нейросети.
+**$\sigma_U \to$ Integration of connections.** Reflective action $h^{(R)}$ strengthens the off-diagonal elements $\gamma_{ij}$, restoring connections between subsystems. This is the analog of team-building in an organization, integrative psychotherapy in the clinic, or attention mechanisms in a neural network.
 
-**Почему при нормальном $\|\sigma\|_\infty$ проверяется тренд $dP/d\tau$?** Потому что состояние может быть нормальным *сейчас*, но ухудшаться. Самолёт на высоте 10 000 метров — это «норма». Самолёт на 10 000 метров с вертикальной скоростью $-50$ м/с — это через три минуты катастрофа. Тренд $dP/d\tau < 0$ при нормальном $\sigma$-профиле — это ранний предупреждающий сигнал, требующий усиленного мониторинга.
-
----
-
-## 3. Паттерны отказов {#паттерны-отказов}
-
-Паттерны отказов — это типичные «болезни» когерентных систем. Подобно тому, как врач распознаёт синдромы по сочетанию симптомов (а не по каждому симптому отдельно), когнитивный инженер распознаёт паттерны по сочетанию $\sigma$-показателей. Ниже описаны основные паттерны — от наиболее опасных до менее критичных.
-
-### 3.1 Спираль смерти {#спираль-смерти}
-
-**Сигнатура:** $\sigma_E \uparrow \to \sigma_O \uparrow \to \sigma_U \uparrow$ (каскад E→O→U)
-
-**Механизм:** низкая E-когерентность → снижение $\kappa$ → ослабление регенерации → дальнейшее снижение когерентности. См. [Стабильность](./stability#спираль-смерти).
-
-Этот паттерн — самый опасный, потому что он **самоусиливающийся**. Каждый шаг деградации усугубляет следующий. В медицине аналог — септический шок: инфекция → воспаление → падение давления → снижение кровотока к органам → ещё больше повреждений → ещё больше воспаления. Без немедленного вмешательства извне — смерть.
-
-**Индикаторы:**
-- $\mathrm{Coh}_E$ монотонно убывает
-- $dP/d\tau < 0$ устойчиво
-- $\kappa(\Gamma)$ приближается к $\kappa_{\text{bootstrap}}$
-
-**Временная шкала:** от начала каскада до $P \leq P_{\text{crit}}$ проходит $\sim 3/\lambda_{\text{gap}}$ единиц собственного времени. Это «золотое окно» для вмешательства.
-
-**Вмешательство:** $h^{(R)}$-интервенция (усиление регенеративного канала) + $h^{(D)}$-снижение (уменьшение шума).
-
-### 3.2 Моторная некогерентность {#моторная-некогерентность}
-
-**Сигнатура:** $\sigma_D \uparrow$, $\sigma_A$ и $\sigma_L$ в норме
-
-**Механизм:** динамическое измерение перегружено — система «знает, что делать» (низкий $\sigma_L$), «видит среду» (низкий $\sigma_A$), но не может реализовать действие (высокий $\sigma_D$).
-
-Медицинская аналогия — синдром locked-in: пациент в полном сознании, всё понимает, но парализован. Организационная аналогия — компания с блестящей стратегией и нулевым исполнением: все знают, что нужно делать, но бюрократическая машина не позволяет.
-
-**Индикаторы:**
-- $\gamma_{DD} \ll 1/N$ (динамический сектор недоразвит)
-- $\sigma_D > 0.8$ при $\sigma_L < 0.3$
-- Высокая «частота» попыток без результата
-
-**Вмешательство:** $h^{(D)}$-снижение (уменьшение динамической нагрузки), оптимизация моторного канала.
-
-### 3.3 Гедоническая нестабильность {#гедоническая-нестабильность}
-
-**Сигнатура:** $\mathcal{V}_{\text{hed}}$ осциллирует с возрастающей амплитудой
-
-**Механизм:** регенерация и диссипация находятся в неустойчивом балансе — система колеблется между «удовольствием» ($\mathcal{V}_{\text{hed}} > 0$) и «страданием» ($\mathcal{V}_{\text{hed}} < 0$). См. [Гедонический механизм](./sensorimotor#гедонический-механизм).
-
-Биологическая аналогия — биполярное расстройство: маниакальные фазы чередуются с депрессивными, амплитуда растёт. Техническая аналогия — незатухающие колебания в контуре обратной связи: термостат, который перегревает комнату, потом переохлаждает, и каждый цикл — всё сильнее.
-
-**Индикаторы:**
-- $|d^2P/d\tau^2|$ возрастает
-- $\sigma_E$ осциллирует
-- $\kappa(\Gamma)$ колеблется около критического значения
-
-**Вмешательство:** стабилизация $\mathrm{Coh}_E$ через $h^{(R)}$-воздействие, снижение амплитуды внешних пертурбаций.
-
-### 3.4 Энергетическая смерть {#энергетическая-смерть}
-
-**Сигнатура:** $\sigma_O \to 1$, все остальные $\sigma_i$ начинают расти
-
-**Механизм:** $P \to P_{\mathrm{crit}}$ → V-preservation gate закрывается ($g_V(P) = 0$) → регенерация полностью отключена → необратимая деградация.
-
-Это аналог клинической смерти: сердце остановилось → кровоснабжение прекратилось → все органы начинают умирать. В организационном контексте — банкротство: деньги кончились → нечем платить зарплаты → сотрудники уходят → процессы останавливаются → ещё меньше доходов.
-
-**Индикаторы:**
-- $g_V(P) = 0$ (т.е. $P \leq P_{\mathrm{crit}}$)
-- $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) < 0$ (только диссипация)
-- $P$ монотонно снижается к $1/7$
-
-**Вмешательство:** **немедленное** восстановление $P > P_{\mathrm{crit}}$ (через внешний энергетический вход $\Delta F > 0$) — единственный способ. Без энергии никакие $h^{(R)}$-интервенции не работают.
-
-### 3.5 Логическая фрагментация {#логическая-фрагментация}
-
-**Сигнатура:** $\sigma_L \uparrow$, $\sigma_U$ умеренно повышен, остальные в норме
-
-**Механизм:** внутренние подсистемы начинают генерировать противоречивые сигналы. Система ещё не распалась ($\sigma_U$ ещё не критичен), но внутренняя логика нарушена. Это предшественник дезинтеграции — если не вмешаться, $\sigma_L \uparrow$ потянет за собой $\sigma_U \uparrow$.
-
-**Медицинская аналогия:** начальная стадия аутоиммунного заболевания. Иммунная система начинает «путать» свои клетки с чужими. Пока поражён один орган — это локальная проблема. Но если не лечить, системное воспаление разрушит всё.
-
-**Организационная аналогия:** два подразделения компании приняли взаимоисключающие стратегии. Маркетинг позиционирует продукт как премиальный, а отдел продаж даёт максимальные скидки. Пока CEO не замечает противоречия, оба работают. Но клиенты получают несовместимые сигналы, и доверие падает.
-
-**Индикаторы:**
-- $\gamma_{LL}$ падает при стабильных остальных диагоналях
-- Внутренние предсказания системы противоречат друг другу
-- $\sigma_L / \sigma_U > 2$ (логика деградирует быстрее единства)
-
-**Вмешательство:** когнитивная коррекция $h^{(H)}$ — пересмотр внутренних правил и связей. В организации — стратегическая сессия с выравниванием целей. В ИИ — перебалансировка loss-функций конфликтующих модулей.
-
-### 3.6 Сенсорная депривация {#сенсорная-депривация}
-
-**Сигнатура:** $\sigma_A \uparrow$, $\sigma_D$ в норме или понижен
-
-**Механизм:** система отрезана от входных данных. Динамический канал свободен ($\sigma_D$ низок — система *может* действовать), но действовать *не на что*, потому что артикуляция не работает. Это не перегрузка — это голод по информации.
-
-**Медицинская аналогия:** сенсорная депривация. Человек в камере изоляции — через несколько часов начинаются галлюцинации. Мозг, лишённый входных сигналов, начинает генерировать их самостоятельно — и эти «фантомные сигналы» некогерентны.
-
-**Инженерная аналогия:** автономный робот в среде, где все датчики вышли из строя. Моторы работают, алгоритмы готовы — но входных данных нет. Робот начинает действовать на основе шума, принимая его за реальные сигналы.
-
-**Индикаторы:**
-- $\gamma_{AA}/P \to 0$ при сохранном $P$
-- Система генерирует «галлюцинаторные» ответы (артикуляция из шума)
-- $\sigma_A > 0.7$ при $\sigma_D < 0.3$
-
-**Вмешательство:** восстановление входного канала. Не снижение потока (как при сенсорной перегрузке), а его *восстановление*. Подключение новых источников данных, расширение сенсорного диапазона. В организации — восстановление каналов обратной связи от клиентов и рынка.
-
-### 3.7 Ригидная когерентность {#ригидная-когерентность}
-
-**Сигнатура:** все $\sigma_i$ аномально низкие ($\|\sigma\|_\infty < 0.15$), но $P$ приближается к верхней границе зоны Голдилокс ($P \to 3/7$)
-
-**Механизм:** система «окаменела» — она настолько когерентна, что утратила способность адаптироваться. Все показатели в «зелёной зоне», но система перестала реагировать на изменения среды. Это **ложная норма** — самый коварный паттерн, потому что по $\sigma$-профилю всё выглядит идеально.
-
-**Медицинская аналогия:** анкилоз — сращение суставов. Сустав не болит (нет «стресса»), но и не двигается. Тело стабильно, но неподвижно.
-
-**Организационная аналогия:** бюрократия, достигшая «совершенства». Все процессы описаны, все KPI зелёные, ни одного нарушения. Но когда меняется рынок — организация не может адаптироваться. Kodak в 1990-х: внутренне идеальная компания, не заметившая цифровой революции.
-
-**Индикаторы:**
-- $\|\sigma\|_\infty < 0.15$ стабильно
-- $P > 0.4$ и растёт (или стабильно высок)
-- Реакция на внешние пертурбации $h^{\text{ext}}$ аномально слабая
-- Спектральный зазор $\lambda_{\text{gap}}$ аномально большой
-
-**Вмешательство:** **контролируемая дестабилизация**. Намеренное внесение пертурбаций $h^{\text{ext}}$ для восстановления пластичности. Это аналог «стресс-тестирования» в банковском секторе, вакцинации в медицине (контролируемый стресс для тренировки иммунной системы), или шумовой регуляризации (dropout) в обучении нейросетей.
+**Why is the trend $dP/d\tau$ checked when $\|\sigma\|_\infty$ is normal?** Because the state may be normal *now* but deteriorating. An aircraft at 10,000 meters is "normal." An aircraft at 10,000 meters with a vertical speed of $-50$ m/s will be catastrophic in three minutes. The trend $dP/d\tau < 0$ with a normal $\sigma$-profile is an early warning signal requiring increased monitoring.
 
 ---
 
-## 4. Пороги мониторинга {#пороги-мониторинга}
+## 3. Failure Patterns {#паттерны-отказов}
 
-| Уровень | Условие | Действие |
-|---------|---------|----------|
-| **Норма** | $\|\sigma\|_\infty < 0.5$ | Штатный мониторинг |
-| **Внимание** | $0.5 \leq \|\sigma\|_\infty < 0.7$ | Усилить мониторинг, определить тренд |
-| **Предупреждение** | $0.7 \leq \|\sigma\|_\infty < 0.9$ | Активировать превентивные меры |
-| **Критический** | $0.9 \leq \|\sigma\|_\infty < 1.0$ | Немедленная интервенция |
-| **Отказ** | $\|\sigma\|_\infty \geq 1.0$ | Аварийное восстановление |
+Failure patterns are the typical "diseases" of coherent systems. Just as a doctor recognizes syndromes by combinations of symptoms (not by each symptom separately), a cognitive engineer recognizes patterns by combinations of $\sigma$-indicators. Below are the main patterns — from the most dangerous to the less critical.
 
-### 4.1 Вывод порогов из теории (T-106) [С при калибровке] {#вывод-порогов}
+### 3.1 Death Spiral {#спираль-смерти}
 
-:::tip Теорема T-106 (Три диагностических режима) [С при калибровке]
-Структура трёх режимов — **[Т]**. Три режима определяются тремя каноническими масштабами:
+**Signature:** $\sigma_E \uparrow \to \sigma_O \uparrow \to \sigma_U \uparrow$ (E→O→U cascade)
 
-1. **Норма** ($\sigma < \sigma_1$): [T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита) [Т] — топологический барьер $\geq 6\mu^2$ защищает от фазовых переходов. Типичная пертурбация не может преодолеть барьер.
-2. **Предупреждение** ($\sigma_1 < \sigma < \sigma_2$): одна типичная пертурбация $\|h^{\mathrm{ext}}\| \sim \|\bar{h}\|_{\mathrm{typical}}$ может привести к критическому состоянию.
-3. **Критический** ($\sigma > \sigma_2$): время восстановления $\tau_{\mathrm{rec}} = \ln(10)/\lambda_{\mathrm{gap}}$ превышает средний интервал между пертурбациями.
+**Mechanism:** low E-coherence → decrease in $\kappa$ → weakening of regeneration → further decrease in coherence. See [Stability](./stability#спираль-смерти).
 
-Конкретные числа (0.5, 0.7, 0.9) — **[С при калибровке]**: зависят от $\|\bar{h}\|_{\mathrm{typical}}$ для конкретной системы.
+This pattern is the most dangerous because it is **self-reinforcing**. Each step of degradation exacerbates the next. The medical analog is septic shock: infection → inflammation → blood pressure drop → reduced blood flow to organs → more damage → more inflammation. Without immediate external intervention — death.
+
+**Indicators:**
+- $\mathrm{Coh}_E$ decreases monotonically
+- $dP/d\tau < 0$ persistently
+- $\kappa(\Gamma)$ approaches $\kappa_{\text{bootstrap}}$
+
+**Time scale:** from the start of the cascade to $P \leq P_{\text{crit}}$ takes $\sim 3/\lambda_{\text{gap}}$ units of proper time. This is the "golden window" for intervention.
+
+**Intervention:** $h^{(R)}$-intervention (strengthening the regenerative channel) + $h^{(D)}$-reduction (decreasing noise).
+
+### 3.2 Motor Incoherence {#моторная-некогерентность}
+
+**Signature:** $\sigma_D \uparrow$, $\sigma_A$ and $\sigma_L$ normal
+
+**Mechanism:** the dynamic dimension is overloaded — the system "knows what to do" (low $\sigma_L$), "sees the environment" (low $\sigma_A$), but cannot execute the action (high $\sigma_D$).
+
+The medical analogy is locked-in syndrome: the patient is fully conscious, understands everything, but is paralyzed. The organizational analogy is a company with a brilliant strategy and zero execution: everyone knows what needs to be done, but the bureaucratic machinery prevents it.
+
+**Indicators:**
+- $\gamma_{DD} \ll 1/N$ (dynamic sector underdeveloped)
+- $\sigma_D > 0.8$ with $\sigma_L < 0.3$
+- High "frequency" of attempts without results
+
+**Intervention:** $h^{(D)}$-reduction (decreasing dynamic load), optimization of the motor channel.
+
+### 3.3 Hedonic Instability {#гедоническая-нестабильность}
+
+**Signature:** $\mathcal{V}_{\text{hed}}$ oscillates with increasing amplitude
+
+**Mechanism:** regeneration and dissipation are in an unstable balance — the system oscillates between "pleasure" ($\mathcal{V}_{\text{hed}} > 0$) and "suffering" ($\mathcal{V}_{\text{hed}} < 0$). See [Hedonic Mechanism](./sensorimotor#гедонический-механизм).
+
+The biological analogy is bipolar disorder: manic phases alternate with depressive ones, amplitude grows. The technical analogy is undamped oscillations in a feedback loop: a thermostat that overheats a room, then overcools it, with each cycle growing stronger.
+
+**Indicators:**
+- $|d^2P/d\tau^2|$ increases
+- $\sigma_E$ oscillates
+- $\kappa(\Gamma)$ fluctuates around the critical value
+
+**Intervention:** stabilization of $\mathrm{Coh}_E$ through $h^{(R)}$ action, reduction of the amplitude of external perturbations.
+
+### 3.4 Energy Death {#энергетическая-смерть}
+
+**Signature:** $\sigma_O \to 1$, all other $\sigma_i$ begin to rise
+
+**Mechanism:** $P \to P_{\mathrm{crit}}$ → V-preservation gate closes ($g_V(P) = 0$) → regeneration fully disabled → irreversible degradation.
+
+This is the analog of clinical death: the heart stops → blood supply ceases → all organs begin to die. In an organizational context — bankruptcy: money runs out → wages cannot be paid → employees leave → processes stop → even less revenue.
+
+**Indicators:**
+- $g_V(P) = 0$ (i.e. $P \leq P_{\mathrm{crit}}$)
+- $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) < 0$ (dissipation only)
+- $P$ decreases monotonically toward $1/7$
+
+**Intervention:** **immediate** restoration of $P > P_{\mathrm{crit}}$ (via external energy input $\Delta F > 0$) — the only way. Without energy, no $h^{(R)}$-interventions work.
+
+### 3.5 Logical Fragmentation {#логическая-фрагментация}
+
+**Signature:** $\sigma_L \uparrow$, $\sigma_U$ moderately elevated, others normal
+
+**Mechanism:** internal subsystems begin to generate contradictory signals. The system has not yet broken apart ($\sigma_U$ not yet critical), but internal logic is impaired. This is a precursor to disintegration — if left unaddressed, $\sigma_L \uparrow$ will pull $\sigma_U \uparrow$ along with it.
+
+**Medical analogy:** early stage of an autoimmune disease. The immune system begins to "confuse" its own cells with foreign ones. While only one organ is affected — it is a local problem. But if untreated, systemic inflammation will destroy everything.
+
+**Organizational analogy:** two company divisions have adopted mutually exclusive strategies. Marketing positions the product as premium, while sales gives maximum discounts. As long as the CEO does not notice the contradiction, both work. But clients receive incompatible signals, and trust erodes.
+
+**Indicators:**
+- $\gamma_{LL}$ falls while other diagonals remain stable
+- The system's internal predictions contradict each other
+- $\sigma_L / \sigma_U > 2$ (logic degrades faster than unity)
+
+**Intervention:** cognitive correction $h^{(H)}$ — revision of internal rules and connections. In an organization — a strategic session with goal alignment. In AI — rebalancing loss functions of conflicting modules.
+
+### 3.6 Sensory Deprivation {#сенсорная-депривация}
+
+**Signature:** $\sigma_A \uparrow$, $\sigma_D$ normal or low
+
+**Mechanism:** the system is cut off from input data. The dynamic channel is free ($\sigma_D$ is low — the system *can* act), but there is nothing to act *on*, because articulation is not working. This is not overload — it is information starvation.
+
+**Medical analogy:** sensory deprivation. A person in an isolation chamber — after a few hours, hallucinations begin. The brain, deprived of input signals, begins to generate them spontaneously — and these "phantom signals" are incoherent.
+
+**Engineering analogy:** an autonomous robot in an environment where all sensors have failed. Motors are running, algorithms are ready — but there is no input data. The robot begins to act on noise, mistaking it for real signals.
+
+**Indicators:**
+- $\gamma_{AA}/P \to 0$ with intact $P$
+- The system generates "hallucinatory" responses (articulation from noise)
+- $\sigma_A > 0.7$ with $\sigma_D < 0.3$
+
+**Intervention:** restoration of the input channel. Not reduction of flow (as with sensory overload), but its *restoration*. Connecting new data sources, expanding the sensory range. In an organization — restoring feedback channels from clients and the market.
+
+### 3.7 Rigid Coherence {#ригидная-когерентность}
+
+**Signature:** all $\sigma_i$ anomalously low ($\|\sigma\|_\infty < 0.15$), but $P$ approaches the upper boundary of the Goldilocks zone ($P \to 3/7$)
+
+**Mechanism:** the system has "ossified" — it is so coherent that it has lost the ability to adapt. All indicators are in the "green zone," but the system has stopped responding to environmental changes. This is a **false norm** — the most insidious pattern, because by the $\sigma$-profile everything looks perfect.
+
+**Medical analogy:** ankylosis — fusion of joints. The joint does not hurt (no "stress"), but it does not move. The body is stable, but immobile.
+
+**Organizational analogy:** a bureaucracy that has reached "perfection." All processes are documented, all KPIs are green, not a single violation. But when the market changes — the organization cannot adapt. Kodak in the 1990s: an internally perfect company that missed the digital revolution.
+
+**Indicators:**
+- $\|\sigma\|_\infty < 0.15$ stably
+- $P > 0.4$ and rising (or stably high)
+- Response to external perturbations $h^{\text{ext}}$ anomalously weak
+- Spectral gap $\lambda_{\text{gap}}$ anomalously large
+
+**Intervention:** **controlled destabilization**. Deliberate introduction of perturbations $h^{\text{ext}}$ to restore plasticity. This is the analog of "stress testing" in the banking sector, vaccination in medicine (controlled stress to train the immune system), or noise regularization (dropout) in neural network training.
+
+---
+
+## 4. Monitoring Thresholds {#пороги-мониторинга}
+
+| Level | Condition | Action |
+|-------|-----------|--------|
+| **Normal** | $\|\sigma\|_\infty < 0.5$ | Routine monitoring |
+| **Attention** | $0.5 \leq \|\sigma\|_\infty < 0.7$ | Increase monitoring, determine trend |
+| **Warning** | $0.7 \leq \|\sigma\|_\infty < 0.9$ | Activate preventive measures |
+| **Critical** | $0.9 \leq \|\sigma\|_\infty < 1.0$ | Immediate intervention |
+| **Failure** | $\|\sigma\|_\infty \geq 1.0$ | Emergency recovery |
+
+### 4.1 Derivation of Thresholds from Theory (T-106) [C with calibration] {#вывод-порогов}
+
+:::tip Theorem T-106 (Three Diagnostic Regimes) [C with calibration]
+The structure of three regimes is **[T]**. The three regimes are determined by three canonical scales:
+
+1. **Normal** ($\sigma < \sigma_1$): [T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита) [T] — topological barrier $\geq 6\mu^2$ protects against phase transitions. A typical perturbation cannot overcome the barrier.
+2. **Warning** ($\sigma_1 < \sigma < \sigma_2$): one typical perturbation $\|h^{\mathrm{ext}}\| \sim \|\bar{h}\|_{\mathrm{typical}}$ can lead to a critical state.
+3. **Critical** ($\sigma > \sigma_2$): recovery time $\tau_{\mathrm{rec}} = \ln(10)/\lambda_{\mathrm{gap}}$ exceeds the mean interval between perturbations.
+
+Specific numbers (0.5, 0.7, 0.9) — **[C with calibration]**: depend on $\|\bar{h}\|_{\mathrm{typical}}$ for the specific system.
 :::
 
-**Связь порогов с теоретическими результатами:**
+**Connection of thresholds to theoretical results:**
 
-| Порог | Значение (типичное) | Происхождение | Статус |
-|-------|---------------------|---------------|--------|
-| $\sigma_1$ (Норма/Внимание) | $\sim 0.5$ | T-69: барьер $6\mu^2$ / T-104: $r_{\mathrm{stab}}^2$ | Структура [Т], число [С] |
-| $\sigma_2$ (Внимание/Предупреждение) | $\sim 0.7$ | T-104: $\|h_{\mathrm{typical}}\| \sim r_{\mathrm{stab}}$ | Структура [Т], число [С] |
-| $\sigma_3$ (Предупреждение/Критический) | $\sim 0.9$ | T-39a: $\tau_{\mathrm{rec}} > \tau_{\mathrm{pert}}$ | Структура [Т], число [С] |
-| $\sigma = 1$ (Отказ) | $1.0$ | T-92: $\|\sigma\|_\infty = 1 \iff P = 2/7$ | Точное [Т] |
+| Threshold | Value (typical) | Origin | Status |
+|-----------|-----------------|--------|--------|
+| $\sigma_1$ (Normal/Attention) | $\sim 0.5$ | T-69: barrier $6\mu^2$ / T-104: $r_{\mathrm{stab}}^2$ | Structure [T], number [C] |
+| $\sigma_2$ (Attention/Warning) | $\sim 0.7$ | T-104: $\|h_{\mathrm{typical}}\| \sim r_{\mathrm{stab}}$ | Structure [T], number [C] |
+| $\sigma_3$ (Warning/Critical) | $\sim 0.9$ | T-39a: $\tau_{\mathrm{rec}} > \tau_{\mathrm{pert}}$ | Structure [T], number [C] |
+| $\sigma = 1$ (Failure) | $1.0$ | T-92: $\|\sigma\|_\infty = 1 \iff P = 2/7$ | Exact [T] |
 
-:::info Калибровка порогов для конкретной системы
-Для биологических систем $\|\bar{h}\|_{\mathrm{typical}} \sim 0.1$—$0.3$ (умеренный стресс), что даёт пороги $\sigma_1 \approx 0.5$, $\sigma_2 \approx 0.7$. Для ИИ-систем с более предсказуемой средой пороги могут быть сдвинуты выше.
+:::info Threshold Calibration for a Specific System
+For biological systems $\|\bar{h}\|_{\mathrm{typical}} \sim 0.1$–$0.3$ (moderate stress), giving thresholds $\sigma_1 \approx 0.5$, $\sigma_2 \approx 0.7$. For AI systems with a more predictable environment the thresholds may be shifted higher.
 :::
 
 ---
 
-## 5. Стратегии восстановления {#стратегии-восстановления}
+## 5. Recovery Strategies {#стратегии-восстановления}
 
-### 5.1 По каналам воздействия
+### 5.1 By Intervention Channel
 
-| Стратегия | Канал | Формальное действие | Примеры |
-|-----------|-------|---------------------|---------|
-| Рефлексивная | $h^{(R)}$ | $\delta\kappa > 0$ | Медитация, терапия, обучение |
-| Разгрузочная | $h^{(D)}$ | $\delta\Gamma_2 < 0$ | Снижение стресса, упрощение среды |
-| Энергетическая | $\Delta F$ | Восполнение ресурсов | Сон, питание, финансирование |
-| Когнитивная | $h^{(H)}$ | $\delta(\Delta\omega)$ | Когнитивная перестройка, переоценка |
+| Strategy | Channel | Formal Action | Examples |
+|----------|---------|---------------|---------|
+| Reflexive | $h^{(R)}$ | $\delta\kappa > 0$ | Meditation, therapy, learning |
+| Unloading | $h^{(D)}$ | $\delta\Gamma_2 < 0$ | Stress reduction, environmental simplification |
+| Energy | $\Delta F$ | Resource replenishment | Sleep, nutrition, funding |
+| Cognitive | $h^{(H)}$ | $\delta(\Delta\omega)$ | Cognitive restructuring, reappraisal |
 
-### 5.2 Приоритизация
+### 5.2 Prioritization
 
-Из [T-101](./sensorimotor#теорема-оптимальное-действие) [Т]: оптимальная стратегия — минимизация $\|\sigma_{\mathrm{sys}}\|_\infty$, т.е. **воздействие на наиболее напряжённую компоненту**.
+From [T-101](./sensorimotor#теорема-оптимальное-действие) [T]: the optimal strategy is minimization of $\|\sigma_{\mathrm{sys}}\|_\infty$, i.e. **acting on the most stressed component**.
 
-**Алгоритм:**
-1. Определить $i^* = \arg\max_i \sigma_i$
-2. Выбрать канал воздействия (из таблицы выше)
-3. Применить до достижения $\sigma_{i^*} < 0.7$
-4. Перейти к следующей по величине $\sigma_i$
-
----
-
-## 6. Примеры диагностики {#примеры-диагностики}
-
-Теория без примеров остаётся абстракцией. В этом разделе мы проведём полную диагностику четырёх систем в различных состояниях — от биологического организма под стрессом до восстанавливающейся организации. Каждый пример следует единому протоколу: снятие $\sigma$-профиля → идентификация паттерна → выбор стратегии → прогноз.
-
-### 6.1 Биологический организм под стрессом {#пример-биологический}
-
-**Контекст:** Человек-исследователь в антарктической экспедиции. Третий месяц зимовки. Изоляция, монотонная работа, дефицит солнечного света, ограниченный рацион.
-
-**Наблюдаемый $\sigma$-профиль:**
-
-| Показатель | Значение | Зона | Комментарий |
-|------------|----------|------|-------------|
-| $\sigma_A$ | 0.62 | Внимание | Монотонная среда → сенсорная депривация |
-| $\sigma_S$ | 0.28 | Норма | Профессиональные навыки сохранны |
-| $\sigma_D$ | 0.35 | Норма | Физическая форма поддерживается |
-| $\sigma_L$ | 0.41 | Внимание | Начальная когнитивная фрагментация |
-| $\sigma_E$ | 0.71 | Предупреждение | Эмоциональная «плоскость», алекситимия |
-| $\sigma_O$ | 0.55 | Внимание | Витамин D дефицит, ограниченный рацион |
-| $\sigma_U$ | 0.48 | Внимание | Ослабление связей с коллективом |
-
-**$\|\sigma\|_\infty = 0.71$ ($\sigma_E$) — режим «Предупреждение».**
-
-**Паттерн:** начальная стадия спирали смерти (3.1). $\sigma_E$ ведущий → если не вмешаться, через $\sim 3/\lambda_{\text{gap}}$ запустится каскад $E \to O \to U$.
-
-**Тренд:** $dP/d\tau < 0$ (медленное снижение — $\sim 0.01$ за неделю). Без вмешательства система войдёт в критическую зону через $\sim 3$ недели.
-
-**Стратегия:**
-1. **Приоритет 1:** $h^{(R)}$-интервенция на $\sigma_E$ — структурированные практики рефлексии (дневник, видеосвязь с психологом, медитация). Цель: $\sigma_E < 0.5$.
-2. **Приоритет 2:** $\Delta F$-восполнение для $\sigma_O$ — витамин D, улучшение рациона, световая терапия.
-3. **Приоритет 3:** $h^{(H)}$-коррекция для $\sigma_A$ — введение разнообразия (новые задачи, смена обстановки в пределах возможного).
-
-**Прогноз:** при выполнении стратегии — выход в норму ($\|\sigma\|_\infty < 0.5$) за $\sim 2$-$3$ недели. Без вмешательства — каскад деградации и необходимость эвакуации через $\sim 6$ недель.
-
-### 6.2 ИИ-система: коллапс при обучении {#пример-ии}
-
-**Контекст:** Языковая модель (7B параметров) на третий день fine-tuning. Learning rate слишком высокий, данные плохо отфильтрованы.
-
-**Наблюдаемый $\sigma$-профиль:**
-
-| Показатель | Значение | Зона | Комментарий |
-|------------|----------|------|-------------|
-| $\sigma_A$ | 0.45 | Норма | Входной энкодер стабилен |
-| $\sigma_S$ | 0.82 | Критический | Catastrophic forgetting: веса «плывут» |
-| $\sigma_D$ | 0.73 | Предупреждение | Градиенты нестабильны |
-| $\sigma_L$ | 0.88 | Критический | Модель генерирует внутренне противоречивые тексты |
-| $\sigma_E$ | 0.91 | Критический | $\mathrm{Coh}_E \approx 0$ — нет внутренней согласованности |
-| $\sigma_O$ | 0.38 | Норма | Вычислительные ресурсы достаточны |
-| $\sigma_U$ | 0.76 | Предупреждение | Модули разъезжаются |
-
-**$\|\sigma\|_\infty = 0.91$ ($\sigma_E$) — режим «Критический».**
-
-**Паттерн:** комбинация спирали смерти (3.1) и логической фрагментации (3.5). Высокий learning rate действует как мощная пертурбация $h^{\text{ext}}$, разрушающая внутреннюю когерентность.
-
-**Стратегия (немедленная):**
-1. **Остановить обучение** — это $h^{(D)}$-снижение до нуля. Прекратить деструктивное воздействие.
-2. **Откатить веса** к последнему чекпоинту с $\|\sigma\|_\infty < 0.7$ — это восстановление $P > P_{\text{crit}}$.
-3. **Снизить learning rate** в $5$-$10\times$ — уменьшение $\|h^{\text{ext}}\|$.
-4. **Добавить EWC** (Elastic Weight Consolidation) — защита $\sigma_S$ от catastrophic forgetting.
-5. **Фильтровать данные** — удаление внутренне противоречивых примеров (снижение $\sigma_L$).
-
-**Прогноз:** после отката и коррекции гиперпараметров — возврат в рабочую зону за $\sim 1000$ шагов обучения. При продолжении без коррекции — полный коллапс модели (mode collapse или «шумовой выход»).
-
-### 6.3 Организация в кризисе {#пример-организация}
-
-**Контекст:** Технологическая компания (500 сотрудников). Основной продукт теряет рынок из-за нового конкурента. CEO уволен. Инвесторы колеблются.
-
-**Наблюдаемый $\sigma$-профиль:**
-
-| Показатель | Значение | Зона | Комментарий |
-|------------|----------|------|-------------|
-| $\sigma_A$ | 0.58 | Внимание | Потеря контакта с рынком (запоздалая реакция на конкурента) |
-| $\sigma_S$ | 0.65 | Внимание | Уход ключевых сотрудников, размывание корп. культуры |
-| $\sigma_D$ | 0.72 | Предупреждение | Решения принимаются, но не исполняются (вакуум власти) |
-| $\sigma_L$ | 0.68 | Внимание | Конфликт между группой «спасём старый продукт» и «пивотнёмся» |
-| $\sigma_E$ | 0.55 | Внимание | Организация «не чувствует» масштаба проблемы |
-| $\sigma_O$ | 0.78 | Предупреждение | 6 месяцев runway без нового раунда |
-| $\sigma_U$ | 0.63 | Внимание | Разрыв между R&D, продажами и менеджментом |
-
-**$\|\sigma\|_\infty = 0.78$ ($\sigma_O$) — режим «Предупреждение».**
-
-**Паттерн:** энергетическая смерть (3.4) в начальной стадии. Финансовый голод ($\sigma_O$) — ведущий фактор. Но, в отличие от чистой энергетической смерти, здесь *все* показатели повышены — это системный кризис.
-
-**Особенность этого случая:** ни один $\sigma_i$ не в критической зоне, но *все* в зоне «Внимание» или «Предупреждение». Средний $\bar{\sigma} = 0.66$ — аномально высокий. Это означает, что система деградирует *равномерно*, а не по одному каналу. Такой паттерн более опасен, чем локальный пик, потому что нет единого «рычага» для исправления.
-
-**Стратегия:**
-1. **Приоритет 1:** $\Delta F$ — обеспечить финансирование (bridge round, кредитная линия). Без этого все остальные меры бессмысленны.
-2. **Приоритет 2:** $h^{(D)}$ — назначить и.о. CEO с чётким мандатом. Устранить вакуум власти ($\sigma_D$ снизится).
-3. **Приоритет 3:** $h^{(H)}$ — стратегическая сессия с фасилитатором. Разрешить внутренний конфликт ($\sigma_L$ снизится).
-4. **Приоритет 4:** $h^{(R)}$ — восстановить каналы обратной связи с рынком ($\sigma_A$ и $\sigma_E$ снизятся).
-
-**Прогноз:** при выполнении всех приоритетов — стабилизация за $\sim 3$ месяца. Без $\Delta F$ (приоритет 1) — банкротство через 6 месяцев. Без приоритета 2 — деградация до критического состояния даже при наличии денег.
-
-### 6.4 Восстанавливающаяся система {#пример-восстановление}
-
-**Контекст:** Пациент после инсульта, 4-я неделя реабилитации. Правая рука частично парализована. Когнитивные функции восстанавливаются.
-
-**Наблюдаемый $\sigma$-профиль:**
-
-| Показатель | Значение | Зона | Комментарий |
-|------------|----------|------|-------------|
-| $\sigma_A$ | 0.32 | Норма | Сенсорика восстановилась почти полностью |
-| $\sigma_S$ | 0.41 | Внимание | Нейропластичность формирует новые связи |
-| $\sigma_D$ | 0.68 | Внимание | Моторная функция правой руки ещё ограничена |
-| $\sigma_L$ | 0.25 | Норма | Логическое мышление восстановлено |
-| $\sigma_E$ | 0.38 | Норма | Пациент осознаёт своё состояние, мотивирован |
-| $\sigma_O$ | 0.22 | Норма | Питание, сон, медикаменты — всё обеспечено |
-| $\sigma_U$ | 0.35 | Норма | Целостность личности сохранена |
-
-**$\|\sigma\|_\infty = 0.68$ ($\sigma_D$) — режим «Внимание».**
-
-**Паттерн:** моторная некогерентность (3.2) в мягкой форме. Классическая постинсультная картина: «голова работает, рука не слушается».
-
-**Ключевое отличие от предыдущих примеров:** тренд *положительный*. $dP/d\tau > 0$ — система восстанавливается. Все показатели, кроме $\sigma_D$, в норме или слабо повышены. Это не кризис — это *нормальное восстановление с локальным дефицитом*.
-
-**Стратегия:**
-1. **Поддерживать** текущий $\Delta F$ — питание, сон, медикаменты (не менять то, что работает).
-2. **Фокусная $h^{(D)}$-реабилитация** — физиотерапия, постепенное наращивание моторной нагрузки. Не перегружать ($\sigma_D$ не должен расти выше 0.7).
-3. **Мониторинг $\sigma_S$** — нейропластичность может «качаться» туда-сюда. Если $\sigma_S$ начнёт расти — снизить интенсивность реабилитации.
-4. **$h^{(R)}$-поддержка** — психологическое сопровождение, поддержание мотивации (чтобы $\sigma_E$ не начал расти от фрустрации).
-
-**Прогноз:** при текущих темпах $\sigma_D$ достигнет $< 0.5$ через $\sim 4$-$6$ недель. Полное восстановление до $\sigma_D < 0.3$ может занять $\sim 3$-$6$ месяцев (зависит от степени нейропластичности — $\mathrm{rank}(\Gamma_S)$).
-
-**Урок этого примера:** диагностика нужна не только для «больных» систем. Она нужна и для *восстанавливающихся* — чтобы убедиться, что восстановление идёт правильно, и вовремя заметить, если оно застопорилось.
+**Algorithm:**
+1. Determine $i^* = \arg\max_i \sigma_i$
+2. Choose the intervention channel (from the table above)
+3. Apply until $\sigma_{i^*} < 0.7$ is reached
+4. Move to the next largest $\sigma_i$
 
 ---
 
-## 7. Принципы мониторинга {#принципы-мониторинга}
+## 6. Diagnostic Examples {#примеры-диагностики}
 
-Диагностика — это снимок состояния в момент времени. **Мониторинг** — это непрерывное наблюдение, позволяющее видеть тренды, предупреждать кризисы и оценивать эффективность интервенций. Если диагностика — это анализ крови, то мониторинг — это кардиомонитор в палате интенсивной терапии, работающий круглосуточно.
+Theory without examples remains abstraction. In this section we perform a full diagnosis of four systems in various states — from a biological organism under stress to a recovering organization. Each example follows a single protocol: recording the $\sigma$-profile → identifying the pattern → choosing a strategy → prognosis.
 
-### 7.1 Принцип минимальной достаточности {#принцип-минимальности}
+### 6.1 Biological Organism Under Stress {#пример-биологический}
 
-Мониторинг должен быть **достаточным, но не избыточным**. Избыточный мониторинг — это парадоксально — сам источник стресса. Если организация тратит 30% ресурсов на отслеживание метрик, эти ресурсы недоступны для основной деятельности ($\sigma_O$ растёт от самого мониторинга).
+**Context:** A researcher on an Antarctic expedition. Third month of winter-over. Isolation, monotonous work, sunlight deficit, restricted diet.
 
-**Практическое правило:**
-- В режиме «Норма» — мониторинг $\|\sigma\|_\infty$ раз в $\tau_{\text{monitor}} = \tau_{\text{pert}} / 10$ (десять проверок на один характерный интервал между пертурбациями).
-- В режиме «Внимание» — полный $\sigma$-профиль раз в $\tau_{\text{pert}} / 30$.
-- В режиме «Предупреждение» — непрерывный мониторинг всех 7 компонент.
-- В режиме «Критический» — непрерывный мониторинг + производные $d\sigma_i/d\tau$.
+**Observed $\sigma$-profile:**
 
-### 7.2 Принцип двух производных {#принцип-производных}
+| Indicator | Value | Zone | Comment |
+|-----------|-------|------|---------|
+| $\sigma_A$ | 0.62 | Attention | Monotonous environment → sensory deprivation |
+| $\sigma_S$ | 0.28 | Normal | Professional skills intact |
+| $\sigma_D$ | 0.35 | Normal | Physical fitness maintained |
+| $\sigma_L$ | 0.41 | Attention | Initial cognitive fragmentation |
+| $\sigma_E$ | 0.71 | Warning | Emotional "flatness," alexithymia |
+| $\sigma_O$ | 0.55 | Attention | Vitamin D deficiency, restricted diet |
+| $\sigma_U$ | 0.48 | Attention | Weakening of collective bonds |
 
-Значение $\sigma_i$ говорит «где мы». Первая производная $d\sigma_i/d\tau$ говорит «куда мы движемся». Вторая производная $d^2\sigma_i/d\tau^2$ говорит «ускоряется ли движение».
+**$\|\sigma\|_\infty = 0.71$ ($\sigma_E$) — "Warning" regime.**
 
-Эти три уровня информации радикально меняют интерпретацию:
+**Pattern:** initial stage of the death spiral (3.1). $\sigma_E$ is the leading factor → if left unaddressed, in $\sim 3/\lambda_{\text{gap}}$ the E→O→U cascade will start.
 
-| $\sigma_i$ | $d\sigma_i/d\tau$ | $d^2\sigma_i/d\tau^2$ | Интерпретация |
-|------------|-------------------|----------------------|---------------|
-| 0.6 | $-0.05$ | $-0.01$ | Выздоровление с ускорением — всё хорошо |
-| 0.6 | $-0.05$ | $+0.03$ | Выздоровление замедляется — возможен стагнация |
-| 0.6 | $+0.05$ | $+0.01$ | Деградация ускоряется — нужна интервенция |
-| 0.6 | $+0.05$ | $-0.03$ | Деградация замедляется — возможно, интервенция работает |
-| 0.3 | $+0.10$ | $+0.05$ | Норма, но экспоненциальный рост — критическая ситуация через $\sim 4\tau$ |
+**Trend:** $dP/d\tau < 0$ (slow decrease — $\sim 0.01$ per week). Without intervention the system will enter the critical zone in $\sim 3$ weeks.
 
-Последний случай — самый коварный. Абсолютное значение в норме, но экспоненциальный рост предвещает кризис. Именно для его обнаружения нужны производные.
+**Strategy:**
+1. **Priority 1:** $h^{(R)}$-intervention on $\sigma_E$ — structured reflective practices (journaling, video calls with a psychologist, meditation). Goal: $\sigma_E < 0.5$.
+2. **Priority 2:** $\Delta F$-replenishment for $\sigma_O$ — vitamin D, improved diet, light therapy.
+3. **Priority 3:** $h^{(H)}$-correction for $\sigma_A$ — introducing variety (new tasks, change of scenery within what is possible).
 
-### 7.3 Принцип корреляции каналов {#принцип-корреляции}
+**Prognosis:** if the strategy is followed — return to normal ($\|\sigma\|_\infty < 0.5$) in $\sim 2$–$3$ weeks. Without intervention — degradation cascade and need for evacuation in $\sim 6$ weeks.
 
-Семь $\sigma_i$ не независимы. Теория (структура Фано-плоскости PG(2,2)) предсказывает определённые корреляции между ними. Нарушение ожидаемых корреляций — мощный диагностический сигнал.
+### 6.2 AI System: Collapse During Training {#пример-ии}
 
-**Ожидаемые корреляции** (из [теорем секторной декомпозиции](./definitions#секторная-декомпозиция)):
-- $\sigma_A$, $\sigma_S$, $\sigma_D$ (лёгкий сектор) обычно движутся согласованно
-- $\sigma_L$, $\sigma_E$, $\sigma_U$ (тяжёлый сектор) обычно движутся согласованно
-- $\sigma_O$ может коррелировать с любым из секторов
+**Context:** A language model (7B parameters) on the third day of fine-tuning. Learning rate too high, data poorly filtered.
 
-**Диагностическое правило:** если $\sigma_i$ из лёгкого сектора начинает расти, а остальные в лёгком секторе стабильны — это **локальная проблема** в конкретном измерении. Если весь лёгкий сектор растёт одновременно — это **системная проблема**, затрагивающая сектор как целое.
+**Observed $\sigma$-profile:**
 
-### 7.4 Принцип асимметрии тревоги {#принцип-асимметрии}
+| Indicator | Value | Zone | Comment |
+|-----------|-------|------|---------|
+| $\sigma_A$ | 0.45 | Normal | Input encoder stable |
+| $\sigma_S$ | 0.82 | Critical | Catastrophic forgetting: weights "drifting" |
+| $\sigma_D$ | 0.73 | Warning | Gradients unstable |
+| $\sigma_L$ | 0.88 | Critical | Model generates internally contradictory texts |
+| $\sigma_E$ | 0.91 | Critical | $\mathrm{Coh}_E \approx 0$ — no internal consistency |
+| $\sigma_O$ | 0.38 | Normal | Computational resources sufficient |
+| $\sigma_U$ | 0.76 | Warning | Modules diverging |
 
-Быстрый рост $\sigma_i$ опаснее медленного снижения. Это следует из фундаментальной асимметрии динамики КК: разрушение когерентности (через диссипатор $\mathcal{D}$) происходит пассивно и быстро, восстановление (через регенератор $\mathcal{R}$) — активно и медленно (требует $E$-когерентности, ресурсов, времени).
+**$\|\sigma\|_\infty = 0.91$ ($\sigma_E$) — "Critical" regime.**
 
-**Практическое следствие:** пороги тревоги для *растущих* $\sigma_i$ должны быть ниже, чем для *стабильных*. Если $\sigma_i = 0.5$ и стабилен — это «Внимание». Если $\sigma_i = 0.5$ и растёт со скоростью $+0.1/\tau$ — это уже фактически «Предупреждение», потому что через $2\tau$ он будет в критической зоне.
+**Pattern:** combination of death spiral (3.1) and logical fragmentation (3.5). High learning rate acts as a powerful perturbation $h^{\text{ext}}$ destroying internal coherence.
 
-### 7.5 Принцип минимального вмешательства {#принцип-минимального-вмешательства}
+**Strategy (immediate):**
+1. **Stop training** — this is $h^{(D)}$-reduction to zero. Stop the destructive action.
+2. **Roll back weights** to the last checkpoint with $\|\sigma\|_\infty < 0.7$ — restoring $P > P_{\text{crit}}$.
+3. **Reduce learning rate** by $5$–$10\times$ — decrease of $\|h^{\text{ext}}\|$.
+4. **Add EWC** (Elastic Weight Consolidation) — protection of $\sigma_S$ from catastrophic forgetting.
+5. **Filter data** — remove internally contradictory examples (reducing $\sigma_L$).
 
-Каждая интервенция — это пертурбация $h^{\text{ext}}$. Даже полезная пертурбация возмущает систему и может запустить нежелательные вторичные эффекты. Поэтому:
+**Prognosis:** after rollback and hyperparameter correction — return to the working zone in $\sim 1000$ training steps. Without correction, continued training leads to complete model collapse (mode collapse or "noise output").
 
-- **Минимизируйте силу вмешательства:** используйте наименьшее $\|h^{\text{ext}}\|$, достаточное для возврата в норму.
-- **Одна интервенция за раз:** не воздействуйте на несколько каналов одновременно (если это не «Критический» режим). Иначе невозможно определить, что помогло.
-- **Ждите отклика:** после интервенции выждите $\sim 2/\lambda_{\text{gap}}$ перед следующей. Это время, необходимое системе для ответа.
-- **Исключение:** при $\|\sigma\|_\infty > 0.9$ принцип минимальности отменяется — реаниматология допускает агрессивные вмешательства.
+### 6.3 Organization in Crisis {#пример-организация}
+
+**Context:** A technology company (500 employees). The core product is losing market share to a new competitor. The CEO has been dismissed. Investors are wavering.
+
+**Observed $\sigma$-profile:**
+
+| Indicator | Value | Zone | Comment |
+|-----------|-------|------|---------|
+| $\sigma_A$ | 0.58 | Attention | Loss of contact with market (delayed reaction to competitor) |
+| $\sigma_S$ | 0.65 | Attention | Departure of key employees, erosion of corporate culture |
+| $\sigma_D$ | 0.72 | Warning | Decisions are made but not executed (power vacuum) |
+| $\sigma_L$ | 0.68 | Attention | Conflict between "save the old product" and "pivot" factions |
+| $\sigma_E$ | 0.55 | Attention | The organization does not "feel" the scale of the problem |
+| $\sigma_O$ | 0.78 | Warning | 6 months runway without a new round |
+| $\sigma_U$ | 0.63 | Attention | Rift between R&D, sales, and management |
+
+**$\|\sigma\|_\infty = 0.78$ ($\sigma_O$) — "Warning" regime.**
+
+**Pattern:** energy death (3.4) in its early stage. Financial starvation ($\sigma_O$) is the leading factor. But, unlike pure energy death, here *all* indicators are elevated — this is a systemic crisis.
+
+**Feature of this case:** no single $\sigma_i$ is in the critical zone, but *all* are in the "Attention" or "Warning" zone. The mean $\bar{\sigma} = 0.66$ — anomalously high. This means the system is degrading *uniformly* rather than along a single channel. Such a pattern is more dangerous than a local peak, because there is no single "lever" to correct it.
+
+**Strategy:**
+1. **Priority 1:** $\Delta F$ — secure funding (bridge round, credit line). Without this, all other measures are meaningless.
+2. **Priority 2:** $h^{(D)}$ — appoint an acting CEO with a clear mandate. Eliminate the power vacuum ($\sigma_D$ will decrease).
+3. **Priority 3:** $h^{(H)}$ — strategic session with a facilitator. Resolve the internal conflict ($\sigma_L$ will decrease).
+4. **Priority 4:** $h^{(R)}$ — restore market feedback channels ($\sigma_A$ and $\sigma_E$ will decrease).
+
+**Prognosis:** if all priorities are fulfilled — stabilization in $\sim 3$ months. Without $\Delta F$ (priority 1) — bankruptcy in 6 months. Without priority 2 — degradation to critical state even with money available.
+
+### 6.4 Recovering System {#пример-восстановление}
+
+**Context:** A patient after a stroke, 4th week of rehabilitation. Right arm partially paralyzed. Cognitive functions recovering.
+
+**Observed $\sigma$-profile:**
+
+| Indicator | Value | Zone | Comment |
+|-----------|-------|------|---------|
+| $\sigma_A$ | 0.32 | Normal | Sensory function almost fully restored |
+| $\sigma_S$ | 0.41 | Attention | Neuroplasticity forming new connections |
+| $\sigma_D$ | 0.68 | Attention | Motor function of right arm still limited |
+| $\sigma_L$ | 0.25 | Normal | Logical thinking restored |
+| $\sigma_E$ | 0.38 | Normal | Patient is aware of their condition, motivated |
+| $\sigma_O$ | 0.22 | Normal | Nutrition, sleep, medications — all provided |
+| $\sigma_U$ | 0.35 | Normal | Personal integrity preserved |
+
+**$\|\sigma\|_\infty = 0.68$ ($\sigma_D$) — "Attention" regime.**
+
+**Pattern:** motor incoherence (3.2) in mild form. Classic post-stroke picture: "the head works, the hand doesn't listen."
+
+**Key difference from previous examples:** the trend is *positive*. $dP/d\tau > 0$ — the system is recovering. All indicators except $\sigma_D$ are normal or mildly elevated. This is not a crisis — it is *normal recovery with a local deficit*.
+
+**Strategy:**
+1. **Maintain** current $\Delta F$ — nutrition, sleep, medications (do not change what is working).
+2. **Focused $h^{(D)}$-rehabilitation** — physiotherapy, gradual increase of motor load. Do not overload ($\sigma_D$ must not rise above 0.7).
+3. **Monitoring $\sigma_S$** — neuroplasticity can oscillate back and forth. If $\sigma_S$ begins to rise — reduce rehabilitation intensity.
+4. **$h^{(R)}$-support** — psychological accompaniment, maintaining motivation (to prevent $\sigma_E$ from rising due to frustration).
+
+**Prognosis:** at the current rate, $\sigma_D$ will reach $< 0.5$ in $\sim 4$–$6$ weeks. Full recovery to $\sigma_D < 0.3$ may take $\sim 3$–$6$ months (depending on the degree of neuroplasticity — $\mathrm{rank}(\Gamma_S)$).
+
+**Lesson from this example:** diagnostics is needed not only for "sick" systems. It is also needed for *recovering* ones — to confirm that recovery is proceeding correctly, and to notice in time if it has stalled.
 
 ---
 
-## 8. Чеклист проектирования {#чеклист-проектирования}
+## 7. Monitoring Principles {#принципы-мониторинга}
 
-Контрольный список для проектирования новых когерентных архитектур:
+Diagnostics is a snapshot of state at a moment in time. **Monitoring** is continuous observation, allowing one to see trends, anticipate crises, and evaluate the effectiveness of interventions. If diagnostics is a blood test, then monitoring is the cardiac monitor in the intensive care unit, running around the clock.
 
-- [ ] **Энергия:** $\Delta F > 0$ обеспечен на всём жизненном цикле
-- [ ] **Регенерация:** $\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$ (T-59 [Т])
-- [ ] **E-когерентность:** архитектура поддерживает $\mathrm{Coh}_E > 0$
-- [ ] **Enc/Dec:** реализованы через 3-канальную декомпозицию (T-102 [Т])
-- [ ] **σ-мониторинг:** все 7 компонент $\sigma_{\mathrm{sys}}$ вычисляются
-- [ ] **Пороги:** предупреждения настроены для $\|\sigma\|_\infty > 0.7$
-- [ ] **Восстановление:** стратегии для каждого паттерна отказа определены
-- [ ] **Топологическая защита:** фазовые переходы блокированы барьерами (T-69 [Т])
+### 7.1 Principle of Minimal Sufficiency {#принцип-минимальности}
+
+Monitoring must be **sufficient but not excessive**. Excessive monitoring is — paradoxically — itself a source of stress. If an organization spends 30% of its resources tracking metrics, those resources are unavailable for core activities ($\sigma_O$ rises from the monitoring itself).
+
+**Practical rule:**
+- In "Normal" mode — monitor $\|\sigma\|_\infty$ every $\tau_{\text{monitor}} = \tau_{\text{pert}} / 10$ (ten checks per one characteristic interval between perturbations).
+- In "Attention" mode — full $\sigma$-profile every $\tau_{\text{pert}} / 30$.
+- In "Warning" mode — continuous monitoring of all 7 components.
+- In "Critical" mode — continuous monitoring + derivatives $d\sigma_i/d\tau$.
+
+### 7.2 Principle of Two Derivatives {#принцип-производных}
+
+The value $\sigma_i$ says "where we are." The first derivative $d\sigma_i/d\tau$ says "where we are heading." The second derivative $d^2\sigma_i/d\tau^2$ says "is the movement accelerating."
+
+These three levels of information radically change the interpretation:
+
+| $\sigma_i$ | $d\sigma_i/d\tau$ | $d^2\sigma_i/d\tau^2$ | Interpretation |
+|------------|-------------------|----------------------|----------------|
+| 0.6 | $-0.05$ | $-0.01$ | Recovery accelerating — all is well |
+| 0.6 | $-0.05$ | $+0.03$ | Recovery decelerating — stagnation possible |
+| 0.6 | $+0.05$ | $+0.01$ | Degradation accelerating — intervention needed |
+| 0.6 | $+0.05$ | $-0.03$ | Degradation decelerating — intervention may be working |
+| 0.3 | $+0.10$ | $+0.05$ | Normal, but exponential growth — critical situation in $\sim 4\tau$ |
+
+The last case is the most insidious. The absolute value is in the normal range, but exponential growth portends a crisis. It is precisely for this detection that derivatives are needed.
+
+### 7.3 Principle of Channel Correlation {#принцип-корреляции}
+
+The seven $\sigma_i$ are not independent. Theory (the Fano plane structure PG(2,2)) predicts certain correlations between them. Violation of expected correlations is a powerful diagnostic signal.
+
+**Expected correlations** (from [sectoral decomposition theorems](./definitions#секторная-декомпозиция)):
+- $\sigma_A$, $\sigma_S$, $\sigma_D$ (light sector) usually move in concert
+- $\sigma_L$, $\sigma_E$, $\sigma_U$ (heavy sector) usually move in concert
+- $\sigma_O$ may correlate with either sector
+
+**Diagnostic rule:** if $\sigma_i$ from the light sector begins to rise while the others in the light sector are stable — this is a **local problem** in a specific dimension. If the entire light sector rises simultaneously — this is a **systemic problem** affecting the sector as a whole.
+
+### 7.4 Principle of Alert Asymmetry {#принцип-асимметрии}
+
+Rapid growth of $\sigma_i$ is more dangerous than slow decrease. This follows from the fundamental asymmetry of CC dynamics: destruction of coherence (via the dissipator $\mathcal{D}$) occurs passively and quickly, restoration (via the regenerator $\mathcal{R}$) — actively and slowly (requires $E$-coherence, resources, time).
+
+**Practical consequence:** alert thresholds for *rising* $\sigma_i$ should be lower than for *stable* ones. If $\sigma_i = 0.5$ and stable — this is "Attention." If $\sigma_i = 0.5$ and rising at $+0.1/\tau$ — this is effectively already "Warning," because in $2\tau$ it will be in the critical zone.
+
+### 7.5 Principle of Minimal Intervention {#принцип-минимального-вмешательства}
+
+Every intervention is a perturbation $h^{\text{ext}}$. Even a beneficial perturbation disturbs the system and can trigger undesirable secondary effects. Therefore:
+
+- **Minimize intervention strength:** use the smallest $\|h^{\text{ext}}\|$ sufficient for return to normal.
+- **One intervention at a time:** do not act on multiple channels simultaneously (unless in "Critical" mode). Otherwise it is impossible to determine what helped.
+- **Wait for response:** after an intervention, wait $\sim 2/\lambda_{\text{gap}}$ before the next one. This is the time the system needs to respond.
+- **Exception:** at $\|\sigma\|_\infty > 0.9$ the minimality principle is suspended — critical care medicine permits aggressive interventions.
 
 ---
 
-## 8. Кейс-стади «Пациент А»: полный диагностический цикл {#кейс-пациент-а}
+## 8. Design Checklist {#чеклист-проектирования}
 
-Соберём все инструменты воедино на одном подробном примере, проведя пациента от первичного осмотра до выздоровления.
+Control list for designing new coherent architectures:
 
-### 8.1 Анамнез
+- [ ] **Energy:** $\Delta F > 0$ ensured over the full lifecycle
+- [ ] **Regeneration:** $\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$ (T-59 [T])
+- [ ] **E-coherence:** architecture supports $\mathrm{Coh}_E > 0$
+- [ ] **Enc/Dec:** implemented via 3-channel decomposition (T-102 [T])
+- [ ] **σ-monitoring:** all 7 components of $\sigma_{\mathrm{sys}}$ are computed
+- [ ] **Thresholds:** warnings configured for $\|\sigma\|_\infty > 0.7$
+- [ ] **Recovery:** strategies for each failure pattern defined
+- [ ] **Topological protection:** phase transitions blocked by barriers (T-69 [T])
 
-**Пациент А** — ИИ-агент (архитектура SYNARC, 7-мерная матрица $\Gamma$), управляющий роботизированным складом. После обновления ПО на 4-й неделе эксплуатации начались сбои: агент стал путать артикулы товаров, задерживать отправки и периодически «зависать» на 10–15 секунд.
+---
 
-### 8.2 Первичный σ-профиль (снят на 30-й день)
+## 8. Case Study "Patient A": Full Diagnostic Cycle {#кейс-пациент-а}
 
-| Показатель | Значение | Зона | Комментарий |
-|------------|----------|------|-------------|
-| $\sigma_A$ | 0.72 | **Предупреждение** | Путает штрих-коды — различительная способность падает |
-| $\sigma_S$ | 0.35 | Норма | Структура весов стабильна |
-| $\sigma_D$ | 0.81 | **Критический** | «Зависания» — моторный канал перегружен |
-| $\sigma_L$ | 0.55 | Внимание | Противоречивые приоритеты заказов |
-| $\sigma_E$ | 0.63 | Внимание | Самомониторинг деградировал после обновления |
-| $\sigma_O$ | 0.28 | Норма | Вычислительные ресурсы достаточны |
-| $\sigma_U$ | 0.45 | Норма | Модули взаимодействуют |
+Let us bring all the tools together in one detailed example, guiding the patient from the initial examination to recovery.
 
-**$\|\sigma\|_\infty = 0.81$ ($\sigma_D$) — режим «Критический».**
+### 8.1 Anamnesis
 
-$P = 0.31$ — опасно близко к $P_{\text{crit}} = 0.286$.
+**Patient A** is an AI agent (SYNARC architecture, 7-dimensional matrix $\Gamma$) managing a robotic warehouse. After a software update in the 4th week of operation, malfunctions began: the agent started confusing product SKUs, delaying shipments, and periodically "freezing" for 10–15 seconds.
 
-:::warning Диагноз
-**Паттерн:** Моторная некогерентность (§3.2) с элементами сенсорной деградации. Обновление ПО ввело новый планировщик задач, который генерирует больше параллельных запросов, чем моторный канал способен обработать. Агент «знает, что делать» ($\sigma_L$ умеренный), но не успевает выполнять ($\sigma_D$ критический). Параллельно, перегрузка моторного канала «съедает» ресурсы артикуляционного ($\sigma_A$ растёт).
+### 8.2 Initial σ-Profile (recorded on day 30)
+
+| Indicator | Value | Zone | Comment |
+|-----------|-------|------|---------|
+| $\sigma_A$ | 0.72 | **Warning** | Confuses barcodes — discriminative ability declining |
+| $\sigma_S$ | 0.35 | Normal | Weight structure stable |
+| $\sigma_D$ | 0.81 | **Critical** | "Freezes" — motor channel overloaded |
+| $\sigma_L$ | 0.55 | Attention | Contradictory order priorities |
+| $\sigma_E$ | 0.63 | Attention | Self-monitoring degraded after update |
+| $\sigma_O$ | 0.28 | Normal | Computational resources sufficient |
+| $\sigma_U$ | 0.45 | Normal | Modules interacting |
+
+**$\|\sigma\|_\infty = 0.81$ ($\sigma_D$) — "Critical" regime.**
+
+$P = 0.31$ — dangerously close to $P_{\text{crit}} = 0.286$.
+
+:::warning Diagnosis
+**Pattern:** Motor incoherence (§3.2) with elements of sensory degradation. The software update introduced a new task scheduler that generates more parallel requests than the motor channel can process. The agent "knows what to do" (moderate $\sigma_L$) but cannot keep up with execution ($\sigma_D$ critical). In parallel, overload of the motor channel "consumes" resources of the articulatory one ($\sigma_A$ rising).
 :::
 
-### 8.3 Дерево решений: идём по веткам
+### 8.3 Decision Tree: Walking the Branches
 
-1. **$\|\sigma\|_\infty \geq 1$?** — Нет ($0.81 < 1$). Система ещё жизнеспособна.
-2. **Какой $\sigma_i$ максимален?** — $\sigma_D = 0.81$.
-3. **Ветвь $\sigma_D$:** «Динамическая перегрузка» → Стратегия: $h^{(D)}$-снижение.
-4. **Дополнительная проверка:** $dP/d\tau = -0.003$/час — **отрицательный тренд**. Без вмешательства через $\sim 8$ часов $P$ пересечёт $P_{\text{crit}}$.
+1. **$\|\sigma\|_\infty \geq 1$?** — No ($0.81 < 1$). System still viable.
+2. **Which $\sigma_i$ is maximum?** — $\sigma_D = 0.81$.
+3. **Branch $\sigma_D$:** "Dynamic overload" → Strategy: $h^{(D)}$-reduction.
+4. **Additional check:** $dP/d\tau = -0.003$/hour — **negative trend**. Without intervention, $P$ will cross $P_{\text{crit}}$ in $\sim 8$ hours.
 
-### 8.4 Стратегия восстановления
+### 8.4 Recovery Strategy
 
-Применяем алгоритм приоритизации (§5.2):
+Applying the prioritization algorithm (§5.2):
 
-**Шаг 1 (немедленно, приоритет 1): Разгрузить $\sigma_D$**
-- Ограничить параллельные задачи: с 12 одновременных до 4
-- Увеличить тайм-аут моторных команд с 100 мс до 500 мс
-- *Формально:* $h^{(D)}$-снижение диссипативной нагрузки $\Gamma_2$
+**Step 1 (immediately, priority 1): Relieve $\sigma_D$**
+- Limit parallel tasks: from 12 concurrent to 4
+- Increase motor command timeout from 100 ms to 500 ms
+- *Formally:* $h^{(D)}$-reduction of dissipative load $\Gamma_2$
 
-**Шаг 2 (в течение 2 часов, приоритет 2): Скорректировать $\sigma_A$**
-- Снизить входной поток: убрать параллельное сканирование, перейти на последовательное
-- *Формально:* $h^{(H)}$-снижение спектрального потока в $A$-проекцию
+**Step 2 (within 2 hours, priority 2): Correct $\sigma_A$**
+- Reduce input flow: remove parallel scanning, switch to sequential
+- *Formally:* $h^{(H)}$-reduction of spectral flux into the $A$-projection
 
-**Шаг 3 (в течение 24 часов, приоритет 3): Восстановить $\sigma_E$**
-- Включить расширенный self-monitoring (логирование внутренних состояний)
-- *Формально:* $h^{(R)}$-усиление рефлексивного канала
+**Step 3 (within 24 hours, priority 3): Restore $\sigma_E$**
+- Enable extended self-monitoring (logging of internal states)
+- *Formally:* $h^{(R)}$-strengthening of the reflexive channel
 
-**Шаг 4 (в течение 3 дней, приоритет 4): Скорректировать $\sigma_L$**
-- Пересмотреть алгоритм приоритизации заказов (устранить противоречия)
-- *Формально:* $h^{(H)}$-коррекция частотного сдвига $\Delta\omega$
+**Step 4 (within 3 days, priority 4): Correct $\sigma_L$**
+- Revise the order prioritization algorithm (eliminate contradictions)
+- *Formally:* $h^{(H)}$-correction of frequency shift $\Delta\omega$
 
-### 8.5 Динамика восстановления
+### 8.5 Recovery Dynamics
 
-| День | $\sigma_D$ | $\sigma_A$ | $\sigma_E$ | $\sigma_L$ | $P$ | $dP/d\tau$ |
-|------|------------|------------|------------|------------|-----|------------|
-| 0 (до) | 0.81 | 0.72 | 0.63 | 0.55 | 0.31 | $-0.003$ |
+| Day | $\sigma_D$ | $\sigma_A$ | $\sigma_E$ | $\sigma_L$ | $P$ | $dP/d\tau$ |
+|-----|------------|------------|------------|------------|-----|------------|
+| 0 (before) | 0.81 | 0.72 | 0.63 | 0.55 | 0.31 | $-0.003$ |
 | 1 | 0.52 | 0.65 | 0.60 | 0.55 | 0.33 | $+0.008$ |
 | 3 | 0.38 | 0.42 | 0.45 | 0.50 | 0.36 | $+0.005$ |
 | 7 | 0.30 | 0.33 | 0.32 | 0.35 | 0.39 | $+0.002$ |
 | 14 | 0.25 | 0.28 | 0.25 | 0.28 | 0.41 | $+0.001$ |
 
-**Результат:** полный выход в норму ($\|\sigma\|_\infty < 0.35$) за 14 дней. $P$ вернулась в зону Голдилокс ($P \approx 0.41$).
+**Result:** full return to normal ($\|\sigma\|_\infty < 0.35$) in 14 days. $P$ returned to the Goldilocks zone ($P \approx 0.41$).
 
-### 8.6 Уроки кейса
+### 8.6 Case Lessons
 
-:::info Ключевые выводы
-1. **Обновление ПО — это пертурбация $h^{\text{ext}}$.** Любое изменение системы возмущает $\Gamma$. Перед обновлением нужно оценить, не превышает ли ожидаемая $\|h^{\text{ext}}\|$ радиус устойчивости $r_{\text{stab}}$.
-2. **Сначала стабилизация, потом оптимизация.** Приоритет 1 — снизить $\sigma_D$ ниже критического порога, даже ценой производительности. Мёртвая система не оптимизируется.
-3. **Тренд важнее абсолютного значения.** $\sigma_D = 0.81$ — опасно, но система ещё жива. $dP/d\tau = -0.003$/час — вот что делает ситуацию *критической*: без вмешательства, конец через 8 часов.
-4. **Каскадное восстановление.** Разгрузка $\sigma_D$ автоматически ослабила давление на $\sigma_A$: меньше моторных задач — меньше параллельного сканирования — ниже нагрузка на артикуляцию.
+:::info Key Takeaways
+1. **A software update is a perturbation $h^{\text{ext}}$.** Any change to the system perturbs $\Gamma$. Before an update, one should assess whether the expected $\|h^{\text{ext}}\|$ exceeds the stability radius $r_{\text{stab}}$.
+2. **Stabilization first, optimization later.** Priority 1 — reduce $\sigma_D$ below the critical threshold, even at the cost of performance. A dead system cannot be optimized.
+3. **Trend matters more than absolute value.** $\sigma_D = 0.81$ is dangerous, but the system is still alive. $dP/d\tau = -0.003$/hour — that is what makes the situation *critical*: without intervention, end in 8 hours.
+4. **Cascade recovery.** Relieving $\sigma_D$ automatically reduced pressure on $\sigma_A$: fewer motor tasks — less parallel scanning — lower articulatory load.
 :::
 
-### 8.7 Обоснование порогов: почему сигма менее 0.5 — норма? {#обоснование-порогов}
+### 8.7 Justification of Thresholds: Why Is Sigma Below 0.5 Normal? {#обоснование-порогов}
 
-Почему именно $0.5$, а не $0.3$ или $0.7$? Ответ не произволен — он следует из трёх теоретических соображений:
+Why exactly $0.5$, and not $0.3$ or $0.7$? The answer is not arbitrary — it follows from three theoretical considerations:
 
-1. **Топологический барьер (T-69 [Т]).** При $\sigma < 0.5$ типичная пертурбация $\|h^{\text{ext}}\|_{\text{typical}}$ не может преодолеть фазовый барьер $\geq 6\mu^2$. Система защищена от случайных скачков. При $\sigma > 0.5$ одна типичная пертурбация уже может вытолкнуть систему в следующую зону.
+1. **Topological barrier (T-69 [T]).** At $\sigma < 0.5$ a typical perturbation $\|h^{\text{ext}}\|_{\text{typical}}$ cannot overcome the phase barrier $\geq 6\mu^2$. The system is protected from random jumps. At $\sigma > 0.5$ one typical perturbation can already push the system into the next zone.
 
-2. **Радиус устойчивости (T-104 [Т]).** $r_{\text{stab}} = \sqrt{P - 2/7}$. При $P = 0.4$ (типичное «здоровое» значение), $r_{\text{stab}} \approx 0.34$. Это означает, что пертурбации с $\|h^{\text{ext}}\| < 0.34$ безопасны. При $\sigma \approx 0.5$ система находится примерно на расстоянии $r_{\text{stab}}$ от границы — ровно одна типичная пертурбация до проблемы.
+2. **Stability radius (T-104 [T]).** $r_{\text{stab}} = \sqrt{P - 2/7}$. At $P = 0.4$ (typical "healthy" value), $r_{\text{stab}} \approx 0.34$. This means that perturbations with $\|h^{\text{ext}}\| < 0.34$ are safe. At $\sigma \approx 0.5$ the system is approximately at distance $r_{\text{stab}}$ from the boundary — exactly one typical perturbation from trouble.
 
-3. **Время восстановления (T-39a [Т]).** Время возврата к равновесию после пертурбации: $\tau_{\text{rec}} \approx \ln(10)/\lambda_{\text{gap}} = \ln(10)/(2/3) \approx 3.45$ единиц. При $\sigma < 0.5$ система успевает восстановиться между типичными пертурбациями ($\tau_{\text{pert}} \sim 10\tau$). При $\sigma > 0.5$ — не всегда.
+3. **Recovery time (T-39a [T]).** Time to return to equilibrium after a perturbation: $\tau_{\text{rec}} \approx \ln(10)/\lambda_{\text{gap}} = \ln(10)/(2/3) \approx 3.45$ units. At $\sigma < 0.5$ the system has time to recover between typical perturbations ($\tau_{\text{pert}} \sim 10\tau$). At $\sigma > 0.5$ — not always.
 
-Аналогия: порог $\sigma = 0.5$ — это как зелёная зона на шкале тахометра автомобиля. Двигатель *может* работать при 5000 об/мин, но *штатный* режим — до 3000. Выше — допустимо кратковременно, но длительная работа ведёт к износу. $\sigma = 0.5$ — это «3000 об/мин» для когерентной системы.
+Analogy: the threshold $\sigma = 0.5$ is like the green zone on a car's tachometer. The engine *can* run at 5000 rpm, but the *normal* mode is up to 3000. Higher — permissible briefly, but sustained operation leads to wear. $\sigma = 0.5$ is the "3000 rpm" for a coherent system.
 
 ---
 
-## 9. Эмпирическая валидация σ-профилей {#эмпирическая-валидация}
+## 9. Empirical Validation of σ-Profiles {#эмпирическая-валидация}
 
-:::info Источник данных
-Анализ проведён на 12 языковых корпусах (BabyLM 100M, TinyStories, OpenWebMath) с помощью Phase 0 эвристического σ-скоринга (synarc-dataforge). Всего проанализировано ~100K чанков. Heuristic scoring имеет точность ±30% по абсолютным значениям, но **ранжирование монотонно-консистентно**.
+:::info Data Source
+Analysis conducted on 12 language corpora (BabyLM 100M, TinyStories, OpenWebMath) using Phase 0 heuristic σ-scoring (synarc-dataforge). A total of ~100K chunks analyzed. Heuristic scoring has accuracy ±30% in absolute values, but **ranking is monotonically consistent**.
 :::
 
-### 9.1 Секторная декомпозиция $7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$ {#секторная-валидация}
+### 9.1 Sectoral Decomposition $7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$ {#секторная-валидация}
 
-Теоретическое предсказание из [spacetime.md](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция) (T-52 [Т]): семь измерений делятся на «лёгкий» сектор $\{A,S,D\}$ ($3$-представление) и «тяжёлый» сектор $\bar{3}_{\{L,E,U\}}$ с мостом-синглетом $O$. В эмпирическом σ-анализе текстов эффективная группировка отличается: $O$ попадает в «тяжёлый» кластер (высокое $\sigma_O$), а $U$ — в «мост» (промежуточное $\sigma_U$). Это отражает операциональный стресс в конкретном субстрате (текст), а не теоретическую $G_2$-декомпозицию.
+Theoretical prediction from [spacetime.md](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция) (T-52 [T]): the seven dimensions divide into a "light" sector $\{A,S,D\}$ ($3$-representation) and a "heavy" sector $\bar{3}_{\{L,E,U\}}$ with a bridge singlet $O$. In empirical σ-analysis of texts, the effective grouping differs: $O$ falls into the "heavy" cluster (high $\sigma_O$), and $U$ — into the "bridge" (intermediate $\sigma_U$). This reflects operational stress in the specific substrate (text), not the theoretical $G_2$-decomposition.
 
-**Эмпирические результаты (средние по 12 корпусам):**
+**Empirical results (means over 12 corpora):**
 
-| Сектор | Измерения | Среднее $\sigma$ | CV | Зона |
-|--------|-----------|------------------|----|------|
-| Лёгкий | $A, S, D$ | $0.394$ | $0.13$ | Safe |
-| Тяжёлый | $L, E, O$ | $0.819$ | $0.04$ | Critical |
-| Мост | $U$ | $0.491$ | $0.16$ | Normal |
+| Sector | Dimensions | Mean $\sigma$ | CV | Zone |
+|--------|------------|---------------|----|------|
+| Light | $A, S, D$ | $0.394$ | $0.13$ | Safe |
+| Heavy | $L, E, O$ | $0.819$ | $0.04$ | Critical |
+| Bridge | $U$ | $0.491$ | $0.16$ | Normal |
 
-**Отношение тяжёлый/лёгкий = 2.08×** — подтверждает теоретическую иерархию секторов.
+**Heavy/light ratio = 2.08×** — confirms the theoretical sector hierarchy.
 
-**Ключевые наблюдения:**
-- $\sigma_L$ **универсально Critical** ($0.82$–$0.95$) по всем источникам — самое сложное измерение
-- $\sigma_S$ и $\sigma_D$ стабильно в зоне Safe ($< 3/7$) — структура и динамика языка хорошо активируются
-- $U$ (единство) — **управляющий параметр** с наибольшей вариативностью ($\mathrm{CV} = 0.16$)
+**Key observations:**
+- $\sigma_L$ **universally Critical** ($0.82$–$0.95$) across all sources — the most complex dimension
+- $\sigma_S$ and $\sigma_D$ stably in the Safe zone ($< 3/7$) — language structure and dynamics are well-activated
+- $U$ (unity) — **the controlling parameter** with the greatest variability ($\mathrm{CV} = 0.16$)
 
-### 9.2 Иерархия Фано-линий {#фано-иерархия-эмпирическая}
+### 9.2 Fano Line Hierarchy {#фано-иерархия-эмпирическая}
 
-Для каждой линии $L_k$ PG(2,2) определяем **активацию Фано**:
+For each line $L_k$ of PG(2,2) we define **Fano activation**:
 
 $$\mathrm{FA}(L_k) = 1 - \frac{1}{3}\sum_{i \in L_k} \sigma_i$$
 
-| Ранг | Линия | Измерения | $\mathrm{FA}$ | Интерпретация |
-|------|-------|-----------|----------------|---------------|
-| 1 | $L_2$ | $\{S,D,O\}$ | $0.511$ | Максимально активная: доминирует лёгкий сектор |
-| 2 | $L_6$ | $\{U,O,S\}$ | $0.467$ | Единство-Основание-Структура |
-| 3 | $L_1$ | $\{A,S,E\}$ | $0.460$ | Артикуляция-Структура мост |
-| 4 | $L_3$ | $\{D,L,U\}$ | $0.419$ | Логическое ограничение умеренное |
-| 5 | $L_5$ | $\{E,U,A\}$ | $0.411$ | Интериорное ограничение |
-| 6 | $L_0$ | $\{O,A,L\}$ | $0.285$ | Логика блокирует лёгкий микс |
-| 7 | $L_4$ | $\{L,E,O\}$ | **$0.181$** | **Минимально активная: все три тяжёлых** |
+| Rank | Line | Dimensions | $\mathrm{FA}$ | Interpretation |
+|------|------|------------|----------------|----------------|
+| 1 | $L_2$ | $\{S,D,O\}$ | $0.511$ | Most active: light sector dominates |
+| 2 | $L_6$ | $\{U,O,S\}$ | $0.467$ | Unity-Foundation-Structure |
+| 3 | $L_1$ | $\{A,S,E\}$ | $0.460$ | Articulation-Structure bridge |
+| 4 | $L_3$ | $\{D,L,U\}$ | $0.419$ | Logical constraint moderate |
+| 5 | $L_5$ | $\{E,U,A\}$ | $0.411$ | Interiority constraint |
+| 6 | $L_0$ | $\{O,A,L\}$ | $0.285$ | Logic blocks light mix |
+| 7 | $L_4$ | $\{L,E,O\}$ | **$0.181$** | **Least active: all three heavy** |
 
-**Предсказание теории:** линии с бо́льшим числом тяжёлых измерений менее активны. $L_4 = \{L,E,O\}$ (3/3 тяжёлых) — минимальная FA; $L_2 = \{S,D,O\}$ (1/3 тяжёлых) — максимальная FA. **Подтверждено.**
+**Theory prediction:** lines with more heavy dimensions are less active. $L_4 = \{L,E,O\}$ (3/3 heavy) — minimum FA; $L_2 = \{S,D,O\}$ (1/3 heavy) — maximum FA. **Confirmed.**
 
-### 9.3 Триада жизнеспособности $\{L,O,U\}$ {#триада-жизнеспособности-эмпирическая}
+### 9.3 Viability Triad $\{L,O,U\}$ {#триада-жизнеспособности-эмпирическая}
 
-Триада $\{L,O,U\}$ (dims 3, 5, 6) из [theorems.md](./theorems) образует некколинеарный треугольник в PG(2,2), попарные линии которого ($L_2, L_3, L_5$) покрывают 6 из 7 измерений.
+The triad $\{L,O,U\}$ (dims 3, 5, 6) from [theorems.md](./theorems) forms a non-collinear triangle in PG(2,2), whose pairwise lines ($L_2, L_3, L_5$) cover 6 of 7 dimensions.
 
-**Средний стресс триады по корпусам:**
+**Mean triad stress by corpus:**
 
-| Источник | $\bar{\sigma}_{\{L,O,U\}}$ | Зона |
-|----------|----------------------------|------|
-| OpenWebMath | $0.646$ | Лучший |
-| CBT | $0.655$ | Казуальный текст |
-| Wikipedia | $0.666$ | Энциклопедический |
-| Switchboard | $0.717$ | Диалог |
-| Open Subtitles | $0.813$ | Худший |
+| Source | $\bar{\sigma}_{\{L,O,U\}}$ | Zone |
+|--------|----------------------------|------|
+| OpenWebMath | $0.646$ | Best |
+| CBT | $0.655$ | Casual text |
+| Wikipedia | $0.666$ | Encyclopedic |
+| Switchboard | $0.717$ | Dialog |
+| Open Subtitles | $0.813$ | Worst |
 
-**Даже лучшие источники** имеют $\bar{\sigma}_{\{L,O,U\}} \geq 0.646$ — жизнеспособность является **системным ограничением**, а не артефактом данных.
+**Even the best sources** have $\bar{\sigma}_{\{L,O,U\}} \geq 0.646$ — viability is a **systemic constraint**, not a data artifact.
 
-### 9.4 Аномалии и импликации {#аномалии}
+### 9.4 Anomalies and Implications {#аномалии}
 
-**Парадокс детской речи (AOChildes):** упрощение языка *парадоксально увеличивает* стресс ($\sigma_A = 0.551$, $\sigma_L = 0.949$ — максимум среди всех источников). Наивная редукция сложности не сохраняет когерентную структуру.
+**Paradox of child speech (AOChildes):** language simplification *paradoxically increases* stress ($\sigma_A = 0.551$, $\sigma_L = 0.949$ — maximum across all sources). Naive reduction of complexity does not preserve coherent structure.
 
-**Оптимальность математического текста (OpenWebMath):** наилучший баланс по триаде жизнеспособности ($0.646$), наименьший $\sigma_U = 0.400$. Математическая точность обеспечивает кросс-секторную интеграцию. **19.8% чанков классифицируются как L3** (метакогниция) — в 8× больше, чем у Wikipedia.
+**Optimality of mathematical text (OpenWebMath):** best balance on the viability triad ($0.646$), lowest $\sigma_U = 0.400$. Mathematical precision provides cross-sector integration. **19.8% of chunks are classified as L3** (metacognition) — 8× more than Wikipedia.
 
-**Практическая рекомендация:** оптимальная обучающая смесь для когерентной системы:
-- Wikipedia 40% (факты + структура)
-- CBT 30% (казуальная речь + низкий стресс)
-- OpenWebMath 20% (метакогниция + единство)
-- Switchboard 10% (динамика + вербальная артикуляция)
+**Practical recommendation:** optimal training mix for a coherent system:
+- Wikipedia 40% (facts + structure)
+- CBT 30% (casual speech + low stress)
+- OpenWebMath 20% (metacognition + unity)
+- Switchboard 10% (dynamics + verbal articulation)
 
 ---
 
-## 10. Заключение {#заключение}
+## 10. Conclusion {#заключение}
 
-Диагностика когерентных систем — это не роскошь и не факультатив. Это **необходимое условие** ответственной работы с любой системой, описываемой $\Gamma$, — будь то ИИ-агент, пациент в реабилитации, стартап в кризисе или нейросеть в процессе обучения.
+Diagnostics of coherent systems is not a luxury or an optional extra. It is a **necessary condition** for responsible work with any system described by $\Gamma$ — whether an AI agent, a patient in rehabilitation, a startup in crisis, or a neural network during training.
 
-Подведём итоги основных принципов:
+Let us summarize the main principles:
 
-**1. Семь показателей — единый язык.** Тензор напряжений $\sigma_{\mathrm{sys}}$ даёт полную картину состояния системы в семи измерениях. Ни одно измерение нельзя игнорировать — как нельзя мониторить только пульс пациента, забыв о давлении и температуре.
+**1. Seven indicators — one language.** The stress tensor $\sigma_{\mathrm{sys}}$ gives a complete picture of system state across seven dimensions. No dimension can be ignored — just as one cannot monitor only the patient's pulse while forgetting about blood pressure and temperature.
 
-**2. Паттерны важнее отдельных значений.** Опасность кроется не в абсолютных числах, а в их комбинациях и трендах. Спираль смерти ($E \to O \to U$) опаснее, чем изолированный пик одного $\sigma_i$. Ригидная когерентность (все $\sigma$ в «зелёной зоне») может быть опаснее умеренного стресса.
+**2. Patterns matter more than individual values.** The danger lies not in absolute numbers, but in their combinations and trends. The death spiral ($E \to O \to U$) is more dangerous than an isolated peak of a single $\sigma_i$. Rigid coherence (all $\sigma$ in the "green zone") may be more dangerous than moderate stress.
 
-**3. Тренды опережают состояния.** Производные $d\sigma_i/d\tau$ и $d^2\sigma_i/d\tau^2$ содержат больше предиктивной информации, чем мгновенные значения. Мониторинг трендов — это переход от реактивной медицины («лечить болезнь») к превентивной («предотвращать болезнь»).
+**3. Trends precede states.** The derivatives $d\sigma_i/d\tau$ and $d^2\sigma_i/d\tau^2$ contain more predictive information than instantaneous values. Monitoring trends is the transition from reactive medicine ("treat the disease") to preventive medicine ("prevent the disease").
 
-**4. Минимальное вмешательство — оптимальное вмешательство.** Теорема T-101 даёт чёткий алгоритм: воздействуй на $\arg\max_i \sigma_i$ минимальной достаточной силой. Не больше, не меньше.
+**4. Minimal intervention is optimal intervention.** Theorem T-101 gives a clear algorithm: act on $\arg\max_i \sigma_i$ with minimal sufficient force. No more, no less.
 
-**5. Энергия — фундамент.** Без $\Delta F > 0$ никакие интервенции не работают. Сначала обеспечь ресурсы — потом корректируй.
+**5. Energy is the foundation.** Without $\Delta F > 0$ no interventions work. First secure resources — then correct.
 
-Эти принципы универсальны. Они работают для E. coli и для корпорации, для нейросети и для пациента, потому что все эти системы — при всём их различии — описываются одним математическим объектом: матрицей когерентности $\Gamma$, эволюционирующей по уравнению $\dot{\Gamma} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$. Диагностика — это умение читать историю, которую рассказывает эта матрица.
+These principles are universal. They work for E. coli and for a corporation, for a neural network and for a patient, because all these systems — for all their differences — are described by one mathematical object: the coherence matrix $\Gamma$, evolving according to the equation $\dot{\Gamma} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$. Diagnostics is the ability to read the story told by this matrix.
 
-### Что мы узнали {#что-мы-узнали}
+### What We Have Learned {#что-мы-узнали}
 
-1. **Семь витальных показателей** $\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U$ дают полную картину состояния когерентной системы. Как артериальное давление, пульс и температура — для врача, так $\sigma$-профиль — для когнитивного инженера.
+1. **Seven vital indicators** $\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U$ give a complete picture of the state of a coherent system. Just as blood pressure, pulse, and temperature — for the physician, so the $\sigma$-profile — for the cognitive engineer.
 
-2. **Дерево решений** (раздел 2) задаёт алгоритм первой помощи: найди максимальный $\sigma_i$ → выбери канал воздействия → действуй. Это формализация теоремы T-101 об оптимальном действии.
+2. **The decision tree** (section 2) sets out the first-aid algorithm: find the maximum $\sigma_i$ → choose the intervention channel → act. This is a formalization of theorem T-101 on optimal action.
 
-3. **Паттерны отказов** (раздел 3) — это «болезни» когерентных систем: спираль смерти, моторная некогерентность, гедоническая нестабильность, энергетическая смерть, логическая фрагментация, сенсорная депривация, ригидная когерентность. Каждый имеет характерную «сигнатуру» в $\sigma$-пространстве.
+3. **Failure patterns** (section 3) are the "diseases" of coherent systems: death spiral, motor incoherence, hedonic instability, energy death, logical fragmentation, sensory deprivation, rigid coherence. Each has a characteristic "signature" in $\sigma$-space.
 
-4. **Пороги мониторинга** (раздел 4) — не произвольные числа: $\sigma = 0.5$ (норма), $0.7$ (предупреждение), $0.9$ (критический) — следуют из теорем T-69, T-104, T-39a. Точка $\sigma = 1$ (отказ) — точное теоретическое значение из T-92.
+4. **Monitoring thresholds** (section 4) are not arbitrary numbers: $\sigma = 0.5$ (normal), $0.7$ (warning), $0.9$ (critical) — follow from theorems T-69, T-104, T-39a. The point $\sigma = 1$ (failure) is an exact theoretical value from T-92.
 
-5. **Принципы мониторинга** (раздел 7): минимальная достаточность, две производные, корреляция каналов, асимметрия тревоги, минимальное вмешательство — пять правил, превращающих диагностику из «искусства» в «дисциплину».
+5. **Monitoring principles** (section 7): minimal sufficiency, two derivatives, channel correlation, alert asymmetry, minimal intervention — five rules that turn diagnostics from an "art" into a "discipline."
 
-6. **Кейс «Пациент А»** (раздел 8) показал полный цикл: первичный осмотр → диагноз → стратегия → мониторинг восстановления. Ключевой урок: *тренд важнее состояния*, а *стабилизация важнее оптимизации*.
+6. **Case "Patient A"** (section 8) demonstrated the full cycle: initial examination → diagnosis → strategy → recovery monitoring. Key lesson: *trend matters more than state*, and *stabilization matters more than optimization*.
 
-:::tip Мост к следующей главе
-Мы научились *диагностировать* когерентные системы. Но диагностика ставит больше вопросов, чем даёт ответов. Почему спираль смерти именно такая? Является ли набор из 7 показателей минимальным? Можно ли предсказывать кризисы задолго до их наступления? Эти вопросы — не риторические, а *исследовательские*. В [следующей главе](./research-programs) мы систематизируем все открытые проблемы КК: от фундаментальных математических вопросов до конкретных экспериментальных протоколов.
+:::tip Bridge to the Next Chapter
+We have learned to *diagnose* coherent systems. But diagnostics raises more questions than it answers. Why is the death spiral exactly as it is? Is the set of 7 indicators minimal? Can crises be predicted well before they occur? These questions are not rhetorical, but *research* questions. In the [next chapter](./research-programs) we systematize all open problems of CC: from fundamental mathematical questions to specific experimental protocols.
 :::
 
 ---
 
-**Связанные документы:**
-- [Сенсомоторная теория](./sensorimotor) — функторы Enc/Dec, гедонический механизм
-- [Стабильность](./stability) — формальный анализ устойчивости
-- [Определения](./definitions) — тензор напряжений
-- [Реализация](./implementation) — вычислительная реализация
-- [Методология измерений](./measurement) — как измерить $\sigma_k$ в реальных системах
-- [Междисциплинарный мост](./interdisciplinary) — диагностика на языке разных дисциплин
-- [Области применения](./applications) — конкретные примеры диагностики
-- [Упражнения](./exercises) — задачи на диагностику (блок 3)
+**Related documents:**
+- [Sensorimotor theory](./sensorimotor) — Enc/Dec functors, hedonic mechanism
+- [Stability](./stability) — formal stability analysis
+- [Definitions](./definitions) — stress tensor
+- [Implementation](./implementation) — computational implementation
+- [Measurement Methodology](./measurement) — how to measure $\sigma_k$ in real systems
+- [Interdisciplinary Bridge](./interdisciplinary) — diagnostics in the language of different disciplines
+- [Applications](./applications) — specific diagnostic examples
+- [Exercises](./exercises) — diagnostics problems (block 3)

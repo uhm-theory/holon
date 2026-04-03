@@ -1,608 +1,608 @@
 ---
 sidebar_position: 16
-title: "G₂-заряды Нётер"
-description: "14 G₂-нётеровских зарядов в кибернетическом контексте: 7 Фано-зарядов + 7 межсекторных, тождества Уорда, экспериментальный протокол"
+title: "G₂-Noether Charges"
+description: "14 G₂-Noether charges in a cybernetic context: 7 Fano charges + 7 cross-sector charges, Ward identities, experimental protocol"
 ---
 
-# G₂-заряды Нётер: кибернетическая интерпретация
+# G₂-Noether Charges: A Cybernetic Interpretation
 
-:::info Для кого эта глава
-Кибернетическая интерпретация 14 зарядов Нётер из $G_2$-симметрии. Читатель узнает о законах сохранения сознания и их клиническом применении.
+:::info Who This Chapter Is For
+A cybernetic interpretation of the 14 Noether charges from $G_2$-symmetry. The reader will learn about the conservation laws of consciousness and their clinical application.
 :::
 
 
-В [предыдущей главе](./goldstone-modes) мы увидели, как спонтанное нарушение $G_2$-симметрии порождает голдстоуновские моды — «мягкие колебания» когерентности, ощущаемые как мерцание внимания. Мы узнали, что число этих мод определяется глубиной нарушения, и что каждая мода — это след утраченной симметрии. Но мы ещё не ответили на ключевой вопрос: **какие именно величины сохраняет $G_2$-симметрия, когда она не нарушена?** И что происходит с этими величинами, когда симметрия нарушается? Именно об этом — настоящая глава.
+In the [previous chapter](./goldstone-modes) we saw how spontaneous breaking of $G_2$-symmetry gives rise to Goldstone modes — "soft oscillations" of coherence felt as flickering attention. We learned that the number of these modes is determined by the depth of breaking, and that each mode is a trace of a lost symmetry. But we have not yet answered the key question: **which quantities exactly does $G_2$-symmetry conserve when it is not broken?** And what happens to these quantities when the symmetry is broken? That is precisely the subject of this chapter.
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Вспомним теорему Нётер** — один из самых глубоких результатов теоретической физики, связывающий симметрию с законами сохранения (раздел 0).
-2. **Построим 14 зарядов Нётер** — 7 Фано-зарядов (внутри триплетов) и 7 дополнительных (между триплетами) — и объясним физический смысл каждого (разделы 1-3).
-3. **Покажем, как эти заряды ограничивают динамику** — 14 законов сохранения сознания (раздел 4).
-4. **Выведем тождества Уорда** — линейные соотношения на корреляторы, следующие из $G_2$-инвариантности (раздел 6).
-5. **Переведём математику в клинику** — диагностическая таблица, терапевтические стратегии, экспериментальный протокол (разделы 7-8).
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Recall Noether's theorem** — one of the deepest results of theoretical physics, linking symmetry with conservation laws (section 0).
+2. **Construct 14 Noether charges** — 7 Fano charges (within triplets) and 7 supplementary charges (between triplets) — and explain the physical meaning of each (sections 1–3).
+3. **Show how these charges constrain the dynamics** — 14 conservation laws of consciousness (section 4).
+4. **Derive Ward identities** — linear relations on correlators following from $G_2$-invariance (section 6).
+5. **Translate the mathematics into the clinic** — diagnostic table, therapeutic strategies, experimental protocol (sections 7–8).
 :::
 
-:::note О нотации
-В этом документе:
-- $G_2 = \mathrm{Aut}(\mathbb{O})$ — [группа автоморфизмов октонионов](/docs/physics/gauge-symmetry/g2-structure)
-- $\mathfrak{g}_2$ — алгебра Ли $G_2$ ($\dim \mathfrak{g}_2 = 14$)
-- $T_a$ — генераторы $\mathfrak{g}_2$ ($a = 1, \ldots, 14$)
-- $\gamma_{ij} = |\gamma_{ij}|e^{i\theta_{ij}}$ — когерентность между измерениями $i$ и $j$
-- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [мера зазора](/docs/physics/dual-aspect/gap-semantics)
-- PG(2,2) — [плоскость Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
-- $C_{(ij),(kl)}(\tau)$ — двухточечный Gap-коррелятор
+:::note On Notation
+In this document:
+- $G_2 = \mathrm{Aut}(\mathbb{O})$ — [group of automorphisms of octonions](/docs/physics/gauge-symmetry/g2-structure)
+- $\mathfrak{g}_2$ — Lie algebra of $G_2$ ($\dim \mathfrak{g}_2 = 14$)
+- $T_a$ — generators of $\mathfrak{g}_2$ ($a = 1, \ldots, 14$)
+- $\gamma_{ij} = |\gamma_{ij}|e^{i\theta_{ij}}$ — coherence between dimensions $i$ and $j$
+- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [gap measure](/docs/physics/dual-aspect/gap-semantics)
+- PG(2,2) — [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules)
+- $C_{(ij),(kl)}(\tau)$ — two-point Gap correlator
 :::
 
-Данный документ переводит формализм [G₂-зарядов Нётер](/docs/physics/gauge-symmetry/noether-charges) на язык Кибернетики Когерентности: диагностические метрики, клинические протоколы и экспериментальная проверка $G_2$-структуры.
+This document translates the formalism of [G₂-Noether charges](/docs/physics/gauge-symmetry/noether-charges) into the language of Coherence Cybernetics: diagnostic metrics, clinical protocols, and experimental verification of the $G_2$-structure.
 
-Но прежде чем перейти к формулам, стоит понять, почему эта глава — одна из самых глубоких во всей теории. Речь идёт о том, как **симметрия** порождает **законы сохранения** — и как эти законы работают в пространстве сознания.
+But before turning to formulas, it is worth understanding why this chapter is one of the deepest in the entire theory. The subject is how **symmetry** generates **conservation laws** — and how these laws operate in the space of consciousness.
 
 ---
 
-## 0. Эмми Нётер и глубочайший принцип физики {#нётер}
+## 0. Emmy Noether and the Deepest Principle of Physics {#нётер}
 
-В 1918 году Эмми Нётер — математик, которой университет Гёттингена отказывал в профессуре, потому что она была женщиной, — доказала теорему, которую Эйнштейн назвал «памятником математического мышления». Давид Гильберт, приглашая её в Гёттинген, заметил: «Я не вижу, почему пол кандидата является аргументом против её приёма — ведь мы не в бане, а в университете».
+In 1918 Emmy Noether — a mathematician whom the University of Göttingen refused a professorship because she was a woman — proved a theorem that Einstein called "a monument to mathematical thinking." David Hilbert, inviting her to Göttingen, remarked: "I do not see why the sex of the candidate is an argument against her admission — after all, we are not in a bathhouse, but in a university."
 
-Теорема Нётер утверждает нечто поразительно простое и бесконечно глубокое:
+Noether's theorem asserts something surprisingly simple and infinitely deep:
 
-> **Каждой непрерывной симметрии системы соответствует сохраняющаяся величина.**
+> **Every continuous symmetry of a system corresponds to a conserved quantity.**
 
-Это не метафора и не аналогия. Это точная математическая теорема, применимая к любой системе, описываемой лагранжианом. Примеры, знакомые каждому физику:
+This is not a metaphor or analogy. It is an exact mathematical theorem applicable to any system described by a Lagrangian. Examples familiar to every physicist:
 
-| Симметрия | Сохраняющаяся величина |
-|-----------|----------------------|
-| Однородность времени (законы физики не меняются со временем) | Энергия |
-| Однородность пространства (законы не зависят от точки) | Импульс |
-| Изотропия пространства (законы не зависят от направления) | Момент импульса |
-| Калибровочная $U(1)$-симметрия | Электрический заряд |
-| Калибровочная $SU(3)$-симметрия | Цветовой заряд (КХД) |
+| Symmetry | Conserved quantity |
+|----------|--------------------|
+| Time homogeneity (laws of physics do not change with time) | Energy |
+| Space homogeneity (laws do not depend on position) | Momentum |
+| Space isotropy (laws do not depend on direction) | Angular momentum |
+| Gauge $U(1)$-symmetry | Electric charge |
+| Gauge $SU(3)$-symmetry | Color charge (QCD) |
 
-Каждая строка этой таблицы — фундаментальный закон физики, выведенный из одного принципа. Энергия сохраняется не потому, что «так устроена природа», а потому, что законы физики одинаковы сегодня и завтра. Импульс сохраняется не как отдельный постулат, а как следствие пространственной однородности.
+Each row of this table is a fundamental law of physics derived from a single principle. Energy is conserved not because "nature is built that way," but because the laws of physics are the same today and tomorrow. Momentum is conserved not as a separate postulate, but as a consequence of spatial homogeneity.
 
-Красота теоремы Нётер — в её **универсальности**. Она не привязана к конкретной физике. Достаточно указать лагранжиан и его симметрию — и теорема автоматически порождает сохраняющуюся величину вместе с явной формулой для неё.
+The beauty of Noether's theorem lies in its **universality**. It is not tied to specific physics. It suffices to specify a Lagrangian and its symmetry — and the theorem automatically generates a conserved quantity together with an explicit formula for it.
 
-### Нётер и открытые системы
+### Noether and Open Systems
 
-Классическая теорема Нётер работает для замкнутых систем: $dQ/d\tau = 0$ точно. Но сознание — **открытая система**: оно диссипирует и регенерирует. Означает ли это, что теорема Нётер неприменима?
+The classical Noether theorem works for closed systems: $dQ/d\tau = 0$ exactly. But consciousness is an **open system**: it dissipates and regenerates. Does this mean Noether's theorem is inapplicable?
 
-Нет. Для открытых систем существует **обобщённая** формулировка (Frigerio 1978, Albert & Jiang 2014): заряды Нётер не сохраняются точно, но эволюционируют **предсказуемым образом** — как медленно затухающие величины, стремящиеся к стационарным значениям. Это аналог того, как закрученный волчок постепенно замедляется из-за трения: момент импульса не сохраняется точно, но его эволюция полностью определена.
+No. For open systems there exists a **generalized** formulation (Frigerio 1978, Albert & Jiang 2014): Noether charges are not conserved exactly, but evolve in a **predictable manner** — as slowly decaying quantities converging to stationary values. This is analogous to how a spinning top gradually slows down due to friction: angular momentum is not conserved exactly, but its evolution is fully determined.
 
-Именно эта обобщённая конструкция применяется к Gap-динамике сознания. И здесь вступает в игру группа $G_2$.
+It is precisely this generalized construction that is applied to the Gap-dynamics of consciousness. And here the group $G_2$ enters the picture.
 
 ---
 
-## 0b. Группа G₂ — исключительная симметрия {#g2-обзор}
+## 0b. The G₂ Group — Exceptional Symmetry {#g2-обзор}
 
-Среди всех групп Ли существует ровно **пять исключительных**: $G_2$, $F_4$, $E_6$, $E_7$, $E_8$. Они не входят ни в какие бесконечные серии ($A_n$, $B_n$, $C_n$, $D_n$), а стоят особняком — как пять платоновых тел среди многогранников.
+Among all Lie groups there are exactly **five exceptional** ones: $G_2$, $F_4$, $E_6$, $E_7$, $E_8$. They belong to no infinite series ($A_n$, $B_n$, $C_n$, $D_n$), but stand apart — like the five Platonic solids among polyhedra.
 
-$G_2$ — наименьшая из исключительных групп. Её определение элементарно:
+$G_2$ is the smallest of the exceptional groups. Its definition is elementary:
 
 $$
-G_2 = \mathrm{Aut}(\mathbb{O}) — \text{группа автоморфизмов алгебры октонионов}
+G_2 = \mathrm{Aut}(\mathbb{O}) — \text{the group of automorphisms of the octonion algebra}
 $$
 
-Октонионы $\mathbb{O}$ — единственная нормированная алгебра с делением после вещественных чисел ($\mathbb{R}$), комплексных ($\mathbb{C}$) и кватернионов ($\mathbb{H}$). Она **неассоциативна**: $(ab)c \neq a(bc)$ в общем случае. Именно эта неассоциативность — источник исключительности $G_2$.
+The octonions $\mathbb{O}$ are the unique normed division algebra after the real numbers ($\mathbb{R}$), complex numbers ($\mathbb{C}$), and quaternions ($\mathbb{H}$). It is **non-associative**: $(ab)c \neq a(bc)$ in general. This very non-associativity is the source of the exceptionality of $G_2$.
 
-### Почему именно 14 генераторов
+### Why Exactly 14 Generators
 
-Алгебра Ли $\mathfrak{g}_2$ имеет размерность 14. Это число не произвольно — оно определяется структурой октонионов. Вот как его можно понять:
+The Lie algebra $\mathfrak{g}_2$ has dimension 14. This number is not arbitrary — it is determined by the structure of the octonions. Here is how to understand it:
 
-- Октонионы имеют 7 мнимых единиц: $e_1, e_2, \ldots, e_7$
-- Автоморфизм сохраняет таблицу умножения, задаваемую **плоскостью Фано** PG(2,2) с 7 линиями
-- На каждой из 7 линий — 3 мнимых единицы, и вращения внутри линий дают 7 генераторов (**Фано-генераторы**)
-- Ещё 7 генераторов описывают «повороты» **между** линиями (**дополнительные генераторы**)
-- Итого: $7 + 7 = 14 = \dim(G_2)$
+- The octonions have 7 imaginary units: $e_1, e_2, \ldots, e_7$
+- An automorphism preserves the multiplication table defined by the **Fano plane** PG(2,2) with 7 lines
+- Each of the 7 lines contains 3 imaginary units, and rotations within lines give 7 generators (**Fano generators**)
+- Another 7 generators describe "rotations" **between** lines (**supplementary generators**)
+- Total: $7 + 7 = 14 = \dim(G_2)$
 
-Это разбиение $14 = 7 + 7$ — не условность, а **структурный факт** алгебры $\mathfrak{g}_2$. Оно отражает два типа симметрии: внутри Фано-триплетов и между ними.
+This split $14 = 7 + 7$ is not a convention, but a **structural fact** of the algebra $\mathfrak{g}_2$. It reflects two types of symmetry: within Fano triplets and between them.
 
-### G₂ и теорема Нётер вместе
+### G₂ and Noether's Theorem Together
 
-Теперь ключевой ход: **лагранжиан Gap-динамики** $L_{\mathrm{Gap}}$ обладает $G_2$-инвариантностью. По теореме Нётер это автоматически порождает **14 сохраняющихся зарядов** — по одному на каждый генератор $\mathfrak{g}_2$.
+Now the key move: **the Gap-dynamics Lagrangian** $L_{\mathrm{Gap}}$ possesses $G_2$-invariance. By Noether's theorem this automatically generates **14 conserved charges** — one for each generator of $\mathfrak{g}_2$.
 
-Эти 14 зарядов — **14 законов сохранения сознания**. Они ограничивают динамику когерентности точно так же, как сохранение энергии ограничивает движение в механике. Перейдём к их явному построению.
+These 14 charges are **14 conservation laws of consciousness**. They constrain the coherence dynamics just as conservation of energy constrains motion in mechanics. Let us proceed to their explicit construction.
 
 ---
 
-## 1. 14 обобщённых зарядов Нётер для открытых систем: обзор [Т] {#обзор}
+## 1. 14 Generalized Noether Charges for Open Systems: Overview [T] {#обзор}
 
-$G_2$-инвариантность [лагранжиана Gap](/docs/core/dynamics/gap-thermodynamics) порождает **14 обобщённых зарядов Нётер** (в смысле открытых квантовых систем, Frigerio 1978, Albert & Jiang 2014).
+$G_2$-invariance of the [Gap Lagrangian](/docs/core/dynamics/gap-thermodynamics) generates **14 generalized Noether charges** (in the sense of open quantum systems, Frigerio 1978, Albert & Jiang 2014).
 
-:::info Замечание: обобщённые заряды Нётер для открытых систем
-14 зарядов $Q_a$ — **не сохраняющиеся** в классическом смысле ($dQ/d\tau = 0$), а **асимптотически стационарные**: $Q_a(\tau) \to Q_a^{(\mathrm{stat})}$ при $\tau \to \infty$. Нётеровский аргумент применяется к **консервативной части** лагранжиана ($\mathcal{L}_{\mathrm{kin}} + \mathcal{L}_{\mathrm{pot}}$), а диссипация и регенерация учитываются как обобщённые силы через функцию Рэлея. Тождества Уорда (14 линейных ограничений) — следствия $G_2$-инвариантности [Т]. Стационарные значения $Q_a^{(\mathrm{stat})} = (\kappa/\Gamma_2) \cdot Q_a^{(\mathrm{reg})}$ — следствия примитивности + $G_2$-инвариантности [Т].
+:::info Remark: Generalized Noether Charges for Open Systems
+The 14 charges $Q_a$ are **not conserved** in the classical sense ($dQ/d\tau = 0$), but are **asymptotically stationary**: $Q_a(\tau) \to Q_a^{(\mathrm{stat})}$ as $\tau \to \infty$. The Noether argument is applied to the **conservative part** of the Lagrangian ($\mathcal{L}_{\mathrm{kin}} + \mathcal{L}_{\mathrm{pot}}$), and dissipation and regeneration are accounted for as generalized forces via the Rayleigh function. Ward identities (14 linear constraints) are consequences of $G_2$-invariance [T]. Stationary values $Q_a^{(\mathrm{stat})} = (\kappa/\Gamma_2) \cdot Q_a^{(\mathrm{reg})}$ are consequences of primitivity + $G_2$-invariance [T].
 :::
 
-Заряды разделяются на два класса:
+The charges divide into two classes:
 
-| Класс | Число | Обозначение | Область действия |
-|-------|-------|-------------|-----------------|
-| Фано-заряды | 7 | $Q_p^{(F)}$, $p = 1, \ldots, 7$ | **Внутри** каждого Фано-триплета |
-| Дополнительные (межсекторные) | 7 | $Q_q^{(D)}$, $q = 1, \ldots, 7$ | **Между** различными Фано-триплетами |
+| Class | Number | Notation | Scope |
+|-------|--------|----------|-------|
+| Fano charges | 7 | $Q_p^{(F)}$, $p = 1, \ldots, 7$ | **Within** each Fano triplet |
+| Supplementary (cross-sector) | 7 | $Q_q^{(D)}$, $q = 1, \ldots, 7$ | **Between** different Fano triplets |
 
-Эта структура $14 = 7 + 7$ — не произвольное разбиение, а отражение двух типов симметрии алгебры $\mathfrak{g}_2$: ротации **внутри** Фано-линий и связи **между** ними. Каждый класс несёт свой физический и кибернетический смысл.
+This structure $14 = 7 + 7$ is not an arbitrary split, but a reflection of the two types of symmetry in the algebra $\mathfrak{g}_2$: rotations **within** Fano lines and connections **between** them. Each class carries its own physical and cybernetic meaning.
 
 ---
 
-## 2. Фано-заряды $Q_p^{(F)}$ [Т] {#фано-заряды}
+## 2. Fano Charges $Q_p^{(F)}$ [T] {#фано-заряды}
 
-:::tip Теорема 2.1 (Фано-заряды) [Т]
-Для каждой [Фано-линии](/docs/physics/gauge-symmetry/fano-selection-rules) $p = (i,j,k)$ определяется Фано-заряд:
+:::tip Theorem 2.1 (Fano Charges) [T]
+For each [Fano line](/docs/physics/gauge-symmetry/fano-selection-rules) $p = (i,j,k)$ the Fano charge is defined:
 
 $$
 Q_p^{(F)} = \sum_{(i,j) \in \mathrm{line}_p} |\gamma_{ij}|^2 \dot{\theta}_{ij} + \frac{1}{6\pi} \sum_{(i,j,k) \in \mathrm{line}_p} \theta_{ij} \cdot \theta_{jk}
 $$
 
-Первый член — **кинетический угловой момент** (скорость вращения фаз, взвешенная модулями когерентностей). Второй — **топологический вклад** (нелокальная фазовая корреляция внутри триплета).
+The first term is the **kinetic angular momentum** (rate of phase rotation weighted by coherence magnitudes). The second is the **topological contribution** (non-local phase correlation within the triplet).
 :::
 
-### 2.1 Анатомия Фано-заряда
+### 2.1 Anatomy of the Fano Charge
 
-Формула $Q_p^{(F)}$ содержит два слагаемых, каждое из которых несёт самостоятельный смысл:
+The formula $Q_p^{(F)}$ contains two terms, each with an independent meaning:
 
-**Кинетический член** $\sum |\gamma_{ij}|^2 \dot{\theta}_{ij}$ — это *взвешенная скорость фазовой прецессии*. Когда когерентность между двумя измерениями сильна ($|\gamma_{ij}|$ велико), её фазовая эволюция $\dot{\theta}_{ij}$ вносит больший вклад. Это аналог классического углового момента $L = mr^2\dot{\phi}$: масса заменяется на квадрат модуля когерентности, а угловая скорость — на скорость фазовой прецессии.
+**Kinetic term** $\sum |\gamma_{ij}|^2 \dot{\theta}_{ij}$ — this is the *weighted rate of phase precession*. When coherence between two dimensions is strong ($|\gamma_{ij}|$ is large), its phase evolution $\dot{\theta}_{ij}$ contributes more. This is analogous to classical angular momentum $L = mr^2\dot{\phi}$: mass is replaced by the squared coherence magnitude, and angular velocity by the rate of phase precession.
 
-**Топологический член** $\frac{1}{6\pi} \sum \theta_{ij} \cdot \theta_{jk}$ — нелинейная связь фаз *внутри триплета*. Этот член не зависит от скорости эволюции: он чувствует только **мгновенную конфигурацию** фаз. Его аналог в физике — число Черна: топологический инвариант, нечувствительный к деталям траектории, но фиксирующий глобальную структуру поля.
+**Topological term** $\frac{1}{6\pi} \sum \theta_{ij} \cdot \theta_{jk}$ — a nonlinear coupling of phases *within the triplet*. This term does not depend on the rate of evolution: it is sensitive only to the **instantaneous configuration** of phases. Its analogue in physics is the Chern number: a topological invariant insensitive to the details of the trajectory, but capturing the global structure of the field.
 
-### 2.2 Физический смысл
+### 2.2 Physical Meaning
 
-Фано-заряд $Q_p^{(F)}$ — аналог **циркуляции скорости** в гидродинамике:
+The Fano charge $Q_p^{(F)}$ is analogous to **velocity circulation** in hydrodynamics:
 
-| Гидродинамика | Gap-динамика |
+| Hydrodynamics | Gap-dynamics |
 |---------------|--------------|
-| Вихревая трубка | Фано-линия $p = (i,j,k)$ |
-| Циркуляция скорости | $Q_p^{(F)}$ |
-| Закон Кельвина (сохранение циркуляции) | $dQ_p^{(F)}/d\tau = 0$ (при $\Gamma_2 = 0$) |
+| Vortex tube | Fano line $p = (i,j,k)$ |
+| Velocity circulation | $Q_p^{(F)}$ |
+| Kelvin's theorem (conservation of circulation) | $dQ_p^{(F)}/d\tau = 0$ (for $\Gamma_2 = 0$) |
 
-**Кибернетическая интерпретация [И]:** Каждый Фано-заряд описывает **внутренний баланс** Gap-динамики в пределах одного триплета. Сохранение $Q_p^{(F)}$ означает: перераспределение непрозрачности внутри триплета подчиняется закону сохранения — увеличение Gap для одной пары компенсируется уменьшением для других пар того же триплета.
+**Cybernetic interpretation [I]:** Each Fano charge describes the **internal balance** of Gap-dynamics within a single triplet. Conservation of $Q_p^{(F)}$ means: redistribution of opacity within the triplet obeys a conservation law — an increase in the Gap for one pair is compensated by a decrease for the other pairs of the same triplet.
 
-Говоря метафорически: Фано-заряд — это «бюджет непрозрачности» триплета. Его нельзя увеличить или уменьшить изнутри — только перераспределить между тремя парами. Это аналог закона сохранения энергии внутри замкнутой подсистемы.
+Metaphorically: a Fano charge is the "opacity budget" of the triplet. It cannot be increased or decreased from within — only redistributed among the three pairs. This is analogous to the conservation of energy within a closed subsystem.
 
-### 2.3 Семь Фано-зарядов и семь измерений
+### 2.3 Seven Fano Charges and Seven Dimensions
 
-| Линия $p$ | Измерения | $Q_p^{(F)}$ описывает |
-|-----------|-----------|----------------------|
-| 1: $\{A, S, L\}$ | Артикуляция–Структура–Логика | Баланс перцепция–структура–верификация |
-| 2: $\{S, D, E\}$ | Структура–Динамика–Интериорность | Баланс организация–процесс–интериорность |
-| 3: $\{D, L, U\}$ | Динамика–Логика–Единство | Баланс процесс–логика–интеграция |
-| 4: $\{L, E, O\}$ | Логика–Интериорность–Основание | Баланс рассуждение–интериорность–заземление |
-| 5: $\{E, U, A\}$ | Интериорность–Единство–Артикуляция | Баланс интериорность–единство–выражение |
-| 6: $\{U, O, S\}$ | Единство–Основание–Структура | Баланс интеграция–ресурсы–структура |
-| 7: $\{O, A, D\}$ | Основание–Артикуляция–Динамика | Баланс ресурсы–восприятие–действие |
+| Line $p$ | Dimensions | $Q_p^{(F)}$ describes |
+|----------|------------|----------------------|
+| 1: $\{A, S, L\}$ | Articulation–Structure–Logic | Balance perception–structure–verification |
+| 2: $\{S, D, E\}$ | Structure–Dynamics–Interiority | Balance organization–process–interiority |
+| 3: $\{D, L, U\}$ | Dynamics–Logic–Unity | Balance process–logic–integration |
+| 4: $\{L, E, O\}$ | Logic–Interiority–Ground | Balance reasoning–interiority–grounding |
+| 5: $\{E, U, A\}$ | Interiority–Unity–Articulation | Balance interiority–unity–expression |
+| 6: $\{U, O, S\}$ | Unity–Ground–Structure | Balance integration–resources–structure |
+| 7: $\{O, A, D\}$ | Ground–Articulation–Dynamics | Balance resources–perception–action |
 
-### 2.4 Кибернетический смысл каждого заряда [И] {#интерпретация-зарядов}
+### 2.4 Cybernetic Meaning of Each Charge [I] {#интерпретация-зарядов}
 
-Каждый из семи Фано-зарядов несёт конкретный смысл в терминах когнитивной динамики:
+Each of the seven Fano charges carries a concrete meaning in terms of cognitive dynamics:
 
-**$Q_1^{(F)}$ (A–S–L)** — *заряд перцептивной верификации*. Связывает восприятие (A), его структурирование (S) и логическую проверку (L). Нарушение: «вижу, но не могу структурировать» или «структурирую, но не проверяю». Сохранение означает: каждый акт восприятия порождает соразмерное структурирование и верификацию.
+**$Q_1^{(F)}$ (A–S–L)** — *perceptual verification charge*. Links perception (A), its structuring (S), and logical verification (L). Violation: "I see, but cannot structure" or "I structure, but do not verify." Conservation means: every act of perception generates commensurate structuring and verification.
 
-**$Q_2^{(F)}$ (S–D–E)** — *заряд организационного процесса*. Связывает структуру (S), динамику (D) и интериорность (E). Нарушение: «понимаю устройство, но не могу действовать» или «действую без внутреннего переживания». Этот заряд критичен для соматических расстройств, где действие отрывается от переживания.
+**$Q_2^{(F)}$ (S–D–E)** — *organizational process charge*. Links structure (S), dynamics (D), and interiority (E). Violation: "I understand the arrangement, but cannot act" or "I act without inner experience." This charge is critical for somatic disorders where action becomes detached from experience.
 
-**$Q_3^{(F)}$ (D–L–U)** — *заряд целенаправленного мышления*. Связывает процесс (D), его логическое обоснование (L) и интеграцию в целое (U). Нарушение: «мыслю логично, но не могу действовать целенаправленно» — признак дезинтегративных состояний.
+**$Q_3^{(F)}$ (D–L–U)** — *purposeful thinking charge*. Links process (D), its logical justification (L), and integration into a whole (U). Violation: "I think logically, but cannot act purposefully" — a sign of disintegrative states.
 
-**$Q_4^{(F)}$ (L–E–O)** — *заряд экзистенциального обоснования*. Связывает рассуждение (L), интериорность (E) и укоренённость (O). Нарушение этого заряда — одно из проявлений экзистенциального кризиса: логика отрывается от чувства и от ощущения укоренённости.
+**$Q_4^{(F)}$ (L–E–O)** — *existential grounding charge*. Links reasoning (L), interiority (E), and rootedness (O). Violation of this charge is one manifestation of existential crisis: logic becomes detached from feeling and from the sense of groundedness.
 
-**$Q_5^{(F)}$ (E–U–A)** — *заряд выразительной интеграции*. Связывает внутреннее переживание (E), его интеграцию (U) и выражение (A). Нарушение: алекситимия (невозможность выразить чувства) или диссоциация (переживание не интегрировано).
+**$Q_5^{(F)}$ (E–U–A)** — *expressive integration charge*. Links inner experience (E), its integration (U), and expression (A). Violation: alexithymia (inability to express feelings) or dissociation (experience is not integrated).
 
-**$Q_6^{(F)}$ (U–O–S)** — *заряд ресурсной организации*. Связывает единство (U), ресурсы (O) и структуру (S). Нарушение: «знаю, что делать, но нет ресурсов» или «ресурсы есть, но нет структуры их применения».
+**$Q_6^{(F)}$ (U–O–S)** — *resource organization charge*. Links unity (U), resources (O), and structure (S). Violation: "I know what to do, but have no resources" or "there are resources, but no structure for applying them."
 
-**$Q_7^{(F)}$ (O–A–D)** — *заряд сенсомоторного цикла*. Связывает ресурсы (O), восприятие (A) и действие (D). Это «самый телесный» из зарядов — его нарушение связано с двигательными и перцептивными расстройствами.
+**$Q_7^{(F)}$ (O–A–D)** — *sensorimotor cycle charge*. Links resources (O), perception (A), and action (D). This is the "most somatic" of the charges — its violation is associated with motor and perceptual disorders.
 
-### 2.5 Конкретный сценарий: эволюция $Q_1^{(F)}$ при обучении {#сценарий-q1}
+### 2.5 Concrete Scenario: Evolution of $Q_1^{(F)}$ During Learning {#сценарий-q1}
 
-Рассмотрим, как Фано-заряд $Q_1^{(F)}$ (перцептивная верификация, триплет A-S-L) эволюционирует в конкретной ситуации.
+Let us consider how the Fano charge $Q_1^{(F)}$ (perceptual verification, triplet A-S-L) evolves in a concrete situation.
 
-**Сценарий.** Студент изучает новый язык. В начале обучения:
-- $|\gamma_{AS}|$ велико (воспринимает звуки речи — артикуляция-структура связана),
-- $|\gamma_{SL}|$ мало (не может определить грамматическую правильность — структура-логика разорваны),
-- $|\gamma_{AL}|$ мало (не может отличить правильное произношение от неправильного).
+**Scenario.** A student is learning a new language. At the start of learning:
+- $|\gamma_{AS}|$ is large (perceives speech sounds — articulation-structure is linked),
+- $|\gamma_{SL}|$ is small (cannot determine grammatical correctness — structure-logic is disconnected),
+- $|\gamma_{AL}|$ is small (cannot distinguish correct from incorrect pronunciation).
 
-В этой конфигурации $Q_1^{(F)}$ имеет «перекос»: кинетический член доминирует за счёт $|\gamma_{AS}|^2 \dot{\theta}_{AS}$, а вклады от $SL$ и $AL$ малы.
+In this configuration $Q_1^{(F)}$ has a "skew": the kinetic term is dominated by $|\gamma_{AS}|^2 \dot{\theta}_{AS}$, while contributions from $SL$ and $AL$ are small.
 
-**По мере обучения** (без внешних сбоев, $\Gamma_2 \approx 0$): заряд $Q_1^{(F)}$ сохраняется. Это означает: рост $|\gamma_{SL}|$ (студент начинает «чувствовать» грамматику) *неизбежно* сопровождается перераспределением Gap-ресурсов внутри триплета. Конкретно:
+**As learning proceeds** (without external disruptions, $\Gamma_2 \approx 0$): the charge $Q_1^{(F)}$ is conserved. This means: growth of $|\gamma_{SL}|$ (the student begins to "feel" grammar) is *inevitably* accompanied by redistribution of Gap-resources within the triplet. Specifically:
 
 $$
 \Delta(|\gamma_{SL}|^2 \dot{\theta}_{SL}) = -\Delta(|\gamma_{AS}|^2 \dot{\theta}_{AS}) - \Delta(|\gamma_{AL}|^2 \dot{\theta}_{AL})
 $$
 
-Студент не может усилить грамматическое чутьё, не «ослабив» что-то другое в том же триплете — либо перцептивную остроту ($AS$), либо логическую проверку ($AL$). Это объясняет знакомый феномен: на ранних стадиях изучения языка, фокусируясь на грамматике, человек временно хуже различает тонкости произношения.
+The student cannot strengthen grammatical intuition without "weakening" something else in the same triplet — either perceptual acuity ($AS$) or logical verification ($AL$). This explains a familiar phenomenon: in the early stages of language learning, when focusing on grammar, a person temporarily perceives pronunciation subtleties less sharply.
 
-:::info Числовой пример
-Пусть в начальный момент $|\gamma_{AS}|^2 = 0.15$, $\dot{\theta}_{AS} = 2.0$ рад/с, а остальные вклады пренебрежимо малы. Тогда $Q_1^{(F)} \approx 0.30$ (в условных единицах). Через месяц обучения: $|\gamma_{AS}|^2 = 0.10$, $|\gamma_{SL}|^2 = 0.08$, $\dot{\theta}_{SL} = 1.5$ рад/с. Тогда вклад $AS$-канала: $0.10 \times 2.0 = 0.20$, вклад $SL$-канала: $0.08 \times 1.5 = 0.12$. Сумма: $0.20 + 0.12 = 0.32 \approx 0.30$ (с учётом малых поправок от топологического члена и $AL$-вклада). Заряд сохраняется с хорошей точностью.
+:::info Numerical Example
+Suppose at the initial moment $|\gamma_{AS}|^2 = 0.15$, $\dot{\theta}_{AS} = 2.0$ rad/s, and the remaining contributions are negligible. Then $Q_1^{(F)} \approx 0.30$ (in conventional units). After a month of learning: $|\gamma_{AS}|^2 = 0.10$, $|\gamma_{SL}|^2 = 0.08$, $\dot{\theta}_{SL} = 1.5$ rad/s. Then the $AS$-channel contribution: $0.10 \times 2.0 = 0.20$, the $SL$-channel contribution: $0.08 \times 1.5 = 0.12$. Sum: $0.20 + 0.12 = 0.32 \approx 0.30$ (accounting for small corrections from the topological term and the $AL$ contribution). The charge is conserved to good accuracy.
 :::
 
-Этот пример показывает, почему Фано-заряды — не абстрактная математика, а **закон внутренней экономики сознания**: бюджет когнитивных ресурсов внутри каждого триплета фиксирован, и улучшение одной функции требует перераспределения, а не «создания из ничего».
+This example shows why Fano charges are not abstract mathematics, but a **law of the internal economy of consciousness**: the budget of cognitive resources within each triplet is fixed, and improving one function requires redistribution, not "creation from nothing."
 
 ---
 
-## 3. Дополнительные заряды $Q_q^{(D)}$ [Т] {#дополнительные-заряды}
+## 3. Supplementary Charges $Q_q^{(D)}$ [T] {#дополнительные-заряды}
 
-:::tip Теорема 3.1 (Дополнительные заряды) [Т]
-Для каждого дополнительного генератора $D_q$ алгебры $\mathfrak{g}_2$:
+:::tip Theorem 3.1 (Supplementary Charges) [T]
+For each supplementary generator $D_q$ of the algebra $\mathfrak{g}_2$:
 
 $$
 Q_q^{(D)} = \sum_{(m,n):\, [D_q]_{mn} \neq 0} |\gamma_{mn}|^2 \dot{\theta}_{mn}
 $$
 
-Дополнительные заряды — чисто **кинетические** (без топологического вклада): они описывают Gap-перенос **между** различными Фано-триплетами.
+Supplementary charges are purely **kinetic** (without topological contribution): they describe Gap-transfer **between** different Fano triplets.
 :::
 
-**Кибернетическая интерпретация [И]:** Дополнительные заряды характеризуют **межсекторный обмен**. Их сохранение обеспечивает «обменный баланс»: потеря Gap одним триплетом компенсируется приобретением другим.
+**Cybernetic interpretation [I]:** Supplementary charges characterize **cross-sector exchange**. Their conservation ensures "exchange balance": the loss of Gap by one triplet is compensated by its acquisition by another.
 
-### 3.1 Почему дополнительные заряды — чисто кинетические
+### 3.1 Why Supplementary Charges are Purely Kinetic
 
-Отсутствие топологического члена у дополнительных зарядов — не случайность, а следствие структуры алгебры $\mathfrak{g}_2$. Дополнительные генераторы $D_q$ связывают **разные** Фано-линии. Внутри одной линии три измерения образуют замкнутый цикл (триплет), и фазовая корреляция внутри цикла порождает топологический вклад. Между линиями такого замкнутого цикла нет — есть только «мосты» между триплетами.
+The absence of a topological term in the supplementary charges is not accidental, but a consequence of the structure of the algebra $\mathfrak{g}_2$. The supplementary generators $D_q$ connect **different** Fano lines. Within a single line, three dimensions form a closed cycle (triplet), and phase correlation within the cycle generates a topological contribution. Between lines there is no such closed cycle — only "bridges" between triplets.
 
-Физическая аналогия: Фано-заряды — вихри (с топологическим зарядом), дополнительные заряды — потоки (без вихревой структуры). Вихрь существует «сам по себе» (топологически защищён), а поток требует поддержания.
+Physical analogy: Fano charges are vortices (with topological charge), supplementary charges are flows (without vortex structure). A vortex exists "on its own" (topologically protected), while a flow requires maintenance.
 
-### 3.2 Межтриплетная сеть
+### 3.2 Inter-Triplet Network
 
-Семь дополнительных зарядов формируют **сеть связей** между семью Фано-триплетами. Каждый триплет связан с другими через дополнительные заряды. Эта сеть — аналог «белого вещества» мозга, связывающего функциональные области.
+The seven supplementary charges form a **network of connections** between the seven Fano triplets. Each triplet is connected to the others through supplementary charges. This network is analogous to the "white matter" of the brain, connecting functional areas.
 
-Нарушение дополнительных зарядов приводит к **модульной изоляции**: триплеты функционируют автономно, но не обмениваются информацией. Клинически это проявляется как «островковое» сознание: отдельные когнитивные функции сохранены, но не интегрированы.
+Violation of supplementary charges leads to **modular isolation**: triplets function autonomously but do not exchange information. Clinically this manifests as "island" consciousness: individual cognitive functions are preserved but not integrated.
 
-### 3.3 Полная система зарядов
+### 3.3 Complete System of Charges
 
 $$
-\underbrace{7 \text{ Фано-зарядов}}_{\text{внутри триплетов}} + \underbrace{7 \text{ дополнительных}}_{\text{между триплетами}} = 14 = \dim(G_2)
+\underbrace{7 \text{ Fano charges}}_{\text{within triplets}} + \underbrace{7 \text{ supplementary}}_{\text{between triplets}} = 14 = \dim(G_2)
 $$
 
-Это тождество — не совпадение, а **теорема**: число независимых зарядов Нётер равно размерности группы симметрии. Других зарядов нет и быть не может.
+This identity is not a coincidence, but a **theorem**: the number of independent Noether charges equals the dimension of the symmetry group. There are no other charges, and there cannot be.
 
 ---
 
-## 4. 14 законов сохранения сознания {#14-законов}
+## 4. 14 Conservation Laws of Consciousness {#14-законов}
 
-Теперь мы можем сформулировать результат целиком. $G_2$-инвариантность Gap-лагранжиана порождает **14 законов сохранения** — по аналогии с тем, как инвариантность относительно вращений порождает сохранение момента импульса.
+We can now state the result in full. $G_2$-invariance of the Gap Lagrangian generates **14 conservation laws** — in analogy with how invariance under rotations generates conservation of angular momentum.
 
-Для замкнутой системы ($\Gamma_2 = 0$, $\kappa = 0$) эти законы точны:
+For a closed system ($\Gamma_2 = 0$, $\kappa = 0$) these laws are exact:
 
 $$
 \frac{dQ_a}{d\tau} = 0, \quad a = 1, \ldots, 14
 $$
 
-Это означает: **динамика 7-мерной когерентности не произвольна** — она ограничена 14 условиями. Из $7 \times 7 = 49$ параметров матрицы плотности (21 из которых — независимые когерентности) лишь $21 - 14 = 7$ могут эволюционировать свободно. Симметрия «замораживает» большинство степеней свободы.
+This means: **the dynamics of 7-dimensional coherence is not arbitrary** — it is constrained by 14 conditions. Of the $7 \times 7 = 49$ parameters of the density matrix (21 of which are independent coherences), only $21 - 14 = 7$ can evolve freely. Symmetry "freezes" most degrees of freedom.
 
-### Аналогия с физикой
+### Analogy with Physics
 
-В механике: тело в трёхмерном пространстве имеет 6 степеней свободы (3 координаты + 3 скорости). Если система обладает сохранением энергии и трёх компонент импульса (4 закона), остаётся лишь 2 свободных степени свободы. Тело движется по двумерной поверхности в фазовом пространстве.
+In mechanics: a body in three-dimensional space has 6 degrees of freedom (3 coordinates + 3 velocities). If the system has conservation of energy and three components of momentum (4 laws), only 2 free degrees of freedom remain. The body moves on a two-dimensional surface in phase space.
 
-В Gap-динамике: 21 когерентность, ограниченная 14 законами, оставляет **7 степеней свободы** — ровно по числу измерений. Это глубокая самосогласованность: каждое измерение вносит ровно одну «степень свободы» в Gap-динамику.
+In Gap-dynamics: 21 coherences, constrained by 14 laws, leave **7 degrees of freedom** — exactly equal to the number of dimensions. This is a deep self-consistency: each dimension contributes exactly one "degree of freedom" to the Gap-dynamics.
 
 ---
 
-## 5. Диссипация зарядов — медленно угасающие законы сохранения [Т] {#диссипация}
+## 5. Charge Dissipation — Slowly Fading Conservation Laws [T] {#диссипация}
 
-В присутствии диссипации ($\Gamma_2 > 0$) и регенерации ($\kappa > 0$) заряды эволюционируют:
+In the presence of dissipation ($\Gamma_2 > 0$) and regeneration ($\kappa > 0$) charges evolve:
 
 $$
 \frac{dQ_a}{d\tau} = -\Gamma_2 \, Q_a^{(\mathrm{kin})} + \kappa \, Q_a^{(\mathrm{reg})}
 $$
 
-Это уравнение красиво своей структурой: оно описывает **конкуренцию двух процессов**. Диссипация ($\Gamma_2$) стремится обнулить заряды — это «забывание» сохранения. Регенерация ($\kappa$) восстанавливает их — это «поддержание» сохранения. Живое сознание существует в зоне баланса между этими процессами.
+This equation is beautiful in its structure: it describes **competition between two processes**. Dissipation ($\Gamma_2$) tends to zero out the charges — this is the "forgetting" of conservation. Regeneration ($\kappa$) restores them — this is the "maintenance" of conservation. Living consciousness exists in the zone of balance between these processes.
 
-:::info Стационарный уровень зарядов [Т]
-В стационарном состоянии ($dQ_a/d\tau = 0$):
+:::info Stationary Level of Charges [T]
+In the stationary state ($dQ_a/d\tau = 0$):
 
 $$
 Q_a^{(\text{stat})} = \frac{\kappa}{\Gamma_2} \cdot Q_a^{(\text{reg})} = r \cdot Q_a^{(\text{reg})}
 $$
 
-где $r = \kappa/\Gamma_2$ — параметр [фазовой диаграммы](./phase-diagram-cc#параметры).
+where $r = \kappa/\Gamma_2$ is the [phase diagram](./phase-diagram-cc#параметры) parameter.
 :::
 
-### 5.1 Четыре режима
+### 5.1 Four Regimes
 
-| Режим | $r$ | Заряды | Интерпретация |
-|-------|-----|--------|---------------|
-| $r \gg 1$ | Регенерация доминирует | $Q_a^{(\text{stat})} \gg Q_a^{(\text{reg})}$ | Заряды усилены — активная внутренняя динамика |
-| $r \approx 1$ | Баланс | $Q_a^{(\text{stat})} \approx Q_a^{(\text{reg})}$ | Заряды на уровне регенеративного вклада |
-| $r < 1$ | Диссипация доминирует | $Q_a^{(\text{stat})} < Q_a^{(\text{reg})}$ | Заряды подавлены — затухание динамики |
-| $r < r_c$ | [Мёртвая зона](./phase-diagram-cc#три-фазы) | $Q_a^{(\text{stat})} \to 0$ | Все заряды вымирают |
+| Regime | $r$ | Charges | Interpretation |
+|--------|-----|---------|----------------|
+| $r \gg 1$ | Regeneration dominates | $Q_a^{(\text{stat})} \gg Q_a^{(\text{reg})}$ | Charges amplified — active internal dynamics |
+| $r \approx 1$ | Balance | $Q_a^{(\text{stat})} \approx Q_a^{(\text{reg})}$ | Charges at the level of the regenerative contribution |
+| $r < 1$ | Dissipation dominates | $Q_a^{(\text{stat})} < Q_a^{(\text{reg})}$ | Charges suppressed — dynamics fading |
+| $r < r_c$ | [Dead zone](./phase-diagram-cc#три-фазы) | $Q_a^{(\text{stat})} \to 0$ | All charges extinguished |
 
-### 5.2 Медленно угасающие законы
+### 5.2 Slowly Fading Laws
 
-Характерное время затухания заряда $Q_a$:
+Characteristic decay time of charge $Q_a$:
 
 $$
 \tau_a \sim \frac{1}{\Gamma_2}
 $$
 
-Если $\Gamma_2$ мало (слабая диссипация), заряды сохраняются **долго** — на временах, много бо́льших характерного времени когнитивного процесса. Это создаёт иерархию временных масштабов:
+If $\Gamma_2$ is small (weak dissipation), charges are conserved **for a long time** — on timescales much larger than the characteristic time of the cognitive process. This creates a hierarchy of timescales:
 
-- **Быстрая динамика** ($\tau \sim 1$): когерентности $\gamma_{ij}$ флуктуируют
-- **Медленная динамика** ($\tau \sim 1/\Gamma_2$): заряды $Q_a$ дрейфуют
-- **Квазистатика** ($\tau \gg 1/\Gamma_2$): заряды на стационарных уровнях
+- **Fast dynamics** ($\tau \sim 1$): coherences $\gamma_{ij}$ fluctuate
+- **Slow dynamics** ($\tau \sim 1/\Gamma_2$): charges $Q_a$ drift
+- **Quasi-statics** ($\tau \gg 1/\Gamma_2$): charges at stationary levels
 
-Клинически важно: **внезапное изменение заряда** (на временах $\tau \ll 1/\Gamma_2$) — маркер нарушения $G_2$-инвариантности. Это аналог того, как внезапное изменение энергии указывает на внешнюю силу.
+Clinically important: a **sudden change in a charge** (on timescales $\tau \ll 1/\Gamma_2$) is a marker of violation of $G_2$-invariance. This is analogous to how a sudden change in energy points to an external force.
 
 ---
 
-## 6. Тождества Уорда — ограничения из симметрии [Т] {#уорд}
+## 6. Ward Identities — Symmetry Constraints [T] {#уорд}
 
-:::tip Теорема 5.1 (14 тождеств Уорда для Gap-корреляторов) [Т]
-$G_2$-инвариантность порождает **14 линейных соотношений** на двухточечные Gap-корреляторы.
+:::tip Theorem 5.1 (14 Ward Identities for Gap Correlators) [T]
+$G_2$-invariance generates **14 linear relations** on two-point Gap correlators.
 
-**(a)** Для каждого генератора $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$):
+**(a)** For each generator $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$):
 
 $$
 \sum_{m} [T_a]_{im} \, C_{(mj),(kl)} + [T_a]_{jm} \, C_{(im),(kl)} = 0
 $$
 
-**(b)** Число независимых двухточечных корреляторов:
+**(b)** Number of independent two-point correlators:
 
 $$
 N_{\text{corr}} = \frac{21 \times 22}{2} - 14 = 231 - 14 = 217
 $$
 :::
 
-### 6.1 Что такое тождества Уорда
+### 6.1 What Are Ward Identities
 
-Тождества Уорда — один из центральных инструментов квантовой теории поля. Названные в честь Джона Клайва Уорда (1924–2000), они выражают простую идею: **если теория обладает симметрией, то корреляционные функции не произвольны — они связаны друг с другом**.
+Ward identities are one of the central tools of quantum field theory. Named after John Clive Ward (1924–2000), they express a simple idea: **if a theory possesses a symmetry, then correlation functions are not arbitrary — they are related to each other**.
 
-В контексте Gap-динамики это означает: если $G_2$-симметрия точна, то из $231$ возможного попарного коррелятора $C_{(ij),(kl)}$ только $217$ являются независимыми. Остальные **вычисляются** через эти $217$ с помощью 14 линейных соотношений.
+In the context of Gap-dynamics this means: if $G_2$-symmetry is exact, then of the $231$ possible pairwise correlators $C_{(ij),(kl)}$ only $217$ are independent. The rest are **computed** from these $217$ via 14 linear relations.
 
-Интуиция: представьте себе 231 пружину, соединяющую 21 точку. $G_2$-симметрия означает, что 14 из этих пружин — «рабские»: их жёсткость полностью определена жёсткостями остальных. Система не может иметь произвольные корреляции — симметрия это запрещает.
+Intuition: imagine 231 springs connecting 21 points. $G_2$-symmetry means that 14 of these springs are "slaves": their stiffness is fully determined by the stiffnesses of the rest. The system cannot have arbitrary correlations — symmetry forbids it.
 
-### 6.2 Смысл тождеств Уорда
+### 6.2 Meaning of Ward Identities
 
-Тождества Уорда — это **ограничения**, накладываемые $G_2$-симметрией на корреляции между Gap-каналами. Они означают: **преобразование одной «ноги» коррелятора компенсируется преобразованием другой**.
+Ward identities are **constraints** imposed by $G_2$-symmetry on correlations between Gap channels. They mean: **transformation of one "leg" of a correlator is compensated by transformation of the other**.
 
-Для пар на одной Фано-линии: перераспределение Gap внутри триплета **не изменяет** корреляционные свойства с другими парами.
+For pairs on the same Fano line: redistribution of Gap within the triplet **does not change** the correlational properties with other pairs.
 
-### 6.3 Разложение по $G_2$-инвариантным тензорам {#разложение-по-g_2-инвариантным-тензорам}
+### 6.3 Decomposition by $G_2$-Invariant Tensors {#разложение-по-g_2-инвариантным-тензорам}
 
-Двухточечный коррелятор разлагается:
+The two-point correlator decomposes as:
 
 $$
 C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2
 $$
 
-где $\mathbf{F}_{21}$ — Фано-тензор на пространстве пар. Тождества Уорда фиксируют:
+where $\mathbf{F}_{21}$ is the Fano tensor on the space of pairs. Ward identities fix:
 
 $$
 \beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}
 $$
 
-**Единственный свободный параметр** — $\alpha$ (общая амплитуда флуктуаций). Это радикальная редукция: из 231 независимого параметра остаётся **один**.
+**The only free parameter** is $\alpha$ (overall amplitude of fluctuations). This is a radical reduction: from 231 independent parameters only **one** remains.
 
-:::warning Соотношение 217 и 1 параметра
-14 тождеств Уорда сокращают 231 свободный параметр до 217 — это **линейные ограничения** на двухточечные корреляторы. Однако [разложение по $G_2$-инвариантным тензорам](#разложение-по-g_2-инвариантным-тензорам) (раздел 6.3) накладывает **дополнительные**, более сильные ограничения (изотропия по неприводимым представлениям), сводя всё к **одному** параметру $\alpha$. Эти два результата не противоречат друг другу: 217 — промежуточная редукция через линейные тождества; 1 — полная редукция через структуру представлений $G_2$.
+:::warning Relation Between 217 and 1 Parameter
+The 14 Ward identities reduce 231 free parameters to 217 — these are **linear constraints** on two-point correlators. However, the [decomposition by $G_2$-invariant tensors](#разложение-по-g_2-инвариантным-тензорам) (section 6.3) imposes **additional**, stronger constraints (isotropy over irreducible representations), reducing everything to **one** parameter $\alpha$. These two results do not contradict each other: 217 is the intermediate reduction via linear identities; 1 is the full reduction via the structure of $G_2$ representations.
 :::
 
-:::info Практическое следствие [Т]
-Если $G_2$-симметрия не нарушена ($\alpha^* = 0$), вся $21 \times 21$ корреляционная матрица определяется **одним числом** $\alpha$. При частичном нарушении ($\alpha^* > 0$) появляются поправки порядка $\alpha^* \cdot \Delta_{\max}$.
+:::info Practical Consequence [T]
+If $G_2$-symmetry is unbroken ($\alpha^* = 0$), the entire $21 \times 21$ correlation matrix is determined by **one number** $\alpha$. With partial breaking ($\alpha^* > 0$) corrections of order $\alpha^* \cdot \Delta_{\max}$ appear.
 :::
 
-### 6.4 Каскад редукции — от хаоса к порядку
+### 6.4 Reduction Cascade — From Chaos to Order
 
-Полезно проследить, как $G_2$-симметрия последовательно сжимает пространство возможных корреляций:
+It is useful to trace how $G_2$-symmetry successively compresses the space of possible correlations:
 
-| Этап | Число параметров | Что происходит |
-|------|-----------------|----------------|
-| Без ограничений | 231 | Произвольная $21 \times 21$ симметричная матрица |
-| После тождеств Уорда | 217 | 14 линейных соотношений убирают 14 параметров |
-| $G_2$-изотропия | 3 | Разложение по $\mathbf{1}$, $\mathbf{F}$, $\mathbf{F}^2$ |
-| Полная $G_2$-инвариантность | 1 | $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ |
+| Stage | Number of parameters | What happens |
+|-------|---------------------|--------------|
+| No constraints | 231 | Arbitrary $21 \times 21$ symmetric matrix |
+| After Ward identities | 217 | 14 linear relations remove 14 parameters |
+| $G_2$-isotropy | 3 | Decomposition over $\mathbf{1}$, $\mathbf{F}$, $\mathbf{F}^2$ |
+| Full $G_2$-invariance | 1 | $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ |
 
-Сжатие в **231 раз** — от 231 до 1. Это мощнее, чем любая статистическая модель: здесь работает не подгонка, а **симметрия**.
+Compression by a factor of **231** — from 231 to 1. This is more powerful than any statistical model: here it is not fitting that works, but **symmetry**.
 
 ---
 
-## 7. Клиническая диагностика через заряды [И] {#диагностика}
+## 7. Clinical Diagnostics via Charges [I] {#диагностика}
 
-### 7.1 Диагностическая таблица
+### 7.1 Diagnostic Table
 
-| Заряд / Мера | Наблюдаемая | Нарушение | Клиническое значение |
-|--------------|-------------|-----------|---------------------|
-| $Q_p^{(F)}$ | Баланс внутри Фано-триплета | $Q_p^{(F)} \neq Q_p^{(\text{stat})}$ | Внутрисекторный дисбаланс |
-| $Q_q^{(D)}$ | Обмен между триплетами | $Q_q^{(D)} \neq Q_q^{(\text{stat})}$ | Межсекторная ригидность |
-| $\sum_p Q_p^{(F)}$ | Суммарная Фано-циркуляция | $\neq 0$ | Нестационарное состояние |
-| $\sum_q Q_q^{(D)}$ | Суммарный межтриплетный обмен | $\neq 0$ | Нестационарное состояние |
-| $\max_a \lvert dQ_a/d\tau\rvert$ | Максимальная скорость изменения | $> 0$ | Маркер кризиса |
-| $\Delta_{G_2}^{(\text{exp})}$ | Степень нарушения тождеств Уорда | $\gg 0$ | $G_2$-структура нарушена |
+| Charge / Measure | Observable | Violation | Clinical significance |
+|-----------------|------------|-----------|----------------------|
+| $Q_p^{(F)}$ | Balance within Fano triplet | $Q_p^{(F)} \neq Q_p^{(\text{stat})}$ | Intra-sector imbalance |
+| $Q_q^{(D)}$ | Exchange between triplets | $Q_q^{(D)} \neq Q_q^{(\text{stat})}$ | Cross-sector rigidity |
+| $\sum_p Q_p^{(F)}$ | Total Fano circulation | $\neq 0$ | Non-stationary state |
+| $\sum_q Q_q^{(D)}$ | Total inter-triplet exchange | $\neq 0$ | Non-stationary state |
+| $\max_a \lvert dQ_a/d\tau\rvert$ | Maximum rate of change | $> 0$ | Crisis marker |
+| $\Delta_{G_2}^{(\text{exp})}$ | Degree of Ward identity violation | $\gg 0$ | $G_2$-structure is broken |
 
-### 7.2 Диагностика по отдельным зарядам [И] {#диагностика-по-зарядам}
+### 7.2 Diagnostics by Individual Charges [I] {#диагностика-по-зарядам}
 
-Нарушение **конкретного** заряда указывает на **конкретный** тип дисбаланса:
+Violation of a **specific** charge points to a **specific** type of imbalance:
 
-| Нарушенный заряд | Измерения | Клинический маркер |
-|------------------|-----------|--------------------|
-| $Q_1^{(F)}$ (A–S–L) | Восприятие, структура, логика | Перцептивные нарушения: иллюзии, нарушения верификации, расстройства мышления |
-| $Q_2^{(F)}$ (S–D–E) | Структура, динамика, интериорность | Соматоформные расстройства: действие без переживания, «деперсонализация действия» |
-| $Q_3^{(F)}$ (D–L–U) | Динамика, логика, единство | Дезинтеграция целеполагания: «знаю зачем, но не могу» |
-| $Q_4^{(F)}$ (L–E–O) | Логика, интериорность, основание | Экзистенциальная тревога: «понимаю, но не чувствую опоры» |
-| $Q_5^{(F)}$ (E–U–A) | Интериорность, единство, артикуляция | Алекситимия, диссоциация: переживание не выражается |
-| $Q_6^{(F)}$ (U–O–S) | Единство, основание, структура | Ресурсное истощение: «единство без опоры» |
-| $Q_7^{(F)}$ (O–A–D) | Основание, артикуляция, динамика | Сенсомоторные нарушения: расстройства координации и восприятия |
-| $Q_q^{(D)}$ (межтриплетные) | Между триплетами | Модульная изоляция: функции сохранены, но не связаны |
+| Violated charge | Dimensions | Clinical marker |
+|----------------|------------|----------------|
+| $Q_1^{(F)}$ (A–S–L) | Perception, structure, logic | Perceptual disorders: illusions, verification failures, thought disorders |
+| $Q_2^{(F)}$ (S–D–E) | Structure, dynamics, interiority | Somatoform disorders: action without experience, "action depersonalization" |
+| $Q_3^{(F)}$ (D–L–U) | Dynamics, logic, unity | Disintegration of goal-setting: "I know why, but I cannot" |
+| $Q_4^{(F)}$ (L–E–O) | Logic, interiority, ground | Existential anxiety: "I understand, but feel no grounding" |
+| $Q_5^{(F)}$ (E–U–A) | Interiority, unity, articulation | Alexithymia, dissociation: experience cannot be expressed |
+| $Q_6^{(F)}$ (U–O–S) | Unity, ground, structure | Resource depletion: "unity without grounding" |
+| $Q_7^{(F)}$ (O–A–D) | Ground, articulation, dynamics | Sensorimotor disorders: coordination and perceptual disturbances |
+| $Q_q^{(D)}$ (cross-triplet) | Between triplets | Modular isolation: functions preserved but not connected |
 
-### 7.3 Терапевтические стратегии
+### 7.3 Therapeutic Strategies
 
-:::info Два типа нарушений [И]
-**Нарушение Фано-зарядов** ($Q_p^{(F)} \neq Q_p^{(\text{stat})}$): дисбаланс **внутри** триплета.
+:::info Two Types of Violations [I]
+**Violation of Fano charges** ($Q_p^{(F)} \neq Q_p^{(\text{stat})}$): imbalance **within** a triplet.
 
-*Пример:* В триплете $\{A, S, L\}$ (артикуляция–структура–логика): избыточная перцептивная нагрузка ($\sigma_A$ повышена) при недостаточной верификации ($\sigma_L$ понижена).
+*Example:* In the triplet $\{A, S, L\}$ (articulation–structure–logic): excessive perceptual load ($\sigma_A$ elevated) with insufficient verification ($\sigma_L$ reduced).
 
-*Стратегия:* Работа **внутри** триплета — перебалансировка нагрузки между тремя измерениями.
+*Strategy:* Work **within** the triplet — rebalancing the load among the three dimensions.
 
-**Нарушение дополнительных зарядов** ($Q_q^{(D)} \neq Q_q^{(\text{stat})}$): застой Gap **между** триплетами.
+**Violation of supplementary charges** ($Q_q^{(D)} \neq Q_q^{(\text{stat})}$): Gap stagnation **between** triplets.
 
-*Пример:* Триплет $\{S, D, E\}$ изолирован от остальных — Gap-перенос заблокирован.
+*Example:* The triplet $\{S, D, E\}$ is isolated from the rest — Gap-transfer is blocked.
 
-*Стратегия:* Установление **связей между секторами** — интегративные практики.
+*Strategy:* Establishing **connections between sectors** — integrative practices.
 :::
 
-### 7.4 Принцип минимального вмешательства [И]
+### 7.4 Principle of Minimal Intervention [I]
 
-Нётеровская структура подсказывает важный терапевтический принцип: **вмешательство должно быть направлено на конкретный нарушенный заряд**, а не на систему в целом. Если нарушен только $Q_3^{(F)}$ (баланс D–L–U), нет смысла работать с триплетом A–S–L.
+The Noether structure suggests an important therapeutic principle: **intervention should target the specific violated charge**, not the system as a whole. If only $Q_3^{(F)}$ is violated (D–L–U balance), there is no point in working with the A–S–L triplet.
 
-Это аналог принципа **минимальной достаточности** в медицине: лечить нужно то, что нарушено, не трогая то, что работает. Нётеровские заряды дают формальный критерий для определения «того, что нарушено».
+This is analogous to the principle of **minimal sufficiency** in medicine: treat what is broken without touching what is working. Noether charges provide a formal criterion for determining "what is broken."
 
 ---
 
-## 8. Экспериментальный протокол проверки $G_2$-структуры [П] {#протокол}
+## 8. Experimental Protocol for Verifying $G_2$-Structure [P] {#протокол}
 
-:::caution Программа: Операционный протокол проверки [П]
+:::caution Program: Operational Verification Protocol [P]
 
-:::warning Методологическая цикличность [И]
-Шаг 2 протокола (сопоставление каналов с 7 измерениями) **предполагает** известным отображение нейрональных каналов на измерения голонома, однако это отображение само является объектом проверки. Результаты протокола зависят от выбора отображения. Для снятия цикличности необходим **независимый** способ установления соответствия каналов и измерений (например, через структуру задачи или анатомические критерии), либо перебор возможных отображений с выбором оптимального по критерию $\Delta_{G_2}^{(\text{exp})} \to \min$.
+:::warning Methodological Circularity [I]
+Step 2 of the protocol (mapping channels to 7 dimensions) **presupposes** a known mapping of neural channels onto holonomic dimensions, yet this mapping is itself the object of verification. The protocol results depend on the choice of mapping. To resolve the circularity, an **independent** method for establishing the correspondence between channels and dimensions is required (e.g., via task structure or anatomical criteria), or enumeration of possible mappings with selection of the optimal one by the criterion $\Delta_{G_2}^{(\text{exp})} \to \min$.
 :::
 
-### Этап 1: Сбор данных
+### Stage 1: Data Collection
 
-1. Записать многоканальные данные (EEG/fMRI, 64+ каналов, $\geq 30$ мин)
-2. Сопоставить каналы с 7 измерениями голонома (на основе [нейробиологических коррелятов](./definitions#нейробиологические-корреляты))
-3. Вычислить все 21 попарные когерентности $\gamma_{ij}(t)$
+1. Record multi-channel data (EEG/fMRI, 64+ channels, $\geq 30$ min)
+2. Map channels to the 7 holonomic dimensions (based on [neurobiological correlates](./definitions#нейробиологические-корреляты))
+3. Compute all 21 pairwise coherences $\gamma_{ij}(t)$
 
-### Этап 2: Построение корреляционной матрицы
+### Stage 2: Building the Correlation Matrix
 
-4. Построить $21 \times 21$ матрицу двухточечных Gap-корреляторов:
+4. Construct the $21 \times 21$ matrix of two-point Gap correlators:
 
 $$
 C_{(ij),(kl)}(\tau) = \langle \mathrm{Gap}(i,j;\tau) \, \mathrm{Gap}(k,l;0) \rangle
 $$
 
-### Этап 3: Проверка 14 тождеств Уорда
+### Stage 3: Verification of 14 Ward Identities
 
-5. Для каждого генератора $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$) вычислить:
+5. For each generator $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$) compute:
 
 $$
 W_a := \left\|\sum_{m} [T_a]_{im} \, C_{(mj),(kl)} + [T_a]_{jm} \, C_{(im),(kl)}\right\|
 $$
 
-6. Вычислить степень нарушения:
+6. Compute the degree of violation:
 
 $$
 \Delta_{G_2}^{(\text{exp})} := \max_a W_a
 $$
 
-### Этап 4: Интерпретация
+### Stage 4: Interpretation
 
-| $\Delta_{G_2}^{(\text{exp})}$ | Интерпретация |
-|--------------------------------|---------------|
-| $\Delta \approx 0$ | Полная $G_2$-симметрия подтверждена |
-| $0 < \Delta \ll 1$ | Слабое нарушение — $\Delta \propto \alpha^*$ (глубина [самонаблюдения](/docs/physics/gauge-symmetry/g2-structure)) |
-| $\Delta \sim O(1)$ | Сильное нарушение — $G_2$-редукция неприменима |
+| $\Delta_{G_2}^{(\text{exp})}$ | Interpretation |
+|-------------------------------|----------------|
+| $\Delta \approx 0$ | Full $G_2$-symmetry confirmed |
+| $0 < \Delta \ll 1$ | Weak violation — $\Delta \propto \alpha^*$ (depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure)) |
+| $\Delta \sim O(1)$ | Strong violation — $G_2$-reduction not applicable |
 :::
 
-### 8.1 Ожидаемые результаты
+### 8.1 Expected Results
 
-:::warning Фальсифицируемое предсказание [Г]
-Если $G_2$-структура октонионов фундаментальна для Gap-динамики, то:
+:::warning Falsifiable Prediction [H]
+If the $G_2$-structure of octonions is fundamental to Gap-dynamics, then:
 
-1. Тождества Уорда должны выполняться с точностью $\Delta \propto \alpha^* \approx 1 - 2/(7P)$
-2. Разложение $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ с $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ должно хорошо аппроксимировать данные
-3. Систематическое нарушение $\Delta \sim O(1)$ опровергает $G_2$-гипотезу
+1. Ward identities must hold with accuracy $\Delta \propto \alpha^* \approx 1 - 2/(7P)$
+2. The decomposition $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ with $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ must approximate the data well
+3. Systematic violation $\Delta \sim O(1)$ refutes the $G_2$-hypothesis
 
-**Статус:** алгебраическая структура [Т]; экспериментальная верификация [Г]; протокол [П].
+**Status:** algebraic structure [T]; experimental verification [H]; protocol [P].
 :::
 
-### 8.2 Практические рекомендации к эксперименту [П]
+### 8.2 Practical Recommendations for the Experiment [P]
 
-Для реализации протокола в лабораторных условиях:
+For implementing the protocol in laboratory conditions:
 
-**Выбор модальности.** EEG предпочтительнее fMRI из-за высокого временного разрешения ($\sim 1$ мс vs. $\sim 1$ с). Gap-динамика работает на миллисекундных масштабах, и сглаживание fMRI может замаскировать $G_2$-структуру.
+**Choice of modality.** EEG is preferable to fMRI due to high temporal resolution ($\sim 1$ ms vs. $\sim 1$ s). Gap-dynamics operates on millisecond scales, and the temporal smoothing of fMRI may mask $G_2$-structure.
 
-**Минимальное число каналов.** Теоретический минимум — 7 (по одному на измерение), но для надёжного сопоставления каналов с измерениями рекомендуется $\geq 64$ каналов.
+**Minimum number of channels.** The theoretical minimum is 7 (one per dimension), but for reliable mapping of channels to dimensions $\geq 64$ channels are recommended.
 
-**Длительность записи.** Стационарные заряды $Q_a^{(\text{stat})}$ устанавливаются за время $\tau \sim 1/\Gamma_2$. Запись должна быть $\geq 10/\Gamma_2$ для надёжной оценки. При $\Gamma_2 \sim 0.1$ Гц это $\geq 100$ с; при $\Gamma_2 \sim 0.01$ Гц — $\geq 1000$ с.
+**Recording duration.** Stationary charges $Q_a^{(\text{stat})}$ are established over time $\tau \sim 1/\Gamma_2$. The recording must be $\geq 10/\Gamma_2$ for a reliable estimate. At $\Gamma_2 \sim 0.1$ Hz this is $\geq 100$ s; at $\Gamma_2 \sim 0.01$ Hz — $\geq 1000$ s.
 
-**Контроль артефактов.** Движения глаз и мышечные артефакты нарушают $G_2$-инвариантность «извне» — их необходимо удалить (ICA или регрессия) до вычисления когерентностей.
+**Artifact control.** Eye movements and muscle artifacts violate $G_2$-invariance "from outside" — they must be removed (ICA or regression) before computing coherences.
 
 ---
 
-## 9. Связь с другими результатами КК {#связи}
+## 9. Connection with Other CC Results {#связи}
 
-### 9.1 14 зарядов и 5 типов защиты Gap
+### 9.1 14 Charges and 5 Types of Gap Protection
 
-Нётеровские заряды связаны с [пятью механизмами защиты когерентности](./topological-protection):
+Noether charges are connected with the [five mechanisms of coherence protection](./topological-protection):
 
-| Заряд | Механизм защиты |
+| Charge | Protection mechanism |
+|--------|---------------------|
+| $Q_p^{(F)}$ (Fano charges) | Code protection (Hamming): Fano lines define the parity-check matrix $H(7,4)$ |
+| $Q_q^{(D)}$ (supplementary) | Algebraic protection: inter-triplet connections are determined by the associator |
+| $Q_{\text{top}}$ (topological) | Topological protection: $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
+
+### 9.2 Charges and Goldstone Modes
+
+Under spontaneous breaking $G_2 \to H$:
+
+- $\dim(H)$ charges remain **exactly conserved**
+- $14 - \dim(H)$ charges are **broken** $\Rightarrow$ generate [Goldstone modes](./goldstone-modes)
+
+| Rank | Preserved charges | Broken $\to$ modes |
+|------|------------------|--------------------|
+| 1 | 8 ($\mathrm{SU}(3)$) | 6 Goldstone |
+| 2 | 4 ($\mathrm{SU}(2) \times \mathrm{U}(1)$) | 10 Goldstone |
+| 3 | 2 ($T^2$) | 12 Goldstone |
+
+Each broken symmetry generates a "soft" mode — a quasi-Goldstone boson. The number of such modes is a precise diagnostic marker of the **depth of breaking** of $G_2$-invariance.
+
+### 9.3 Charges and Phase Diagram
+
+In the context of the [phase diagram](./phase-diagram-cc):
+
+| Phase | State of charges |
 |-------|-----------------|
-| $Q_p^{(F)}$ (Фано-заряды) | Кодовая защита (Хэмминг): Фано-линии определяют проверочную матрицу $H(7,4)$ |
-| $Q_q^{(D)}$ (дополнительные) | Алгебраическая защита: межтриплетные связи определяются ассоциатором |
-| $Q_{\text{top}}$ (топологический) | Топологическая защита: $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
+| **I (ordered)** | $n_{\text{broken}}$ charges are broken; the rest are exactly conserved |
+| **II (disordered)** | All 14 charges are approximately conserved ($G_2$ is not broken) |
+| **III (dead)** | Charges are not defined ($\gamma_{ij} \to 0$) |
 
-### 9.2 Заряды и голдстоуновские моды
+### 9.4 Charges and Consciousness Thresholds
 
-При спонтанном нарушении $G_2 \to H$:
+Noether charges are connected with [critical consciousness thresholds](/docs/consciousness/foundations/self-observation):
 
-- $\dim(H)$ зарядов остаются **точно сохраняющимися**
-- $14 - \dim(H)$ зарядов **нарушены** $\Rightarrow$ порождают [голдстоуновские моды](./goldstone-modes)
-
-| Ранг | Сохранённые заряды | Нарушенные $\to$ моды |
-|------|--------------------|-----------------------|
-| 1 | 8 ($\mathrm{SU}(3)$) | 6 голдстоуновских |
-| 2 | 4 ($\mathrm{SU}(2) \times \mathrm{U}(1)$) | 10 голдстоуновских |
-| 3 | 2 ($T^2$) | 12 голдстоуновских |
-
-Каждая нарушенная симметрия порождает «мягкую» моду — квази-голдстоуновский бозон. Число таких мод — точный диагностический маркер **глубины нарушения** $G_2$-инвариантности.
-
-### 9.3 Заряды и фазовая диаграмма
-
-В контексте [фазовой диаграммы](./phase-diagram-cc):
-
-| Фаза | Состояние зарядов |
-|------|-------------------|
-| **I (упорядоченный)** | $n_{\text{broken}}$ зарядов нарушены; остальные точно сохранены |
-| **II (разупорядоченный)** | Все 14 зарядов приблизительно сохранены ($G_2$ не нарушена) |
-| **III (мёртвая)** | Заряды не определены ($\gamma_{ij} \to 0$) |
-
-### 9.4 Заряды и пороги сознания
-
-Нётеровские заряды связаны с [критическими порогами сознания](/docs/consciousness/foundations/self-observation):
-
-- **$P = P_{\text{crit}} = 2/7$**: при пересечении порога чистоты — скачкообразное изменение профиля зарядов. Ниже порога заряды определены, но флуктуации доминируют. Выше — заряды стабилизируются.
-- **$R = R_{\text{th}} = 1/3$**: при достижении порога рефлексии — самонаблюдение начинает *модифицировать* заряды. Появляется обратная связь: заряды $\to$ самонаблюдение $\to$ коррекция зарядов.
-- **$\Phi = \Phi_{\text{th}} = 1$**: при достижении порога интеграции — заряды Фано и дополнительные заряды начинают координироваться. Сознание «видит» свои собственные законы сохранения.
+- **$P = P_{\text{crit}} = 2/7$**: on crossing the purity threshold — a step change in the charge profile. Below threshold, charges are defined but fluctuations dominate. Above it — charges stabilize.
+- **$R = R_{\text{th}} = 1/3$**: on reaching the reflection threshold — self-observation begins to *modify* charges. A feedback loop appears: charges $\to$ self-observation $\to$ correction of charges.
+- **$\Phi = \Phi_{\text{th}} = 1$**: on reaching the integration threshold — Fano charges and supplementary charges begin to coordinate. Consciousness "sees" its own conservation laws.
 
 ---
 
-## 10. Сводка статусов {#статусы}
+## 10. Status Summary {#статусы}
 
-| Результат | Статус |
-|-----------|--------|
-| 14 нётеровских зарядов из $G_2$-инвариантности $L_{\text{Gap}}$ | [Т] |
-| 7 Фано-зарядов = циркуляционные импульсы | [Т] |
-| 7 дополнительных зарядов = межтриплетные моменты | [Т] |
-| Диссипация зарядов: $dQ_a/d\tau = -\Gamma_2 Q_a^{(\text{kin})} + \kappa Q_a^{(\text{reg})}$ | [Т] |
-| 14 тождеств Уорда: линейные соотношения на $C_{(ij),(kl)}$ | [Т] |
-| Число независимых корреляторов: $231 - 14 = 217$ | [Т] |
-| Разложение $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ | [Т] |
-| Клиническая диагностика через заряды | [И] |
-| Терапевтические стратегии (Фано vs. межсекторные) | [И] |
-| Экспериментальная верификация $G_2$-структуры | [Г] |
-| Операционный протокол ($21 \times 21$ матрица) | [П] |
+| Result | Status |
+|--------|--------|
+| 14 Noether charges from $G_2$-invariance of $L_{\text{Gap}}$ | [T] |
+| 7 Fano charges = circulation momenta | [T] |
+| 7 supplementary charges = inter-triplet momenta | [T] |
+| Charge dissipation: $dQ_a/d\tau = -\Gamma_2 Q_a^{(\text{kin})} + \kappa Q_a^{(\text{reg})}$ | [T] |
+| 14 Ward identities: linear relations on $C_{(ij),(kl)}$ | [T] |
+| Number of independent correlators: $231 - 14 = 217$ | [T] |
+| Decomposition $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ | [T] |
+| Clinical diagnostics via charges | [I] |
+| Therapeutic strategies (Fano vs. cross-sector) | [I] |
+| Experimental verification of $G_2$-structure | [H] |
+| Operational protocol ($21 \times 21$ matrix) | [P] |
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+### What We Learned {#что-мы-узнали}
 
-1. **Теорема Нётер универсальна**: каждой непрерывной симметрии соответствует закон сохранения — и это работает для сознания точно так же, как для физики.
-2. **14 зарядов = 14 законов сохранения сознания**: 7 Фано-зарядов (бюджет когнитивных ресурсов *внутри* триплетов) + 7 дополнительных зарядов (обменный баланс *между* триплетами).
-3. **Заряды не сохраняются вечно** в открытых системах: они медленно затухают с характерным временем $\tau \sim 1/\Gamma_2$, но стремятся к стационарным значениям $Q_a^{(\text{stat})} = (\kappa/\Gamma_2) \cdot Q_a^{(\text{reg})}$.
-4. **14 тождеств Уорда** ограничивают корреляции: из 231 возможного параметра остаётся **один** свободный — амплитуда $\alpha$. Это сжатие в 231 раз — сила симметрии.
-5. **Каждый нарушенный заряд — диагностический маркер**: клиническая таблица переводит математику в конкретные типы нарушений и терапевтические стратегии.
-6. **Экспериментальный протокол существует**: $21 \times 21$ корреляционная матрица из EEG-данных, проверка 14 тождеств Уорда, мера нарушения $\Delta_{G_2}^{(\text{exp})}$.
+1. **Noether's theorem is universal**: every continuous symmetry corresponds to a conservation law — and this works for consciousness just as it does for physics.
+2. **14 charges = 14 conservation laws of consciousness**: 7 Fano charges (budget of cognitive resources *within* triplets) + 7 supplementary charges (exchange balance *between* triplets).
+3. **Charges are not conserved forever** in open systems: they slowly decay with characteristic time $\tau \sim 1/\Gamma_2$, but converge to stationary values $Q_a^{(\text{stat})} = (\kappa/\Gamma_2) \cdot Q_a^{(\text{reg})}$.
+4. **14 Ward identities** constrain correlations: from 231 possible parameters only **one** free parameter remains — the amplitude $\alpha$. This is a compression by a factor of 231 — the power of symmetry.
+5. **Each violated charge is a diagnostic marker**: the clinical table translates mathematics into concrete types of violations and therapeutic strategies.
+6. **An experimental protocol exists**: the $21 \times 21$ correlation matrix from EEG data, verification of 14 Ward identities, violation measure $\Delta_{G_2}^{(\text{exp})}$.
 
-:::tip Мост к следующей главе
-Мы увидели, как $G_2$-симметрия задаёт законы сохранения сознания. Но откуда взялись все эти идеи — обратная связь, наблюдатель, социальные системы? Формализм КК не возник в вакууме: он стоит на плечах 80 лет кибернетической мысли. В [следующей главе](./cybernetics-history) мы проследим эту историю — от кормчего Платона через Винера и фон Фёрстера к полной когерентности — и увидим, как каждая кибернетическая традиция захватила **часть** истины, а КК собирает их в единое целое.
+:::tip Bridge to the Next Chapter
+We have seen how $G_2$-symmetry defines the conservation laws of consciousness. But where did all these ideas come from — feedback, the observer, social systems? The CC formalism did not arise in a vacuum: it stands on the shoulders of 80 years of cybernetic thought. In the [next chapter](./cybernetics-history) we trace this history — from Plato's helmsman through Wiener and von Foerster to full coherence — and see how each cybernetic tradition captured **part** of the truth, while CC assembles them into a unified whole.
 :::
 
 ---
 
-## Связанные документы
+## Related Documents
 
-- [G₂-заряды Нётер и тождества Уорда](/docs/physics/gauge-symmetry/noether-charges) — математическое основание: полные доказательства, топологические заряды
-- [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, Фано-операторы Линдблада
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — $G_2/\perp$-разложение, стабилизаторы
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — тождества Уорда (матем.), три фазы
-- [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — $G_2$-ковариантность Фано-диссипатора
-- [Фазовая диаграмма КК](./phase-diagram-cc) — кибернетическая интерпретация фаз
-- [Голдстоуновские моды](./goldstone-modes) — квази-голдстоуновские моды из нарушения $G_2$
-- [Топологическая защита когерентности](./topological-protection) — пять механизмов защиты
-- [Определения КК](./definitions) — нейробиологические корреляты, тензор напряжений
-- [Предсказания КК](./predictions) — фальсифицируемые предсказания
-- [Теоремы КК](./theorems) — No-Zombie, композиция
-- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — PG(2,2), 7 линий
-- [Философские основания](./philosophy) — Нётеровские симметрии и онтология
-- [Междисциплинарный мост](./interdisciplinary) — G₂-заряды в разных контекстах
+- [G₂-Noether Charges and Ward Identities](/docs/physics/gauge-symmetry/noether-charges) — mathematical foundation: complete proofs, topological charges
+- [G₂-Structure and the Fano Plane](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, Fano-Lindblad operators
+- [Gap Operator](/docs/core/dynamics/gap-operator) — $G_2/\perp$-decomposition, stabilizers
+- [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — Ward identities (mathematical), three phases
+- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — $G_2$-covariance of the Fano dissipator
+- [CC Phase Diagram](./phase-diagram-cc) — cybernetic interpretation of phases
+- [Goldstone Modes](./goldstone-modes) — quasi-Goldstone modes from $G_2$ breaking
+- [Topological Coherence Protection](./topological-protection) — five protection mechanisms
+- [CC Definitions](./definitions) — neurobiological correlates, stress tensor
+- [CC Predictions](./predictions) — falsifiable predictions
+- [CC Theorems](./theorems) — No-Zombie, composition
+- [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) — PG(2,2), 7 lines
+- [Philosophical Foundations](./philosophy) — Noether symmetries and ontology
+- [Interdisciplinary Bridge](./interdisciplinary) — G₂-charges in different contexts

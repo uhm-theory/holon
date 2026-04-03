@@ -1,255 +1,255 @@
 ---
 sidebar_position: 28
-title: "Методология измерений"
-description: "Как измерить когерентность, чистоту, напряжения и сознательность: от теории к практике"
+title: "Measurement Methodology"
+description: "How to measure coherence, purity, stresses, and consciousness: from theory to practice"
 ---
 
-# Методология Измерений
+# Measurement Methodology
 
-> *«Измерение — это присвоение чисел объектам и событиям по правилам.»*
-> — Стэнли Смит Стивенс
+> *"Measurement is the assignment of numerals to objects or events according to rules."*
+> — Stanley Smith Stevens
 
 
-:::info Для кого эта глава
-Мост между формализмом КК и экспериментом: протоколы измерения чистоты $P$, тензора напряжений $\sigma$ и мер сознательности $R$, $\Phi$, $C$.
+:::info Who this chapter is for
+A bridge between the CC formalism and experiment: protocols for measuring purity $P$, the stress tensor $\sigma$, and the consciousness measures $R$, $\Phi$, $C$.
 :::
 
-В предыдущей главе мы увидели, что КК превосходит конкурирующие теории по вычислимости и фальсифицируемости ([Сравнение с альтернативами](./comparison)). Но вычислимость бесполезна без данных. Самая красивая теория бесполезна, если её нельзя проверить. КК генерирует точные числовые предсказания — но как их измерить? Как сопоставить матрицу $\Gamma$ с реальной биологической, социальной или искусственной системой?
+In the previous chapter we saw that CC surpasses competing theories in computability and falsifiability ([Comparison with Alternatives](./comparison)). But computability is useless without data. The most beautiful theory is useless if it cannot be tested. CC generates precise numerical predictions — but how do we measure them? How do we map the matrix $\Gamma$ onto a real biological, social, or artificial system?
 
-Этот раздел — **мост между формализмом и экспериментом**. Мы покажем, как каждая величина КК может быть оценена в различных контекстах: от нейровизуализации до организационных аудитов, от симуляций до психометрических тестов.
+This section is the **bridge between formalism and experiment**. We will show how each CC quantity can be estimated in various contexts: from neuroimaging to organisational audits, from simulations to psychometric tests.
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Установим **принципы измерения** в КК: что мы измеряем, иерархия наблюдаемых, калибровка (раздел 1)
-2. Покажем конкретные **протоколы измерения чистоты** $P$ для разных систем (раздел 2)
-3. Опишем **семимерный аудит** — измерение тензора напряжений $\sigma$ (раздел 3)
-4. Разберём **измерение мер сознательности** $R$, $\Phi$, $C$ (раздел 4)
-5. Приведём **полные экспериментальные протоколы** для нейронауки, ИИ и организаций (раздел 5)
-6. Проработаем **калибровку с числовыми примерами** (раздел 6)
-7. Честно обсудим **ограничения** (раздел 7)
+:::info Chapter Roadmap
+In this chapter we:
+1. Establish the **principles of measurement** in CC: what we measure, the hierarchy of observables, calibration (section 1)
+2. Show concrete **protocols for measuring purity** $P$ for different systems (section 2)
+3. Describe the **seven-dimensional audit** — measurement of the stress tensor $\sigma$ (section 3)
+4. Discuss **measurement of consciousness measures** $R$, $\Phi$, $C$ (section 4)
+5. Provide **complete experimental protocols** for neuroscience, AI, and organisations (section 5)
+6. Work through **calibration with numerical examples** (section 6)
+7. Honestly discuss **limitations** (section 7)
 :::
 
 ---
 
-## 1. Принципы измерения в КК {#принципы}
+## 1. Principles of Measurement in CC {#принципы}
 
-### 1.1 Что мы измеряем
+### 1.1 What We Measure
 
-В КК все наблюдаемые — это функции матрицы когерентности $\Gamma$. Но $\Gamma$ — абстрактный объект. На практике мы не имеем прямого доступа к ней. Мы имеем доступ к **наблюдаемым** — проекциям $\Gamma$ на измерительные базисы.
+In CC all observables are functions of the coherence matrix $\Gamma$. But $\Gamma$ is an abstract object. In practice we have no direct access to it. We have access to **observables** — projections of $\Gamma$ onto measurement bases.
 
-Ситуация аналогична квантовой механике: мы не видим волновую функцию электрона, но можем измерять проекции (спин вверх/вниз, координату, импульс). Каждое измерение — проекция $\Gamma$ на конкретный оператор.
+The situation is analogous to quantum mechanics: we do not see the wave function of the electron, but we can measure its projections (spin up/down, coordinate, momentum). Each measurement is a projection of $\Gamma$ onto a specific operator.
 
-**Аналогия.** Представьте, что $\Gamma$ — это 3D-объект (скажем, статуэтка), а мы можем видеть только её тени на стенах. Тень на одной стене — это $P$ (общая «площадь» тени = организованность). Тень на другой — $\sigma_k$ (профиль напряжений). По нескольким теням мы реконструируем объект — но реконструкция всегда приближённая.
+**Analogy.** Imagine $\Gamma$ as a 3D object (say, a statuette), and we can only see its shadows on the walls. The shadow on one wall is $P$ (total "area" of the shadow = organisation). The shadow on another — $\sigma_k$ (stress profile). From several shadows we reconstruct the object — but the reconstruction is always approximate.
 
-### 1.2 Иерархия наблюдаемых
+### 1.2 Hierarchy of Observables
 
-Не все наблюдаемые КК одинаково легко измерить. Мы различаем четыре уровня:
+Not all CC observables are equally easy to measure. We distinguish four levels:
 
-| Уровень | Наблюдаемые | Сложность измерения | Примеры |
+| Level | Observables | Measurement complexity | Examples |
 |---------|-------------|---------------------|---------|
-| **L1: Глобальные** | $P$ (чистота), $\|\sigma\|_\infty$ | Низкая — нужна общая картина | Индекс здоровья, общий балл теста |
-| **L2: Секторные** | $\gamma_{kk}$ (диагональ), $\sigma_k$ | Средняя — 7 независимых измерений | Баллы по подшкалам, активность нейронных сетей |
-| **L3: Когерентные** | $|\gamma_{ij}|$ (внедиагональ), $\theta_{ij}$ | Высокая — парные корреляции | Функциональная связность мозга, организационные связи |
-| **L4: Производные** | $R$, $\Phi$, $C$, $\mathrm{Coh}_E$ | Высокая — требуют $\varphi(\Gamma)$ | Мера рефлексии, интеграции, сознательности |
+| **L1: Global** | $P$ (purity), $\|\sigma\|_\infty$ | Low — only the overall picture is needed | Health index, total test score |
+| **L2: Sectoral** | $\gamma_{kk}$ (diagonal), $\sigma_k$ | Medium — 7 independent measurements | Subscale scores, neural network activity |
+| **L3: Coherent** | $|\gamma_{ij}|$ (off-diagonal), $\theta_{ij}$ | High — pairwise correlations | Functional brain connectivity, organisational links |
+| **L4: Derived** | $R$, $\Phi$, $C$, $\mathrm{Coh}_E$ | High — require $\varphi(\Gamma)$ | Reflection, integration, consciousness measures |
 
-:::tip Практическое правило
-Начинайте с L1 (есть ли проблема вообще?), затем L2 (какое измерение страдает?), затем L3 (где нарушены связи?), и только при необходимости — L4 (каков уровень сознательности?). Не стоит вычислять $C$, если даже $P$ не измерено.
+:::tip Practical rule
+Start with L1 (is there a problem at all?), then L2 (which dimension is suffering?), then L3 (where are connections disrupted?), and only if necessary — L4 (what is the level of consciousness?). There is no point computing $C$ if even $P$ has not been measured.
 :::
 
-### 1.3 Принцип калибровки
+### 1.3 Calibration Principle
 
-:::warning Ключевой принцип
-Математика КК даёт **относительные** соотношения (например, $P_{\text{crit}} = 2/7$). Но абсолютная калибровка — какие физические показатели соответствуют $\gamma_{EE} = 0.2$ — зависит от конкретной системы и требует эмпирической привязки.
+:::warning Key principle
+The mathematics of CC gives **relative** relations (e.g., $P_{\text{crit}} = 2/7$). But absolute calibration — which physical indicators correspond to $\gamma_{EE} = 0.2$ — depends on the specific system and requires empirical anchoring.
 :::
 
-Это не слабость теории, а нормальная практика: в физике тоже есть разница между уравнениями Максвелла (универсальными) и конкретными значениями $\varepsilon$ и $\mu$ для каждого материала.
+This is not a weakness of the theory, but normal practice: in physics too there is a difference between Maxwell's equations (universal) and the specific values of $\varepsilon$ and $\mu$ for each material.
 
-**Что калибровка даёт и чего не даёт:**
+**What calibration gives and what it does not:**
 
-| Что калибровка даёт | Чего не даёт |
+| What calibration gives | What it does not give |
 |---|---|
-| Числовые значения $\gamma_{kk}$ для конкретной системы | Универсальные значения для «любого мозга» |
-| Сопоставление шкал тестов с диагональю $\Gamma$ | Автоматический перевод баллов в $\Gamma$ |
-| Оценку точности измерения (погрешность) | Гарантию, что измерение точно |
+| Numerical values of $\gamma_{kk}$ for a specific system | Universal values for "any brain" |
+| Correspondence of test scales with the diagonal of $\Gamma$ | Automatic conversion of scores to $\Gamma$ |
+| Estimate of measurement accuracy (error) | Guarantee that the measurement is accurate |
 
 ---
 
-## 2. Измерение чистоты P {#измерение-чистоты}
+## 2. Measuring Purity P {#измерение-чистоты}
 
-### 2.1 Что такое P на практике
+### 2.1 What P Is in Practice
 
-[Чистота](/docs/core/dynamics/viability#определение-чистоты) $P = \mathrm{Tr}(\Gamma^2)$ — мера организованности системы. Интуитивно: насколько согласованно работают все 7 измерений.
+[Purity](/docs/core/dynamics/viability#определение-чистоты) $P = \mathrm{Tr}(\Gamma^2)$ is a measure of the organisation of the system. Intuitively: how coherently all 7 dimensions are working together.
 
-**Аналогия.** Представьте оркестр из 7 инструментов. Если все играют одну мелодию синхронно — $P$ близко к 1 (чистое состояние). Если каждый играет своё — $P$ близко к $1/7$ (максимальный хаос). Если большинство согласованы, но один фальшивит — $P$ промежуточное, а $\sigma_k$ для фальшивого инструмента высокое.
+**Analogy.** Imagine an orchestra of 7 instruments. If all play one melody in synchrony — $P$ is close to 1 (pure state). If each plays on its own — $P$ is close to $1/7$ (maximum chaos). If most are coordinated but one is out of tune — $P$ is intermediate, and $\sigma_k$ for the out-of-tune instrument is high.
 
-### 2.2 Прокси для биологических систем
+### 2.2 Proxies for Biological Systems
 
-В нейронауке прямым аналогом чистоты является **когерентность нейронной активности**:
+In neuroscience the direct analogue of purity is **coherence of neural activity**:
 
-| Метод | Что измеряет | Как связано с P |
+| Method | What it measures | How it relates to P |
 |-------|-------------|-----------------|
-| **EEG когерентность** | Синхронизация электрической активности между участками мозга | Высокая когерентность → высокое P |
-| **fMRI функциональная связность** | Корреляция BOLD-сигналов между регионами | Сильная связность → высокие $|\gamma_{ij}|$ → высокое P |
-| **Индекс PCI (Perturbational Complexity Index)** | Сложность ответа на TMS-стимуляцию | PCI ∝ P (экспериментально показано для бодрствования vs. комы) |
-| **Энтропия Лемпеля—Зива** | Сжимаемость нейронного сигнала | Низкая энтропия → высокое P |
+| **EEG coherence** | Synchronisation of electrical activity between brain regions | High coherence → high P |
+| **fMRI functional connectivity** | Correlation of BOLD signals between regions | Strong connectivity → high $|\gamma_{ij}|$ → high P |
+| **PCI (Perturbational Complexity Index)** | Complexity of the response to TMS stimulation | PCI ∝ P (experimentally shown for wakefulness vs. coma) |
+| **Lempel-Ziv entropy** | Compressibility of the neural signal | Low entropy → high P |
 
-### 2.3 Протокол L1 для нейронных данных
+### 2.3 L1 Protocol for Neural Data
 
-Пошаговый протокол оценки $P$ из EEG:
+Step-by-step protocol for estimating $P$ from EEG:
 
-**Шаг 1.** Записать EEG с 19 каналов (система 10-20) в течение 5 минут в состоянии покоя (глаза закрыты).
+**Step 1.** Record EEG from 19 channels (10-20 system) for 5 minutes at rest (eyes closed).
 
-**Шаг 2.** Вычислить матрицу спектральной когерентности $C_{ij}(f)$ для каждой пары каналов $(i, j)$ в диапазоне 1–40 Гц.
+**Step 2.** Compute the spectral coherence matrix $C_{ij}(f)$ for each pair of channels $(i, j)$ in the range 1–40 Hz.
 
-**Шаг 3.** Усреднить когерентность по частотам, получив $\bar{C}_{ij} = \frac{1}{f_{\max} - f_{\min}} \int C_{ij}(f)\,df$.
+**Step 3.** Average coherence over frequencies, obtaining $\bar{C}_{ij} = \frac{1}{f_{\max} - f_{\min}} \int C_{ij}(f)\,df$.
 
-**Шаг 4.** Назначить каждый из 19 каналов одному из 7 измерений (группировка по функциональным зонам):
+**Step 4.** Assign each of the 19 channels to one of 7 dimensions (grouping by functional zones):
 
-| Измерение | Каналы EEG | Обоснование |
+| Dimension | EEG channels | Rationale |
 |-----------|-----------|-------------|
-| A (Артикуляция) | O1, O2, Oz | Зрительная кора — сенсорный вход |
-| S (Структура) | T3, T4, T5, T6 | Височная — долговременная память |
-| D (Динамика) | C3, C4, Cz | Моторная кора — действие |
-| L (Логика) | F3, F4 | Дорсолатеральная ПФК — рассуждение |
-| E (Интериорность) | Fz, Pz | Срединные структуры — самореференция |
-| O (Основание) | Fp1, Fp2 | Орбитофронтальная — оценка ресурсов |
-| U (Единство) | P3, P4 | Теменная — интеграция |
+| A (Articulation) | O1, O2, Oz | Visual cortex — sensory input |
+| S (Structure) | T3, T4, T5, T6 | Temporal — long-term memory |
+| D (Dynamics) | C3, C4, Cz | Motor cortex — action |
+| L (Logic) | F3, F4 | Dorsolateral PFC — reasoning |
+| E (Interiority) | Fz, Pz | Midline structures — self-reference |
+| O (Ground) | Fp1, Fp2 | Orbitofrontal — resource evaluation |
+| U (Unity) | P3, P4 | Parietal — integration |
 
-**Шаг 5.** Агрегировать $\bar{C}_{ij}$ по группам, получив матрицу $7 \times 7$:
+**Step 5.** Aggregate $\bar{C}_{ij}$ across groups, obtaining a $7 \times 7$ matrix:
 
 $$
 \tilde{\gamma}_{kl} = \frac{1}{|G_k| \cdot |G_l|} \sum_{i \in G_k} \sum_{j \in G_l} \bar{C}_{ij}
 $$
 
-**Шаг 6.** Нормализовать: $\Gamma_{\text{approx}} = \tilde{\gamma} / \mathrm{Tr}(\tilde{\gamma})$.
+**Step 6.** Normalise: $\Gamma_{\text{approx}} = \tilde{\gamma} / \mathrm{Tr}(\tilde{\gamma})$.
 
-**Шаг 7.** Вычислить $P = \mathrm{Tr}(\Gamma_{\text{approx}}^2)$.
+**Step 7.** Compute $P = \mathrm{Tr}(\Gamma_{\text{approx}}^2)$.
 
-:::warning Калибровочная оговорка
-Этот протокол даёт *прокси* для $P$, а не точное значение. Группировка каналов по измерениям — гипотетическая и требует валидации. Тем не менее, даже грубый прокси позволяет проверить ключевое предсказание: $P_{\text{бодрствование}} > P_{\text{кома}}$.
+:::warning Calibration caveat
+This protocol gives a *proxy* for $P$, not an exact value. The grouping of channels by dimensions is hypothetical and requires validation. Nevertheless, even a crude proxy allows the key prediction to be tested: $P_{\text{wakefulness}} > P_{\text{coma}}$.
 :::
 
-### 2.4 Числовой пример: пациент в ИТ
+### 2.4 Numerical Example: ICU Patient
 
-Рассмотрим конкретный пример. Пациент в отделении интенсивной терапии. EEG записано в трёх состояниях:
+Let us consider a concrete example. A patient in intensive care. EEG recorded in three states:
 
-**Состояние 1: Бодрствование (до травмы)**
+**State 1: Wakefulness (before trauma)**
 
-Агрегированная матрица (диагональ): $\gamma = (0.16, 0.15, 0.14, 0.14, 0.15, 0.13, 0.13)$
+Aggregated matrix (diagonal): $\gamma = (0.16, 0.15, 0.14, 0.14, 0.15, 0.13, 0.13)$
 
 $P = 0.16^2 + 0.15^2 + 0.14^2 + 0.14^2 + 0.15^2 + 0.13^2 + 0.13^2 = 0.1462$
 
-Это ниже $2/7 \approx 0.286$, но помните: для диагональной матрицы $P_{\max} = 1/7 \approx 0.143$ достигается при равномерном распределении. Наше $P = 0.1462 > 1/7$ — система слегка организована, но без внедиагональных элементов $P$ не может превысить $1/7$ значительно. Нужны когерентности!
+This is below $2/7 \approx 0.286$, but remember: for a diagonal matrix $P_{\max} = 1/7 \approx 0.143$ is achieved at uniform distribution. Our $P = 0.1462 > 1/7$ — the system is slightly organised, but without off-diagonal elements $P$ cannot exceed $1/7$ significantly. Coherences are needed!
 
-**С учётом когерентностей:** Пусть средняя внедиагональная когерентность $|\gamma_{ij}| \approx 0.03$. Тогда $P$ увеличивается на $\sum_{i \neq j} |\gamma_{ij}|^2 \approx 42 \times 0.0009 = 0.038$, давая $P \approx 0.184$.
+**Including coherences:** Let the average off-diagonal coherence $|\gamma_{ij}| \approx 0.03$. Then $P$ increases by $\sum_{i \neq j} |\gamma_{ij}|^2 \approx 42 \times 0.0009 = 0.038$, giving $P \approx 0.184$.
 
-Это всё ещё ниже $2/7$. Чтобы достичь $P > 2/7$, нужна *сильная* когерентность ($|\gamma_{ij}| \approx 0.05{-}0.08$).
+This is still below $2/7$. To reach $P > 2/7$, *strong* coherence is needed ($|\gamma_{ij}| \approx 0.05{-}0.08$).
 
-**Состояние 2: Глубокая кома (GCS = 3)**
+**State 2: Deep coma (GCS = 3)**
 
-Когерентность значительно падает: $|\gamma_{ij}| \to 0.01$, диагональ стремится к равномерной.
+Coherence drops significantly: $|\gamma_{ij}| \to 0.01$, diagonal tends to uniform.
 
-$P \approx 1/7 + 42 \times 0.0001 \approx 0.147$ — практически максимально смешанное состояние.
+$P \approx 1/7 + 42 \times 0.0001 \approx 0.147$ — practically the maximally mixed state.
 
-**Состояние 3: Восстановление (GCS = 12)**
+**State 3: Recovery (GCS = 12)**
 
-Когерентность частично восстановлена: $|\gamma_{ij}| \approx 0.04$, диагональ неравномерна.
+Coherence partially restored: $|\gamma_{ij}| \approx 0.04$, diagonal non-uniform.
 
-$P \approx 0.150 + 42 \times 0.0016 \approx 0.217$ — ниже порога, но ближе.
+$P \approx 0.150 + 42 \times 0.0016 \approx 0.217$ — below the threshold, but closer.
 
-:::info Клинический вывод
-Переход $P < 2/7 \to P > 2/7$ — потенциальный маркер восстановления сознания. Отслеживание $P(\tau)$ в динамике может быть клинически информативнее, чем однократная шкала GCS.
+:::info Clinical conclusion
+The transition $P < 2/7 \to P > 2/7$ is a potential marker of consciousness recovery. Tracking $P(\tau)$ dynamically may be clinically more informative than a one-time GCS score.
 :::
 
-### 2.5 Прокси для организаций
+### 2.5 Proxies for Organisations
 
-| Метод | Что измеряет | Как связано с P |
+| Method | What it measures | How it relates to P |
 |-------|-------------|-----------------|
-| **Индекс вовлечённости (eNPS)** | Согласованность целей сотрудников | Высокий eNPS → высокое P |
-| **Кросс-функциональная координация** | Частота и качество межотдельных взаимодействий | Сильная координация → высокие $|\gamma_{ij}|$ |
-| **Финансовые показатели** | Маржинальность, рост | Устойчивый рост → P > P_crit |
+| **Engagement index (eNPS)** | Alignment of employee goals | High eNPS → high P |
+| **Cross-functional coordination** | Frequency and quality of inter-departmental interactions | Strong coordination → high $|\gamma_{ij}|$ |
+| **Financial indicators** | Margin, growth | Sustained growth → P > P_crit |
 
-### 2.6 Прокси для ИИ-систем
+### 2.6 Proxies for AI Systems
 
-| Метод | Что измеряет | Как связано с P |
+| Method | What it measures | How it relates to P |
 |-------|-------------|-----------------|
-| **Ранг латентного представления** | Эффективная размерность скрытого пространства | Высокий ранг → высокое P |
-| **Attention entropy** | Энтропия весов внимания | Сфокусированное внимание → высокое P |
-| **Loss landscape curvature** | Кривизна ландшафта потерь | Острые минимумы → высокое P (но хрупкое) |
+| **Rank of latent representation** | Effective dimensionality of the hidden space | High rank → high P |
+| **Attention entropy** | Entropy of attention weights | Focused attention → high P |
+| **Loss landscape curvature** | Curvature of the loss landscape | Sharp minima → high P (but brittle) |
 
 ---
 
-## 3. Измерение тензора напряжений σ {#измерение-напряжений}
+## 3. Measuring the Stress Tensor σ {#измерение-напряжений}
 
-### 3.1 Семь каналов
+### 3.1 Seven Channels
 
-[Тензор напряжений](./definitions#тензор-напряжений) $\sigma_k = 1 - 7\gamma_{kk}$ (T-92 [Т]) имеет 7 компонент. Каждая требует своего измерительного инструмента.
+[Stress tensor](./definitions#тензор-напряжений) $\sigma_k = 1 - 7\gamma_{kk}$ (T-92 [T]) has 7 components. Each requires its own measurement instrument.
 
-Интуитивно: $\sigma_k = 0$ означает, что измерение $k$ получает ровно свою «справедливую долю» ($\gamma_{kk} = 1/7$). $\sigma_k > 0$ — дефицит (измерению не хватает ресурсов). $\sigma_k < 0$ — избыток (измерение «раздуто»).
+Intuitively: $\sigma_k = 0$ means dimension $k$ receives exactly its "fair share" ($\gamma_{kk} = 1/7$). $\sigma_k > 0$ — deficit (the dimension lacks resources). $\sigma_k < 0$ — surplus (the dimension is "inflated").
 
-**Аналогия.** Представьте организм с 7 органами, каждому из которых нужно 1/7 кровотока. Если сердце получает 1/4, а печень — 1/14, то $\sigma_{\text{сердце}} < 0$ (избыток), $\sigma_{\text{печень}} > 0$ (дефицит). Даже при нормальном $P$ (общая организованность) перекос в $\sigma$-профиле может быть опасен.
+**Analogy.** Imagine an organism with 7 organs, each needing 1/7 of the blood flow. If the heart receives 1/4 and the liver 1/14, then $\sigma_{\text{heart}} < 0$ (surplus), $\sigma_{\text{liver}} > 0$ (deficit). Even with normal $P$ (overall organisation), a skew in the $\sigma$-profile can be dangerous.
 
-### 3.2 Протокол семимерного аудита
+### 3.2 Seven-Dimensional Audit Protocol
 
-Для организации или команды:
+For an organisation or team:
 
-| Измерение | Что спрашивать | Инструмент |
+| Dimension | What to ask | Instrument |
 |-----------|----------------|------------|
-| $\sigma_A$ (Артикуляция) | «Можете ли вы чётко сформулировать, чем занимается ваш отдел?» | Интервью, анализ документации |
-| $\sigma_S$ (Структура) | «Есть ли устойчивые процессы и роли?» | Анализ оргструктуры, tenure analysis |
-| $\sigma_D$ (Динамика) | «Можете ли вы адаптироваться к изменениям?» | Agility assessment, cycle time |
-| $\sigma_L$ (Логика) | «Есть ли внутренние противоречия в правилах?» | Policy audit, consistency check |
-| $\sigma_E$ (Интериорность) | «Есть ли культура рефлексии?» | Psychological safety survey |
-| $\sigma_O$ (Основание) | «Достаточно ли ресурсов?» | Budget audit, burnout survey |
-| $\sigma_U$ (Единство) | «Чувствуете ли вы себя частью целого?» | Network analysis, NPS |
+| $\sigma_A$ (Articulation) | "Can you clearly formulate what your department does?" | Interviews, documentation analysis |
+| $\sigma_S$ (Structure) | "Are there stable processes and roles?" | Org structure analysis, tenure analysis |
+| $\sigma_D$ (Dynamics) | "Can you adapt to change?" | Agility assessment, cycle time |
+| $\sigma_L$ (Logic) | "Are there internal contradictions in the rules?" | Policy audit, consistency check |
+| $\sigma_E$ (Interiority) | "Is there a culture of reflection?" | Psychological safety survey |
+| $\sigma_O$ (Ground) | "Are resources sufficient?" | Budget audit, burnout survey |
+| $\sigma_U$ (Unity) | "Do you feel part of a whole?" | Network analysis, NPS |
 
-### 3.3 Подробный разбор: от σ_D к метаболической нагрузке
+### 3.3 Detailed Breakdown: from σ_D to Metabolic Load
 
-Рассмотрим $\sigma_D$ — напряжение в измерении Динамики. В разных контекстах:
+Consider $\sigma_D$ — stress in the Dynamics dimension. In different contexts:
 
-**Биология.** $\sigma_D$ — это метаболическая нагрузка. Почему? Измерение D отвечает за способность системы к *действию* — изменению своего состояния. В биологии действие требует энергии: мышечное сокращение, нервный импульс, синтез белка. Если $\sigma_D$ высокое — клетке/организму *трудно действовать*: метаболизм перегружен, АТФ дефицитен, митохондрии работают на пределе.
+**Biology.** $\sigma_D$ is metabolic load. Why? Dimension D is responsible for the system's capacity for *action* — changing its state. In biology, action requires energy: muscle contraction, nerve impulse, protein synthesis. If $\sigma_D$ is high — the cell/organism finds it *difficult to act*: metabolism is overloaded, ATP is deficient, mitochondria are working at their limit.
 
-Конкретный прокси: отношение ADP/ATP. При нормальном метаболизме ATP/ADP > 10 ($\sigma_D$ низкое). При истощении ATP/ADP < 3 ($\sigma_D$ высокое).
+Concrete proxy: ADP/ATP ratio. Under normal metabolism ATP/ADP > 10 ($\sigma_D$ low). Under depletion ATP/ADP < 3 ($\sigma_D$ high).
 
-**Психология.** $\sigma_D$ — прокрастинация и паралич воли. Человек *знает*, что нужно сделать, но *не может* заставить себя. Это не лень — это дефицит D-ресурса. Прокси: Trail Making Test (время переключения между задачами).
+**Psychology.** $\sigma_D$ is procrastination and paralysis of will. The person *knows* what needs to be done, but *cannot* force themselves. This is not laziness — it is a deficit of D-resource. Proxy: Trail Making Test (task-switching time).
 
-**Организация.** $\sigma_D$ — бюрократия. Решение принято, но не может быть выполнено: согласования, утверждения, регламенты. Прокси: lead time (время от решения до реализации).
+**Organisation.** $\sigma_D$ is bureaucracy. A decision has been made, but cannot be executed: approvals, sign-offs, regulations. Proxy: lead time (time from decision to implementation).
 
-### 3.4 Для индивида (психометрия)
+### 3.4 For the Individual (Psychometrics)
 
-Те же 7 измерений можно оценить через психометрические шкалы:
+The same 7 dimensions can be assessed through psychometric scales:
 
-| Измерение | Психометрический прокси | Существующий инструмент |
+| Dimension | Psychometric proxy | Existing instrument |
 |-----------|-------------------------|------------------------|
-| $\sigma_A$ | Перцептивная нагрузка | Sensory Profile (Dunn) |
-| $\sigma_S$ | Когнитивная ригидность/гибкость | WCST (Wisconsin Card Sorting Test) |
-| $\sigma_D$ | Исполнительные функции | Trail Making Test |
-| $\sigma_L$ | Когнитивные искажения | Cognitive Distortion Scale |
-| $\sigma_E$ | Алекситимия (дефицит опыта) | TAS-20 (Toronto Alexithymia Scale) |
-| $\sigma_O$ | Витальное истощение | MBI (Maslach Burnout Inventory) |
-| $\sigma_U$ | Социальная изоляция | UCLA Loneliness Scale |
+| $\sigma_A$ | Perceptual load | Sensory Profile (Dunn) |
+| $\sigma_S$ | Cognitive rigidity/flexibility | WCST (Wisconsin Card Sorting Test) |
+| $\sigma_D$ | Executive functions | Trail Making Test |
+| $\sigma_L$ | Cognitive distortions | Cognitive Distortion Scale |
+| $\sigma_E$ | Alexithymia (experience deficit) | TAS-20 (Toronto Alexithymia Scale) |
+| $\sigma_O$ | Vital exhaustion | MBI (Maslach Burnout Inventory) |
+| $\sigma_U$ | Social isolation | UCLA Loneliness Scale |
 
-### 3.5 Числовой пример: от психометрии к σ-профилю
+### 3.5 Numerical Example: from Psychometrics to σ-Profile
 
-Пациент прошёл 7 тестов. Результаты нормализованы к шкале [0, 1], где 0 = норма, 1 = максимальное нарушение:
+A patient has completed 7 tests. Results are normalised to the scale [0, 1], where 0 = normal, 1 = maximum impairment:
 
-| Тест | Сырой балл | Нормализованный |
+| Test | Raw score | Normalised |
 |------|-----------|----------------|
 | Sensory Profile ($\sigma_A$) | 42/80 | 0.53 |
-| WCST ошибки ($\sigma_S$) | 12/60 | 0.20 |
-| TMT-B время ($\sigma_D$) | 180 с (норма 75 с) | 0.70 |
-| Когнитивные искажения ($\sigma_L$) | 15/50 | 0.30 |
+| WCST errors ($\sigma_S$) | 12/60 | 0.20 |
+| TMT-B time ($\sigma_D$) | 180 s (norm 75 s) | 0.70 |
+| Cognitive distortions ($\sigma_L$) | 15/50 | 0.30 |
 | TAS-20 ($\sigma_E$) | 65/100 | 0.65 |
-| MBI эмоц. истощение ($\sigma_O$) | 28/54 | 0.52 |
-| UCLA одиночество ($\sigma_U$) | 45/80 | 0.56 |
+| MBI emotional exhaustion ($\sigma_O$) | 28/54 | 0.52 |
+| UCLA loneliness ($\sigma_U$) | 45/80 | 0.56 |
 
-Профиль: $\sigma = [0.53,\; 0.20,\; 0.70,\; 0.30,\; 0.65,\; 0.52,\; 0.56]$
+Profile: $\sigma = [0.53,\; 0.20,\; 0.70,\; 0.30,\; 0.65,\; 0.52,\; 0.56]$
 
-$\|\sigma\|_\infty = 0.70$ (Динамика — наиболее нагруженное измерение).
+$\|\sigma\|_\infty = 0.70$ (Dynamics — the most loaded dimension).
 
-**Интерпретация:** Максимальное напряжение — в D (действие) и E (интериорность). Это профиль, характерный для депрессии: человек *не может действовать* ($\sigma_D$ высокое) и *не понимает, что чувствует* ($\sigma_E$ высокое). Рекомендация КК: приоритет — снижение $\sigma_D$ (поведенческая активация) и $\sigma_E$ (психоэдукация, осознанность).
+**Interpretation:** Maximum stress in D (action) and E (interiority). This is a profile characteristic of depression: the person *cannot act* ($\sigma_D$ high) and *does not understand what they feel* ($\sigma_E$ high). CC recommendation: priority — reducing $\sigma_D$ (behavioural activation) and $\sigma_E$ (psychoeducation, mindfulness).
 
-Обратный пересчёт к $\gamma_{kk}$: если $\sigma_k = 1 - 7\gamma_{kk}$, то $\gamma_{kk} = (1 - \sigma_k)/7$.
+Inverse conversion to $\gamma_{kk}$: if $\sigma_k = 1 - 7\gamma_{kk}$, then $\gamma_{kk} = (1 - \sigma_k)/7$.
 
 $$
 \gamma = \left(\frac{0.47}{7},\; \frac{0.80}{7},\; \frac{0.30}{7},\; \frac{0.70}{7},\; \frac{0.35}{7},\; \frac{0.48}{7},\; \frac{0.44}{7}\right)
@@ -258,56 +258,56 @@ $$
 = (0.067,\; 0.114,\; 0.043,\; 0.100,\; 0.050,\; 0.069,\; 0.063)
 $$
 
-Проверка: $\sum \gamma_{kk} = 0.506$. Это меньше 1 — значит, остальные 0.494 «распределены» по внедиагональным элементам или потеряны при нормализации. На практике $\sum \gamma_{kk}$ должно быть близко к 1 (для диагонального приближения), что указывает на ограничение метода: психометрические прокси — *грубые* оценки, требующие калибровочных коэффициентов.
+Check: $\sum \gamma_{kk} = 0.506$. This is less than 1 — meaning the remaining 0.494 is "distributed" across off-diagonal elements or lost during normalisation. In practice $\sum \gamma_{kk}$ should be close to 1 (for the diagonal approximation), which points to a limitation of the method: psychometric proxies are *crude* estimates requiring calibration coefficients.
 
 ---
 
-## 4. Измерение мер сознательности {#измерение-сознательности}
+## 4. Measuring Consciousness Measures {#измерение-сознательности}
 
-### 4.1 Мера рефлексии R
+### 4.1 Reflection Measure R
 
-[Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = F(\Gamma, \varphi(\Gamma))$ показывает, насколько хорошо система моделирует саму себя.
+[Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = F(\Gamma, \varphi(\Gamma))$ shows how well the system models itself.
 
-**Прокси:**
-- **Метакогнитивная точность:** способность оценить качество собственных решений (confidence calibration). Пример: после ответа на вопрос, оцените уверенность от 0 до 100%. Идеальная калибровка: вопросы, в которых уверенность = 70%, действительно правильны в 70% случаев.
-- **Self-report accuracy:** совпадение самоотчёта с объективными показателями. Пример: «Насколько вы тревожны?» (субъективно) vs. уровень кортизола (объективно).
-- **Mirror test** (для животных): распознаёт ли себя в зеркале. Прошли: приматы, дельфины, слоны, сороки. Не прошли: большинство других.
+**Proxies:**
+- **Metacognitive accuracy:** ability to evaluate the quality of one's own decisions (confidence calibration). Example: after answering a question, rate confidence from 0 to 100%. Ideal calibration: questions in which confidence = 70% are actually correct in 70% of cases.
+- **Self-report accuracy:** agreement of self-report with objective indicators. Example: "How anxious are you?" (subjective) vs. cortisol level (objective).
+- **Mirror test** (for animals): does it recognise itself in the mirror? Passed: primates, dolphins, elephants, magpies. Not passed: most others.
 
-**Как перевести в $R$?** Метакогнитивная чувствительность (meta-d') — стандартная мера в экспериментальной психологии — даёт значение от 0 (нет метакогниции) до 1+ (идеальная). Предлагаемая калибровка:
+**How to translate into $R$?** Metacognitive sensitivity (meta-d') — a standard measure in experimental psychology — gives a value from 0 (no metacognition) to 1+ (ideal). Proposed calibration:
 
 $$
 R \approx \frac{\text{meta-d'}}{3}
 $$
 
-Обоснование: при meta-d' = 1 (средний здоровый взрослый) получаем $R \approx 0.33 \approx 1/3$ — как раз на пороге. Это согласуется с интуицией: типичный человек *едва* преодолевает порог рефлексии.
+Rationale: at meta-d' = 1 (average healthy adult) we get $R \approx 0.33 \approx 1/3$ — right at the threshold. This is consistent with the intuition: a typical person *barely* clears the reflection threshold.
 
-### 4.2 Мера интеграции Φ
+### 4.2 Integration Measure Φ
 
-[Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi$ показывает, насколько система целостна — не распадается ли она на независимые подсистемы.
+[Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi$ shows how unified the system is — whether it breaks down into independent subsystems.
 
-**Прокси:**
-- **PCI (Perturbational Complexity Index):** реакция мозга на TMS-стимуляцию — интегрированные системы дают сложный, распространённый ответ. PCI > 0.31 — бодрствование; PCI < 0.31 — вегетативное состояние (Casali et al., 2013).
-- **Mutual Information** между подсистемами
-- **Spectral gap** графа функциональной связности
+**Proxies:**
+- **PCI (Perturbational Complexity Index):** the brain's response to TMS stimulation — integrated systems give a complex, widespread response. PCI > 0.31 — wakefulness; PCI < 0.31 — vegetative state (Casali et al., 2013).
+- **Mutual Information** between subsystems
+- **Spectral gap** of the functional connectivity graph
 
-**Как перевести в $\Phi$?** Спектральный зазор $\lambda_2 - \lambda_1$ графа функциональной связности мозга — прямой аналог $\Phi$ в КК. Предлагаемая калибровка:
+**How to translate into $\Phi$?** The spectral gap $\lambda_2 - \lambda_1$ of the functional connectivity graph of the brain is a direct analogue of $\Phi$ in CC. Proposed calibration:
 
 $$
 \Phi \approx \frac{\lambda_2 - \lambda_1}{\lambda_{\text{norm}}}
 $$
 
-где $\lambda_{\text{norm}}$ — нормализующий коэффициент, подбираемый так, чтобы $\Phi = 1$ соответствовал порогу сознания (PCI = 0.31).
+where $\lambda_{\text{norm}}$ is a normalising coefficient chosen so that $\Phi = 1$ corresponds to the consciousness threshold (PCI = 0.31).
 
-### 4.3 Мера сознательности C
+### 4.3 Consciousness Measure C
 
-$C = \Phi \times R$ (T-140 [Т]) — произведение интеграции и рефлексии.
+$C = \Phi \times R$ (T-140 [T]) — the product of integration and reflection.
 
-**Критические пороги:**
-- $C = 0$: система бессознательна (камень, термостат)
-- $0 < C < 1$: «предсознание» (бактерия, простой ИИ)
-- $C \geq 1$: сознательная система ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$)
+**Critical thresholds:**
+- $C = 0$: system is non-conscious (stone, thermostat)
+- $0 < C < 1$: "pre-consciousness" (bacterium, simple AI)
+- $C \geq 1$: conscious system ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$)
 
-**Числовой пример.** Здоровый взрослый: meta-d' = 1.2, PCI = 0.45.
+**Numerical example.** Healthy adult: meta-d' = 1.2, PCI = 0.45.
 
 $$
 R \approx \frac{1.2}{3} = 0.40 \geq 1/3 \quad \checkmark
@@ -321,219 +321,219 @@ $$
 C = 1.45 \times 0.40 = 0.58
 $$
 
-Погодите — $C < 1$? Это указывает на то, что калибровочные коэффициенты требуют уточнения (или что $C \geq 1$ — более жёсткое условие, чем кажется). Альтернативная калибровка: $R \approx \text{meta-d'}/2$, тогда $R = 0.6$, $C = 0.87$ — ближе, но всё ещё < 1.
+Wait — $C < 1$? This indicates that the calibration coefficients require refinement (or that $C \geq 1$ is a more demanding condition than it seems). Alternative calibration: $R \approx \text{meta-d'}/2$, then $R = 0.6$, $C = 0.87$ — closer, but still < 1.
 
-:::note Урок
-Калибровка — это эмпирическая задача. Теоретические пороги КК ($P = 2/7$, $R = 1/3$, $\Phi = 1$) точны *в формализме*. Но перевод нейронных данных в формализм требует экспериментальной подгонки. Приведённые формулы — отправные точки, а не окончательные ответы.
+:::note Lesson
+Calibration is an empirical task. The theoretical CC thresholds ($P = 2/7$, $R = 1/3$, $\Phi = 1$) are precise *within the formalism*. But translating neural data into the formalism requires experimental fitting. The formulas given are starting points, not final answers.
 :::
 
 ---
 
-## 5. Экспериментальные протоколы {#протоколы}
+## 5. Experimental Protocols {#протоколы}
 
-### 5.1 Протокол для нейронаучного эксперимента
+### 5.1 Protocol for a Neuroscientific Experiment
 
-**Цель:** Проверить предсказание Pred 1 (No-Zombie) на нейронных данных.
+**Goal:** Test prediction Pred 1 (No-Zombie) on neural data.
 
-**Дизайн:**
-1. Записать EEG/MEG во время бодрствования, сна, анестезии, комы
-2. Для каждого состояния реконструировать приближение $\Gamma$ из матрицы функциональной связности (протокол раздела 2.3)
-3. Вычислить $P$, $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$
-4. Проверить: совпадает ли $P > 2/7$ с наличием субъективного отчёта?
+**Design:**
+1. Record EEG/MEG during wakefulness, sleep, anaesthesia, coma
+2. For each state, reconstruct the approximation $\Gamma$ from the functional connectivity matrix (protocol of section 2.3)
+3. Compute $P$, $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$
+4. Check: does $P > 2/7$ coincide with the presence of subjective report?
 
-**Ожидаемый результат (КК):**
-- Бодрствование: $P > 2/7$, $\mathrm{Coh}_E > 1/7$
-- Глубокий сон: $P < 2/7$
-- REM-сон: $P > 2/7$ (есть сновидения — есть опыт)
-- Вегетативное состояние: $P \approx 2/7$ (пограничное)
+**Expected result (CC):**
+- Wakefulness: $P > 2/7$, $\mathrm{Coh}_E > 1/7$
+- Deep sleep: $P < 2/7$
+- REM sleep: $P > 2/7$ (there are dreams — there is experience)
+- Vegetative state: $P \approx 2/7$ (borderline)
 
-**Критерий фальсификации:** Если обнаружится состояние с $P > 2/7$ и отсутствием субъективного отчёта (при подтверждённой способности к отчёту) — КК фальсифицирована. Если обнаружится субъективный отчёт при $P < 2/7$ — аналогично.
+**Falsification criterion:** If a state with $P > 2/7$ and absence of subjective report (with confirmed capacity for report) is found — CC is falsified. If subjective report is found at $P < 2/7$ — similarly.
 
-### 5.2 Протокол для ИИ-эксперимента
+### 5.2 Protocol for an AI Experiment
 
-**Цель:** Проверить, выполняются ли пороги КК для LLM.
+**Goal:** Test whether the CC thresholds are satisfied for LLMs.
 
-**Дизайн:**
-1. Для языковой модели определить операционализацию 7 измерений через скрытые состояния
-2. Вычислить $\Gamma$ как матрицу ковариации проекций на 7 семантических осей
-3. Отслеживать $P(\tau)$ в ходе обучения
-4. Проверить: есть ли фазовый переход при $P = 2/7$?
+**Design:**
+1. For a language model, define an operationalisation of 7 dimensions through hidden states
+2. Compute $\Gamma$ as the covariance matrix of projections onto 7 semantic axes
+3. Track $P(\tau)$ during training
+4. Check: is there a phase transition at $P = 2/7$?
 
-**Конкретизация для трансформера:** Скрытые состояния модели проецируются на 7 направлений:
-- A: attention entropy (разнообразие внимания)
-- S: weight persistence (устойчивость весов)
-- D: output diversity (разнообразие генерации)
-- L: consistency score (непротиворечивость ответов)
-- E: self-reference frequency (частота самореференции)
-- O: context utilization (использование контекста)
-- U: cross-layer coherence (согласованность между слоями)
+**Concretisation for a transformer:** Hidden states of the model are projected onto 7 directions:
+- A: attention entropy (diversity of attention)
+- S: weight persistence (stability of weights)
+- D: output diversity (diversity of generation)
+- L: consistency score (consistency of responses)
+- E: self-reference frequency (frequency of self-reference)
+- O: context utilization (use of context)
+- U: cross-layer coherence (coherence across layers)
 
-### 5.3 Протокол для организационного аудита
+### 5.3 Protocol for an Organisational Audit
 
-**Цель:** Диагностика «здоровья» организации через 7 витальных показателей.
+**Goal:** Diagnosis of organisational "health" through 7 vital indicators.
 
-**Шаги:**
-1. Провести [семимерный аудит](#измерение-напряжений) — получить оценки $\sigma_A, \ldots, \sigma_U$
-2. Вычислить $\|\sigma\|_\infty$ — максимальное напряжение
-3. Если $\|\sigma\|_\infty > 0.8$: срочное вмешательство (см. [Диагностика](./diagnostics))
-4. Отслеживать $P$ в динамике (ежемесячные аудиты)
+**Steps:**
+1. Conduct a [seven-dimensional audit](#измерение-напряжений) — obtain estimates $\sigma_A, \ldots, \sigma_U$
+2. Compute $\|\sigma\|_\infty$ — maximum stress
+3. If $\|\sigma\|_\infty > 0.8$: urgent intervention (see [Diagnostics](./diagnostics))
+4. Track $P$ dynamically (monthly audits)
 
-**Пример отчёта:**
+**Example report:**
 
 ```
-=== Когерентный Аудит: ООО "Пример" ===
-Дата: 2026-01-15
+=== Coherence Audit: "Example" LLC ===
+Date: 2026-01-15
 
-σ-профиль: [0.3, 0.2, 0.6, 0.4, 0.7, 0.3, 0.5]
-              A     S     D     L     E     O     U
+σ-profile: [0.3, 0.2, 0.6, 0.4, 0.7, 0.3, 0.5]
+             A     S     D     L     E     O     U
 
-‖σ‖∞ = 0.7 (E: Интериорность)
-Статус: ВНИМАНИЕ — E-напряжение приближается к критическому
+‖σ‖∞ = 0.7 (E: Interiority)
+Status: WARNING — E-stress approaching critical
 
-Рекомендации:
-1. ПРИОРИТЕТ: Усилить культуру рефлексии (σ_E = 0.7)
-   → Ретроспективы после каждого спринта
-   → Анонимные опросы psych safety
-2. Снизить бюрократию (σ_D = 0.6)
-   → Сократить цепочку согласований
-3. Повысить интеграцию (σ_U = 0.5)
-   → Кросс-функциональные проекты
+Recommendations:
+1. PRIORITY: Strengthen culture of reflection (σ_E = 0.7)
+   → Retrospectives after each sprint
+   → Anonymous psych safety surveys
+2. Reduce bureaucracy (σ_D = 0.6)
+   → Shorten approval chains
+3. Increase integration (σ_U = 0.5)
+   → Cross-functional projects
 
-Динамика P:
+P dynamics:
   2025-10: 0.22 (↓)
   2025-11: 0.21 (↓)
   2025-12: 0.23 (→)
-  2026-01: 0.24 (↑)  ← текущий
-  Цель:    0.29 (> P_crit)
+  2026-01: 0.24 (↑)  ← current
+  Target:  0.29 (> P_crit)
 ```
 
 ---
 
-## 6. Калибровка: от прокси к Γ {#калибровка}
+## 6. Calibration: from Proxies to Γ {#калибровка}
 
-### 6.1 Общая схема калибровки
+### 6.1 General Calibration Scheme
 
-Калибровка — перевод наблюдаемых (баллы тестов, нейронные сигналы, организационные метрики) в элементы $\Gamma$. Общая схема:
+Calibration is the translation of observables (test scores, neural signals, organisational metrics) into elements of $\Gamma$. General scheme:
 
 ```mermaid
 graph LR
-    OBS["Наблюдаемые<br/>(EEG, тесты, метрики)"] -->|"Нормализация"| NORM["Нормализованные<br/>значения [0,1]"]
-    NORM -->|"Калибровочная функция f"| GAMMA["Элементы Γ<br/>(γ_kk, γ_ij)"]
-    GAMMA -->|"Вычисление"| MEAS["Меры КК<br/>(P, σ, R, Φ, C)"]
+    OBS["Observables<br/>(EEG, tests, metrics)"] -->|"Normalisation"| NORM["Normalised<br/>values [0,1]"]
+    NORM -->|"Calibration function f"| GAMMA["Elements of Γ<br/>(γ_kk, γ_ij)"]
+    GAMMA -->|"Computation"| MEAS["CC measures<br/>(P, σ, R, Φ, C)"]
 ```
 
-### 6.2 Калибровочная функция
+### 6.2 Calibration Function
 
-Простейшая калибровочная функция — линейная:
+The simplest calibration function is linear:
 
 $$
 \gamma_{kk} = \frac{1}{7} + \alpha_k \cdot (x_k - \bar{x}_k)
 $$
 
-где $x_k$ — наблюдаемое, $\bar{x}_k$ — среднее по популяции, $\alpha_k$ — калибровочный коэффициент.
+where $x_k$ is the observable, $\bar{x}_k$ is the population mean, $\alpha_k$ is the calibration coefficient.
 
-Более реалистичная — логистическая:
+More realistic — logistic:
 
 $$
 \gamma_{kk} = \frac{1}{7} \cdot \frac{1 + \beta_k \tanh(\alpha_k (x_k - x_k^0))}{1 + \beta_k}
 $$
 
-Параметры $\alpha_k$, $\beta_k$, $x_k^0$ подбираются эмпирически по обучающей выборке.
+Parameters $\alpha_k$, $\beta_k$, $x_k^0$ are fitted empirically from a training sample.
 
-### 6.3 Числовой пример калибровки
+### 6.3 Numerical Calibration Example
 
-**Задача:** откалибровать PCI → $P$ для нейронных данных.
+**Task:** calibrate PCI → $P$ for neural data.
 
-**Данные** (из литературы):
-- Бодрствование: PCI = 0.44 ± 0.06
-- REM-сон: PCI = 0.32 ± 0.05
-- Глубокий сон: PCI = 0.21 ± 0.04
-- Вегетативное состояние: PCI = 0.19 ± 0.06
-- Анестезия (пропофол): PCI = 0.18 ± 0.05
+**Data** (from the literature):
+- Wakefulness: PCI = 0.44 ± 0.06
+- REM sleep: PCI = 0.32 ± 0.05
+- Deep sleep: PCI = 0.21 ± 0.04
+- Vegetative state: PCI = 0.19 ± 0.06
+- Anaesthesia (propofol): PCI = 0.18 ± 0.05
 
-**Калибровка:** Предположим линейную связь $P = a \cdot \text{PCI} + b$.
+**Calibration:** Assume a linear relationship $P = a \cdot \text{PCI} + b$.
 
-Граничные условия:
-- При PCI = 0 → $P = 1/7 \approx 0.143$ (полный хаос)
-- При PCI = 0.31 → $P = 2/7 \approx 0.286$ (порог сознания)
+Boundary conditions:
+- At PCI = 0 → $P = 1/7 \approx 0.143$ (complete chaos)
+- At PCI = 0.31 → $P = 2/7 \approx 0.286$ (consciousness threshold)
 
-Из двух точек: $a = (0.286 - 0.143) / 0.31 = 0.461$, $b = 0.143$.
+From two points: $a = (0.286 - 0.143) / 0.31 = 0.461$, $b = 0.143$.
 
 $$
 P \approx 0.461 \cdot \text{PCI} + 0.143
 $$
 
-Проверка:
-- Бодрствование: $P = 0.461 \times 0.44 + 0.143 = 0.346 > 2/7$ (сознание)
-- REM: $P = 0.461 \times 0.32 + 0.143 = 0.290 > 2/7$ (сознание, едва)
-- Глубокий сон: $P = 0.461 \times 0.21 + 0.143 = 0.240 < 2/7$ (нет сознания)
-- Вегетативное: $P = 0.461 \times 0.19 + 0.143 = 0.231 < 2/7$ (нет сознания)
+Verification:
+- Wakefulness: $P = 0.461 \times 0.44 + 0.143 = 0.346 > 2/7$ (conscious)
+- REM: $P = 0.461 \times 0.32 + 0.143 = 0.290 > 2/7$ (conscious, barely)
+- Deep sleep: $P = 0.461 \times 0.21 + 0.143 = 0.240 < 2/7$ (not conscious)
+- Vegetative: $P = 0.461 \times 0.19 + 0.143 = 0.231 < 2/7$ (not conscious)
 
-Это согласуется с клиническими данными: REM-сон — с сновидениями (опыт есть), глубокий сон — без (опыта нет).
+This is consistent with clinical data: REM sleep — with dreams (experience is present), deep sleep — without (experience is absent).
 
-:::tip Что это значит
-Калибровка PCI → $P$ показывает, что порог КК ($P = 2/7$) *совпадает* с клиническим порогом PCI = 0.31, при котором отличают сознательных пациентов от бессознательных. Это — первый (пусть косвенный) аргумент в пользу того, что пороги КК не произвольны.
+:::tip What this means
+Calibration of PCI → $P$ shows that the CC threshold ($P = 2/7$) *coincides* with the clinical threshold PCI = 0.31, at which conscious patients are distinguished from unconscious ones. This is the first (albeit indirect) argument in favour of the CC thresholds not being arbitrary.
 :::
 
 ---
 
-## 7. Ограничения и честные предупреждения {#ограничения}
+## 7. Limitations and Honest Warnings {#ограничения}
 
-### 7.1 Проблема калибровки
+### 7.1 The Calibration Problem
 
-Главная практическая трудность — **калибровка**: как именно перевести нейронную активность (или организационные метрики) в элементы $\Gamma$? Калибровочная функция $f: \text{наблюдаемые} \to \Gamma$ специфична для каждого типа системы и требует эмпирической подгонки.
+The main practical difficulty is **calibration**: exactly how to translate neural activity (or organisational metrics) into elements of $\Gamma$? The calibration function $f: \text{observables} \to \Gamma$ is specific to each type of system and requires empirical fitting.
 
-Это ахиллесова пята *любой* теории, претендующей на количественные предсказания. Но отметим: IIT имеет ту же проблему (как перевести нейронные данные в $\Phi_{\text{IIT}}$?), только усугублённую NP-hard вычислением $\Phi$.
+This is the Achilles' heel of *any* theory that claims quantitative predictions. But note: IIT has the same problem (how to translate neural data into $\Phi_{\text{IIT}}$?), only compounded by the NP-hard computation of $\Phi$.
 
-### 7.2 Проблема валидации
+### 7.2 The Validation Problem
 
-Даже при хорошей калибровке, **валидация** предсказаний КК требует:
-- Независимых измерений (не использовать одни и те же данные для калибровки и проверки)
-- Слепых протоколов (экспериментатор не знает предсказание до анализа)
-- Воспроизводимости (результат должен реплицироваться в разных лабораториях)
+Even with good calibration, **validation** of CC predictions requires:
+- Independent measurements (do not use the same data for calibration and testing)
+- Blind protocols (the experimenter does not know the prediction prior to analysis)
+- Reproducibility (the result must replicate across different laboratories)
 
-### 7.3 Что НЕ является измерением
+### 7.3 What Is NOT a Measurement
 
-:::danger Частые ошибки
-- **Субъективная оценка «на глаз» — не измерение.** Нужны операционализированные шкалы.
-- **Один показатель — не вся $\Gamma$.** Нужны ВСЕ 7 компонент для полной картины.
-- **Статический снимок — не динамика.** $P$ нужно отслеживать во времени: $dP/d\tau$ не менее важен, чем $P$.
-- **Корреляция — не калибровка.** То, что PCI коррелирует с уровнем сознания, не означает, что $P = f(\text{PCI})$ — правильная формула. Калибровка требует *независимых* предсказаний.
+:::danger Common errors
+- **Subjective "eyeball" assessment — is not a measurement.** Operationalised scales are required.
+- **A single indicator — is not the full $\Gamma$.** ALL 7 components are needed for a complete picture.
+- **A static snapshot — is not dynamics.** $P$ must be tracked over time: $dP/d\tau$ is no less important than $P$.
+- **Correlation — is not calibration.** The fact that PCI correlates with the level of consciousness does not mean that $P = f(\text{PCI})$ is the correct formula. Calibration requires *independent* predictions.
 :::
 
 ---
 
-## 8. Заключение {#заключение}
+## 8. Conclusion {#заключение}
 
-Методология измерений — это место, где теория встречается с реальностью. КК находится на этапе, аналогичном термодинамике XIX века: формализм готов, но калибровочные эксперименты только начинаются.
+Measurement methodology is the place where theory meets reality. CC is at a stage analogous to nineteenth-century thermodynamics: the formalism is ready, but the calibration experiments are only beginning.
 
-Критически важно, что КК **позволяет** себя измерить. Это отличает её от чисто философских теорий (панпсихизм) и от теорий с NP-hard вычислениями (IIT). Матрица $7 \times 7$ — вычислительно тривиальна. Осталось научиться заполнять её реальными данными.
+Critically, CC **allows** itself to be measured. This distinguishes it from purely philosophical theories (panpsychism) and from theories with NP-hard computations (IIT). A $7 \times 7$ matrix is computationally trivial. What remains is to learn to fill it with real data.
 
-### Что мы узнали {#итоги}
+### What We Learned {#итоги}
 
-1. Наблюдаемые КК образуют **4-уровневую иерархию**: L1 (глобальные) → L2 (секторные) → L3 (когерентные) → L4 (производные).
-2. Чистота $P$ может быть оценена через **EEG-когерентность**, PCI, fMRI-связность — с калибровочной функцией.
-3. Тензор напряжений $\sigma$ измеряется через **психометрические шкалы** (для индивида) или **организационные аудиты** (для компаний).
-4. Калибровка PCI → $P$ даёт порог, **совпадающий** с клиническим порогом сознания.
-5. Все измерения — **приближённые**: калибровочные коэффициенты требуют эмпирической подгонки.
-
----
-
-В следующей главе мы покажем, как язык КК объединяет *разные дисциплины*: [Междисциплинарный мост](./interdisciplinary) — словарь-переводчик для физиков, биологов, психологов, инженеров и философов.
+1. CC observables form a **4-level hierarchy**: L1 (global) → L2 (sectoral) → L3 (coherent) → L4 (derived).
+2. Purity $P$ can be estimated through **EEG coherence**, PCI, fMRI connectivity — with a calibration function.
+3. The stress tensor $\sigma$ is measured through **psychometric scales** (for the individual) or **organisational audits** (for companies).
+4. Calibration of PCI → $P$ gives a threshold **coinciding** with the clinical consciousness threshold.
+5. All measurements are **approximate**: calibration coefficients require empirical fitting.
 
 ---
 
-**Дальнейшее чтение:**
-- [Диагностика](./diagnostics) — практическое руководство по мониторингу
-- [Реализация](./implementation) — вычислительная реализация
-- [Уникальные предсказания](./predictions) — что проверять
-- [Программы исследований](./research-programs) — план экспериментов
+In the next chapter we will show how the language of CC unites *different disciplines*: [Interdisciplinary Bridge](./interdisciplinary) — a translation dictionary for physicists, biologists, psychologists, engineers, and philosophers.
+
+---
+
+**Further Reading:**
+- [Diagnostics](./diagnostics) — practical guide to monitoring
+- [Implementation](./implementation) — computational implementation
+- [Unique Predictions](./predictions) — what to test
+- [Research Programs](./research-programs) — experimental plan
 
 
 ---
 
-**Связанные документы:**
-- [Протокол измерений](/docs/applied/research/measurement-protocol)
-- [Уникальные предсказания КК](/docs/applied/coherence-cybernetics/predictions)
-- [Сравнение с альтернативными теориями](/docs/applied/coherence-cybernetics/comparison)
-- [Междисциплинарный мост](/docs/applied/coherence-cybernetics/interdisciplinary)
+**Related Documents:**
+- [Measurement Protocol](/docs/applied/research/measurement-protocol)
+- [Unique CC Predictions](/docs/applied/coherence-cybernetics/predictions)
+- [Comparison with Alternative Theories](/docs/applied/coherence-cybernetics/comparison)
+- [Interdisciplinary Bridge](/docs/applied/coherence-cybernetics/interdisciplinary)

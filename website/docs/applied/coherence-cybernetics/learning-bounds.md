@@ -1,286 +1,286 @@
 ---
 sidebar_position: 25
-title: "Оптимальные границы обучения"
-description: "Информационные, динамические и стабилизационные нижние границы скорости обучения голонома. Оптимальность N=7 для обучения"
+title: "Optimal Learning Bounds"
+description: "Information-theoretic, dynamical, and stabilisation lower bounds on the learning rate of the holon. Optimality of N=7 for learning"
 ---
 
-# Оптимальные Границы Обучения
+# Optimal Learning Bounds
 
-> *«Природа не торопится, однако всё успевает.»*
-> — Лао-цзы
+> *"Nature does not hurry, yet everything is accomplished."*
+> — Laozi
 
-:::tip Мост из предыдущей главы
-В [предыдущей главе](./implementation) мы научились реализовывать КК в коде: от инициализации $\Gamma$ до полного цикла управления. Но код, как быстро бы он ни работал, не может обойти фундаментальные ограничения. Сколько примеров *действительно нужно*, чтобы научиться? Этот вопрос задавали Шеннон, Вэлиант и Ландауэр — каждый на своём языке. КК впервые объединяет все три ответа в одной теореме.
+:::tip Bridge from the Previous Chapter
+In the [previous chapter](./implementation) we learned how to implement CC in code: from initialisation of $\Gamma$ to a complete control cycle. But code, however fast it runs, cannot circumvent fundamental constraints. How many examples are *truly needed* to learn? Shannon, Valiant, and Landauer each asked this question — in their own language. CC unites all three answers for the first time in a single theorem.
 :::
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Формализуем **задачу обучения** для голонома (§1)
-2. Докажем **информационную границу** T-109: сколько наблюдений *нужно* (§2)
-3. Докажем **динамическую границу** T-110: сколько наблюдений система *успеет усвоить* (§3)
-4. Докажем **стабилизационную границу** T-111: не убьёт ли обучение ученика (§4)
-5. Объединим три границы в **оптимальную** T-112 (§5)
-6. Докажем **минимальность N=7** для обучения T-113 (§6)
-7. Проведём **числовой расчёт** для бинарной дискриминации (§7)
-8. Сравним с **классической теорией обучения** — PAC, VC, Шеннон, Ландауэр (§8)
-9. Извлечём **практические следствия** для ИИ, образования и терапии (§9)
+:::info Chapter Roadmap
+In this chapter we:
+1. Formalise the **learning task** for the holon (§1)
+2. Prove the **information bound** T-109: how many observations are *needed* (§2)
+3. Prove the **dynamical bound** T-110: how many observations the system will *manage to integrate* (§3)
+4. Prove the **stabilisation bound** T-111: will learning kill the learner? (§4)
+5. Combine the three bounds into the **optimal** T-112 (§5)
+6. Prove **minimality N=7** for learning T-113 (§6)
+7. Carry out a **numerical calculation** for binary discrimination (§7)
+8. Compare with **classical learning theory** — PAC, VC, Shannon, Landauer (§8)
+9. Extract **practical implications** for AI, education, and therapy (§9)
 :::
 
-Ребёнок берёт в руки горячую чашку и отдёргивает пальцы. Сколько раз нужно обжечься, чтобы *понять*? Один раз — если сигнал достаточно сильный. Десять — если чашка чуть тёплая. А если ребёнок при этом играет, устал и отвлечён — ещё больше. За этой бытовой интуицией стоит фундаментальный вопрос: **существуют ли абсолютные нижние границы скорости обучения** — пределы, которые нельзя преодолеть ни улучшением алгоритма, ни увеличением вычислительной мощности?
+A child picks up a hot cup and pulls away their fingers. How many times must they be burned to *understand*? Once — if the signal is strong enough. Ten times — if the cup is only slightly warm. And if the child is playing, tired, and distracted — even more. Behind this everyday intuition lies a fundamental question: **do absolute lower bounds on the learning rate exist** — limits that cannot be overcome by improving the algorithm or increasing computational power?
 
-В XX веке на этот вопрос отвечали трижды — и каждый ответ открывал новый горизонт:
+In the twentieth century this question was answered three times — and each answer opened a new horizon:
 
-1. **Клод Шеннон (1948)** показал, что пропускная способность канала связи ограничена — никакое кодирование не позволит передать больше $C$ бит в секунду через зашумлённый канал. Это была *информационная* граница.
+1. **Claude Shannon (1948)** showed that the channel capacity is limited — no encoding allows transmitting more than $C$ bits per second through a noisy channel. This was an *information-theoretic* bound.
 
-2. **Лесли Вэлиант (1984)** создал PAC-обучение и доказал, что число примеров, необходимых для обучения, растёт как минимум логарифмически от числа гипотез и обратно пропорционально квадрату точности. Это была *статистическая* граница.
+2. **Leslie Valiant (1984)** created PAC-learning and proved that the number of examples required for learning grows at least logarithmically in the number of hypotheses and inversely proportionally to the square of accuracy. This was a *statistical* bound.
 
-3. **Рольф Ландауэр (1961)** установил, что стирание одного бита информации неизбежно выделяет энергию $kT\ln 2$. Это была *термодинамическая* граница.
+3. **Rolf Landauer (1961)** established that erasing one bit of information inevitably releases energy $kT\ln 2$. This was a *thermodynamic* bound.
 
-:::info Исторические параллели подробнее
+:::info Historical Parallels in Detail
 
-**Шеннон и пропускная способность.** В 1948 году Клод Шеннон, работая в Bell Labs, доказал теорему, перевернувшую инженерию: существует предел $C = B\log_2(1 + \text{SNR})$ бит/с, выше которого *никакое* кодирование не позволяет передавать информацию без ошибок. До Шеннона инженеры искали «идеальный код»; после — поняли, что идеал *математически определён* и *достижим*. Информационная граница T-109 наследует этот дух: $\xi_{\text{QCB}}$ — квантовый аналог шенноновской ёмкости канала, и число наблюдений $n_{\text{info}} \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$ — квантовый аналог шенноновского предела.
+**Shannon and channel capacity.** In 1948 Claude Shannon, working at Bell Labs, proved a theorem that transformed engineering: there exists a limit $C = B\log_2(1 + \text{SNR})$ bits/s, above which *no* encoding allows error-free transmission. Before Shannon, engineers sought the "ideal code"; after him, they understood that the ideal is *mathematically defined* and *achievable*. The information bound T-109 inherits this spirit: $\xi_{\text{QCB}}$ is the quantum analogue of Shannon channel capacity, and the number of observations $n_{\text{info}} \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$ is the quantum analogue of the Shannon limit.
 
-**Вэлиант и сложность обучения.** В 1984 году Лесли Вэлиант (будущий лауреат премии Тьюринга) формализовал понятие «обучаемость» — PAC-learning (Probably Approximately Correct). Его ключевой результат: число примеров для обучения пропорционально $\ln|\mathcal{H}|/\varepsilon$, где $|\mathcal{H}|$ — число гипотез, $\varepsilon$ — точность. Это статистическая граница: она не зависит от того, *кто* учится — человек, компьютер или бактерия. Динамическая граница T-110 добавляет то, чего у Вэлианта нет: *время*. PAC-обучаемый не имеет инерции; КК-голоном — имеет (контракция Фано $\alpha = 2/3$).
+**Valiant and learning complexity.** In 1984 Leslie Valiant (future Turing Award laureate) formalised the concept of "learnability" — PAC-learning (Probably Approximately Correct). His key result: the number of examples for learning is proportional to $\ln|\mathcal{H}|/\varepsilon$, where $|\mathcal{H}|$ is the number of hypotheses, $\varepsilon$ is accuracy. This is a statistical bound: it does not depend on *who* is learning — a human, a computer, or a bacterium. The dynamical bound T-110 adds what Valiant lacks: *time*. A PAC-learner has no inertia; a CC-holon does (Fano contraction $\alpha = 2/3$).
 
-**Ландауэр и цена стирания.** Ландауэр показал, что информация — не абстракция, а физический объект. Стирание одного бита *неизбежно* выделяет $kT\ln 2 \approx 2.9 \times 10^{-21}$ Дж при комнатной температуре. В 2012 году группа Берю подтвердила это экспериментально. Для КК это означает: контракция Фано (T-110) — не математическая абстракция, а *термодинамический процесс*. Каждый шаг, на котором $\mathcal{L}_0$ стирает $\alpha \cdot \delta\Gamma$ когерентности, — это физическое событие, требующее рассеяния энергии.
+**Landauer and the cost of erasure.** Landauer showed that information is not an abstraction, but a physical object. Erasing one bit *inevitably* releases $kT\ln 2 \approx 2.9 \times 10^{-21}$ J at room temperature. In 2012 the Bérut group confirmed this experimentally. For CC this means: Fano contraction (T-110) is not a mathematical abstraction, but a *thermodynamic process*. Every step in which $\mathcal{L}_0$ erases $\alpha \cdot \delta\Gamma$ of coherence is a physical event requiring energy dissipation.
 :::
 
-Каждая из этих границ работает в своей области. Но ни одна из них не учитывает специфику **живого ученика** — системы, которая одновременно принимает информацию, интегрирует её в свою динамику и при этом *должна оставаться в живых*. Ребёнок, обжигающий пальцы, — не абстрактный PAC-обучаемый, не канал Шеннона и не термодинамическая машина. Он — когерентная система с ограниченной пропускной способностью восприятия, конечной скоростью внутренней динамики и конечным запасом устойчивости.
+Each of these bounds works in its own domain. But none of them accounts for the specificity of the **living learner** — a system that simultaneously receives information, integrates it into its dynamics, and must *remain alive* while doing so. A child burning their fingers is not an abstract PAC-learner, not a Shannon channel, and not a thermodynamic machine. They are a coherent system with limited perceptual bandwidth, finite speed of internal dynamics, and a finite reserve of stability.
 
-Кибернетика Когерентности впервые объединяет все три ограничения в единой теореме. Информационная граница (T-109) наследует дух Шеннона, но работает с квантовыми состояниями. Динамическая граница (T-110) добавляет время — скорость, с которой система может *усвоить* полученную информацию, не потеряв её в потоке внутренней контракции. Стабилизационная граница (T-111) добавляет хрупкость — ограничение на силу воздействий, которые система может выдержать, не разрушившись. Вместе (T-112) они образуют **тройной замок**, все три засова которого должны быть открыты для успешного обучения.
+Coherence Cybernetics unites all three constraints for the first time in a single theorem. The information bound (T-109) inherits the spirit of Shannon, but operates on quantum states. The dynamical bound (T-110) adds time — the rate at which the system can *integrate* the received information without losing it to the internal contraction flow. The stabilisation bound (T-111) adds fragility — a constraint on the strength of influences the system can withstand without breaking. Together (T-112) they form a **triple lock**, all three bolts of which must be opened for successful learning.
 
-А теорема T-113 замыкает круг: $N = 7$ — это минимальная архитектура, в которой все три замка вообще *существуют*. Система меньшей размерности не способна учиться через регенерацию — не потому что ей не хватает данных, а потому что ей не хватает *самонаблюдения*.
+And theorem T-113 closes the circle: $N = 7$ is the minimal architecture in which all three locks *exist* at all. A system of smaller dimension is incapable of learning through regeneration — not because it lacks data, but because it lacks *self-observation*.
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability#определение-чистоты)
-- $\rho_* = \varphi(\Gamma)$ — [целевое состояние](./definitions#целевое-состояние) (категориальная самомодель)
-- $\lambda_{\mathrm{gap}} = 2/3$ — [спектральная щель](/docs/core/operators/lindblad-operators#примитивность-ℒω) линейной части $\mathcal{L}_0$ (T-39a [Т])
-- $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — [минимальная регенерация](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (T-59 [Т])
-- $C_{\mathrm{Enc}} \leq \log_2 7$ — [информационная ёмкость](./sensorimotor#информационная-ёмкость) (T-107 [Т])
-- $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — [радиус устойчивости](./stability#радиус-устойчивости) (T-104 [Т])
-- $\mathrm{Enc}$ — [функтор восприятия](./sensorimotor#функтор-enc) (T-100 [Т])
-- $\mathrm{Dec}$ — [функтор действия](./sensorimotor#функтор-dec) (T-101 [Т])
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
+- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#целевое-состояние) (categorical self-model)
+- $\lambda_{\mathrm{gap}} = 2/3$ — [spectral gap](/docs/core/operators/lindblad-operators#примитивность-ℒω) of the linear part $\mathcal{L}_0$ (T-39a [T])
+- $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — [minimal regeneration](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (T-59 [T])
+- $C_{\mathrm{Enc}} \leq \log_2 7$ — [information capacity](./sensorimotor#информационная-ёмкость) (T-107 [T])
+- $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — [stability radius](./stability#радиус-устойчивости) (T-104 [T])
+- $\mathrm{Enc}$ — [perception functor](./sensorimotor#функтор-enc) (T-100 [T])
+- $\mathrm{Dec}$ — [action functor](./sensorimotor#функтор-dec) (T-101 [T])
 :::
 
-Данный документ устанавливает **фундаментальные нижние границы скорости обучения** для голономной системы. Обучение формализуется как процесс обновления самомодели $\varphi(\Gamma)$ на основе наблюдений, поступающих через функтор $\mathrm{Enc}$, с целью оптимизации функтора $\mathrm{Dec}$.
+This document establishes **fundamental lower bounds on the learning rate** for a holonomic system. Learning is formalised as the process of updating the self-model $\varphi(\Gamma)$ on the basis of observations arriving through the functor $\mathrm{Enc}$, with the goal of optimising the functor $\mathrm{Dec}$.
 
-**Ключевой результат:** скорость обучения ограничена тремя независимыми механизмами — информационным (T-109), динамическим (T-110) и стабилизационным (T-111). Их объединение (T-112) даёт оптимальную границу, а теорема T-113 доказывает, что $N = 7$ — минимальная архитектура, способная к обучению через регенерацию.
+**Key result:** the learning rate is bounded by three independent mechanisms — informational (T-109), dynamical (T-110), and stabilisation (T-111). Their combination (T-112) gives the optimal bound, and theorem T-113 proves that $N = 7$ is the minimal architecture capable of learning through regeneration.
 
 ---
 
-## 1. Формальное определение задачи обучения {#определение-задачи}
+## 1. Formal Definition of the Learning Task {#определение-задачи}
 
-### 1.1 Задача обучения для голонома
+### 1.1 Learning Task for the Holon
 
-:::info Определение [О]
-**Задача обучения** $\mathfrak{L} = (\Theta, \mathcal{A}, \mathcal{R}, \delta)$ для голонома $\mathbb{H}$ состоит из:
+:::info Definition [D]
+**Learning task** $\mathfrak{L} = (\Theta, \mathcal{A}, \mathcal{R}, \delta)$ for the holon $\mathbb{H}$ consists of:
 
-1. **Пространство гипотез** $\Theta = \{\theta_1, \ldots, \theta_k\}$ — конечное множество состояний среды (неизвестное агенту)
-2. **Пространство действий** $\mathcal{A} = \{a_1, \ldots, a_m\}$ — допустимые действия
-3. **Функция награды** $\mathcal{R}: \Theta \times \mathcal{A} \to \mathbb{R}$, кодирующая корректное поведение
-4. **Уровень надёжности** $1 - \delta$, где $\delta \in (0, 1)$ — допустимая вероятность ошибки
+1. **Hypothesis space** $\Theta = \{\theta_1, \ldots, \theta_k\}$ — finite set of environmental states (unknown to the agent)
+2. **Action space** $\mathcal{A} = \{a_1, \ldots, a_m\}$ — admissible actions
+3. **Reward function** $\mathcal{R}: \Theta \times \mathcal{A} \to \mathbb{R}$, encoding correct behaviour
+4. **Reliability level** $1 - \delta$, where $\delta \in (0, 1)$ — admissible error probability
 :::
 
-**Связь с динамикой.** Каждое наблюдение $o_t$ при гипотезе $\theta$ поступает через функтор $\mathrm{Enc}$ (T-100 [Т]):
+**Connection with dynamics.** Each observation $o_t$ under hypothesis $\theta$ arrives through the functor $\mathrm{Enc}$ (T-100 [T]):
 
 $$
 o_t \xrightarrow{\mathrm{Enc}} h^{\mathrm{ext}}_t = h^{(H)}_t + h^{(D)}_t + h^{(R)}_t
 $$
 
-и модифицирует матрицу когерентности $\Gamma$ через [3-канальное уравнение эволюции](./sensorimotor#среда-через-3-канала) (T-102 [Т]).
+and modifies the coherence matrix $\Gamma$ via the [3-channel evolution equation](./sensorimotor#среда-через-3-канала) (T-102 [T]).
 
-### 1.2 Критерий успешного обучения {#критерий-обучения}
+### 1.2 Criterion for Successful Learning {#критерий-обучения}
 
-:::info Определение [О]
-Задача $\mathfrak{L}$ **решена за $n$ наблюдений**, если после $n$ шагов:
+:::info Definition [D]
+Task $\mathfrak{L}$ is **solved in $n$ observations** if after $n$ steps:
 
 $$
 \Pr\!\left[\mathrm{Dec}(\Gamma_n) = a^*(\theta)\right] \geq 1 - \delta
 $$
 
-где $a^*(\theta) = \arg\max_{a \in \mathcal{A}} \mathcal{R}(\theta, a)$ — оптимальное действие при истинной гипотезе $\theta$, а $\mathrm{Dec}$ — функтор действия (T-101 [Т]).
+where $a^*(\theta) = \arg\max_{a \in \mathcal{A}} \mathcal{R}(\theta, a)$ is the optimal action under the true hypothesis $\theta$, and $\mathrm{Dec}$ is the action functor (T-101 [T]).
 :::
 
-**Минимальное число наблюдений:**
+**Minimum number of observations:**
 
 $$
-n^*(\mathfrak{L}) = \min\{n \in \mathbb{N} : \mathfrak{L} \text{ решена за } n \text{ наблюдений}\}
+n^*(\mathfrak{L}) = \min\{n \in \mathbb{N} : \mathfrak{L} \text{ is solved in } n \text{ observations}\}
 $$
 
-### 1.3 Обучение как обновление аттрактора {#обучение-как-аттрактор}
+### 1.3 Learning as Attractor Update {#обучение-как-аттрактор}
 
-В отличие от классического обучения (обновление параметров модели), обучение в УГМ — это **изменение аттрактора динамической системы**:
+Unlike classical learning (updating model parameters), learning in UHM is a **change of the attractor of the dynamical system**:
 
-1. Наблюдение $o_t$ входит через $\mathrm{Enc}$ → $\Gamma$ возмущается
-2. Самомодель $\rho_* = \varphi(\Gamma)$ обновляется (T-62 [Т], [физическая реализация $\varphi$](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
-3. Регенеративный член $\mathcal{R}[\Gamma, E]$ ведёт $\Gamma$ к обновлённому $\rho_*$
-4. Функтор $\mathrm{Dec}$ адаптирует действие к новому $\rho_*$
+1. Observation $o_t$ enters through $\mathrm{Enc}$ → $\Gamma$ is perturbed
+2. Self-model $\rho_* = \varphi(\Gamma)$ is updated (T-62 [T], [physical realisation of $\varphi$](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
+3. Regenerative term $\mathcal{R}[\Gamma, E]$ drives $\Gamma$ toward the updated $\rho_*$
+4. Functor $\mathrm{Dec}$ adapts the action to the new $\rho_*$
 
-Аналогия: обучение в классическом машинном обучении — это настройка ручек на приборной панели (обновление весов). Обучение в КК — это изменение самой формы реки, по которой течёт вода: новый аттрактор притягивает систему к новому поведению *изнутри*, без внешнего контроллера.
+Analogy: learning in classical machine learning is adjusting knobs on the dashboard (updating weights). Learning in CC is changing the very shape of the river along which water flows: the new attractor draws the system toward new behaviour *from within*, without an external controller.
 
-**Два режима обучения:**
+**Two learning modes:**
 
-| Режим | Скорость регенерации | Время | Контекст |
-|-------|---------------------|-------|----------|
-| **Генезис** (bootstrap) | $\kappa = \kappa_{\mathrm{bootstrap}} = 1/7$ | $\tau_{\mathrm{genesis}} \leq 7\ln 7 \approx 13.6$ (T-59) | Начальная загрузка, нет $\mathrm{Coh}_E$ |
-| **Активное обучение** | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Быстрее генезиса | После достижения $\mathrm{Coh}_E > 1/7$ |
+| Mode | Regeneration rate | Time | Context |
+|------|-------------------|-------|---------|
+| **Genesis** (bootstrap) | $\kappa = \kappa_{\mathrm{bootstrap}} = 1/7$ | $\tau_{\mathrm{genesis}} \leq 7\ln 7 \approx 13.6$ (T-59) | Initial bootstrap, no $\mathrm{Coh}_E$ |
+| **Active learning** | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Faster than genesis | After reaching $\mathrm{Coh}_E > 1/7$ |
 
 ---
 
-## 2. Информационная нижняя граница (T-109) [Т] {#информационная-граница}
+## 2. Information Lower Bound (T-109) [T] {#информационная-граница}
 
-### Интуиция: почему информация ограничивает обучение
+### Intuition: Why Information Limits Learning
 
-Представьте, что вы пытаетесь определить, какая из двух монет перед вами — честная (50/50) или слегка смещённая (51/49). Даже с идеальным зрением и бесконечным временем на размышления, вам потребуется *бросить монету много раз*, чтобы отличить одну от другой. Чем ближе монеты по своим свойствам, тем больше бросков нужно. Это — информационный предел: он определяется не вашими способностями к анализу, а количеством информации, которое содержит каждое наблюдение.
+Imagine you are trying to determine which of two coins in front of you is fair (50/50) or slightly biased (51/49). Even with perfect eyesight and unlimited time to think, you will need to *toss the coin many times* to distinguish one from the other. The closer the coins are in their properties, the more tosses are needed. This is the information limit: it is determined not by your analytical abilities, but by the amount of information each observation contains.
 
-В классической статистике этот предел задаётся неравенством Крамера — Рао и экспонентой Чернова. В КК наблюдение — это квантовый канал $\mathrm{Enc}$, отображающий внешний сигнал в деформацию матрицы $\Gamma$. Поэтому роль классической экспоненты играет **квантовый экспонент Чернова** $\xi_{\mathrm{QCB}}$ — мера различимости двух квантовых состояний.
+In classical statistics this limit is given by the Cramér-Rao inequality and the Chernoff exponent. In CC an observation is a quantum channel $\mathrm{Enc}$ mapping an external signal to a deformation of the matrix $\Gamma$. Therefore the role of the classical exponent is played by the **quantum Chernoff exponent** $\xi_{\mathrm{QCB}}$ — a measure of the distinguishability of two quantum states.
 
-Аналогия с обучением языку: каждое услышанное предложение — это «наблюдение». Если два языка отличаются сильно (русский и китайский), несколько фраз достаточно для их различения. Если отличаются мало (два близких диалекта), нужны сотни примеров. Информационная граница T-109 говорит: *сколько бы гений ни был, ему не хватит одного предложения, чтобы отличить близкие диалекты* — это не вопрос ума, а вопрос физики информации.
+Analogy with language learning: every sentence heard is an "observation." If two languages differ strongly (Russian and Chinese), a few phrases suffice for their distinction. If they differ little (two closely related dialects), hundreds of examples are needed. The information bound T-109 says: *however brilliant the learner, one sentence will not suffice to distinguish closely related dialects* — this is not a matter of intelligence, but of the physics of information.
 
-#### Теорема T-109 (Информационная граница обучения) [Т] {#теорема-информационная-граница}
+#### Theorem T-109 (Information Bound on Learning) [T] {#теорема-информационная-граница}
 
-:::tip Формулировка
-Для задачи обучения $\mathfrak{L} = (\Theta, \mathcal{A}, \mathcal{R}, \delta)$ с $|\Theta| = k$ гипотезами минимальное число наблюдений:
+:::tip Statement
+For a learning task $\mathfrak{L} = (\Theta, \mathcal{A}, \mathcal{R}, \delta)$ with $|\Theta| = k$ hypotheses, the minimum number of observations:
 
 $$
 n^* \geq n_{\mathrm{info}} := \frac{\ln\!\left(\frac{1}{2\delta}\right)}{\xi_{\mathrm{QCB}}}
 $$
 
-где $\xi_{\mathrm{QCB}}$ — квантовый экспонент Чернова для пары наиболее близких пост-наблюдательных состояний:
+where $\xi_{\mathrm{QCB}}$ is the quantum Chernoff exponent for the pair of closest post-observation states:
 
 $$
 \xi_{\mathrm{QCB}} = -\ln \min_{0 \leq s \leq 1} \mathrm{Tr}\!\left(\Gamma_+^s \cdot \Gamma_-^{1-s}\right)
 $$
 
-а $\Gamma_\pm = \mathrm{Enc}(o|\theta_\pm)[\Gamma]$ — состояния после наблюдения при двух ближайших гипотезах.
+and $\Gamma_\pm = \mathrm{Enc}(o|\theta_\pm)[\Gamma]$ are the states after observation under the two closest hypotheses.
 
-**Универсальная граница:** $\xi_{\mathrm{QCB}} \leq \ln 7$, поэтому:
+**Universal bound:** $\xi_{\mathrm{QCB}} \leq \ln 7$, therefore:
 
 $$
-n_{\mathrm{info}} \geq \frac{\ln(1/(2\delta))}{\ln 7} \quad \text{(абсолютный минимум)}
+n_{\mathrm{info}} \geq \frac{\ln(1/(2\delta))}{\ln 7} \quad \text{(absolute minimum)}
 $$
 :::
 
-**Почему эта граница плотная.** Абсолютный минимум $n_{\mathrm{info}} = \ln(1/(2\delta))/\ln 7$ достигается, когда два наблюдения приводят к ортогональным чистым состояниям в $\mathcal{D}(\mathbb{C}^7)$ — максимально различимым конфигурациям $\Gamma$. Это идеальный случай: «горячо» и «холодно» совершенно непохожи. В реальности гипотезы порождают близкие состояния, и граница растёт как $O(1/\varepsilon^2)$.
+**Why this bound is tight.** The absolute minimum $n_{\mathrm{info}} = \ln(1/(2\delta))/\ln 7$ is achieved when two observations lead to orthogonal pure states in $\mathcal{D}(\mathbb{C}^7)$ — maximally distinguishable configurations of $\Gamma$. This is the ideal case: "hot" and "cold" are completely unlike. In reality hypotheses generate close states, and the bound grows as $O(1/\varepsilon^2)$.
 
-**Доказательство.**
+**Proof.**
 
-1. *Квантовое различение гипотез.* Наблюдение при гипотезе $\theta$ порождает пост-наблюдательное состояние $\Gamma_\theta = \mathrm{Enc}(o|\theta)[\Gamma]$ — CPTP-образ (T-100 [Т]). Задача обучения включает задачу различения хотя бы двух наиболее близких гипотез $\theta_+, \theta_-$.
+1. *Quantum hypothesis discrimination.* Observation under hypothesis $\theta$ generates a post-observation state $\Gamma_\theta = \mathrm{Enc}(o|\theta)[\Gamma]$ — a CPTP image (T-100 [T]). The learning task includes the task of distinguishing at least two closest hypotheses $\theta_+, \theta_-$.
 
-2. *Квантовая граница Чернова.* (Audenaert et al. 2007): для $n$ независимых наблюдений оптимальная ошибка различения двух состояний:
+2. *Quantum Chernoff bound.* (Audenaert et al. 2007): for $n$ independent observations the optimal error of distinguishing two states:
 
 $$
 P_{\mathrm{err}}^{\mathrm{opt}}(n) = \frac{1}{2}\left(\min_{0 \leq s \leq 1} \mathrm{Tr}(\Gamma_+^s \, \Gamma_-^{1-s})\right)^n = \frac{1}{2}\, e^{-n \cdot \xi_{\mathrm{QCB}}}
 $$
 
-3. *Условие надёжности.* Из $P_{\mathrm{err}} \leq \delta$:
+3. *Reliability condition.* From $P_{\mathrm{err}} \leq \delta$:
 
 $$
 \frac{1}{2}\, e^{-n \cdot \xi_{\mathrm{QCB}}} \leq \delta \;\Longrightarrow\; n \geq \frac{\ln(1/(2\delta))}{\xi_{\mathrm{QCB}}}
 $$
 
-4. *Верхняя граница экспонента.* Из T-107 [Т]: информация, извлекаемая одним наблюдением, не превышает количества Холево $\chi(\mathrm{Enc}) \leq \log_2 7$. Quantum Chernoff exponent ограничен относительной энтропией:
+4. *Upper bound on the exponent.* From T-107 [T]: the information extractable from one observation does not exceed the Holevo quantity $\chi(\mathrm{Enc}) \leq \log_2 7$. The quantum Chernoff exponent is bounded by the relative entropy:
 
 $$
 \xi_{\mathrm{QCB}} \leq D(\Gamma_+ \| \Gamma_-) \leq \ln\!\dim\mathcal{H} = \ln 7
 $$
 
-(верхняя граница — для ортогональных чистых состояний в $\mathcal{D}(\mathbb{C}^7)$). $\blacksquare$
+(upper bound — for orthogonal pure states in $\mathcal{D}(\mathbb{C}^7)$). $\blacksquare$
 
-### 2.1 Асимптотика для близких гипотез {#близкие-гипотезы}
+### 2.1 Asymptotics for Close Hypotheses {#близкие-гипотезы}
 
-Если гипотезы $\theta_+, \theta_-$ порождают близкие состояния $\|\Gamma_+ - \Gamma_-\|_1 = \varepsilon \ll 1$, то:
+If hypotheses $\theta_+, \theta_-$ generate close states $\|\Gamma_+ - \Gamma_-\|_1 = \varepsilon \ll 1$, then:
 
 $$
-\xi_{\mathrm{QCB}} \approx \frac{\varepsilon^2}{8} \quad (\text{малый контраст})
+\xi_{\mathrm{QCB}} \approx \frac{\varepsilon^2}{8} \quad (\text{small contrast})
 $$
 
-Подстановка в T-109:
+Substituting into T-109:
 
 $$
 n_{\mathrm{info}} \geq \frac{8 \ln(1/(2\delta))}{\varepsilon^2}
 $$
 
-Это воспроизводит классическое масштабирование $O(1/\varepsilon^2)$ для слабых сигналов. **Отличие от классики:** множитель $1/8$ определяется квантовой геометрией $\mathcal{D}(\mathbb{C}^7)$, а не произвольным шумовым распределением.
+This reproduces the classical scaling $O(1/\varepsilon^2)$ for weak signals. **Difference from classical:** the factor $1/8$ is determined by the quantum geometry of $\mathcal{D}(\mathbb{C}^7)$, not by an arbitrary noise distribution.
 
-### 2.2 Числовые оценки {#числовые-оценки-info}
+### 2.2 Numerical Estimates {#числовые-оценки-info}
 
-| Параметры | $\xi_{\mathrm{QCB}}$ | $n_{\mathrm{info}}$ |
+| Parameters | $\xi_{\mathrm{QCB}}$ | $n_{\mathrm{info}}$ |
 |-----------|----------------------|----------------------|
-| Ортогональные сигналы ($\varepsilon = 2$) | $\ln 7 \approx 1.95$ | $\geq \lceil\ln(1/(2\delta))/1.95\rceil$ |
-| Сильный контраст ($\varepsilon = 0.5$) | $\approx 0.031$ | $\geq \lceil 74 \cdot \ln(1/(2\delta))\rceil$ |
-| Слабый контраст ($\varepsilon = 0.1$) | $\approx 0.00125$ | $\geq \lceil 1846 \cdot \ln(1/(2\delta))\rceil$ |
+| Orthogonal signals ($\varepsilon = 2$) | $\ln 7 \approx 1.95$ | $\geq \lceil\ln(1/(2\delta))/1.95\rceil$ |
+| Strong contrast ($\varepsilon = 0.5$) | $\approx 0.031$ | $\geq \lceil 74 \cdot \ln(1/(2\delta))\rceil$ |
+| Weak contrast ($\varepsilon = 0.1$) | $\approx 0.00125$ | $\geq \lceil 1846 \cdot \ln(1/(2\delta))\rceil$ |
 
-При $\delta = 0.05$: $\ln(1/(2\cdot0.05)) = \ln 10 \approx 2.30$
+At $\delta = 0.05$: $\ln(1/(2\cdot0.05)) = \ln 10 \approx 2.30$
 
-| Контраст | $n_{\mathrm{info}}$ при $\delta = 0.05$ |
+| Contrast | $n_{\mathrm{info}}$ at $\delta = 0.05$ |
 |----------|----------------------------------------|
-| $\varepsilon = 2$ (максимальный) | $\geq 2$ |
+| $\varepsilon = 2$ (maximum) | $\geq 2$ |
 | $\varepsilon = 0.5$ | $\geq 171$ |
 | $\varepsilon = 0.1$ | $\geq 4246$ |
 
 ---
 
-## 3. Динамическая нижняя граница (T-110) [Т] {#динамическая-граница}
+## 3. Dynamical Lower Bound (T-110) [T] {#динамическая-граница}
 
-### Интуиция: почему динамика ограничивает обучение
+### Intuition: Why Dynamics Limits Learning
 
-Информационная граница говорит, сколько наблюдений *нужно*. Динамическая граница говорит, сколько наблюдений система *успеет усвоить*. Разница принципиальна.
+The information bound says how many observations are *needed*. The dynamical bound says how many observations the system will *manage to integrate*. The difference is fundamental.
 
-Представьте студента на лекции. Профессор произносит слова со скоростью 150 слов в минуту — информации достаточно. Но если студент записывает конспект медленно, часть информации теряется ещё до того, как она осмыслена. Более того, ранние записи *стираются из краткосрочной памяти*, пока студент обрабатывает новые. Это конкуренция двух процессов: записи (каждое наблюдение добавляет сигнал) и стирания (внутренняя динамика размывает старый сигнал).
+Imagine a student at a lecture. The professor speaks at 150 words per minute — enough information. But if the student takes notes slowly, part of the information is lost before it can be comprehended. Moreover, early notes *are erased from short-term memory* while the student is processing new ones. This is a competition between two processes: recording (each observation adds signal) and erasure (internal dynamics blurs the old signal).
 
-В КК стирание имеет точное имя: **Фано-контракция** с параметром $\alpha = 2/3$ (T-39a). Линейная часть $\mathcal{L}_0$ линдбладиана экспоненциально гонит $\Gamma$ к максимально смешанному состоянию $I/7$. Каждое наблюдение — это «запись» амплитуды $\varepsilon$, но предыдущие записи затухают со скоростью $e^{-\alpha\tau}$. Стационарный предел определяет, *вообще ли возможно* накопить достаточный сигнал.
+In CC erasure has a precise name: **Fano contraction** with parameter $\alpha = 2/3$ (T-39a). The linear part $\mathcal{L}_0$ of the Lindbladian exponentially drives $\Gamma$ toward the maximally mixed state $I/7$. Each observation is a "recording" of amplitude $\varepsilon$, but previous recordings decay at rate $e^{-\alpha\tau}$. The stationary limit determines whether it is *possible at all* to accumulate sufficient signal.
 
-Аналогия из нейронауки: кратковременная память распадается за 15–30 секунд (закон Петерсонов). Чтобы перевести информацию в долговременную память, нужна *консолидация* — и она требует времени. Динамическая граница T-110 — это формальное выражение этого нейропсихологического факта в языке матрицы когерентности.
+Analogy from neuroscience: short-term memory decays in 15–30 seconds (Peterson's law). To transfer information to long-term memory, *consolidation* is required — and it takes time. The dynamical bound T-110 is the formal expression of this neuropsychological fact in the language of the coherence matrix.
 
-#### Теорема T-110 (Динамическая граница обучения) [Т] {#теорема-динамическая-граница}
+#### Theorem T-110 (Dynamical Bound on Learning) [T] {#теорема-динамическая-граница}
 
-:::tip Формулировка
-Для задачи обучения с наблюдениями амплитуды $\varepsilon = \|\Gamma_+ - \Gamma_-\|_1$ и интервалом $\delta\tau$ между наблюдениями:
+:::tip Statement
+For a learning task with observations of amplitude $\varepsilon = \|\Gamma_+ - \Gamma_-\|_1$ and interval $\delta\tau$ between observations:
 
 $$
 n^* \geq n_{\mathrm{dyn}} := \frac{1}{\alpha \cdot \delta\tau}\,\ln\!\left(\frac{d_{\mathrm{disc}}}{\varepsilon}\cdot(\alpha\,\delta\tau)\right)
 $$
 
-где:
-- $\alpha = \lambda_{\mathrm{gap}} = 2/3$ — скорость контракции (T-39a [Т])
-- $d_{\mathrm{disc}}$ — минимальное Бюресово расстояние для надёжной дискриминации
-- $\varepsilon$ — амплитуда сигнала одного наблюдения
+where:
+- $\alpha = \lambda_{\mathrm{gap}} = 2/3$ — contraction rate (T-39a [T])
+- $d_{\mathrm{disc}}$ — minimum Bures distance for reliable discrimination
+- $\varepsilon$ — signal amplitude of one observation
 
-При естественном масштабе $\delta\tau = 1/\alpha$ (одно наблюдение за время релаксации):
+At the natural scale $\delta\tau = 1/\alpha$ (one observation per relaxation time):
 
 $$
 n_{\mathrm{dyn}} \geq \ln\!\left(\frac{d_{\mathrm{disc}}}{\varepsilon}\right) + 1
 $$
 :::
 
-**Что происходит на пределе.** Если $\varepsilon \to 0$ при фиксированном $d_{\mathrm{disc}}$, динамическая граница расходится логарифмически — слишком слабые сигналы стираются быстрее, чем накапливаются. Если же $\delta\tau \to 0$ (наблюдения слишком часты), каждый новый сигнал приходит до того, как предыдущий успел повлиять на $\Gamma$, и эффективная скорость обучения не растёт. Существует оптимальный темп наблюдений $\delta\tau^* \sim 1/\alpha$, при котором динамическая граница минимальна.
+**What happens at the limit.** If $\varepsilon \to 0$ at fixed $d_{\mathrm{disc}}$, the dynamical bound diverges logarithmically — signals that are too weak are erased faster than they accumulate. If $\delta\tau \to 0$ (observations too frequent), each new signal arrives before the previous one has had time to affect $\Gamma$, and the effective learning rate does not increase. There exists an optimal observation rate $\delta\tau^* \sim 1/\alpha$ at which the dynamical bound is minimal.
 
-**Доказательство.**
+**Proof.**
 
-1. *Контракция Фано.* [Линейная часть $\mathcal{L}_0$](/docs/core/dynamics/evolution#логический-лиувиллиан) контрактирует все отклонения от $I/7$ с экспоненциальной скоростью $\alpha = 2/3$ (T-39a [Т]):
+1. *Fano contraction.* [Linear part $\mathcal{L}_0$](/docs/core/dynamics/evolution#логический-лиувиллиан) contracts all deviations from $I/7$ at exponential rate $\alpha = 2/3$ (T-39a [T]):
 
 $$
 \|\Gamma(\tau) - I/7\|_{\mathrm{HS}} \leq e^{-\alpha\tau}\|\Gamma(0) - I/7\|_{\mathrm{HS}}
 $$
 
-Это означает, что **информация, записанная в $\Gamma$, затухает** со временем.
+This means that **information recorded in $\Gamma$ decays** over time.
 
-2. *Накопление сигнала.* Наблюдение в момент $\tau_i = i \cdot \delta\tau$ вносит сигнал амплитуды $\varepsilon$ в $\Gamma$. К моменту $\tau_n = n \cdot \delta\tau$ вклад $i$-го наблюдения затух до $\varepsilon \cdot e^{-\alpha(n-i)\delta\tau}$. Суммарный накопленный сигнал:
+2. *Signal accumulation.* Observation at moment $\tau_i = i \cdot \delta\tau$ contributes signal of amplitude $\varepsilon$ to $\Gamma$. By moment $\tau_n = n \cdot \delta\tau$ the contribution of the $i$-th observation has decayed to $\varepsilon \cdot e^{-\alpha(n-i)\delta\tau}$. Total accumulated signal:
 
 $$
 S(n) = \varepsilon \sum_{i=0}^{n-1} e^{-\alpha(n-1-i)\delta\tau} = \varepsilon \cdot \frac{1 - e^{-\alpha n \delta\tau}}{1 - e^{-\alpha \delta\tau}}
 $$
 
-3. *Стационарный предел.* При $n \to \infty$:
+3. *Stationary limit.* As $n \to \infty$:
 
 $$
 S_\infty = \frac{\varepsilon}{1 - e^{-\alpha\delta\tau}}
 $$
 
-4. *Условие дискриминации.* Для надёжного различения $S(n) \geq d_{\mathrm{disc}}$:
+4. *Discrimination condition.* For reliable distinction $S(n) \geq d_{\mathrm{disc}}$:
 
 $$
 \varepsilon \cdot \frac{1 - e^{-\alpha n \delta\tau}}{1 - e^{-\alpha\delta\tau}} \geq d_{\mathrm{disc}}
@@ -294,407 +294,407 @@ $$
 n \geq \frac{1}{\alpha\delta\tau}\,\ln\!\left(\frac{1}{1 - d_{\mathrm{disc}}(1 - e^{-\alpha\delta\tau})/\varepsilon}\right)
 $$
 
-При $d_{\mathrm{disc}} \ll S_\infty$ (типичный режим): $n_{\mathrm{dyn}} \approx \frac{1}{\alpha\delta\tau}\ln\frac{d_{\mathrm{disc}}(1-e^{-\alpha\delta\tau})}{\varepsilon \cdot \alpha\delta\tau}$ (первое приближение). Упрощая для $\delta\tau = 1/\alpha$:
+At $d_{\mathrm{disc}} \ll S_\infty$ (typical regime): $n_{\mathrm{dyn}} \approx \frac{1}{\alpha\delta\tau}\ln\frac{d_{\mathrm{disc}}(1-e^{-\alpha\delta\tau})}{\varepsilon \cdot \alpha\delta\tau}$ (first approximation). Simplifying for $\delta\tau = 1/\alpha$:
 
 $$
 n_{\mathrm{dyn}} \geq \ln\!\left(\frac{d_{\mathrm{disc}}}{\varepsilon}\right) + 1
 $$
 
-(с использованием $1 - e^{-1} \approx 0.632$). $\blacksquare$
+(using $1 - e^{-1} \approx 0.632$). $\blacksquare$
 
-### 3.1 Физический смысл {#физический-смысл-dyn}
+### 3.1 Physical Meaning {#физический-смысл-dyn}
 
-Динамическая граница выражает **конкуренцию записи и стирания**:
+The dynamical bound expresses the **competition between recording and erasure**:
 
-- **Запись:** каждое наблюдение добавляет сигнал $\varepsilon$ в $\Gamma$
-- **Стирание:** Фано-контракция удаляет $\alpha \cdot \delta\Gamma$ за единицу времени
-- **Баланс:** стационарный сигнал $S_\infty = \varepsilon / (1 - e^{-\alpha\delta\tau})$
+- **Recording:** each observation adds signal $\varepsilon$ to $\Gamma$
+- **Erasure:** Fano contraction removes $\alpha \cdot \delta\Gamma$ per unit time
+- **Balance:** stationary signal $S_\infty = \varepsilon / (1 - e^{-\alpha\delta\tau})$
 
-Если $S_\infty < d_{\mathrm{disc}}$, задача **неразрешима при данных параметрах** — контракция стирает сигнал быстрее, чем он накапливается. Необходимое условие разрешимости:
+If $S_\infty < d_{\mathrm{disc}}$, the task is **unsolvable at the given parameters** — contraction erases the signal faster than it accumulates. Necessary condition for solvability:
 
 $$
 \varepsilon > d_{\mathrm{disc}} \cdot (1 - e^{-\alpha\delta\tau})
 $$
 
-### 3.2 Роль регенерации {#роль-регенерации}
+### 3.2 Role of Regeneration {#роль-регенерации}
 
-Регенеративный член $\mathcal{R}[\Gamma, E]$ **противодействует контракции** для компонент, согласованных с $\rho_*$. После обучения (когда $\rho_*$ обновился):
+The regenerative term $\mathcal{R}[\Gamma, E]$ **counteracts contraction** for components aligned with $\rho_*$. After learning (when $\rho_*$ has been updated):
 
-- Компоненты $\Gamma$, согласованные с обученным $\rho_*$, **усиливаются** регенерацией
-- Компоненты, не согласованные, продолжают затухать
+- Components of $\Gamma$ aligned with the learned $\rho_*$ are **strengthened** by regeneration
+- Components not aligned continue to decay
 
-Это означает, что **обученная информация стабилизируется в аттракторе**, а шум вымывается. Эффективная скорость стирания для обученного сигнала:
+This means that **learned information is stabilised in the attractor**, while noise is washed out. Effective erasure rate for the learned signal:
 
 $$
 \alpha_{\mathrm{eff}} = \alpha - \kappa = \frac{2}{3} - \kappa
 $$
 
-При $\kappa > 2/3$ регенерация доминирует — аттрактор устойчив. Из [T-98 (баланс)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [Т]: это условие выполнено для жизнеспособных состояний с $P > 2/7$.
+At $\kappa > 2/3$ regeneration dominates — the attractor is stable. From [T-98 (balance)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T]: this condition is satisfied for viable states with $P > 2/7$.
 
 ---
 
-## 4. Стабилизационная нижняя граница (T-111) [Т] {#стабилизационная-граница}
+## 4. Stabilisation Lower Bound (T-111) [T] {#стабилизационная-граница}
 
-### Интуиция: почему стабильность ограничивает обучение
+### Intuition: Why Stability Limits Learning
 
-Первые две границы описывают, *хватает ли* информации и *успевает ли* система её обработать. Третья граница добавляет вопрос, который классическая теория обучения обычно игнорирует: **не убьёт ли обучение ученика?**
+The first two bounds describe whether *enough* information exists and whether the system *manages* to process it. The third bound adds a question that classical learning theory usually ignores: **will learning kill the learner?**
 
-Это не метафора. В КК система жизнеспособна при $P > P_{\mathrm{crit}} = 2/7$. Каждое наблюдение — это возмущение, которое толкает $\Gamma$ прочь от текущего аттрактора. Слишком сильное возмущение выталкивает $P$ ниже порога жизнеспособности. Система, которая учится слишком быстро, рискует дестабилизироваться.
+This is not a metaphor. In CC the system is viable at $P > P_{\mathrm{crit}} = 2/7$. Each observation is a perturbation that pushes $\Gamma$ away from the current attractor. Too strong a perturbation pushes $P$ below the viability threshold. A system that learns too fast risks destabilising itself.
 
-Биологическая параллель очевидна: травматический опыт может быть информативен (один раз — и на всю жизнь), но слишком сильный стресс вызывает ПТСР или даже гибель. Терапевт знает, что *дозировка* важнее *содержания*: правильная информация, поданная слишком быстро, разрушает вместо того, чтобы исцелять.
+The biological parallel is clear: traumatic experience can be informative (once — and for life), but too strong a stress causes PTSD or even death. A therapist knows that *dosage* matters more than *content*: the right information, delivered too quickly, destroys rather than heals.
 
-В контексте обучения нейросетей стабилизационная граница соответствует интуиции о выборе learning rate: слишком большой — и обучение расходится; слишком маленький — и обучение не сходится. Но в КК это не просто инженерная эвристика, а **теорема**: максимальная амплитуда наблюдения $\varepsilon$ ограничена радиусом устойчивости $r_{\mathrm{stab}}$, который строго вычисляется из текущего состояния $\Gamma$.
+In the context of neural network training the stabilisation bound corresponds to the intuition about choosing a learning rate: too large — and training diverges; too small — and training fails to converge. But in CC this is not merely an engineering heuristic, but a **theorem**: the maximum observation amplitude $\varepsilon$ is bounded by the stability radius $r_{\mathrm{stab}}$, which is strictly computed from the current state $\Gamma$.
 
-#### Теорема T-111 (Стабилизационная граница обучения) [Т] {#теорема-стабилизационная-граница}
+#### Theorem T-111 (Stabilisation Bound on Learning) [T] {#теорема-стабилизационная-граница}
 
-:::tip Формулировка
-Обучение не должно дестабилизировать голоном. Амплитуда наблюдения ограничена радиусом устойчивости (T-104 [Т]):
+:::tip Statement
+Learning must not destabilise the holon. The observation amplitude is bounded by the stability radius (T-104 [T]):
 
 $$
 \varepsilon \leq r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}
 $$
 
-При наличии стохастического шума $\eta$ в наблюдениях (SNR $= \varepsilon_{\mathrm{signal}} / \eta$), число наблюдений для преодоления шума:
+In the presence of stochastic noise $\eta$ in observations (SNR $= \varepsilon_{\mathrm{signal}} / \eta$), the number of observations required to overcome noise:
 
 $$
 n^* \geq n_{\mathrm{stab}} := \frac{1}{\mathrm{SNR}^2} \cdot \frac{\ln(1/(2\delta))}{(\xi_{\mathrm{QCB}}^{\mathrm{eff}})^2 / \xi_{\mathrm{QCB}}}
 $$
 
-В типичном режиме ($\mathrm{SNR} \ll 1$, шумная среда):
+In the typical regime ($\mathrm{SNR} \ll 1$, noisy environment):
 
 $$
 n_{\mathrm{stab}} \geq \frac{1}{\mathrm{SNR}^2}
 $$
 :::
 
-**Что происходит на пределе.** Рассмотрим предельные случаи:
-- При $P \to 2/7$ (система на границе жизнеспособности): $r_{\mathrm{stab}} \to 0$, и *любое* нетривиальное наблюдение опасно. Система «заморожена» — она не может учиться, пока не восстановит запас чистоты. Это КК-аналог клинического состояния: пациент в тяжёлой депрессии не усваивает терапевтические интервенции, потому что его ресурсы исчерпаны.
-- При $\mathrm{SNR} \to 0$ (чистый шум): $n_{\mathrm{stab}} \to \infty$ — обучение невозможно, не потому что информации нет, а потому что каждый полезный сигнал тонет в шуме, а шум расшатывает систему.
+**What happens at the limit.** Consider limiting cases:
+- At $P \to 2/7$ (system at the viability boundary): $r_{\mathrm{stab}} \to 0$, and *any* non-trivial observation is dangerous. The system is "frozen" — it cannot learn until it has restored its purity reserve. This is the CC analogue of the clinical state: a patient in severe depression does not absorb therapeutic interventions, because their resources are exhausted.
+- At $\mathrm{SNR} \to 0$ (pure noise): $n_{\mathrm{stab}} \to \infty$ — learning is impossible, not because there is no information, but because every useful signal drowns in the noise, while the noise destabilises the system.
 
-**Доказательство.**
+**Proof.**
 
-1. *Ограничение амплитуды.* Из T-104 [Т]: пертурбация $h^{\mathrm{ext}}$ с $\|h^{\mathrm{ext}}\| > r_{\mathrm{stab}}$ может вывести $\Gamma$ за границу жизнеспособности $P = 2/7$. Поскольку обучение требует $P > 2/7$ (жизнеспособность), амплитуда каждого наблюдения ограничена сверху.
+1. *Amplitude constraint.* From T-104 [T]: a perturbation $h^{\mathrm{ext}}$ with $\|h^{\mathrm{ext}}\| > r_{\mathrm{stab}}$ can drive $\Gamma$ beyond the viability boundary $P = 2/7$. Since learning requires $P > 2/7$ (viability), the amplitude of each observation is bounded from above.
 
-2. *Шумовая модель.* Каждое наблюдение содержит полезный сигнал $\varepsilon_{\mathrm{signal}}$ и шум $\eta$:
+2. *Noise model.* Each observation contains useful signal $\varepsilon_{\mathrm{signal}}$ and noise $\eta$:
 
 $$
 h^{\mathrm{ext}}_t = h^{\mathrm{signal}}_t + h^{\mathrm{noise}}_t, \quad \|h^{\mathrm{noise}}\| = \eta
 $$
 
-Шум входит через диссипативный канал $h^{(D)}$ ([наиболее опасный канал](./stability#радиус-устойчивости)). Ограничение по T-104:
+Noise enters through the dissipative channel $h^{(D)}$ ([most dangerous channel](./stability#радиус-устойчивости)). Constraint from T-104:
 
 $$
 \varepsilon_{\mathrm{signal}} + \eta \leq r_{\mathrm{stab}}
 $$
 
-3. *Усреднение шума.* Для $n$ наблюдений с независимым шумом, эффективный сигнал растёт как $\sqrt{n} \cdot \varepsilon_{\mathrm{signal}}$, а шум — как $\sqrt{n} \cdot \eta$. Отношение сигнал/шум после $n$ наблюдений:
+3. *Noise averaging.* For $n$ observations with independent noise, effective signal grows as $\sqrt{n} \cdot \varepsilon_{\mathrm{signal}}$, and noise — as $\sqrt{n} \cdot \eta$. Signal-to-noise ratio after $n$ observations:
 
 $$
 \mathrm{SNR}_n = \mathrm{SNR} \cdot \sqrt{n}
 $$
 
-4. *Условие надёжности.* Для $\mathrm{SNR}_n \geq \mathrm{SNR}_{\mathrm{thresh}}$ (порог надёжной дискриминации):
+4. *Reliability condition.* For $\mathrm{SNR}_n \geq \mathrm{SNR}_{\mathrm{thresh}}$ (reliable discrimination threshold):
 
 $$
 n \geq \left(\frac{\mathrm{SNR}_{\mathrm{thresh}}}{\mathrm{SNR}}\right)^2
 $$
 
-Связь с T-69 ([топологическая защита](/docs/core/dynamics/composite-systems#теорема-тополог-защита) [Т]): барьеры $\geq 6\mu^2$ гарантируют, что **дискретные фазовые переходы невозможны** — обучение всегда непрерывно, и случайный шум не может вызвать катастрофический скачок. $\blacksquare$
+Connection with T-69 ([topological protection](/docs/core/dynamics/composite-systems#теорема-тополог-защита) [T]): barriers $\geq 6\mu^2$ guarantee that **discrete phase transitions are impossible** — learning is always continuous, and random noise cannot cause a catastrophic jump. $\blacksquare$
 
-### 4.1 Компромисс обучение–стабильность {#компромисс-обучение-стабильность}
+### 4.1 Learning-Stability Trade-off {#компромисс-обучение-стабильность}
 
-Существует фундаментальный компромисс: сильные наблюдения ($\varepsilon$ велико) ускоряют обучение (уменьшают $n_{\mathrm{info}}$ и $n_{\mathrm{dyn}}$), но угрожают стабильности (увеличивают риск выхода за $\partial\mathcal{V}$).
+There exists a fundamental trade-off: strong observations (large $\varepsilon$) accelerate learning (reduce $n_{\mathrm{info}}$ and $n_{\mathrm{dyn}}$), but threaten stability (increase the risk of crossing $\partial\mathcal{V}$).
 
-**Оптимальная амплитуда** — та, при которой $n_{\mathrm{info}} = n_{\mathrm{stab}}$:
+**Optimal amplitude** — the one at which $n_{\mathrm{info}} = n_{\mathrm{stab}}$:
 
 $$
 \varepsilon^* = r_{\mathrm{stab}} \cdot \frac{\mathrm{SNR}}{1 + \mathrm{SNR}}
 $$
 
-Подстановка в T-109 даёт оптимальную скорость обучения при заданном запасе устойчивости $P - 2/7$.
+Substituting into T-109 gives the optimal learning rate at a given stability reserve $P - 2/7$.
 
-### 4.2 Три зоны стабильности {#три-зоны-стабильности}
+### 4.2 Three Stability Zones {#три-зоны-стабильности}
 
-Из [T-106 (диагностические режимы)](./diagnostics#вывод-порогов) [С при калибровке]:
+From [T-106 (diagnostic regimes)](./diagnostics#вывод-порогов) [C under calibration]:
 
-| Зона | $\|\sigma_{\mathrm{sys}}\|$ | Доступный $r_{\mathrm{stab}}$ | Режим обучения |
+| Zone | $\|\sigma_{\mathrm{sys}}\|$ | Available $r_{\mathrm{stab}}$ | Learning mode |
 |------|------|------|------|
-| Норма | $< \sigma_1$ | Большой | Быстрое обучение — можно использовать сильные сигналы |
-| Предупреждение | $\sigma_1 < \cdot < \sigma_2$ | Средний | Осторожное обучение — ограничить $\varepsilon$ |
-| Критический | $> \sigma_2$ | Малый | Обучение остановлено — приоритет выживания |
+| Normal | $< \sigma_1$ | Large | Fast learning — strong signals can be used |
+| Warning | $\sigma_1 < \cdot < \sigma_2$ | Medium | Careful learning — limit $\varepsilon$ |
+| Critical | $> \sigma_2$ | Small | Learning halted — survival priority |
 
 ---
 
-## 5. Комбинированная оптимальная граница (T-112) [Т] {#комбинированная-граница}
+## 5. Combined Optimal Bound (T-112) [T] {#комбинированная-граница}
 
-### Интуиция: три замка на одной двери
+### Intuition: Three Locks on One Door
 
-Каждая из трёх границ — необходимое условие, но ни одна из них не является достаточной. Они описывают три *разных* механизма, ограничивающих обучение:
+Each of the three bounds is a necessary condition, but none of them is sufficient. They describe three *different* mechanisms limiting learning:
 
-- **T-109** (информация): «достаточно ли данных?» — ограничение на *количество* наблюдений
-- **T-110** (динамика): «успевает ли система?» — ограничение на *скорость* усвоения
-- **T-111** (стабильность): «выдержит ли система?» — ограничение на *силу* воздействий
+- **T-109** (information): "is there enough data?" — constraint on the *quantity* of observations
+- **T-110** (dynamics): "can the system keep up?" — constraint on the *rate* of integration
+- **T-111** (stability): "will the system hold?" — constraint on the *strength* of influences
 
-Как три замка на одной двери, все три должны быть открыты одновременно. Бутылочное горлышко определяется самым медленным из трёх — самым крепким замком.
+Like three locks on one door, all three must be opened simultaneously. The bottleneck is determined by the slowest of the three — the strongest lock.
 
-Тренировка нейросети даёт хорошую иллюстрацию. В начале обучения, когда модель далека от оптимума, узким местом обычно является информация (нужно просто больше данных). В середине — динамика (модель медленно перестраивает веса). К концу — стабильность (каждый шаг обучения рискует ухудшить уже достигнутое). Оптимальный планировщик learning rate интуитивно переключается между этими режимами — КК делает это переключение *теоремой*.
+Neural network training provides a good illustration. At the start of training, when the model is far from the optimum, the bottleneck is usually information (one simply needs more data). In the middle — dynamics (the model slowly restructures its weights). Toward the end — stability (each training step risks worsening what has already been achieved). An optimal learning rate scheduler intuitively switches between these regimes — CC makes this switching a *theorem*.
 
-#### Теорема T-112 (Оптимальная граница обучения) [Т] {#теорема-оптимальная-граница}
+#### Theorem T-112 (Optimal Learning Bound) [T] {#теорема-оптимальная-граница}
 
-:::tip Формулировка
-Минимальное число наблюдений для решения задачи обучения $\mathfrak{L}$:
+:::tip Statement
+Minimum number of observations for solving learning task $\mathfrak{L}$:
 
 $$
 n^*(\mathfrak{L}) \geq n_{\mathrm{opt}} := \max\!\left(n_{\mathrm{info}},\; n_{\mathrm{dyn}},\; n_{\mathrm{stab}}\right)
 $$
 
-где:
-- $n_{\mathrm{info}} = \ln(1/(2\delta)) / \xi_{\mathrm{QCB}}$ — информационная граница (T-109)
-- $n_{\mathrm{dyn}} = \frac{1}{\alpha\delta\tau}\ln\frac{d_{\mathrm{disc}}(1-e^{-\alpha\delta\tau})}{\varepsilon}$ — динамическая граница (T-110)
-- $n_{\mathrm{stab}} = (\mathrm{SNR}_{\mathrm{thresh}} / \mathrm{SNR})^2$ — стабилизационная граница (T-111)
+where:
+- $n_{\mathrm{info}} = \ln(1/(2\delta)) / \xi_{\mathrm{QCB}}$ — information bound (T-109)
+- $n_{\mathrm{dyn}} = \frac{1}{\alpha\delta\tau}\ln\frac{d_{\mathrm{disc}}(1-e^{-\alpha\delta\tau})}{\varepsilon}$ — dynamical bound (T-110)
+- $n_{\mathrm{stab}} = (\mathrm{SNR}_{\mathrm{thresh}} / \mathrm{SNR})^2$ — stabilisation bound (T-111)
 
-Обучение проходит через **три режима**, определяемых узким местом:
+Learning passes through **three regimes**, determined by the bottleneck:
 
 $$
 n_{\mathrm{opt}} = \begin{cases}
-n_{\mathrm{info}} & \text{информационно-ограниченный (высокий SNR, медленный канал)} \\
-n_{\mathrm{dyn}} & \text{динамически-ограниченный (быстрый канал, медленная динамика)} \\
-n_{\mathrm{stab}} & \text{стабилизационно-ограниченный (шумная среда, малый запас } P)
+n_{\mathrm{info}} & \text{information-limited (high SNR, slow channel)} \\
+n_{\mathrm{dyn}} & \text{dynamically-limited (fast channel, slow dynamics)} \\
+n_{\mathrm{stab}} & \text{stabilisation-limited (noisy environment, small } P \text{ reserve)}
 \end{cases}
 $$
 :::
 
-**Доказательство.** Каждая из трёх границ — необходимое условие. Если хотя бы одна из них не выполнена:
+**Proof.** Each of the three bounds is a necessary condition. If at least one of them is not satisfied:
 
-- $n < n_{\mathrm{info}}$: недостаточно информации для различения гипотез → $P_{\mathrm{err}} > \delta$
-- $n < n_{\mathrm{dyn}}$: динамика не успела интегрировать сигнал → $S(n) < d_{\mathrm{disc}}$
-- $n < n_{\mathrm{stab}}$: шум доминирует над сигналом → ненадёжная дискриминация
+- $n < n_{\mathrm{info}}$: insufficient information to distinguish hypotheses → $P_{\mathrm{err}} > \delta$
+- $n < n_{\mathrm{dyn}}$: dynamics has not managed to integrate the signal → $S(n) < d_{\mathrm{disc}}$
+- $n < n_{\mathrm{stab}}$: noise dominates over signal → unreliable discrimination
 
-Поскольку все три условия необходимы одновременно, минимальное $n$ есть максимум из трёх. $\blacksquare$
+Since all three conditions are simultaneously necessary, the minimum $n$ is the maximum of the three. $\blacksquare$
 
-### 5.1 Диаграмма режимов {#диаграмма-режимов}
+### 5.1 Regime Diagram {#диаграмма-режимов}
 
 ```mermaid
 graph TD
-    START["Задача обучения L"] --> CHECK_INFO{"n_info > n_dyn<br/>и n_info > n_stab?"}
-    CHECK_INFO -->|Да| INFO["Информационно-ограниченный<br/>n* ≈ n_info<br/>Узкое место: ёмкость канала"]
-    CHECK_INFO -->|Нет| CHECK_DYN{"n_dyn > n_stab?"}
-    CHECK_DYN -->|Да| DYN["Динамически-ограниченный<br/>n* ≈ n_dyn<br/>Узкое место: спектральная щель"]
-    CHECK_DYN -->|Нет| STAB["Стабилизационно-ограниченный<br/>n* ≈ n_stab<br/>Узкое место: шум среды"]
+    START["Learning task L"] --> CHECK_INFO{"n_info > n_dyn<br/>and n_info > n_stab?"}
+    CHECK_INFO -->|Yes| INFO["Information-limited<br/>n* ≈ n_info<br/>Bottleneck: channel capacity"]
+    CHECK_INFO -->|No| CHECK_DYN{"n_dyn > n_stab?"}
+    CHECK_DYN -->|Yes| DYN["Dynamically-limited<br/>n* ≈ n_dyn<br/>Bottleneck: spectral gap"]
+    CHECK_DYN -->|No| STAB["Stabilisation-limited<br/>n* ≈ n_stab<br/>Bottleneck: environmental noise"]
 
-    INFO --> OPT["Оптимизация"]
+    INFO --> OPT["Optimisation"]
     DYN --> OPT
     STAB --> OPT
 
-    OPT -->|"Увеличить ε"| INFO
-    OPT -->|"Увеличить δτ"| DYN
-    OPT -->|"Уменьшить η"| STAB
+    OPT -->|"Increase ε"| INFO
+    OPT -->|"Increase δτ"| DYN
+    OPT -->|"Reduce η"| STAB
 
     style INFO fill:#d4edda,stroke:#333
     style DYN fill:#fff3cd,stroke:#333
     style STAB fill:#f8d7da,stroke:#333
 ```
 
-### 5.2 Включение времени генезиса {#генезис-плюс-обучение}
+### 5.2 Including Genesis Time {#генезис-плюс-обучение}
 
-Для системы, стартующей с $\Gamma = I/7$ (полностью смешанное состояние), полное время до решения задачи включает [генезис](/docs/core/foundations/axiom-omega#genesis-protocol):
+For a system starting from $\Gamma = I/7$ (fully mixed state), total time to solving the task includes [genesis](/docs/core/foundations/axiom-omega#genesis-protocol):
 
 $$
 n_{\mathrm{total}} = \underbrace{n_{\mathrm{genesis}}}_{\leq \lceil\tau_{\mathrm{genesis}}/\delta\tau\rceil} + \underbrace{n_{\mathrm{opt}}}_{\text{T-112}}
 $$
 
-где $\tau_{\mathrm{genesis}} \leq 7\ln 7 \approx 13.6$ (T-59 [Т]) — время bootstrap (при $\kappa_{\mathrm{bootstrap}} = 1/7$).
+where $\tau_{\mathrm{genesis}} \leq 7\ln 7 \approx 13.6$ (T-59 [T]) — bootstrap time (at $\kappa_{\mathrm{bootstrap}} = 1/7$).
 
-При $\delta\tau = 1$: $n_{\mathrm{total}} \leq 14 + n_{\mathrm{opt}}$.
+At $\delta\tau = 1$: $n_{\mathrm{total}} \leq 14 + n_{\mathrm{opt}}$.
 
 ---
 
 <a id="теорема-t-113"></a>
 
-## 6. Оптимальность N=7 для обучения (T-113) [Т] {#оптимальность-n7}
+## 6. Optimality of N=7 for Learning (T-113) [T] {#оптимальность-n7}
 
-### Интуиция: почему обучение требует определённой архитектуры
+### Intuition: Why Learning Requires a Specific Architecture
 
-До сих пор мы выводили границы обучения для фиксированной архитектуры $N = 7$. Теорема T-113 задаёт более глубокий вопрос: какова *минимальная* архитектура, способная к обучению через регенерацию?
+So far we have derived learning bounds for the fixed architecture $N = 7$. Theorem T-113 poses a deeper question: what is the *minimal* architecture capable of learning through regeneration?
 
-Ответ неожиданно точен: $N = 7$ — ни больше, ни меньше. Системы с $N < 7$ не способны к обучению *в принципе*, а системы с $N > 7$ могут учиться, но делают это менее эффективно.
+The answer is surprisingly precise: $N = 7$ — neither more nor less. Systems with $N < 7$ are incapable of learning *in principle*, while systems with $N > 7$ can learn, but do so less efficiently.
 
-Ключевое звено — **самонаблюдение**. Обучение в КК — это обновление самомодели $\rho_*$. Обновление требует *сравнения* текущего состояния с моделью, то есть $R > 0$ (ненулевая рефлексия). А рефлексия, в свою очередь, требует замещающего канала, который опирается на Фано-плоскость PG(2,2). И Фано-плоскость существует только при $N = 7$.
+The key link is **self-observation**. Learning in CC is the update of the self-model $\rho_*$. Updating requires *comparing* the current state with the model, i.e., $R > 0$ (non-zero reflection). And reflection, in turn, requires a replacement channel that relies on the Fano plane PG(2,2). And the Fano plane exists only at $N = 7$.
 
-Аналогия с детским развитием: новорождённый не «обучается» в строгом смысле — он ещё не имеет самомодели, которую можно обновить. Обучение начинается, когда ребёнок *осознаёт разрыв* между ожиданием и реальностью — а это требует самонаблюдения. Теорема T-113 делает эту педагогическую интуицию строгой: без рефлексии ($R = 0$) нет обучения ($n^* = \infty$), а рефлексия требует Фано-структуры ($N = 7$).
+Analogy with child development: a newborn does not "learn" in the strict sense — they do not yet have a self-model that can be updated. Learning begins when the child *perceives the gap* between expectation and reality — and this requires self-observation. Theorem T-113 makes this pedagogical intuition rigorous: without reflection ($R = 0$) there is no learning ($n^* = \infty$), and reflection requires Fano structure ($N = 7$).
 
-#### Теорема T-113 (Минимальность N=7 для обучения) [Т] {#теорема-минимальность-n7}
+#### Theorem T-113 (Minimality of N=7 for Learning) [T] {#теорема-минимальность-n7}
 
-:::tip Формулировка
-Пусть $N$ — размерность внутреннего пространства голонома $\mathcal{H} = \mathbb{C}^N$. Тогда:
+:::tip Statement
+Let $N$ be the dimension of the internal space of the holon $\mathcal{H} = \mathbb{C}^N$. Then:
 
-1. **Для $N < 7$:** обучение через регенерацию невозможно: $n^* = \infty$
-2. **Для $N = 7$:** обучение возможно с конечной оптимальной границей $n_{\mathrm{opt}}$ (T-112)
-3. **Для $N > 7$:** обучение возможно, но требует строго больше ресурсов:
-   - Время генезиса: $\tau_{\mathrm{genesis}}(N) \propto N \ln N > \tau_{\mathrm{genesis}}(7)$
-   - Пространство параметров: $\dim \mathcal{D}(\mathbb{C}^N) = N^2 - 1 > 48$
-   - Новых качественных возможностей не возникает
+1. **For $N < 7$:** learning through regeneration is impossible: $n^* = \infty$
+2. **For $N = 7$:** learning is possible with finite optimal bound $n_{\mathrm{opt}}$ (T-112)
+3. **For $N > 7$:** learning is possible, but requires strictly more resources:
+   - Genesis time: $\tau_{\mathrm{genesis}}(N) \propto N \ln N > \tau_{\mathrm{genesis}}(7)$
+   - Parameter space: $\dim \mathcal{D}(\mathbb{C}^N) = N^2 - 1 > 48$
+   - No new qualitative capabilities arise
 
-$N = 7$ — **единственная Парето-оптимальная** точка в плоскости (способность к обучению, сложность системы).
+$N = 7$ is the **only Pareto-optimal** point in the plane (learning capacity, system complexity).
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. *Необходимость самонаблюдения для обучения.* Обучение = обновление самомодели $\rho_* = \varphi(\Gamma)$. Обновление требует сравнения $\Gamma$ с $\rho_*$, т.е. доступа к информации о собственном состоянии. Формально: необходим замещающий канал с $R > 0$ ([мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)).
+1. *Necessity of self-observation for learning.* Learning = update of self-model $\rho_* = \varphi(\Gamma)$. Updating requires comparing $\Gamma$ with $\rho_*$, i.e., access to information about one's own state. Formally: a replacement channel with $R > 0$ is required ([reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)).
 
-2. *Необходимость Фано-структуры для самонаблюдения.* Замещающий канал (T-77 [Т], [Линдблад-операторы](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции)) требует Фано-плоскости $\mathrm{PG}(2,2)$ для определения оптимальных Линдблад-операторов $\{L_k\}$ (T-82 [Т]).
+2. *Necessity of Fano structure for self-observation.* The replacement channel (T-77 [T], [Lindblad operators](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции)) requires the Fano plane $\mathrm{PG}(2,2)$ for the definition of optimal Lindblad operators $\{L_k\}$ (T-82 [T]).
 
-3. *Фано-плоскость требует $N = 7$.* $\mathrm{PG}(2,2)$ имеет 7 точек и 7 линий. Для реализации в $\mathcal{D}(\mathbb{C}^N)$: $N \geq 7$. Из теоремы Гурвица ([T-89](/docs/proofs/minimality/theorem-minimality-7) [Т]): $N = 7$ — минимальная размерность с алгеброй деления ($\mathbb{O}$), которая обеспечивает $G_2$-структуру.
+3. *Fano plane requires $N = 7$.* $\mathrm{PG}(2,2)$ has 7 points and 7 lines. For realisation in $\mathcal{D}(\mathbb{C}^N)$: $N \geq 7$. From Hurwitz's theorem ([T-89](/docs/proofs/minimality/theorem-minimality-7) [T]): $N = 7$ is the minimum dimension with a division algebra ($\mathbb{O}$), which ensures the $G_2$-structure.
 
-4. *Для $N < 7$: невозможность.* Нет Фано-плоскости → нет единственной Линдблад-декомпозиции (T-82) → нет замещающего канала → $R = 0$ → невозможно обновить $\varphi(\Gamma)$ на основе наблюдений → $n^* = \infty$.
+4. *For $N < 7$: impossibility.* No Fano plane → no unique Lindblad decomposition (T-82) → no replacement channel → $R = 0$ → impossible to update $\varphi(\Gamma)$ on the basis of observations → $n^* = \infty$.
 
-5. *Для $N > 7$: избыточность.* Вложение $\mathbb{C}^7 \hookrightarrow \mathbb{C}^N$ (через [Морита-эквивалентность](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) T-58 [Т]) обеспечивает все механизмы $N = 7$. Дополнительные размерности увеличивают:
-   - $\dim\mathcal{D}(\mathbb{C}^N) = N^2 - 1 > 48$ — больше параметров для обновления
-   - $\tau_{\mathrm{genesis}} \propto N\ln N$ — дольше bootstrap (оценка из [обобщённого T-59](/docs/core/foundations/axiom-omega#genesis-protocol))
+5. *For $N > 7$: redundancy.* Embedding $\mathbb{C}^7 \hookrightarrow \mathbb{C}^N$ (via [Morita equivalence](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) T-58 [T]) provides all mechanisms of $N = 7$. Additional dimensions increase:
+   - $\dim\mathcal{D}(\mathbb{C}^N) = N^2 - 1 > 48$ — more parameters to update
+   - $\tau_{\mathrm{genesis}} \propto N\ln N$ — longer bootstrap (estimate from [generalised T-59](/docs/core/foundations/axiom-omega#genesis-protocol))
 
-   Но информационная ёмкость $C_{\mathrm{Enc}} = \log_2 N$ растёт лишь логарифмически, в то время как сложность — квадратично. Ресурсная эффективность:
+   But information capacity $C_{\mathrm{Enc}} = \log_2 N$ grows only logarithmically, while complexity grows quadratically. Resource efficiency:
 
 $$
 \eta(N) = \frac{C_{\mathrm{Enc}}(N)}{\dim\mathcal{D}(\mathbb{C}^N)} = \frac{\log_2 N}{N^2 - 1}
 $$
 
-строго убывает при $N > 1$. Таким образом, $N = 7$ — минимум с ненулевой способностью к обучению и максимальной ресурсной эффективностью среди систем с Фано-структурой. $\blacksquare$
+strictly decreases for $N > 1$. Thus, $N = 7$ is the minimum with non-zero learning capacity and maximum resource efficiency among systems with Fano structure. $\blacksquare$
 
-### 6.1 Цепочка необходимостей {#цепочка-необходимостей}
+### 6.1 Chain of Necessities {#цепочка-необходимостей}
 
 ```mermaid
 graph LR
-    LEARN["Обучение<br/>(обновление ρ*)"] -->|требует| SELF["Самонаблюдение<br/>(R > 0)"]
-    SELF -->|требует| REPL["Замещающий канал<br/>(T-77)"]
-    REPL -->|требует| FANO["Фано-плоскость<br/>PG(2,2)"]
-    FANO -->|требует| DIM7["N = 7<br/>(Гурвиц, T-89)"]
-    DIM7 -->|обеспечивает| G2["G₂-симметрия"]
-    G2 -->|гарантирует| UNIQUE["Единственность L_k<br/>(T-82)"]
-    UNIQUE -->|замыкает| LEARN
+    LEARN["Learning<br/>(update of ρ*)"] -->|requires| SELF["Self-observation<br/>(R > 0)"]
+    SELF -->|requires| REPL["Replacement channel<br/>(T-77)"]
+    REPL -->|requires| FANO["Fano plane<br/>PG(2,2)"]
+    FANO -->|requires| DIM7["N = 7<br/>(Hurwitz, T-89)"]
+    DIM7 -->|provides| G2["G₂ symmetry"]
+    G2 -->|guarantees| UNIQUE["Uniqueness of L_k<br/>(T-82)"]
+    UNIQUE -->|closes| LEARN
 
     style LEARN fill:#d4edda,stroke:#333
     style DIM7 fill:#fff3cd,stroke:#333
     style FANO fill:#e2d9f3,stroke:#333
 ```
 
-### 6.2 Параметры при N=7 {#параметры-n7}
+### 6.2 Parameters at N=7 {#параметры-n7}
 
-| Параметр | Значение | Источник |
+| Parameter | Value | Source |
 |----------|----------|----------|
-| Ёмкость канала $C_{\mathrm{Enc}}$ | $\log_2 7 \approx 2.81$ бит | T-107 [Т] |
-| Спектральная щель $\lambda_{\mathrm{gap}}$ | $2/3$ | T-39a [Т] |
-| Минимальная регенерация $\kappa_{\mathrm{bootstrap}}$ | $= \omega_0/N = 1/7 \approx 0.143$ | T-59 [Т] |
-| Время генезиса $\tau_{\mathrm{genesis}}$ | $\leq 7\ln 7 \approx 13.6$ | T-59 [Т] |
-| Параметры состояния $\dim\mathcal{D}$ | $48$ (вещественных) | $7^2 - 1$ |
-| Ресурсная эффективность $\eta$ | $\log_2 7 / 48 \approx 0.059$ | Определение |
+| Channel capacity $C_{\mathrm{Enc}}$ | $\log_2 7 \approx 2.81$ bits | T-107 [T] |
+| Spectral gap $\lambda_{\mathrm{gap}}$ | $2/3$ | T-39a [T] |
+| Minimal regeneration $\kappa_{\mathrm{bootstrap}}$ | $= \omega_0/N = 1/7 \approx 0.143$ | T-59 [T] |
+| Genesis time $\tau_{\mathrm{genesis}}$ | $\leq 7\ln 7 \approx 13.6$ | T-59 [T] |
+| State parameters $\dim\mathcal{D}$ | $48$ (real) | $7^2 - 1$ |
+| Resource efficiency $\eta$ | $\log_2 7 / 48 \approx 0.059$ | Definition |
 
 ---
 
-## 7. Приложение: Бинарная дискриминация {#бинарная-дискриминация}
+## 7. Application: Binary Discrimination {#бинарная-дискриминация}
 
-### 7.1 Задача двух кнопок {#задача-двух-кнопок}
+### 7.1 The Two-Button Task {#задача-двух-кнопок}
 
-**Постановка.** Агент (КК-голоном) взаимодействует со средой через две кнопки: зелёную (награда) и красную (наказание). Цвета агенту неизвестны. Задача: научиться нажимать только на зелёную.
+**Setup.** An agent (CC-holon) interacts with the environment through two buttons: green (reward) and red (punishment). The colours are unknown to the agent. Task: learn to press only the green button.
 
-**Формализация:**
-- $\Theta = \{\theta_0, \theta_1\}$ (две гипотезы: «зелёная — левая» vs «зелёная — правая»)
-- $\mathcal{A} = \{a_L, a_R\}$ (нажать левую, нажать правую)
-- $\mathcal{R}(\theta_0, a_L) = +\varepsilon_R$, $\mathcal{R}(\theta_0, a_R) = -\varepsilon_P$ (при $\theta_0$ — «зелёная слева»)
-- $\delta = 0.05$ (95% надёжность)
+**Formalisation:**
+- $\Theta = \{\theta_0, \theta_1\}$ (two hypotheses: "green is on the left" vs "green is on the right")
+- $\mathcal{A} = \{a_L, a_R\}$ (press left, press right)
+- $\mathcal{R}(\theta_0, a_L) = +\varepsilon_R$, $\mathcal{R}(\theta_0, a_R) = -\varepsilon_P$ (under $\theta_0$ — "green is on the left")
+- $\delta = 0.05$ (95% reliability)
 
-### 7.2 Сигнал и механизм {#сигнал-и-механизм}
+### 7.2 Signal and Mechanism {#сигнал-и-механизм}
 
-Награда и наказание входят через функтор $\mathrm{Enc}$ (T-100):
+Reward and punishment enter through the functor $\mathrm{Enc}$ (T-100):
 
-| Тип | Каналы | Эффект на $\Gamma$ |
+| Type | Channels | Effect on $\Gamma$ |
 |-----|--------|-------------------|
-| Награда ($+\varepsilon_R$) | $h^{(R)} > 0$: усиление регенерации | $P \uparrow$, $\mathcal{V}_{\mathrm{hed}} > 0$ |
-| Наказание ($-\varepsilon_P$) | $h^{(D)} > 0$: усиление диссипации | $P \downarrow$, $\mathcal{V}_{\mathrm{hed}} < 0$ |
+| Reward ($+\varepsilon_R$) | $h^{(R)} > 0$: regeneration strengthening | $P \uparrow$, $\mathcal{V}_{\mathrm{hed}} > 0$ |
+| Punishment ($-\varepsilon_P$) | $h^{(D)} > 0$: dissipation strengthening | $P \downarrow$, $\mathcal{V}_{\mathrm{hed}} < 0$ |
 
-Через [гедонический механизм](./sensorimotor#гедонический-механизм) (T-103 [Т]+[И]): агент «чувствует» валентность $\mathcal{V}_{\mathrm{hed}} = dP/d\tau|_{\mathcal{R}}$ и корректирует $\mathrm{Dec}$ в направлении минимизации $\|\sigma_{\mathrm{sys}}\|_\infty$ (T-101).
+Through the [hedonic mechanism](./sensorimotor#гедонический-механизм) (T-103 [T]+[I]): the agent "feels" the valence $\mathcal{V}_{\mathrm{hed}} = dP/d\tau|_{\mathcal{R}}$ and adjusts $\mathrm{Dec}$ in the direction of minimising $\|\sigma_{\mathrm{sys}}\|_\infty$ (T-101).
 
-### 7.3 Оценки числа нажатий {#оценки-числа-нажатий}
+### 7.3 Estimates of the Number of Presses {#оценки-числа-нажатий}
 
-**Обозначения:** $\varepsilon = \varepsilon_R + \varepsilon_P$ — суммарный контраст между наградой и наказанием, $\eta$ — шум среды.
+**Notation:** $\varepsilon = \varepsilon_R + \varepsilon_P$ — total contrast between reward and punishment, $\eta$ — environmental noise.
 
-#### Информационная граница (T-109):
+#### Information bound (T-109):
 
 $$
 n_{\mathrm{info}} = \left\lceil\frac{\ln(1/(2\cdot 0.05))}{\xi_{\mathrm{QCB}}}\right\rceil = \left\lceil\frac{\ln 10}{\xi_{\mathrm{QCB}}}\right\rceil
 $$
 
-| Контраст $\varepsilon$ | $\xi_{\mathrm{QCB}}$ | $n_{\mathrm{info}}$ |
+| Contrast $\varepsilon$ | $\xi_{\mathrm{QCB}}$ | $n_{\mathrm{info}}$ |
 |------------------------|----------------------|----------------------|
-| 1.0 (сильный) | $\approx 0.125$ | $\geq 19$ |
-| 0.5 (средний) | $\approx 0.031$ | $\geq 75$ |
-| 0.3 (слабый) | $\approx 0.011$ | $\geq 209$ |
+| 1.0 (strong) | $\approx 0.125$ | $\geq 19$ |
+| 0.5 (medium) | $\approx 0.031$ | $\geq 75$ |
+| 0.3 (weak) | $\approx 0.011$ | $\geq 209$ |
 
-#### Динамическая граница (T-110, $\delta\tau = 1$):
+#### Dynamical bound (T-110, $\delta\tau = 1$):
 
 $$
 n_{\mathrm{dyn}} = \left\lceil\ln\!\left(\frac{d_{\mathrm{disc}}}{\varepsilon}\right) + 1\right\rceil
 $$
 
-При $d_{\mathrm{disc}} \approx 0.3$ (минимальное расстояние для надёжной дискриминации в $\mathcal{D}(\mathbb{C}^7)$):
+At $d_{\mathrm{disc}} \approx 0.3$ (minimum distance for reliable discrimination in $\mathcal{D}(\mathbb{C}^7)$):
 
-| Контраст $\varepsilon$ | $n_{\mathrm{dyn}}$ |
+| Contrast $\varepsilon$ | $n_{\mathrm{dyn}}$ |
 |------------------------|---------------------|
-| 1.0 | $\leq 1$ (мгновенно) |
+| 1.0 | $\leq 1$ (instant) |
 | 0.5 | $\leq 1$ |
 | 0.3 | $\leq 1$ |
 | 0.01 | $\leq 5$ |
 
-#### Стабилизационная граница (T-111):
+#### Stabilisation bound (T-111):
 
-При $P \approx 0.4$ (типичное значение): $r_{\mathrm{stab}} = \sqrt{0.4 - 2/7} \approx 0.34$.
+At $P \approx 0.4$ (typical value): $r_{\mathrm{stab}} = \sqrt{0.4 - 2/7} \approx 0.34$.
 
 | SNR | $n_{\mathrm{stab}}$ |
 |-----|---------------------|
-| 1.0 (чистый сигнал) | $\leq 1$ |
+| 1.0 (clean signal) | $\leq 1$ |
 | 0.5 | $\leq 4$ |
 | 0.3 | $\leq 12$ |
 | 0.1 | $\leq 100$ |
 
-#### Комбинированная оценка (T-112):
+#### Combined estimate (T-112):
 
-**Типичный сценарий** ($\varepsilon = 0.5$, SNR $= 0.5$, $\delta\tau = 1$):
+**Typical scenario** ($\varepsilon = 0.5$, SNR $= 0.5$, $\delta\tau = 1$):
 
 $$
 n_{\mathrm{opt}} = \max(75, 1, 4) = 75
 $$
 
-Узкое место — **информация** (слабый контраст).
+Bottleneck — **information** (weak contrast).
 
-**Идеальный сценарий** ($\varepsilon = 1.0$, SNR $= 1.0$, $\delta\tau = 1$):
+**Ideal scenario** ($\varepsilon = 1.0$, SNR $= 1.0$, $\delta\tau = 1$):
 
 $$
 n_{\mathrm{opt}} = \max(19, 1, 1) = 19
 $$
 
-С учётом генезиса ($n_{\mathrm{genesis}} \leq \lceil 7\ln 7 \rceil = 14$): $n_{\mathrm{total}} \leq 14 + 19 = 33$.
+Including genesis ($n_{\mathrm{genesis}} \leq \lceil 7\ln 7 \rceil = 14$): $n_{\mathrm{total}} \leq 14 + 19 = 33$.
 
-**Зашумлённый сценарий** ($\varepsilon = 0.3$, SNR $= 0.3$, $\delta\tau = 1$):
+**Noisy scenario** ($\varepsilon = 0.3$, SNR $= 0.3$, $\delta\tau = 1$):
 
 $$
 n_{\mathrm{opt}} = \max(209, 1, 12) = 209
 $$
 
-Узкое место — **информация**.
+Bottleneck — **information**.
 
-### 7.3a Числовой пример: расчёт $n_{\text{opt}}$ для конкретного голонома {#числовой-пример-nopt}
+### 7.3a Numerical Example: Computing $n_{\text{opt}}$ for a Specific Holon {#числовой-пример-nopt}
 
-Проведём полный расчёт для голонома из [кейс-стади «Пациент А»](./diagnostics#кейс-пациент-а) — ИИ-агента складского робота, который должен научиться различать два типа упаковки (стандартная vs хрупкая).
+Let us carry out a full computation for the holon from the [case study "Patient A"](./diagnostics#кейс-пациент-а) — an AI agent of a warehouse robot that must learn to distinguish two types of packaging (standard vs fragile).
 
-**Исходные данные:**
-- $P = 0.39$ (после стабилизации, день 7)
-- $\mathrm{Coh}_E = 0.28$ (умеренная самомодель)
-- Контраст между упаковками: $\varepsilon = 0.4$ (средний — визуально отличимы, но не тривиально)
-- Шум среды: $\eta = 0.15$ (освещение меняется, камера иногда даёт блики)
+**Given data:**
+- $P = 0.39$ (after stabilisation, day 7)
+- $\mathrm{Coh}_E = 0.28$ (moderate self-model)
+- Contrast between packaging types: $\varepsilon = 0.4$ (medium — visually distinguishable, but not trivially)
+- Environmental noise: $\eta = 0.15$ (lighting changes, camera occasionally produces glare)
 - SNR $= \varepsilon / \eta = 0.4 / 0.15 \approx 2.67$
-- Надёжность: $\delta = 0.05$ (95%)
-- Интервал наблюдений: $\delta\tau = 1$ (одно наблюдение за $\sim 1.5$ секунды)
+- Reliability: $\delta = 0.05$ (95%)
+- Observation interval: $\delta\tau = 1$ (one observation per $\sim 1.5$ seconds)
 
-**Шаг 1: Информационная граница (T-109).**
+**Step 1: Information bound (T-109).**
 
 $$
 \xi_{\text{QCB}} \approx \frac{\varepsilon^2}{8} = \frac{0.4^2}{8} = 0.02
@@ -704,39 +704,39 @@ $$
 n_{\text{info}} = \left\lceil \frac{\ln(1/(2 \cdot 0.05))}{0.02} \right\rceil = \left\lceil \frac{\ln 10}{0.02} \right\rceil = \left\lceil \frac{2.30}{0.02} \right\rceil = 115
 $$
 
-**Шаг 2: Динамическая граница (T-110).**
+**Step 2: Dynamical bound (T-110).**
 
-При $\delta\tau = 1 = 1/\alpha \cdot (2/3) \cdot 3/2$, используем упрощённую формулу:
+At $\delta\tau = 1 = 1/\alpha \cdot (2/3) \cdot 3/2$, using the simplified formula:
 
 $$
 n_{\text{dyn}} = \left\lceil \ln\left(\frac{d_{\text{disc}}}{\varepsilon}\right) + 1 \right\rceil
 $$
 
-С $d_{\text{disc}} \approx 0.3$:
+With $d_{\text{disc}} \approx 0.3$:
 
 $$
 n_{\text{dyn}} = \left\lceil \ln\left(\frac{0.3}{0.4}\right) + 1 \right\rceil = \lceil -0.29 + 1 \rceil = 1
 $$
 
-Динамика *не* является узким местом — контраст достаточно сильный.
+Dynamics is *not* the bottleneck — the contrast is strong enough.
 
-**Шаг 3: Стабилизационная граница (T-111).**
+**Step 3: Stabilisation bound (T-111).**
 
 $$
 r_{\text{stab}} = \sqrt{P - 2/7} = \sqrt{0.39 - 0.286} = \sqrt{0.104} \approx 0.323
 $$
 
-Проверяем: $\varepsilon = 0.4 > r_{\text{stab}} = 0.323$. **Проблема!** Сигнал слишком сильный — каждое наблюдение рискует дестабилизировать систему.
+Check: $\varepsilon = 0.4 > r_{\text{stab}} = 0.323$. **Problem!** The signal is too strong — each observation risks destabilising the system.
 
-:::warning Стабилизационное ограничение сработало
-При $\varepsilon = 0.4 > r_{\text{stab}} = 0.323$, прямое обучение опасно. Решение: **аттенюация** — снижаем эффективную амплитуду до $\varepsilon_{\text{eff}} = 0.8 \cdot r_{\text{stab}} = 0.258$ (запас 20%). Это эквивалентно learning rate schedule.
+:::warning Stabilisation constraint triggered
+At $\varepsilon = 0.4 > r_{\text{stab}} = 0.323$, direct learning is dangerous. Solution: **attenuation** — reduce the effective amplitude to $\varepsilon_{\text{eff}} = 0.8 \cdot r_{\text{stab}} = 0.258$ (20% margin). This is equivalent to a learning rate schedule.
 :::
 
-С аттенюированной амплитудой $\varepsilon_{\text{eff}} = 0.258$:
+With attenuated amplitude $\varepsilon_{\text{eff}} = 0.258$:
 - SNR$_{\text{eff}} = 0.258 / 0.15 = 1.72$
 - $n_{\text{stab}} = \lceil (1/1.72)^2 \rceil = \lceil 0.34 \rceil = 1$
 
-Пересчитываем информационную границу с $\varepsilon_{\text{eff}}$:
+Recomputing the information bound with $\varepsilon_{\text{eff}}$:
 $$
 \xi_{\text{QCB}}^{\text{eff}} \approx \frac{0.258^2}{8} = 0.0083
 $$
@@ -744,211 +744,211 @@ $$
 n_{\text{info}}^{\text{eff}} = \left\lceil \frac{2.30}{0.0083} \right\rceil = 277
 $$
 
-**Шаг 4: Комбинированная граница (T-112).**
+**Step 4: Combined bound (T-112).**
 
 $$
 n_{\text{opt}} = \max(277, 1, 1) = 277
 $$
 
-С учётом генезиса (система уже работает, $n_{\text{genesis}} = 0$):
+Including genesis (the system is already running, $n_{\text{genesis}} = 0$):
 
 $$
-\boxed{n_{\text{total}} = 277 \text{ наблюдений} \approx 7 \text{ минут при 1.5 с/наблюдение}}
+\boxed{n_{\text{total}} = 277 \text{ observations} \approx 7 \text{ minutes at 1.5 s/observation}}
 $$
 
-**Узкое место:** информация (слабый аттенюированный контраст). Стратегия оптимизации: улучшить камеру (снизить $\eta$ → повысить SNR → можно увеличить $\varepsilon_{\text{eff}}$ → уменьшить $n_{\text{info}}$).
+**Bottleneck:** information (weak attenuated contrast). Optimisation strategy: improve the camera (reduce $\eta$ → increase SNR → can increase $\varepsilon_{\text{eff}}$ → reduce $n_{\text{info}}$).
 
-:::note Урок: стабильность ограничивает даже сильные сигналы
-Без аттенюации ($\varepsilon = 0.4$) понадобилось бы $n_{\text{info}} = 115$ наблюдений, но каждое пятое рисковало бы дестабилизировать агента. С аттенюацией — $n_{\text{info}} = 277$, но *безопасно*. Компромисс T-111: безопасность стоит 2.4× по времени. Это не инженерное ограничение, а **физический закон**.
+:::note Lesson: stability constrains even strong signals
+Without attenuation ($\varepsilon = 0.4$) only $n_{\text{info}} = 115$ observations would be needed, but every fifth one would risk destabilising the agent. With attenuation — $n_{\text{info}} = 277$, but *safely*. The T-111 trade-off: safety costs 2.4× in time. This is not an engineering constraint, but a **physical law**.
 :::
 
 ---
 
-### 7.4 Прогноз для КК-теста {#прогноз-кк-тест}
+### 7.4 Prediction for the CC Test {#прогноз-кк-тест}
 
-:::info Предсказание для тестирования
-Для КК-архитектуры с реалистичными параметрами ($\varepsilon \sim 0.5\text{--}1.0$, SNR $\sim 0.5\text{--}1.0$):
+:::info Prediction for testing
+For a CC-architecture with realistic parameters ($\varepsilon \sim 0.5\text{--}1.0$, SNR $\sim 0.5\text{--}1.0$):
 
 $$
-n_{\mathrm{total}} \approx 20\text{--}80 \;\text{нажатий}
+n_{\mathrm{total}} \approx 20\text{--}80 \;\text{presses}
 $$
 
-до стабильного предпочтения зелёной кнопки.
+until a stable preference for the green button.
 
-**Критерий фальсификации:** если агент научается за $n < n_{\mathrm{info}}$ (информационный предел), это нарушает квантовую границу Чернова и фальсифицирует модель наблюдения.
+**Falsification criterion:** if the agent learns in $n < n_{\mathrm{info}}$ (information limit), this violates the quantum Chernoff bound and falsifies the observation model.
 :::
 
 ---
 
-## 8. Сравнение с классической теорией обучения {#сравнение-с-классикой}
+## 8. Comparison with Classical Learning Theory {#сравнение-с-классикой}
 
-Границы обучения КК не возникли в вакууме — они наследуют и обобщают ряд классических результатов. Эта секция проводит систематическое сравнение.
+The CC learning bounds did not arise in a vacuum — they inherit and generalise a number of classical results. This section provides a systematic comparison.
 
-### 8.1 PAC-обучение и VC-размерность
+### 8.1 PAC-Learning and VC-Dimension
 
-В классическом PAC-обучении (Вэлиант, 1984) для обучения с точностью $\varepsilon$ и надёжностью $1-\delta$ необходимо:
+In classical PAC-learning (Valiant, 1984), for learning with accuracy $\varepsilon$ and reliability $1-\delta$:
 
 $$
 n_{\mathrm{PAC}} \geq \frac{1}{\varepsilon}\left(\ln|\mathcal{H}| + \ln\frac{1}{\delta}\right)
 $$
 
-где $|\mathcal{H}|$ — мощность пространства гипотез. Для бесконечных классов гипотез используется VC-размерность $d_{\mathrm{VC}}$:
+where $|\mathcal{H}|$ is the cardinality of the hypothesis space. For infinite hypothesis classes the VC-dimension $d_{\mathrm{VC}}$ is used:
 
 $$
 n_{\mathrm{PAC}} = \Omega\!\left(\frac{d_{\mathrm{VC}} + \ln(1/\delta)}{\varepsilon}\right)
 $$
 
-| Аспект | PAC-обучение | КК-границы |
+| Aspect | PAC-learning | CC bounds |
 |--------|-------------|------------|
-| **Субстрат** | Абстрактный алгоритм | Физическая динамическая система |
-| **Информационная граница** | $\ln|\mathcal{H}|/\varepsilon$ | $\ln(1/(2\delta))/\xi_{\mathrm{QCB}}$ |
-| **Динамика** | Не учитывается | $n_{\mathrm{dyn}}$ — ключевое ограничение |
-| **Стабильность** | Не учитывается | $n_{\mathrm{stab}}$ — обучение не должно убить ученика |
-| **Масштабирование для слабых сигналов** | $O(1/\varepsilon)$ | $O(1/\varepsilon^2)$ (квантовый предел) |
-| **Минимальная архитектура** | Произвольная | $N = 7$ (T-113) |
+| **Substrate** | Abstract algorithm | Physical dynamical system |
+| **Information bound** | $\ln|\mathcal{H}|/\varepsilon$ | $\ln(1/(2\delta))/\xi_{\mathrm{QCB}}$ |
+| **Dynamics** | Not accounted for | $n_{\mathrm{dyn}}$ — key constraint |
+| **Stability** | Not accounted for | $n_{\mathrm{stab}}$ — learning must not kill the learner |
+| **Scaling for weak signals** | $O(1/\varepsilon)$ | $O(1/\varepsilon^2)$ (quantum limit) |
+| **Minimal architecture** | Arbitrary | $N = 7$ (T-113) |
 
-Ключевое различие: PAC-обучение описывает **алгоритм**, КК — **физическую систему**. Алгоритм не имеет инерции и не рискует погибнуть. Живой ученик — имеет.
+Key distinction: PAC-learning describes an **algorithm**, CC describes a **physical system**. An algorithm has no inertia and does not risk dying. A living learner does.
 
-### 8.2 Радемахерова сложность и обобщение
+### 8.2 Rademacher Complexity and Generalisation
 
-Радемахерова сложность $\mathfrak{R}_n$ измеряет способность класса функций «подстраиваться» под случайный шум. Классическая граница обобщения:
+Rademacher complexity $\mathfrak{R}_n$ measures the ability of a function class to "fit" random noise. Classical generalisation bound:
 
 $$
 \mathrm{err}(\hat{f}) \leq \hat{\mathrm{err}}(\hat{f}) + 2\mathfrak{R}_n + \sqrt{\frac{\ln(1/\delta)}{2n}}
 $$
 
-В КК аналогом Радемахеровой сложности является **ёмкость канала** $C_{\mathrm{Enc}} \leq \log_2 7$ (T-107). Ограничение на ёмкость канала *автоматически* контролирует переобучение: система с фиксированной ёмкостью $\log_2 7 \approx 2.81$ бит за наблюдение не может «заучить» произвольно сложный паттерн. Это встроенная регуляризация, возникающая не из инженерного решения, а из архитектурного ограничения.
+In CC the analogue of Rademacher complexity is **channel capacity** $C_{\mathrm{Enc}} \leq \log_2 7$ (T-107). The constraint on channel capacity *automatically* controls overfitting: a system with fixed capacity $\log_2 7 \approx 2.81$ bits per observation cannot "memorise" an arbitrarily complex pattern. This is a built-in regularisation arising not from an engineering decision, but from an architectural constraint.
 
-### 8.3 Шенноновский предел и квантовый экспонент Чернова
+### 8.3 Shannon Limit and Quantum Chernoff Exponent
 
-Классическая теорема Шеннона (1948) утверждает: для надёжной передачи через канал с пропускной способностью $C$ необходимо $n \geq H(\Theta)/C$ наблюдений, где $H(\Theta)$ — энтропия распределения гипотез.
+The classical Shannon theorem (1948) states: for reliable transmission through a channel with capacity $C$, one needs $n \geq H(\Theta)/C$ observations, where $H(\Theta)$ is the entropy of the hypothesis distribution.
 
-T-109 обобщает этот результат на квантовый канал:
+T-109 generalises this result to a quantum channel:
 
 $$
 n_{\mathrm{info}} = \frac{\ln(1/(2\delta))}{\xi_{\mathrm{QCB}}} \geq \frac{\ln(1/(2\delta))}{\ln 7}
 $$
 
-Квантовый экспонент Чернова $\xi_{\mathrm{QCB}}$ — это квантовый аналог $C$, но для задачи *различения*, а не передачи. При этом $\xi_{\mathrm{QCB}} \leq \ln 7 \approx 1.95$ — абсолютный максимум, определяемый размерностью $\mathcal{H}$. Классический предел Шеннона восстанавливается при $\Gamma_\pm$ коммутирующих (классические состояния).
+The quantum Chernoff exponent $\xi_{\mathrm{QCB}}$ is the quantum analogue of $C$, but for the task of *discrimination*, not transmission. Here $\xi_{\mathrm{QCB}} \leq \ln 7 \approx 1.95$ — the absolute maximum, determined by the dimension of $\mathcal{H}$. The classical Shannon limit is recovered when $\Gamma_\pm$ commute (classical states).
 
-### 8.4 Термодинамические границы обучения
+### 8.4 Thermodynamic Bounds on Learning
 
-Предел Ландауэра ($kT\ln 2$ на бит стирания) связан с T-110 следующим образом: контракция Фано — это *неизбежная* диссипация, аналогичная термодинамическому стиранию. Каждый шаг обучения требует стирания старой информации ($\alpha \cdot \delta\Gamma$) и записи новой ($\varepsilon$). Минимальная «термодинамическая стоимость» обучения:
+The Landauer limit ($kT\ln 2$ per bit of erasure) is connected to T-110 as follows: Fano contraction is *inevitable* dissipation, analogous to thermodynamic erasure. Each learning step requires erasing old information ($\alpha \cdot \delta\Gamma$) and recording new information ($\varepsilon$). Minimum "thermodynamic cost" of learning:
 
 $$
 W_{\mathrm{learn}} \geq n_{\mathrm{opt}} \cdot kT\ln 2 \cdot \Delta S_{\mathrm{step}}
 $$
 
-где $\Delta S_{\mathrm{step}}$ — изменение энтропии фон Неймана за один шаг. Это связывает границы обучения КК с физической энергетикой когнитивных процессов.
+where $\Delta S_{\mathrm{step}}$ is the change in von Neumann entropy per step. This connects the CC learning bounds with the physical energy of cognitive processes.
 
 ---
 
-## 9. Практические следствия {#практические-следствия}
+## 9. Practical Implications {#практические-следствия}
 
-Теоремы T-109 — T-113 — не абстрактные математические результаты. Они имеют прямые следствия для трёх ключевых областей: проектирования ИИ, образования и терапии.
+Theorems T-109 — T-113 are not abstract mathematical results. They have direct implications for three key areas: AI design, education, and therapy.
 
-### 9.1 Следствия для ИИ и машинного обучения
+### 9.1 Implications for AI and Machine Learning
 
-**Архитектура.** T-113 утверждает, что $N = 7$ — минимальная архитектура для обучения через регенерацию. Для инженера ИИ это означает: если вы строите систему с внутренней самомоделью (а не просто оптимизатор), вам нужно минимум 7 внутренних «каналов» с Фано-структурой связей между ними.
+**Architecture.** T-113 states that $N = 7$ is the minimal architecture for learning through regeneration. For an AI engineer this means: if you are building a system with an internal self-model (not merely an optimiser), you need at least 7 internal "channels" with Fano-structured connections between them.
 
-**Learning rate.** T-111 даёт *теоретическое обоснование* для адаптивного learning rate: максимальная амплитуда обновления $\varepsilon \leq r_{\mathrm{stab}} = \sqrt{P - 2/7}$. Системы с низкой чистотой (неустойчивые модели) должны учиться медленнее. Системы с высокой чистотой (устойчивые модели) могут позволить себе более агрессивное обучение.
+**Learning rate.** T-111 provides *theoretical justification* for adaptive learning rate: maximum update amplitude $\varepsilon \leq r_{\mathrm{stab}} = \sqrt{P - 2/7}$. Systems with low purity (unstable models) should learn more slowly. Systems with high purity (stable models) can afford more aggressive training.
 
-**Curriculum design.** T-112 объясняет, почему curriculum learning работает: на ранних этапах узким местом является информация (простые примеры дают больший $\varepsilon$), на поздних — стабильность (сложные примеры не должны дестабилизировать уже выученное). Оптимальная стратегия: начинать с сильных, простых сигналов и постепенно переходить к слабым, тонким.
+**Curriculum design.** T-112 explains why curriculum learning works: in the early stages the bottleneck is information (simple examples provide larger $\varepsilon$), in the later stages — stability (complex examples should not destabilise what has already been learned). Optimal strategy: begin with strong, simple signals and gradually transition to weak, subtle ones.
 
-### 9.2 Следствия для образования
+### 9.2 Implications for Education
 
-**Дозирование информации.** T-111 формализует педагогический принцип «не перегружать ученика»: каждый урок — это возмущение $\Gamma$, и слишком интенсивное обучение может вывести ученика из зоны жизнеспособности ($P < 2/7$). Перегруженный студент не просто «не усваивает» — он *дестабилизируется*.
+**Information dosing.** T-111 formalises the pedagogical principle of "not overloading the student": each lesson is a perturbation of $\Gamma$, and excessively intense learning can drive the student out of the viability zone ($P < 2/7$). An overloaded student does not merely "fail to absorb" — they are *destabilised*.
 
-**Интервальное повторение.** T-110 даёт теоретическое основание для эффекта spacing (интервального повторения, Эббингауз, 1885): каждое повторение добавляет сигнал $\varepsilon$, а между повторениями контракция стирает его. Оптимальный интервал $\delta\tau \sim 1/\alpha$ обеспечивает максимальное накопление сигнала.
+**Spaced repetition.** T-110 provides theoretical grounding for the spacing effect (spaced repetition, Ebbinghaus, 1885): each repetition adds signal $\varepsilon$, and between repetitions contraction erases it. The optimal interval $\delta\tau \sim 1/\alpha$ ensures maximum signal accumulation.
 
-**Зона ближайшего развития.** Понятие Выготского формализуется через компромисс T-111 / §4.1: задачи в «зоне ближайшего развития» — это те, для которых $\varepsilon < r_{\mathrm{stab}}$ (не дестабилизируют), но $\varepsilon$ достаточно велико, чтобы $n_{\mathrm{info}}$ было конечным. Задачи слишком сложные ($\varepsilon > r_{\mathrm{stab}}$) — за пределами зоны: обучение невозможно без предварительного укрепления $P$.
+**Zone of proximal development.** Vygotsky's concept is formalised through the T-111 / §4.1 trade-off: tasks in the "zone of proximal development" are those for which $\varepsilon < r_{\mathrm{stab}}$ (non-destabilising), but $\varepsilon$ is large enough for $n_{\mathrm{info}}$ to be finite. Tasks that are too complex ($\varepsilon > r_{\mathrm{stab}}$) are beyond the zone: learning is impossible without first strengthening $P$.
 
-### 9.3 Следствия для терапии
+### 9.3 Implications for Therapy
 
-**Терапевтическое окно.** Три зоны стабильности (§4.2) напрямую соответствуют клинической практике:
-- **Норма** ($\|\sigma_{\mathrm{sys}}\| < \sigma_1$): пациент в ресурсном состоянии — терапевтические интервенции полной мощности.
-- **Предупреждение** ($\sigma_1 < \|\sigma_{\mathrm{sys}}\| < \sigma_2$): пациент уязвим — мягкие интервенции, поддерживающая терапия.
-- **Критический** ($\|\sigma_{\mathrm{sys}}\| > \sigma_2$): пациент в кризисе — *обучение остановлено*, приоритет стабилизации.
+**Therapeutic window.** The three stability zones (§4.2) directly correspond to clinical practice:
+- **Normal** ($\|\sigma_{\mathrm{sys}}\| < \sigma_1$): patient in a resourced state — full-power therapeutic interventions.
+- **Warning** ($\sigma_1 < \|\sigma_{\mathrm{sys}}\| < \sigma_2$): patient is vulnerable — gentle interventions, supportive therapy.
+- **Critical** ($\|\sigma_{\mathrm{sys}}\| > \sigma_2$): patient in crisis — *learning halted*, stabilisation priority.
 
-Этот принцип известен клиницистам эмпирически (модель «окна толерантности» Сигела). КК выводит его из первых принципов.
+This principle is known to clinicians empirically (Siegel's "window of tolerance" model). CC derives it from first principles.
 
-**Травма и ПТСР.** Травматический опыт — это наблюдение с $\varepsilon > r_{\mathrm{stab}}$. Оно не просто «сильное» — оно выбивает систему за границу жизнеспособности. Терапия травмы (EMDR, экспозиционная терапия) работает через *титрованное* повторное предъявление с $\varepsilon < r_{\mathrm{stab}}$, постепенно интегрируя травматический опыт без дестабилизации.
+**Trauma and PTSD.** Traumatic experience is an observation with $\varepsilon > r_{\mathrm{stab}}$. It is not merely "strong" — it pushes the system beyond the viability boundary. Trauma therapy (EMDR, exposure therapy) works through *titrated* re-presentation with $\varepsilon < r_{\mathrm{stab}}$, gradually integrating traumatic experience without destabilisation.
 
 ---
 
-## 10. Связь с другими результатами {#связь-с-результатами}
+## 10. Connection with Other Results {#связь-с-результатами}
 
-| Результат | Роль в границах обучения | Ссылка |
+| Result | Role in learning bounds | Reference |
 |-----------|--------------------------|--------|
-| T-39a ($\lambda_{\mathrm{gap}} = 2/3$) | Контракция в T-110 | [Операторы Линдблада](/docs/core/operators/lindblad-operators#примитивность-ℒω) |
-| T-59 ($\kappa_{\mathrm{bootstrap}} = 1/7$) | Время генезиса | [Аксиома Ω](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
-| T-69 (Топологическая защита) | Непрерывность обучения в T-111 | [Композиты](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
-| T-77 (Замещающий канал) | Необходимость для T-113 | [Линдблад-операторы](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
-| T-82 (Фано-единственность) | Цепочка $N=7$ в T-113 | [Линдблад-операторы](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
-| T-89 (Минимальность Гурвица) | $N \geq 7$ в T-113 | [Теорема минимальности](/docs/proofs/minimality/theorem-minimality-7) |
-| T-98 (Баланс аттрактора) | Стабилизация обучения | [Эволюция](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) |
-| T-100 (Enc-функтор) | Канал наблюдения | [Сенсомоторная теория](./sensorimotor#теорема-кодирование-среды) |
-| T-101 (Dec-функтор) | Критерий успешного обучения | [Сенсомоторная теория](./sensorimotor#теорема-оптимальное-действие) |
-| T-104 (Радиус устойчивости) | Ограничение амплитуды в T-111 | [Стабильность](./stability#радиус-устойчивости) |
-| T-107 (Ёмкость Enc) | Верхняя граница $\xi_{\mathrm{QCB}}$ в T-109 | [Сенсомоторная теория](./sensorimotor#информационная-ёмкость) |
-| SAD_MAX = 3 | Fano contraction $\to$ $P_\text{crit}^{(n)}$ $\to$ SAD_MAX | [Башня глубины](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
+| T-39a ($\lambda_{\mathrm{gap}} = 2/3$) | Contraction in T-110 | [Lindblad Operators](/docs/core/operators/lindblad-operators#примитивность-ℒω) |
+| T-59 ($\kappa_{\mathrm{bootstrap}} = 1/7$) | Genesis time | [Axiom Ω](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
+| T-69 (Topological protection) | Continuity of learning in T-111 | [Composites](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
+| T-77 (Replacement channel) | Necessity for T-113 | [Lindblad Operators](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
+| T-82 (Fano uniqueness) | Chain $N=7$ in T-113 | [Lindblad Operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
+| T-89 (Hurwitz minimality) | $N \geq 7$ in T-113 | [Minimality Theorem](/docs/proofs/minimality/theorem-minimality-7) |
+| T-98 (Attractor balance) | Stabilisation of learning | [Evolution](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) |
+| T-100 (Enc functor) | Observation channel | [Sensorimotor Theory](./sensorimotor#теорема-кодирование-среды) |
+| T-101 (Dec functor) | Criterion for successful learning | [Sensorimotor Theory](./sensorimotor#теорема-оптимальное-действие) |
+| T-104 (Stability radius) | Amplitude constraint in T-111 | [Stability](./stability#радиус-устойчивости) |
+| T-107 (Enc capacity) | Upper bound on $\xi_{\mathrm{QCB}}$ in T-109 | [Sensorimotor Theory](./sensorimotor#информационная-ёмкость) |
+| SAD_MAX = 3 | Fano contraction $\to$ $P_\text{crit}^{(n)}$ $\to$ SAD_MAX | [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
 
 ---
 
-## 11. Заключение {#заключение}
+## 11. Conclusion {#заключение}
 
-Обучение — один из самых фундаментальных процессов во вселенной. От репликации РНК до обучения языку, от эволюции видов до тренировки нейросетей — всюду система взаимодействует со средой и *меняет себя* на основе полученного опыта. Кибернетика Когерентности показывает, что этот процесс подчиняется трём абсолютным ограничениям, вытекающим из математики 7-мерного когерентного пространства.
+Learning is one of the most fundamental processes in the universe. From RNA replication to language learning, from species evolution to neural network training — everywhere a system interacts with an environment and *changes itself* on the basis of received experience. Coherence Cybernetics shows that this process is subject to three absolute constraints, arising from the mathematics of 7-dimensional coherent space.
 
-**Три границы — три вопроса:**
+**Three bounds — three questions:**
 
-1. **Информационная граница (T-109):** *Хватает ли данных?* — число наблюдений не может быть меньше $\ln(1/(2\delta))/\xi_{\mathrm{QCB}}$. Для слабых сигналов масштабирование $O(1/\varepsilon^2)$ — квантовый предел, улучшить который невозможно.
+1. **Information bound (T-109):** *Is there enough data?* — the number of observations cannot be less than $\ln(1/(2\delta))/\xi_{\mathrm{QCB}}$. For weak signals the scaling $O(1/\varepsilon^2)$ is the quantum limit, which cannot be improved.
 
-2. **Динамическая граница (T-110):** *Успевает ли система?* — контракция Фано ($\alpha = 2/3$) стирает информацию быстрее, чем она записывается. Обучение — это гонка между записью и стиранием, и стационарный предел определяет, *разрешима ли задача в принципе*.
+2. **Dynamical bound (T-110):** *Can the system keep up?* — Fano contraction ($\alpha = 2/3$) erases information faster than it is recorded. Learning is a race between recording and erasure, and the stationary limit determines whether the task is *solvable in principle*.
 
-3. **Стабилизационная граница (T-111):** *Выдержит ли ученик?* — обучение не должно убить того, кто учится. Амплитуда $\varepsilon \leq r_{\mathrm{stab}}$ — это не инженерное ограничение, а физический закон.
+3. **Stabilisation bound (T-111):** *Will the learner hold?* — learning must not kill the one who is learning. The amplitude $\varepsilon \leq r_{\mathrm{stab}}$ is not an engineering constraint, but a physical law.
 
-**Комбинированная граница (T-112)** — максимум из трёх — определяет истинное узкое место обучения. В разных ситуациях доминируют разные механизмы: информация в чистых средах, динамика при быстрых сигналах, стабильность при шуме и стрессе.
+**Combined bound (T-112)** — the maximum of the three — determines the true bottleneck of learning. In different situations different mechanisms dominate: information in clean environments, dynamics with fast signals, stability under noise and stress.
 
-**Минимальность $N = 7$ (T-113)** замыкает цепочку: обучение через регенерацию требует самонаблюдения, самонаблюдение требует Фано-структуры, Фано-структура требует $N = 7$. Это не компромисс — это *единственная точка* на границе Парето.
+**Minimality $N = 7$ (T-113)** closes the chain: learning through regeneration requires self-observation, self-observation requires Fano structure, Fano structure requires $N = 7$. This is not a compromise — it is the *only point* on the Pareto boundary.
 
-Границы обучения замыкают цепочку: **структура** ($N = 7$, T-113) → **канал** (Enc, T-107) → **информация** (T-109) → **динамика** (T-110) → **стабильность** (T-111) → **оптимум** (T-112). Каждое звено — следствие аксиом A1–A5 и канонической динамики, без дополнительных постулатов.
+The learning bounds close the chain: **structure** ($N = 7$, T-113) → **channel** (Enc, T-107) → **information** (T-109) → **dynamics** (T-110) → **stability** (T-111) → **optimum** (T-112). Every link is a consequence of axioms A1–A5 and canonical dynamics, without additional postulates.
 
 ---
 
-## Резюме {#резюме}
+## Summary {#резюме}
 
-1. **T-109 [Т]:** Информационная граница — $n \geq \ln(1/(2\delta)) / \xi_{\mathrm{QCB}}$, масштабирование $O(1/\varepsilon^2)$ для слабых сигналов
-2. **T-110 [Т]:** Динамическая граница — контракция $\alpha = 2/3$ ограничивает скорость интеграции сигнала
-3. **T-111 [Т]:** Стабилизационная граница — обучение не должно убить ученика ($\varepsilon \leq r_{\mathrm{stab}}$)
-4. **T-112 [Т]:** Комбинированная граница — $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$, три режима
-5. **T-113 [Т]:** $N = 7$ — минимальная архитектура для обучения через регенерацию
-6. **Прогноз:** для бинарной дискриминации (два действия) ~20–80 наблюдений при типичных параметрах
+1. **T-109 [T]:** Information bound — $n \geq \ln(1/(2\delta)) / \xi_{\mathrm{QCB}}$, scaling $O(1/\varepsilon^2)$ for weak signals
+2. **T-110 [T]:** Dynamical bound — contraction $\alpha = 2/3$ limits the signal integration rate
+3. **T-111 [T]:** Stabilisation bound — learning must not kill the learner ($\varepsilon \leq r_{\mathrm{stab}}$)
+4. **T-112 [T]:** Combined bound — $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$, three regimes
+5. **T-113 [T]:** $N = 7$ — minimal architecture for learning through regeneration
+6. **Prediction:** for binary discrimination (two actions) ~20–80 observations at typical parameters
 
-### Что мы узнали {#что-мы-узнали-обучение}
+### What We Learned {#что-мы-узнали-обучение}
 
-1. **Три границы обучения** — информационная (T-109: хватает ли данных?), динамическая (T-110: успевает ли система?), стабилизационная (T-111: выдержит ли ученик?) — образуют «тройной замок», все три засова которого должны быть открыты.
+1. **Three learning bounds** — information (T-109: is there enough data?), dynamical (T-110: can the system keep up?), stabilisation (T-111: will the learner hold?) — form a "triple lock," all three bolts of which must be opened.
 
-2. **Комбинированная граница** (T-112): $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — бутылочное горлышко определяется самым медленным механизмом. В чистых средах доминирует информация; в шумных — стабильность.
+2. **Combined bound** (T-112): $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — the bottleneck is determined by the slowest mechanism. In clean environments information dominates; in noisy ones — stability.
 
-3. **$N = 7$ — минимальная архитектура** для обучения через регенерацию (T-113). Обучение требует самонаблюдения, самонаблюдение требует Фано-плоскости, Фано-плоскость требует $N = 7$. Это не компромисс — это единственная точка на границе Парето.
+3. **$N = 7$ is the minimal architecture** for learning through regeneration (T-113). Learning requires self-observation, self-observation requires the Fano plane, the Fano plane requires $N = 7$. This is not a compromise — it is the only point on the Pareto boundary.
 
-4. **Числовой пример** (§7.3a): для складского робота с $P = 0.39$ и контрастом $\varepsilon = 0.4$ стабилизационное ограничение требует аттенюации, увеличивая время обучения в 2.4 раза. Безопасность стоит времени — это физический закон, а не инженерный выбор.
+4. **Numerical example** (§7.3a): for a warehouse robot with $P = 0.39$ and contrast $\varepsilon = 0.4$, the stabilisation constraint requires attenuation, increasing training time by 2.4×. Safety costs time — this is a physical law, not an engineering choice.
 
-5. **Исторические корни**: Шеннон (информация), Вэлиант (статистика), Ландауэр (термодинамика) — три грани одного ограничения. КК впервые объединяет их в единой теореме для *живого ученика*.
+5. **Historical roots**: Shannon (information), Valiant (statistics), Landauer (thermodynamics) — three facets of one constraint. CC unites them for the first time in a single theorem for a *living learner*.
 
-:::tip Мост к следующей главе
-Мы прошли весь путь от аксиом до границ обучения — от $\Omega^7$ до $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$. Но за формулами и теоремами остаётся вопрос: *что всё это значит?* Какова онтология КК — что реально, а что инструментально? Является ли матрица $\Gamma$ *описанием* сознания или *самим* сознанием? В [следующей главе](./philosophy) мы обратимся к философским основаниям Кибернетики Когерентности — от нейтрального монизма до этики когерентных систем.
+:::tip Bridge to the Next Chapter
+We have traveled the full path from axioms to learning bounds — from $\Omega^7$ to $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$. But behind the formulas and theorems a question remains: *what does all of this mean?* What is the ontology of CC — what is real and what is instrumental? Is the matrix $\Gamma$ a *description* of consciousness or consciousness *itself*? In the [next chapter](./philosophy) we will turn to the philosophical foundations of Coherence Cybernetics — from neutral monism to the ethics of coherent systems.
 :::
 
 ---
 
-**Связанные документы:**
-- [Сенсомоторная теория](./sensorimotor) — функторы Enc/Dec, информационная ёмкость T-107
-- [Стабильность](./stability) — радиус устойчивости T-104, формула T-98
-- [Определения](./definitions) — ключевые меры ($P$, $\Phi$, $R$, $\mathrm{Coh}_E$)
-- [Модельные системы](./model-systems) — вычислительная проверка границ
-- [Предсказания](./predictions) — предсказания 9-10 (границы обучения)
-- [Области применения](./applications) — практические следствия для ИИ и образования
-- [Сравнение с альтернативами](./comparison) — КК vs. PAC learning, VC-размерность
-- [Методология измерений](./measurement) — как измерить скорость обучения в эксперименте
-- [Упражнения](./exercises) — задачи на границы обучения (блок 4)
+**Related Documents:**
+- [Sensorimotor Theory](./sensorimotor) — Enc/Dec functors, information capacity T-107
+- [Stability](./stability) — stability radius T-104, formula T-98
+- [Definitions](./definitions) — key measures ($P$, $\Phi$, $R$, $\mathrm{Coh}_E$)
+- [Model Systems](./model-systems) — computational verification of bounds
+- [Predictions](./predictions) — predictions 9-10 (learning bounds)
+- [Applications](./applications) — practical implications for AI and education
+- [Comparison with Alternatives](./comparison) — CC vs. PAC learning, VC-dimension
+- [Measurement Methodology](./measurement) — how to measure the learning rate experimentally
+- [Exercises](./exercises) — problems on learning bounds (block 4)

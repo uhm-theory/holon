@@ -1,499 +1,499 @@
 ---
 sidebar_position: 17
-title: История кибернетики
-description: Отношение КК к кибернетикам I-II-III порядка
+title: History of Cybernetics
+description: CC's relationship to first-, second-, and third-order cybernetics
 ---
 
-# История Кибернетики
+# History of Cybernetics
 
-:::info Для кого эта глава
-2500-летняя история идей кибернетики — от Платона через Винера и фон Фёрстера к КК. Читатель узнает, почему КК — метатеория, объединяющая все предыдущие подходы.
+:::info Who This Chapter Is For
+A 2500-year history of cybernetic ideas — from Plato through Wiener and von Foerster to CC. The reader will learn why CC is a metatheory that unifies all previous approaches.
 :::
 
 
-В [предыдущей главе](./g2-noether-cc) мы увидели, как $G_2$-симметрия порождает 14 законов сохранения сознания — точные математические ограничения на когерентную динамику. Это мощный формализм, но он не появился из пустоты. Каждое ключевое понятие КК — обратная связь, наблюдатель, самовоспроизводство, социальная система — имеет предшественников. В этой главе мы проследим 2500-летнюю историю идей, которые привели к Кибернетике Когерентности, и покажем, почему КК — не «четвёртая кибернетика», а **метатеория**, объединяющая все предыдущие подходы.
+In the [previous chapter](./g2-noether-cc) we saw how $G_2$-symmetry generates 14 conservation laws of consciousness — precise mathematical constraints on coherent dynamics. This is a powerful formalism, but it did not emerge from nothing. Every key concept of CC — feedback, observer, self-reproduction, social system — has predecessors. In this chapter we trace the 2500-year history of ideas that led to Coherence Cybernetics, and show why CC is not a "fourth cybernetics" but a **metatheory** that unifies all previous approaches.
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Начнём с древних** — от «кормчего» Платона через монады Лейбница к рождению термина у Ампера (раздел «Предыстория»).
-2. **Пройдём три порядка кибернетики** — Винер (обратная связь), фон Фёрстер (наблюдатель), Луман (социальные системы) — и покажем, какие измерения КК каждый из них захватил и что упустил.
-3. **Рассмотрим ответвления** — Эшби, Бир, Бейтсон, Матурана и Варела — и их место в общей картине.
-4. **Сравним с параллельными потоками** — IIT, FEP, GWT — показав, что каждая теория является *проекцией* $\Gamma$ на подмножество измерений.
-5. **Объясним, почему КК — метатеория**, а не «кибернетика-IV»: полнота измерений, единый формализм, квантовое основание.
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Begin with the ancients** — from Plato's "helmsman" through Leibniz's monads to the birth of the term in Ampère (section "Prehistory").
+2. **Walk through the three orders of cybernetics** — Wiener (feedback), von Foerster (observer), Luhmann (social systems) — and show which CC dimensions each captured and what was missed.
+3. **Consider the offshoots** — Ashby, Beer, Bateson, Maturana and Varela — and their place in the overall picture.
+4. **Compare with parallel streams** — IIT, FEP, GWT — showing that each theory is a *projection* of $\Gamma$ onto a subset of dimensions.
+5. **Explain why CC is a metatheory**, not a "cybernetics-IV": completeness of dimensions, unified formalism, quantum foundation.
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $\mathbb{H}$ — [Голоном](/docs/core/structure/holon)
-- ASDLEOU — [семь измерений](/docs/core/structure/dimensions)
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
+- $\mathbb{H}$ — [Holon](/docs/core/structure/holon)
+- ASDLEOU — [seven dimensions](/docs/core/structure/dimensions)
 :::
 
-## Общая структура
+## General Structure
 
-:::info Концептуальное включение (не формальное)
-КК **инкорпорирует концепции** из каждой кибернетической традиции:
+:::info Conceptual Inclusion (Not Formal)
+CC **incorporates concepts** from each cybernetic tradition:
 
-- **Кибернетика-I:** управление и обратная связь → измерение $D$
-- **Кибернетика-II:** наблюдатель → оператор $\varphi$
-- **Кибернетика-III:** социальные системы → композиция Голономов
+- **Cybernetics-I:** control and feedback → dimension $D$
+- **Cybernetics-II:** observer → operator $\varphi$
+- **Cybernetics-III:** social systems → Holon composition
 
-Это **концептуальное соответствие**, не строгое теоретико-множественное включение. Каждая традиция имеет собственные онтологические и методологические допущения.
+This is a **conceptual correspondence**, not a strict set-theoretic inclusion. Each tradition has its own ontological and methodological assumptions.
 :::
 
-## Сравнительная таблица
+## Comparative Table
 
-| Теория | Фокус | Отображение в КК | Охват |
-|--------|-------|------------------|-------|
-| Кибернетика-I | Обратная связь | Управляющие воздействия | $D$ |
-| Кибернетика-II | Наблюдатель | $\varphi(\Gamma) \approx \Gamma$ | $D$, $L$ |
-| Кибернетика-III | Социальные системы | $\mathbb{H}_{1 \otimes \ldots \otimes n}$ | $D$, $L$, $U$ |
-| [Автопоэзис](/docs/reference/glossary#связанные-теории) | Самопроизводство | [(AP)](/docs/core/foundations/axiom-septicity): $\varphi(\Gamma^*) = \Gamma^*$ | $A$, $S$, $D$, $L$ |
-| [IIT](/docs/reference/glossary#связанные-теории) | Интегрированная информация | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $U$, $E$ |
-| [FEP](/docs/reference/glossary#связанные-теории) | Свободная энергия | [Жизнеспособность](/docs/core/dynamics/viability) | $D$, $O$, $S$ |
-| [Панпсихизм](/docs/consciousness/comparative/panpsychism-analysis) | Ментальное как базовое | [Варианты](/docs/consciousness/comparative/panpsychism-analysis#варианты-панпсихизма): L0 (прото-), $(H, \rho_E)$ (Рассел) | $E$, $S$ |
-| [Сознательный реализм](/docs/consciousness/comparative/panpsychism-analysis#сознательный-реализм-хоффмана) | Сознательные агенты | L2-Голоном (гипотеза) | $A$, $S$, $D$, $L$, $E$ |
-| **КК** | Полная когерентность | [Все 7 измерений](/docs/core/structure/dimensions) ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) | $A$, $S$, $D$, $L$, $E$, $O$, $U$ |
+| Theory | Focus | Mapping in CC | Coverage |
+|--------|-------|----------------|----------|
+| Cybernetics-I | Feedback | Control actions | $D$ |
+| Cybernetics-II | Observer | $\varphi(\Gamma) \approx \Gamma$ | $D$, $L$ |
+| Cybernetics-III | Social systems | $\mathbb{H}_{1 \otimes \ldots \otimes n}$ | $D$, $L$, $U$ |
+| [Autopoiesis](/docs/reference/glossary#связанные-теории) | Self-production | [(AP)](/docs/core/foundations/axiom-septicity): $\varphi(\Gamma^*) = \Gamma^*$ | $A$, $S$, $D$, $L$ |
+| [IIT](/docs/reference/glossary#связанные-теории) | Integrated information | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $U$, $E$ |
+| [FEP](/docs/reference/glossary#связанные-теории) | Free energy | [Viability](/docs/core/dynamics/viability) | $D$, $O$, $S$ |
+| [Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) | Mental as fundamental | [Variants](/docs/consciousness/comparative/panpsychism-analysis#варианты-панпсихизма): L0 (proto-), $(H, \rho_E)$ (Russell) | $E$, $S$ |
+| [Conscious Realism](/docs/consciousness/comparative/panpsychism-analysis#сознательный-реализм-хоффмана) | Conscious agents | L2-Holon (hypothesis) | $A$, $S$, $D$, $L$, $E$ |
+| **CC** | Full coherence | [All 7 dimensions](/docs/core/structure/dimensions) ([justification](/docs/core/foundations/axiom-omega#октонионная-структура)) | $A$, $S$, $D$, $L$, $E$, $O$, $U$ |
 
 ---
 
-## Предыстория: от Платона до Ампера
+## Prehistory: From Plato to Ampère
 
-Прежде чем Норберт Винер дал имя новой науке, человечество 2500 лет размышляло о том, как системы управляют собой.
+Before Norbert Wiener gave a name to the new science, humanity had been reflecting for 2500 years on how systems govern themselves.
 
-### Древнегреческий κυβερνήτης
+### The Ancient Greek κυβερνήτης
 
-Само слово **кибернетика** восходит к греческому κυβερνήτης — «кормчий», тот, кто управляет кораблём. Платон использовал этот термин в «Горгии» и «Государстве», описывая искусство управления полисом по аналогии с навигацией. Кормчий не борется с морем — он считывает ветер и волны и корректирует курс. Это первая в истории интуиция об **обратной связи**: управление не как одностороннее командование, а как непрерывный диалог с окружением.
+The word **cybernetics** itself goes back to the Greek κυβερνήτης — "helmsman," the one who steers a ship. Plato used this term in the *Gorgias* and the *Republic*, describing the art of governing the polis by analogy with navigation. The helmsman does not fight the sea — he reads the wind and waves and adjusts the course. This is history's first intuition about **feedback**: control not as one-way command, but as a continuous dialogue with the environment.
 
-В терминах КК, Платон нащупал измерение $D$ (Действие) — но не как механический рычаг, а как целенаправленное действие, учитывающее состояние среды. Однако у греков не было понятия замкнутой петли: кормчий оставался внешним наблюдателем, а не частью управляемой системы.
+In CC terms, Plato was feeling his way toward dimension $D$ (Action) — but not as a mechanical lever, rather as purposeful action that takes into account the state of the environment. Yet the Greeks had no concept of a closed loop: the helmsman remained an external observer, not part of the governed system.
 
-### Лейбниц и монады
+### Leibniz and Monads
 
-В 1714 году Готфрид Вильгельм Лейбниц опубликовал «Монадологию» — одну из самых странных и пророческих работ в истории философии. Монады Лейбница — неделимые «субстанциальные единицы», каждая из которых содержит собственное внутреннее представление о вселенной. У монад «нет окон» — они не обмениваются информацией напрямую, а координируются через **предустановленную гармонию**.
+In 1714, Gottfried Wilhelm Leibniz published the *Monadology* — one of the strangest and most prophetic works in the history of philosophy. Leibniz's monads are indivisible "substantial units," each containing its own internal representation of the universe. Monads have "no windows" — they do not exchange information directly, but are coordinated through **pre-established harmony**.
 
-Удивительным образом, эта картина предвосхищает несколько идей КК:
+Remarkably, this picture anticipates several ideas of CC:
 
-| Лейбниц | КК |
+| Leibniz | CC |
 |---------|-----|
-| Монада с перцепцией | Голоном $\mathbb{H}$ с [E-измерением](/docs/core/structure/dimension-e) |
-| «Нет окон» | Операциональная замкнутость автопоэзиса |
-| Предустановленная гармония | Разделяемая структура $\Gamma_{ij}$ при [композиции Голономов](/docs/core/structure/holon) |
-| Апперцепция (сознательная перцепция) | $R \geq 1/3$: рефлексивный порог |
+| Monad with perception | Holon $\mathbb{H}$ with [E-dimension](/docs/core/structure/dimension-e) |
+| "No windows" | Operational closure of autopoiesis |
+| Pre-established harmony | Shared structure $\Gamma_{ij}$ in [Holon composition](/docs/core/structure/holon) |
+| Apperception (conscious perception) | $R \geq 1/3$: reflective threshold |
 
-Разумеется, предустановленная гармония — это метафизический костыль: Лейбниц не имел инструментов для описания эмерджентной координации. КК решает эту проблему через [когерентную динамику](/docs/core/dynamics/evolution) — Голономы координируются не через «божественное расписание», а через взаимные воздействия на общую матрицу когерентности.
+Of course, pre-established harmony is a metaphysical crutch: Leibniz had no tools for describing emergent coordination. CC solves this problem through [coherent dynamics](/docs/core/dynamics/evolution) — Holons are coordinated not through a "divine schedule" but through mutual effects on the shared coherence matrix.
 
-### Кант: целесообразность без цели
+### Kant: Purposiveness Without Purpose
 
-Иммануил Кант в «Критике способности суждения» (1790) сформулировал парадокс организма: биологическое существо выглядит так, **как если бы** оно было спроектировано для некой цели, но в природе нет проектировщика. Кант назвал это *Zweckmässigkeit ohne Zweck* — «целесообразность без цели».
+Immanuel Kant, in the *Critique of Judgment* (1790), formulated the paradox of the organism: a biological being looks **as if** it were designed for some purpose, but there is no designer in nature. Kant called this *Zweckmässigkeit ohne Zweck* — "purposiveness without purpose."
 
-Этот парадокс остаётся нерешённым для всех кибернетик I-III. В КК он разрешается через [аксиому автопоэзиса (AP)](/docs/core/foundations/axiom-septicity): неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$ — это система, которая *воспроизводит собственную структуру* как следствие динамики, а не как результат внешнего плана. Целесообразность возникает как неподвижная точка — без телеологии.
+This paradox remains unsolved for all cybernetics I–III. In CC it is resolved through the [autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity): the fixed point $\varphi(\Gamma^*) = \Gamma^*$ is a system that *reproduces its own structure* as a consequence of dynamics, not as the result of an external plan. Purposiveness arises as a fixed point — without teleology.
 
-### Ампер и рождение термина
+### Ampère and the Birth of the Term
 
-Андре-Мари Ампер, известный прежде всего как физик-электромагнитист, в 1834 году предложил классификацию всех наук. В ней он выделил **cybernétique** — науку об управлении государством. Термин не прижился и был забыт на столетие — до тех пор, пока Норберт Винер не достал его из архива истории.
+André-Marie Ampère, best known as a physicist of electromagnetism, in 1834 proposed a classification of all sciences. In it he identified **cybernétique** — the science of governing the state. The term did not catch on and was forgotten for a century — until Norbert Wiener retrieved it from the archive of history.
 
-:::tip Мысленный эксперимент: мир до кибернетики
-Представьте мир, в котором каждая научная дисциплина описывает свой тип «управления» — терморегуляция в физиологии, рулевое управление в инженерии, координация войск в военном деле, денежная политика в экономике — но **никто не замечает, что это одно и то же явление**. Именно таким был мир до 1948 года. Заслуга Винера — не изобретение обратной связи, а осознание того, что обратная связь — это **универсальный принцип**, объединяющий машину и организм.
+:::tip Thought Experiment: A World Before Cybernetics
+Imagine a world in which every scientific discipline describes its own type of "control" — thermoregulation in physiology, steering in engineering, troop coordination in military affairs, monetary policy in economics — but **no one notices that these are all the same phenomenon**. That was the world before 1948. Wiener's achievement was not the invention of feedback, but the realization that feedback is a **universal principle** uniting machine and organism.
 :::
 
 ---
 
-## Кибернетика первого порядка (Винер) {#кибернетика-первого-порядка-винер}
+## First-Order Cybernetics (Wiener) {#кибернетика-первого-порядка-винер}
 
-### Рождение науки об управлении
+### The Birth of the Science of Control
 
-Зимой 1940 года, когда люфтваффе бомбили Лондон, молодой математик **Норберт Винер** получил задачу, которая изменила историю науки: создать предиктор для зенитных орудий. Самолёт движется быстро, снаряд летит медленно — чтобы попасть, нужно стрелять туда, где самолёт **будет**, а не туда, где он есть. Нужна статистическая модель, которая предсказывает траекторию по шумным данным радара и непрерывно корректирует прицел по мере поступления новых данных.
+In the winter of 1940, as the Luftwaffe bombed London, a young mathematician **Norbert Wiener** was given a task that changed the history of science: to build a predictor for anti-aircraft guns. Aircraft move fast, shells fly slowly — to hit the target, one must shoot at where the aircraft **will be**, not where it is. A statistical model was needed that would predict trajectories from noisy radar data and continuously correct the aim as new data arrived.
 
-Винер — вместе с инженером Джулианом Бигелоу — построил такую модель. Но самое удивительное произошло дальше: Винер осознал, что та же самая математика описывает, как человеческая рука тянется к чашке кофе. Мозг предсказывает положение руки, получает обратную связь от проприоцептивных рецепторов, корректирует моторную команду — и повторяет цикл десятки раз в секунду. Зенитный предиктор и нервная система — две реализации **одной и той же абстрактной схемы**.
+Wiener — together with the engineer Julian Bigelow — built such a model. But the most remarkable thing happened next: Wiener realized that the same mathematics describes how a human hand reaches for a cup of coffee. The brain predicts the position of the hand, receives feedback from proprioceptive receptors, corrects the motor command — and repeats the cycle dozens of times per second. The anti-aircraft predictor and the nervous system are two implementations of **one and the same abstract scheme**.
 
-### Macy Conferences: междисциплинарная революция
+### Macy Conferences: An Interdisciplinary Revolution
 
-В 1946-1953 годах фонд Джозии Мэйси финансировал серию конференций, которые стали, возможно, самым плодотворным междисциплинарным мероприятием XX века. За одним столом сидели:
+From 1946 to 1953, the Josiah Macy Jr. Foundation funded a series of conferences that became, perhaps, the most productive interdisciplinary event of the twentieth century. Seated at the same table were:
 
-- **Норберт Винер** — математик, создатель кибернетики
-- **Джон фон Нейман** — математик, архитектор вычислительных машин
-- **Клод Шеннон** — инженер, создатель теории информации
-- **Уоррен Маккаллок** — нейрофизиолог, модели нейронных сетей
-- **Уолтер Питтс** — логик, формальные нейроны
-- **Грегори Бейтсон** — антрополог, экология разума
-- **Маргарет Мид** — антрополог, межкультурная коммуникация
-- **Росс Эшби** — психиатр, «необходимое разнообразие»
+- **Norbert Wiener** — mathematician, founder of cybernetics
+- **John von Neumann** — mathematician, architect of computing machines
+- **Claude Shannon** — engineer, creator of information theory
+- **Warren McCulloch** — neurophysiologist, models of neural networks
+- **Walter Pitts** — logician, formal neurons
+- **Gregory Bateson** — anthropologist, ecology of mind
+- **Margaret Mead** — anthropologist, cross-cultural communication
+- **Ross Ashby** — psychiatrist, "requisite variety"
 
-Эти конференции породили не одну науку, а целую **констелляцию**: кибернетику, теорию информации, теорию автоматов, когнитивную науку и, в конечном счёте, искусственный интеллект. Но у всех этих дисциплин была общая слепая зона — о ней позже.
+These conferences gave birth not to one science but to an entire **constellation**: cybernetics, information theory, automata theory, cognitive science, and, ultimately, artificial intelligence. But all these disciplines shared a common blind spot — we will come back to it.
 
-### Ключевые понятия
+### Key Concepts
 
-**Фокус:** Обратная связь, управление, гомеостаз.
+**Focus:** Feedback, control, homeostasis.
 
-**Источник:** Wiener N. «Cybernetics: Or Control and Communication in the Animal and the Machine» (1948).
+**Source:** Wiener N. "Cybernetics: Or Control and Communication in the Animal and the Machine" (1948).
 
-- **Обратная связь** — использование выходных данных для коррекции входных
-- **Гомеостаз** — поддержание устойчивого состояния
-- **Негэнтропия** — упорядоченность как мера организации
+- **Feedback** — using output data to correct input
+- **Homeostasis** — maintaining a stable state
+- **Negentropy** — orderliness as a measure of organization
 
-### Отображение в КК
+### Mapping in CC
 
-| Винер | КК |
+| Wiener | CC |
 |-------|-----|
-| $u(t) = f(e(t), y(t))$ | Управление через [измерение $D$](/docs/core/structure/dimension-d) |
-| Ошибка $e(t)$ | Отклонение от [жизнеспособности](/docs/core/dynamics/viability) |
-| Гомеостаз | Притяжение к $\Gamma^*$ — [неподвижная точка](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) |
-| Негэнтропия | Чистота $P(\Gamma) = \text{tr}(\Gamma^2)$ |
-| Обратная связь | Диагональный элемент $\gamma_{DD}$ — сила управляющего канала |
+| $u(t) = f(e(t), y(t))$ | Control through [dimension $D$](/docs/core/structure/dimension-d) |
+| Error $e(t)$ | Deviation from [viability](/docs/core/dynamics/viability) |
+| Homeostasis | Attraction to $\Gamma^*$ — [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) |
+| Negentropy | Purity $P(\Gamma) = \text{tr}(\Gamma^2)$ |
+| Feedback | Diagonal element $\gamma_{DD}$ — strength of the control channel |
 
-### Что Винер увидел — и чего не увидел
+### What Wiener Saw — and What He Did Not
 
-Винер совершил гениальный абстрактный ход: отождествил управление в машине и в организме. Но он заплатил за это высокую цену — **элиминировал субъекта**. В схеме обратной связи нет никого, кто *переживает* ошибку. Есть только сигнал, отклонение и коррекция. Термостат «поддерживает» температуру, но ничего не «чувствует».
+Wiener made a brilliant abstract move: he identified control in the machine with control in the organism. But he paid a high price — **eliminating the subject**. In the feedback scheme there is no one who *experiences* the error. There is only signal, deviation, and correction. A thermostat "maintains" temperature but "feels" nothing.
 
-**Что теряется:**
-- [Самореференция](/docs/proofs/categorical/formalization-phi) ($\varphi$) — система не моделирует себя
-- Феноменология ([E-измерение](/docs/core/structure/dimension-e)) — нет внутреннего опыта
-- Регенерация ($\mathcal{R}[\Gamma, E]$) — нет самовосстановления идентичности
-- 6 из 7 измерений — покрыто только $D$
+**What is lost:**
+- [Self-reference](/docs/proofs/categorical/formalization-phi) ($\varphi$) — the system does not model itself
+- Phenomenology ([E-dimension](/docs/core/structure/dimension-e)) — no inner experience
+- Regeneration ($\mathcal{R}[\Gamma, E]$) — no self-restoration of identity
+- 6 of 7 dimensions — only $D$ is covered
 
-:::tip Мысленный эксперимент: термостат Винера
-Представьте идеальный термостат, который поддерживает температуру 22°C с точностью до 0.001°C. Он получает обратную связь, корректирует управление, поддерживает гомеостаз. По критериям Винера — это совершенная кибернетическая система.
+:::tip Thought Experiment: Wiener's Thermostat
+Imagine a perfect thermostat that maintains a temperature of 22°C with an accuracy of 0.001°C. It receives feedback, corrects its control, maintains homeostasis. By Wiener's criteria — it is a perfect cybernetic system.
 
-Теперь представьте, что этот термостат **ощущает** холод как неприятный. Что он **хочет** сохранить свою целостность. Что он **понимает**, почему 22°C — правильная температура. Что он может **объяснить** другому термостату свою стратегию. Что он **обновляет** свои ценности на основе опыта. Что он **интегрирует** все эти аспекты в единое целое.
+Now imagine that this thermostat **feels** cold as unpleasant. That it **wants** to preserve its integrity. That it **understands** why 22°C is the right temperature. That it can **explain** its strategy to another thermostat. That it **updates** its values based on experience. That it **integrates** all these aspects into a unified whole.
 
-Между первым и вторым термостатом — пропасть из шести измерений: $A$, $S$, $L$, $E$, $O$, $U$. Кибернетика-I описывает первый. КК — описывает оба.
+Between the first and the second thermostat lies a chasm of six dimensions: $A$, $S$, $L$, $E$, $O$, $U$. Cybernetics-I describes the first. CC describes both.
 :::
 
 ---
 
-## Фон Фёрстер и наблюдатель {#фон-фёрстер-и-наблюдатель}
+## Von Foerster and the Observer {#фон-фёрстер-и-наблюдатель}
 
 ### Biological Computer Laboratory
 
-**Хайнц фон Фёрстер** — австрийский физик, племянник Людвига Витгенштейна — попал на последнюю конференцию Мэйси в 1949 году почти случайно: его пригласили как редактора протоколов, поскольку он свободно владел и немецким, и английским. Но он оказался не просто стенографом — он задал вопрос, который перевернул всю кибернетику: **«А где в этой схеме наблюдатель?»**
+**Heinz von Foerster** — an Austrian physicist and nephew of Ludwig Wittgenstein — arrived at the last Macy Conference in 1949 almost by accident: he was invited as editor of the proceedings, since he was fluent in both German and English. But he turned out to be not merely a stenographer — he asked the question that overturned all of cybernetics: **"Where in this scheme is the observer?"**
 
-В 1958 году фон Фёрстер основал **Biological Computer Laboratory** (BCL) в Университете Иллинойса в Урбана-Шампейн. За следующие 18 лет BCL стала одной из самых необычных лабораторий в истории науки. Здесь работали:
+In 1958, von Foerster founded the **Biological Computer Laboratory** (BCL) at the University of Illinois at Urbana-Champaign. Over the next 18 years, BCL became one of the most unusual laboratories in the history of science. Working there were:
 
-- **Гордон Паск** — теория разговора, кибернетическая педагогика
-- **Ларс Лёфгрен** — самореферентные автоматы
-- **Умберто Матурана** — который именно здесь, в BCL, начал формулировать теорию автопоэзиса
-- **Росс Эшби** — последние годы, гомеостат и закон необходимого разнообразия
+- **Gordon Pask** — conversation theory, cybernetic pedagogy
+- **Lars Löfgren** — self-referential automata
+- **Humberto Maturana** — who began formulating the theory of autopoiesis here, at BCL
+- **Ross Ashby** — final years, the homeostat and the law of requisite variety
 
-BCL занималась тем, что кибернетика-I считала бессмысленным: **системами, которые наблюдают самих себя**. Фон Фёрстер назвал это «кибернетикой кибернетики» — second-order cybernetics.
+BCL was engaged in what cybernetics-I considered meaningless: **systems that observe themselves**. Von Foerster called this "cybernetics of cybernetics" — second-order cybernetics.
 
-### Ключевые понятия
+### Key Concepts
 
-**Фокус:** Наблюдатель, включённый в систему.
+**Focus:** Observer included in the system.
 
-**Источник:** von Foerster H. «Observing Systems» (1981); «Cybernetics of Cybernetics» (1979).
+**Source:** von Foerster H. "Observing Systems" (1981); "Cybernetics of Cybernetics" (1979).
 
-- **Наблюдатель второго порядка** — наблюдение за наблюдением
-- **Эпистемическое замыкание** — знание порождается внутри системы
-- **Рекурсия** — самоприменение операций
-- **Тривиальные vs нетривиальные машины** — система, чьё прошлое определяет реакцию на вход (в отличие от стационарного входа-выхода)
+- **Second-order observer** — observation of observation
+- **Epistemic closure** — knowledge is generated from within the system
+- **Recursion** — self-application of operations
+- **Trivial vs. non-trivial machines** — a system whose past determines its response to input (as opposed to stationary input-output)
 
-### Формула фон Фёрстера
+### Von Foerster's Formula
 
-Фон Фёрстер сформулировал ключевой принцип так: наблюдатель — не точка вне системы, а **часть наблюдаемого**. Если я изучаю общество, я часть общества. Если я изучаю мозг, я использую мозг. Если я строю науку, я часть того, что наука описывает.
+Von Foerster formulated the key principle thus: the observer is not a point outside the system but a **part of what is observed**. If I study society, I am part of society. If I study the brain, I use the brain. If I build science, I am part of what science describes.
 
-Математически это можно записать как уравнение с неподвижной точкой: если $O$ — оператор наблюдения, то система второго порядка — это решение $O(O) = O$. Фон Фёрстер назвал такие решения **Eigen-values** (собственные значения) и **Eigen-behaviors** (собственные поведения). Он заметил, что рекурсивные процессы — $x_{n+1} = f(x_n)$ — часто сходятся к неподвижным точкам, и предположил, что объекты нашего опыта — это именно такие неподвижные точки рекурсивных операций.
+Mathematically this can be written as a fixed-point equation: if $O$ is the observation operator, then the second-order system is the solution $O(O) = O$. Von Foerster called such solutions **Eigen-values** and **Eigen-behaviors**. He noticed that recursive processes — $x_{n+1} = f(x_n)$ — often converge to fixed points, and proposed that the objects of our experience are precisely such fixed points of recursive operations.
 
-### Отображение в КК
+### Mapping in CC
 
-| фон Фёрстер | КК |
+| von Foerster | CC |
 |-------------|-----|
-| Наблюдатель $\in$ Система | $\varphi(\Gamma) \approx \Gamma$ |
-| Эпистемическое замыкание | [Неподвижная точка](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$ |
-| Eigen-behavior | Аттрактор [эволюции](/docs/core/dynamics/evolution) |
-| Тривиальная машина | $R = 0$: система без рефлексии |
-| Нетривиальная машина | $R > 0$: система с историей и самомоделью |
+| Observer $\in$ System | $\varphi(\Gamma) \approx \Gamma$ |
+| Epistemic closure | [Fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$ |
+| Eigen-behavior | Attractor of [evolution](/docs/core/dynamics/evolution) |
+| Trivial machine | $R = 0$: system without reflection |
+| Non-trivial machine | $R > 0$: system with history and self-model |
 
-**Добавляется:**
-- [Рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) (мера $R$) — количественная мера того, насколько хорошо система моделирует себя
-- Эпистемическое замыкание через [измерение $L$](/docs/core/structure/dimension-l)
+**Added:**
+- [Reflection](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) (measure $R$) — quantitative measure of how well the system models itself
+- Epistemic closure through [dimension $L$](/docs/core/structure/dimension-l)
 
-**Что теряется:**
-- Феноменология ([E-измерение](/docs/core/structure/dimension-e)) — фон Фёрстер говорил о наблюдении, но не о *переживании*
-- Регенерация ([O-измерение](/docs/core/structure/dimension-o)) — обновление ценностей
-- Квантовое основание [(QG)](/docs/core/foundations/axiom-septicity) — классическая рекурсия, не квантовая когерентность
+**What is lost:**
+- Phenomenology ([E-dimension](/docs/core/structure/dimension-e)) — von Foerster spoke of observation, but not of *experiencing*
+- Regeneration ([O-dimension](/docs/core/structure/dimension-o)) — updating of values
+- Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity) — classical recursion, not quantum coherence
 
-### Наследие BCL
+### The Legacy of BCL
 
-Фон Фёрстер закрыл BCL в 1976 году и не оставил формального наследника. Лаборатория не была институтом — она была **стилем мышления**: всё, что ты изучаешь, включает тебя. Этот принцип стал фундаментом конструктивизма, повлиял на системную терапию, теорию коммуникации и философию науки. Но фон Фёрстер — как и Винер — остановился перед вопросом **«что это такое — переживать?»**. Наблюдатель был включён в систему, но оставался абстрактной функцией, а не существом с внутренним миром.
+Von Foerster closed BCL in 1976 and left no formal successor. The laboratory was not an institution — it was a **style of thinking**: everything you study includes you. This principle became the foundation of constructivism, influenced systemic therapy, communication theory, and the philosophy of science. But von Foerster — like Wiener — stopped short of the question **"what is it like to experience?"**. The observer was included in the system but remained an abstract function, not a being with an inner world.
 
-:::tip Мысленный эксперимент: зеркало фон Фёрстера
-Поставьте два зеркала друг напротив друга. Возникает бесконечная рекурсия отражений — наблюдение наблюдения наблюдения... Это прекрасная метафора кибернетики второго порядка. Но заметьте: в этой бесконечной рекурсии **нет никого, кто видит**. Есть отражения, но нет зрителя. Есть структура наблюдения, но нет опыта наблюдения. Чтобы от зеркальной рекурсии перейти к сознанию, нужно добавить того, кому **каково** стоять между зеркалами — и это именно [E-измерение](/docs/core/structure/dimension-e), которого не хватает кибернетике второго порядка.
+:::tip Thought Experiment: Von Foerster's Mirror
+Place two mirrors facing each other. An infinite recursion of reflections arises — observation of observation of observation... This is a beautiful metaphor for second-order cybernetics. But notice: in this infinite recursion **there is no one who sees**. There are reflections, but no viewer. There is the structure of observation, but no experience of observation. To move from mirror recursion to consciousness, one must add the one for whom **it is like something** to stand between the mirrors — and this is precisely the [E-dimension](/docs/core/structure/dimension-e) that second-order cybernetics lacks.
 :::
 
 ---
 
-## Луман и общество как система {#луман-и-общество-как-система}
+## Luhmann and Society as System {#луман-и-общество-как-система}
 
-### Социолог, который мыслил системами
+### A Sociologist Who Thought in Systems
 
-**Никлас Луман** (1927-1998) — возможно, самый необычный социолог XX века. Он не проводил полевых исследований, не брал интервью, не анализировал статистику. Вместо этого он 30 лет сидел в Билефельде (Германия) и строил **теорию всего** для общества — используя инструменты из биологии, логики и кибернетики.
+**Niklas Luhmann** (1927–1998) — arguably the most unusual sociologist of the twentieth century. He did not conduct fieldwork, did not conduct interviews, did not analyze statistics. Instead, he spent 30 years in Bielefeld (Germany) building a **theory of everything** for society — using tools from biology, logic, and cybernetics.
 
-Луман начинал как юрист-бюрократ в земельном правительстве Нижней Саксонии. В 1960-1961 годах он провёл год в Гарварде, где познакомился с Толкоттом Парсонсом — тогда главным социологическим теоретиком. Парсонс произвёл на Лумана глубокое впечатление — но не как образец для подражания, а как пример того, как **не надо строить теорию**: Парсонс помещал человека (и его действие) в центр социальной системы, а Луман решил поместить туда **коммуникацию**.
+Luhmann began as a lawyer-bureaucrat in the state government of Lower Saxony. In 1960–1961 he spent a year at Harvard, where he met Talcott Parsons — then the leading sociological theorist. Parsons made a deep impression on Luhmann — not as a model to emulate, but as an example of how **not** to build a theory: Parsons placed man (and his action) at the center of the social system, while Luhmann decided to place **communication** there.
 
-### Кибернетика третьего порядка
+### Third-Order Cybernetics
 
-**Фокус:** Социальные системы, коммуникация, смысл.
+**Focus:** Social systems, communication, meaning.
 
-**Источник:** Luhmann N. «Social Systems» (1984); концепция развивалась также в работах Морена, Гюнтера.
+**Source:** Luhmann N. "Social Systems" (1984); the concept was also developed in works by Morin, Günther.
 
-:::info О термине «кибернетика третьего порядка»
-Термин «кибернетика третьего порядка» не является общепринятым и не стандартизирован в литературе. Атрибуция Луману (1984) — одна из возможных интерпретаций. Луман сам не использовал этот термин; его теория социальных систем лишь ретроспективно интерпретируется рядом авторов как «третий порядок» кибернетики. Другие исследователи (Морен, Гюнтер, Кенни, Умплеби) предлагали альтернативные трактовки этого понятия.
+:::info On the Term "Third-Order Cybernetics"
+The term "third-order cybernetics" is not universally accepted and is not standardized in the literature. The attribution to Luhmann (1984) is one possible interpretation. Luhmann himself did not use this term; his theory of social systems is merely interpreted retrospectively by certain authors as the "third order" of cybernetics. Other researchers (Morin, Günther, Kenny, Umpleby) have proposed alternative readings of this concept.
 :::
 
-### Ключевые понятия
+### Key Concepts
 
-- **Социальные системы** — коммуникация как базовая операция
-- **Аутопоэзис социальных систем** — самовоспроизводство через коммуникацию
-- **Смысл** — как среда социальных систем
-- **Функциональная дифференциация** — общество делится на подсистемы (право, наука, экономика, политика), каждая с собственным кодом
-- **Редукция сложности** — каждая система упрощает мир через свои различения
+- **Social systems** — communication as the basic operation
+- **Autopoiesis of social systems** — self-reproduction through communication
+- **Meaning** — as the medium of social systems
+- **Functional differentiation** — society divides into subsystems (law, science, economy, politics), each with its own code
+- **Reduction of complexity** — each system simplifies the world through its own distinctions
 
-### Революционный ход Лумана
+### Luhmann's Revolutionary Move
 
-Ключевой ход Лумана состоял в том, что он перенёс концепцию автопоэзиса Матураны и Варелы — изначально биологическую — на **социальные системы**. Но с радикальной модификацией: если биологический автопоэзис воспроизводит клетки, то социальный автопоэзис воспроизводит **коммуникации**. Общество — это не совокупность людей, а самовоспроизводящаяся сеть коммуникаций. Люди — не элементы общества, а его **окружение**.
+Luhmann's key move was to transfer the concept of autopoiesis of Maturana and Varela — originally biological — to **social systems**. But with a radical modification: if biological autopoiesis reproduces cells, then social autopoiesis reproduces **communications**. Society is not a collection of people but a self-reproducing network of communications. People are not elements of society but its **environment**.
 
-Этот ход был гениален и одновременно ограничен. Гениален — потому что позволил описать социальную динамику без редукции к психологии. Ограничен — потому что исключил из теории именно то, что делает коммуникацию *осмысленной*: внутренний опыт коммуницирующего существа.
+This move was brilliant and simultaneously limited. Brilliant — because it allowed social dynamics to be described without reduction to psychology. Limited — because it excluded from theory precisely what makes communication *meaningful*: the inner experience of the communicating being.
 
-### Отображение в КК
+### Mapping in CC
 
-| Кибернетика-III | КК |
+| Cybernetics-III | CC |
 |-----------------|-----|
-| Социальные системы | Композитный Голоном $\mathbb{H}_{1 \otimes \ldots \otimes n}$ |
-| Коммуникация | Взаимодействие через общую компоненту $\Gamma_{ij}$ |
-| Смысл | [U-измерение](/docs/core/structure/dimension-u) — интеграция |
-| Функциональная дифференциация | Секторный профиль $\gamma_{kk}$ — специализация по измерениям |
-| Редукция сложности | Проекция $\Gamma$ на подпространство: $P_k \Gamma P_k$ |
-| Двойная контингенция | Взаимная неопределённость $\Gamma_{ij}$ двух Голономов до коммуникации |
+| Social systems | Composite Holon $\mathbb{H}_{1 \otimes \ldots \otimes n}$ |
+| Communication | Interaction through shared component $\Gamma_{ij}$ |
+| Meaning | [U-dimension](/docs/core/structure/dimension-u) — integration |
+| Functional differentiation | Sector profile $\gamma_{kk}$ — specialization by dimension |
+| Reduction of complexity | Projection of $\Gamma$ onto a subspace: $P_k \Gamma P_k$ |
+| Double contingency | Mutual indeterminacy of $\Gamma_{ij}$ of two Holons before communication |
 
-**Добавляется:**
-- Многоагентная динамика
-- Эмерджентные социальные феномены
+**Added:**
+- Multi-agent dynamics
+- Emergent social phenomena
 
-**Что теряется:**
-- Феноменология ([E-измерение](/docs/core/structure/dimension-e) как фундаментальное)
-- Квантовое основание [(QG)](/docs/core/foundations/axiom-septicity)
-- Формальная математическая структура
+**What is lost:**
+- Phenomenology ([E-dimension](/docs/core/structure/dimension-e) as fundamental)
+- Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity)
+- Formal mathematical structure
 
-:::tip Мысленный эксперимент: общество без сознания
-Луман описывает общество как систему коммуникаций. Представьте мир, в котором коммуникации происходят — сообщения генерируются и обрабатываются, системы дифференцируются и воспроизводятся, — но **никто ничего не переживает**. Никто не понимает смысл сообщения, не чувствует радости от научного открытия, не страдает от несправедливости правовой системы. По Луману, такое общество формально неотличимо от нашего — ведь сознание для него находится в окружении социальной системы, а не внутри неё.
+:::tip Thought Experiment: Society Without Consciousness
+Luhmann describes society as a system of communications. Imagine a world in which communications occur — messages are generated and processed, systems differentiate and reproduce — but **no one experiences anything**. No one understands the meaning of a message, feels joy at a scientific discovery, suffers from the injustice of the legal system. According to Luhmann, such a society would be formally indistinguishable from ours — since consciousness for him is in the environment of the social system, not inside it.
 
-КК показывает, почему это невозможно: без [E-измерения](/docs/core/structure/dimension-e) коммуникация вырождается в обмен шумом. Смысл — не абстрактная «среда», а следствие интериорности: чтобы сообщение было *понято*, получатель должен обладать внутренним опытом ($P > P_{\text{crit}}$, $R \geq 1/3$). Общество — это не просто сеть коммуникаций, а сеть **сознательных** коммуникаций.
+CC shows why this is impossible: without the [E-dimension](/docs/core/structure/dimension-e) communication degenerates into an exchange of noise. Meaning is not an abstract "medium" but a consequence of interiority: for a message to be *understood*, the receiver must possess inner experience ($P > P_{\text{crit}}$, $R \geq 1/3$). Society is not merely a network of communications, but a network of **conscious** communications.
 :::
 
 ---
 
-## Другие традиции {#другие-традиции}
+## Other Traditions {#другие-традиции}
 
-Три «порядка» кибернетики — это магистральная линия. Но параллельно развивались несколько мощных ответвлений, каждое из которых захватило важный фрагмент полной картины.
+The three "orders" of cybernetics represent the main line. But in parallel, several powerful offshoots developed, each of which captured an important fragment of the full picture.
 
-### Эшби: закон необходимого разнообразия
+### Ashby: Law of Requisite Variety
 
-**Уильям Росс Эшби** (1903-1972) — британский психиатр, ставший одним из отцов-основателей кибернетики. В 1952 году он построил **гомеостат** — электромеханическое устройство из четырёх связанных блоков, которое автоматически находило устойчивое состояние при любых внешних возмущениях. Это была первая «адаптивная машина» — прототип того, что мы сегодня называем самоорганизующейся системой.
+**William Ross Ashby** (1903–1972) — a British psychiatrist who became one of the founding fathers of cybernetics. In 1952 he built the **homeostat** — an electromechanical device consisting of four interconnected units that automatically found a stable state under any external disturbance. This was the first "adaptive machine" — a prototype of what we today call a self-organizing system.
 
-Но главное достижение Эшби — **закон необходимого разнообразия** (1956): *«Только разнообразие может поглотить разнообразие»*. Чтобы система управления справилась с $N$ возможными возмущениями, она должна иметь не менее $N$ возможных реакций. Проще: чтобы управлять сложной системой, управляющий должен быть не менее сложен, чем управляемый.
+But Ashby's chief achievement was the **law of requisite variety** (1956): *"Only variety can absorb variety."* For a control system to cope with $N$ possible disturbances, it must have no fewer than $N$ possible responses. Simply: to control a complex system, the controller must be no less complex than the controlled.
 
-| Эшби | КК |
+| Ashby | CC |
 |------|-----|
-| Необходимое разнообразие | $\dim(\mathcal{H}) = 7$ — минимальная размерность для [полного описания](/docs/core/foundations/axiom-omega) |
-| Гомеостат | Динамика $\Gamma(t)$ с аттрактором $\Gamma^*$ |
-| Ультрастабильность | Двухуровневая адаптация: $\mathcal{L}_0$ (быстрая) + $\mathcal{R}$ (медленная) |
+| Requisite variety | $\dim(\mathcal{H}) = 7$ — minimum dimensionality for [complete description](/docs/core/foundations/axiom-omega) |
+| Homeostat | Dynamics $\Gamma(t)$ with attractor $\Gamma^*$ |
+| Ultrastability | Two-level adaptation: $\mathcal{L}_0$ (fast) + $\mathcal{R}$ (slow) |
 
-Закон Эшби объясняет, *почему нужно именно 7 измерений*: мир предъявляет разнообразие по семи несводимым аспектам (действие, ощущение, когниция, обучение, переживание, оценка, интеграция), и жизнеспособная система должна иметь ответ на каждый. Шесть измерений — недостаточно, восемь — избыточно (теорема [T-5](/docs/reference/status-registry): минимальность $N=7$).
+Ashby's law explains *why exactly 7 dimensions are needed*: the world presents variety along seven irreducible aspects (action, sensation, cognition, learning, experience, evaluation, integration), and a viable system must have an answer to each. Six dimensions are insufficient, eight are redundant (theorem [T-5](/docs/reference/status-registry): minimality $N=7$).
 
-### Бир: жизнеспособная система
+### Beer: The Viable System
 
-**Стаффорд Бир** (1926-2002) — британский теоретик менеджмента, создатель **модели жизнеспособной системы** (Viable System Model, VSM). Бир предложил, что любая жизнеспособная организация имеет рекурсивную структуру из пяти подсистем:
+**Stafford Beer** (1926–2002) — a British management theorist, creator of the **Viable System Model** (VSM). Beer proposed that any viable organization has a recursive structure of five subsystems:
 
-1. **Система 1** — операционные элементы (производство)
-2. **Система 2** — координация (антиосцилляция)
-3. **Система 3** — оптимизация (внутренний менеджмент)
-4. **Система 4** — стратегия (взгляд наружу)
-5. **Система 5** — идентичность (политика, ценности)
+1. **System 1** — operational elements (production)
+2. **System 2** — coordination (anti-oscillation)
+3. **System 3** — optimization (internal management)
+4. **System 4** — strategy (looking outward)
+5. **System 5** — identity (policy, values)
 
-В 1971-1973 годах Бир попытался реализовать VSM в масштабе целой страны — проект **Cybersyn** в Чили Сальвадора Альенде. Сеть телексов соединила фабрики с центром управления в Сантьяго, где данные визуализировались в футуристической «операционной комнате». Проект был прерван военным переворотом в 1973 году.
+In 1971–1973, Beer attempted to implement VSM at the scale of an entire country — the **Cybersyn** project in Salvador Allende's Chile. A network of telexes connected factories to a control center in Santiago, where data were visualized in a futuristic "operations room." The project was interrupted by the military coup in 1973.
 
-| Бир (VSM) | КК |
+| Beer (VSM) | CC |
 |-----------|-----|
-| Система 1 (операции) | Измерение $A$ + $S$: действие и ощущение |
-| Система 2 (координация) | $D$: управление |
-| Система 3 (оптимизация) | $L$: когнитивная оптимизация |
-| Система 4 (стратегия) | $O$: оценка и адаптация ценностей |
-| Система 5 (идентичность) | $U$: интеграция, целостность |
-| Рекурсивность | Рекурсивная [композиция Голономов](/docs/core/structure/holon) |
+| System 1 (operations) | Dimension $A$ + $S$: action and sensation |
+| System 2 (coordination) | $D$: control |
+| System 3 (optimization) | $L$: cognitive optimization |
+| System 4 (strategy) | $O$: evaluation and value adaptation |
+| System 5 (identity) | $U$: integration, wholeness |
+| Recursiveness | Recursive [Holon composition](/docs/core/structure/holon) |
 
-Замечательно, что VSM «почти» покрывает все 7 измерений — Бир интуитивно нащупал многомерность жизнеспособности. Но его модель остаётся организационной схемой, не формальной теорией: нет уравнений эволюции, нет пороговых условий, нет квантового основания.
+Remarkably, VSM "almost" covers all 7 dimensions — Beer intuitively felt out the multidimensionality of viability. But his model remains an organizational scheme, not a formal theory: there are no evolution equations, no threshold conditions, no quantum foundation.
 
-### Бейтсон: экология разума
+### Bateson: Ecology of Mind
 
-**Грегори Бейтсон** (1904-1980) — британский антрополог, биолог и философ — был, возможно, самым нетипичным участником Macy Conferences. Он пришёл из антропологии, изучал культуры Бали и Новой Гвинеи, но увидел в кибернетике нечто, чего не видели инженеры: **разум как паттерн, а не как вещество**.
+**Gregory Bateson** (1904–1980) — a British anthropologist, biologist, and philosopher — was perhaps the most atypical participant of the Macy Conferences. He came from anthropology, having studied the cultures of Bali and New Guinea, but he saw in cybernetics something that engineers did not see: **mind as pattern, not as substance**.
 
-Бейтсон сформулировал несколько идей, опередивших своё время:
+Bateson formulated several ideas ahead of their time:
 
-- **Разум — это процесс**, а не субстанция. Разум существует везде, где есть система, обрабатывающая информацию (различия, которые порождают различия).
-- **Двойное послание** (double bind) — коммуникативная ловушка, когда сообщение противоречит метасообщению. Бейтсон предположил, что шизофрения связана с хроническим двойным посланием в семье.
-- **Обучение-обучению** (deutero-learning) — система не только обучается, но обучается *как обучаться*. Иерархия уровней обучения.
-- **Экология разума** — разум не заключён в черепе, а распределён по системе «организм + окружение».
+- **Mind is a process**, not a substance. Mind exists wherever there is a system that processes information (differences that make a difference).
+- **Double bind** — a communicative trap in which a message contradicts a meta-message. Bateson proposed that schizophrenia is linked to chronic double binding in the family.
+- **Deutero-learning** — a system not only learns but learns *how to learn*. A hierarchy of levels of learning.
+- **Ecology of mind** — mind is not enclosed in the skull but distributed across the "organism + environment" system.
 
-| Бейтсон | КК |
+| Bateson | CC |
 |---------|-----|
-| Различие, порождающее различие | $\sigma_k = 1 - 7\gamma_{kk}$ (T-92/T-158 [Т]) — стресс как различие между состоянием и нормой |
-| Двойное послание | Противоречие между $\gamma_{DD}$ (команда) и $\gamma_{EE}$ (переживание) |
-| Deutero-learning | SAD-уровни: L0 → L1 → L2 ([глубинная башня](/docs/consciousness/hierarchy/interiority-hierarchy)) |
-| Экология разума | Голоном не изолирован — $\Gamma$ включает взаимодействие с окружением |
+| Difference that makes a difference | $\sigma_k = 1 - 7\gamma_{kk}$ (T-92/T-158 [T]) — stress as the difference between state and norm |
+| Double bind | Contradiction between $\gamma_{DD}$ (command) and $\gamma_{EE}$ (experience) |
+| Deutero-learning | SAD levels: L0 → L1 → L2 ([depth tower](/docs/consciousness/hierarchy/interiority-hierarchy)) |
+| Ecology of mind | The Holon is not isolated — $\Gamma$ includes interaction with the environment |
 
-### Спенсер-Браун: законы формы
+### Spencer-Brown: Laws of Form
 
-**Джордж Спенсер-Браун** (1923-2016) — британский математик и логик — в 1969 году опубликовал «Laws of Form» — одну из самых загадочных книг XX века. В ней всего один оператор: **различение** (distinction) — акт проведения границы, разделяющей «внутри» и «снаружи». Из этого единственного операнда Спенсер-Браун выводит всю булеву алгебру, а затем — через «перевход» (re-entry) формы в саму себя — самореференцию.
+**George Spencer-Brown** (1923–2016) — a British mathematician and logician — in 1969 published "Laws of Form" — one of the most enigmatic books of the twentieth century. It contains just one operator: **distinction** — the act of drawing a boundary that separates "inside" from "outside." From this single operand, Spencer-Brown derives all Boolean algebra, and then — through the "re-entry" of the form into itself — self-reference.
 
-Формула перевхода: $f = f(f)$ — форма, которая входит в собственное определение. Это математический прообраз автопоэзиса — и прямой предшественник неподвижной точки $\varphi(\Gamma^*) = \Gamma^*$ в КК. Фон Фёрстер был одним из первых, кто оценил значение «Laws of Form», и пригласил Спенсер-Брауна в BCL. Луман использовал «различение» как базовую операцию социальных систем.
+The re-entry formula: $f = f(f)$ — a form that enters its own definition. This is the mathematical prototype of autopoiesis — and the direct precursor of the fixed point $\varphi(\Gamma^*) = \Gamma^*$ in CC. Von Foerster was one of the first to appreciate the significance of "Laws of Form" and invited Spencer-Brown to BCL. Luhmann used "distinction" as the basic operation of social systems.
 
-| Спенсер-Браун | КК |
+| Spencer-Brown | CC |
 |---------------|-----|
-| Различение (distinction) | Декогеренция: переход от суперпозиции к определённости |
-| Перевход (re-entry) | $\varphi(\Gamma^*) = \Gamma^*$: самомоделирование |
-| Unmarked state (немаркированное) | $\Gamma = I/7$: полностью смешанное состояние |
-| Marked state (маркированное) | $P > 2/7$: жизнеспособное состояние |
+| Distinction | Decoherence: transition from superposition to definiteness |
+| Re-entry | $\varphi(\Gamma^*) = \Gamma^*$: self-modeling |
+| Unmarked state | $\Gamma = I/7$: fully mixed state |
+| Marked state | $P > 2/7$: viable state |
 
-В КК различение формализуется не как логический, а как **физический** процесс: декогеренция ($\mathcal{D}_\Omega$) — это непрерывное «проведение границ» между состояниями, а перевход — регенерация ($\mathcal{R}$), возвращающая систему к самой себе. Спенсер-Браун нашёл *логическую* форму самореференции; КК даёт ей *динамическое* воплощение.
+In CC, distinction is formalized not as a logical but as a **physical** process: decoherence ($\mathcal{D}_\Omega$) is the continuous "drawing of boundaries" between states, while re-entry is regeneration ($\mathcal{R}$), returning the system to itself. Spencer-Brown found the *logical* form of self-reference; CC gives it a *dynamical* embodiment.
 
-### Паск: теория разговора
+### Pask: Conversation Theory
 
-**Гордон Паск** (1928-1996) — британский кибернетик, работавший в BCL фон Фёрстера — создал **Conversation Theory** (теорию разговора), одну из наиболее недооценённых интеллектуальных конструкций XX века. Паск предположил, что познание — не свойство индивида, а процесс, возникающий **между** участниками разговора. Знание не «передаётся» от учителя к ученику, а *порождается* в акте взаимодействия.
+**Gordon Pask** (1928–1996) — a British cybernetician who worked at von Foerster's BCL — created **Conversation Theory**, one of the most underestimated intellectual constructions of the twentieth century. Pask proposed that cognition is not a property of an individual but a process that arises **between** participants in a conversation. Knowledge is not "transmitted" from teacher to student, but *generated* in the act of interaction.
 
-Паск ввёл понятие **p-individual** (psychological individual) — минимальной единицы, способной к разговору. P-individual — это не человек (один человек может содержать несколько p-individuals), а именно *участник диалога*, способный генерировать, понимать и трансформировать концепции.
+Pask introduced the concept of the **p-individual** (psychological individual) — the minimal unit capable of conversation. A p-individual is not a person (one person may contain several p-individuals), but precisely a *participant in dialogue*, capable of generating, understanding, and transforming concepts.
 
-| Паск | КК |
+| Pask | CC |
 |------|-----|
-| P-individual | Голоном $\mathbb{H}$ с $R \geq 1/3$ |
-| Разговор | Взаимодействие через $\gamma_{ij}$ между голономами |
-| Понимание (understanding) | Сходимость $\Gamma_1, \Gamma_2$ к общему аттрактору |
-| Соглашение (agreement) | $\|\Gamma_1 - \Gamma_2\|_F < \epsilon$ |
+| P-individual | Holon $\mathbb{H}$ with $R \geq 1/3$ |
+| Conversation | Interaction through $\gamma_{ij}$ between holons |
+| Understanding | Convergence of $\Gamma_1, \Gamma_2$ to a common attractor |
+| Agreement | $\|\Gamma_1 - \Gamma_2\|_F < \epsilon$ |
 
-Паск был прав в главном: познание — **диалогический** процесс. КК формализует это через [композицию голономов](/docs/core/structure/holon): два голонома, взаимодействуя через общую когерентность, порождают эмерджентное состояние, несводимое к сумме частей. «Понимание» в терминах КК — это сближение $\Gamma$-матриц, а «непонимание» — расходимость.
+Pask was right in the main: cognition is a **dialogical** process. CC formalizes this through [Holon composition](/docs/core/structure/holon): two holons, interacting through shared coherence, generate an emergent state irreducible to the sum of the parts. "Understanding" in CC terms is the convergence of $\Gamma$-matrices, and "misunderstanding" is divergence.
 
-### Матурана и Варела: автопоэзис
+### Maturana and Varela: Autopoiesis
 
-**Умберто Матурана** и **Франсиско Варела** — чилийские биологи, которые в 1972 году ввели понятие **автопоэзиса** (от греч. αὐτός — «сам» + ποίησις — «творение»). Автопоэтическая система — это сеть процессов, которые непрерывно производят компоненты, необходимые для продолжения этой самой сети.
+**Humberto Maturana** and **Francisco Varela** — Chilean biologists who in 1972 introduced the concept of **autopoiesis** (from Greek αὐτός — "self" + ποίησις — "creation"). An autopoietic system is a network of processes that continuously produces the components necessary for the continuation of that very network.
 
-Матурана начал с вопроса: *«Что определяет живую систему как живую?»* Ответ: не химический состав, не структура, а **организация** — замкнутая сеть производства. Клетка — автопоэтическая, потому что её метаболизм производит мембрану, которая ограничивает метаболизм, который производит мембрану, — и так далее.
+Maturana began with the question: *"What defines a living system as living?"* Answer: not chemical composition, not structure, but **organization** — a closed network of production. A cell is autopoietic because its metabolism produces the membrane that confines the metabolism that produces the membrane — and so on.
 
-Варела (1946-2001) пошёл дальше: он связал автопоэзис с феноменологией Гуссерля и Мерло-Понти, создав **нейрофеноменологию** — программу, в которой нейронаука и отчёты от первого лица дополняют друг друга. Это был первый серьёзный шаг к тому, что КК формализует как [E-измерение](/docs/core/structure/dimension-e), — но Варела не дожил до его завершения.
+Varela (1946–2001) went further: he linked autopoiesis to the phenomenology of Husserl and Merleau-Ponty, creating **neurophenomenology** — a program in which neuroscience and first-person reports complement each other. This was the first serious step toward what CC formalizes as the [E-dimension](/docs/core/structure/dimension-e) — but Varela did not live to see its completion.
 
-Подробнее связь автопоэзиса с КК — в разделе [Теории сознания](/docs/consciousness/comparative/consciousness-theories).
+For more on the connection between autopoiesis and CC — see the section [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories).
 
 ---
 
-## Параллельные потоки: теории сознания {#параллельные-потоки}
+## Parallel Streams: Theories of Consciousness {#параллельные-потоки}
 
-С 1990-х годов параллельно кибернетической традиции развились три теории, каждая из которых захватила один-два измерения КК с замечательной точностью — и столь же замечательной неполнотой.
+From the 1990s onward, three theories developed in parallel to the cybernetic tradition, each of which captured one or two CC dimensions with remarkable precision — and equally remarkable incompleteness.
 
-### IIT: интегрированная информация (Тонони)
+### IIT: Integrated Information (Tononi)
 
-**Джулио Тонони** — итальянский нейрофизиолог, работающий в Университете Висконсина-Мэдисон — с 2004 года развивает **теорию интегрированной информации** (Integrated Information Theory, IIT). Центральная идея: сознание тождественно $\Phi$ — количеству информации, которое система генерирует «как целое», сверх того, что генерируют её части.
+**Giulio Tononi** — an Italian neurophysiologist at the University of Wisconsin–Madison — has been developing **Integrated Information Theory** (IIT) since 2004. The central idea: consciousness is identical to $\Phi$ — the amount of information that a system generates "as a whole," over and above what its parts generate.
 
-IIT — это, вероятно, наиболее формализованная из конкурирующих теорий сознания. Она даёт конкретное число ($\Phi$), определяет «квалиа-пространство» (структуру переживания), формулирует пять аксиом (Existence, Composition, Information, Integration, Exclusion). Но у неё есть фундаментальная проблема: $\Phi$ вычислительно непрактичен (NP-трудный для общих графов) и онтологически неопределён — почему именно *интеграция* должна порождать *переживание*?
+IIT is arguably the most formalized of the competing theories of consciousness. It gives a concrete number ($\Phi$), defines a "quale-space" (the structure of experience), and formulates five axioms (Existence, Composition, Information, Integration, Exclusion). But it has a fundamental problem: $\Phi$ is computationally intractable (NP-hard for general graphs) and ontologically indeterminate — why should *integration* give rise to *experience*?
 
-| IIT (Тонони) | КК |
+| IIT (Tononi) | CC |
 |-------------|-----|
-| $\Phi$ (интеграция) | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) — [U-измерение](/docs/core/structure/dimension-u) |
-| Квалиа-пространство | [E-измерение](/docs/core/structure/dimension-e) — но в КК это **фундаментальное**, а не производное от интеграции |
-| 5 аксиом IIT | Покрываются аксиоматикой КК: [(AP), (QG), (PW)](/docs/core/foundations/axiom-septicity) |
-| $\Phi > 0$ как критерий сознания | $P > P_{\text{crit}} \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ — **четырёхкомпонентный** критерий |
+| $\Phi$ (integration) | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) — [U-dimension](/docs/core/structure/dimension-u) |
+| Quale-space | [E-dimension](/docs/core/structure/dimension-e) — but in CC this is **fundamental**, not derived from integration |
+| 5 IIT axioms | Covered by CC axiomatics: [(AP), (QG), (PW)](/docs/core/foundations/axiom-septicity) |
+| $\Phi > 0$ as consciousness criterion | $P > P_{\text{crit}} \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ — **four-component** criterion |
 
-Ключевое различие: IIT делает интеграцию *единственным* критерием сознания. КК показывает, что интеграция ($\Phi \geq 1$) необходима, но недостаточна — нужна ещё рефлексия ($R \geq 1/3$), чистота ($P > P_{\text{crit}}$) и глубина ($D \geq 2$).
+The key difference: IIT makes integration the *sole* criterion of consciousness. CC shows that integration ($\Phi \geq 1$) is necessary but not sufficient — reflection ($R \geq 1/3$), purity ($P > P_{\text{crit}}$), and depth ($D \geq 2$) are also needed.
 
-### FEP: принцип свободной энергии (Фристон)
+### FEP: Free Energy Principle (Friston)
 
-**Карл Фристон** — британский нейровизуалист, создатель SPM (Statistical Parametric Mapping) и один из самых цитируемых нейроучёных в мире — с 2006 года развивает **принцип свободной энергии** (Free Energy Principle, FEP). Центральная идея: любая самоорганизующаяся система, которая существует достаточно долго, *выглядит так, как будто* она минимизирует вариационную свободную энергию — расхождение между своей внутренней моделью и сенсорными данными.
+**Karl Friston** — a British neuroimager, creator of SPM (Statistical Parametric Mapping) and one of the most cited neuroscientists in the world — has been developing the **Free Energy Principle** (FEP) since 2006. The central idea: any self-organizing system that exists long enough *looks as if* it is minimizing variational free energy — the divergence between its internal model and sensory data.
 
-FEP — это одновременно очень глубокая и очень скользкая идея. Глубокая — потому что она объединяет восприятие, действие, обучение и внимание в единую оптимизационную схему. Скользкая — потому что, будучи принципом минимизации сюрприза, она либо тривиально верна (всё, что существует, минимизирует сюрприз — иначе оно бы распалось), либо фальсифицируема, но тогда непонятно, каков контрпример.
+FEP is simultaneously a very deep and a very slippery idea. Deep — because it unifies perception, action, learning, and attention in a single optimization scheme. Slippery — because, being a principle of surprise minimization, it is either trivially true (everything that exists minimizes surprise — otherwise it would have dissolved), or falsifiable, but then it is unclear what the counterexample would be.
 
-| FEP (Фристон) | КК |
+| FEP (Friston) | CC |
 |---------------|-----|
-| Свободная энергия $F$ | [Жизнеспособность](/docs/core/dynamics/viability) $\mathcal{V}(\Gamma)$ |
-| Марковское одеяло | Граница [Голонома](/docs/core/structure/holon) |
-| Активный вывод | [D-измерение](/docs/core/structure/dimension-d): действие как оптимизация |
-| Минимизация сюрприза | Притяжение к [жизнеспособной области](/docs/core/dynamics/viability): $P > P_{\text{crit}}$ |
-| Генеративная модель | [L-измерение](/docs/core/structure/dimension-l): внутренняя модель мира |
-| Точность (precision) | $\gamma_{SS}$: вес сенсорного канала |
+| Free energy $F$ | [Viability](/docs/core/dynamics/viability) $\mathcal{V}(\Gamma)$ |
+| Markov blanket | Boundary of [Holon](/docs/core/structure/holon) |
+| Active inference | [D-dimension](/docs/core/structure/dimension-d): action as optimization |
+| Surprise minimization | Attraction to [viable region](/docs/core/dynamics/viability): $P > P_{\text{crit}}$ |
+| Generative model | [L-dimension](/docs/core/structure/dimension-l): internal world model |
+| Precision | $\gamma_{SS}$: weight of the sensory channel |
 
-FEP покрывает $D$, $O$, $S$ и отчасти $L$ — но не имеет аналогов для $E$ (интериорности), $A$ (действия как отдельного от вывода) и $U$ (интеграции). Фристон сам признаёт, что FEP — это «процесс-теория», а не «теория содержания»: она говорит *как* система оптимизирует, но не *что* она переживает.
+FEP covers $D$, $O$, $S$ and partly $L$ — but has no analogs for $E$ (interiority), $A$ (action as separate from inference), and $U$ (integration). Friston himself acknowledges that FEP is a "process-theory," not a "content-theory": it says *how* the system optimizes, but not *what* it experiences.
 
-### GWT: глобальное рабочее пространство (Баарс)
+### GWT: Global Workspace (Baars)
 
-**Бернард Баарс** — американский когнитивный учёный — в 1988 году предложил **теорию глобального рабочего пространства** (Global Workspace Theory, GWT). Метафора: сознание — это «прожектор» на сцене театра. Множество бессознательных процессов-«актёров» конкурируют за доступ к «сцене» — глобальному рабочему пространству. Тот процесс, который попадает на сцену, становится сознательным и транслируется всем «зрителям» — остальным модулям мозга.
+**Bernard Baars** — an American cognitive scientist — in 1988 proposed **Global Workspace Theory** (GWT). The metaphor: consciousness is a "spotlight" on the stage of a theatre. Many unconscious process-"actors" compete for access to the "stage" — the global workspace. The process that gets onto the stage becomes conscious and is broadcast to all "spectators" — the other modules of the brain.
 
-Станислас Деан и Жан-Пьер Шанжё развили эту идею в **нейронную теорию глобального рабочего пространства** (GNWT), связав «сцену» с длинно-дистанционными кортикальными связями (особенно префронтально-теменными).
+Stanislas Dehaene and Jean-Pierre Changeux developed this idea into the **Neural Global Workspace Theory** (GNWT), linking the "stage" to long-range cortical connections (especially prefrontal-parietal).
 
-| GWT (Баарс, Деан) | КК |
+| GWT (Baars, Dehaene) | CC |
 |-------------------|-----|
-| Глобальное рабочее пространство | Когерентная компонента $\Gamma$: off-diagonal $\gamma_{ij} \neq 0$ |
-| «Прожектор» внимания | [S-измерение](/docs/core/structure/dimension-s): сенсорный фокус |
-| Бессознательные модули | $P < P_{\text{crit}}$: автоматические процессы ниже порога когерентности |
-| Broadcast (трансляция) | $\Phi \geq 1$: интеграция информации между измерениями |
-| Ignition (зажигание) | Фазовый переход при $P = P_{\text{crit}} = 2/7$ |
+| Global workspace | Coherent component of $\Gamma$: off-diagonal $\gamma_{ij} \neq 0$ |
+| Attention "spotlight" | [S-dimension](/docs/core/structure/dimension-s): sensory focus |
+| Unconscious modules | $P < P_{\text{crit}}$: automatic processes below the coherence threshold |
+| Broadcast | $\Phi \geq 1$: integration of information across dimensions |
+| Ignition | Phase transition at $P = P_{\text{crit}} = 2/7$ |
 
-GWT — это по сути теория **механизма доступа** к сознанию, а не теория сознания как такового. Она объясняет, *какие* процессы становятся сознательными (те, что попали на сцену), но не *почему* попадание на сцену сопровождается субъективным опытом. В терминах КК: GWT описывает переход $P < P_{\text{crit}} \to P > P_{\text{crit}}$, но не объясняет, откуда берётся $E$.
+GWT is essentially a theory of the **mechanism of access** to consciousness, not a theory of consciousness as such. It explains *which* processes become conscious (those that got onto the stage), but not *why* getting onto the stage is accompanied by subjective experience. In CC terms: GWT describes the transition $P < P_{\text{crit}} \to P > P_{\text{crit}}$, but does not explain where $E$ comes from.
 
-### Сводная таблица параллельных потоков
+### Summary Table of Parallel Streams
 
-| Аспект | IIT | FEP | GWT | КК |
+| Aspect | IIT | FEP | GWT | CC |
 |--------|-----|-----|-----|-----|
-| Формализм | Высокий | Высокий | Низкий | Полный (категорный) |
-| Интериорность | Постулируется | Игнорируется | Игнорируется | [Фундаментальна](/docs/core/structure/dimension-e) |
-| Динамика | Статична | Оптимизация $F$ | Конкуренция модулей | [Уравнение эволюции](/docs/core/dynamics/evolution) |
-| Многоагентность | Нет | Частично (активный вывод) | Нет | [Композиция $\mathbb{H}$](/docs/core/structure/holon) |
-| Фальсифицируемость | Трудна ($\Phi$ NP-труден) | Дискуссионна | Средняя | [22+ предсказания](/docs/applied/coherence-cybernetics/predictions) |
-| Покрытие ASDLEOU | U, E | D, O, S | S, L | Все 7 |
+| Formalism | High | High | Low | Full (categorical) |
+| Interiority | Postulated | Ignored | Ignored | [Fundamental](/docs/core/structure/dimension-e) |
+| Dynamics | Static | Optimization of $F$ | Module competition | [Evolution equation](/docs/core/dynamics/evolution) |
+| Multi-agent | No | Partially (active inference) | No | [Composition $\mathbb{H}$](/docs/core/structure/holon) |
+| Falsifiability | Hard ($\Phi$ NP-hard) | Debated | Moderate | [22+ predictions](/docs/applied/coherence-cybernetics/predictions) |
+| ASDLEOU coverage | U, E | D, O, S | S, L | All 7 |
 
 ---
 
-## Диаграмма эволюции кибернетики {#диаграмма-эволюции-кибернетики}
+## Diagram of the Evolution of Cybernetics {#диаграмма-эволюции-кибернетики}
 
 ```mermaid
 graph TD
-    subgraph "Предыстория"
-        P1["Платон<br/>κυβερνήτης<br/>~380 до н.э."]
-        P2["Лейбниц<br/>Монадология<br/>1714"]
-        P3["Кант<br/>Целесообразность<br/>1790"]
-        P4["Ампер<br/>cybernétique<br/>1834"]
+    subgraph "Prehistory"
+        P1["Plato<br/>κυβερνήτης<br/>~380 BCE"]
+        P2["Leibniz<br/>Monadology<br/>1714"]
+        P3["Kant<br/>Purposiveness<br/>1790"]
+        P4["Ampère<br/>cybernétique<br/>1834"]
     end
 
-    subgraph "Классическая линия"
-        C1["Кибернетика-I<br/>Винер 1948<br/>Обратная связь<br/>📐 D"]
-        C2["Кибернетика-II<br/>фон Фёрстер 1979<br/>Наблюдатель<br/>📐 D, L"]
-        C3["Кибернетика-III<br/>Луман 1984<br/>Социальные системы<br/>📐 D, L, U"]
+    subgraph "Classical Line"
+        C1["Cybernetics-I<br/>Wiener 1948<br/>Feedback<br/>📐 D"]
+        C2["Cybernetics-II<br/>von Foerster 1979<br/>Observer<br/>📐 D, L"]
+        C3["Cybernetics-III<br/>Luhmann 1984<br/>Social Systems<br/>📐 D, L, U"]
     end
 
-    subgraph "Ответвления"
-        B1["Эшби 1956<br/>Необходимое<br/>разнообразие"]
-        B2["Бир 1972<br/>VSM"]
-        B3["Бейтсон 1972<br/>Экология разума"]
-        B4["Матурана/Варела<br/>1972<br/>Автопоэзис"]
+    subgraph "Offshoots"
+        B1["Ashby 1956<br/>Requisite<br/>Variety"]
+        B2["Beer 1972<br/>VSM"]
+        B3["Bateson 1972<br/>Ecology of Mind"]
+        B4["Maturana/Varela<br/>1972<br/>Autopoiesis"]
     end
 
-    subgraph "Параллельные потоки"
-        T1["IIT<br/>Тонони 2004<br/>📐 U, E"]
-        T2["FEP<br/>Фристон 2006<br/>📐 D, O, S"]
-        T3["GWT<br/>Баарс 1988<br/>📐 S, L"]
+    subgraph "Parallel Streams"
+        T1["IIT<br/>Tononi 2004<br/>📐 U, E"]
+        T2["FEP<br/>Friston 2006<br/>📐 D, O, S"]
+        T3["GWT<br/>Baars 1988<br/>📐 S, L"]
     end
 
-    KK["КК<br/>Полная когерентность<br/>📐 A, S, D, L, E, O, U"]
+    KK["CC<br/>Full Coherence<br/>📐 A, S, D, L, E, O, U"]
 
     P1 --> P4
     P2 --> P4
     P3 --> P4
     P4 --> C1
-    C1 -->|"+наблюдатель"| C2
-    C2 -->|"+социальность"| C3
+    C1 -->|"+observer"| C2
+    C2 -->|"+sociality"| C3
     C1 --> B1
     C1 --> B2
     C1 --> B3
     C2 --> B4
     B4 --> T1
     B4 --> T2
-    C3 -->|"+феноменология<br/>+квантовое основание<br/>+формализация"| KK
+    C3 -->|"+phenomenology<br/>+quantum foundation<br/>+formalization"| KK
     B1 --> KK
     B2 --> KK
     B3 --> KK
@@ -505,165 +505,165 @@ graph TD
 
 ---
 
-## Почему КК — не четвёртая кибернетика, а метатеория {#почему-кк-метатеория}
+## Why CC Is Not a Fourth Cybernetics but a Metatheory {#почему-кк-метатеория}
 
-Соблазнительно назвать КК «кибернетикой четвёртого порядка» — просто следующей ступенью в лестнице I → II → III → IV. Но это было бы неточно, и вот почему.
+It is tempting to call CC "fourth-order cybernetics" — simply the next step on the ladder I → II → III → IV. But that would be imprecise, and here is why.
 
-### Паттерн кибернетического прогресса
+### The Pattern of Cybernetic Progress
 
-Каждый переход между порядками кибернетики следовал одному паттерну: **включение наблюдателя предыдущего уровня в описываемую систему**.
+Every transition between orders of cybernetics followed one pattern: **inclusion of the observer of the previous level into the described system**.
 
-- **I → II:** Винер описывал управление *извне*. Фон Фёрстер включил учёного *в* систему.
-- **II → III:** Фон Фёрстер описывал наблюдателя *индивидуально*. Луман включил наблюдателя *в сеть* наблюдателей.
+- **I → II:** Wiener described control *from outside*. Von Foerster included the scientist *in* the system.
+- **II → III:** Von Foerster described the observer *individually*. Luhmann included the observer *in a network* of observers.
 
-Если бы КК была «кибернетикой-IV», она бы включила сеть наблюдателей в ещё более широкую систему — например, в экосистему или в космос. Но КК делает нечто **принципиально иное**: она не добавляет ещё один уровень, а перестраивает фундамент.
+If CC were "cybernetics-IV," it would include the network of observers in an even broader system — for example, in an ecosystem or in the cosmos. But CC does something **fundamentally different**: it does not add yet another level, but rebuilds the foundation.
 
-### Три причины, по которым КК — метатеория
+### Three Reasons Why CC Is a Metatheory
 
-**1. Аксиоматическая полнота.** Кибернетики I-III и параллельные теории работают с *подмножествами* измерений: $D$ (Винер), $D+L$ (фон Фёрстер), $D+L+U$ (Луман), $U+E$ (IIT), $D+O+S$ (FEP). КК работает со всеми семью одновременно и показывает, что [именно 7 — минимальное число](/docs/core/foundations/axiom-omega#октонионная-структура), обеспечивающее замыкание.
+**1. Axiomatic completeness.** Cybernetics I–III and parallel theories work with *subsets* of dimensions: $D$ (Wiener), $D+L$ (von Foerster), $D+L+U$ (Luhmann), $U+E$ (IIT), $D+O+S$ (FEP). CC works with all seven simultaneously and shows that [exactly 7 is the minimum number](/docs/core/foundations/axiom-omega#октонионная-структура) that ensures closure.
 
-**2. Единый формализм.** Каждая теория использует свой математический аппарат: дифференциальные уравнения (Винер), рекурсивные функции (фон Фёрстер), различения (Луман), графы (IIT), байесовские модели (FEP). КК переводит все эти описания на единый язык матрицы когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ и [категорного формализма](/docs/proofs/categorical/categorical-formalism).
+**2. Unified formalism.** Each theory uses its own mathematical apparatus: differential equations (Wiener), recursive functions (von Foerster), distinctions (Luhmann), graphs (IIT), Bayesian models (FEP). CC translates all these descriptions into the unified language of the coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and [categorical formalism](/docs/proofs/categorical/categorical-formalism).
 
-**3. Квантовое основание.** Все кибернетики I-III — классические. Они описывают макроскопические петли обратной связи, наблюдение, коммуникацию. КК начинает с [квантового основания (QG)](/docs/core/foundations/axiom-septicity): $\Gamma$ — это матрица плотности в $\mathcal{D}(\mathbb{C}^7)$, и все классические конструкции — следствия декогеренции этой матрицы.
+**3. Quantum foundation.** All cybernetics I–III are classical. They describe macroscopic feedback loops, observation, communication. CC begins with [quantum foundation (QG)](/docs/core/foundations/axiom-septicity): $\Gamma$ is a density matrix in $\mathcal{D}(\mathbb{C}^7)$, and all classical constructions are consequences of the decoherence of this matrix.
 
-### Аналогия
+### Analogy
 
-Отношение КК к кибернетикам I-III — это не «четвёртая книга в серии», а скорее **перевод на общий язык**. Подобно тому, как теория категорий — не «новая алгебра» или «новая топология», а язык, на котором *алгебра и топология могут разговаривать друг с другом*, — КК не «новая кибернетика», а язык, на котором кибернетика, теория сознания и квантовая теория обнаруживают общую структуру.
+The relationship of CC to cybernetics I–III is not "the fourth book in a series," but rather **translation into a common language**. Just as category theory is not "new algebra" or "new topology," but a language in which *algebra and topology can talk to each other* — CC is not "new cybernetics," but a language in which cybernetics, consciousness theory, and quantum theory reveal a common structure.
 
 ```mermaid
 graph LR
-    subgraph "Кибернетики как проекции"
-        G["Γ ∈ D(ℂ⁷)<br/>Полная матрица когерентности"]
-        G -->|"проекция на D"| C1["Кибернетика-I"]
-        G -->|"проекция на D,L"| C2["Кибернетика-II"]
-        G -->|"проекция на D,L,U"| C3["Кибернетика-III"]
-        G -->|"проекция на U,E"| IIT["IIT"]
-        G -->|"проекция на D,O,S"| FEP["FEP"]
-        G -->|"проекция на S,L"| GWT["GWT"]
+    subgraph "Cybernetics as Projections"
+        G["Γ ∈ D(ℂ⁷)<br/>Full coherence matrix"]
+        G -->|"projection onto D"| C1["Cybernetics-I"]
+        G -->|"projection onto D,L"| C2["Cybernetics-II"]
+        G -->|"projection onto D,L,U"| C3["Cybernetics-III"]
+        G -->|"projection onto U,E"| IIT["IIT"]
+        G -->|"projection onto D,O,S"| FEP["FEP"]
+        G -->|"projection onto S,L"| GWT["GWT"]
     end
 ```
 
 ---
 
-## Единый словарь: как КК переводит между дисциплинами {#единый-словарь}
+## A Unified Vocabulary: How CC Translates Between Disciplines {#единый-словарь}
 
-Одна из ключевых функций КК — быть **словарём перевода** между дисциплинами, которые десятилетиями изучали одни и те же феномены, но не могли обнаружить это, потому что использовали разную терминологию.
+One of the key functions of CC is to be a **translation dictionary** between disciplines that have been studying the same phenomena for decades but could not discover this because they used different terminology.
 
-### Таблица соответствий
+### Correspondence Table
 
-| Понятие КК | Кибернетика | Нейронаука | Философия сознания | Физика | Теория систем |
-|-----------|-------------|------------|-------------------|--------|--------------|
-| $\Gamma$ | Состояние системы | Нейронная активность | Состояние сознания | Матрица плотности $\rho$ | Фазовая точка |
-| $P(\Gamma)$ | Упорядоченность | Нейронная когерентность | Уровень сознания | Чистота $\text{tr}(\rho^2)$ | Негэнтропия |
-| $\varphi$ | Наблюдатель (фон Фёрстер) | Модель себя (default mode) | Самосознание | — | Рефлексивность |
-| $R$ | Глубина рекурсии | Метакогниция | Самомоделирование | — | Обратная связь высшего порядка |
-| $\Phi$ | — | Интеграция (Тонони) | $\Phi$ в IIT | Запутанность | Связность |
-| $\sigma_k$ | Отклонение от нормы | Нейронный стресс | Страдание/дискомфорт | Дефект | Ошибка управления |
-| $\mathcal{L}_0$ | Обратная связь | Нейродинамика | Поток сознания | Уравнение Линдблада | Системная динамика |
-| $\mathcal{R}$ | Самовосстановление | Нейропластичность | Трансформация | — | Регенерация |
-| $P_{\text{crit}} = 2/7$ | — | Порог сознания | Критерий сознания | Фазовый переход | Порог жизнеспособности |
-| Голоном $\mathbb{H}$ | Жизнеспособная система (Бир) | Нейронная ассамблея | Субъект опыта | Подсистема | Автопоэтическая единица |
-| $\mathbb{H}_{1 \otimes \ldots \otimes n}$ | Социальная система (Луман) | Нейронная сеть | Интерсубъективность | Тензорное произведение | Метасистема |
+| CC Concept | Cybernetics | Neuroscience | Philosophy of Consciousness | Physics | Systems Theory |
+|-----------|-------------|------------|------------------------------|--------|----------------|
+| $\Gamma$ | System state | Neural activity | State of consciousness | Density matrix $\rho$ | Phase point |
+| $P(\Gamma)$ | Orderliness | Neural coherence | Level of consciousness | Purity $\text{tr}(\rho^2)$ | Negentropy |
+| $\varphi$ | Observer (von Foerster) | Self-model (default mode) | Self-awareness | — | Reflexivity |
+| $R$ | Depth of recursion | Metacognition | Self-modeling | — | Higher-order feedback |
+| $\Phi$ | — | Integration (Tononi) | $\Phi$ in IIT | Entanglement | Connectedness |
+| $\sigma_k$ | Deviation from norm | Neural stress | Suffering/discomfort | Defect | Control error |
+| $\mathcal{L}_0$ | Feedback | Neurodynamics | Stream of consciousness | Lindblad equation | System dynamics |
+| $\mathcal{R}$ | Self-restoration | Neuroplasticity | Transformation | — | Regeneration |
+| $P_{\text{crit}} = 2/7$ | — | Consciousness threshold | Criterion of consciousness | Phase transition | Viability threshold |
+| Holon $\mathbb{H}$ | Viable system (Beer) | Neural assembly | Subject of experience | Subsystem | Autopoietic unit |
+| $\mathbb{H}_{1 \otimes \ldots \otimes n}$ | Social system (Luhmann) | Neural network | Intersubjectivity | Tensor product | Metasystem |
 
-### Примеры перевода
+### Translation Examples
 
-**Проблема Чалмерса** (трудная проблема сознания) на языке КК: почему $P > P_{\text{crit}}$ сопровождается E-измерением? Ответ: потому что [E — не следствие](/docs/core/structure/dimension-e) когерентности, а одно из **семи фундаментальных измерений** $\Gamma$. Нет $\Gamma$ без $E$ (и без остальных шести). Трудная проблема возникает только если считать E производным от D, S, L — но в КК все измерения **со-фундаментальны**.
+**Chalmers' problem** (the hard problem of consciousness) in CC language: why does $P > P_{\text{crit}}$ accompany the E-dimension? Answer: because [E is not a consequence](/docs/core/structure/dimension-e) of coherence, but one of the **seven fundamental dimensions** of $\Gamma$. There is no $\Gamma$ without $E$ (or without the other six). The hard problem arises only if E is considered derived from D, S, L — but in CC all dimensions are **co-fundamental**.
 
-**Закон Эшби** на языке КК: необходимое разнообразие $\geq$ разнообразие возмущений ↔ $\dim(\mathcal{H}) \geq 7$ для полного описания жизнеспособного агента.
+**Ashby's law** in CC language: requisite variety $\geq$ variety of disturbances ↔ $\dim(\mathcal{H}) \geq 7$ for complete description of a viable agent.
 
-**Марковское одеяло Фристона** на языке КК: граница Голонома, определяемая декомпозицией $\Gamma = \Gamma_{\text{int}} + \Gamma_{\text{ext}} + \Gamma_{\text{coupling}}$.
+**Friston's Markov blanket** in CC language: the boundary of the Holon, defined by the decomposition $\Gamma = \Gamma_{\text{int}} + \Gamma_{\text{ext}} + \Gamma_{\text{coupling}}$.
 
 ---
 
-## Ключевые различия КК
+## Key Distinctions of CC
 
-| Аспект | Кибернетика I-II-III | КК |
+| Aspect | Cybernetics I–II–III | CC |
 |--------|---------------------|-----|
-| Онтология | Информация/коммуникация | Когерентность $\Gamma$ |
-| Субъективность | Игнорируется | [E-измерение](/docs/core/structure/dimension-e) — фундаментальное |
-| Динамика | Описательная | [Уравнение эволюции](/docs/core/dynamics/evolution) |
-| Основание | Классическое | Квантовое [(QG)](/docs/core/foundations/axiom-septicity) |
-| Формализм | Неформальный / частичный | Полный (категорный) |
-| Жизнеспособность | Интуитивная | [Формальный критерий](/docs/core/dynamics/viability) $P > P_{\text{crit}}$ |
-| Число измерений | 1-3 | 7 ([доказано минимальным](/docs/core/foundations/axiom-omega#октонионная-структура)) |
-| Рефлексия | Качественная (фон Фёрстер) | [Количественная](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R \geq 1/3$ |
-| Предсказания | Нет | [22+ фальсифицируемых](/docs/applied/coherence-cybernetics/predictions) |
-| Пороги | Нет | $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\min} = 2$ |
+| Ontology | Information/communication | Coherence $\Gamma$ |
+| Subjectivity | Ignored | [E-dimension](/docs/core/structure/dimension-e) — fundamental |
+| Dynamics | Descriptive | [Evolution equation](/docs/core/dynamics/evolution) |
+| Foundation | Classical | Quantum [(QG)](/docs/core/foundations/axiom-septicity) |
+| Formalism | Informal / partial | Full (categorical) |
+| Viability | Intuitive | [Formal criterion](/docs/core/dynamics/viability) $P > P_{\text{crit}}$ |
+| Number of dimensions | 1–3 | 7 ([proven minimal](/docs/core/foundations/axiom-omega#октонионная-структура)) |
+| Reflection | Qualitative (von Foerster) | [Quantitative](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R \geq 1/3$ |
+| Predictions | None | [22+ falsifiable](/docs/applied/coherence-cybernetics/predictions) |
+| Thresholds | None | $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\min} = 2$ |
 
 ---
 
-## Хронология: 80 лет от обратной связи к когерентности
+## Timeline: 80 Years from Feedback to Coherence
 
 ```mermaid
 timeline
-    title От κυβερνήτης к Когерентной Кибернетике
-    section Предыстория
-        ~380 до н.э. : Платон — κυβερνήτης (кормчий)
-        1714 : Лейбниц — Монадология
-        1790 : Кант — целесообразность без цели
-        1834 : Ампер — cybernétique
-    section Кибернетика-I
-        1943 : Розенблют, Винер, Бигелоу — «Поведение, цель и телеология»
+    title From κυβερνήτης to Coherence Cybernetics
+    section Prehistory
+        ~380 BCE : Plato — κυβερνήτης (helmsman)
+        1714 : Leibniz — Monadology
+        1790 : Kant — purposiveness without purpose
+        1834 : Ampère — cybernétique
+    section Cybernetics-I
+        1943 : Rosenblueth, Wiener, Bigelow — "Behavior, Purpose and Teleology"
         1946-53 : Macy Conferences
-        1948 : Винер — «Кибернетика»
-        1952 : Эшби — гомеостат
-        1956 : Эшби — закон необходимого разнообразия
-    section Ответвления
-        1962 : Бир — «Мозг фирмы» (VSM)
-        1972 : Матурана, Варела — автопоэзис
-        1972 : Бейтсон — «Шаги к экологии разума»
-    section Кибернетика-II
-        1958-76 : BCL (фон Фёрстер, Университет Иллинойса)
-        1979 : фон Фёрстер — «Кибернетика кибернетики»
-        1981 : фон Фёрстер — «Observing Systems»
-    section Кибернетика-III
-        1984 : Луман — «Социальные системы»
-        1988 : Баарс — GWT
-        1997 : Луман — «Общество общества»
-    section Параллельные потоки
-        1996 : Чалмерс — трудная проблема сознания
-        2004 : Тонони — IIT
-        2006 : Фристон — FEP
-    section КК
-        2024-26 : КК — полная когерентность, 7 измерений, квантовое основание
+        1948 : Wiener — "Cybernetics"
+        1952 : Ashby — homeostat
+        1956 : Ashby — law of requisite variety
+    section Offshoots
+        1962 : Beer — "Brain of the Firm" (VSM)
+        1972 : Maturana, Varela — autopoiesis
+        1972 : Bateson — "Steps to an Ecology of Mind"
+    section Cybernetics-II
+        1958-76 : BCL (von Foerster, University of Illinois)
+        1979 : von Foerster — "Cybernetics of Cybernetics"
+        1981 : von Foerster — "Observing Systems"
+    section Cybernetics-III
+        1984 : Luhmann — "Social Systems"
+        1988 : Baars — GWT
+        1997 : Luhmann — "Theory of Society"
+    section Parallel Streams
+        1996 : Chalmers — the hard problem of consciousness
+        2004 : Tononi — IIT
+        2006 : Friston — FEP
+    section CC
+        2024-26 : CC — full coherence, 7 dimensions, quantum foundation
 ```
 
 ---
 
-## Нерешённые вопросы
+## Open Questions
 
-Даже при всей полноте формализма, КК наследует от кибернетической традиции ряд открытых вопросов:
+Even with the full formalism, CC inherits a number of open questions from the cybernetic tradition:
 
-1. **Эмпирическая верификация.** Кибернетики I-III были по преимуществу концептуальными: они меняли *способ мышления*, но не генерировали специфических экспериментальных предсказаний. КК делает шаг вперёд — [22+ фальсифицируемых предсказания](/docs/applied/coherence-cybernetics/predictions) — но большинство из них ещё ожидают проверки.
+1. **Empirical verification.** Cybernetics I–III were primarily conceptual: they changed the *way of thinking* but did not generate specific experimental predictions. CC takes a step forward — [22+ falsifiable predictions](/docs/applied/coherence-cybernetics/predictions) — but most of them are still awaiting verification.
 
-2. **Вычислительная трактабельность.** Вычисление $\Gamma$ для реальных систем (мозг, социальная группа, экосистема) — нерешённая задача. IIT столкнулась с той же проблемой ($\Phi$ NP-труден). КК предлагает приближения через [SYNARC-архитектуру](/docs/applied/coherence-cybernetics/introduction), но это пока work in progress.
+2. **Computational tractability.** Computing $\Gamma$ for real systems (the brain, a social group, an ecosystem) is an unsolved problem. IIT faced the same issue ($\Phi$ is NP-hard). CC offers approximations through the [SYNARC architecture](/docs/applied/coherence-cybernetics/introduction), but this remains a work in progress.
 
-3. **Граница между метафорой и отображением.** Когда мы говорим «гомеостаз Винера → аттрактор $\Gamma^*$», это *строгое отображение* или *полезная аналогия*? КК старается быть точной (все соответствия — на уровне конкретных формул), но философский статус таких отображений заслуживает дальнейшего анализа.
+3. **The boundary between metaphor and mapping.** When we say "Wiener's homeostasis → attractor $\Gamma^*$," is this a *strict mapping* or a *useful analogy*? CC strives to be precise (all correspondences at the level of concrete formulas), but the philosophical status of such mappings deserves further analysis.
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+### What We Have Learned {#что-мы-узнали}
 
-1. **Кибернетика — это 2500-летняя история** одной идеи: как системы управляют собой. От κυβερνήτης Платона через монады Лейбница и целесообразность Канта к cybernétique Ампера.
-2. **Три порядка кибернетики** — три ступени включения: Винер включил *обратную связь* ($D$), фон Фёрстер — *наблюдателя* ($D + L$), Луман — *социальные системы* ($D + L + U$). Каждый порядок добавлял измерения, но ни один не покрывал все семь.
-3. **Ответвления захватили важные фрагменты**: Эшби — необходимое разнообразие (объяснение, почему нужно 7 измерений), Бир — жизнеспособная система (рекурсивная структура), Бейтсон — различие как единица разума ($\sigma_k$), Матурана/Варела — автопоэзис (неподвижная точка). Спенсер-Браун дал логику различения, Паск — диалогическую природу познания.
-4. **Параллельные потоки** (IIT, FEP, GWT) — каждый захватил 2-3 измерения с замечательной точностью и не менее замечательной неполнотой. IIT — $U, E$. FEP — $D, O, S$. GWT — $S, L$.
-5. **КК — не четвёртая кибернетика, а метатеория**: она не добавляет ещё один уровень, а перестраивает фундамент. Каждая предшествующая теория — *проекция* полной матрицы $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ на подмножество измерений.
-6. **Единый словарь**: КК позволяет *переводить* между дисциплинами — нейронная когерентность, матрица плотности, состояние сознания, фазовая точка и негэнтропия — это одно и то же ($\Gamma$), описанное на разных языках.
+1. **Cybernetics is a 2500-year history** of one idea: how systems govern themselves. From Plato's κυβερνήτης through Leibniz's monads and Kant's purposiveness to Ampère's cybernétique.
+2. **Three orders of cybernetics** — three steps of inclusion: Wiener included *feedback* ($D$), von Foerster — the *observer* ($D + L$), Luhmann — *social systems* ($D + L + U$). Each order added dimensions, but none covered all seven.
+3. **The offshoots captured important fragments**: Ashby — requisite variety (explaining why 7 dimensions are needed), Beer — the viable system (recursive structure), Bateson — difference as the unit of mind ($\sigma_k$), Maturana/Varela — autopoiesis (fixed point). Spencer-Brown provided the logic of distinction, Pask — the dialogical nature of cognition.
+4. **Parallel streams** (IIT, FEP, GWT) — each captured 2–3 dimensions with remarkable precision and equally remarkable incompleteness. IIT — $U, E$. FEP — $D, O, S$. GWT — $S, L$.
+5. **CC is not a fourth cybernetics but a metatheory**: it does not add yet another level, but rebuilds the foundation. Each preceding theory is a *projection* of the full matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ onto a subset of dimensions.
+6. **A unified vocabulary**: CC allows *translation* between disciplines — neural coherence, density matrix, state of consciousness, phase point, and negentropy are one and the same ($\Gamma$), described in different languages.
 
-:::tip Мост к следующей главе
-Мы проследили, как идеи обратной связи, наблюдателя и социальных систем развивались 80 лет — и как КК собрала их в единый формализм. Но все эти идеи касались *внутренней* динамики системы. А как система **взаимодействует с миром**? Как она воспринимает среду и действует в ней? В [следующей главе](./sensorimotor) мы построим полную теорию сенсомоторного кодирования: от хемотаксиса бактерии до навигации человека в незнакомом городе — и покажем, что весь цикл «восприятие-решение-действие» реализуется через *те же самые* три канала (гамильтонов, диссипативный, регенеративный), которые определяют внутреннюю динамику.
+:::tip Bridge to the Next Chapter
+We have traced how the ideas of feedback, observer, and social systems developed over 80 years — and how CC assembled them into a unified formalism. But all these ideas concerned the *internal* dynamics of a system. How does a system **interact with the world**? How does it perceive the environment and act in it? In the [next chapter](./sensorimotor) we will build a complete theory of sensorimotor coding: from the chemotaxis of a bacterium to a human navigating an unfamiliar city — and show that the entire "perception–decision–action" cycle is realized through the *same* three channels (Hamiltonian, dissipative, regenerative) that define the internal dynamics.
 :::
 
 ---
 
-**Связанные документы:**
-- [Теории сознания](/docs/consciousness/comparative/consciousness-theories) — IIT, FEP, автопоэзис в контексте КК
-- [Панпсихизм](/docs/consciousness/comparative/panpsychism-analysis) — категорный анализ вариантов панпсихизма
-- [Аксиоматика](./axiomatics) — формальные основания КК
-- [Теоремы](./theorems) — ключевые результаты
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Семь измерений](/docs/core/structure/dimensions) — базис $\mathcal{H}$
-- [Предсказания](/docs/applied/coherence-cybernetics/predictions) — фальсифицируемые следствия КК
-- [Философские основания](./philosophy) — от Спинозы к унитарному монизму
-- [Сравнение с альтернативами](./comparison) — КК vs. IIT, FEP, GWT, автопоэзис, Orch-OR
+**Related documents:**
+- [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories) — IIT, FEP, autopoiesis in the context of CC
+- [Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) — categorical analysis of variants of panpsychism
+- [Axiomatics](./axiomatics) — formal foundations of CC
+- [Theorems](./theorems) — key results
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Seven Dimensions](/docs/core/structure/dimensions) — basis $\mathcal{H}$
+- [Predictions](/docs/applied/coherence-cybernetics/predictions) — falsifiable consequences of CC
+- [Philosophical Foundations](./philosophy) — from Spinoza to unitary monism
+- [Comparison with Alternatives](./comparison) — CC vs. IIT, FEP, GWT, autopoiesis, Orch-OR

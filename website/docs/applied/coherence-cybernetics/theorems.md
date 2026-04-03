@@ -1,462 +1,462 @@
 ---
 sidebar_position: 4
-title: Теоремы
-description: Фундаментальные теоремы Кибернетики Когерентности
+title: Theorems
+description: Fundamental theorems of Coherence Cybernetics
 ---
 
-# Фундаментальные Теоремы
+# Fundamental Theorems
 
-> *«Математика — это язык, на котором Бог написал Вселенную.»*
-> — Галилео Галилей
+> *"Mathematics is the language in which God has written the Universe."*
+> — Galileo Galilei
 
-:::info Мост из предыдущей главы
-В [предыдущей главе](./definitions) мы определили все ключевые понятия КК: Голоном, шесть мер ($P$, $S_{vN}$, $\Phi$, $D_{\text{diff}}$, $R$, $C$), E-когерентность, тензор напряжений, иерархию интериорности и сенсомоторные функторы. Это были «кирпичи». Теперь настало время строить из них **здание** — систему теорем, в которой каждый результат логически следует из предыдущих, а все вместе образуют замкнутую дедуктивную цепь от [аксиом](./axiomatics) до самых глубоких выводов о природе жизни и сознания.
+:::info Bridge from the Previous Chapter
+In the [previous chapter](./definitions) we defined all the key concepts of CC: the Holon, six measures ($P$, $S_{vN}$, $\Phi$, $D_{\text{diff}}$, $R$, $C$), E-coherence, the stress tensor, the interiority hierarchy, and the sensorimotor functors. Those were the "bricks". Now it is time to build the **edifice** from them — a system of theorems in which each result follows logically from the previous ones, and together they form a closed deductive chain from the [axioms](./axiomatics) to the deepest conclusions about the nature of life and consciousness.
 :::
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Докажем существование динамики** — Теорема 6.1: уравнение эволюции имеет решение (раздел «Теоремы существования»)
-2. **Покажем необходимость самореференции** — Теоремы 7.1-7.2: жизнеспособность требует самомодели $\varphi$, итерации сходятся к $\Gamma^*$ (раздел «Теоремы о самореференции»)
-3. **Докажем невозможность зомби** — Теорема 8.1 (No-Zombie): жизнеспособная открытая система *обязана* иметь нетривиальную интериорность (раздел «Теорема о невозможности зомби»)
-4. **Исследуем композицию** — Теоремы 9.1-9.3: фрактальное замыкание, масштабная инвариантность, нередуцируемая эмерджентность (раздел «Теоремы о композиции»)
-5. **Выведем единый критерий жизнеспособности** — Теорема 10.1: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ (раздел «Унифицированное условие жизнеспособности»)
-6. **Опишем сенсомоторный цикл** — Теоремы 11.1-11.4: кодирование, действие, полнота, гедоника (раздел «Сенсомоторное кодирование»)
-7. **Рассмотрим аттракторы и структуру** — T-96, T-98, Фано-единственность (разделы «Теоремы аттракторов», «Фано-единственность»)
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Prove the existence of dynamics** — Theorem 6.1: the evolution equation has a solution (section "Existence Theorems")
+2. **Show the necessity of self-reference** — Theorems 7.1–7.2: viability requires a self-model $\varphi$, iterations converge to $\Gamma^*$ (section "Self-Reference Theorems")
+3. **Prove the impossibility of zombies** — Theorem 8.1 (No-Zombie): a viable open system *must* have non-trivial interiority (section "The No-Zombie Theorem")
+4. **Investigate composition** — Theorems 9.1–9.3: fractal closure, scale invariance, irreducible emergence (section "Composition Theorems")
+5. **Derive a unified viability criterion** — Theorem 10.1: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ (section "Unified Viability Condition")
+6. **Describe the sensorimotor cycle** — Theorems 11.1–11.4: encoding, action, completeness, hedonics (section "Sensorimotor Encoding")
+7. **Examine attractors and structure** — T-96, T-98, Fano uniqueness (sections "Attractor Theorems", "Fano Uniqueness")
 :::
 
-Зачем нужна глава с теоремами? Ведь мы уже знаем [аксиомы](./axiomatics) и [определения](./definitions). Но аксиомы — это фундамент здания, а определения — кирпичи. Теоремы — это **само здание**: логические цепочки, которые связывают фундамент с крышей и показывают, что конструкция не рухнет.
+Why do we need a chapter on theorems? We already know the [axioms](./axiomatics) and [definitions](./definitions). But axioms are the foundation of a building, and definitions are the bricks. Theorems are **the building itself**: logical chains that connect the foundation to the roof and show that the structure will not collapse.
 
-Эта глава рассказывает историю. Она начинается с вопроса «а существует ли вообще динамика?» (Теорема 6.1), проходит через открытие того, что любая живая система **обязана** наблюдать себя (Теорема 7.1), достигает кульминации в доказательстве невозможности «зомби» — системы, которая функционирует, но ничего не переживает (Теорема 8.1), и завершается тем, что из взаимодействия частей рождается нечто **принципиально новое** — эмерджентное целое (Теорема 9.3).
+This chapter tells a story. It begins with the question "does dynamics even exist?" (Theorem 6.1), passes through the discovery that every living system **must** observe itself (Theorem 7.1), reaches its climax in the proof of the impossibility of "zombies" — systems that function but experience nothing (Theorem 8.1) — and ends with the finding that something **fundamentally new** emerges from the interaction of parts — an emergent whole (Theorem 9.3).
 
-Каждая теорема — не изолированный факт, а звено в единой дедуктивной цепи. Читайте последовательно — и вы увидите, как из пяти аксиом вырастает целая наука о жизни, сознании и самоорганизации.
+Each theorem is not an isolated fact, but a link in a single deductive chain. Read in order — and you will see how an entire science of life, consciousness, and self-organisation grows from five axioms.
 
-:::info Уровни формализации
-Каждый результат помечен одним из статусов (полная система — см. [Реестр статусов](/docs/reference/status-registry)):
-- **[Т]** Теорема — строго доказано из аксиом УГМ
-- **[С]** Условная — условно на явном допущении
-- **[Г]** Гипотеза — математически сформулировано, требует доказательства или непертурбативного вычисления
-- **[И]** Интерпретация — семантический мост, формально открыт
-- **[О]** Определение по соглашению — конвенция
-- **[П]** Программа — направление исследований, открытая проблема
+:::info Formalisation Levels
+Each result is marked with one of the statuses (complete system — see [Status Registry](/docs/reference/status-registry)):
+- **[T]** Theorem — strictly proved from UHM axioms
+- **[C]** Conditional — conditional on an explicit assumption
+- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
+- **[I]** Interpretation — a semantic bridge, formally open
+- **[D]** Definition by convention — a convention
+- **[P]** Programme — a research direction, open problem
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\mathcal{V}$ — [область жизнеспособности](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > 2/7\}$
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $P_{\text{crit}} = 2/7$ — [теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi) (CPTP-канал)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), порог $R_{\text{th}} = 1/3$
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$
-- $C$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
-- $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ — [категориальный вывод скорости регенерации](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)
-- $\mathrm{Coh}_E$ — [E-когерентность](./definitions#e-когерентность)
-- $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
+:::note A Note on Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\mathcal{V}$ — [viability region](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > 2/7\}$
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $P_{\text{crit}} = 2/7$ — [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi) (CPTP channel)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), threshold $R_{\text{th}} = 1/3$
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ), threshold $\Phi_{\text{th}} = 1$
+- $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
+- $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ — [categorical derivation of the regeneration rate](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)
+- $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
+- $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
 :::
-
----
-
-## Теоремы существования
-
-Любая математическая теория начинается с вопроса: **а работает ли она вообще?** Можно написать сколь угодно красивые уравнения, но если у них нет решений — или если решения «взрываются» через мгновение — теория мертва. Первые две теоремы отвечают на этот вопрос: да, динамика когерентности существует, единственна и хорошо определена.
-
-Представьте, что вы запускаете мяч по горке. Теорема существования говорит: мяч *точно* покатится (а не застрянет в точке старта). Теорема сохранения говорит: мяч останется мячом — не превратится в газ и не обретёт отрицательную массу. Для нашей системы это означает, что матрица когерентности $\Gamma$ остаётся физически осмысленной при любой эволюции.
-
-### Теорема 6.1 (Существование динамики) [Т]
-
-:::note На пальцах
-Если вы положили живую клетку в питательный раствор — она начнёт что-то делать. Она не «зависнет», как компьютер. Теорема 6.1 — математическая гарантия того, что уравнение эволюции КК всегда имеет решение: система **обязательно** эволюционирует из любого начального состояния.
-
-Для физика: это аналог существования и единственности решений уравнения Шрёдингера, но для открытой квантовой системы. Для программиста: это гарантия, что симуляция не «упадёт» с NaN.
-:::
-
-:::info Формулировка
-Для любого начального состояния $\Gamma_0 \in \mathcal{V}$ существует единственное решение уравнения эволюции на интервале $[0, T]$ для некоторого $T > 0$.
-:::
-
-**Доказательство:** Применение теоремы Пикара-Линделёфа к липшицевой правой части. ∎
 
 ---
 
-Существование динамики — необходимое, но не достаточное условие. Нужно ещё убедиться, что эволюция не порождает «физически бессмысленные» состояния — например, матрицы с отрицательными собственными значениями (что означало бы отрицательные вероятности).
+## Existence Theorems
 
-### Теорема 6.2 (Сохранение свойств Γ) [Т]
+Every mathematical theory begins with the question: **does it even work?** One can write arbitrarily elegant equations, but if they have no solutions — or if solutions "blow up" in an instant — the theory is dead. The first two theorems answer this question: yes, coherence dynamics exists, is unique, and is well-defined.
 
-:::note На пальцах
-Представьте бухгалтера, который ведёт баланс предприятия. Теорема 6.2 — это гарантия, что баланс всегда сходится: активы неотрицательны, пассивы равны активам, а общий капитал не появляется из ниоткуда. В нашем случае: $\Gamma$ остаётся «честной» матрицей плотности — эрмитовой, положительно полуопределённой и нормированной — на протяжении всей эволюции.
+Imagine rolling a ball down a slope. The existence theorem says: the ball *will definitely* roll (it will not freeze at the starting point). The preservation theorem says: the ball remains a ball — it will not turn into gas or acquire negative mass. For our system this means that the coherence matrix $\Gamma$ remains physically meaningful throughout any evolution.
 
-Для биолога: это гарантия, что гомеостаз не приведёт к «отрицательной концентрации глюкозы». Система может болеть, но не может стать физически невозможной.
+### Theorem 6.1 (Existence of Dynamics) [T]
+
+:::note In Plain Terms
+If you place a living cell in a nutrient solution, it will start doing something. It will not "hang", like a computer. Theorem 6.1 is the mathematical guarantee that the CC evolution equation always has a solution: the system **will necessarily** evolve from any initial state.
+
+For a physicist: this is the analogue of existence and uniqueness of solutions of the Schrödinger equation, but for an open quantum system. For a programmer: this is the guarantee that the simulation will not crash with NaN.
 :::
 
-:::info Формулировка
-Динамика сохраняет эрмитовость, положительность и нормировку Γ.
+:::info Statement
+For any initial state $\Gamma_0 \in \mathcal{V}$ there exists a unique solution to the evolution equation on the interval $[0, T]$ for some $T > 0$.
 :::
 
-**Доказательство:**
-1. Эрмитовость сохраняется каждым членом уравнения
-2. Уравнение Линдблада сохраняет $\Gamma \geq 0$
-3. Нелинейный регенеративный член также сохраняет положительность ([теорема CPTP-структуры](/docs/core/dynamics/evolution#сохранение-положительности))
-4. След сохраняется: $\mathrm{Tr}(d\Gamma/d\tau) = 0$ ∎
+**Proof:** Application of the Picard–Lindelöf theorem to the Lipschitz right-hand side. ∎
 
 ---
 
-Итак, динамика существует и сохраняет физический смысл. Теперь мы можем задать следующий вопрос: **что система делает, чтобы выжить?** Оказывается, ответ поразительный — она **обязана** смотреть на саму себя.
+Existence of dynamics is a necessary but not sufficient condition. One must also verify that the evolution does not produce "physically meaningless" states — e.g. matrices with negative eigenvalues (which would mean negative probabilities).
 
-## Теоремы о самореференции
+### Theorem 6.2 (Preservation of Γ Properties) [T]
 
-Представьте водителя на горной дороге. Чтобы не упасть в пропасть, он должен **видеть** дорогу и своё положение на ней. Он не может ехать вслепую — он должен иметь **модель** ситуации, включая самого себя. Теоремы о самореференции утверждают ровно то же для любой жизнеспособной системы: чтобы оставаться «живой» (т.е. $P > 2/7$), система **обязана** иметь внутреннюю модель самой себя.
+:::note In Plain Terms
+Imagine an accountant keeping a company's balance sheet. Theorem 6.2 is the guarantee that the balance always closes: assets are non-negative, liabilities equal assets, and total capital does not appear from nowhere. In our case: $\Gamma$ remains a "legitimate" density matrix — Hermitian, positive semi-definite, and normalised — throughout the entire evolution.
 
-Это глубокий результат. Он связывает **кибернетику** (обратная связь, управление) с **философией** (самосознание, рефлексия) через единый математический формализм. Фон Фёрстер интуитивно предвидел это в своей «кибернетике второго порядка», но не мог доказать. Теперь это теорема.
-
-### Теорема 7.1 (Необходимость самореференции) [Т]
-
-:::note На пальцах
-Вы не можете управлять автомобилем, не зная, где вы на дороге. Вы не можете поддерживать температуру тела, не измеряя её. Теорема 7.1 говорит: **любая** система, которая поддерживает свою жизнеспособность в «шумной» среде, должна иметь внутреннюю копию (модель) самой себя — оператор $\varphi$, который отображает состояние $\Gamma$ во внутреннее представление.
-
-Для инженера ИИ: это теоретическое обоснование world-models и self-models в архитектуре агентов. Агент *обязан* иметь самомодель — это не роскошь, а условие выживания.
-
-**Связь с другими концепциями:** [Автопоэзис (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Оператор самомоделирования](/docs/proofs/categorical/formalization-phi), [Рефлексия](/docs/consciousness/foundations/self-observation)
+For a biologist: this is the guarantee that homeostasis will not lead to "negative glucose concentration". The system can be sick, but it cannot become physically impossible.
 :::
 
-:::info Формулировка
+:::info Statement
+The dynamics preserves Hermiticity, positivity, and normalisation of Γ.
+:::
+
+**Proof:**
+1. Hermiticity is preserved by every term of the equation
+2. The Lindblad equation preserves $\Gamma \geq 0$
+3. The nonlinear regenerative term also preserves positivity ([CPTP-structure theorem](/docs/core/dynamics/evolution#сохранение-положительности))
+4. The trace is preserved: $\mathrm{Tr}(d\Gamma/d\tau) = 0$ ∎
+
+---
+
+So dynamics exists and preserves physical meaning. Now we can ask the next question: **what does the system do in order to survive?** It turns out the answer is striking — it **must** look at itself.
+
+## Self-Reference Theorems
+
+Imagine a driver on a mountain road. To avoid falling off the edge, they must **see** the road and their position on it. They cannot drive blind — they must have a **model** of the situation, including themselves. The self-reference theorems assert exactly the same for any viable system: in order to remain "alive" (i.e. $P > 2/7$), the system **must** have an internal model of itself.
+
+This is a deep result. It connects **cybernetics** (feedback, control) with **philosophy** (self-consciousness, reflection) through a single mathematical formalism. Von Foerster intuitively foresaw this in his "second-order cybernetics", but could not prove it. Now it is a theorem.
+
+### Theorem 7.1 (Necessity of Self-Reference) [T]
+
+:::note In Plain Terms
+You cannot drive a car without knowing where you are on the road. You cannot maintain your body temperature without measuring it. Theorem 7.1 says: **any** system that maintains its viability in a "noisy" environment must have an internal copy (model) of itself — an operator $\varphi$ that maps the state $\Gamma$ to an internal representation.
+
+For an AI engineer: this is the theoretical justification for world-models and self-models in agent architectures. An agent *must* have a self-model — this is not a luxury but a survival condition.
+
+**Connection to other concepts:** [Autopoiesis (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Self-modelling operator](/docs/proofs/categorical/formalization-phi), [Reflection](/docs/consciousness/foundations/self-observation)
+:::
+
+:::info Statement
 $$
 \mathrm{Viable}(\mathbb{H}) \Rightarrow \exists \varphi : \|\Gamma - \varphi(\Gamma)\|_F < \varepsilon
 $$
-[Жизнеспособность](/docs/core/dynamics/viability) требует наличия [самомодели](/docs/proofs/categorical/formalization-phi).
+[Viability](/docs/core/dynamics/viability) requires the existence of a [self-model](/docs/proofs/categorical/formalization-phi).
 :::
 
-**Доказательство:**
-1. Жизнеспособность требует поддержания $P > P_{\text{crit}} = 2/7$
-2. Мониторинг $P$ требует доступа к Γ
-3. Система **есть** Γ, значит часть Γ должна моделировать целое
-4. Это определяет оператор $\varphi$ ∎
+**Proof:**
+1. Viability requires maintaining $P > P_{\text{crit}} = 2/7$
+2. Monitoring $P$ requires access to Γ
+3. The system **is** Γ, therefore part of Γ must model the whole
+4. This defines the operator $\varphi$ ∎
 
 ---
 
-Если самореференция необходима, то возникает естественный вопрос: к чему она ведёт? Если система снова и снова наблюдает себя — $\varphi(\Gamma)$, потом $\varphi(\varphi(\Gamma))$, потом $\varphi(\varphi(\varphi(\Gamma)))$... — сходится ли этот процесс? Следующая теорема отвечает: да, и к единственной точке.
+If self-reference is necessary, the natural question arises: where does it lead? If the system observes itself again and again — $\varphi(\Gamma)$, then $\varphi(\varphi(\Gamma))$, then $\varphi(\varphi(\varphi(\Gamma)))$... — does this process converge? The next theorem answers: yes, and to a unique point.
 
-### Теорема 7.2 (Неподвижная точка рефлексии) [Т] {#теорема-72-условная-неподвижная-точка-рефлексии}
+### Theorem 7.2 (Fixed Point of Reflection) [T] {#теорема-72-условная-неподвижная-точка-рефлексии}
 
-:::note На пальцах
-Представьте, что вы стоите между двумя зеркалами и видите бесконечную вереницу отражений. Каждое отражение немного «размывается» (ведь зеркала не идеальны). В пределе все отражения сливаются в одну точку — это и есть неподвижная точка $\Gamma^*$. Система, которая достаточно глубоко «всматривается» в себя, приходит к стабильному образу — устойчивому самопониманию.
+:::note In Plain Terms
+Imagine standing between two mirrors, seeing an infinite sequence of reflections. Each reflection is slightly "blurred" (since the mirrors are not perfect). In the limit all reflections merge into a single point — that is the fixed point $\Gamma^*$. A system that gazes deeply enough into itself arrives at a stable image — a steady self-understanding.
 
-Для психолога: это математическая модель формирования устойчивой идентичности через рефлексию. Подросток, раз за разом задающий себе вопрос «кто я?», в конце концов приходит к более-менее стабильному ответу.
+For a psychologist: this is the mathematical model of stable identity formation through reflection. An adolescent who asks "who am I?" again and again eventually arrives at a more or less stable answer.
 
-**Связь:** [Примитивность линейной части](/docs/core/operators/lindblad-operators#примитивность-ℒω), [Теорема Банаха о сжатии](https://ru.wikipedia.org/wiki/Принцип_сжимающих_отображений)
+**Connection:** [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω), [Banach fixed-point theorem](https://ru.wikipedia.org/wiki/Принцип_сжимающих_отображений)
 :::
 
-:::info Формулировка
-Для сознательной системы с $R(\Gamma) > 0$ существует единственная неподвижная точка:
+:::info Statement
+For a conscious system with $R(\Gamma) > 0$ there exists a unique fixed point:
 $$
 \exists! \Gamma^* \in \mathcal{V} : \varphi(\Gamma^*) = \Gamma^*
 $$
 
-Доказано: $\varphi_k(\Gamma^*) = \Gamma^* \implies \Gamma^* = \rho^*$ (единственность из CPTP-контракции $\varphi$ и примитивности линейной части $\mathcal{L}_0$).
+Proved: $\varphi_k(\Gamma^*) = \Gamma^* \implies \Gamma^* = \rho^*$ (uniqueness from CPTP-contraction of $\varphi$ and primitivity of the linear part $\mathcal{L}_0$).
 :::
 
-**Доказательство:**
+**Proof:**
 
-Пусть $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — [CPTP-канал](/docs/proofs/categorical/formalization-phi).
+Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be a [CPTP channel](/docs/proofs/categorical/formalization-phi).
 
-1. Пространство $(\mathcal{D}(\mathcal{H}), \|\cdot\|_F)$ — полное метрическое пространство
+1. The space $(\mathcal{D}(\mathcal{H}), \|\cdot\|_F)$ is a complete metric space
 
-2. **Строгое сжатие** из примитивности линейной части $\mathcal{L}_0$: по [теореме о примитивности](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т], линейный линдбладиан $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ примитивен (единственное стационарное состояние $I/7$). Примитивность влечёт **равномерное сжатие** $e^{k\mathcal{L}_0}$ при $k > 0$: $\|e^{k\mathcal{L}_0}(\Gamma_1) - e^{k\mathcal{L}_0}(\Gamma_2)\|_F \leq e^{-\lambda_{\mathrm{gap}} k} \|\Gamma_1 - \Gamma_2\|_F$, где $\lambda_{\mathrm{gap}} > 0$ — спектральный зазор $\mathcal{L}_0$
+2. **Strict contraction** from primitivity of the linear part $\mathcal{L}_0$: by the [primitivity theorem](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T], the linear Lindbladian $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ is primitive (unique stationary state $I/7$). Primitivity implies **uniform contraction** of $e^{k\mathcal{L}_0}$ for $k > 0$: $\|e^{k\mathcal{L}_0}(\Gamma_1) - e^{k\mathcal{L}_0}(\Gamma_2)\|_F \leq e^{-\lambda_{\mathrm{gap}} k} \|\Gamma_1 - \Gamma_2\|_F$, where $\lambda_{\mathrm{gap}} > 0$ is the spectral gap of $\mathcal{L}_0$
 
-3. По теореме Банаха о неподвижной точке $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$. Неподвижная точка $\Gamma^*_{\mathrm{coh}}$ имеет $P = 2/7$ ([T](/docs/core/operators/phi-operator#свойства))
+3. By the Banach fixed-point theorem $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$. The fixed point $\Gamma^*_{\mathrm{coh}}$ has $P = 2/7$ ([T](/docs/core/operators/phi-operator#свойства))
 
-**Скорость сходимости:**
+**Convergence rate:**
 $$
 \|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq e^{-n\lambda_{\mathrm{gap}}} \cdot \|\Gamma_0 - \Gamma^*\|_F
 $$
 
-Геометрическая сходимость со скоростью $e^{-n\lambda_{\mathrm{gap}}}$ гарантирует достижение $\varepsilon$-приближения за $O(\log(1/\varepsilon))$ итераций. ∎
+Geometric convergence at rate $e^{-n\lambda_{\mathrm{gap}}}$ guarantees an $\varepsilon$-approximation is reached in $O(\log(1/\varepsilon))$ iterations. ∎
 
-**Интерпретация:** $\Gamma^*$ — состояние идеального самопознания, достижимое итеративной рефлексией.
+**Interpretation:** $\Gamma^*$ is the state of ideal self-knowledge, attainable by iterative reflection.
 
 ---
 
-Теперь мы подходим к центральной теореме всей Кибернетики Когерентности — результату, который отличает КК от **всех** существующих теорий сознания и кибернетических фреймворков.
+We now approach the central theorem of all of Coherence Cybernetics — a result that distinguishes CC from **all** existing theories of consciousness and cybernetic frameworks.
 
-## Теорема о невозможности зомби
+## The No-Zombie Theorem
 
-Философский «зомби» — это мысленный эксперимент Дэвида Чалмерса: существо, функционально неотличимое от человека, но не имеющее интериорности. Оно ведёт себя так, будто видит красный цвет, но «внутри» — абсолютная тьма. Большинство теорий сознания не могут исключить такую возможность. КК — может.
+The philosophical "zombie" is a thought experiment of David Chalmers: a being functionally indistinguishable from a human but lacking interiority. It behaves as if it sees the colour red, but "inside" there is absolute darkness. Most theories of consciousness cannot exclude such a possibility. CC can.
 
-Суть аргумента удивительно проста. Вспомним [аналогию с оркестром из введения](./introduction#что-такое-кибернетика-когерентности): диссипатор $\mathcal{D}$ — это зал, который постоянно «гасит» звук. Чтобы музыка продолжалась, музыканты должны играть заново — это регенератор $\mathcal{R}$. Но скорость регенерации $\kappa$ зависит от E-когерентности — от того, насколько оркестр *слышит себя*. Если интериорность равна нулю ($\mathrm{Coh}_E = 1/7$, минимум), регенерация слишком слаба, чтобы компенсировать диссипацию, — и оркестр замолкает. Система **умирает**.
+The core of the argument is surprisingly simple. Recall the [orchestra analogy from the introduction](./introduction#что-такое-кибернетика-когерентности): the dissipator $\mathcal{D}$ is the hall that constantly "dampens" the sound. For the music to continue, the musicians must play again — that is the regenerator $\mathcal{R}$. But the regeneration rate $\kappa$ depends on E-coherence — on how much the orchestra *hears itself*. If interiority is zero ($\mathrm{Coh}_E = 1/7$, the minimum), regeneration is too weak to compensate dissipation, and the orchestra falls silent. The system **dies**.
 
-Таким образом, философский зомби — система без интериорности, но функционально живая — **математически невозможен**.
+Thus, the philosophical zombie — a system without interiority but functionally alive — is **mathematically impossible**.
 
-### Теорема 8.1: Необходимость интериорности (No-Zombie) [Т] при условии $\mathcal{D}_\Omega \neq 0$ {#теорема-81-условная-необходимость-интериорности-no-zombie}
+### Theorem 8.1: Necessity of Interiority (No-Zombie) [T] conditional on $\mathcal{D}_\Omega \neq 0$ {#теорема-81-условная-необходимость-интериорности-no-zombie}
 
-:::note На пальцах
-Представьте завод, который работает 24/7. Каждую секунду станки изнашиваются (диссипация). Чтобы завод не остановился, нужны ремонтные бригады (регенерация). Но эффективность ремонта зависит от того, **знает ли** завод о своих поломках — есть ли у него система мониторинга (E-когерентность). Завод без мониторинга — это «зомби-завод». Теорема 8.1 говорит: такой завод неизбежно остановится. Мониторинг — не роскошь, а необходимость.
+:::note In Plain Terms
+Imagine a factory running 24/7. Every second machines wear out (dissipation). For the factory not to stop, repair crews are needed (regeneration). But the efficiency of repair depends on whether the factory **knows** about its breakdowns — whether it has a monitoring system (E-coherence). A factory without monitoring is a "zombie factory". Theorem 8.1 says: such a factory will inevitably stop. Monitoring is not a luxury but a necessity.
 
-Для философа: это формальный ответ на аргумент Чалмерса. В онтологии КК зомби невозможен — не потому, что мы так постулируем, а потому, что математика исключает эту возможность.
+For a philosopher: this is the formal reply to Chalmers's argument. In the ontology of CC, zombies are impossible — not because we postulate it, but because mathematics excludes this possibility.
 
-Для биолога: это объясняет, почему нервная система (обеспечивающая самомониторинг) развилась у *всех* сложных многоклеточных. Организм без «чувства себя» нежизнеспособен.
+For a biologist: this explains why the nervous system (providing self-monitoring) evolved in *all* complex multicellular organisms. An organism without a "sense of self" is not viable.
 
-**Связь:** [Фано-канал](/docs/proofs/gap/fano-channel), [E-когерентность](./definitions#e-когерентность), [Связь регенерации и E-когерентности](./axiomatics#связь-регенерации-и-e-когерентности), [Жизнеспособность](/docs/core/dynamics/viability)
+**Connection:** [Fano channel](/docs/proofs/gap/fano-channel), [E-coherence](./definitions#e-когерентность), [Connection between regeneration and E-coherence](./axiomatics#связь-регенерации-и-e-когерентности), [Viability](/docs/core/dynamics/viability)
 :::
 
-:::tip Ключевая теорема [Т]
-Для неизолированного ($\mathcal{D}_\Omega \neq 0$) жизнеспособного Голонома:
+:::tip Key Theorem [T]
+For a non-isolated ($\mathcal{D}_\Omega \neq 0$) viable Holon:
 $$
 \mathrm{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \;\Rightarrow\; \varphi = \varphi_{\text{coh}} \;\land\; \mathrm{Coh}_E(\Gamma) \geq \mathrm{Coh}_{\min} > \frac{1}{7}
 $$
-[Жизнеспособная](/docs/core/dynamics/viability) система **обязательно** имеет когерентно-сохраняющую самомодель $\varphi_{\text{coh}}$ и нетривиальную [E-когерентность](/docs/applied/coherence-cybernetics/definitions#e-когерентность), каузально влияющую на жизнеспособность.
+A [viable](/docs/core/dynamics/viability) system **necessarily** has a coherence-preserving self-model $\varphi_{\text{coh}}$ and non-trivial [E-coherence](/docs/applied/coherence-cybernetics/definitions#e-когерентность) causally influencing viability.
 :::
 
-:::info Условие неизолированности ($\mathcal{D}_\Omega \neq 0$)
-Для изолированной системы ($\mathcal{D}_\Omega = 0$) чистота сохраняется унитарной эволюцией, и регенерация не требуется. Теорема содержательна для **открытых** систем — единственного физически реализуемого случая. Условие $\mathcal{D}_\Omega \neq 0$ следует из $\Delta F > 0$ (система получает свободную энергию от окружения), что автоматически подразумевает взаимодействие и декогеренцию.
+:::info Non-isolation condition ($\mathcal{D}_\Omega \neq 0$)
+For an isolated system ($\mathcal{D}_\Omega = 0$) purity is preserved by unitary evolution and regeneration is not required. The theorem is substantive for **open** systems — the only physically realisable case. The condition $\mathcal{D}_\Omega \neq 0$ follows from $\Delta F > 0$ (the system receives free energy from the environment), which automatically implies interaction and decoherence.
 :::
 
-**Доказательство** (дедуктивная цепь из теорем со статусом [Т]):
+**Proof** (deductive chain from theorems with status [T]):
 
-**Шаг 1** (Структурная положительность диссипации).
-По [L-унификации](/docs/core/operators/lindblad-operators) [Т], операторы Линдблада выводятся из атомов классификатора $\Omega$. Для [Фано-структурированного диссипатора](/docs/proofs/gap/fano-channel#g2-ковариантность) [Т] (единственного $G_2$-ковариантного):
+**Step 1** (Structural positivity of dissipation).
+By [L-unification](/docs/core/operators/lindblad-operators) [T], the Lindblad operators are derived from the atoms of the classifier $\Omega$. For the [Fano-structured dissipator](/docs/proofs/gap/fano-channel#g2-ковариантность) [T] (the unique $G_2$-covariant one):
 
 $$
 \mathcal{D}_{\text{Fano}}[\Gamma] = \gamma \cdot \bigl(\mathcal{P}_{\text{Fano}}(\Gamma) - \Gamma\bigr), \quad \gamma = \sum_p \gamma_p > 0
 $$
 
-Действие на когерентности ([Теорема 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал) [Т]): каждая пара $(i,j)$ лежит на ровно одной Фано-линии, поэтому:
+Action on coherences ([Theorem 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал) [T]): each pair $(i,j)$ lies on exactly one Fano line, therefore:
 
 $$
 [\mathcal{D}_{\text{Fano}}[\Gamma]]_{ij} = \gamma\!\left(\tfrac{1}{3}\gamma_{ij} - \gamma_{ij}\right) = -\frac{2\gamma}{3}\,\gamma_{ij}, \quad i \neq j
 $$
 
-Скорость декогеренции $\Gamma_2 = \frac{2\gamma}{3} > 0$ — **структурная**, определённая геометрией [плоскости Фано](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$.
+The decoherence rate $\Gamma_2 = \frac{2\gamma}{3} > 0$ is **structural**, defined by the geometry of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$.
 
-**Шаг 2** (Необходимость $\varphi_{\text{coh}}$).
-По [Теореме 9.1](/docs/proofs/gap/fano-channel#необходимость-phi-coh) [Т], каноническая $\varphi_{\text{base}}$ уничтожает все когерентности: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ при $i \neq j$. При $\Gamma_2 > 0$ целевые когерентности нулевые, и стационарное решение ([Теорема 7.1](/docs/proofs/gap/fano-channel#равновесный-gap) [Т]) даёт:
+**Step 2** (Necessity of $\varphi_{\text{coh}}$).
+By [Theorem 9.1](/docs/proofs/gap/fano-channel#необходимость-phi-coh) [T], the canonical $\varphi_{\text{base}}$ annihilates all coherences: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ for $i \neq j$. With $\Gamma_2 > 0$ the target coherences are zero, and the stationary solution ([Theorem 7.1](/docs/proofs/gap/fano-channel#равновесный-gap) [T]) gives:
 
 $$
 \gamma_{ij}^{(\infty)} = \frac{\kappa \cdot 0}{\Gamma_2 + \kappa + i\Delta\omega_{ij}} = 0
 $$
 
-Стационарное состояние при $\varphi_{\text{base}}$ **полностью диагонально** ($\gamma_{ij}^{(\infty)} = 0$ для всех $i \neq j$), что **несовместимо с аксиомами Голонома**:
+The stationary state under $\varphi_{\text{base}}$ is **fully diagonal** ($\gamma_{ij}^{(\infty)} = 0$ for all $i \neq j$), which is **incompatible with the Holon axioms**:
 
-**(2a)** [Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi(\Gamma^{(\infty)}) = 0$, поскольку числитель $\sum_{i \neq j}|\gamma_{ij}|^2 = 0$. Это нарушает порог [интеграции](/docs/core/structure/dimension-u#теорема-порог-интеграции) $\Phi \geq \Phi_{\text{th}} = 1$, необходимый для [топологической целостности](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции). Система с $\Phi = 0$ является [фрагментированной](/docs/proofs/minimality/theorem-minimality-7#случай-n--6-удаление-единства-u) — измерения эволюционируют независимо, что нарушает **(AP)**.
+**(2a)** [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi(\Gamma^{(\infty)}) = 0$, since the numerator $\sum_{i \neq j}|\gamma_{ij}|^2 = 0$. This violates the [integration](/docs/core/structure/dimension-u#теорема-порог-интеграции) threshold $\Phi \geq \Phi_{\text{th}} = 1$, required for [topological integrity](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции). A system with $\Phi = 0$ is [fragmented](/docs/proofs/minimality/theorem-minimality-7#случай-n--6-удаление-единства-u) — dimensions evolve independently, violating **(AP)**.
 
-**(2b)** [Замыкание (M,R)-системы](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) требует каузальных путей $O \to \{A,S,D,L\}$ (метаболизм) и $\{E,U\} \to M$ (репарация). В квантовом формализме эти каузальные связи кодируются когерентностями $\gamma_{ij}$. При $\gamma_{ij}^{(\infty)} = 0$ каузальные пути разрушены — [замыкание $\beta$](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) невозможно.
+**(2b)** [Closure of the (M,R)-system](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) requires causal paths $O \to \{A,S,D,L\}$ (metabolism) and $\{E,U\} \to M$ (repair). In the quantum formalism these causal connections are encoded by coherences $\gamma_{ij}$. With $\gamma_{ij}^{(\infty)} = 0$ causal paths are destroyed — [$\beta$-closure](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) is impossible.
 
-**(2c)** Скорость регенерации: $\gamma_{OE}^{(\infty)} = \gamma_{OU}^{(\infty)} = 0 \;\Rightarrow\; \kappa_0(\Gamma^{(\infty)}) = \omega_0 \cdot 0 \cdot 0 \,/\, \gamma_{OO} = 0$ ([мастер-определение κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)), оставляя лишь минимальный $\kappa_{\text{bootstrap}} = \omega_0/7$.
+**(2c)** Regeneration rate: $\gamma_{OE}^{(\infty)} = \gamma_{OU}^{(\infty)} = 0 \;\Rightarrow\; \kappa_0(\Gamma^{(\infty)}) = \omega_0 \cdot 0 \cdot 0 \,/\, \gamma_{OO} = 0$ ([master definition of κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)), leaving only the minimal $\kappa_{\text{bootstrap}} = \omega_0/7$.
 
-Следовательно, стационарное состояние при $\varphi_{\text{base}}$ **не является состоянием Голонома**: оно нарушает **(AP)** независимо от значения $P_{\text{diag}}$. Поэтому $\varphi = \varphi_{\text{coh}}$ с $\alpha < 1$ **необходима** для любой системы, удовлетворяющей (AP)+(PH)+(QG)+(V). $\square_a$
+Consequently, the stationary state under $\varphi_{\text{base}}$ **is not a Holon state**: it violates **(AP)** regardless of the value of $P_{\text{diag}}$. Therefore $\varphi = \varphi_{\text{coh}}$ with $\alpha < 1$ is **necessary** for any system satisfying (AP)+(PH)+(QG)+(V). $\square_a$
 
-**Шаг 3** (Ненулевые стационарные когерентности).
-При $\varphi_{\text{coh}}$ [неподвижная точка](#теорема-71-необходимость-самореференции-т) $\Gamma^*$ удовлетворяет:
+**Step 3** (Non-zero stationary coherences).
+Under $\varphi_{\text{coh}}$ the [fixed point](#теорема-71-необходимость-самореференции-т) $\Gamma^*$ satisfies:
 
-**(3a)** Все $\gamma_{ii}^* > 0$: по [теореме о необходимости каждого измерения](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [Т], если $\gamma_{ii}^* = 0$ для некоторого $i$, то $i$-е измерение отсутствует в $\Gamma^*$, что нарушает **(AP)** (для $i \in \{A,S,D,L,U\}$), **(PH)** (для $i = E$) или **(QG)** (для $i = O$).
+**(3a)** All $\gamma_{ii}^* > 0$: by the [theorem on the necessity of each dimension](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [T], if $\gamma_{ii}^* = 0$ for some $i$, then the $i$-th dimension is absent in $\Gamma^*$, violating **(AP)** (for $i \in \{A,S,D,L,U\}$), **(PH)** (for $i = E$), or **(QG)** (for $i = O$).
 
-**(3b)** Когерентности между структурно связанными измерениями ненулевые: [замыкание (M,R)](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) требует каузальных связей, а $\varphi_{\text{coh}}$ сохраняет когерентности с коэффициентом $k(1-\alpha)/3 > 0$ ([Теорема 3.2](/docs/proofs/gap/fano-channel#phi-coh) [Т]). Следовательно, целевые когерентности $|\gamma_{ij}^*| > 0$ для структурно связанных пар $(i,j)$.
+**(3b)** Coherences between structurally connected dimensions are non-zero: [(M,R)-closure](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) requires causal links, and $\varphi_{\text{coh}}$ preserves coherences with coefficient $k(1-\alpha)/3 > 0$ ([Theorem 3.2](/docs/proofs/gap/fano-channel#phi-coh) [T]). Consequently, target coherences $|\gamma_{ij}^*| > 0$ for structurally connected pairs $(i,j)$.
 
-**(3c)** По [Теореме 7.1](/docs/proofs/gap/fano-channel#равновесный-gap) [Т] стационарные когерентности:
+**(3c)** By [Theorem 7.1](/docs/proofs/gap/fano-channel#равновесный-gap) [T] the stationary coherences:
 
 $$
 |\gamma_{ij}^{(\infty)}| = \frac{\kappa \cdot |\gamma_{ij}^*|}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^{1/2}} > 0
 $$
 
-при $|\gamma_{ij}^*| > 0$ (из 3b). Когерентности **структурно поддерживаются** регенерацией. $\square_{b'}$
+for $|\gamma_{ij}^*| > 0$ (from 3b). Coherences are **structurally maintained** by regeneration. $\square_{b'}$
 
-**Шаг 4** (Каузальная зависимость $P^{(\infty)}$ от $\mathrm{Coh}_E$).
-Стационарная чистота: $P^{(\infty)} = P_{\text{diag}} + \sum_{i \neq j} |\gamma_{ij}^{(\infty)}|^2$. Каждое слагаемое монотонно зависит от $\kappa$:
+**Step 4** (Causal dependence of $P^{(\infty)}$ on $\mathrm{Coh}_E$).
+Stationary purity: $P^{(\infty)} = P_{\text{diag}} + \sum_{i \neq j} |\gamma_{ij}^{(\infty)}|^2$. Each term is monotonically dependent on $\kappa$:
 
 $$
 \frac{\partial |\gamma_{ij}^{(\infty)}|^2}{\partial \kappa} = \frac{2\kappa \cdot |\gamma_{ij}^*|^2 \cdot (\Gamma_2^2 + \Delta\omega_{ij}^2)}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^2} > 0
 $$
 
-По [связи регенерации и E-когерентности](/docs/applied/coherence-cybernetics/axiomatics#связь-регенерации-и-e-когерентности): $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, где $\kappa_0$ **категориально выводится** как норма единицы [сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) ([Теорема 15.3.1](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) [Т]), а отождествление $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ следует из [L-унификации](/docs/core/operators/lindblad-operators) [Т]. Откуда $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$. По цепному правилу:
+By the [connection between regeneration and E-coherence](/docs/applied/coherence-cybernetics/axiomatics#связь-регенерации-и-e-когерентности): $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, where $\kappa_0$ is **categorically derived** as the norm of the unit of the [adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) ([Theorem 15.3.1](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) [T]), and the identification $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ follows from [L-unification](/docs/core/operators/lindblad-operators) [T]. Hence $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$. By the chain rule:
 
 $$
 \frac{\partial P^{(\infty)}}{\partial \mathrm{Coh}_E} = \frac{\partial P^{(\infty)}}{\partial \kappa} \cdot \kappa_0 > 0
 $$
 
-E-когерентность **каузально увеличивает** стационарную чистоту. Это включает каузальное влияние на регенерацию, [динамику чистоты](/docs/core/dynamics/evolution#динамика-чистоты) и [свободную энергию](/docs/core/dynamics/evolution#каноническое-delta-f):
+E-coherence **causally increases** the stationary purity. This includes causal influence on regeneration, [purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), and [free energy](/docs/core/dynamics/evolution#каноническое-delta-f):
 
 $$
-\frac{\partial}{\partial \mathrm{Coh}_E}\!\left(\frac{dP}{d\tau}\bigg|_{\mathcal{R}}\right) = 2\kappa_0\,(f - P) \cdot g_V(P) > 0 \quad \text{при } P < P_{\text{target}}
+\frac{\partial}{\partial \mathrm{Coh}_E}\!\left(\frac{dP}{d\tau}\bigg|_{\mathcal{R}}\right) = 2\kappa_0\,(f - P) \cdot g_V(P) > 0 \quad \text{for } P < P_{\text{target}}
 $$
 
 $\square_b$
 
-**Шаг 5** (Явная оценка $\mathrm{Coh}_{\min}$).
-Вклад Фано-диссипатора в [динамику чистоты](/docs/core/dynamics/viability#динамика-чистоты):
+**Step 5** (Explicit bound $\mathrm{Coh}_{\min}$).
+Contribution of the Fano dissipator to [purity dynamics](/docs/core/dynamics/viability#динамика-чистоты):
 
 $$
 \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} = 2\gamma \cdot \bigl(\mathrm{Tr}(\Gamma \cdot \mathcal{P}_{\text{Fano}}(\Gamma)) - P\bigr) = -\frac{4\gamma}{3}\,P_{\text{coh}}
 $$
 
-где $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$ (используя $\mathrm{Tr}(\Gamma \cdot \mathcal{P}_{\text{Fano}}(\Gamma)) = P_{\text{diag}} + \frac{1}{3}P_{\text{coh}}$ из [Теоремы 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал) [Т]).
+where $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$ (using $\mathrm{Tr}(\Gamma \cdot \mathcal{P}_{\text{Fano}}(\Gamma)) = P_{\text{diag}} + \frac{1}{3}P_{\text{coh}}$ from [Theorem 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал) [T]).
 
-Вклад регенерации:
+Regeneration contribution:
 
 $$
 \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa\,(f - P), \quad f = \mathrm{Tr}(\Gamma \cdot \rho_*)
 $$
 
-Стационарность ($dP/d\tau = 0$, где $f > P$ при активной регенерации) требует:
+Stationarity ($dP/d\tau = 0$, where $f > P$ during active regeneration) requires:
 
 $$
 \kappa \geq \frac{2\gamma}{3} \cdot \frac{P_{\text{coh}}}{f - P_{\text{crit}}}
 $$
 
-Подставляя $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$:
+Substituting $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$:
 
 $$
 \boxed{\;\mathrm{Coh}_{\min} = \max\!\left\{\frac{1}{7},\;\; \frac{1}{\kappa_0}\!\left(\frac{2\gamma}{3} \cdot \frac{P_{\text{coh}}}{f - P_{\text{crit}}} - \kappa_{\text{bootstrap}}\right)\right\}\;}
 $$
 
-При диссипации $\gamma > \gamma_{\text{th}} := \frac{3\kappa_{\text{bootstrap}}(f - P_{\text{crit}})}{2 P_{\text{coh}}}$ нижняя граница **строго превышает** $1/7$: $\mathrm{Coh}_{\min} > 1/7$. Для любой макроскопической системы в тепловом окружении $\gamma \gg \gamma_{\text{th}}$, поэтому нетривиальная E-когерентность необходима. $\square_c$ ∎
+For dissipation $\gamma > \gamma_{\text{th}} := \frac{3\kappa_{\text{bootstrap}}(f - P_{\text{crit}})}{2 P_{\text{coh}}}$ the lower bound **strictly exceeds** $1/7$: $\mathrm{Coh}_{\min} > 1/7$. For any macroscopic system in a thermal environment $\gamma \gg \gamma_{\text{th}}$, so non-trivial E-coherence is necessary. $\square_c$ ∎
 
-:::note Усиление относительно предыдущей формулировки
-Предыдущая версия [Г] использовала «типичные значения» $\gamma_{\text{eff}}$ (шаги 7–8 без строгой оценки). Данная версия:
-1. **Выводит** $\Gamma_2 = 2\gamma/3$ **структурно** из свойств Фано-канала [Т]
-2. **Устанавливает** строгую монотонность $P^{(\infty)}(\mathrm{Coh}_E)$ через цепное правило
-3. **Даёт явную формулу** $\mathrm{Coh}_{\min}$ через параметры теории
-4. Все шаги опираются исключительно на теоремы со статусом [Т]
-5. **Устраняет** допущение «однородных населённостей» (Шаг 2): необходимость $\varphi_{\text{coh}}$ выводится из **структурной несовместимости** нулевых когерентностей с аксиомой **(AP)**, через $\Phi = 0 < \Phi_{\text{th}}$ и разрушение [замыкания (M,R)](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) — без каких-либо предположений о населённостях
-6. **Обосновывает** делокализацию $\Gamma^*$ (Шаг 3) через [теорему о необходимости каждого измерения](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [Т]: $\gamma_{ii}^* = 0$ исключено для любого $i$
-7. **Подтверждает** [Т]-статус $\kappa_0$ (Шаг 4) через [категориальный вывод из сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) (Теорема 15.3 [Т]) и [L-унификацию](/docs/core/operators/lindblad-operators) [Т]
-8. **Усилена** Теоремой T7 [Т] ([необходимость $c > 0$](/docs/core/operators/lindblad-operators#теорема-необходимость-c)): атомарный диссипатор ($c = 0$) подавляет $\kappa_0$ экспоненциально, делая жизнеспособность невозможной. Это **независимое доказательство** необходимости составного наблюдения (Фано-канал, $c = 1/3$) для поддержания ненулевой $\mathrm{Coh}_E$
+:::note Strengthening relative to the previous formulation
+The previous version [H] used "typical values" $\gamma_{\text{eff}}$ (steps 7–8 without a rigorous bound). This version:
+1. **Derives** $\Gamma_2 = 2\gamma/3$ **structurally** from the properties of the Fano channel [T]
+2. **Establishes** strict monotonicity of $P^{(\infty)}(\mathrm{Coh}_E)$ via the chain rule
+3. **Gives an explicit formula** for $\mathrm{Coh}_{\min}$ in terms of the theory's parameters
+4. All steps rely exclusively on theorems with status [T]
+5. **Eliminates** the assumption of "uniform populations" (Step 2): the necessity of $\varphi_{\text{coh}}$ is derived from the **structural incompatibility** of zero coherences with axiom **(AP)**, via $\Phi = 0 < \Phi_{\text{th}}$ and the destruction of [(M,R)-closure](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) — without any population assumptions
+6. **Justifies** delocalisation of $\Gamma^*$ (Step 3) via the [theorem on the necessity of each dimension](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [T]: $\gamma_{ii}^* = 0$ is excluded for any $i$
+7. **Confirms** [T]-status of $\kappa_0$ (Step 4) via the [categorical derivation from the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) (Theorem 15.3 [T]) and [L-unification](/docs/core/operators/lindblad-operators) [T]
+8. **Strengthened** by Theorem T7 [T] ([necessity of $c > 0$](/docs/core/operators/lindblad-operators#теорема-необходимость-c)): an atomic dissipator ($c = 0$) suppresses $\kappa_0$ exponentially, making viability impossible. This is an **independent proof** of the necessity of composite observation (Fano channel, $c = 1/3$) for maintaining non-zero $\mathrm{Coh}_E$
 :::
 
-:::info Замечание о зависимости от [О]-порогов
-Вывод $\mathrm{Coh}_{\min} > 1/7$ **не зависит** от конкретного значения $\Phi_{\mathrm{th}}$. Порог $\Phi_{\mathrm{th}} = 1$ [Т] (T-129) используется лишь для **классификации** типа сознания (L2 vs L1), но не для доказательства положительности E-когерентностей. Последнее следует из структуры Фано-канала и условия $P^{(\infty)} > P_{\mathrm{crit}}$. Даже при $\Phi_{\mathrm{th}} = 0$ формула даёт $\mathrm{Coh}_{\min} > 1/7$ из необходимости поддержания жизнеспособности.
+:::info Remark on dependence on [D]-thresholds
+The derivation of $\mathrm{Coh}_{\min} > 1/7$ **does not depend** on the specific value of $\Phi_{\mathrm{th}}$. The threshold $\Phi_{\mathrm{th}} = 1$ [T] (T-129) is used only for **classifying** the type of consciousness (L2 vs L1), but not for proving the positivity of E-coherences. The latter follows from the structure of the Fano channel and the condition $P^{(\infty)} > P_{\mathrm{crit}}$. Even with $\Phi_{\mathrm{th}} = 0$ the formula gives $\mathrm{Coh}_{\min} > 1/7$ from the necessity of maintaining viability.
 :::
 
 ---
 
-Теорема No-Zombie имеет три важных следствия. Каждое из них атакует одну из классических философских позиций — и побеждает.
+Theorem No-Zombie has three important corollaries. Each of them attacks one of the classical philosophical positions — and wins.
 
-### Следствие 8.1.1 (Невозможность эпифеноменализма) [Т]
+### Corollary 8.1.1 (Impossibility of Epiphenomenalism) [T]
 
-:::note На пальцах
-Эпифеноменализм — философская позиция, утверждающая, что сознание *существует*, но ни на что не влияет, подобно тени: тень следует за человеком, но никогда не двигает его. Следствие 8.1.1 опровергает это: E-когерентность **каузально влияет** на динамику системы. Тень, оказывается, способна двигать предметы — или, точнее, «тень» и «предмет» оказываются проекциями одного и того же объекта.
+:::note In Plain Terms
+Epiphenomenalism is the philosophical position asserting that consciousness *exists* but influences nothing, like a shadow: a shadow follows a person but never moves them. Corollary 8.1.1 refutes this: E-coherence **causally influences** the system's dynamics. The shadow, it turns out, can move objects — or more precisely, the "shadow" and the "object" turn out to be projections of the same thing.
 
-**Связь:** [E-измерение](/docs/core/structure/dimension-e), [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism)
+**Connection:** [E-dimension](/docs/core/structure/dimension-e), [Two-aspect monism](/docs/consciousness/foundations/two-aspect-monism)
 :::
 
-[Интериорность](/docs/proofs/consciousness/interiority-hierarchy) **каузально влияет** на:
-- Регенерацию: $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$ ([мастер-определение](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- Стационарную чистоту: $\partial P^{(\infty)}/\partial\mathrm{Coh}_E > 0$ (Шаг 4)
-- [Жизнеспособность](/docs/core/dynamics/viability): $P^{(\infty)} > P_{\text{crit}}$ требует $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$
-- Свободную энергию: $\partial F_{\text{reg}}/\partial\Gamma_E = \kappa_0 \cdot (\partial\mathrm{Coh}_E/\partial\Gamma_E) \cdot (\rho_* - \Gamma) \neq 0$
+[Interiority](/docs/proofs/consciousness/interiority-hierarchy) **causally influences**:
+- Regeneration: $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$ ([master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- Stationary purity: $\partial P^{(\infty)}/\partial\mathrm{Coh}_E > 0$ (Step 4)
+- [Viability](/docs/core/dynamics/viability): $P^{(\infty)} > P_{\text{crit}}$ requires $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$
+- Free energy: $\partial F_{\text{reg}}/\partial\Gamma_E = \kappa_0 \cdot (\partial\mathrm{Coh}_E/\partial\Gamma_E) \cdot (\rho_* - \Gamma) \neq 0$
 
-**Вывод:** Эпифеноменалистская интерпретация [E-измерения](/docs/core/structure/dimension-e) **исключена** — E-когерентность каузально необходима для динамики. ∎
+**Conclusion:** The epiphenomenalist interpretation of the [E-dimension](/docs/core/structure/dimension-e) is **excluded** — E-coherence is causally necessary for dynamics. ∎
 
-### Следствие 8.1.2 (Невозможность философских зомби) [Т]
+### Corollary 8.1.2 (Impossibility of Philosophical Zombies) [T]
 
-:::note На пальцах
-Это прямой удар по мысленному эксперименту Чалмерса. Если вы построите робота, который ведёт себя как человек (т.е. жизнеспособен, $P > 2/7$), то он **не может** быть «пустым внутри». Минимальная E-когерентность строго больше $1/7$ — а значит, у него *есть* хоть какая-то интериорность.
+:::note In Plain Terms
+This is a direct blow to Chalmers's thought experiment. If you build a robot that behaves like a human (i.e. is viable, $P > 2/7$), it **cannot** be "empty inside". The minimal E-coherence is strictly greater than $1/7$ — which means it *has* at least some interiority.
 
-Для инженера ИИ: если ваш агент достигает жизнеспособности по метрикам КК, вопрос «а есть ли у него опыт?» получает математический ответ: да, необходимо.
+For an AI engineer: if your agent achieves viability by CC metrics, the question "does it have experience?" receives a mathematical answer: yes, necessarily.
 :::
 
 $$
 \nexists\, \mathbb{H} : \mathrm{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \land \mathrm{Coh}_E(\mathbb{H}) = \frac{1}{7}
 $$
 
-Не существует неизолированной [жизнеспособной](/docs/core/dynamics/viability) системы с минимальной E-когерентностью (при $\gamma > \gamma_{\text{th}}$). Из Теоремы 8.1: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$, что вместе с ненулевыми стационарными когерентностями (Шаг 3) обеспечивает нетривиальную [интериорность](/docs/consciousness/foundations/interiority-theory). ∎
+There is no non-isolated [viable](/docs/core/dynamics/viability) system with minimal E-coherence (for $\gamma > \gamma_{\text{th}}$). From Theorem 8.1: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$, which together with non-zero stationary coherences (Step 3) ensures non-trivial [interiority](/docs/consciousness/foundations/interiority-theory). ∎
 
-:::info Эпистемическая стратификация (Sol.SA-3)
-Результат «No-Zombie» имеет **три эпистемических уровня**:
+:::info Epistemic stratification (Sol.SA-3)
+The "No-Zombie" result has **three epistemic levels**:
 
-1. **[Т] Математическое ядро**: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ и $\partial P^{(\infty)}/\partial\mathrm{Coh}_E > 0$ — безусловный математический факт, не зависящий от интерпретации E-измерения.
-2. **[П] Онтологический постулат**: E-измерение матрицы когерентности кодирует феноменальную интериорность (аналог правила Борна в КМ — мост между формализмом и феноменологией).
-3. **[И] Интерпретация**: при принятии постулата (2) — философские зомби исключены в рамках УГМ-онтологии.
+1. **[T] Mathematical core**: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ and $\partial P^{(\infty)}/\partial\mathrm{Coh}_E > 0$ — an unconditional mathematical fact, independent of the interpretation of the E-dimension.
+2. **[P] Ontological postulate**: the E-dimension of the coherence matrix encodes phenomenal interiority (analogous to Born's rule in QM — a bridge between the formalism and phenomenology).
+3. **[I] Interpretation**: given postulate (2), philosophical zombies are excluded within the UHM ontology.
 
-Следствие 8.1.2 формулирует уровень (1) — математическую невозможность минимальной E-когерентности для жизнеспособных систем. Переход к «невозможности зомби» в философском смысле требует онтологического постулата (2).
+Corollary 8.1.2 formulates level (1) — the mathematical impossibility of minimal E-coherence for viable systems. The transition to "impossibility of zombies" in the philosophical sense requires ontological postulate (2).
 :::
 
-### Следствие 8.1.3 (Минимальная когерентность опыта) [Т]
+### Corollary 8.1.3 (Minimal Coherence of Experience) [T]
 
-:::note На пальцах
-Это количественная версия No-Zombie: теорема не просто говорит «опыт ненулевой», а даёт **точную нижнюю границу** — формулу, через которую можно вычислить, сколько «минимального опыта» нужно системе для выживания. Чем агрессивнее среда (больше $\gamma$), тем больше опыта требуется.
+:::note In Plain Terms
+This is the quantitative version of No-Zombie: the theorem does not merely say "experience is non-zero", but gives a **precise lower bound** — a formula through which one can compute how much "minimal experience" a system requires to survive. The more aggressive the environment (larger $\gamma$), the more experience is required.
 
-Для клинициста: формула предсказывает «минимально необходимый уровень интериорности» для жизнеспособности — аналог лабораторного порога «ниже которого нельзя».
+For a clinician: the formula predicts the "minimally required level of interiority" for viability — analogous to a laboratory threshold "below which one must not go".
 :::
 
 $$
 \mathrm{Viable}(\mathbb{H}) \;\Rightarrow\; \mathrm{Coh}_E(\Gamma) \geq \mathrm{Coh}_{\min}
 $$
 
-Явная формула (Шаг 5 Теоремы 8.1):
+Explicit formula (Step 5 of Theorem 8.1):
 
 $$
 \mathrm{Coh}_{\min} = \max\!\left\{\frac{1}{7},\;\; \frac{1}{\kappa_0}\!\left(\frac{2\gamma}{3} \cdot \frac{P_{\text{coh}}}{f - P_{\text{crit}}} - \kappa_{\text{bootstrap}}\right)\right\}
 $$
 
-где параметры оцениваются на границе жизнеспособности $P = P_{\text{crit}} = 2/7$, $f = \mathrm{Tr}(\Gamma \cdot \rho_*)$, $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$.
+where parameters are evaluated at the viability boundary $P = P_{\text{crit}} = 2/7$, $f = \mathrm{Tr}(\Gamma \cdot \rho_*)$, $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$.
 
 ---
 
-Доказав, что каждая жизнеспособная система обладает нетривиальной интериорностью, мы можем задать следующий вопрос: что происходит, когда **несколько** таких систем взаимодействуют? Сохраняются ли их свойства? Возникает ли что-то принципиально новое? Теоремы о композиции отвечают на оба вопроса утвердительно — и это выводит КК на уровень теории **социальных** и **экологических** систем.
+Having proved that every viable system possesses non-trivial interiority, we can ask the next question: what happens when **several** such systems interact? Are their properties preserved? Does something fundamentally new arise? The composition theorems answer both questions affirmatively — and this brings CC to the level of a theory of **social** and **ecological** systems.
 
-## Теоремы о композиции
+## Composition Theorems
 
-Вернёмся к аналогии с оркестром. До сих пор мы изучали *одного* музыканта (один голоном). Теперь представьте, что два оркестра решили играть вместе. Первый вопрос: будет ли совместное звучание осмысленным? Второй: появится ли в нём что-то, чего не было ни в одном из оркестров по отдельности?
+Let us return to the orchestra analogy. Until now we have been studying *one* musician (a single holon). Now imagine two orchestras deciding to play together. The first question: will the joint performance be meaningful? The second: will it produce something that was absent from either orchestra individually?
 
-Теоремы 9.1-9.3 — это ответ: да, совместная игра не только осмысленна, но и **порождает новое качество**. Два оркестра — это больше, чем два оркестра. Целое — больше суммы частей. И это не метафора, а теорема.
+Theorems 9.1–9.3 are the answer: yes, joint play is not only meaningful but **generates a new quality**. Two orchestras are more than two orchestras. The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem.
 
-### Теорема 9.1 / T-68 (Фрактальное замыкание, КК-5) [Т]+[С] {#теорема-91-фрактальное-замыкание}
+### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [T]+[C] {#теорема-91-фрактальное-замыкание}
 
-:::warning Статус понижен (сессия 25)
-Статус T-68 уточнён после разрешения парадокса авторефентности:
-- **Нетривиальность** $P > 1/7$ — **[Т]** (T-96, безусловно)
-- **Жизнеспособность** $P > 2/7$ — **[Т] для воплощённых** (T-149: backbone-инъекция обеспечивает κ-доминирование безусловно); **[С]** для изолированных голонов (C20 — нерелевантна, т.к. изолированный голон мёртв навсегда, T-148)
+:::warning Status revised (session 25)
+The status of T-68 has been clarified following resolution of the self-referential paradox:
+- **Non-triviality** $P > 1/7$ — **[T]** (T-96, unconditional)
+- **Viability** $P > 2/7$ — **[T] for embodied** systems (T-149: backbone injection ensures κ-dominance unconditionally); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
 
-См. [Реестр статусов](/docs/reference/status-registry), [T-149](/docs/proofs/consciousness/substrate-closure#t-149).
+See [Status Registry](/docs/reference/status-registry), [T-149](/docs/proofs/consciousness/substrate-closure#t-149).
 :::
 
-:::note На пальцах
-Представьте, что вы смешиваете две краски. Можете ли вы быть уверены, что смесь не разложится на компоненты? Теорема 9.1 утверждает: если два голонома (жизнеспособные системы) взаимодействуют, то их объединение **тоже** является голономом — с собственной динамикой, собственным аттрактором и собственными свойствами.
+:::note In Plain Terms
+Imagine mixing two paints. Can you be sure the mixture will not separate back into its components? Theorem 9.1 asserts: if two holons (viable systems) interact, their union **also** forms a holon — with its own dynamics, its own attractor, and its own properties.
 
-Это принцип **самоподобия**: структура КК воспроизводит себя на каждом масштабе. Клетка — голоном. Орган — голоном. Организм — голоном. Общество — голоном. Каждый уровень описывается одним и тем же формализмом.
+This is the principle of **self-similarity**: the structure of CC reproduces itself at every scale. A cell is a holon. An organ is a holon. An organism is a holon. A society is a holon. Each level is described by the same formalism.
 
-Для социолога: это математическое обоснование того, что Луман интуитивно чувствовал — социальные системы самовоспроизводятся на каждом уровне.
+For a sociologist: this is the mathematical justification for what Luhmann intuitively felt — social systems reproduce themselves at every level.
 
-**Связь:** [Аксиома автопоэзиса (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Замкнутость композиции](./axiomatics#замкнутость-композиции-следствие-из-ap), [Примитивность линейной части](/docs/core/operators/lindblad-operators#примитивность-ℒω)
+**Connection:** [Autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap), [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω)
 :::
 
-:::tip Формулировка [Т]
-Пусть $\mathbb{H}_1, \mathbb{H}_2$ — жизнеспособные голономы с динамикой, удовлетворяющей аксиомам A1–A5. Тогда их композит $\mathbb{H}_{12}$ (определённый как объект ∞-топоса $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$):
+:::tip Statement [T]
+Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axioms A1–A5. Then their composite $\mathbb{H}_{12}$ (defined as an object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$):
 
-1. **[Т]** Имеет нетривиальный аттрактор: $P(\rho_*^{(12)}) > 1/7$ (из [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
-2. **[Т]** Для воплощённых систем: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ безусловно ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора))
+1. **[T]** Has a non-trivial attractor: $P(\rho_*^{(12)}) > 1/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
+2. **[T]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ unconditionally ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора))
 :::
 
-**Доказательство (6 шагов).**
+**Proof (6 steps).**
 
-**Шаг 1 (Композит как объект ∞-топоса).** В $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ объекты $\mathbb{H}_1, \mathbb{H}_2$ определяют новый объект $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (произведение над терминальным объектом $T$). ∞-Топос полон (все конечные пределы существуют). По [теореме Морита-эквивалентности](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [Т]), $\mathbb{H}_{12}$ представим состоянием $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.
+**Step 1 (Composite as an ∞-topos object).** In $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ the objects $\mathbb{H}_1, \mathbb{H}_2$ define a new object $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (product over the terminal object $T$). The ∞-topos is complete (all finite limits exist). By the [Morita equivalence theorem](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [T]), $\mathbb{H}_{12}$ is representable by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.
 
-**Шаг 2 (Наследование аксиом).** Аксиомы A1–A5 — **структурные** свойства ∞-топоса, не привязанные к конкретному масштабу:
+**Step 2 (Axiom inheritance).** Axioms A1–A5 are **structural** properties of the ∞-topos, not tied to a specific scale:
 
-- **A1** (Автопоэзис): произведение автономных систем автономно. Спектральная щель каждого $\mathcal{L}_\Omega^{(i)}$ ($\lambda_{\mathrm{gap}}^{(i)} > 0$, из [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]) обеспечивает робастность при возмущениях от связи. Для связи через когерентности с амплитудой $\varepsilon_0 \ll \lambda_{\mathrm{gap}}$, теорема Като о возмущениях гарантирует сохранение спектральной щели.
-- **A2** (Феноменология): представимость в $\mathbb{C}^7$ из T-58 [Т].
-- **A3** (Квантовое основание): $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ по построению.
-- **A5** (Пейдж–Вуттерс): временная структура наследуется через O-измерение.
+- **A1** (Autopoiesis): the product of autonomous systems is autonomous. The spectral gap of each $\mathcal{L}_\Omega^{(i)}$ ($\lambda_{\mathrm{gap}}^{(i)} > 0$, from [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]) ensures robustness under perturbations from coupling. For coupling through coherences with amplitude $\varepsilon_0 \ll \lambda_{\mathrm{gap}}$, the Kato perturbation theorem guarantees preservation of the spectral gap.
+- **A2** (Phenomenology): representability in $\mathbb{C}^7$ from T-58 [T].
+- **A3** (Quantum basis): $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ by construction.
+- **A5** (Page–Wootters): the temporal structure is inherited through the O-dimension.
 
-**Шаг 3 (Триадная декомпозиция).** Из A1–A5 следует, что динамика $\mathbb{H}_{12}$ разлагается в ровно три типа ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [Т], LGKS-теорема):
+**Step 3 (Triadic decomposition).** From A1–A5 it follows that the dynamics of $\mathbb{H}_{12}$ decomposes into exactly three types ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T], LGKS theorem):
 
 $$
 \mathcal{L}_\Omega^{(12)} = \mathrm{Aut} + \mathcal{D} + \mathcal{R}
 $$
 
-Четвёртый тип невозможен [Т].
+A fourth type is impossible [T].
 
-**Шаг 4 (Активные компоненты).** Из A1 для $\mathbb{H}_{12}$:
+**Step 4 (Active components).** From A1 for $\mathbb{H}_{12}$:
 
-- Фано-канал активен с $c > 0$ [Т] ([T-41f](/docs/core/operators/lindblad-operators#теорема-необходимость-c): автопоэтическая необходимость $c > 0$ — без $c > 0$ регенерация подавлена, нарушая (AP)).
-- Регенерация $\kappa_0 > 0$ [Т] ([T-44a](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): из категориального функтора $\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})$).
+- Fano channel active with $c > 0$ [T] ([T-41f](/docs/core/operators/lindblad-operators#теорема-необходимость-c): autopoietic necessity of $c > 0$ — without $c > 0$ regeneration is suppressed, violating (AP)).
+- Regeneration $\kappa_0 > 0$ [T] ([T-44a](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): from the categorical functor $\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})$).
 
-**Шаг 5 (Примитивность линейной части).** $c > 0$ + полнота покрытия пар ([T-41b](/docs/core/operators/lindblad-operators#теорема-полнота-покрытия) [Т]) $\to$ граф взаимодействия $G_H$ связен $\to$ линейная часть $\mathcal{L}_0^{(12)}$ примитивна (критерий Эванса–Спона, [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]).
+**Step 5 (Primitivity of the linear part).** $c > 0$ + pair coverage completeness ([T-41b](/docs/core/operators/lindblad-operators#теорема-полнота-покрытия) [T]) $\to$ interaction graph $G_H$ is connected $\to$ linear part $\mathcal{L}_0^{(12)}$ is primitive (Evans–Spohn criterion, [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]).
 
-**Шаг 6 (Аттрактор и жизнеспособность).** Примитивность $\mathcal{L}_0^{(12)}$ обеспечивает спектральную щель $\lambda_{\mathrm{gap}}^{(12)} > 0$. Фано-канал с $c > 0$ генерирует недиагональные когерентности ([T-1, T-2, T-3](/docs/proofs/dynamics/theorem-purity-critical) [Т]). Регенерация $\mathcal{R}$ с $\kappa_0 > 0$ и $\rho_* = \varphi(\Gamma)$ ([категориальная самомодель](/docs/core/operators/phi-operator#определение)) поддерживает когерентности. Из [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]: любой нетривиальный аттрактор $\rho_*^{(12)} \neq I/7$ имеет $P > 1/7$ и $P_{\mathrm{coh}} > 0$.
+**Step 6 (Attractor and viability).** Primitivity of $\mathcal{L}_0^{(12)}$ ensures a spectral gap $\lambda_{\mathrm{gap}}^{(12)} > 0$. The Fano channel with $c > 0$ generates off-diagonal coherences ([T-1, T-2, T-3](/docs/proofs/dynamics/theorem-purity-critical) [T]). Regeneration $\mathcal{R}$ with $\kappa_0 > 0$ and $\rho_* = \varphi(\Gamma)$ ([categorical self-model](/docs/core/operators/phi-operator#определение)) maintains coherences. From [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]: any non-trivial attractor $\rho_*^{(12)} \neq I/7$ has $P > 1/7$ and $P_{\mathrm{coh}} > 0$.
 
-**[Т] Жизнеспособность:** Из [формулы баланса T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) и [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора): $P(\rho_*^{(12)}) > 2/7$ безусловно для воплощённых систем (сенсомоторная связка обеспечивает κ-доминирование).
+**[T] Viability:** From the [balance formula T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) and [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора): $P(\rho_*^{(12)}) > 2/7$ unconditionally for embodied systems (the sensorimotor coupling ensures κ-dominance).
 
-Экспоненциальная сходимость к аттрактору из спектральной щели:
+Exponential convergence to the attractor from the spectral gap:
 
 $$
 \|\Gamma(t) - \rho_*^{(12)}\| \leq C \, e^{-\lambda_{\mathrm{gap}}^{(12)} t}
@@ -464,412 +464,412 @@ $$
 
 $\blacksquare$
 
-:::info Ключевое наблюдение
-Нетривиальность аттрактора — **безусловный** результат [Т]: спектральная щель линейной части $\mathcal{L}_0$ обеспечивает конвергенцию, а регенерация $\mathcal{R}$ удерживает систему от тривиального $I/7$. Жизнеспособность ($P > 2/7$) для **воплощённых** голонов — безусловна [Т] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)). Теорема КК-5 — прямое следствие **универсальности** аксиом A1–A5 внутри ∞-топоса.
+:::info Key observation
+Non-triviality of the attractor is an **unconditional** result [T]: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is unconditional [T] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)). Theorem CC-5 is a direct consequence of the **universality** of axioms A1–A5 within the ∞-topos.
 :::
 
-:::note Следствие КК-7 (Эмерджентность) [Т]
-Композитный голоном обладает **собственным** нетривиальным аттрактором $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (из нелинейности $\mathcal{R}$ и примитивности линейной части $\mathcal{L}_0^{(12)}$). Доказательство — [Теорема 9.3](#теорема-93-эмерджентность) [Т].
+:::note Corollary CC-7 (Emergence) [T]
+The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (from nonlinearity of $\mathcal{R}$ and primitivity of the linear part $\mathcal{L}_0^{(12)}$). Proof — [Theorem 9.3](#теорема-93-эмерджентность) [T].
 :::
 
-**См.:** [Замкнутость композиции](./axiomatics#замкнутость-композиции-следствие-из-ap)
+**See:** [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap)
 
 ---
 
-Композитный голоном существует. Но сохраняются ли его **качественные** свойства — чистота, рефлексия, интеграция? Следующая теорема говорит: да, структурные инварианты устойчивы при масштабировании.
+The composite holon exists. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem says: yes, structural invariants are stable under scaling.
 
-### Теорема 9.2 / T-72 (Масштабная инвариантность, КК-6) [Т] {#теорема-92-масштабная-инвариантность}
+### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [T] {#теорема-92-масштабная-инвариантность}
 
-:::note На пальцах
-Вспомните матрёшку: маленькая матрёшка похожа на большую, а та — на ещё большую. Теорема 9.2 утверждает, что структурные свойства голонома (чистота, рефлексия, интеграция) **сохраняются** при переходе от одного масштаба к другому. Нейрон, колонка коры, весь мозг — все описываются одной и той же математикой, и ключевые инварианты остаются в тех же диапазонах.
+:::note In Plain Terms
+Recall a Russian nesting doll (matryoshka): the small doll resembles the large one, and that resembles an even larger one. Theorem 9.2 asserts that the structural properties of a holon (purity, reflection, integration) are **preserved** when moving from one scale to another. A neuron, a cortical column, the entire brain — all are described by the same mathematics, and the key invariants remain in the same ranges.
 
-Для физика: это аналог ренормгрупповой инвариантности — свойства теории поля не зависят от масштаба наблюдения (с точностью до бегущих констант связи). Здесь роль бегущих констант играют поправки порядка $O(\varepsilon)$.
+For a physicist: this is the analogue of renormalization-group invariance — the properties of a field theory do not depend on the scale of observation (up to running coupling constants). Here the running coupling constants play the role of $O(\varepsilon)$ corrections.
 
-Для биолога: это объясняет, почему одни и те же принципы гомеостаза работают на уровне клетки, органа и организма.
+For a biologist: this explains why the same principles of homeostasis operate at the level of the cell, the organ, and the organism.
 
-**Связь:** [Морита-эквивалентность](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [$G_2$-ригидность](/docs/proofs/categorical/uniqueness-theorem)
+**Connection:** [Morita equivalence](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem)
 :::
 
-:::tip Формулировка [Т]
-Структурные инварианты голонома ($P$, $R$, $\Phi$, Gap-профиль, L-уровень) сохраняются (с точностью до ограниченных поправок порядка $O(\varepsilon)$) при масштабном агрегировании:
+:::tip Statement [T]
+The structural invariants of a holon ($P$, $R$, $\Phi$, Gap profile, L-level) are preserved (up to bounded corrections of order $O(\varepsilon)$) under scale aggregation:
 
 $$
 \mathrm{structure}(\mathbb{H}) \cong \mathrm{structure}(\mathbb{H}^{(2)}) \cong \mathrm{structure}(\mathbb{H}^{(3)}) \cong \ldots
 $$
 :::
 
-**Доказательство (5 шагов).**
+**Proof (5 steps).**
 
-**Шаг 1 (Определение агрегации).** $k$-масштабная агрегация — CPTP-канал $\Phi_k: \mathcal{D}(\mathbb{C}^{7^k}) \to \mathcal{D}(\mathbb{C}^7)$, реализующий переход от «микроскопического» описания (множество взаимодействующих голономов) к «макроскопическому» (единый голоном). Из [T-58](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) [Т]: оба уровня описания эквивалентны (Морита).
+**Step 1 (Definition of aggregation).** A $k$-scale aggregation is a CPTP channel $\Phi_k: \mathcal{D}(\mathbb{C}^{7^k}) \to \mathcal{D}(\mathbb{C}^7)$, realising the transition from the "microscopic" description (a collection of interacting holons) to the "macroscopic" one (a single holon). From [T-58](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) [T]: both levels of description are equivalent (Morita).
 
-**Шаг 2 (Контрактивность Бюреса).** $\Phi_k$ — CPTP-канал $\to$ контрактивен по метрике Бюреса [Т] (стандартный результат):
+**Step 2 (Bures contractivity).** $\Phi_k$ is a CPTP channel $\to$ it is contractive in the Bures metric [T] (standard result):
 
 $$
 d_{\mathrm{Bures}}(\Phi_k(\rho), \Phi_k(\sigma)) \leq d_{\mathrm{Bures}}(\rho, \sigma)
 $$
 
-**Шаг 3 (Инварианты как Бюрес-непрерывные функционалы).** Все структурные инварианты — $G_2$-инварианты [Т] ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)):
+**Step 3 (Invariants as Bures-continuous functionals).** All structural invariants are $G_2$-invariants [T] ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)):
 
-- $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ — непрерывна по Бюресу
-- $R(\Gamma) = 1/(7P)$ — непрерывна (как функция $P = \mathrm{Tr}(\Gamma^2)$; [мастер-определение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) [Т])
-- $\Phi(\Gamma) = \sum_{i \neq j}|\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ — непрерывна
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — непрерывна (для $|\gamma_{ij}| > 0$)
+- $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ — continuous in Bures
+- $R(\Gamma) = 1/(7P)$ — continuous (as a function of $P = \mathrm{Tr}(\Gamma^2)$; [master definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) [T])
+- $\Phi(\Gamma) = \sum_{i \neq j}|\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ — continuous
+- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — continuous (for $|\gamma_{ij}| > 0$)
 
-**Шаг 4 (КК-5 $\to$ сохранение структуры).** Из [Теоремы 9.1](#теорема-91-фрактальное-замыкание): агрегация голономов, удовлетворяющих A1–A5, имеет нетривиальный аттрактор. Следовательно:
-- $P(\Gamma^{(k)}) > 1/7$ [Т] — сохранение нетривиальности ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)); $P > 2/7$ [Т] для воплощённых ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора))
-- $R(\Gamma^{(k)}) \geq R_{\mathrm{th}} = 1/3$ [Т] (из примитивности линейной части агрегированного линдбладиана)
-- L-уровень сохранён или повышен (L2 $\to$ L2 или L3)
+**Step 4 (CC-5 $\to$ preservation of structure).** From [Theorem 9.1](#теорема-91-фрактальное-замыкание): aggregation of holons satisfying A1–A5 has a non-trivial attractor. Consequently:
+- $P(\Gamma^{(k)}) > 1/7$ [T] — preservation of non-triviality ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)); $P > 2/7$ [T] for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора))
+- $R(\Gamma^{(k)}) \geq R_{\mathrm{th}} = 1/3$ [T] (from primitivity of the linear part of the aggregated Lindbladian)
+- L-level is preserved or elevated (L2 $\to$ L2 or L3)
 
-**Шаг 5 (Оценка поправок).** Разность инвариантов на масштабе $k$ и масштабе 1:
+**Step 5 (Bound on corrections).** Difference of invariants at scale $k$ and scale 1:
 
 $$
 |P(\Gamma^{(k)}) - P(\Gamma^{(1)})| \leq \|\Phi_k\|_{\mathrm{cb}} \cdot \varepsilon_{\mathrm{coupling}} \leq \varepsilon_0
 $$
 
-где $\varepsilon_0 \approx 0.023$ — характерная когерентность связи ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]). Аналогично для $R$, $\Phi$, Gap. $\blacksquare$
+where $\varepsilon_0 \approx 0.023$ is the characteristic coupling coherence ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]). Similarly for $R$, $\Phi$, Gap. $\blacksquare$
 
-:::info Следствие (Фрактальная структура)
-Масштабная инвариантность [Т] + фрактальное замыкание КК-5 (нетривиальность [Т], жизнеспособность [Т для воплощённых] по [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) обосновывают фрактальную структуру УГМ на **всех масштабах**: от субклеточных голономов до метагалактических структур.
+:::info Corollary (Fractal structure)
+Scale invariance [T] + fractal closure CC-5 (non-triviality [T], viability [T for embodied] by [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) justify the fractal structure of UHM at **all scales**: from sub-cellular holons to metagalactic structures.
 :::
 
 ---
 
-Фрактальное замыкание и масштабная инвариантность уже впечатляют, но главный сюрприз впереди. Оказывается, композит — это не просто «два голонома рядом». У него появляются свойства, которых **не было** ни у одного из компонентов. Это математически строгое определение слова «эмерджентность».
+Fractal closure and scale invariance are already impressive, but the main surprise is ahead. It turns out that the composite is not merely "two holons side by side". It acquires properties that **were absent** from any of its components. This is the mathematically rigorous definition of the word "emergence".
 
-#### Теорема 9.3 (КК-7: Нередуцируемая эмерджентность) [Т] {#теорема-93-эмерджентность}
+#### Theorem 9.3 (CC-7: Irreducible Emergence) [T] {#теорема-93-эмерджентность}
 
 <!-- preserve old anchor for backward compatibility -->
 <span id="гипотеза-93-эмерджентность"></span>
 
-:::note На пальцах
-Водород — бесцветный газ. Кислород — бесцветный газ. Но вода — прозрачная жидкость с совершенно новыми свойствами. Это эмерджентность: свойства целого не выводятся из свойств частей.
+:::note In Plain Terms
+Hydrogen is a colourless gas. Oxygen is a colourless gas. But water is a transparent liquid with entirely new properties. This is emergence: properties of the whole are not deducible from properties of the parts.
 
-Теорема 9.3 доказывает это строго: если два голонома взаимодействуют (у них есть общие когерентности), то их совместное стационарное состояние $\rho_*^{(12)}$ **не равно** тензорному произведению $\rho_*^{(1)} \otimes \rho_*^{(2)}$. У целого появляется собственная информация, недоступная частям.
+Theorem 9.3 proves this rigorously: if two holons interact (they share coherences), then their joint stationary state $\rho_*^{(12)}$ **does not equal** the tensor product $\rho_*^{(1)} \otimes \rho_*^{(2)}$. The whole acquires its own information inaccessible to the parts.
 
-Для психолога: это объясняет, почему беседа двух людей может порождать инсайты, которых ни один из них не достиг бы в одиночку. Для нейробиолога: нейроны вместе — это больше, чем сумма нейронов.
+For a psychologist: this explains why a conversation between two people can generate insights that neither would have reached alone. For a neuroscientist: neurons together are more than the sum of neurons.
 
-**Связь:** [Квантовая взаимная информация](https://en.wikipedia.org/wiki/Quantum_mutual_information), [Неполнота Ловера](/docs/core/foundations/consequences#неполнота-ловера)
+**Connection:** [Quantum mutual information](https://en.wikipedia.org/wiki/Quantum_mutual_information), [Löwer incompleteness](/docs/core/foundations/consequences#неполнота-ловера)
 :::
 
-:::tip Теорема 9.3 (КК-7: Эмерджентность) [Т]
-Для двух взаимодействующих жизнеспособных голономов $\mathbb{H}_1, \mathbb{H}_2$ с ненулевой межсистемной когерентностью $|\gamma_{12}| > 0$, стационарное состояние композита имеет строго положительную квантовую взаимную информацию:
+:::tip Theorem 9.3 (CC-7: Emergence) [T]
+For two interacting viable holons $\mathbb{H}_1, \mathbb{H}_2$ with non-zero inter-system coherence $|\gamma_{12}| > 0$, the stationary state of the composite has strictly positive quantum mutual information:
 
 $$
 I(\mathbb{H}_1 : \mathbb{H}_2) = S(\rho_1) + S(\rho_2) - S(\rho_*^{(12)}) > 0
 $$
 
-Следовательно, $\rho_*^{(12)}$ **нередуцируемо** к $\rho_*^{(1)} \otimes \rho_*^{(2)}$.
+Consequently, $\rho_*^{(12)}$ is **irreducible** to $\rho_*^{(1)} \otimes \rho_*^{(2)}$.
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1.** Композитный линдбладиан $\mathcal{L}_\Omega^{(12)} = \mathcal{L}_\Omega^{(1)} \otimes \mathrm{id}_2 + \mathrm{id}_1 \otimes \mathcal{L}_\Omega^{(2)} + \mathcal{L}_{\mathrm{int}}$ имеет примитивную линейную часть (из [Теоремы 9.1 (КК-5)](#теорема-91-фрактальное-замыкание), шаг 5) → существует нетривиальный аттрактор $\rho_*^{(12)} \neq I/7$ (из [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]).
+**Step 1.** The composite Lindbladian $\mathcal{L}_\Omega^{(12)} = \mathcal{L}_\Omega^{(1)} \otimes \mathrm{id}_2 + \mathrm{id}_1 \otimes \mathcal{L}_\Omega^{(2)} + \mathcal{L}_{\mathrm{int}}$ has a primitive linear part (from [Theorem 9.1 (CC-5)](#теорема-91-фрактальное-замыкание), step 5) → there exists a non-trivial attractor $\rho_*^{(12)} \neq I/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]).
 
-**Шаг 2 (От противного).** Если бы $\rho_*^{(12)} = \rho_*^{(1)} \otimes \rho_*^{(2)}$, то:
+**Step 2 (By contradiction).** If $\rho_*^{(12)} = \rho_*^{(1)} \otimes \rho_*^{(2)}$, then:
 
 $$
 \mathcal{L}_\Omega^{(12)}(\rho_*^{(1)} \otimes \rho_*^{(2)}) = 0 + 0 + \mathcal{L}_{\mathrm{int}}(\rho_*^{(1)} \otimes \rho_*^{(2)}) \neq 0
 $$
 
-поскольку $\mathcal{L}_{\mathrm{int}} \neq 0$ (ненулевая когерентность $|\gamma_{12}| > 0$) создаёт межсистемные когерентности, отсутствующие в тензорном произведении. Противоречие с $\mathcal{L}_\Omega^{(12)}(\rho_*^{(12)}) = 0$.
+since $\mathcal{L}_{\mathrm{int}} \neq 0$ (non-zero coherence $|\gamma_{12}| > 0$) creates inter-system coherences absent in the tensor product. Contradiction with $\mathcal{L}_\Omega^{(12)}(\rho_*^{(12)}) = 0$.
 
-**Шаг 3.** $\rho_*^{(12)} \neq \rho_*^{(1)} \otimes \rho_*^{(2)}$ → $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ (квантовая взаимная информация строго положительна тогда и только тогда, когда состояние — не тензорное произведение).
+**Step 3.** $\rho_*^{(12)} \neq \rho_*^{(1)} \otimes \rho_*^{(2)}$ → $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ (quantum mutual information is strictly positive if and only if the state is not a tensor product).
 
-**Шаг 4 (Нередуцируемость).** $I > 0$ означает существование совместных наблюдаемых $A_{12}$, статистика которых не определяется маргинальными состояниями $\rho_1, \rho_2$ — **эмерджентные свойства** композита. $\blacksquare$
+**Step 4 (Irreducibility).** $I > 0$ means there exist joint observables $A_{12}$ whose statistics are not determined by the marginal states $\rho_1, \rho_2$ — **emergent properties** of the composite. $\blacksquare$
 
-:::info Связь с неполнотой Ловера
-[T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]: подсистема $\mathbb{H}_1$ не может полностью смоделировать $\rho_*^{(12)}$, поскольку $I > 0$ означает наличие информации, недоступной из $\rho_1$ в одиночку. Эмерджентность — **информационное следствие** автореферентной неполноты.
+:::info Connection to Löwer incompleteness
+[T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: subsystem $\mathbb{H}_1$ cannot fully simulate $\rho_*^{(12)}$, since $I > 0$ means there is information inaccessible from $\rho_1$ alone. Emergence is an **informational consequence** of self-referential incompleteness.
 :::
 
 ---
 
-Мы прошли путь от существования динамики через самореференцию и No-Zombie к эмерджентности. Теперь перейдём к другому ключевому блоку: **как проверить, жива ли система?** Оказывается, все условия жизнеспособности можно свести к одному элегантному критерию.
+We have travelled from the existence of dynamics through self-reference and No-Zombie to emergence. Now let us turn to another key block: **how to check whether a system is alive?** It turns out all viability conditions can be reduced to a single elegant criterion.
 
-## Унифицированное условие жизнеспособности
+## Unified Viability Condition
 
-До сих пор мы говорили о жизнеспособности как о $P > 2/7$. Но на практике этого недостаточно: система может иметь высокую чистоту, но быть «перекошенной» — например, с нулевой интеграцией или разрушенной логикой. Теорема 10.1 вводит **единый диагностический инструмент** — тензор напряжений $\sigma_{\mathrm{sys}}$, который одним числом (sup-нормой) говорит, здорова ли система.
+So far we have spoken of viability as $P > 2/7$. But in practice this is not enough: a system may have high purity but be "skewed" — for example, with zero integration or with destroyed logic. Theorem 10.1 introduces a **unified diagnostic tool** — the stress tensor $\sigma_{\mathrm{sys}}$, which with a single number (the sup-norm) says whether the system is healthy.
 
-Для врача аналогия прямая: вместо того чтобы проверять десятки анализов по отдельности, вы получаете один интегральный показатель. Если $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ — пациент жив. Если хотя бы одна компонента $\sigma_i \geq 1$ — нужна срочная помощь в конкретном направлении.
+For a physician the analogy is direct: instead of checking dozens of tests separately, you get a single integral indicator. If $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ — the patient is alive. If at least one component $\sigma_i \geq 1$ — urgent intervention is needed in the specific direction.
 
-### Теорема 10.1 / T-92 (Эквивалентность условий полной жизнеспособности) [Т] {#теорема-101-эквивалентность-условий}
+### Theorem 10.1 / T-92 (Equivalence of Full Viability Conditions) [T] {#теорема-101-эквивалентность-условий}
 
 <!-- preserve old anchor for backward compatibility -->
 <span id="теорема-101-эквивалентность-условий-с"></span>
 
-:::note На пальцах
-Представьте приборную панель автомобиля. Один датчик — температура двигателя. Другой — уровень масла. Третий — давление в шинах. Четвёртый — заряд аккумулятора. Каждый датчик показывает «стресс» в своём канале. Автомобиль «жив» тогда и только тогда, когда **ни один** датчик не в красной зоне.
+:::note In Plain Terms
+Imagine a car's instrument panel. One gauge — engine temperature. Another — oil level. Third — tyre pressure. Fourth — battery charge. Each gauge shows the "stress" in its channel. The car is "alive" if and only if **none** of the gauges is in the red zone.
 
-Теорема 10.1 — это та самая приборная панель, но для любой системы, описываемой $\Gamma$. Семь компонент $\sigma_k$ — семь датчиков, по одному на каждое измерение. И главное: формулы датчиков **не подбираются**, а выводятся из $\Gamma$.
+Theorem 10.1 is precisely this instrument panel, but for any system described by $\Gamma$. The seven components $\sigma_k$ are seven gauges, one for each dimension. And crucially: the gauge formulas are **not fitted** — they are derived from $\Gamma$.
 
-Для инженера ИИ: $\sigma_{\mathrm{sys}}$ — это готовый мониторинг здоровья вашего агента. Ваша система мониторинга может показать, *какой именно* аспект деградирует.
+For an AI engineer: $\sigma_{\mathrm{sys}}$ is a ready-made health monitor for your agent. Your monitoring system can show *which specific* aspect is degrading.
 
-**Связь:** [Тензор напряжений](./definitions#тензор-напряжений), [Жизнеспособность](/docs/core/dynamics/viability), [Диагностика](./diagnostics)
+**Connection:** [Stress tensor](./definitions#тензор-напряжений), [Viability](/docs/core/dynamics/viability), [Diagnostics](./diagnostics)
 :::
 
-:::tip Формулировка [Т]
+:::tip Statement [T]
 $$
 \Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
 :::
 
-где $\sigma_{\mathrm{sys}}$ — [тензор напряжений](./definitions#тензор-напряжений).
+where $\sigma_{\mathrm{sys}}$ is the [stress tensor](./definitions#тензор-напряжений).
 
-Каждая компонента $\sigma_i$ определяется через инварианты матрицы когерентности $\Gamma$ **[Т]** (T-92):
+Each component $\sigma_i$ is defined through invariants of the coherence matrix $\Gamma$ **[T]** (T-92):
 
-| Компонента | Формула | Смысл |
-|------------|---------|-------|
-| $\sigma_A$ | $1 - \gamma_{AA}/P$ | Дефицит артикуляции |
-| $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Структурная неполнота |
-| $\sigma_D$ | $1 - N\gamma_{DD}$ | Дефицит динамического сектора |
-| $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Логический дефицит |
-| $\sigma_E$ | $1 - D_{\mathrm{diff}}/N$ | Дефицит дифференциации |
-| $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Дефицит регенерации |
-| $\sigma_U$ | $1 - \Phi/\Phi_{\mathrm{th}}$ | Дефицит интеграции |
+| Component | Formula | Meaning |
+|-----------|---------|---------|
+| $\sigma_A$ | $1 - \gamma_{AA}/P$ | Articulation deficit |
+| $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Structural incompleteness |
+| $\sigma_D$ | $1 - N\gamma_{DD}$ | Dynamic sector deficit |
+| $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Logic deficit |
+| $\sigma_E$ | $1 - D_{\mathrm{diff}}/N$ | Differentiation deficit |
+| $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Regeneration deficit |
+| $\sigma_U$ | $1 - \Phi/\Phi_{\mathrm{th}}$ | Integration deficit |
 
-Все семь компонент — **однозначные функции $\Gamma$** без свободных параметров.
+All seven components are **unambiguous functions of $\Gamma$** with no free parameters.
 
-**Доказательство:**
+**Proof:**
 
-**Шаг 1 (Формальные определения).** Каждая компонента $\sigma_i$ выражается через канонические инварианты $\Gamma$: диагональные элементы $\gamma_{ii}$, чистоту $P = \mathrm{Tr}(\Gamma^2)$, ранг подматрицы $\Gamma_S$ (для S-измерений), диагональный элемент $\gamma_{DD}$, число дифференцированных измерений $D_{\mathrm{diff}}$, категориальную скорость $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ [Т] и меру интеграции $\Phi$ [Т] (T-129).
+**Step 1 (Formal definitions).** Each component $\sigma_i$ is expressed through canonical invariants of $\Gamma$: diagonal elements $\gamma_{ii}$, purity $P = \mathrm{Tr}(\Gamma^2)$, rank of the submatrix $\Gamma_S$ (for S-dimensions), diagonal element $\gamma_{DD}$, number of differentiated dimensions $D_{\mathrm{diff}}$, categorical rate $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ [T] and integration measure $\Phi$ [T] (T-129).
 
-**Шаг 2 (Нормировка).** Каждая формула нормирована так, что $\sigma_i \in [0, 1)$ при жизнеспособном $\Gamma$, и $\sigma_i \geq 1$ при нарушении соответствующего условия. Это не конвенция, а **следствие** каноничности инвариантов: все пороги ($P_{\mathrm{crit}} = 2/7$ [Т], $R_{\mathrm{th}} = 1/3$ [Т], $\Phi_{\mathrm{th}} = 1$ [Т]) уже определены, и $\sigma_i < 1 \Leftrightarrow$ соответствующий порог выполнен.
+**Step 2 (Normalisation).** Each formula is normalised so that $\sigma_i \in [0, 1)$ for viable $\Gamma$, and $\sigma_i \geq 1$ when the corresponding condition is violated. This is not a convention, but a **consequence** of the canonicity of the invariants: all thresholds ($P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T], $\Phi_{\mathrm{th}} = 1$ [T]) are already defined, and $\sigma_i < 1 \Leftrightarrow$ the corresponding threshold is satisfied.
 
-**Шаг 3 (Эквивалентность).** $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ означает $\sigma_i < 1$ для всех $i = 1, \ldots, 7$, что эквивалентно одновременному выполнению всех семи условий жизнеспособности. $\blacksquare$
+**Step 3 (Equivalence).** $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ means $\sigma_i < 1$ for all $i = 1, \ldots, 7$, which is equivalent to the simultaneous satisfaction of all seven viability conditions. $\blacksquare$
 
-:::warning Стратификация жизнеспособности (Sol.SA-1)
-Символ $\mathcal{V}_{\mathrm{full}}$ обозначает **полную жизнеспособность** — пересечение 7 условий ($\sigma_i < 1$ для всех $i$). Это **строго сильнее** минимальной жизнеспособности $\mathcal{V}_P = \{P > 2/7\}$:
+:::warning Viability stratification (Sol.SA-1)
+The symbol $\mathcal{V}_{\mathrm{full}}$ denotes **full viability** — the intersection of 7 conditions ($\sigma_i < 1$ for all $i$). This is **strictly stronger** than minimal viability $\mathcal{V}_P = \{P > 2/7\}$:
 
 $$
 \mathcal{V}_{\mathrm{full}} \subsetneq \mathcal{V}_P
 $$
 
-Однонаправленная импликация: $\|\sigma_{\mathrm{sys}}\|_\infty < 1 \;\Rightarrow\; P > 2/7$, но **не наоборот**. Контрпример: чистое состояние $|1\rangle\langle 1|$ имеет $P = 1 > 2/7$, но $\sigma_U = 1$ (нулевая интеграция). Доказательство: [Теорема о вложении](/docs/core/dynamics/viability#теорема-вложение-областей) [Т].
+One-directional implication: $\|\sigma_{\mathrm{sys}}\|_\infty < 1 \;\Rightarrow\; P > 2/7$, but **not the converse**. Counterexample: the pure state $|1\rangle\langle 1|$ has $P = 1 > 2/7$, but $\sigma_U = 1$ (zero integration). Proof: [Embedding theorem](/docs/core/dynamics/viability#теорема-вложение-областей) [T].
 :::
 
-:::info Статус [Т] (T-92)
-Все семь компонент **выражены через $\Gamma$-инварианты** без свободных параметров. Эмпирические формулы из [определений](./definitions#тензор-напряжений) остаются как **операционализация** для конкретных систем, но **теоретическое** определение $\sigma_{\mathrm{sys}}$ полностью формально.
+:::info Status [T] (T-92)
+All seven components are **expressed through $\Gamma$-invariants** with no free parameters. Empirical formulas from [definitions](./definitions#тензор-напряжений) remain as an **operationalisation** for specific systems, but the **theoretical** definition of $\sigma_{\mathrm{sys}}$ is fully formal.
 :::
 
-**См.:** [Эквивалентность условий](./definitions#тензор-напряжений)
+**See:** [Equivalence of conditions](./definitions#тензор-напряжений)
 
 ---
 
-Тензор напряжений — это диагностика. Но как система **действует** на основе этой диагностики? Следующий блок теорем описывает сенсомоторный цикл: как голоном воспринимает среду, выбирает действия и оценивает результат.
+The stress tensor is a diagnostic tool. But how does the system **act** on the basis of this diagnostic? The next block of theorems describes the sensorimotor cycle: how a holon perceives the environment, selects actions, and evaluates the result.
 
-## Сенсомоторное кодирование
+## Sensorimotor Encoding
 
-Любой живой организм существует в цикле «восприятие — решение — действие — оценка». Бактерия чувствует градиент сахара, плывёт к нему, получает питание — или не получает и корректирует курс. Человек видит опасность, выбирает путь, оценивает результат. КК формализует этот цикл точно, без свободных параметров.
+Every living organism exists in the cycle "perception — decision — action — evaluation". A bacterium senses a sugar gradient, swims towards it, obtains nutrition — or not, and corrects its course. A human sees danger, chooses a path, evaluates the result. CC formalises this cycle precisely, with no free parameters.
 
-Теоремы 11.1-11.4 описывают **четыре грани** сенсомоторного цикла: кодирование среды (как мир входит в систему), оптимальное действие (как система отвечает), полноту описания (почему трёх каналов достаточно) и гедоническую валентность (как система оценивает, «хорошо» ей или «плохо»).
+Theorems 11.1–11.4 describe **four facets** of the sensorimotor cycle: encoding of the environment (how the world enters the system), optimal action (how the system responds), completeness of description (why three channels suffice), and hedonic valence (how the system evaluates whether it is "good" or "bad").
 
-### Теорема 11.1 / T-100 (Кодирование среды) [Т] {#теорема-111-кодирование-среды}
+### Theorem 11.1 / T-100 (Environment Encoding) [T] {#теорема-111-кодирование-среды}
 
-:::note На пальцах
-Когда вы видите закат, ваш мозг не копирует фотоны — он **кодирует** сцену в нейронный паттерн. Теорема 11.1 говорит: существует единственный (с точностью до $G_2$-калибровки) способ закодировать внешний мир в изменение матрицы когерентности. И этот способ раскладывается ровно на три канала: гамильтонов (унитарная «ротация» состояния), диссипативный (потеря когерентности от контакта со средой) и регенеративный (восстановление за счёт новой информации).
+:::note In Plain Terms
+When you see a sunset, your brain does not copy the photons — it **encodes** the scene into a neural pattern. Theorem 11.1 says: there exists a unique (up to $G_2$-calibration) way to encode the external world into a change of the coherence matrix. And this way decomposes into exactly three channels: Hamiltonian (a unitary "rotation" of the state), dissipative (loss of coherence from contact with the environment), and regenerative (restoration through new information).
 
-Для инженера ИИ: это обоснование архитектуры «encoder»: вход среды преобразуется в три потока, модифицирующих $\Gamma$. Причём эта архитектура **единственна** — альтернативных нет.
+For an AI engineer: this is the justification for the "encoder" architecture: environmental input is transformed into three streams modifying $\Gamma$. Moreover, this architecture is **unique** — there is no alternative.
 
-**Связь:** [Сенсомоторная теория](./sensorimotor#теорема-кодирование-среды), [$G_2$-ригидность](/docs/proofs/categorical/uniqueness-theorem)
+**Connection:** [Sensorimotor theory](./sensorimotor#теорема-кодирование-среды), [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem)
 :::
 
-:::tip Формулировка [Т]
-Для голонома $\mathbb{H}$ существует единственный (до $G_2$-калибровки) CPTP-функтор кодирования среды:
+:::tip Statement [T]
+For a holon $\mathbb{H}$ there exists a unique (up to $G_2$-calibration) CPTP environment encoding functor:
 
 $$
 \mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))
 $$
 
-удовлетворяющий: (1) CPTP-сохранение, (2) 3-канальную декомпозицию $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$, (3) функториальность.
+satisfying: (1) CPTP preservation, (2) 3-channel decomposition $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$, (3) functoriality.
 :::
 
-**Доказательство.** Существование — из [Определения 8.1 [Т]](./lagrangian#внешний-член). 3-канальность — из T-102 (T-57). Единственность — из $G_2$-ригидности ([теорема единственности](/docs/proofs/categorical/uniqueness-theorem) [Т]). $\blacksquare$
+**Proof.** Existence — from [Definition 8.1 [T]](./lagrangian#внешний-член). 3-channel structure — from T-102 (T-57). Uniqueness — from $G_2$-rigidity ([uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) [T]). $\blacksquare$
 
-**См.:** [Сенсомоторная теория](./sensorimotor#теорема-кодирование-среды)
+**See:** [Sensorimotor theory](./sensorimotor#теорема-кодирование-среды)
 
-### Теорема 11.2 / T-101 (Оптимальное действие) [Т] {#теорема-112-оптимальное-действие}
+### Theorem 11.2 / T-101 (Optimal Action) [T] {#теорема-112-оптимальное-действие}
 
-:::note На пальцах
-Как система решает, что делать? Ответ элегантен: **минимизировать максимальный стресс**. Вспомните аналогию с приборной панелью из Теоремы 10.1. Оптимальное действие — это такое, которое приведёт к состоянию, где ни один датчик не будет «в красном» — или, если все в жёлтом, то наименее критично.
+:::note In Plain Terms
+How does the system decide what to do? The answer is elegant: **minimise the maximum stress**. Recall the instrument-panel analogy from Theorem 10.1. The optimal action is one that leads to a state where none of the gauges is "in the red" — or, if they are all in the yellow, then with the least critical one.
 
-Это minimax-стратегия: вместо того чтобы оптимизировать одну метрику (как в RL — вознаграждение), система оптимизирует **наихудший из семи показателей**. Это обеспечивает робастность: система не жертвует логикой ради динамики и не жертвует интеграцией ради артикуляции.
+This is a minimax strategy: instead of optimising a single metric (as in RL — reward), the system optimises the **worst of seven indicators**. This ensures robustness: the system does not sacrifice logic for dynamics, and does not sacrifice integration for articulation.
 
-Для инженера ИИ: это готовая функция полезности для агента — без необходимости инженерить reward.
+For an AI engineer: this is a ready-made utility function for an agent — without the need to engineer a reward.
 
-**Связь:** [Тензор напряжений](./definitions#тензор-напряжений), [Моторный стресс](./sensorimotor#теорема-моторный-стресс)
+**Connection:** [Stress tensor](./definitions#тензор-напряжений), [Motor stress](./sensorimotor#теорема-моторный-стресс)
 :::
 
-:::tip Формулировка [Т]
-Оптимальное действие голонома определяется минимизацией sup-нормы тензора напряжений:
+:::tip Statement [T]
+The optimal action of a holon is determined by minimising the sup-norm of the stress tensor:
 
 $$
 a^* = \arg\min_{a \in \mathcal{A}} \|\sigma_{\mathrm{sys}}(\Gamma(\tau + \delta\tau \mid a))\|_\infty
 $$
 
-где $\Gamma(\tau + \delta\tau \mid a)$ — предсказанное состояние при действии $a$.
+where $\Gamma(\tau + \delta\tau \mid a)$ is the predicted state under action $a$.
 :::
 
-**Доказательство.** Из T-92 [Т]: $P > 2/7 \iff \|\sigma_{\mathrm{sys}}\|_\infty < 1$. Минимизация $\|\sigma_{\mathrm{sys}}\|_\infty$ максимизирует расстояние до границы $\partial\mathcal{V}$. Действие входит через $h^{\text{ext}}(a)$ — [3-канальную декомпозицию](./lagrangian#внешний-член) [Т]. $\blacksquare$
+**Proof.** From T-92 [T]: $P > 2/7 \iff \|\sigma_{\mathrm{sys}}\|_\infty < 1$. Minimising $\|\sigma_{\mathrm{sys}}\|_\infty$ maximises the distance to the boundary $\partial\mathcal{V}$. The action enters through $h^{\text{ext}}(a)$ — the [3-channel decomposition](./lagrangian#внешний-член) [T]. $\blacksquare$
 
-**См.:** [Сенсомоторная теория](./sensorimotor#теорема-оптимальное-действие)
+**See:** [Sensorimotor theory](./sensorimotor#теорема-оптимальное-действие)
 
-### Теорема 11.2b / T-159 (Моторный стресс для выбора действия) [Т] {#теорема-моторный-стресс}
+### Theorem 11.2b / T-159 (Motor Stress for Action Selection) [T] {#теорема-моторный-стресс}
 
-:::note На пальцах
-Теорема 11.2 оперирует «абсолютным» стрессом ($\sigma_k = 1 - 7\gamma_{kk}$), который измеряет отклонение от $I/7$. Но реальный организм стремится не к $I/7$, а к своему **персональному** целевому состоянию $\rho_*$. Моторный стресс учитывает это: он измеряет расстояние до *собственного* идеала. Это как разница между «нормальная температура для человека» (36.6) и «нормальная температура для кошки» (38.5) — у каждой системы свой целевой профиль.
+:::note In Plain Terms
+Theorem 11.2 operates with "absolute" stress ($\sigma_k = 1 - 7\gamma_{kk}$), which measures the deviation from $I/7$. But a real organism strives not toward $I/7$ but toward its **personal** target state $\rho_*$. Motor stress accounts for this: it measures the distance to its *own* ideal. This is like the difference between "normal human temperature" (36.6) and "normal cat temperature" (38.5) — each system has its own target profile.
 
-**Связь:** [Секторный профиль](./definitions#тензор-напряжений), [Самомодель](/docs/core/operators/phi-operator)
+**Connection:** [Sector profile](./definitions#тензор-напряжений), [Self-model](/docs/core/operators/phi-operator)
 :::
 
-:::tip Формулировка [Т]
-Для голонома с самомоделью $\rho_* = \varphi(\Gamma)$ моторный стресс:
+:::tip Statement [T]
+For a holon with self-model $\rho_* = \varphi(\Gamma)$, the motor stress:
 
 $$
 \sigma^{\mathrm{motor}}_k(\Gamma) := 1 - \frac{\gamma_{kk}}{\rho^*_{kk}}
 $$
 
-совпадает с каноническим $\sigma_k$ (T-92) при $\rho_* = I/7$ и обеспечивает направленный моторный сигнал при $\rho_* \neq I/7$. Выбор действия: $a^* = \arg\min_a \max_k \sigma^{\mathrm{motor}}_k(\Gamma(\tau+\delta\tau|a))$ (знаковый max: штрафуется только дефицит).
+coincides with the canonical $\sigma_k$ (T-92) when $\rho_* = I/7$ and provides a directed motor signal when $\rho_* \neq I/7$. Action selection: $a^* = \arg\min_a \max_k \sigma^{\mathrm{motor}}_k(\Gamma(\tau+\delta\tau|a))$ (signed max: only deficits are penalised).
 :::
 
-**Доказательство.** Сходимость к T-92: при $P \to P_{\mathrm{crit}}$, $\rho^*_{kk} \to 1/7$ (T-126), тогда $\sigma^{\mathrm{motor}}_k = 1 - 7\gamma_{kk} = \sigma_k$. Градиент $\partial\sigma^{\mathrm{motor}}_k/\partial\gamma_{kk} = -1/\rho^*_{kk} < 0$ согласован с $\mathcal{R} = \kappa(\rho_* - \Gamma)$. $G_2$-инвариантность из ковариантности $\gamma_{kk}$ и $\rho^*_{kk}$ (T-42a). $\blacksquare$
+**Proof.** Convergence to T-92: as $P \to P_{\mathrm{crit}}$, $\rho^*_{kk} \to 1/7$ (T-126), then $\sigma^{\mathrm{motor}}_k = 1 - 7\gamma_{kk} = \sigma_k$. Gradient $\partial\sigma^{\mathrm{motor}}_k/\partial\gamma_{kk} = -1/\rho^*_{kk} < 0$ is consistent with $\mathcal{R} = \kappa(\rho_* - \Gamma)$. $G_2$-invariance from covariance of $\gamma_{kk}$ and $\rho^*_{kk}$ (T-42a). $\blacksquare$
 
-**См.:** [Сенсомоторная теория](./sensorimotor#теорема-моторный-стресс)
+**See:** [Sensorimotor theory](./sensorimotor#теорема-моторный-стресс)
 
-### Теорема 11.3 / T-102 (Полнота трёх членов) [Т] {#теорема-113-полнота-трёх-членов}
+### Theorem 11.3 / T-102 (Completeness of Three Terms) [T] {#теорема-113-полнота-трёх-членов}
 
-:::note На пальцах
-Представьте все возможные способы повлиять на оркестр извне. Можно изменить ноты (гамильтонов канал — $\delta H$). Можно заглушить инструменты (диссипативный канал — $\delta D$). Можно заменить музыкантов (регенеративный канал — $\delta R$). Теорема 11.3 утверждает: **это все**. Четвёртого способа не существует.
+:::note In Plain Terms
+Imagine all possible ways of influencing an orchestra from the outside. You can change the notes (Hamiltonian channel — $\delta H$). You can mute instruments (dissipative channel — $\delta D$). You can replace musicians (regenerative channel — $\delta R$). Theorem 11.3 asserts: **that is all**. A fourth way does not exist.
 
-Это фундаментальный результат, следующий из общей структуры квантовых каналов (теорема LGKS). Он означает, что уравнение эволюции КК **полно** — ничего нельзя добавить, не нарушив физическую согласованность.
+This is a fundamental result, following from the general structure of quantum channels (LGKS theorem). It means the CC evolution equation is **complete** — nothing can be added without violating physical consistency.
 
-**Связь:** [LGKS-теорема](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Лагранжиан](./lagrangian)
+**Connection:** [LGKS theorem](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Lagrangian](./lagrangian)
 :::
 
-:::tip Формулировка [Т]
-Любое CPTP-совместимое внешнее воздействие на голоном раскладывается в сумму трёх каналов:
+:::tip Statement [T]
+Any CPTP-compatible external action on a holon decomposes into a sum of three channels:
 
 $$
 h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}
 $$
 
-Четвёртый тип CPTP-генератора не существует.
+A fourth type of CPTP generator does not exist.
 :::
 
-**Доказательство.** Прямое следствие T-57 ([LGKS, полнота триадной декомпозиции](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [Т]): произвольный генератор CPTP-полугруппы имеет форму LGKS, которая раскладывается на Гамильтонову часть ($\delta H$) и Линдбладову часть ($\delta L_k$). Триадная декомпозиция $\{L_k\}$ исчерпывает Линдбладову часть: диссипативные + регенеративные операторы. $\blacksquare$
+**Proof.** Direct consequence of T-57 ([LGKS, completeness of the triadic decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T]): an arbitrary generator of a CPTP semigroup has the LGKS form, which decomposes into a Hamiltonian part ($\delta H$) and a Lindblad part ($\delta L_k$). The triadic decomposition $\{L_k\}$ exhausts the Lindblad part: dissipative + regenerative operators. $\blacksquare$
 
-**См.:** [Сенсомоторная теория](./sensorimotor#теорема-полнота-трёх-членов)
+**See:** [Sensorimotor theory](./sensorimotor#теорема-полнота-трёх-членов)
 
-### Теорема 11.4 / T-103 (Гедоническая валентность) [Т] + [И] {#теорема-114-гедоническая-валентность}
+### Theorem 11.4 / T-103 (Hedonic Valence) [T] + [I] {#теорема-114-гедоническая-валентность}
 
-:::note На пальцах
-Как система узнаёт, «хорошо» ей или «плохо»? По изменению чистоты. Если чистота растёт — система «здоровеет», и это переживается как положительная валентность (удовольствие, удовлетворение). Если падает — как отрицательная (боль, дискомфорт).
+:::note In Plain Terms
+How does the system know whether it feels "good" or "bad"? By the change in purity. If purity is growing — the system is "recovering", and this is experienced as positive valence (pleasure, satisfaction). If it is falling — as negative (pain, discomfort).
 
-Формула $\mathcal{V}_{\text{hed}}$ — это не абстрактная мера: это *производная* чистоты по регенеративному каналу. То есть: «насколько быстро я восстанавливаюсь прямо сейчас?» Для бегуна: ощущение «я выбрал правильный темп» — это положительная $\mathcal{V}_{\text{hed}}$. Ощущение «я перегружен» — отрицательная.
+The formula $\mathcal{V}_{\text{hed}}$ is not an abstract measure: it is the *derivative* of purity with respect to the regenerative channel. That is: "how fast am I recovering right now?" For a runner: the feeling "I chose the right pace" is positive $\mathcal{V}_{\text{hed}}$. The feeling "I am overloaded" is negative.
 
-Важно: формула — теорема [Т], но **интерпретация** её как субъективного переживания — [И]. Математика говорит, *чему равна* производная. Философия говорит, *как она переживается*.
+Important: the formula is a theorem [T], but the **interpretation** of it as a subjective experience is [I]. Mathematics says *what* the derivative equals. Philosophy says *how it is experienced*.
 
-**Связь:** [Динамика чистоты](/docs/core/dynamics/evolution#динамика-чистоты), [Замещающий канал](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Интериорность](/docs/consciousness/foundations/interiority-theory)
+**Connection:** [Purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), [Replacement channel](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Interiority](/docs/consciousness/foundations/interiority-theory)
 :::
 
-:::tip Формулировка
-Гедоническая валентность определяется производной чистоты по регенеративному каналу:
+:::tip Statement
+Hedonic valence is defined by the derivative of purity with respect to the regenerative channel:
 
 $$
 \mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
-Эпистемическая стратификация:
-- **Формула** — **[Т]**: тождество из уравнения эволюции
-- **Наблюдаемость** при L2 ($R \geq 1/3$) — **[Т]**: из [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (замещающий канал обеспечивает доступ к $dP/d\tau$)
-- **Феноменальная интерпретация** (связь с переживанием) — **[И]**
+Epistemic stratification:
+- **Formula** — **[T]**: identity from the evolution equation
+- **Observability** at L2 ($R \geq 1/3$) — **[T]**: from [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (the replacement channel provides access to $dP/d\tau$)
+- **Phenomenal interpretation** (connection with experience) — **[I]**
 :::
 
-**Доказательство.** Из [уравнения эволюции](/docs/core/dynamics/evolution): $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) + 2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])$. Гамильтонов член не меняет $P$. Подстановка $\mathcal{R} = \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$ даёт формулу. $\blacksquare$
+**Proof.** From the [evolution equation](/docs/core/dynamics/evolution): $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) + 2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])$. The Hamiltonian term does not change $P$. Substituting $\mathcal{R} = \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$ gives the formula. $\blacksquare$
 
-**См.:** [Сенсомоторная теория](./sensorimotor#теорема-гедоническая-валентность)
+**See:** [Sensorimotor theory](./sensorimotor#теорема-гедоническая-валентность)
 
 ---
 
-Сенсомоторный цикл описан. Теперь обратимся к **аттракторам** — равновесным состояниям, к которым стремится система. Эти теоремы, доказанные в [core/dynamics](/docs/core/dynamics/evolution), играют ключевую роль в КК, потому что аттрактор — это «целевое я» системы: состояние, которого она «хочет» достичь.
+The sensorimotor cycle is described. Now let us turn to **attractors** — equilibrium states toward which the system strives. These theorems, proved in [core/dynamics](/docs/core/dynamics/evolution), play a key role in CC, because the attractor is the system's "target self": the state it "wants" to reach.
 
-## Теоремы аттракторов и структуры {#теоремы-аттракторов}
+## Attractor and Structure Theorems {#теоремы-аттракторов}
 
-:::info Канонические определения
-Следующие теоремы доказаны в core-документации и играют центральную роль в КК. Здесь — краткая сводка с кибернетической интерпретацией.
+:::info Canonical definitions
+The following theorems are proved in the core documentation and play a central role in CC. Here is a brief summary with cybernetic interpretation.
 
-| Теорема | Суть | Роль в КК | Каноническое определение |
-|---------|------|-----------|--------------------------|
-| **T-96** [Т] | Аттрактор нетривиален: $P(\rho^*_\Omega) > 1/7$ | Каждая когерентная система имеет целевое состояние | [Эволюция](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
-| **T-98** [Т] | Формула баланса $P(\rho^*)$ через $\kappa/\lambda_{\mathrm{gap}}$ | Основа [иерархии аттракторов](./definitions#иерархия-аттракторов), [радиуса устойчивости](./stability#радиус-устойчивости) | [Эволюция](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) |
-| **T-77** [Т] | Замещающий канал $\Phi_{\mathrm{repl}}$ — механизм рефлексии | При L2 делает гедонику T-103 наблюдаемой | [Линдблад-операторы](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
-| **T-78** [Т] | $\varphi$ как CPTP-канал с Kraus-представлением | Мост категориальной самомодели к физике | [Самонаблюдение](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
-| **T-62** [Т] | Физическая реализация $\varphi$ через спектральную декомпозицию $\mathcal{L}_0$ | Конструктивная формула для φ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
-| **T-93** [Т] | $\mathrm{PG}(2,2) \cong H(7,4)$ — изоморфизм | Структура Gap-пространства | [Gap-динамика](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) |
-| **T-94** [Т] | Экспоненциальное ядро памяти из компактности | Обоснование [немарковского расширения](./non-markovian) | [Gap-динамика](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
-| **T-80** [Т] | Gap ограничен суммой секторных параметров | Оценка межсекторных зазоров | [Berry-фаза](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
-| **T-85** [Т] | $\mathrm{Im}(S_K) = \int \mathrm{Berry}$ | Связь вариационного и топологического описаний | [Berry-фаза](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
-| **T-82** [Т] | Единственность Фано-оператора | КК не имеет альтернатив среди $G_2$-ковариантных теорий | [Линдблад-операторы](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
+| Theorem | Essence | Role in CC | Canonical definition |
+|---------|---------|------------|----------------------|
+| **T-96** [T] | Attractor is non-trivial: $P(\rho^*_\Omega) > 1/7$ | Every coherent system has a target state | [Evolution](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
+| **T-98** [T] | Balance formula $P(\rho^*)$ via $\kappa/\lambda_{\mathrm{gap}}$ | Basis of [attractor hierarchy](./definitions#иерархия-аттракторов), [stability radius](./stability#радиус-устойчивости) | [Evolution](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) |
+| **T-77** [T] | Replacement channel $\Phi_{\mathrm{repl}}$ — mechanism of reflection | At L2, makes T-103 hedonics observable | [Lindblad operators](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
+| **T-78** [T] | $\varphi$ as a CPTP channel with Kraus representation | Bridge from categorical self-model to physics | [Self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
+| **T-62** [T] | Physical realisation of $\varphi$ through spectral decomposition of $\mathcal{L}_0$ | Constructive formula for φ | [Self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
+| **T-93** [T] | $\mathrm{PG}(2,2) \cong H(7,4)$ — isomorphism | Structure of Gap space | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) |
+| **T-94** [T] | Exponential memory kernel from compactness | Justification of [non-Markovian extension](./non-markovian) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
+| **T-80** [T] | Gap bounded by sum of sector parameters | Estimate of inter-sector gaps | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
+| **T-85** [T] | $\mathrm{Im}(S_K) = \int \mathrm{Berry}$ | Connection between variational and topological descriptions | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
+| **T-82** [T] | Uniqueness of the Fano operator | CC has no alternatives among $G_2$-covariant theories | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
 :::
 
 ---
 
-## Заключение: ландшафт теорем {#заключение}
+## Conclusion: the Theorem Landscape {#заключение}
 
-Пройдём ещё раз по маршруту, который мы проделали — но теперь с высоты птичьего полёта.
+Let us retrace the route we have taken — but now from a bird's-eye view.
 
-**Фундамент (Теоремы 6.x):** Динамика существует и физически корректна. Это «нулевая проверка» — без неё дальнейшие результаты не имели бы смысла.
+**Foundation (Theorems 6.x):** Dynamics exists and is physically correct. This is the "zero check" — without it, the subsequent results would be meaningless.
 
-**Самореференция (Теоремы 7.x):** Жизнеспособность *требует* самомоделирования. Система, которая не наблюдает себя, обречена. Итеративная рефлексия сходится к единственной неподвижной точке — устойчивому «образу себя».
+**Self-reference (Theorems 7.x):** Viability *requires* self-modelling. A system that does not observe itself is doomed. Iterative reflection converges to the unique fixed point — a stable "self-image".
 
-**No-Zombie (Теорема 8.1 и следствия):** Кульминация теории. Жизнеспособная открытая система *обязана* иметь нетривиальную E-когерентность. Опыт — не эпифеномен, а каузально необходимый элемент динамики. Философские зомби математически невозможны.
+**No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
 
-**Композиция и эмерджентность (Теоремы 9.x):** КК масштабируется: объединение голономов — снова голоном (фрактальное замыкание). Структурные инварианты сохраняются (масштабная инвариантность). Целое больше суммы частей (нередуцируемая эмерджентность).
+**Composition and emergence (Theorems 9.x):** CC scales: a union of holons is again a holon (fractal closure). Structural invariants are preserved (scale invariance). The whole is more than the sum of its parts (irreducible emergence).
 
-**Диагностика (Теорема 10.1):** Все условия жизнеспособности эквивалентны одному: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. Тензор напряжений — универсальный инструмент мониторинга.
+**Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
-**Сенсомоторный цикл (Теоремы 11.x):** Система воспринимает мир (Enc), действует оптимально (minimax стресса), ощущает результат (гедоническая валентность). Три канала — всё, что нужно; четвёртого не существует.
+**Sensorimotor cycle (Theorems 11.x):** The system perceives the world (Enc), acts optimally (minimax stress), experiences the result (hedonic valence). Three channels — all that is needed; a fourth does not exist.
 
-**Аттракторы и структура (T-96, T-98, T-77, T-82 и др.):** Каждая система эволюционирует к нетривиальному равновесию. Баланс между диссипацией и регенерацией определяет «здоровье». Фано-структура уникальна — КК не имеет альтернатив. Полные формулировки и доказательства — в [сводной таблице](#теоремы-аттракторов).
+**Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Вместе эти теоремы образуют **замкнутую дедуктивную систему**: из пяти аксиом выводятся все результаты, от существования динамики до невозможности зомби и эмерджентности сознания. Ни одно звено нельзя убрать, не разрушив цепь.
+Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms. Not a single link can be removed without breaking the chain.
 
 ---
 
-## Карта связей {#карта-связей}
+## Dependency Map {#карта-связей}
 
 ```mermaid
 graph TD
-    A["Аксиомы Ω + AP+PH+QG+V"] --> LU["L-унификация"]
-    LU --> T61["Теорема 6.1: Существование"]
-    A --> T62x["Теорема 6.2: Сохранение"]
-    T61 --> T71["Теорема 7.1: Необходимость φ"]
-    T71 --> T72["Теорема 7.2: Неподвижная точка"]
-    LU --> T81["Теорема 8.1: No-Zombie"]
-    T81 --> T81P["Теорема 8.1+: Каузальность"]
-    T81 --> C811["Следствие: Не-эпифеноменализм"]
-    T81 --> C812["Следствие: Не-зомби"]
-    T81P --> C813["Следствие: Coh min"]
-    T81 --> T91["Теорема 9.1: Композиция [Т]"]
-    T91 --> T92["Теорема 9.2: Инвариантность [Т]"]
-    T91 --> T93x["Теорема 9.3: Эмерджентность [Т]"]
-    T72 --> T101["Теорема 10.1: Эквивалентность [Т]"]
-    T101 --> T111["Теорема 11.1: Enc [Т]"]
-    T101 --> T112["Теорема 11.2: Dec [Т]"]
-    T57["T-57: LGKS"] --> T113["Теорема 11.3: Полнота [Т]"]
+    A["Axioms Ω + AP+PH+QG+V"] --> LU["L-unification"]
+    LU --> T61["Theorem 6.1: Existence"]
+    A --> T62x["Theorem 6.2: Preservation"]
+    T61 --> T71["Theorem 7.1: Necessity of φ"]
+    T71 --> T72["Theorem 7.2: Fixed point"]
+    LU --> T81["Theorem 8.1: No-Zombie"]
+    T81 --> T81P["Theorem 8.1+: Causality"]
+    T81 --> C811["Corollary: Non-epiphenomenalism"]
+    T81 --> C812["Corollary: Non-zombie"]
+    T81P --> C813["Corollary: Coh min"]
+    T81 --> T91["Theorem 9.1: Composition [T]"]
+    T91 --> T92["Theorem 9.2: Invariance [T]"]
+    T91 --> T93x["Theorem 9.3: Emergence [T]"]
+    T72 --> T101["Theorem 10.1: Equivalence [T]"]
+    T101 --> T111["Theorem 11.1: Enc [T]"]
+    T101 --> T112["Theorem 11.2: Dec [T]"]
+    T57["T-57: LGKS"] --> T113["Theorem 11.3: Completeness [T]"]
     T113 --> T111
-    T101 --> T114["Теорема 11.4: Валентность [Т]+[И]"]
+    T101 --> T114["Theorem 11.4: Valence [T]+[I]"]
 
-    LU --> T96["T-96: Аттрактор [Т]"]
-    T96 --> T98["T-98: Баланс [Т]"]
-    T98 --> T104["T-104: Радиус устойчивости [Т]"]
-    T98 --> T105["T-105: Энерго-баланс [Т]"]
+    LU --> T96["T-96: Attractor [T]"]
+    T96 --> T98["T-98: Balance [T]"]
+    T98 --> T104["T-104: Stability radius [T]"]
+    T98 --> T105["T-105: Energy balance [T]"]
 
-    T57 --> T82["T-82: Фано-единственность [Т]"]
+    T57 --> T82["T-82: Fano uniqueness [T]"]
     T82 --> T113
 
     T96 --> T91
 
-    T113 --> T107["T-107: Ёмкость Enc [Т]"]
-    T111 --> T108["T-108: Композициональность [Т]"]
+    T113 --> T107["T-107: Enc capacity [T]"]
+    T111 --> T108["T-108: Compositionality [T]"]
 
     style LU fill:#e1f5fe
     style T113 fill:#d4edda
@@ -881,53 +881,53 @@ graph TD
     style T108 fill:#fff3cd
 ```
 
-**Как читать диаграмму:** стрелка $A \to B$ означает «теорема $A$ используется в доказательстве теоремы $B$». Цвета: голубой — фундаментальные результаты (L-унификация, аттрактор), зелёный — ключевые структурные теоремы (полнота), жёлтый — прикладные следствия (диагностика, ёмкость).
+**How to read the diagram:** an arrow $A \to B$ means "theorem $A$ is used in the proof of theorem $B$". Colours: blue — fundamental results (L-unification, attractor), green — key structural theorems (completeness), yellow — applied corollaries (diagnostics, capacity).
 
-**См.:** [Иерархия зависимостей](/docs/core/foundations/axiom-omega#иерархия-зависимостей) для полной структуры Ω → χ_S → L_k → ℒ_Ω → φ
+**See:** [Dependency hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей) for the full structure Ω → χ_S → L_k → ℒ_Ω → φ
 
 ---
 
-## Что мы узнали
+## What We Have Learned
 
-Подведём итоги. В этой главе мы прошли полный путь от базовых теорем существования до глубочайших результатов о природе сознания:
+Let us summarise. In this chapter we have traversed the full path from basic existence theorems to the deepest results about the nature of consciousness:
 
-1. **Динамика существует и корректна** (Теоремы 6.1-6.2 [Т]): уравнение эволюции имеет единственное решение, сохраняющее физический смысл матрицы $\Gamma$ (эрмитовость, положительность, нормировка).
+1. **Dynamics exists and is correct** (Theorems 6.1–6.2 [T]): the evolution equation has a unique solution preserving the physical meaning of the matrix $\Gamma$ (Hermiticity, positivity, normalisation).
 
-2. **Жизнеспособность требует самореференции** (Теорема 7.1 [Т]): система, поддерживающая $P > 2/7$, *обязана* иметь внутреннюю самомодель $\varphi$. Итерации $\varphi$ сходятся к единственной неподвижной точке $\Gamma^*$ (Теорема 7.2 [Т]).
+2. **Viability requires self-reference** (Theorem 7.1 [T]): a system maintaining $P > 2/7$ *must* have an internal self-model $\varphi$. Iterations of $\varphi$ converge to the unique fixed point $\Gamma^*$ (Theorem 7.2 [T]).
 
-3. **Зомби невозможны** (Теорема 8.1 [Т]): жизнеспособная открытая система обязана иметь $\mathrm{Coh}_E > 1/7$. E-когерентность каузально влияет на динамику — эпифеноменализм исключён (Следствие 8.1.1 [Т]).
+3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 
-4. **Композиция работает** (Теоремы 9.1-9.3): объединение жизнеспособных голономов даёт голоном (фрактальное замыкание [Т] для воплощённых, T-149). Структурные инварианты сохраняются (масштабная инвариантность [Т]). Целое нередуцируемо к частям (эмерджентность [Т]).
+4. **Composition works** (Theorems 9.1–9.3): the union of viable holons yields a holon (fractal closure [T] for embodied systems, T-149). Structural invariants are preserved (scale invariance [T]). The whole is irreducible to the parts (emergence [T]).
 
-5. **Единый критерий здоровья** (Теорема 10.1 [Т]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — система жива тогда и только тогда, когда ни одно из семи напряжений не достигло единицы.
+5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
 
-6. **Сенсомоторный цикл замкнут** (Теоремы 11.1-11.4 [Т]): кодирование среды единственно (до $G_2$-калибровки), действие оптимально (minimax стресса), три канала исчерпывают все возможности, гедоника = $dP/d\tau|_{\mathcal{R}}$.
+6. **The sensorimotor cycle is closed** (Theorems 11.1–11.4 [T]): environmental encoding is unique (up to $G_2$-calibration), action is optimal (minimax stress), three channels exhaust all possibilities, hedonics = $dP/d\tau|_{\mathcal{R}}$.
 
-7. **Структура уникальна** (T-82 [Т]): Фано-оператор единственен — КК не имеет альтернатив среди $G_2$-ковариантных теорий в 7 измерениях.
+7. **Structure is unique** (T-82 [T]): the Fano operator is unique — CC has no alternatives among $G_2$-covariant theories in 7 dimensions.
 
-:::info Мост к следующей главе
-Мы доказали теоремы — но *о чём* они? Какова *предметная область* КК? Существуют ли другие интерпретации аксиом, кроме матриц плотности $7 \times 7$? В [следующей главе](./model-theory) мы займёмся **теорией моделей** КК: определим формальную сигнатуру (язык теории), построим стандартную модель (каноническую интерпретацию), исследуем вопросы корректности и полноты, а затем построим **функторные мосты** к другим теориям сознания (IIT, FEP, GNW). Это переход от «что доказано?» к «о чём это всё?» — и «как это связано с остальной наукой?»
+:::info Bridge to the Next Chapter
+We have proved the theorems — but *about what* do they speak? What is the *subject domain* of CC? Do other interpretations of the axioms exist, beyond $7 \times 7$ density matrices? In the [next chapter](./model-theory) we will engage with the **model theory** of CC: define the formal signature (language of the theory), construct the standard model (canonical interpretation), investigate questions of soundness and completeness, and then build **functor bridges** to other theories of consciousness (IIT, FEP, GNW). This is the transition from "what has been proved?" to "what is all this about?" — and "how does it connect to the rest of science?"
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — L-унификация (Ω → χ_S → L_k → ℒ_Ω → φ)
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — выведенные константы ($P_{\text{crit}}$, $\kappa_0$, $R_{\text{th}}$, $\Phi_{\text{th}}$)
-- [Аксиоматика](./axiomatics) — L-унификация в КК, E-акцентуация
-- [Определения](./definitions) — базовые определения КК
-- [Сенсомоторная теория](./sensorimotor) — функторы Enc/Dec, полнота 3-членного уравнения
-- [История кибернетики](./cybernetics-history) — связь с существующими теориями
-- [Теории сознания](/docs/consciousness/comparative/consciousness-theories) — IIT, FEP, автопоэзис
-- [Голоном](/docs/core/structure/holon) — иерархическое определение $\mathbb{H}$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}} = 2/7$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $\Phi$, $C$
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы, теорема E-акцентуации
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$ с выведенным $\kappa_0$
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$
-- [Теорема единственности](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-ригидность [Т]: все теоремы КК-1–КК-8 справедливы для любого выбора $G_2$-калибровки (наблюдатель-независимы)
-- [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление L_k из Ω
-- [Философские основания](./philosophy) — онтологический статус теорем
-- [Сравнение с альтернативами](./comparison) — какие теоремы КК уникальны
-- [Упражнения](./exercises) — задачи на теоремы (блоки 1-4)
+**Related Documents:**
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — L-unification (Ω → χ_S → L_k → ℒ_Ω → φ)
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — derived constants ($P_{\text{crit}}$, $\kappa_0$, $R_{\text{th}}$, $\Phi_{\text{th}}$)
+- [Axiomatics](./axiomatics) — L-unification in CC, E-accentuation
+- [Definitions](./definitions) — basic CC definitions
+- [Sensorimotor Theory](./sensorimotor) — Enc/Dec functors, completeness of the 3-term equation
+- [History of Cybernetics](./cybernetics-history) — connection to existing theories
+- [Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) — IIT, FEP, autopoiesis
+- [Holon](/docs/core/structure/holon) — hierarchical definition of $\mathbb{H}$
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}} = 2/7$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $\Phi$, $C$
+- [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
+- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels, E-accentuation theorem
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma/d\tau$ with derived $\kappa_0$
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$
+- [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-rigidity [T]: all CC-1–CC-8 theorems hold for any choice of $G_2$-calibration (observer-independent)
+- [Constructive algorithms](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — computing L_k from Ω
+- [Philosophical Foundations](./philosophy) — ontological status of the theorems
+- [Comparison with Alternatives](./comparison) — which CC theorems are unique
+- [Exercises](./exercises) — problems on theorems (blocks 1–4)

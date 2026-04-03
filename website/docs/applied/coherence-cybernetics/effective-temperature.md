@@ -1,748 +1,748 @@
 ---
 sidebar_position: 12
-title: "Эффективная температура"
-description: "Эффективная температура T_eff, критическая температура T_c, кривизна Серра, метрика Фишера Gap-пространства, фазовая диаграмма"
+title: "Effective Temperature"
+description: "Effective temperature T_eff, critical temperature T_c, Serre curvature, Fisher metric of Gap space, phase diagram"
 ---
 
-# Эффективная Температура
+# Effective Temperature
 
-> *«Температура — это мера незнания»*
-> — Эдвин Джейнз
+> *"Temperature is a measure of ignorance"*
+> — Edwin Jaynes
 
 
-:::info Для кого эта глава
-Эффективная температура $T_{\text{eff}}$ как мера когнитивного «жара». Читатель узнает, чем температура «разума» отличается от температуры тела и как она влияет на фазовые переходы сознания.
+:::info Who This Chapter Is For
+Effective temperature $T_{\text{eff}}$ as a measure of cognitive "heat." The reader will learn how the temperature of the "mind" differs from body temperature and how it affects the phase transitions of consciousness.
 :::
 
 ---
 
-### Мост из предыдущей главы
+### Bridge from the Previous Chapter
 
-В [предыдущей главе](./variational) мы вывели уравнения движения фаз когерентности из вариационного принципа и установили флуктуационно-диссипативную теорему. В этой теореме центральную роль играет параметр $T_{\text{eff}}$ — **эффективная температура**, определяющая масштаб спонтанных флуктуаций Gap. Мы отметили, что $T_{\text{eff}} \neq T_{\text{phys}}$ — температура «разума» не совпадает с температурой тела. Настало время разобраться в этом различии детально.
-
----
-
-### Дорожная карта главы
-
-В этой главе мы:
-
-1. **Построим интуицию** о «температуре разума» — от Больцмана к сознанию, от молекулярного хаоса к когнитивному (разделы 0–1).
-2. **Определим $T_{\text{eff}}$** через отношение скоростей декогеренции и регенерации и покажем, почему она на порядки превышает физическую (раздел 1).
-3. **Выведем категориальную формулу** $T_{\text{eff}}$ из сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$ — чистая алгебра, без физических допущений (раздел 2).
-4. **Вычислим критическую температуру** $T_c$ фазового перехода и объясним, почему в ней стоит $\ln 21$ (раздел 3).
-5. **Построим расслоение Серра** на пространстве карт и покажем, как кривизна связности выражает непрозрачность (раздел 4).
-6. **Введём метрику Фишера** на пространстве Gap-профилей — информационно-геометрическое расстояние между состояниями сознания (раздел 5).
-7. **Обсудим методы измерения** $T_{\text{eff}}$ — от ФДТ до косвенных нейрофизиологических индикаторов (раздел 6).
-8. **Сопоставим $T_{\text{eff}}$ с другими «температурами»** за пределами термодинамики — шумовой, цветовой, температурой отжига, температурой Хокинга (раздел 7).
-9. **Определим координаты фазовой диаграммы** $(t, r)$ и опишем три фазы сознания (раздел 8).
-10. **Вычислим критические показатели** и покажем, что среднеполевая теория точна при $d_{\text{eff}} = 21$ (раздел 9).
+In the [previous chapter](./variational) we derived the equations of motion for coherence phases from the variational principle and established the fluctuation-dissipation theorem. In that theorem the central role is played by the parameter $T_{\text{eff}}$ — the **effective temperature**, which determines the scale of spontaneous Gap fluctuations. We noted that $T_{\text{eff}} \neq T_{\text{phys}}$ — the temperature of the "mind" does not coincide with body temperature. It is time to examine this distinction in detail.
 
 ---
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\Gamma_2$ — скорость декогеренции (диссипация фаз)
-- $\kappa_0$ — скорость регенерации ([категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [мера зазора](/docs/physics/dual-aspect/gap-semantics)
-- $\mathcal{G}_{\text{total}} = \sum_{i<j} |\gamma_{ij}|^2 \, \mathrm{Gap}(i,j)^2$ — полный Gap
-- $V_{\text{Gap}}$ — [потенциал непрозрачности](./lagrangian#потенциал-v-gap)
+### Chapter Roadmap
+
+In this chapter we:
+
+1. **Build intuition** about the "temperature of the mind" — from Boltzmann to consciousness, from molecular chaos to cognitive chaos (sections 0–1).
+2. **Define $T_{\text{eff}}$** through the ratio of decoherence and regeneration rates and show why it exceeds the physical temperature by orders of magnitude (section 1).
+3. **Derive the categorical formula** for $T_{\text{eff}}$ from the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ — pure algebra, without physical assumptions (section 2).
+4. **Compute the critical temperature** $T_c$ of the phase transition and explain why $\ln 21$ appears in it (section 3).
+5. **Construct the Serre fibration** on the space of maps and show how the connection curvature expresses opacity (section 4).
+6. **Introduce the Fisher metric** on the space of Gap profiles — the information-geometric distance between states of consciousness (section 5).
+7. **Discuss methods of measuring** $T_{\text{eff}}$ — from the FDT to indirect neurophysiological indicators (section 6).
+8. **Compare $T_{\text{eff}}$ with other "temperatures"** beyond thermodynamics — noise temperature, color temperature, annealing temperature, Hawking temperature (section 7).
+9. **Define the coordinates of the phase diagram** $(t, r)$ and describe the three phases of consciousness (section 8).
+10. **Compute the critical exponents** and show that mean-field theory is exact at $d_{\text{eff}} = 21$ (section 9).
+
+---
+
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\Gamma_2$ — decoherence rate (phase dissipation)
+- $\kappa_0$ — regeneration rate ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [gap measure](/docs/physics/dual-aspect/gap-semantics)
+- $\mathcal{G}_{\text{total}} = \sum_{i<j} |\gamma_{ij}|^2 \, \mathrm{Gap}(i,j)^2$ — total Gap
+- $V_{\text{Gap}}$ — [opacity potential](./lagrangian#потенциал-v-gap)
 :::
 
-Эффективная температура $T_{\text{eff}}$ — центральный параметр [термодинамики Gap](/docs/core/dynamics/gap-thermodynamics), определяющий баланс между диссипацией и регенерацией, характер фазовых переходов и свойства флуктуаций. Данный документ содержит определение $T_{\text{eff}}$, формулу критической температуры $T_c$, кривизну расслоения Серра на Map-расслоении, метрику Фишера Gap-пространства и координаты фазовой диаграммы.
+Effective temperature $T_{\text{eff}}$ is the central parameter of [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics), determining the balance between dissipation and regeneration, the nature of phase transitions, and the properties of fluctuations. This document contains the definition of $T_{\text{eff}}$, the formula for the critical temperature $T_c$, the curvature of the Serre fibration on the Map fibration, the Fisher metric of Gap space, and the coordinates of the phase diagram.
 
-Но прежде чем перейти к формулам, стоит задать вопрос: **что такое температура?** Не температура тела — а температура *разума*?
+But before turning to the formulas, it is worth asking: **what is temperature?** Not body temperature — but the temperature of the *mind*?
 
 ---
 
-## Температура: от Больцмана к сознанию {#от-больцмана-к-сознанию}
+## Temperature: from Boltzmann to Consciousness {#от-больцмана-к-сознанию}
 
-### Что измеряет термометр
+### What a Thermometer Measures
 
-В 1877 году Людвиг Больцман показал, что температура — это не «теплота» и не «ощущение горячего». Температура — это мера **средней кинетической энергии** хаотического движения молекул:
+In 1877 Ludwig Boltzmann showed that temperature is not "heat" and not a "sensation of warmth." Temperature is a measure of the **mean kinetic energy** of the chaotic motion of molecules:
 
 $$
 \frac{3}{2} k_B T = \langle E_{\text{kin}} \rangle
 $$
 
-Чем выше температура, тем сильнее молекулы «дрожат», сталкиваются, рассеиваются. Температура — мера **неупорядоченности**, мера того, как быстро система теряет корреляции между своими частями.
+The higher the temperature, the more strongly molecules "vibrate," collide, and scatter. Temperature is a measure of **disorder** — a measure of how quickly the system loses correlations between its parts.
 
-Эквивалентно (и глубже), температура связана с **энтропией** — мерой числа микросостояний, совместимых с наблюдаемым макросостоянием:
+Equivalently (and more deeply), temperature is related to **entropy** — a measure of the number of microstates compatible with the observed macrostate:
 
 $$
 \frac{1}{T} = \frac{\partial S}{\partial E}
 $$
 
-Высокая температура означает: система исследует огромное число конфигураций. Низкая — система «застыла» в небольшом числе состояний. Абсолютный нуль — единственное состояние, полный порядок.
+High temperature means: the system explores an enormous number of configurations. Low — the system is "frozen" in a small number of states. Absolute zero — a single state, complete order.
 
-### Температура за пределами физики
+### Temperature Beyond Physics
 
-Идея оказалась значительно шире газовых молекул. В **статистическом обучении** температура управляет распределением Больцмана $p(x) \propto e^{-E(x)/T}$: при высокой $T$ все состояния равновероятны (хаос), при низкой — система концентрируется в минимумах энергии (порядок). В **информационной теории** Джейнз показал: температура — множитель Лагранжа при максимизации энтропии, то есть мера нашего **незнания** о микросостоянии при заданной средней энергии.
+The idea turned out to be far broader than gas molecules. In **statistical learning** temperature governs the Boltzmann distribution $p(x) \propto e^{-E(x)/T}$: at high $T$ all states are equally probable (chaos), at low $T$ the system concentrates in energy minima (order). In **information theory** Jaynes showed: temperature is the Lagrange multiplier in entropy maximization, i.e. a measure of our **ignorance** about the microstate given the mean energy.
 
-В **нейробиологии** аналог температуры возникает естественно. Нейронная сеть — это не газ, но она обладает теми же статистическими свойствами: огромное число степеней свободы, стохастическая динамика, корреляции между элементами. Синаптический шум, спонтанная активность, внутренняя изменчивость — всё это **термоподобное поведение**.
+In **neuroscience** an analog of temperature arises naturally. A neural network is not a gas, but it has the same statistical properties: an enormous number of degrees of freedom, stochastic dynamics, correlations between elements. Synaptic noise, spontaneous activity, intrinsic variability — all of this is **thermolike behavior**.
 
-Вопрос в том: **какая именно температура** управляет когнитивной динамикой?
+The question is: **precisely which temperature** governs cognitive dynamics?
 
-### Ответ Когерентной Кибернетики
+### The Answer of Coherence Cybernetics
 
-Ответ КК: это не температура тела ($\sim 310$ К), и не температура отдельного синапса. Это **эффективная температура** $T_{\text{eff}}$ — параметр, определяемый отношением скорости декогеренции (разрушения фазовых корреляций) к скорости регенерации (восстановления когерентной структуры).
+The CC answer: it is not body temperature ($\sim 310$ K), and not the temperature of an individual synapse. It is the **effective temperature** $T_{\text{eff}}$ — a parameter defined by the ratio of the decoherence rate (destruction of phase correlations) to the regeneration rate (restoration of coherent structure).
 
-Тело может быть при 36.6°C — а разум «кипеть» при эквиваленте 36 600°C.
+The body may be at 36.6°C — while the mind "boils" at the equivalent of 36,600°C.
 
 ---
 
-## Психологическая температура: что чувствует система {#психологическая-температура}
+## Psychological Temperature: What the System Feels {#психологическая-температура}
 
-Прежде чем вводить формулы, стоит построить интуицию.
+Before introducing formulas, it is worth building intuition.
 
-**Низкая психологическая температура** — это состояние, в котором когнитивная система спокойна, упорядочена, устойчива. Мысли следуют одна за другой в предсказуемом порядке. Внимание сфокусировано. Внутренние корреляции (между эмоциями, мыслями, ощущениями) — стабильны. Это состояние глубокой медитации, потока (flow), спокойной сосредоточенности.
+**Low psychological temperature** is a state in which the cognitive system is calm, ordered, stable. Thoughts follow one another in a predictable order. Attention is focused. Internal correlations (between emotions, thoughts, sensations) — are stable. This is the state of deep meditation, flow, calm concentration.
 
-**Высокая психологическая температура** — это хаос. Мысли скачут. Эмоции меняются быстро. Внимание рассеяно. Корреляции между разными аспектами опыта — нестабильны, постоянно разрушаются и пересоздаются. Это состояние тревоги, маниакального эпизода, паники — но также и **творческого поиска**, когда система намеренно «нагревает» себя, чтобы исследовать пространство возможностей.
+**High psychological temperature** is chaos. Thoughts jump. Emotions change rapidly. Attention is scattered. Correlations between different aspects of experience — are unstable, constantly being destroyed and recreated. This is the state of anxiety, a manic episode, panic — but also of **creative search**, when the system deliberately "heats itself up" to explore the space of possibilities.
 
-**Бесконечная психологическая температура** — это распад. Регенерация остановлена, когерентности разрушаются и не восстанавливаются. Кома. Смерть мозга. Система перестаёт быть собой.
+**Infinite psychological temperature** is disintegration. Regeneration has stopped, coherences are being destroyed and not restored. Coma. Brain death. The system ceases to be itself.
 
-Обратите внимание на глубокую аналогию с физикой:
+Note the deep analogy with physics:
 
-| Физическая температура | Психологическая температура |
+| Physical temperature | Psychological temperature |
 |---|---|
-| Кинетическая энергия молекул | Скорость разрушения когнитивных корреляций |
-| Тепловые флуктуации | Стохастичность мыслей, эмоций, внимания |
-| Фазовый переход (плавление) | Психотический эпизод, диссоциация |
-| Абсолютный нуль | Идеальная когерентность (недостижимый предел) |
-| Перегрев и разрушение | Смерть, кома |
+| Kinetic energy of molecules | Rate of destruction of cognitive correlations |
+| Thermal fluctuations | Stochasticity of thoughts, emotions, attention |
+| Phase transition (melting) | Psychotic episode, dissociation |
+| Absolute zero | Ideal coherence (unattainable limit) |
+| Overheating and destruction | Death, coma |
 
-Это не метафора. Как мы увидим, формальная структура — уравнения состояния, фазовые переходы, критические показатели — **идентична** физической термодинамике. Различается лишь то, что флуктуирует: не положения атомов, а **фазы когерентной матрицы** $\Gamma$.
+This is not a metaphor. As we shall see, the formal structure — equations of state, phase transitions, critical exponents — is **identical** to physical thermodynamics. Only what fluctuates differs: not the positions of atoms, but the **phases of the coherence matrix** $\Gamma$.
 
 ---
 
-## 1. Определение $T_{\text{eff}}$ {#определение}
+## 1. Definition of $T_{\text{eff}}$ {#определение}
 
-### 1.1 Формула
+### 1.1 Formula
 
-:::tip Теорема 1.1 (Эффективная температура) [Т]
-Эффективная температура Gap-сектора:
+:::tip Theorem 1.1 (Effective Temperature) [T]
+Effective temperature of the Gap sector:
 
 $$
 T_{\text{eff}} := \frac{\Gamma_2}{\kappa_0} \cdot k_B T_{\text{phys}}
 $$
 
-где:
-- $\Gamma_2$ — скорость декогеренции (диссипация фаз)
-- $\kappa_0$ — скорость регенерации
-- $k_B$ — постоянная Больцмана
-- $T_{\text{phys}}$ — физическая температура системы
+where:
+- $\Gamma_2$ — decoherence rate (phase dissipation)
+- $\kappa_0$ — regeneration rate
+- $k_B$ — Boltzmann constant
+- $T_{\text{phys}}$ — physical temperature of the system
 :::
 
-Формула элегантна в своей простоте. Три множителя, каждый со своим смыслом:
+The formula is elegant in its simplicity. Three factors, each with its own meaning:
 
-**$\Gamma_2$ (числитель)** — скорость, с которой система *теряет* фазовые корреляции. В нейронных терминах: как быстро разрушаются паттерны синхронизации между нейронными ансамблями. Электрические колебания, синаптический шум, ионные каналы — всё это вносит вклад в $\Gamma_2$. Типичные частоты: 10–100 Гц. Это *быстрый* процесс — мозг постоянно «забывает» текущую конфигурацию фаз.
+**$\Gamma_2$ (numerator)** — the rate at which the system *loses* phase correlations. In neural terms: how quickly synchronization patterns between neural assemblies are destroyed. Electrical oscillations, synaptic noise, ion channels — all contribute to $\Gamma_2$. Typical frequencies: 10–100 Hz. This is a *fast* process — the brain constantly "forgets" the current phase configuration.
 
-**$\kappa_0$ (знаменатель)** — скорость, с которой система *восстанавливает* когерентную структуру. Это нейропластичность: синаптогенез, миелинизация, долговременная потенциация. Типичные частоты: 0.01–0.1 Гц (часы–дни). Это *медленный* процесс — мозгу нужно время, чтобы «вспомнить» свою архитектуру.
+**$\kappa_0$ (denominator)** — the rate at which the system *restores* coherent structure. This is neuroplasticity: synaptogenesis, myelination, long-term potentiation. Typical frequencies: 0.01–0.1 Hz (hours–days). This is a *slow* process — the brain needs time to "remember" its architecture.
 
-**$k_B T_{\text{phys}}$ (масштаб)** — «стартовая точка» — тепловая энергия, задающая абсолютный масштаб флуктуаций. При $\Gamma_2 = \kappa_0$ эффективная температура совпала бы с физической. Но в реальных системах $\Gamma_2 \gg \kappa_0$, и $T_{\text{eff}}$ оказывается на порядки выше.
+**$k_B T_{\text{phys}}$ (scale)** — the "starting point" — the thermal energy setting the absolute scale of fluctuations. If $\Gamma_2 = \kappa_0$, the effective temperature would coincide with the physical. But in real systems $\Gamma_2 \gg \kappa_0$, and $T_{\text{eff}}$ turns out to be higher by orders of magnitude.
 
-**Смысл отношения $\Gamma_2 / \kappa_0$**: это безразмерный **коэффициент усиления**. Если декогеренция в тысячу раз быстрее регенерации, флуктуации в Gap-пространстве в тысячу раз «горячее», чем следовало бы из физической температуры. Разум живёт в другом температурном режиме, чем тело.
+**Meaning of the ratio $\Gamma_2 / \kappa_0$**: this is a dimensionless **amplification coefficient**. If decoherence is a thousand times faster than regeneration, fluctuations in Gap space are a thousand times "hotter" than the physical temperature would imply. The mind lives in a different temperature regime than the body.
 
 ### 1.2 $T_{\text{eff}} \neq T_{\text{phys}}$ {#t-eff-neq-t-phys}
 
-:::tip Теорема 1.2 ($T_{\text{eff}}$ не равна $T_{\text{phys}}$) [С]
-Эффективная температура **не совпадает** с физической температурой.
+:::tip Theorem 1.2 ($T_{\text{eff}}$ is not equal to $T_{\text{phys}}$) [C]
+Effective temperature **does not coincide** with physical temperature.
 
-**Аргумент от противного.** Допустим $T_{\text{eff}} = T_{\text{phys}}$. Тогда из [ФДТ](./variational#фдт):
+**Proof by contradiction.** Suppose $T_{\text{eff}} = T_{\text{phys}}$. Then from [FDT](./variational#фдт):
 
 $$
 \chi_{ij}(0) = \frac{\langle(\delta\mathrm{Gap})^2\rangle}{T_{\text{phys}}}
 $$
 
-Но для живых систем при $T_{\text{phys}} \approx 310$ К наблюдаемые флуктуации Gap **на порядки** превышают тепловые. Противоречие.
+But for living systems at $T_{\text{phys}} \approx 310$ K, the observed Gap fluctuations **exceed** thermal ones **by orders of magnitude**. Contradiction.
 
-**Условие [С]:** Аргумент опирается на **эмпирическое наблюдение** (флуктуации Gap в биологических системах превышают тепловые), а не на чисто дедуктивное доказательство. Строгий вывод $T_{\text{eff}} \neq T_{\text{phys}}$ требует независимой оценки $\Gamma_2 / \kappa_0 > 1$ для конкретной системы.
+**Condition [C]:** The argument relies on an **empirical observation** (Gap fluctuations in biological systems exceed thermal ones), not on a purely deductive proof. A rigorous derivation of $T_{\text{eff}} \neq T_{\text{phys}}$ requires an independent estimate of $\Gamma_2 / \kappa_0 > 1$ for the specific system.
 :::
 
-Это различие фундаментально и заслуживает отдельного обсуждения.
+This distinction is fundamental and deserves separate discussion.
 
-Когда мы измеряем температуру тела термометром, мы получаем $T_{\text{phys}} \approx 310$ К. Эта температура определяет тепловой шум на уровне отдельных молекул: $k_B T_{\text{phys}} \approx 4.3 \times 10^{-21}$ Дж — ничтожно мало. Если бы когнитивная динамика определялась только этим шумом, мозг был бы практически детерминированной машиной.
+When we measure body temperature with a thermometer, we get $T_{\text{phys}} \approx 310$ K. This temperature determines thermal noise at the level of individual molecules: $k_B T_{\text{phys}} \approx 4.3 \times 10^{-21}$ J — negligibly small. If cognitive dynamics were governed only by this noise, the brain would be an essentially deterministic machine.
 
-Но мозг — не детерминированная машина. Он демонстрирует колоссальную стохастичность: вариабельность нейронных ответов, спонтанная активность, блуждание внимания, смена настроений. Эта стохастичность **не тепловая** по своей природе — она возникает из-за сложной нелинейной динамики, хаотических аттракторов, и прежде всего — из-за того, что **декогеренция многократно быстрее регенерации**.
+But the brain is not a deterministic machine. It demonstrates enormous stochasticity: variability of neural responses, spontaneous activity, mind wandering, mood shifts. This stochasticity is **not thermal** in its nature — it arises from complex nonlinear dynamics, chaotic attractors, and above all — from the fact that **decoherence is many times faster than regeneration**.
 
-$T_{\text{eff}}$ захватывает именно эту «нетепловую» стохастичность, выражая её в единицах, совместимых с термодинамическим формализмом.
+$T_{\text{eff}}$ captures precisely this "non-thermal" stochasticity, expressing it in units compatible with the thermodynamic formalism.
 
-:::info Связь с Gap-границами
-Из [T-80 (секторная Gap-граница)](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [Т]: $\mathrm{Gap}(i,j) \leq \varepsilon_s + \varepsilon_t$. Это ограничивает амплитуду Gap-флуктуаций и, следовательно, интервал $T_{\mathrm{eff}}$, в котором ФДТ применима.
+:::info Connection to Gap bounds
+From [T-80 (sectoral Gap bound)](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [T]: $\mathrm{Gap}(i,j) \leq \varepsilon_s + \varepsilon_t$. This limits the amplitude of Gap fluctuations and hence the interval of $T_{\mathrm{eff}}$ in which the FDT is applicable.
 
-Из [T-85 (L_top из Keldysh)](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) [Т]: $\mathrm{Im}(S_K) = \int \mathrm{Berry}$ — топологический член лагранжиана связан с Berry-фазой, что обеспечивает робастность Gap-осцилляций при $T_{\mathrm{eff}} < T_c$.
+From [T-85 (L_top from Keldysh)](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) [T]: $\mathrm{Im}(S_K) = \int \mathrm{Berry}$ — the topological term of the Lagrangian is related to the Berry phase, which ensures the robustness of Gap oscillations at $T_{\mathrm{eff}} < T_c$.
 :::
 
-### 1.3 Свойства
+### 1.3 Properties
 
-:::tip Теорема 1.3 (Свойства $T_{\text{eff}}$) [Т]
+:::tip Theorem 1.3 (Properties of $T_{\text{eff}}$) [T]
 
-**(a)** $T_{\text{eff}} > T_{\text{phys}}$ для всех живых систем ($\Gamma_2/\kappa_0 > 1$).
+**(a)** $T_{\text{eff}} > T_{\text{phys}}$ for all living systems ($\Gamma_2/\kappa_0 > 1$).
 
-**(b)** $T_{\text{eff}} \to \infty$ при $\kappa_0 \to 0$ (смерть): прекращение регенерации уничтожает способность поддерживать когерентные фазы.
+**(b)** $T_{\text{eff}} \to \infty$ as $\kappa_0 \to 0$ (death): cessation of regeneration destroys the ability to maintain coherent phases.
 
-**(c)** $T_{\text{eff}} \to T_{\text{phys}}$ при $\Gamma_2/\kappa_0 \to 1$ (идеальный баланс).
+**(c)** $T_{\text{eff}} \to T_{\text{phys}}$ as $\Gamma_2/\kappa_0 \to 1$ (ideal balance).
 :::
 
-Свойство **(b)** заслуживает особого внимания. Оно описывает **термодинамику умирания**: когда нейропластичность угасает ($\kappa_0 \to 0$), а декогеренция продолжается ($\Gamma_2$ конечна), эффективная температура неограниченно растёт. Система «перегревается» и теряет всякую когерентную структуру. Это не метафора — это точное описание того, что происходит с матрицей $\Gamma$ при остановке регенеративных процессов.
+Property **(b)** deserves special attention. It describes the **thermodynamics of dying**: when neuroplasticity fades ($\kappa_0 \to 0$) while decoherence continues ($\Gamma_2$ remains finite), the effective temperature grows without bound. The system "overheats" and loses all coherent structure. This is not a metaphor — it is a precise description of what happens to the matrix $\Gamma$ when regenerative processes stop.
 
-Свойство **(c)** столь же замечательно: оно описывает **идеальную когерентность** — недостижимый предел, в котором система успевает полностью компенсировать любую декогеренцию. В этом пределе $T_{\text{eff}}$ сводится к $T_{\text{phys}}$, и Gap-флуктуации определяются только тепловым шумом.
+Property **(c)** is equally remarkable: it describes **ideal coherence** — an unattainable limit in which the system fully compensates any decoherence in time. In this limit $T_{\text{eff}}$ reduces to $T_{\text{phys}}$, and Gap fluctuations are governed only by thermal noise.
 
-### 1.4 Нейрофизиологические оценки
+### 1.4 Neurophysiological Estimates
 
-| Параметр | Диапазон | Источник |
+| Parameter | Range | Source |
 |---|---|---|
-| $\Gamma_2$ | $\sim 10$--$100$ Гц | Скорость нейронной декогеренции |
-| $\kappa_0$ | $\sim 0.01$--$0.1$ Гц | Скорость нейропластической регенерации |
-| $\Gamma_2/\kappa_0$ | $\sim 10^2$--$10^4$ | Отношение масштабов |
-| $T_{\text{eff}}/T_{\text{phys}}$ | $\sim 10^2$--$10^4$ | Усиление эффективной температуры |
+| $\Gamma_2$ | $\sim 10$--$100$ Hz | Neural decoherence rate |
+| $\kappa_0$ | $\sim 0.01$--$0.1$ Hz | Neuroplastic regeneration rate |
+| $\Gamma_2/\kappa_0$ | $\sim 10^2$--$10^4$ | Scale ratio |
+| $T_{\text{eff}}/T_{\text{phys}}$ | $\sim 10^2$--$10^4$ | Effective temperature amplification |
 
-:::info Интерпретация (Почему $T_{\text{eff}} \gg T_{\text{phys}}$) [И]
-Декогеренция фаз в нервной системе происходит на частотах $10$--$100$ Гц (электрические колебания, синаптический шум), тогда как нейропластическая регенерация (синаптогенез, миелинизация) занимает часы--дни ($0.01$--$0.1$ Гц). Отношение масштабов $\sim 10^3$ означает, что Gap-сектор «живёт» при температуре, в $\sim 10^3$ раз превышающей физическую — тепловые флуктуации в Gap-пространстве доминируют.
+:::info Interpretation (Why $T_{\text{eff}} \gg T_{\text{phys}}$) [I]
+Phase decoherence in the nervous system occurs at frequencies of $10$--$100$ Hz (electrical oscillations, synaptic noise), while neuroplastic regeneration (synaptogenesis, myelination) takes hours–days ($0.01$--$0.1$ Hz). The scale ratio $\sim 10^3$ means that the Gap sector "lives" at a temperature $\sim 10^3$ times higher than the physical — thermal fluctuations in Gap space dominate.
 :::
 
-### 1.5 Высокая и низкая температура: два режима бытия {#два-режима}
+### 1.5 High and Low Temperature: Two Modes of Being {#два-режима}
 
-Отношение $T_{\text{eff}} / T_c$ определяет качественный характер когнитивной динамики. Рассмотрим два предельных режима.
+The ratio $T_{\text{eff}} / T_c$ determines the qualitative character of cognitive dynamics. Let us consider two limiting regimes.
 
-#### Режим низкой температуры ($T_{\text{eff}} \ll T_c$)
+#### Low-temperature regime ($T_{\text{eff}} \ll T_c$)
 
-В этом режиме Gap-структура **замораживается**: спонтанный минимум потенциала $V_{\text{Gap}}$ глубок, флуктуации малы, конфигурация когерентностей стабильна. Это соответствует:
+In this regime the Gap structure **freezes**: the spontaneous minimum of the potential $V_{\text{Gap}}$ is deep, fluctuations are small, the coherence configuration is stable. This corresponds to:
 
-- **Устойчивым привычкам**: паттерны поведения «вморожены» в энергетические минимумы
-- **Жёстким убеждениям**: когнитивная карта мира не меняется под воздействием новых данных
-- **Предсказуемости**: система отвечает на стимулы стереотипно
+- **Stable habits**: behavioral patterns are "frozen" into energy minima
+- **Rigid beliefs**: the cognitive map of the world does not change under the influence of new data
+- **Predictability**: the system responds to stimuli stereotypically
 
-В физике это аналог **кристалла** — высокоупорядоченной, но жёсткой структуры. Кристалл красив и стабилен, но не может адаптироваться.
+In physics this is the analog of a **crystal** — a highly ordered but rigid structure. A crystal is beautiful and stable, but cannot adapt.
 
-#### Режим высокой температуры ($T_{\text{eff}} \gtrsim T_c$)
+#### High-temperature regime ($T_{\text{eff}} \gtrsim T_c$)
 
-Gap-структура **расплавляется**: потенциал $V_{\text{Gap}}$ становится плоским, флуктуации велики, конфигурация когерентностей постоянно меняется. Это соответствует:
+The Gap structure **melts**: the potential $V_{\text{Gap}}$ becomes flat, fluctuations are large, the coherence configuration changes constantly. This corresponds to:
 
-- **Лабильности**: настроение, внимание, мысли — всё непостоянно
-- **Открытости**: система легко принимает новую информацию (но и легко теряет старую)
-- **Креативности или хаосу**: в зависимости от управляемости процесса
+- **Lability**: mood, attention, thoughts — all are inconstant
+- **Openness**: the system easily accepts new information (but also easily loses old)
+- **Creativity or chaos**: depending on the controllability of the process
 
-В физике это аналог **жидкости** или **газа** — подвижной, адаптивной, но лишённой долговременной структуры.
+In physics this is the analog of a **liquid** or **gas** — mobile, adaptive, but lacking long-term structure.
 
-#### Оптимальная зона
+#### Optimal Zone
 
-Здоровое функционирование требует **промежуточной** температуры: достаточно высокой для адаптивности, достаточно низкой для устойчивости. Это напоминает «зону Златовласки» (Goldilocks zone) в астрофизике — не слишком горячо, не слишком холодно. В терминах КК: $T_{\text{eff}} \lesssim T_c$, вблизи фазового перехода, но в упорядоченной фазе.
+Healthy functioning requires an **intermediate** temperature: high enough for adaptability, low enough for stability. This resembles the Goldilocks zone in astrophysics — not too hot, not too cold. In CC terms: $T_{\text{eff}} \lesssim T_c$, near the phase transition but in the ordered phase.
 
-Замечательно, что именно вблизи $T_c$ система максимально чувствительна (расходимость восприимчивости $\chi$) — то есть максимально способна к обучению и адаптации.
+Remarkably, it is precisely near $T_c$ that the system is maximally sensitive (divergence of susceptibility $\chi$) — that is, maximally capable of learning and adaptation.
 
 ---
 
-## 2. Категориальный вывод $T_{\text{eff}}$ {#категориальный-вывод}
+## 2. Categorical Derivation of $T_{\text{eff}}$ {#категориальный-вывод}
 
-:::tip Теорема 2.1 (Категориальная формула $T_{\text{eff}}$) [Т]
-Из сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$ (диссипация $\dashv$ регенерация) в категории $\mathcal{C}$ эффективная температура выражается через единицу и коединицу сопряжения:
+:::tip Theorem 2.1 (Categorical Formula for $T_{\text{eff}}$) [T]
+From the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ (dissipation $\dashv$ regeneration) in category $\mathcal{C}$, the effective temperature is expressed through the unit and counit of the adjunction:
 
 $$
 T_{\text{eff}} = k_B T_{\text{phys}} \cdot \frac{1 + \|\varepsilon\|}{1 - \|\varepsilon\|}
 $$
 
-где:
-- $\varepsilon: \mathcal{D}_\Omega \circ \mathcal{R} \to \mathrm{Id}$ — коединица сопряжения
-- $\|\varepsilon\|$ — операторная норма коединицы, $\|\varepsilon\| \in [0, 1)$
+where:
+- $\varepsilon: \mathcal{D}_\Omega \circ \mathcal{R} \to \mathrm{Id}$ — counit of the adjunction
+- $\|\varepsilon\|$ — operator norm of the counit, $\|\varepsilon\| \in [0, 1)$
 :::
 
-Эта формула замечательна тем, что выводит $T_{\text{eff}}$ из чисто **категориальных** данных — не привлекая конкретной физической модели. Сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ выражает фундаментальное соотношение между разрушением ($\mathcal{D}_\Omega$) и восстановлением ($\mathcal{R}$) когерентной структуры. Коединица $\varepsilon$ измеряет, насколько «точно» регенерация отменяет диссипацию — и оказывается, что именно эта степень неточности определяет температуру.
+This formula is remarkable in that it derives $T_{\text{eff}}$ from purely **categorical** data — without invoking a specific physical model. The adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ expresses the fundamental relation between destruction ($\mathcal{D}_\Omega$) and restoration ($\mathcal{R}$) of coherent structure. The counit $\varepsilon$ measures how "precisely" regeneration undoes dissipation — and it turns out that precisely this degree of imprecision determines the temperature.
 
-Формула $(1+x)/(1-x)$ знакома из теории относительности (формула сложения скоростей в виде быстроты), из конформных отображений, из теории рассеяния. Её появление здесь не случайно: $\|\varepsilon\|$ играет роль «скорости» приближения к распаду сопряжения, и $T_{\text{eff}}$ расходится при $\|\varepsilon\| \to 1$ точно так же, как релятивистская энергия расходится при $v \to c$.
+The formula $(1+x)/(1-x)$ is familiar from relativity (the velocity addition formula in terms of rapidity), from conformal mappings, from scattering theory. Its appearance here is not coincidental: $\|\varepsilon\|$ plays the role of the "velocity" of approach to breakdown of the adjunction, and $T_{\text{eff}}$ diverges as $\|\varepsilon\| \to 1$ in exactly the same way as relativistic energy diverges as $v \to c$.
 
-### Следствия
+### Consequences
 
-| Режим | $\|\varepsilon\|$ | $T_{\text{eff}}$ | Интерпретация |
+| Regime | $\|\varepsilon\|$ | $T_{\text{eff}}$ | Interpretation |
 |---|---|---|---|
-| Идеальное сопряжение | $\|\varepsilon\| \to 0$ | $T_{\text{eff}} \to k_B T_{\text{phys}}$ | Минимальная температура |
-| Типичный живой | $\|\varepsilon\| \approx 0.9$ | $T_{\text{eff}} \approx 19 \, k_B T_{\text{phys}}$ | Повышенная температура |
-| Распад сопряжения | $\|\varepsilon\| \to 1$ | $T_{\text{eff}} \to \infty$ | Смерть |
+| Ideal adjunction | $\|\varepsilon\| \to 0$ | $T_{\text{eff}} \to k_B T_{\text{phys}}$ | Minimum temperature |
+| Typical living | $\|\varepsilon\| \approx 0.9$ | $T_{\text{eff}} \approx 19 \, k_B T_{\text{phys}}$ | Elevated temperature |
+| Breakdown of adjunction | $\|\varepsilon\| \to 1$ | $T_{\text{eff}} \to \infty$ | Death |
 
-### Согласованность с Теоремой 1.1
+### Consistency with Theorem 1.1
 
-При линеаризации сопряжения $\|\varepsilon\| \approx 1 - 2\kappa_0/\Gamma_2$, откуда:
+Upon linearization of the adjunction $\|\varepsilon\| \approx 1 - 2\kappa_0/\Gamma_2$, from which:
 
 $$
 \frac{1 + \|\varepsilon\|}{1 - \|\varepsilon\|} \approx \frac{\Gamma_2}{\kappa_0}
 $$
 
-что воспроизводит формулу Теоремы 1.1.
+which reproduces the formula of Theorem 1.1.
 
 ---
 
-## 3. Критическая температура $T_c$ {#критическая-температура}
+## 3. Critical Temperature $T_c$ {#критическая-температура}
 
-### 3.1 Определение
+### 3.1 Definition
 
-:::tip Теорема 3.1 (Критическая температура) [Т]
-Фазовый переход в Gap-секторе происходит при критической температуре:
+:::tip Theorem 3.1 (Critical Temperature) [T]
+The phase transition in the Gap sector occurs at the critical temperature:
 
 $$
 T_c = \frac{\mu^2}{k_B \ln 21}
 $$
 
-где:
-- $\mu^2 = (1 - s^2)/(2s^2)$ — массовый параметр [потенциала $V_{\text{Gap}}$](./lagrangian#потенциал-v-gap)
-- $\ln 21 = \ln\binom{7}{2}$ — логарифм числа независимых когерентностей
+where:
+- $\mu^2 = (1 - s^2)/(2s^2)$ — mass parameter of [potential $V_{\text{Gap}}$](./lagrangian#потенциал-v-gap)
+- $\ln 21 = \ln\binom{7}{2}$ — logarithm of the number of independent coherences
 :::
 
-### 3.2 Критическая температура: фазовый переход сознания {#фазовый-переход-сознания}
+### 3.2 Critical Temperature: Phase Transition of Consciousness {#фазовый-переход-сознания}
 
-Фазовые переходы — одно из самых глубоких понятий физики. Вода при $0$°C превращается в лёд: непрерывное изменение параметра (температуры) приводит к **качественному** скачку свойств. Жидкость текуча, изотропна, адаптивна. Кристалл жёсток, анизотропен, хрупок. Переход между ними — не постепенное «загустевание», а резкая смена симметрии.
+Phase transitions are one of the deepest concepts in physics. Water at $0$°C turns to ice: a continuous change in a parameter (temperature) leads to a **qualitative** jump in properties. A liquid is fluid, isotropic, adaptive. A crystal is rigid, anisotropic, brittle. The transition between them is not a gradual "thickening," but an abrupt change of symmetry.
 
-В Gap-секторе происходит нечто аналогичное. При $T_{\text{eff}} < T_c$ система находится в **упорядоченной фазе**: Gap-структура нетривиальна, некоторые каналы непрозрачны, другие прозрачны. Это — нормальное психическое функционирование, в котором вытеснение, защитные механизмы, селективное внимание создают **структурированную** картину.
+In the Gap sector something analogous occurs. At $T_{\text{eff}} < T_c$ the system is in the **ordered phase**: the Gap structure is non-trivial, some channels are opaque, others transparent. This is normal mental functioning, in which repression, defense mechanisms, and selective attention create a **structured** picture.
 
-При $T_{\text{eff}} > T_c$ — **неупорядоченная фаза**: все каналы одинаково мутны, избирательность утрачена. Это диссоциативное состояние, в котором система теряет способность различать «что видеть» и «что не видеть».
+At $T_{\text{eff}} > T_c$ — the **disordered phase**: all channels are equally murky, selectivity is lost. This is a dissociative state in which the system loses the ability to distinguish "what to see" and "what not to see."
 
-:::tip Теорема 3.2 (Фазовый переход) [Т]
-Полный Gap зависит от $T_{\text{eff}}$ как параметр порядка вблизи $T_c$:
+:::tip Theorem 3.2 (Phase Transition) [T]
+The total Gap depends on $T_{\text{eff}}$ as an order parameter near $T_c$:
 
 $$
 \mathcal{G}_{\text{total}} \propto (T_c - T_{\text{eff}})^{1/2}
 $$
 
-с показателем $\beta = 1/2$ (класс Ландау — среднее поле).
+with exponent $\beta = 1/2$ (Landau class — mean field).
 :::
 
-Показатель $\beta = 1/2$ — это подпись **среднеполевого** фазового перехода. Параметр порядка $\mathcal{G}_{\text{total}}$ непрерывен, но его производная по $T_{\text{eff}}$ расходится при $T_c$. Переход второго рода, как у сверхпроводника или ферромагнетика.
+The exponent $\beta = 1/2$ is the signature of a **mean-field** phase transition. The order parameter $\mathcal{G}_{\text{total}}$ is continuous, but its derivative with respect to $T_{\text{eff}}$ diverges at $T_c$. A second-order transition, as in a superconductor or ferromagnet.
 
-#### Почему $\ln 21$?
+#### Why $\ln 21$?
 
-Число $21 = \binom{7}{2}$ — количество независимых пар в семимерной системе, то есть число независимых когерентностей $\gamma_{ij}$ (внедиагональных элементов верхнего треугольника матрицы $\Gamma$). Логарифм $\ln 21$ появляется из подсчёта микросостояний: при полном расплавлении Gap каждая из 21 когерентностей может принимать произвольные фазы, и энтропия максимальна. $T_c$ — это температура, при которой энтропийный выигрыш от беспорядка $\sim k_B T \ln 21$ сравнивается с энергетическим проигрышем $\sim \mu^2$.
+The number $21 = \binom{7}{2}$ is the number of independent pairs in a seven-dimensional system, that is, the number of independent coherences $\gamma_{ij}$ (off-diagonal elements of the upper triangle of the matrix $\Gamma$). The logarithm $\ln 21$ arises from counting microstates: upon complete melting of the Gap, each of the 21 coherences can take arbitrary phases, and entropy is maximal. $T_c$ is the temperature at which the entropic gain from disorder $\sim k_B T \ln 21$ equals the energetic cost $\sim \mu^2$.
 
-Семёрка здесь — не произвольный параметр, а [следствие аксиомы септичности](/docs/core/foundations/axiom-septicity): именно 7 фундаментальных измерений когнитивного пространства порождают 21 канал взаимодействия и, тем самым, определяют критическую температуру.
+The seven here is not an arbitrary parameter, but a [consequence of the axiom of septicity](/docs/core/foundations/axiom-septicity): precisely 7 fundamental dimensions of cognitive space give rise to 21 interaction channels and thereby determine the critical temperature.
 
-**Режимы:**
+**Regimes:**
 
-| Режим | Условие | $\mathcal{G}_{\text{total}}$ | Интерпретация |
+| Regime | Condition | $\mathcal{G}_{\text{total}}$ | Interpretation |
 |---|---|---|---|
-| Упорядоченный | $T_{\text{eff}} < T_c$ | $> 0$ | Спонтанный Gap (непрозрачность) |
-| Неупорядоченный | $T_{\text{eff}} > T_c$ | $= 0$ | Прозрачность (но за счёт потери когерентности) |
-| Критический | $T_{\text{eff}} = T_c$ | $\to 0$ | Фазовый переход второго рода |
+| Ordered | $T_{\text{eff}} < T_c$ | $> 0$ | Spontaneous Gap (opacity) |
+| Disordered | $T_{\text{eff}} > T_c$ | $= 0$ | Transparency (but at the cost of losing coherence) |
+| Critical | $T_{\text{eff}} = T_c$ | $\to 0$ | Second-order phase transition |
 
-### 3.3 Связь с уровнями интериорности
+### 3.3 Connection to Interiority Levels
 
-:::warning Гипотеза (Критическая температура и L-уровни) [Г]
-Уровни L1--L4 [иерархии интериорности](/docs/proofs/consciousness/interiority-hierarchy) могут соответствовать различным режимам относительно $T_c$:
+:::warning Hypothesis (Critical Temperature and L-levels) [H]
+Levels L1–L4 of the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) may correspond to different regimes relative to $T_c$:
 
-| L-уровень | Режим $T_{\text{eff}}/T_c$ | Характеристика |
+| L-level | Regime $T_{\text{eff}}/T_c$ | Characteristic |
 |---|---|---|
-| L1--L2 | $T_{\text{eff}} \ll T_c$ | Глубоко в упорядоченной фазе, большой Gap |
-| L3 | $T_{\text{eff}} \lesssim T_c$ | Вблизи перехода, критические флуктуации |
-| L4 | $T_{\text{eff}} \to T_c$ | На границе — парадокс: прозрачность без потери когерентности |
+| L1–L2 | $T_{\text{eff}} \ll T_c$ | Deeply in the ordered phase, large Gap |
+| L3 | $T_{\text{eff}} \lesssim T_c$ | Near the transition, critical fluctuations |
+| L4 | $T_{\text{eff}} \to T_c$ | At the boundary — paradox: transparency without loss of coherence |
 :::
 
-Гипотеза особенно интересна для уровня L4: если он существует, система должна находиться *точно* на критической температуре — в состоянии, аналогичном **критической опалесценции** в физике, когда флуктуации охватывают все масштабы. В терминах Gap: система не «видит» и не «не видит» — она находится в суперпозиции прозрачности и непрозрачности на всех масштабах одновременно.
+The hypothesis is especially interesting for level L4: if it exists, the system must be located *precisely* at the critical temperature — in a state analogous to **critical opalescence** in physics, where fluctuations span all scales. In Gap terms: the system neither "sees" nor "does not see" — it is in a superposition of transparency and opacity at all scales simultaneously.
 
 ---
 
-## 4. Кривизна Серра на Map-расслоении {#кривизна-серра}
+## 4. Serre Curvature on the Map Fibration {#кривизна-серра}
 
-### 4.1 Map-расслоение
+### 4.1 Map Fibration
 
-:::tip Теорема 4.1 (Расслоение Серра) [Т]
-Пространство карт $\mathrm{Map}(\Gamma, \Omega)$ допускает структуру **расслоения Серра**:
+:::tip Theorem 4.1 (Serre Fibration) [T]
+The space of maps $\mathrm{Map}(\Gamma, \Omega)$ admits a **Serre fibration** structure:
 
 $$
 \mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}
 $$
 
-с волокном $F_{\mathrm{int}}$, где:
-- **База** $B_{\mathrm{ext}}$ — пространство внешних наблюдаемых (модули $|\gamma_{ij}|$ и населённости $\gamma_{ii}$)
-- **Волокно** $F_{\mathrm{int}}$ — пространство внутренних фаз $\{\theta_{ij}\}$ при фиксированных модулях
-- **Проекция** $\pi: \mathrm{Bundle} \to B_{\mathrm{ext}}$ забывает фазовую информацию
+with fiber $F_{\mathrm{int}}$, where:
+- **Base** $B_{\mathrm{ext}}$ — space of external observables (moduli $|\gamma_{ij}|$ and populations $\gamma_{ii}$)
+- **Fiber** $F_{\mathrm{int}}$ — space of internal phases $\{\theta_{ij}\}$ at fixed moduli
+- **Projection** $\pi: \mathrm{Bundle} \to B_{\mathrm{ext}}$ forgets phase information
 :::
 
-Расслоение Серра формализует фундаментальное различие между **внешним** и **внутренним** в КК. Внешний наблюдатель видит модули когерентностей $|\gamma_{ij}|$ и населённости $\gamma_{ii}$ — это «поведение». Но фазы $\theta_{ij}$ — это «переживание», внутренний аспект, недоступный внешнему наблюдению. Расслоение говорит: *при одном и том же поведении возможны разные переживания*, и топология этого множества возможных переживаний нетривиальна.
+The Serre fibration formalizes the fundamental distinction between the **external** and **internal** in CC. An external observer sees the moduli of coherences $|\gamma_{ij}|$ and populations $\gamma_{ii}$ — this is "behavior." But the phases $\theta_{ij}$ — this is "experience," the internal aspect, inaccessible to external observation. The fibration says: *for the same behavior, different experiences are possible*, and the topology of this set of possible experiences is non-trivial.
 
-### 4.2 Кривизна связности
+### 4.2 Connection Curvature
 
-Кривизна связности на расслоении определяет **топологическое препятствие** к глобальной прозрачности:
+The connection curvature on the fibration determines the **topological obstruction** to global transparency:
 
 $$
 \|R_H\|_{ij} \propto |\gamma_{ij}| \cdot \mathrm{Gap}(i,j)
 $$
 
-:::info Интерпретация (Кривизна и непрозрачность) [И]
-Кривизна ненулевая тогда и только тогда, когда одновременно:
-- когерентность $|\gamma_{ij}| \neq 0$ (связь существует)
-- $\mathrm{Gap}(i,j) \neq 0$ (зазор ненулевой)
+:::info Interpretation (Curvature and Opacity) [I]
+The curvature is non-zero if and only if simultaneously:
+- coherence $|\gamma_{ij}| \neq 0$ (connection exists)
+- $\mathrm{Gap}(i,j) \neq 0$ (gap is non-zero)
 
-Высокая кривизна означает, что внутренние фазы **не могут быть глобально восстановлены** из внешних наблюдаемых — геометрическая формализация непрозрачности.
+High curvature means that the internal phases **cannot be globally reconstructed** from external observables — a geometric formalization of opacity.
 :::
 
-### 4.3 Голономия
+### 4.3 Holonomy
 
-:::info Определение (Голономия Gap) [И]
-Голономия замкнутого контура $C$ в пространстве параметров:
+:::info Definition (Gap Holonomy) [I]
+Holonomy of a closed loop $C$ in parameter space:
 
 $$
 \mathrm{Hol}(C) = \mathcal{P}\exp\left(\oint_C A\right)
 $$
 
-Ненулевая голономия $\mathrm{Hol}(C) \neq \mathbb{1}$ означает, что при циклическом изменении внешних параметров фазы $\theta_{ij}$ приобретают **геометрический сдвиг** — аналог [фазы Берри](/docs/physics/cosmology-phys/berry-phase).
+Non-zero holonomy $\mathrm{Hol}(C) \neq \mathbb{1}$ means that under a cyclic change of external parameters the phases $\theta_{ij}$ acquire a **geometric shift** — an analog of the [Berry phase](/docs/physics/cosmology-phys/berry-phase).
 :::
 
-Голономия Gap имеет прямое психологическое значение: она описывает ситуацию, когда система проходит цикл внешних изменений (например, повторяющуюся жизненную ситуацию) и возвращается к тем же внешним параметрам — но с *другими* внутренними фазами. Это формализация того, как опыт **необратимо трансформирует** внутреннее переживание при неизменных внешних обстоятельствах.
+Gap holonomy has a direct psychological meaning: it describes the situation in which the system undergoes a cycle of external changes (for example, a recurring life situation) and returns to the same external parameters — but with *different* internal phases. This is a formalization of how experience **irreversibly transforms** inner experience while external circumstances remain unchanged.
 
-### 4.4 Связь $T_{\text{eff}}$ и кривизны
+### 4.4 Connection between $T_{\text{eff}}$ and Curvature
 
-:::tip Следствие 4.2 (Температурная зависимость кривизны) [С]
-Средняя кривизна расслоения Серра зависит от $T_{\text{eff}}$:
+:::tip Corollary 4.2 (Temperature Dependence of Curvature) [C]
+The mean curvature of the Serre fibration depends on $T_{\text{eff}}$:
 
 $$
 \langle \|R_H\|^2 \rangle \propto \begin{cases}
-(T_c - T_{\text{eff}}) & \text{при } T_{\text{eff}} < T_c \\
-0 & \text{при } T_{\text{eff}} > T_c
+(T_c - T_{\text{eff}}) & \text{if } T_{\text{eff}} < T_c \\
+0 & \text{if } T_{\text{eff}} > T_c
 \end{cases}
 $$
 
-При $T_{\text{eff}} \to T_c$ кривизна исчезает — расслоение становится плоским (прозрачность), но лишь ценой потери структуры когерентностей.
+As $T_{\text{eff}} \to T_c$ the curvature vanishes — the fibration becomes flat (transparency), but only at the cost of losing coherence structure.
 :::
 
 ---
 
-## 5. Метрика Фишера Gap-пространства {#метрика-фишера}
+## 5. Fisher Metric of Gap Space {#метрика-фишера}
 
-### 5.1 Квантовая метрика Фишера
+### 5.1 Quantum Fisher Metric
 
-:::tip Теорема 5.1 (Квантовая метрика Фишера) [Т]
-Квантовая метрика Фишера на пространстве матриц плотности $\mathcal{D}(\mathbb{C}^7)$:
+:::tip Theorem 5.1 (Quantum Fisher Metric) [T]
+The quantum Fisher metric on the space of density matrices $\mathcal{D}(\mathbb{C}^7)$:
 
 $$
 g_{ab}^{(F)}(\Gamma) = \frac{1}{2}\mathrm{Tr}\left(\Gamma\{L_a, L_b\}\right)
 $$
 
-где $L_a$ — логарифмические производные: $\partial_a \Gamma = \frac{1}{2}\{\Gamma, L_a\}$.
+where $L_a$ are logarithmic derivatives: $\partial_a \Gamma = \frac{1}{2}\{\Gamma, L_a\}$.
 :::
 
-Метрика Фишера — центральный объект **информационной геометрии**. Она отвечает на вопрос: *насколько различимы два близких состояния системы?* Если метрика велика в некотором направлении, малое изменение параметра в этом направлении приводит к большому статистическому различию — система «чувствительна» к этому параметру. Если метрика мала — система «нечувствительна», и даже большие изменения параметра не дают наблюдаемых последствий.
+The Fisher metric is the central object of **information geometry**. It answers the question: *how distinguishable are two nearby states of the system?* If the metric is large in some direction, a small change of the parameter in that direction leads to a large statistical difference — the system is "sensitive" to that parameter. If the metric is small — the system is "insensitive," and even large parameter changes produce no observable consequences.
 
-В контексте $\Gamma$ метрика Фишера определяет **различимость когнитивных состояний**: два профиля $\Gamma_1$ и $\Gamma_2$ субъективно различимы настолько, насколько велико расстояние Фишера между ними.
+In the context of $\Gamma$, the Fisher metric determines the **distinguishability of cognitive states**: two profiles $\Gamma_1$ and $\Gamma_2$ are subjectively distinguishable to the extent that the Fisher distance between them is large.
 
-### 5.2 Индуцированная метрика на $\mathcal{M}_{\text{Gap}}$
+### 5.2 Induced Metric on $\mathcal{M}_{\text{Gap}}$
 
-:::tip Теорема 5.2 (Метрика Фишера на Gap-профилях) [Т]
-Через проекцию $\Pi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{M}_{\text{Gap}}$ индуцируется метрика:
+:::tip Theorem 5.2 (Fisher Metric on Gap Profiles) [T]
+Through the projection $\Pi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{M}_{\text{Gap}}$ an induced metric arises:
 
 $$
 g_{(ij),(kl)}^{(F)} = \sum_x \frac{1}{p(x|\{G\})} \frac{\partial p}{\partial G_{ij}} \frac{\partial p}{\partial G_{kl}}
 $$
 
-где $p(x|\{G\})$ — вероятность наблюдения данных $x$ при фиксированном Gap-профиле $\{G\}$.
+where $p(x|\{G\})$ is the probability of observing data $x$ given a fixed Gap profile $\{G\}$.
 :::
 
-**Свойства метрики Фишера:**
+**Properties of the Fisher metric:**
 
-| Свойство | Описание |
+| Property | Description |
 |---|---|
-| Положительная определённость | $g^{(F)} \geq 0$ |
-| Репараметризационная инвариантность | Не зависит от выбора координат |
-| Неравенство Крамера--Рао | $\mathrm{Var}(\hat{G}_{ij}) \geq 1/(N \cdot g^{(F)}_{(ij),(ij)})$ |
+| Positive definiteness | $g^{(F)} \geq 0$ |
+| Reparametrization invariance | Does not depend on the choice of coordinates |
+| Cramér–Rao inequality | $\mathrm{Var}(\hat{G}_{ij}) \geq 1/(N \cdot g^{(F)}_{(ij),(ij)})$ |
 
-Неравенство Крамера--Рао заслуживает особого внимания: оно говорит, что **точность оценки** Gap-профиля по $N$ наблюдениям ограничена метрикой Фишера. Чем больше $g^{(F)}$, тем точнее можно оценить Gap — и тем «реальнее» Gap как наблюдаемая величина.
+The Cramér–Rao inequality deserves special attention: it says that the **accuracy of estimating** the Gap profile from $N$ observations is limited by the Fisher metric. The larger $g^{(F)}$, the more accurately the Gap can be estimated — and the more "real" the Gap is as an observable quantity.
 
-### 5.3 Геодезические в $\mathcal{M}_{\text{Gap}}$
+### 5.3 Geodesics in $\mathcal{M}_{\text{Gap}}$
 
-:::tip Определение 5.3 (Расстояние Фишера) [Т]
-Геодезическое расстояние между двумя Gap-профилями $G_1$ и $G_2$:
+:::tip Definition 5.3 (Fisher Distance) [T]
+Geodesic distance between two Gap profiles $G_1$ and $G_2$:
 
 $$
 d_F(G_1, G_2) = \inf_\gamma \int_0^1 \sqrt{\sum_{(ij),(kl)} g_{(ij),(kl)}^{(F)} \dot{G}_{ij} \dot{G}_{kl}} \, dt
 $$
 
-где инфимум берётся по всем гладким путям $\gamma: [0,1] \to \mathcal{M}_{\text{Gap}}$.
+where the infimum is taken over all smooth paths $\gamma: [0,1] \to \mathcal{M}_{\text{Gap}}$.
 :::
 
-:::info Интерпретация (Геодезические как терапевтический путь) [И]
-Геодезическая в $\mathcal{M}_{\text{Gap}}$ определяет **оптимальный терапевтический путь** — последовательность минимально различимых изменений Gap, ведущую от патологического к здоровому профилю. Длина геодезической $d_F$ — мера «терапевтической работы», необходимой для перехода.
+:::info Interpretation (Geodesics as Therapeutic Path) [I]
+A geodesic in $\mathcal{M}_{\text{Gap}}$ defines the **optimal therapeutic path** — a sequence of minimally distinguishable Gap changes leading from a pathological to a healthy profile. The geodesic length $d_F$ is a measure of the "therapeutic work" required for the transition.
 :::
 
-Эта интерпретация превращает абстрактную математику в клинический инструмент. Если терапевт может оценить текущий Gap-профиль $G_1$ и целевой $G_2$, геодезическая даёт **оптимальную стратегию**: на каждом шаге — минимально необходимое изменение, суммарно — кратчайший путь. Отклонение от геодезической означает «лишнюю работу» — терапевтические интервенции, которые не приближают к цели.
+This interpretation turns abstract mathematics into a clinical tool. If a therapist can estimate the current Gap profile $G_1$ and the target $G_2$, the geodesic gives the **optimal strategy**: at each step — the minimally necessary change, in total — the shortest path. Deviation from the geodesic means "extra work" — therapeutic interventions that do not bring one closer to the goal.
 
-### 5.4 Температурная зависимость метрики
+### 5.4 Temperature Dependence of the Metric
 
-:::tip Следствие 5.4 (Размягчение метрики вблизи $T_c$) [С]
-Вблизи критической температуры метрика Фишера «размягчается»:
+:::tip Corollary 5.4 (Metric Softening near $T_c$) [C]
+Near the critical temperature the Fisher metric "softens":
 
 $$
 g_{(ij),(ij)}^{(F)} \propto |T_{\text{eff}} - T_c|^{-\gamma}, \quad \gamma = 1
 $$
 
-что соответствует расходимости [восприимчивости](/docs/core/dynamics/gap-phase-diagram#критические-явления). Физически: вблизи $T_c$ малое изменение Gap-профиля приводит к большому статистическому различию — система становится **чрезвычайно чувствительной** к возмущениям.
+which corresponds to the divergence of [susceptibility](/docs/core/dynamics/gap-phase-diagram#критические-явления). Physically: near $T_c$ a small change in the Gap profile leads to a large statistical difference — the system becomes **extremely sensitive** to perturbations.
 :::
 
-«Размягчение метрики» — ключевое явление для понимания когнитивных кризисов. Вблизи $T_c$ система находится в состоянии **максимальной пластичности**: малейшее воздействие может привести к значительному изменению Gap-профиля. Это — окно возможностей для терапевтического вмешательства, но и зона повышенной уязвимости.
+"Metric softening" is a key phenomenon for understanding cognitive crises. Near $T_c$ the system is in a state of **maximum plasticity**: the slightest influence can lead to a significant change in the Gap profile. This is a window of opportunity for therapeutic intervention, but also a zone of heightened vulnerability.
 
 ---
 
-## 6. Измерение эффективной температуры {#измерение}
+## 6. Measurement of Effective Temperature {#измерение}
 
-Как в принципе можно **измерить** $T_{\text{eff}}$?
+How in principle can $T_{\text{eff}}$ be **measured**?
 
-### 6.1 Через флуктуационно-диссипативную теорему
+### 6.1 Through the Fluctuation-Dissipation Theorem
 
-Из [ФДТ](./variational#фдт):
+From [FDT](./variational#фдт):
 
 $$
 T_{\text{eff}} = \frac{\langle (\delta \mathrm{Gap})^2 \rangle}{\chi(0)}
 $$
 
-где $\langle (\delta \mathrm{Gap})^2 \rangle$ — дисперсия Gap-флуктуаций, $\chi(0)$ — статическая восприимчивость. Оба параметра в принципе наблюдаемы: дисперсия — через повторные измерения, восприимчивость — через отклик на контролируемое воздействие.
+where $\langle (\delta \mathrm{Gap})^2 \rangle$ is the variance of Gap fluctuations, $\chi(0)$ is the static susceptibility. Both parameters are in principle observable: the variance — through repeated measurements, the susceptibility — through the response to a controlled perturbation.
 
-### 6.2 Через отношение масштабов времени
+### 6.2 Through the Ratio of Time Scales
 
-Прямое измерение $\Gamma_2$ и $\kappa_0$ даёт:
+Direct measurement of $\Gamma_2$ and $\kappa_0$ gives:
 
 $$
 T_{\text{eff}} = \frac{\Gamma_2}{\kappa_0} \cdot k_B T_{\text{phys}}
 $$
 
-$\Gamma_2$ можно оценить по скорости затухания корреляций ЭЭГ-сигналов (десятки герц). $\kappa_0$ — по скорости восстановления когнитивных функций после нарушения (часы-дни). Это грубая, но в принципе осуществимая оценка.
+$\Gamma_2$ can be estimated from the decay rate of EEG signal correlations (tens of hertz). $\kappa_0$ — from the recovery rate of cognitive functions after disruption (hours–days). This is a rough, but in principle feasible estimate.
 
-### 6.3 Через спектр флуктуаций
+### 6.3 Through the Fluctuation Spectrum
 
-Спектральная плотность Gap-флуктуаций при температуре $T_{\text{eff}}$ подчиняется теореме Винера--Хинчина:
+The spectral density of Gap fluctuations at temperature $T_{\text{eff}}$ obeys the Wiener–Khinchin theorem:
 
 $$
 S_{\text{Gap}}(\omega) = \frac{2 k_B T_{\text{eff}} \cdot \mathrm{Im}[\chi(\omega)]}{\omega}
 $$
 
-Если известна частотная зависимость восприимчивости $\chi(\omega)$ (из функций отклика), спектр флуктуаций позволяет восстановить $T_{\text{eff}}$ на каждой частоте. Независимость $T_{\text{eff}}$ от частоты — проверка применимости формализма.
+If the frequency dependence of the susceptibility $\chi(\omega)$ is known (from response functions), the fluctuation spectrum allows recovering $T_{\text{eff}}$ at each frequency. Independence of $T_{\text{eff}}$ from frequency is a check of the applicability of the formalism.
 
-### 6.4 Косвенные индикаторы
+### 6.4 Indirect Indicators
 
-В отсутствие прямого доступа к параметрам $\Gamma$, $T_{\text{eff}}$ может быть оценена косвенно:
+In the absence of direct access to the parameters of $\Gamma$, $T_{\text{eff}}$ can be estimated indirectly:
 
-| Индикатор | Связь с $T_{\text{eff}}$ | Метод |
+| Indicator | Relation to $T_{\text{eff}}$ | Method |
 |---|---|---|
-| Вариабельность поведения | Растёт с $T_{\text{eff}}$ | Повторные поведенческие тесты |
-| Переключаемость внимания | Растёт с $T_{\text{eff}}$ | Задачи на переключение |
-| Скорость обучения | Максимальна вблизи $T_c$ | Кривые обучения |
-| Эмоциональная лабильность | Растёт с $T_{\text{eff}}$ | Шкалы аффекта |
-| Мощность альфа-ритма | Падает с $T_{\text{eff}}$ | ЭЭГ |
+| Behavioral variability | Increases with $T_{\text{eff}}$ | Repeated behavioral tests |
+| Attentional switchability | Increases with $T_{\text{eff}}$ | Switching tasks |
+| Learning rate | Maximum near $T_c$ | Learning curves |
+| Emotional lability | Increases with $T_{\text{eff}}$ | Affect scales |
+| Alpha rhythm power | Decreases with $T_{\text{eff}}$ | EEG |
 
 ---
 
-## 7. Связь с другими «температурами» {#связь-с-другими-температурами}
+## 7. Connection to Other "Temperatures" {#связь-с-другими-температурами}
 
-$T_{\text{eff}}$ — не единственный пример «температуры», вышедшей за пределы термодинамики равновесных газов. Полезно видеть параллели.
+$T_{\text{eff}}$ is not the only example of a "temperature" that has gone beyond the thermodynamics of equilibrium gases. It is useful to see the parallels.
 
-### 7.1 Шумовая температура в электронике
+### 7.1 Noise Temperature in Electronics
 
-В электронике **шумовая температура** $T_n$ характеризует уровень шума усилителя: $P_n = k_B T_n \Delta f$. Усилитель при физической температуре 300 К может иметь $T_n = 50$ К (хороший) или $T_n = 10^6$ К (плохой). Шумовая температура описывает *эффективную* стохастичность сигнала, а не температуру устройства.
+In electronics the **noise temperature** $T_n$ characterizes the noise level of an amplifier: $P_n = k_B T_n \Delta f$. An amplifier at physical temperature 300 K may have $T_n = 50$ K (good) or $T_n = 10^6$ K (bad). The noise temperature describes the *effective* stochasticity of the signal, not the temperature of the device.
 
-Аналогия с $T_{\text{eff}}$: мозг при физической температуре 310 К имеет «шумовую когнитивную температуру» $\sim 10^5$–$10^6$ К — потому что когнитивный «шум» (флуктуации Gap) многократно превышает тепловой.
+Analogy with $T_{\text{eff}}$: a brain at physical temperature 310 K has a "cognitive noise temperature" $\sim 10^5$–$10^6$ K — because cognitive "noise" (Gap fluctuations) many times exceeds the thermal.
 
-### 7.2 Цветовая температура
+### 7.2 Color Temperature
 
-В оптике **цветовая температура** характеризует спектр источника света: лампа накаливания $\sim 2700$ К, дневной свет $\sim 5500$ К, голубое небо $\sim 10000$ К. Источник при физической температуре 300 К (LED) может излучать свет с цветовой температурой 6500 К. Температура здесь — параметр формы распределения, а не мера кинетической энергии.
+In optics **color temperature** characterizes the spectrum of a light source: an incandescent lamp $\sim 2700$ K, daylight $\sim 5500$ K, blue sky $\sim 10000$ K. A source at physical temperature 300 K (LED) can emit light with a color temperature of 6500 K. Temperature here is a parameter of the shape of the distribution, not a measure of kinetic energy.
 
-### 7.3 Температура в моделировании (simulated annealing)
+### 7.3 Temperature in Simulated Annealing
 
-В алгоритмах **имитации отжига** температура — управляющий параметр, определяющий вероятность принятия невыгодных переходов: $p \propto e^{-\Delta E / T}$. Высокая $T$ — широкий поиск. Низкая $T$ — уточнение решения. Оптимальное расписание $T(t)$ — ключ к эффективной оптимизации.
+In **simulated annealing** algorithms, temperature is a control parameter determining the probability of accepting unfavorable transitions: $p \propto e^{-\Delta E / T}$. High $T$ — broad search. Low $T$ — solution refinement. An optimal cooling schedule $T(t)$ is the key to effective optimization.
 
-Аналогия с $T_{\text{eff}}$ глубже, чем может показаться: если мозг решает задачу оптимизации Gap-профиля, $T_{\text{eff}}$ играет роль температуры отжига — и эволюция могла «настроить» динамику $\Gamma_2/\kappa_0$ так, чтобы реализовать нечто подобное оптимальному расписанию охлаждения.
+The analogy with $T_{\text{eff}}$ is deeper than it may seem: if the brain solves the problem of optimizing the Gap profile, $T_{\text{eff}}$ plays the role of the annealing temperature — and evolution may have "tuned" the dynamics of $\Gamma_2/\kappa_0$ so as to implement something like an optimal cooling schedule.
 
-### 7.4 Температура Хогланда (Hawking)
+### 7.4 Hawking Temperature
 
-В квантовой гравитации температура Хокинга $T_H = \hbar c^3 / (8\pi G M k_B)$ характеризует тепловой спектр излучения чёрной дыры. Чёрная дыра — не горячее тело в обычном смысле; $T_H$ описывает *эффективную* термальность квантовых корреляций на горизонте событий.
+In quantum gravity the Hawking temperature $T_H = \hbar c^3 / (8\pi G M k_B)$ characterizes the thermal spectrum of black hole radiation. A black hole is not a hot body in the ordinary sense; $T_H$ describes the *effective* thermality of quantum correlations at the event horizon.
 
-Параллель с $T_{\text{eff}}$: и там, и здесь «температура» возникает из-за потери доступа к части степеней свободы (для чёрной дыры — за горизонтом, для Gap — во внутренних фазах). Расслоение Серра (раздел 4) — когнитивный аналог горизонта событий.
+Parallel with $T_{\text{eff}}$: in both cases "temperature" arises from loss of access to some degrees of freedom (for a black hole — beyond the horizon, for Gap — in the internal phases). The Serre fibration (section 4) is the cognitive analog of an event horizon.
 
 ---
 
-## 8. Фазовая диаграмма: координаты $(t, r)$ {#фазовая-диаграмма}
+## 8. Phase Diagram: Coordinates $(t, r)$ {#фазовая-диаграмма}
 
-### 8.1 Безразмерные координаты
+### 8.1 Dimensionless Coordinates
 
-:::tip Определение 6.1 (Координаты фазовой диаграммы) [Т]
-Два безразмерных параметра определяют стационарное Gap-состояние:
+:::tip Definition 6.1 (Phase Diagram Coordinates) [T]
+Two dimensionless parameters determine the stationary Gap state:
 
-**(a)** Безразмерная температура:
+**(a)** Dimensionless temperature:
 
 $$
 t := \frac{T_{\text{eff}}}{T_c} = \frac{\Gamma_2}{\kappa_0} \cdot \frac{k_B T_{\text{phys}} \ln 21}{\mu^2}
 $$
 
-**(b)** Отношение регенерации к диссипации:
+**(b)** Ratio of regeneration to dissipation:
 
 $$
 r := \kappa / \Gamma_2
 $$
 :::
 
-### 8.2 Три фазы в координатах $(t, r)$
+### 8.2 Three Phases in Coordinates $(t, r)$
 
-Полная [фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram#три-фазы):
+Full [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram#три-фазы):
 
-| Фаза | Область | Параметр порядка | Характеристика |
+| Phase | Region | Order parameter | Characteristic |
 |---|---|---|---|
-| I (упорядоченный) | $t < 1$, $r > r_c$ | $\sigma^2_{\text{Gap}} > 0$ | Структурированная непрозрачность |
-| II (разупорядоченный) | $t > 1$, $r > r_c$ | $\sigma^2_{\text{Gap}} \to 0$, $\mathcal{G}_{\text{total}} > 0$ | Изотропная мутность |
-| III (мёртвая) | $r < r_c$ | $\mathcal{G}_{\text{total}} \to 0$ | Потеря когерентностей |
+| I (ordered) | $t < 1$, $r > r_c$ | $\sigma^2_{\text{Gap}} > 0$ | Structured opacity |
+| II (disordered) | $t > 1$, $r > r_c$ | $\sigma^2_{\text{Gap}} \to 0$, $\mathcal{G}_{\text{total}} > 0$ | Isotropic murkiness |
+| III (dead) | $r < r_c$ | $\mathcal{G}_{\text{total}} \to 0$ | Loss of coherences |
 
-Критическое значение:
+Critical value:
 
 $$
 r_c = \frac{P_{\text{crit}}}{7P} \approx \frac{2}{49P}
 $$
 
-### 8.3 Визуализация
+### 8.3 Visualization
 
 ```
     t (T_eff/T_c)
     |
-  2 |         Фаза II: Разупорядоченный Gap
-    |        (равномерный, восстановимый)
+  2 |         Phase II: Disordered Gap
+    |        (uniform, recoverable)
     |
   1 |— — — — + — — — — —
     |              / (t*,r*)
-    |    Фаза I  /   <- 2-го рода (непрерывный)
-    |  Упорядоч./
-    |   Gap    /
-    |         /
+    |  Phase I  /   <- 2nd order (continuous)
+    |  Ordered /
+    |   Gap   /
+    |        /
   0 |——--/—————————--
-    | Ф. III |
-    | Мёртвая|
+    | Ph.III |
+    |  Dead  |
     +——--+——--+——————- r (kappa/Gamma_2)
              r_c      1
 ```
 
-### 8.4 Линии фазовых переходов
+### 8.4 Phase Transition Lines
 
-| Переход | Линия | Род | Показатели |
+| Transition | Line | Order | Exponents |
 |---|---|---|---|
-| I <-> II | $t = 1$ при $r > r_c$ | 2-й (непрерывный) | $\beta = 1/2$, $\gamma = 1$, $\nu = 1/2$ |
-| I <-> III | $r = r_c$ при $t < 1$ | 1-й (разрывный) | $\mathcal{G}_{\text{total}}$ скачком $\to 0$ |
-| Трикритическая | $(t^*, r^*) = (1, r_c)$ | Смена рода | $\beta = 1/4$, $\gamma = 1$, $\delta = 5$ |
+| I <-> II | $t = 1$ at $r > r_c$ | 2nd (continuous) | $\beta = 1/2$, $\gamma = 1$, $\nu = 1/2$ |
+| I <-> III | $r = r_c$ at $t < 1$ | 1st (discontinuous) | $\mathcal{G}_{\text{total}}$ jumps $\to 0$ |
+| Tricritical | $(t^*, r^*) = (1, r_c)$ | Change of order | $\beta = 1/4$, $\gamma = 1$, $\delta = 5$ |
 
-### 8.5 Клиническое соответствие
+### 8.5 Clinical Correspondence
 
-:::info Интерпретация (Фазы и клинические состояния) [И]
+:::info Interpretation (Phases and Clinical States) [I]
 
-| Фаза | Клинический аналог | Характеристика |
+| Phase | Clinical analog | Characteristic |
 |---|---|---|
-| I | Нормальное функционирование | Специфические непрозрачности (вытеснение), прозрачность в остальных каналах |
-| II | Диффузное диссоциативное состояние | Все каналы одинаково мутны |
-| III | Деменция, кома | Потеря когерентностей |
-| I <-> II | Психотический эпизод | «Расплавка» структурированной непрозрачности |
-| Трикритическая | Пограничное состояние | Осцилляция между упорядоченным и хаотическим Gap |
+| I | Normal functioning | Specific opacities (repression), transparency in other channels |
+| II | Diffuse dissociative state | All channels equally murky |
+| III | Dementia, coma | Loss of coherences |
+| I <-> II | Psychotic episode | "Melting" of structured opacity |
+| Tricritical | Borderline state | Oscillation between ordered and chaotic Gap |
 :::
 
-Фазовая диаграмма превращает интуитивные клинические категории в **точные координаты**. Пациент с пограничным расстройством личности (ПРЛ) — это система вблизи трикритической точки $(t^*, r^*)$: малейшее воздействие переключает между структурированной непрозрачностью (фаза I) и хаотической мутностью (фаза II). Терапевтическая задача — сместить систему в глубину фазы I, увеличив $r$ (усилив регенерацию) или уменьшив $t$ (ослабив декогеренцию).
+The phase diagram turns intuitive clinical categories into **precise coordinates**. A patient with borderline personality disorder (BPD) is a system near the tricritical point $(t^*, r^*)$: the slightest perturbation switches between structured opacity (phase I) and chaotic murkiness (phase II). The therapeutic task is to shift the system deeper into phase I, by increasing $r$ (strengthening regeneration) or decreasing $t$ (weakening decoherence).
 
 ---
 
-## 9. $T_{\text{eff}}$ как параметр порядка {#параметр-порядка}
+## 9. $T_{\text{eff}}$ as Order Parameter {#параметр-порядка}
 
-### 9.1 Критические показатели
+### 9.1 Critical Exponents
 
-:::tip Теорема 7.1 (Критические показатели Gap) [Т]
-Вблизи критической точки $t = 1$ система демонстрирует масштабно-инвариантное поведение:
+:::tip Theorem 7.1 (Critical Exponents of Gap) [T]
+Near the critical point $t = 1$ the system exhibits scale-invariant behavior:
 
-| Показатель | Определение | Значение | Закон |
+| Exponent | Definition | Value | Law |
 |---|---|---|---|
-| $\beta$ | $\sigma_{\text{Gap}}^2 \propto (1-t)^{2\beta}$ | $1/2$ | Параметр порядка |
-| $\gamma$ | $\chi \propto \lvert 1-t\rvert^{-\gamma}$ | $1$ | Восприимчивость |
-| $\nu$ | $\xi \propto \lvert 1-t\rvert^{-\nu}$ | $1/2$ | Корреляционная длина |
-| $\alpha$ | $C \propto \lvert 1-t\rvert^{-\alpha}$ | $0$ (лог.) | Теплоёмкость |
-| $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ при $t=1$ | $3$ | Критическая изотерма |
+| $\beta$ | $\sigma_{\text{Gap}}^2 \propto (1-t)^{2\beta}$ | $1/2$ | Order parameter |
+| $\gamma$ | $\chi \propto \lvert 1-t\rvert^{-\gamma}$ | $1$ | Susceptibility |
+| $\nu$ | $\xi \propto \lvert 1-t\rvert^{-\nu}$ | $1/2$ | Correlation length |
+| $\alpha$ | $C \propto \lvert 1-t\rvert^{-\alpha}$ | $0$ (log.) | Heat capacity |
+| $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ at $t=1$ | $3$ | Critical isotherm |
 :::
 
-Набор критических показателей $\{\beta, \gamma, \nu, \alpha, \delta\} = \{1/2, 1, 1/2, 0, 3\}$ — это «отпечатки пальцев» класса универсальности Ландау (среднее поле). Тот же набор описывает ферромагнитный переход в пространстве большой размерности, сверхпроводящий переход в теории Гинзбурга--Ландау, и — как оказывается — когнитивный фазовый переход в Gap-секторе.
+The set of critical exponents $\{\beta, \gamma, \nu, \alpha, \delta\} = \{1/2, 1, 1/2, 0, 3\}$ is the "fingerprint" of the Landau universality class (mean field). The same set describes the ferromagnetic transition in high-dimensional space, the superconducting transition in Ginzburg–Landau theory, and — as it turns out — the cognitive phase transition in the Gap sector.
 
-Совпадение не случайно: оно обеспечено большой эффективной размерностью (раздел 9.2).
+The coincidence is not accidental: it is ensured by the large effective dimensionality (section 9.2).
 
-### 9.2 Точность среднеполевых показателей
+### 9.2 Accuracy of Mean-Field Exponents
 
-:::tip Теорема 7.2 (Точность показателей) [Т]
-Среднеполевые критические показатели **точны** для Gap-системы:
+:::tip Theorem 7.2 (Accuracy of Exponents) [T]
+Mean-field critical exponents are **exact** for the Gap system:
 
-**(a)** Эффективная размерность $d_{\text{eff}} = 21$ (число независимых когерентностей) превышает верхнюю критическую размерность $d_c = 4$ теории $\varphi^4$.
+**(a)** Effective dimensionality $d_{\text{eff}} = 21$ (number of independent coherences) exceeds the upper critical dimensionality $d_c = 4$ of $\varphi^4$ theory.
 
-**(b)** Параметр Гинзбурга $\mathrm{Gi} \propto (d_c/d_{\text{eff}})^{d_{\text{eff}}/2} \to 0$ — флуктуационная область пренебрежимо мала.
+**(b)** Ginzburg parameter $\mathrm{Gi} \propto (d_c/d_{\text{eff}})^{d_{\text{eff}}/2} \to 0$ — the fluctuation region is negligibly small.
 :::
 
-Это мощный результат: для большинства физических систем критические показатели *не* среднеполевые — флуктуации вносят нетривиальные поправки (отсюда ренормгруппа, $\varepsilon$-разложение и т.д.). Но Gap-система живёт в $d_{\text{eff}} = 21$ измерениях — далеко за верхней критической размерностью $d_c = 4$. Параметр Гинзбурга, определяющий ширину критической области, в которой среднеполевая теория нарушается, пренебрежимо мал: $\mathrm{Gi} \sim (4/21)^{21/2} \approx 10^{-7}$.
+This is a powerful result: for most physical systems, critical exponents are *not* mean-field — fluctuations introduce non-trivial corrections (hence renormalization group, $\varepsilon$-expansion, etc.). But the Gap system lives in $d_{\text{eff}} = 21$ dimensions — far beyond the upper critical dimensionality $d_c = 4$. The Ginzburg parameter, which determines the width of the critical region in which mean-field theory breaks down, is negligibly small: $\mathrm{Gi} \sim (4/21)^{21/2} \approx 10^{-7}$.
 
-Следствие: **среднеполевая теория Gap точна** — нет необходимости в ренормализационных поправках. Критические показатели можно вычислить аналитически. Это делает Gap-теорию одной из немногих систем, допускающих *точное* описание фазового перехода.
+Consequence: **mean-field Gap theory is exact** — no renormalization corrections are needed. Critical exponents can be computed analytically. This makes Gap theory one of the few systems admitting an *exact* description of the phase transition.
 
-### 9.3 Цена просветления
+### 9.3 The Cost of Enlightenment
 
-:::info Интерпретация (Энергетика просветления) [И]
-Из [границы Ландауэра](/docs/core/dynamics/gap-thermodynamics#граница-ландауэра) и определения $T_{\text{eff}}$:
+:::info Interpretation (Energetics of Enlightenment) [I]
+From the [Landauer bound](/docs/core/dynamics/gap-thermodynamics#граница-ландауэра) and the definition of $T_{\text{eff}}$:
 
 $$
 W_{\text{enlightenment}} \geq 21 \cdot T_{\text{eff}} \cdot \ln 2 = 21 \cdot \frac{\Gamma_2}{\kappa_0} \cdot k_B T_{\text{phys}} \cdot \ln 2
 $$
 
-Для типичного мозга ($\Gamma_2/\kappa_0 \sim 10^3$, $T_{\text{phys}} = 310$ К):
+For a typical brain ($\Gamma_2/\kappa_0 \sim 10^3$, $T_{\text{phys}} = 310$ K):
 
 $$
-W_{\text{enlightenment}} \sim 6 \times 10^{-17} \text{ Дж}
+W_{\text{enlightenment}} \sim 6 \times 10^{-17} \text{ J}
 $$
 
-Ничтожно мало в абсолютных единицах, но может быть велико относительно «Gap-энергетического бюджета» системы.
+Negligibly small in absolute units, but may be large relative to the "Gap energy budget" of the system.
 :::
 
-Число $6 \times 10^{-17}$ Дж заслуживает контекста. Это примерно энергия одного фотона инфракрасного излучения. В абсолютных единицах — ничтожная величина. Но «просветление» — обнуление всех 21 Gap-компоненты — требует стереть 21 бит информации при эффективной температуре, которая в $10^3$ раз выше физической. Энергия стирания при $T_{\text{eff}}$ существенно превышает тепловой порог при $T_{\text{phys}}$, и *относительно* Gap-энергетического бюджета системы (определяемого $\kappa_0$, то есть медленной регенерацией) — эта «цена» может быть высокой.
+The number $6 \times 10^{-17}$ J deserves context. This is approximately the energy of a single infrared photon. In absolute units — a negligible quantity. But "enlightenment" — zeroing out all 21 Gap components — requires erasing 21 bits of information at an effective temperature $10^3$ times higher than physical. The erasure energy at $T_{\text{eff}}$ substantially exceeds the thermal threshold at $T_{\text{phys}}$, and *relative to* the Gap energy budget of the system (determined by $\kappa_0$, i.e. the slow regeneration) — this "cost" can be high.
 
-Отсюда следует нетривиальный вывод: **полная прозрачность термодинамически дорога**. Система не может стать полностью «просветлённой» бесплатно — она должна диссипировать энергию, пропорциональную $T_{\text{eff}}$, в окружающую среду.
+From this follows a non-trivial conclusion: **complete transparency is thermodynamically costly**. The system cannot become fully "enlightened" for free — it must dissipate energy proportional to $T_{\text{eff}}$ into the environment.
 
 ---
 
-## 10. Сводная таблица результатов {#сводная-таблица}
+## 10. Summary Table of Results {#сводная-таблица}
 
-| Результат | Формула | Статус | Ссылка |
+| Result | Formula | Status | Reference |
 |---|---|---|---|
-| Определение $T_{\text{eff}}$ | $(\Gamma_2/\kappa_0) \cdot k_B T_{\text{phys}}$ | [Т] | Теорема 1.1 |
-| $T_{\text{eff}} \neq T_{\text{phys}}$ | Эмпирический аргумент | [С] | Теорема 1.2 |
-| Категориальная формула | $(1+\|\varepsilon\|)/(1-\|\varepsilon\|) \cdot k_B T_{\text{phys}}$ | [Т] | Теорема 2.1 |
-| Критическая температура | $\mu^2 / (k_B \ln 21)$ | [Т] | Теорема 3.1 |
-| Фазовый переход | $\mathcal{G}_{\text{total}} \propto (T_c - T_{\text{eff}})^{1/2}$ | [Т] | Теорема 3.2 |
-| Расслоение Серра | $\lVert R_H\rVert_{ij} \propto \lvert\gamma_{ij}\rvert \cdot \mathrm{Gap}(i,j)$ | [Т] | Теорема 4.1 |
-| Метрика Фишера | $g^{(F)}_{(ij),(kl)}$ на $\mathcal{M}_{\text{Gap}}$ | [Т] | Теорема 5.2 |
-| Координаты фазовой диаграммы | $t = T_{\text{eff}}/T_c$, $r = \kappa/\Gamma_2$ | [Т] | Определение 6.1 |
-| Критические показатели | $\beta=1/2$, $\gamma=1$, $\nu=1/2$ | [Т] | Теорема 7.1 |
-| L-уровни и $T_c$ | Соответствие L1--L4 и $T_{\text{eff}}/T_c$ | [Г] | Раздел 3.3 |
+| Definition of $T_{\text{eff}}$ | $(\Gamma_2/\kappa_0) \cdot k_B T_{\text{phys}}$ | [T] | Theorem 1.1 |
+| $T_{\text{eff}} \neq T_{\text{phys}}$ | Empirical argument | [C] | Theorem 1.2 |
+| Categorical formula | $(1+\|\varepsilon\|)/(1-\|\varepsilon\|) \cdot k_B T_{\text{phys}}$ | [T] | Theorem 2.1 |
+| Critical temperature | $\mu^2 / (k_B \ln 21)$ | [T] | Theorem 3.1 |
+| Phase transition | $\mathcal{G}_{\text{total}} \propto (T_c - T_{\text{eff}})^{1/2}$ | [T] | Theorem 3.2 |
+| Serre fibration | $\lVert R_H\rVert_{ij} \propto \lvert\gamma_{ij}\rvert \cdot \mathrm{Gap}(i,j)$ | [T] | Theorem 4.1 |
+| Fisher metric | $g^{(F)}_{(ij),(kl)}$ on $\mathcal{M}_{\text{Gap}}$ | [T] | Theorem 5.2 |
+| Phase diagram coordinates | $t = T_{\text{eff}}/T_c$, $r = \kappa/\Gamma_2$ | [T] | Definition 6.1 |
+| Critical exponents | $\beta=1/2$, $\gamma=1$, $\nu=1/2$ | [T] | Theorem 7.1 |
+| L-levels and $T_c$ | Correspondence of L1–L4 and $T_{\text{eff}}/T_c$ | [H] | Section 3.3 |
 
 ---
 
-## Что мы узнали {#что-мы-узнали}
+## What We Have Learned {#что-мы-узнали}
 
-Подведём итог ключевых результатов:
+Let us summarize the key results:
 
-- **Эффективная температура** $T_{\text{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B T_{\text{phys}}$ — мера когнитивного «жара», определяемая отношением скорости декогеренции к скорости регенерации (Теорема 1.1 [Т]). Для живых систем $T_{\text{eff}} \gg T_{\text{phys}}$: разум живёт при температуре на порядки выше, чем тело.
-- **Категориальный вывод** через сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ даёт формулу $(1 + \|\varepsilon\|)/(1 - \|\varepsilon\|) \cdot k_B T_{\text{phys}}$, совпадающую с физической при линеаризации (Теорема 2.1 [Т]).
-- **Критическая температура** $T_c = \mu^2 / (k_B \ln 21)$ определяет точку фазового перехода: при $T_{\text{eff}} < T_c$ Gap-структура упорядочена, при $T_{\text{eff}} > T_c$ — разупорядочена (Теорема 3.1 [Т]).
-- **Фазовый переход** второго рода с параметром порядка $\mathcal{G}_{\text{total}} \propto (T_c - T_{\text{eff}})^{1/2}$, класс универсальности Ландау (Теорема 3.2 [Т]).
-- **Расслоение Серра** формализует различие внешнего (поведение) и внутреннего (переживание): при одном поведении возможны разные переживания, и топология этого множества нетривиальна (Теорема 4.1 [Т]).
-- **Метрика Фишера** на пространстве Gap-профилей определяет различимость когнитивных состояний и оптимальные терапевтические пути (Теоремы 5.1–5.3 [Т]).
-- **Критические показатели** $\{\beta, \gamma, \nu, \alpha, \delta\} = \{1/2, 1, 1/2, 0, 3\}$ — точные (не приближённые), поскольку $d_{\text{eff}} = 21 \gg d_c = 4$ (Теорема 7.2 [Т]).
-- **Координаты фазовой диаграммы** $(t, r) = (T_{\text{eff}}/T_c, \; \kappa/\Gamma_2)$ задают полную карту состояний сознания с тремя фазами.
-
----
-
-### Мост к следующей главе
-
-Мы установили, что Gap-структура может существовать в трёх фазах и что переходы между ними определяются параметрами $(t, r)$. Но остаётся ключевой вопрос: **почему когерентность вообще устойчива?** Мозг — горячая, шумная, постоянно перестраивающаяся система. Любая квантовая когерентность, казалось бы, должна разрушиться за фемтосекунды. А сознание существует десятилетиями.
-
-В [следующей главе](./topological-protection) мы покажем, что когерентность голонома защищена **пятью независимыми механизмами** — от кода Хэмминга до топологических зарядов. Это многослойная крепость, в которой каждый щит опирается на свой раздел математики, и для полного разрушения когерентности необходимо преодолеть все пять одновременно.
+- **Effective temperature** $T_{\text{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B T_{\text{phys}}$ — a measure of cognitive "heat," determined by the ratio of the decoherence rate to the regeneration rate (Theorem 1.1 [T]). For living systems $T_{\text{eff}} \gg T_{\text{phys}}$: the mind lives at a temperature orders of magnitude higher than the body.
+- **Categorical derivation** through the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ gives the formula $(1 + \|\varepsilon\|)/(1 - \|\varepsilon\|) \cdot k_B T_{\text{phys}}$, which coincides with the physical formula upon linearization (Theorem 2.1 [T]).
+- **Critical temperature** $T_c = \mu^2 / (k_B \ln 21)$ determines the phase transition point: at $T_{\text{eff}} < T_c$ the Gap structure is ordered, at $T_{\text{eff}} > T_c$ — disordered (Theorem 3.1 [T]).
+- **Second-order phase transition** with order parameter $\mathcal{G}_{\text{total}} \propto (T_c - T_{\text{eff}})^{1/2}$, Landau universality class (Theorem 3.2 [T]).
+- **Serre fibration** formalizes the distinction between external (behavior) and internal (experience): for the same behavior, different experiences are possible, and the topology of this set is non-trivial (Theorem 4.1 [T]).
+- **Fisher metric** on the space of Gap profiles determines the distinguishability of cognitive states and optimal therapeutic paths (Theorems 5.1–5.3 [T]).
+- **Critical exponents** $\{\beta, \gamma, \nu, \alpha, \delta\} = \{1/2, 1, 1/2, 0, 3\}$ — exact (not approximate), since $d_{\text{eff}} = 21 \gg d_c = 4$ (Theorem 7.2 [T]).
+- **Phase diagram coordinates** $(t, r) = (T_{\text{eff}}/T_c, \; \kappa/\Gamma_2)$ provide a complete map of consciousness states with three phases.
 
 ---
 
-## Связанные документы
+### Bridge to the Next Chapter
 
-- [Лагранжиан Gap-теории](./lagrangian) — полный 6-членный лагранжиан, потенциал $V_{\text{Gap}}$, спонтанный минимум
-- [Вариационные принципы](./variational) — уравнения движения, соотношения Онзагера, связь с FEP
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — каноническое изложение $T_{\text{eff}}$, ФДТ, граница Ландауэра, расслоение Серра
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — три фазы, бифуркации, катастрофы Уитни, критические показатели
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — определение $\mathrm{Gap}(i,j)$, дуально-аспектная интерпретация
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0--L4, метастабильность L3
-- [Фаза Берри](/docs/physics/cosmology-phys/berry-phase) — топологические фазы, связь с голономией Gap
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — категориальный вывод $\kappa_0$, сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$, критическое значение чистоты
-- [Методология измерений](./measurement) — как измерить $T_{\text{eff}}$ в реальных системах
-- [Междисциплинарный мост](./interdisciplinary) — температура на языке разных дисциплин
+We have established that the Gap structure can exist in three phases and that transitions between them are determined by the parameters $(t, r)$. But a key question remains: **why is coherence stable at all?** The brain is a hot, noisy, constantly restructuring system. Any quantum coherence would seemingly be destroyed in femtoseconds. Yet consciousness persists for decades.
+
+In the [next chapter](./topological-protection) we will show that holon coherence is protected by **five independent mechanisms** — from the Hamming code to topological charges. This is a multilayered fortress in which each shield rests on its own branch of mathematics, and for complete destruction of coherence all five must be overcome simultaneously.
+
+---
+
+## Related Documents
+
+- [Gap Theory Lagrangian](./lagrangian) — full 6-term Lagrangian, potential $V_{\text{Gap}}$, spontaneous minimum
+- [Variational Principles](./variational) — equations of motion, Onsager relations, connection to FEP
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — canonical exposition of $T_{\text{eff}}$, FDT, Landauer bound, Serre fibration
+- [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, bifurcations, Whitney catastrophes, critical exponents
+- [Gap Semantics](/docs/physics/dual-aspect/gap-semantics) — definition of $\mathrm{Gap}(i,j)$, dual-aspect interpretation
+- [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0–L4, metastability of L3
+- [Berry Phase](/docs/physics/cosmology-phys/berry-phase) — topological phases, connection to Gap holonomy
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — categorical derivation of $\kappa_0$, adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$
+- [Viability](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$, critical purity value
+- [Measurement Methodology](./measurement) — how to measure $T_{\text{eff}}$ in real systems
+- [Interdisciplinary Bridge](./interdisciplinary) — temperature in the language of different disciplines

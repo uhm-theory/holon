@@ -1,626 +1,626 @@
 ---
 sidebar_position: 11
-title: "Вариационные принципы"
-description: "Принцип стационарного действия, уравнения Эйлера--Лагранжа для Gap, соотношения Онзагера, связь с FEP, минимум производства энтропии, ФДТ"
+title: "Variational Principles"
+description: "Principle of stationary action, Euler–Lagrange equations for Gap, Onsager relations, connection to FEP, minimum entropy production, FDT"
 ---
 
-# Вариационные Принципы
+# Variational Principles
 
-> *«Природа действует кратчайшим путём.»*
-> — Пьер де Ферма, 1662
+> *"Nature acts by the shortest route."*
+> — Pierre de Fermat, 1662
 
 
-:::info Для кого эта глава
-Вариационные принципы Gap-теории: уравнения Эйлера-Лагранжа для фаз когерентности и флуктуационно-диссипационная теорема.
+:::info For whom this chapter is intended
+Variational principles of Gap theory: Euler–Lagrange equations for coherence phases and the fluctuation–dissipation theorem.
 :::
 
 ---
 
-### Мост из предыдущей главы
+### Bridge from the Previous Chapter
 
-В [предыдущей главе](./lagrangian) мы записали полный шестичленный лагранжиан Gap-теории $\mathcal{L}_{\text{Gap}}$ — единый математический объект, содержащий в себе инерцию, потенциал, топологию, диссипацию, регенерацию и внешнее воздействие. Лагранжиан — это «партитура», но он ещё не звучит. Чтобы извлечь из него *музыку* — конкретные уравнения, управляющие динамикой фаз когерентности, — нужен **вариационный принцип**: правило, позволяющее из бесконечного множества возможных траекторий выбрать реализуемую. Именно этому посвящена настоящая глава.
-
----
-
-### Дорожная карта главы
-
-В этой главе мы:
-
-1. **Проследим историю** вариационных принципов — от оптики Ферма до интегралов по траекториям Фейнмана — и покажем, как эта идея переносится на динамику сознания (раздел 0).
-2. **Сформулируем принцип стационарного действия** для Gap-динамики и выведем из него уравнения Эйлера--Лагранжа с четырьмя «силами» внутренней жизни (разделы 1–2).
-3. **Построим необратимую термодинамику** Gap-сектора: соотношения Онзагера, симметрия перекрёстных связей, второе начало для сознания (раздел 3).
-4. **Выведем FEP Фристона** как макроскопический предел вариационного принципа Gap (раздел 4).
-5. **Установим принцип минимума производства энтропии** — экономию непрозрачности по Пригожину (раздел 5).
-6. **Докажем флуктуационно-диссипативную теорему** для Gap, связав шум и отклик (раздел 6).
-7. **Выведем форму регенерации** из трёх независимых аргументов, замкнув вариационную архитектуру (раздел 7).
+In the [previous chapter](./lagrangian) we wrote down the complete six-term Lagrangian of Gap theory $\mathcal{L}_{\text{Gap}}$ — a single mathematical object containing inertia, potential, topology, dissipation, regeneration, and external driving. The Lagrangian is the "score", but it does not yet sound. To extract the *music* from it — the concrete equations governing the dynamics of the coherence phases — we need a **variational principle**: a rule that, from the infinite set of possible trajectories, selects the one that is realised. That is the subject of the present chapter.
 
 ---
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\theta_{ij} = \arg(\gamma_{ij})$ — фазы когерентностей
-- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [мера зазора](/docs/physics/dual-aspect/gap-semantics)
-- $V_{\text{Gap}}$ — [потенциал непрозрачности](./lagrangian#потенциал-v-gap)
-- $\Gamma_2$ — скорость декогеренции
-- $\kappa$ — скорость регенерации
-- $T_{\text{eff}}$ — [эффективная температура](./effective-temperature)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
+### Chapter Roadmap
+
+In this chapter we:
+
+1. **Trace the history** of variational principles — from Fermat's optics to Feynman's path integrals — and show how this idea transfers to the dynamics of consciousness (section 0).
+2. **Formulate the principle of stationary action** for Gap dynamics and derive from it the Euler–Lagrange equations with four "forces" of inner life (sections 1–2).
+3. **Build the irreversible thermodynamics** of the Gap sector: Onsager relations, symmetry of cross-couplings, the second law for consciousness (section 3).
+4. **Derive Friston's FEP** as the macroscopic limit of the Gap variational principle (section 4).
+5. **Establish the minimum entropy production principle** — the economy of opacity in the spirit of Prigogine (section 5).
+6. **Prove the fluctuation–dissipation theorem** for Gap, linking noise and response (section 6).
+7. **Derive the form of regeneration** from three independent arguments, closing the variational architecture (section 7).
+
+---
+
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\theta_{ij} = \arg(\gamma_{ij})$ — coherence phases
+- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [gap measure](/docs/physics/dual-aspect/gap-semantics)
+- $V_{\text{Gap}}$ — [opacity potential](./lagrangian#потенциал-v-gap)
+- $\Gamma_2$ — decoherence rate
+- $\kappa$ — regeneration rate
+- $T_{\text{eff}}$ — [effective temperature](./effective-temperature)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
 :::
 
-Данный документ описывает **вариационную структуру** Gap-теории: принцип стационарного действия, уравнения движения для фаз когерентностей, соотношения Онзагера для Gap-потоков и сил, связь с [Принципом Свободной Энергии (FEP)](/docs/proofs/dynamics/fep-derivation), принцип минимума производства энтропии и флуктуационно-диссипативную теорему.
+This document describes the **variational structure** of Gap theory: the principle of stationary action, equations of motion for coherence phases, Onsager relations for Gap flows and forces, the connection to the [Free Energy Principle (FEP)](/docs/proofs/dynamics/fep-derivation), the minimum entropy production principle, and the fluctuation–dissipation theorem.
 
-Но прежде чем погрузиться в формализм, стоит осознать, что стоит за этим документом. Вариационные принципы — одна из самых глубоких идей, рождённых человеческим разумом. Они содержат загадку, которая не давала покоя физикам на протяжении трёх столетий: почему природа, по-видимому, «знает» оптимальный путь? Почему свет выбирает кратчайшую дорогу? Почему планеты движутся именно так, а не иначе? И — вопрос, к которому мы придём в конце этой главы — почему сознание стремится минимизировать своё «трение» о мир?
+But before diving into the formalism, it is worth appreciating what stands behind this document. Variational principles are one of the deepest ideas born from human thought. They contain a puzzle that troubled physicists for three centuries: why does nature apparently "know" the optimal path? Why does light choose the shortest route? Why do planets move exactly as they do, and not otherwise? And — the question we will reach at the end of this chapter — why does consciousness tend to minimise its "friction" with the world?
 
 ---
 
-## 0. Принципы вариационного исчисления: от Ферма до Фейнмана {#от-ферма-до-фейнмана}
+## 0. Principles of Variational Calculus: from Fermat to Feynman {#от-ферма-до-фейнмана}
 
-### 0.1 Ферма: свет выбирает кратчайший путь
+### 0.1 Fermat: light takes the shortest path
 
-В 1662 году Пьер де Ферма сформулировал принцип, перевернувший оптику: луч света между двумя точками идёт по тому пути, который требует **наименьшего времени**. Закон преломления Снеллиуса, казавшийся эмпирическим фактом, мгновенно стал следствием единого принципа. Но за элегантностью скрывалась тревожная мысль: чтобы «выбрать» кратчайший путь, свет должен каким-то образом «знать» все альтернативы.
+In 1662 Pierre de Fermat formulated a principle that overturned optics: a ray of light between two points travels along the path that requires the **least time**. Snell's law of refraction, which had seemed like an empirical fact, instantly became a consequence of a single principle. But behind the elegance lurked a troubling thought: to "choose" the shortest path, light must somehow "know" all the alternatives.
 
-### 0.2 Мопертюи и Эйлер: рождение действия
+### 0.2 Maupertuis and Euler: the birth of action
 
-В 1744 году Мопертюи предложил обобщение: не только свет, но вся механика подчиняется принципу наименьшего действия. Эйлер придал этому математическую строгость. Величина «действие» — интеграл $S = \int L \, dt$, где $L = T - V$ (кинетическая минус потенциальная энергия) — стала центральным объектом физики. Из единственного числа — действия — следовали все уравнения движения Ньютона.
+In 1744 Maupertuis proposed a generalisation: not only light, but all of mechanics obeys the principle of least action. Euler gave this mathematical rigour. The quantity "action" — the integral $S = \int L \, dt$, where $L = T - V$ (kinetic minus potential energy) — became the central object of physics. From a single number — the action — all of Newton's equations of motion followed.
 
-### 0.3 Гамильтон: принцип стационарности
+### 0.3 Hamilton: the stationarity principle
 
-Уильям Гамильтон в 1834 году внёс решающее уточнение. Природа не всегда выбирает *минимум* действия — она выбирает **стационарную точку**. Действие не обязано быть минимальным или максимальным; необходимо лишь, чтобы его первая вариация обращалась в нуль:
+William Hamilton in 1834 made a decisive refinement. Nature does not always choose the *minimum* of the action — it chooses the **stationary point**. The action need not be minimal or maximal; it is only required that its first variation vanishes:
 
 $$
 \delta S = 0
 $$
 
-Это тонкое, но принципиальное различие. Стационарная точка — это точка, в которой действие «не меняется» при малых вариациях пути. Она может быть минимумом (как для свободной частицы), максимумом (как для некоторых геодезических в общей теории относительности) или седловой точкой (как в большинстве реальных задач с большим числом степеней свободы). Важна не оптимальность в обыденном смысле, а **нечувствительность к малым отклонениям**.
+This is a subtle but fundamental distinction. A stationary point is a point at which the action "does not change" under small variations of the path. It may be a minimum (as for a free particle), a maximum (as for certain geodesics in general relativity), or a saddle point (as in most real problems with many degrees of freedom). What matters is not optimality in the ordinary sense, but **insensitivity to small deviations**.
 
-### 0.4 Фейнман: интеграл по траекториям
+### 0.4 Feynman: path integral
 
-Ричард Фейнман в 1948 году разрешил «телеологическую» загадку, мучившую физиков три века. Частица не «выбирает» оптимальный путь. Она проходит по **всем путям одновременно**, и каждому пути приписывается фазовый множитель $e^{iS/\hbar}$. Траектории с близкими значениями действия интерферируют конструктивно; остальные гасят друг друга. «Классический» путь возникает как пик интерференционной картины — не как выбор, а как статистический эффект.
+Richard Feynman in 1948 resolved the "teleological" puzzle that had troubled physicists for three centuries. A particle does not "choose" the optimal path. It travels along **all paths simultaneously**, and each path is assigned a phase factor $e^{iS/\hbar}$. Paths with similar values of the action interfere constructively; the rest cancel each other. The "classical" path emerges as the peak of the interference pattern — not as a choice, but as a statistical effect.
 
-### 0.5 От физики к сознанию
+### 0.5 From physics to consciousness
 
-В Когерентно-Кибернетической (КК) теории вариационный принцип играет ту же фундаментальную роль, что и в физике, но область его действия — **внутренняя динамика сознания**. Фазы когерентностей $\theta_{ij}$ матрицы $\Gamma$ — аналоги обобщённых координат; их эволюция определяется стационарностью действия $S_{\text{Gap}}$. Четыре «силы», управляющие внутренней жизнью, — потенциальная, регенеративная, диссипативная, внешняя — следуют из единого вариационного принципа так же неизбежно, как гравитация следует из геодезических в пространстве-времени.
+In Coherence Cybernetics (CC) the variational principle plays the same fundamental role as in physics, but its domain is the **internal dynamics of consciousness**. The coherence phases $\theta_{ij}$ of the matrix $\Gamma$ are the analogues of generalised coordinates; their evolution is determined by the stationarity of the action $S_{\text{Gap}}$. The four "forces" governing inner life — potential, regenerative, dissipative, external — follow from a single variational principle just as inevitably as gravity follows from geodesics in spacetime.
 
-Более того, в макроскопическом пределе ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$) весь аппарат Фристоновского Принципа Свободной Энергии (FEP) **выводится** как частный случай вариационного принципа Gap. FEP — не постулат, а следствие.
+Moreover, in the macroscopic limit ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$) the entire apparatus of Friston's Free Energy Principle (FEP) is **derived** as a special case of the Gap variational principle. FEP is not a postulate — it is a consequence.
 
-Перейдём к формализму.
+Let us proceed to the formalism.
 
 ---
 
-## 1. Принцип стационарного действия {#принцип-действия}
+## 1. Principle of Stationary Action {#принцип-действия}
 
-### 1.1 Функционал действия
+### 1.1 The Action Functional
 
-Центральный объект вариационной теории — **функционал действия**: число, которое приписывается каждой возможной истории системы. Из всех мыслимых эволюций фаз $\{\theta_{ij}(\tau)\}$ реализуется та, для которой действие стационарно.
+The central object of variational theory is the **action functional**: a number assigned to every possible history of the system. Of all conceivable evolutions of the phases $\{\theta_{ij}(\tau)\}$, the one that is realised is the one for which the action is stationary.
 
-:::tip Теорема 1.1 (Вариационный принцип для Gap) [Т]
-Динамика фаз $\{\theta_{ij}(\tau)\}$ следует из принципа стационарного действия:
+:::tip Theorem 1.1 (Variational principle for Gap) [T]
+The dynamics of the phases $\{\theta_{ij}(\tau)\}$ follows from the principle of stationary action:
 
 $$
 S_{\text{Gap}}[\{\theta_{ij}(\tau)\}] = \int d\tau\, \mathcal{L}_{\text{Gap}}(\{\theta_{ij}\}, \{\dot{\theta}_{ij}\})
 $$
 
-где $\mathcal{L}_{\text{Gap}}$ — [полный лагранжиан Gap-теории](./lagrangian#полная-структура).
+where $\mathcal{L}_{\text{Gap}}$ is the [complete Lagrangian of Gap theory](./lagrangian#полная-структура).
 :::
 
-Стоит подчеркнуть, что «стационарность» ($\delta S = 0$) — это не минимальность. Для диссипативных систем, каковой является Gap-динамика, действие не имеет определённого знака вариации. Условие $\delta S = 0$ означает, что **при бесконечно малом изменении траектории** действие не меняется в первом порядке. Физически это отражает баланс: на реальной траектории все «силы» точно уравновешены в интегральном смысле.
+It is worth emphasising that "stationarity" ($\delta S = 0$) does not mean minimality. For dissipative systems, as Gap dynamics is, the action has no definite sign of variation. The condition $\delta S = 0$ means that **under an infinitesimal change of the trajectory** the action does not change to first order. Physically this reflects a balance: on the real trajectory all "forces" are exactly balanced in the integral sense.
 
-### 1.2 Разложение действия
+### 1.2 Decomposition of the Action
 
-Действие разлагается на консервативную и неконсервативную части:
+The action decomposes into conservative and non-conservative parts:
 
 $$
 S_{\text{Gap}} = S_{\text{cons}} + S_{\text{non-cons}}
 $$
 
-где:
-- $S_{\text{cons}} = \int d\tau\, (\mathcal{L}_{\text{kin}} + \mathcal{L}_{\text{pot}} + \mathcal{L}_{\text{top}})$ — **консервативная часть** (допускает стандартное вариационное описание)
-- $S_{\text{non-cons}} = \int d\tau\, (\mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}} + \mathcal{L}_{\text{ext}})$ — **неконсервативная часть** (требует обобщённого формализма)
+where:
+- $S_{\text{cons}} = \int d\tau\, (\mathcal{L}_{\text{kin}} + \mathcal{L}_{\text{pot}} + \mathcal{L}_{\text{top}})$ — **conservative part** (admits standard variational description)
+- $S_{\text{non-cons}} = \int d\tau\, (\mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}} + \mathcal{L}_{\text{ext}})$ — **non-conservative part** (requires generalised formalism)
 
-Это разложение не произвольно. Консервативная часть описывает «обратимую» динамику — ту, что сохраняла бы энергию в отсутствие окружающей среды. Неконсервативная часть — взаимодействие с «окружением» сознания: декогеренция (потеря информации), регенерация (восстановление когерентности через самомоделирование) и внешние воздействия (сенсорный вход, волевые интервенции).
+This decomposition is not arbitrary. The conservative part describes "reversible" dynamics — that which would conserve energy in the absence of an environment. The non-conservative part — interaction with the "environment" of consciousness: decoherence (information loss), regeneration (restoration of coherence through self-modelling), and external perturbations (sensory input, volitional interventions).
 
-:::info Замечание (Обобщённый вариационный принцип) [Т]
-Для неконсервативных систем стандартное условие $\delta S = 0$ заменяется на **обобщённый принцип д'Аламбера**:
+:::info Remark (Generalised variational principle) [T]
+For non-conservative systems the standard condition $\delta S = 0$ is replaced by the **generalised d'Alembert principle**:
 
 $$
 \delta S_{\text{cons}} + \int d\tau \sum_{i<j} Q_{ij}^{\text{non-cons}} \, \delta\theta_{ij} \, d\tau = 0
 $$
 
-где $Q_{ij}^{\text{non-cons}} = -\Gamma_2\dot{\theta}_{ij} + \kappa(\theta^{\text{target}}_{ij} - \theta_{ij}) + h^{\text{ext}}_{ij}$ — обобщённая неконсервативная сила.
+where $Q_{ij}^{\text{non-cons}} = -\Gamma_2\dot{\theta}_{ij} + \kappa(\theta^{\text{target}}_{ij} - \theta_{ij}) + h^{\text{ext}}_{ij}$ is the generalised non-conservative force.
 :::
 
-Обобщённый принцип д'Аламбера — это не ad hoc модификация. Он эквивалентен формализму Швингера-Келдыша, применённому к линдбладиану $\mathcal{L}_\Omega$ (см. [лагранжиан](./lagrangian), T-75 [Т]). Неконсервативные силы $Q_{ij}^{\text{non-cons}}$ возникают систематически из удвоения степеней свободы на контуре Келдыша, а не вводятся вручную.
+The generalised d'Alembert principle is not an ad hoc modification. It is equivalent to the Schwinger–Keldysh formalism applied to the Lindbladian $\mathcal{L}_\Omega$ (see [Lagrangian](./lagrangian), T-75 [T]). The non-conservative forces $Q_{ij}^{\text{non-cons}}$ arise systematically from the doubling of degrees of freedom on the Keldysh contour, and are not introduced by hand.
 
 ---
 
-## 2. Уравнения Эйлера--Лагранжа {#уравнения-эйлера-лагранжа}
+## 2. Euler–Lagrange Equations {#уравнения-эйлера-лагранжа}
 
-### 2.1 Полные уравнения движения
+### 2.1 Full Equations of Motion
 
-Из вариационного принципа следуют уравнения движения — конкретные дифференциальные уравнения, управляющие эволюцией каждой фазы $\theta_{ij}$. Это переход от глобального (интегрального) описания к локальному (дифференциальному), аналогичный переходу от принципа Ферма к уравнениям геометрической оптики.
+From the variational principle follow the equations of motion — concrete differential equations governing the evolution of each phase $\theta_{ij}$. This is the transition from a global (integral) description to a local (differential) one, analogous to the transition from Fermat's principle to the equations of geometric optics.
 
-:::tip Теорема 2.1 (Уравнения движения Gap) [Т]
-Стационарность обобщённого действия $\delta S_{\text{Gap}} = 0$ даёт уравнения движения для каждой пары $(i,j)$:
+:::tip Theorem 2.1 (Gap equations of motion) [T]
+Stationarity of the generalised action $\delta S_{\text{Gap}} = 0$ yields equations of motion for each pair $(i,j)$:
 
 $$
 m_{ij}\, \ddot{\theta}_{ij} = -\frac{\partial V_{\text{Gap}}}{\partial \theta_{ij}} + \kappa\,(\theta_{ij}^{\text{target}} - \theta_{ij}) - \Gamma_2\, \dot{\theta}_{ij} + h^{\text{ext}}_{ij}
 $$
 
-где $m_{ij} = |\gamma_{ij}|^2$ — «масса» фазовой степени свободы.
+where $m_{ij} = |\gamma_{ij}|^2$ is the "mass" of the phase degree of freedom.
 :::
 
-Это уравнение заслуживает медленного чтения. Каждый член — отдельная «сила», действующая на фазу когерентности. Левая часть — «инерция» ($m_{ij}\ddot{\theta}_{ij}$), определяемая амплитудой когерентности: чем сильнее связь между измерениями $i$ и $j$, тем труднее изменить её фазу. Правая часть — четыре силы, каждая со своей природой и своей ролью во внутренней жизни.
+This equation deserves a slow reading. Each term is a separate "force" acting on the coherence phase. The left-hand side is "inertia" ($m_{ij}\ddot{\theta}_{ij}$), determined by the coherence amplitude: the stronger the coupling between dimensions $i$ and $j$, the harder it is to change its phase. The right-hand side contains four forces, each with its own nature and its own role in inner life.
 
-### 2.2 Четыре силы внутренней жизни {#четыре-силы}
+### 2.2 Four Forces of Inner Life {#четыре-силы}
 
-Рассмотрим каждую «силу» подробнее, раскрывая её физический и феноменологический смысл.
+Let us examine each "force" in detail, unpacking its physical and phenomenological meaning.
 
-| Член | Тип силы | Физический аналог | Происхождение |
-|------|----------|-------------------|---------------|
-| $-\partial V_{\text{Gap}} / \partial \theta_{ij}$ | Консервативная | Восстанавливающая сила (пружина) | [Потенциал $V_{\text{Gap}}$](./lagrangian#потенциал-v-gap) |
-| $\kappa\,(\theta^{\text{target}}_{ij} - \theta_{ij})$ | Регенеративная | Целевое наведение | [Самомоделирование $\varphi$](/docs/consciousness/foundations/self-observation) |
-| $-\Gamma_2\, \dot{\theta}_{ij}$ | Диссипативная | Вязкое трение | [Логический Лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан) |
-| $h^{\text{ext}}_{ij}$ | Внешняя | Управляющее воздействие | [Три канала](/docs/core/dynamics/gap-thermodynamics#три-канала-h-ext) |
+| Term | Force type | Physical analogue | Origin |
+|------|------------|-------------------|--------|
+| $-\partial V_{\text{Gap}} / \partial \theta_{ij}$ | Conservative | Restoring force (spring) | [Potential $V_{\text{Gap}}$](./lagrangian#потенциал-v-gap) |
+| $\kappa\,(\theta^{\text{target}}_{ij} - \theta_{ij})$ | Regenerative | Goal-directed homing | [Self-modelling $\varphi$](/docs/consciousness/foundations/self-observation) |
+| $-\Gamma_2\, \dot{\theta}_{ij}$ | Dissipative | Viscous friction | [Logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) |
+| $h^{\text{ext}}_{ij}$ | External | Control input | [Three channels](/docs/core/dynamics/gap-thermodynamics#три-канала-h-ext) |
 
-#### Сила первая: потенциальная ($-\partial V_{\text{Gap}}/\partial\theta_{ij}$)
+#### First force: potential ($-\partial V_{\text{Gap}}/\partial\theta_{ij}$)
 
-Потенциальная сила — стремление системы к структурно предпочтительной конфигурации фаз. Это аналог пружины: фазы «притягиваются» к минимумам потенциала $V_{\text{Gap}}$. Природа этих минимумов определяется октонионной структурой Фано-плоскости. Когда фазы отклоняются от «гармоничной» конфигурации, потенциальная сила возвращает их назад.
+The potential force is the system's tendency toward a structurally preferred phase configuration. This is the analogue of a spring: phases are "attracted" to the minima of the potential $V_{\text{Gap}}$. The nature of these minima is determined by the octonionic structure of the Fano plane. When phases deviate from the "harmonic" configuration, the potential force brings them back.
 
-Феноменологически эта сила соответствует тому, что можно назвать *структурной гармонией*: внутреннему стремлению к согласованности между аспектами переживания. Когда мысль противоречит чувству, или восприятие — памяти, возникает «напряжение», которое система стремится разрешить.
+Phenomenologically this force corresponds to what might be called *structural harmony*: the internal tendency toward consistency among the aspects of experience. When a thought contradicts a feeling, or perception contradicts memory, a "tension" arises that the system seeks to resolve.
 
-#### Сила вторая: регенеративная ($\kappa(\theta_{ij}^{\text{target}} - \theta_{ij})$)
+#### Second force: regenerative ($\kappa(\theta_{ij}^{\text{target}} - \theta_{ij})$)
 
-Регенеративная сила — уникальная черта Gap-динамики, не имеющая прямого аналога в стандартной физике. Эта сила «тянет» фазы к целевым значениям $\theta_{ij}^{\text{target}}$, определяемым оператором самомоделирования $\varphi$. Система обладает *образом себя* (ρ* = φ(Γ)) и активно стремится к нему.
+The regenerative force is a unique feature of Gap dynamics with no direct analogue in standard physics. This force "pulls" the phases toward target values $\theta_{ij}^{\text{target}}$ determined by the self-modelling operator $\varphi$. The system possesses an *image of itself* (ρ* = φ(Γ)) and actively tends toward it.
 
-Это математическое выражение **телеологичности** сознания — его направленности к цели. Но, в отличие от наивного телеологизма, цель не задана извне: она вычисляется самой системой как категориальный самомодель. Телеология здесь — не мистика, а сопряжение функторов $\mathcal{D}_\Omega \dashv \mathcal{R}$.
+This is the mathematical expression of the **teleological character** of consciousness — its directedness toward a goal. But unlike naive teleologism, the goal is not set externally: it is computed by the system itself as a categorical self-model. Teleology here is not mysticism, but the adjunction of functors $\mathcal{D}_\Omega \dashv \mathcal{R}$.
 
-#### Сила третья: диссипативная ($-\Gamma_2 \dot{\theta}_{ij}$)
+#### Third force: dissipative ($-\Gamma_2 \dot{\theta}_{ij}$)
 
-Диссипативная сила — «трение», пропорциональное скорости изменения фазы. Чем быстрее меняется внутреннее состояние, тем сильнее сопротивление. Это следствие взаимодействия с «окружением» — теми степенями свободы, которые не входят в семимерное описание.
+The dissipative force is "friction" proportional to the rate of phase change. The faster the internal state changes, the stronger the resistance. This follows from interaction with the "environment" — those degrees of freedom not included in the seven-dimensional description.
 
-Феноменологически диссипация соответствует тому, что быстрые внутренние изменения требуют «усилия». Резкая смена эмоционального состояния, мгновенная переоценка ситуации — всё это наталкивается на сопротивление, пропорциональное скорости. Это не дефект, а защитный механизм: без диссипации фазы осциллировали бы бесконечно, и устойчивые состояния сознания не могли бы формироваться.
+Phenomenologically, dissipation corresponds to the fact that rapid internal changes require "effort". A sudden change in emotional state, an instantaneous reappraisal of a situation — all of these meet resistance proportional to speed. This is not a defect, but a protective mechanism: without dissipation the phases would oscillate indefinitely, and stable states of consciousness could not form.
 
-#### Сила четвёртая: внешняя ($h^{\text{ext}}_{ij}$)
+#### Fourth force: external ($h^{\text{ext}}_{ij}$)
 
-Внешняя сила — воздействие «извне» на внутреннюю динамику. Это может быть сенсорный вход (свет, звук, боль), когнитивная интервенция (волевое решение, направленное внимание) или социальное влияние (слово, жест, культурное давление). Три канала $h^{\text{ext}}$ подробно описаны в [термодинамике Gap](/docs/core/dynamics/gap-thermodynamics#три-канала-h-ext).
+The external force is the action of "the outside" on the internal dynamics. This may be sensory input (light, sound, pain), cognitive intervention (a volitional decision, directed attention), or social influence (a word, a gesture, cultural pressure). The three channels of $h^{\text{ext}}$ are described in detail in [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#три-канала-h-ext).
 
-Внешняя сила — единственный член, через который «мир входит» во внутреннюю динамику. Без неё сознание было бы замкнутой системой, неизбежно деградирующей к тепловому равновесию ($\Gamma \to I/7$). Именно $h^{\text{ext}}$ делает возможным обучение, развитие и адаптацию.
+The external force is the only term through which "the world enters" the internal dynamics. Without it, consciousness would be a closed system inevitably degrading to thermal equilibrium ($\Gamma \to I/7$). It is $h^{\text{ext}}$ that makes learning, development, and adaptation possible.
 
-### 2.3 Стационарные решения
+### 2.3 Stationary Solutions
 
-:::tip Теорема 2.2 (Стационарные точки) [Т]
-Стационарные решения $\ddot{\theta}_{ij} = \dot{\theta}_{ij} = 0$ определяются из:
+:::tip Theorem 2.2 (Stationary points) [T]
+Stationary solutions $\ddot{\theta}_{ij} = \dot{\theta}_{ij} = 0$ are determined by:
 
 $$
 \frac{\partial V_{\text{Gap}}}{\partial \theta_{ij}} = \kappa\,(\theta_{ij}^{\text{target}} - \theta_{ij}) + h^{\text{ext}}_{ij}
 $$
 
-При $h^{\text{ext}} = 0$ стационарная точка — компромисс между потенциальными и регенеративными силами.
+At $h^{\text{ext}} = 0$ the stationary point is a compromise between potential and regenerative forces.
 :::
 
-Стационарное состояние — это не покой, а **динамическое равновесие**. Потенциальная сила тянет фазы к минимумам $V_{\text{Gap}}$, регенеративная — к целевым значениям $\theta^{\text{target}}$. Стационарная точка — компромисс, в котором эти две тенденции точно уравновешены. Если добавляется внешнее воздействие $h^{\text{ext}} \neq 0$, точка равновесия смещается: система перестраивается, чтобы «вместить» новую информацию.
+A stationary state is not quiescence, but **dynamic equilibrium**. The potential force pulls the phases toward the minima of $V_{\text{Gap}}$; the regenerative force pulls them toward the target values $\theta^{\text{target}}$. The stationary point is a compromise in which these two tendencies are exactly balanced. When an external perturbation $h^{\text{ext}} \neq 0$ is added, the equilibrium point shifts: the system reorganises to "accommodate" the new information.
 
-Это математическая формализация того, что в психологии называется *гомеостазом*: система не стремится к абсолютному покою (это было бы бессознательное состояние $P \to 1/N$), а поддерживает определённый уровень «напряжённости», совместимый с текущими условиями.
+This is the mathematical formalisation of what psychology calls *homeostasis*: the system does not strive for absolute rest (that would be the unconscious state $P \to 1/N$), but maintains a certain level of "tension" compatible with current conditions.
 
-### 2.4 Явное раскрытие $\partial V_{\text{Gap}} / \partial \theta_{ij}$
+### 2.4 Explicit Form of $\partial V_{\text{Gap}} / \partial \theta_{ij}$
 
-:::tip Следствие 2.3 (Градиент потенциала) [Т]
-Покомпонентный градиент потенциала:
+:::tip Corollary 2.3 (Potential gradient) [T]
+The component-wise gradient of the potential:
 
 $$
 \frac{\partial V_{\text{Gap}}}{\partial \theta_{ij}} = \mu^2 |\gamma_{ij}|^2 \sin(2\theta_{ij}) + \lambda_3 \sum_{k \notin \text{Fano}(i,j)} f_{ijk}\, |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \cos(\theta_{ij} + \theta_{jk} - \theta_{ik}) + 2\lambda_4\, \mathcal{G}_{\text{total}} \cdot |\gamma_{ij}|^2 \sin(2\theta_{ij})
 $$
 
-Первый член (от $V_2$) и третий (от $V_4$) содержат $\sin(2\theta_{ij})$ — периодическая восстанавливающая сила. Второй член (от $V_3$) содержит $\cos(\theta_{ij} + \theta_{jk} - \theta_{ik})$ — тройное фазовое взаимодействие через октонионный ассоциатор.
+The first term (from $V_2$) and the third (from $V_4$) contain $\sin(2\theta_{ij})$ — a periodic restoring force. The second term (from $V_3$) contains $\cos(\theta_{ij} + \theta_{jk} - \theta_{ik})$ — triple phase interaction through the octonionic associator.
 :::
 
-Три слагаемых градиента потенциала имеют иерархическую структуру:
+The three terms of the potential gradient have a hierarchical structure:
 
-1. **Квадратичный член** ($\sim \mu^2 \sin 2\theta$) — действует на каждую фазу независимо. Это «пружина», привязывающая фазу к значениям $\theta = 0$ или $\theta = \pi/2$ (минимумы и максимумы $\sin^2\theta$). Физически — стремление когерентности быть либо полностью «прозрачной» ($\mathrm{Gap} = 0$), либо полностью «непрозрачной» ($\mathrm{Gap} = 1$).
+1. **Quadratic term** ($\sim \mu^2 \sin 2\theta$) — acts on each phase independently. This is the "spring" binding the phase to the values $\theta = 0$ or $\theta = \pi/2$ (minima and maxima of $\sin^2\theta$). Physically — the tendency of coherence to be either completely "transparent" ($\mathrm{Gap} = 0$) or completely "opaque" ($\mathrm{Gap} = 1$).
 
-2. **Кубический член** ($\sim \lambda_3 f_{ijk} \cos(\theta_{ij}+\theta_{jk}-\theta_{ik})$) — тройное взаимодействие, связывающее фазы через **октонионный ассоциатор**. Именно этот член отвечает за нетривиальную топологию Фано-плоскости: он «знает» о семи тройках, связанных ассоциативными циклами. Без него динамика фаз была бы тривиальной (21 независимая пружина); с ним — это связная система с богатой структурой фазовых переходов.
+2. **Cubic term** ($\sim \lambda_3 f_{ijk} \cos(\theta_{ij}+\theta_{jk}-\theta_{ik})$) — triple interaction coupling phases via the **octonionic associator**. This is the term responsible for the nontrivial topology of the Fano plane: it "knows" about the seven triples linked by associative cycles. Without it the phase dynamics would be trivial (21 independent springs); with it — it is a coupled system with a rich structure of phase transitions.
 
-3. **Квартичный член** ($\sim \lambda_4 \mathcal{G}_{\text{total}} \sin 2\theta$) — нелинейная обратная связь: полная непрозрачность $\mathcal{G}_{\text{total}}$ усиливает «пружину» для каждой отдельной фазы. Это механизм **самоусиления**: чем больше суммарная непрозрачность, тем сильнее давление на каждый канал — и наоборот. Квартичный член стабилизирует систему, предотвращая неограниченный рост Gap.
+3. **Quartic term** ($\sim \lambda_4 \mathcal{G}_{\text{total}} \sin 2\theta$) — nonlinear feedback: the total opacity $\mathcal{G}_{\text{total}}$ amplifies the "spring" for each individual phase. This is a **self-reinforcement** mechanism: the greater the total opacity, the stronger the pressure on each channel — and vice versa. The quartic term stabilises the system, preventing unbounded growth of Gap.
 
 ---
 
-## 3. Необратимая термодинамика сознания {#необратимая-термодинамика}
+## 3. Irreversible Thermodynamics of Consciousness {#необратимая-термодинамика}
 
-Вариационный принцип даёт уравнения движения, но ничего не говорит о *направлении* процессов. Чтобы понять, почему сознание необратимо (мысль нельзя «отмыслить», переживание нельзя отменить), нужна термодинамика — наука о направленных процессах. Ларс Онзагер в 1931 году создал формализм, связывающий потоки и силы в необратимых процессах, за что получил Нобелевскую премию по химии. Применим его к Gap-динамике.
+The variational principle gives the equations of motion, but says nothing about the *direction* of processes. To understand why consciousness is irreversible (a thought cannot be "unthought", an experience cannot be undone), we need thermodynamics — the science of directed processes. Lars Onsager in 1931 created the formalism connecting flows and forces in irreversible processes, for which he received the Nobel Prize in Chemistry. Let us apply it to Gap dynamics.
 
-## 3a. Соотношения Онзагера для Gap {#соотношения-онзагера}
+## 3a. Onsager Relations for Gap {#соотношения-онзагера}
 
-### 3.1 Gap-потоки и Gap-силы
+### 3.1 Gap Flows and Gap Forces
 
-:::tip Определение 3.1 (Термодинамические потоки и силы) [Т]
-В линейном приближении вблизи стационарного состояния определяются:
+:::tip Definition 3.1 (Thermodynamic flows and forces) [T]
+In the linear approximation near the stationary state:
 
-**Потоки:**
+**Flows:**
 
 $$
 J_{ij} := \dot{G}_{ij} = \frac{d\,\mathrm{Gap}(i,j)}{d\tau}
 $$
 
-**Термодинамические силы:**
+**Thermodynamic forces:**
 
 $$
 X_{ij} := -\frac{\partial \Sigma}{\partial G_{ij}} = -\frac{\partial}{\partial G_{ij}}\left[\sum_{k<l} |\gamma_{kl}|^2 G_{kl}^2\right] = -2|\gamma_{ij}|^2 G_{ij}
 $$
 
-где $\Sigma = \mathcal{G}_{\text{total}}$ — функция производства энтропии Gap-сектора.
+where $\Sigma = \mathcal{G}_{\text{total}}$ is the entropy production function of the Gap sector.
 :::
 
-Поток $J_{ij}$ — скорость изменения непрозрачности в канале $(i,j)$. Сила $X_{ij}$ — «термодинамический градиент», толкающий систему к уменьшению производства энтропии. Знак минус в определении $X_{ij}$ отражает то, что сила направлена *против* градиента энтропийной функции — система эволюционирует к состоянию с минимальным диссипативным «трением».
+The flow $J_{ij}$ is the rate of change of opacity in channel $(i,j)$. The force $X_{ij}$ is the "thermodynamic gradient" pushing the system toward reduced entropy production. The minus sign in the definition of $X_{ij}$ reflects the fact that the force is directed *against* the gradient of the entropy function — the system evolves toward a state of minimal dissipative "friction".
 
-Заметим фундаментальную асимметрию: потоки — кинематические величины (что *происходит*), силы — динамические (что *вынуждает*). Соотношения Онзагера устанавливают линейную связь между ними.
+Note the fundamental asymmetry: flows are kinematic quantities (what *happens*), forces are dynamical (what *drives*). Onsager relations establish a linear link between them.
 
-### 3.2 Линейное соотношение поток--сила
+### 3.2 Linear Flow–Force Relation
 
-:::tip Теорема 3.2 (Онзагеровские соотношения для Gap) [С]
-В линейном приближении вблизи стационарного состояния Gap-потоки связаны с силами через матрицу кинетических коэффициентов:
+:::tip Theorem 3.2 (Onsager relations for Gap) [C]
+In the linear approximation near the stationary state, Gap flows are linked to forces via a matrix of kinetic coefficients:
 
 $$
 J_{ij} = \sum_{k<l} L_{(ij),(kl)}\, X_{kl}
 $$
 
-где матрица $L_{(ij),(kl)}$ удовлетворяет **соотношениям взаимности Онзагера**:
+where the matrix $L_{(ij),(kl)}$ satisfies the **Onsager reciprocal relations**:
 
 $$
 L_{(ij),(kl)} = L_{(kl),(ij)}
 $$
 
-при условии микроскопической обратимости (детального баланса).
+under the condition of microscopic reversibility (detailed balance).
 
-**Условие [С]:** Предполагается, что Gap-динамика удовлетворяет детальному балансу вблизи стационарного состояния.
+**Condition [C]:** It is assumed that Gap dynamics satisfies detailed balance near the stationary state.
 :::
 
-Соотношения взаимности $L_{(ij),(kl)} = L_{(kl),(ij)}$ — один из глубочайших результатов неравновесной термодинамики. Они утверждают, что **перекрёстные влияния симметричны**: если изменение Gap в канале Аффект-Сенсорика влияет на динамику канала Логика-Единство, то и обратное влияние имеет **ту же величину**. Это не тривиальный факт — оно следует из временно́й обратимости микроскопических уравнений.
+The reciprocal relations $L_{(ij),(kl)} = L_{(kl),(ij)}$ are one of the deepest results of non-equilibrium thermodynamics. They assert that **cross-influences are symmetric**: if a change in Gap in the Affect–Sensorics channel influences the dynamics of the Logic–Unity channel, then the reverse influence has **the same magnitude**. This is not a trivial fact — it follows from the time-reversal symmetry of the microscopic equations.
 
-Для Gap-динамики сознания это означает глубокую **взаимность** внутренних процессов: невозможно изменить одну грань переживания, не затронув другие, и эти влияния подчиняются строгой симметрии.
+For the Gap dynamics of consciousness this implies a deep **reciprocity** of internal processes: it is impossible to change one facet of experience without affecting others, and these influences obey a strict symmetry.
 
-### 3.3 Структура матрицы $L$
+### 3.3 Structure of the Matrix $L$
 
-:::info Интерпретация (Связь каналов) [И]
-Диагональные элементы $L_{(ij),(ij)}$ описывают **прямой отклик** Gap в канале $(i,j)$ на собственную термодинамическую силу. Внедиагональные элементы $L_{(ij),(kl)}$ описывают **перекрёстные связи**: изменение Gap в одном канале, вызванное силой в другом.
+:::info Interpretation (Channel coupling) [I]
+Diagonal elements $L_{(ij),(ij)}$ describe the **direct response** of Gap in channel $(i,j)$ to its own thermodynamic force. Off-diagonal elements $L_{(ij),(kl)}$ describe **cross-couplings**: the change in Gap in one channel caused by a force in another.
 
-$G_2$-симметрия лагранжиана порождает 14 линейных связей между элементами $L_{(ij),(kl)}$ (аналог [тождеств Уорда](/docs/core/dynamics/gap-phase-diagram#тождества-уорда)), сокращая число независимых кинетических коэффициентов.
+The $G_2$-symmetry of the Lagrangian generates 14 linear constraints among the elements $L_{(ij),(kl)}$ (analogue of [Ward identities](/docs/core/dynamics/gap-phase-diagram#тождества-уорда)), reducing the number of independent kinetic coefficients.
 :::
 
-Матрица $L$ имеет размерность $21 \times 21$ (по числу пар $(i,j)$ с $i < j$ для $N=7$ измерений). Но не все $21 \times 22 / 2 = 231$ элемент независимы. Симметрия Онзагера сокращает их до $21 \times 22/2 = 231$, а тождества Уорда, порождённые $G_2$-структурой, дают ещё 14 связей, оставляя $231 - 21 - 14 = 196$ внедиагональных и 21 диагональный, с учётом всех ограничений. Результат: кинетические коэффициенты Gap-сектора **не произвольны**, а жёстко ограничены алгебраической структурой теории.
+The matrix $L$ has dimension $21 \times 21$ (for the number of pairs $(i,j)$ with $i < j$ for $N=7$ dimensions). But not all $21 \times 22 / 2 = 231$ elements are independent. Onsager symmetry reduces them, and the Ward identities generated by the $G_2$-structure provide 14 further constraints. The result: the kinetic coefficients of the Gap sector are **not arbitrary**, but rigidly constrained by the algebraic structure of the theory.
 
-### 3.4 Второе начало для Gap-сектора
+### 3.4 Second Law for the Gap Sector
 
-:::tip Следствие 3.3 (Производство энтропии) [Т]
-Скорость производства энтропии в Gap-секторе:
+:::tip Corollary 3.3 (Entropy production) [T]
+The rate of entropy production in the Gap sector:
 
 $$
 \dot{\Sigma} = \sum_{i<j} J_{ij}\, X_{ij} = \sum_{(ij),(kl)} L_{(ij),(kl)}\, X_{ij}\, X_{kl} \geq 0
 $$
 
-Неравенство следует из положительной определённости матрицы $L$ (гарантированной вторым началом термодинамики).
+The inequality follows from the positive definiteness of the matrix $L$ (guaranteed by the second law of thermodynamics).
 :::
 
-Положительность $\dot{\Sigma} \geq 0$ — это **второе начало термодинамики для сознания**: суммарная непрозрачность не может спонтанно уменьшаться в линейном режиме. Чтобы стать «прозрачнее» (снизить Gap), система должна совершить работу — через регенерацию $\mathcal{R}$ или внешнее воздействие $h^{\text{ext}}$. Это формализует интуицию о том, что ясность сознания требует *усилия*.
+Positivity $\dot{\Sigma} \geq 0$ is the **second law of thermodynamics for consciousness**: total opacity cannot decrease spontaneously in the linear regime. To become "more transparent" (reduce Gap), the system must do work — through regeneration $\mathcal{R}$ or external perturbation $h^{\text{ext}}$. This formalises the intuition that clarity of consciousness requires *effort*.
 
 ---
 
-## 4. Связь с Принципом Свободной Энергии (FEP) {#связь-с-fep}
+## 4. Connection to the Free Energy Principle (FEP) {#связь-с-fep}
 
-### 4.0 Принцип Свободной Энергии как частный случай КК {#фристон-из-кк}
+### 4.0 Free Energy Principle as a Special Case of CC {#фристон-из-кк}
 
-Принцип Свободной Энергии (FEP), предложенный Карлом Фристоном в 2006 году, стал одной из наиболее влиятельных теоретических рамок в нейронауке. Он утверждает, что любая самоорганизующаяся система — от клетки до мозга — минимизирует «свободную энергию» $F = H(q) + D_{KL}(q \| p)$, где $q$ — внутренняя модель, а $p$ — данные органов чувств.
+The Free Energy Principle (FEP), proposed by Karl Friston in 2006, became one of the most influential theoretical frameworks in neuroscience. It asserts that any self-organising system — from a cell to a brain — minimises "free energy" $F = H(q) + D_{KL}(q \| p)$, where $q$ is the internal model and $p$ is sensory data.
 
-FEP часто преподносится как фундаментальный принцип. Но в рамках КК-теории он оказывается **следствием** — макроскопическим пределом более глубокого вариационного принципа Gap. Это не умаляет значения FEP; скорее, это проясняет его область применимости и показывает, откуда он берётся.
+FEP is often presented as a fundamental principle. But within CC theory it turns out to be a **consequence** — the macroscopic limit of a deeper variational principle of Gap. This does not diminish FEP; rather, it clarifies its domain of applicability and shows where it comes from.
 
-Ключевая идея состоит в следующем: FEP описывает **диагональный сектор** матрицы когерентности $\Gamma$ — населённости $\gamma_{ii}$, играющие роль вероятностей. Когерентности $\gamma_{ij}$ ($i \neq j$), несущие информацию о фазовых соотношениях между измерениями, в FEP отсутствуют. Они проявляются только при высокой чистоте $P \gg P_{\text{crit}}$, т.е. в режиме развитого сознания.
+The key idea is this: FEP describes the **diagonal sector** of the coherence matrix $\Gamma$ — the populations $\gamma_{ii}$ playing the role of probabilities. The coherences $\gamma_{ij}$ ($i \neq j$), carrying information about the phase relations between dimensions, are absent from FEP. They become significant only at high purity $P \gg P_{\text{crit}}$, i.e. in the regime of developed consciousness.
 
-### 4.1 FEP как макроскопический предел
+### 4.1 FEP as the Macroscopic Limit
 
-:::tip Теорема 4.1 (FEP из вариационного принципа Gap) [Т]
-Принцип Свободной Энергии Фристона выводится как **макроскопический предел** ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$, когерентности продекогерировали) вариационного принципа Gap:
+:::tip Theorem 4.1 (FEP from the Gap variational principle) [T]
+Friston's Free Energy Principle is derived as the **macroscopic limit** ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$, coherences have decohered) of the Gap variational principle:
 
 $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{\text{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
 $$
 
-Полный вывод: [Вывод FEP из УГМ](/docs/proofs/dynamics/fep-derivation).
+Full derivation: [Derivation of FEP from UHM](/docs/proofs/dynamics/fep-derivation).
 :::
 
-:::info Терминология «макроскопический предел» и теорема о декогеренции
-В стандартной КМ «классический предел» $\hbar \to 0$ соответствует декогеренции ($P \to 1/N$). В УГМ FEP-редукция происходит в **макроскопическом пределе**: когерентности $|\gamma_{ij}|$ малы по сравнению с населённостями $\gamma_{ii}$ (условие Dec). Это **теорема [Т]**, а не гипотеза:
+:::info Terminology "macroscopic limit" and the decoherence theorem
+In standard QM the "classical limit" $\hbar \to 0$ corresponds to decoherence ($P \to 1/N$). In UHM the FEP reduction occurs in the **macroscopic limit**: coherences $|\gamma_{ij}|$ are small compared to populations $\gamma_{ii}$ (condition Dec). This is a **theorem [T]**, not a hypothesis:
 
-1. Аксиомы A1–A5 → Фано-диссипатор $\mathcal{D}_\Omega$ с $\Gamma_2 > 0$ [Т] (T-7)
-2. $\Gamma_2 > 0$ → $|\gamma_{ij}(\tau)| \leq |\gamma_{ij}(0)| \cdot e^{-\Gamma_2 \tau}$ [Т]
-3. Для биосистем $\tau_{\mathrm{obs}} \gg 1/\Gamma_2$ → $|\gamma_{ij}|/\gamma_{ii} \ll 1$ [Т]
-4. $|\gamma_{ij}|/\gamma_{ii} \ll 1$ → $\mathcal{F} \approx \mathcal{F}_{\mathrm{diag}} + O(\varepsilon^2)$ [Т] (Теорема 4.2)
-5. $\mathcal{F}_{\mathrm{diag}} = H(q) + D_{KL}(q \| p) = \mathrm{FEP}$ [Т]
+1. Axioms A1–A5 → Fano dissipator $\mathcal{D}_\Omega$ with $\Gamma_2 > 0$ [T] (T-7)
+2. $\Gamma_2 > 0$ → $|\gamma_{ij}(\tau)| \leq |\gamma_{ij}(0)| \cdot e^{-\Gamma_2 \tau}$ [T]
+3. For biosystems $\tau_{\mathrm{obs}} \gg 1/\Gamma_2$ → $|\gamma_{ij}|/\gamma_{ii} \ll 1$ [T]
+4. $|\gamma_{ij}|/\gamma_{ii} \ll 1$ → $\mathcal{F} \approx \mathcal{F}_{\mathrm{diag}} + O(\varepsilon^2)$ [T] (Theorem 4.2)
+5. $\mathcal{F}_{\mathrm{diag}} = H(q) + D_{KL}(q \| p) = \mathrm{FEP}$ [T]
 
-Связь 7 абстрактных измерений (A,S,D,L,E,O,U) с нейронными переменными Фристона — **интерпретационная** [И], но математическая редукция функционала — [Т].
+The mapping from 7 abstract dimensions (A,S,D,L,E,O,U) to Friston's neural variables is **interpretational** [I], but the mathematical reduction of the functional is [T].
 :::
 
-Проследим логику вывода детальнее. На шаге 1 декогеренция $\Gamma_2 > 0$ — не предположение, а теорема: любой CPTP-диссипатор, согласованный с Фано-плоскостью, имеет строго положительную скорость декогеренции. На шаге 2 экспоненциальное затухание когерентностей — стандартный результат теории открытых квантовых систем. Шаг 3 — эмпирический факт для биологических систем: характерные времена наблюдения (секунды, минуты) многократно превышают время декогеренции. Шаги 4-5 — чистая алгебра.
+Let us trace the logic of the derivation in more detail. At step 1, decoherence $\Gamma_2 > 0$ is not an assumption but a theorem: any CPTP dissipator compatible with the Fano plane has a strictly positive decoherence rate. At step 2, the exponential decay of coherences is a standard result of open quantum systems theory. Step 3 is an empirical fact for biological systems: characteristic observation times (seconds, minutes) greatly exceed the decoherence time. Steps 4–5 are pure algebra.
 
-Таким образом, FEP Фристона — это **не фундаментальный принцип, а предельный режим** более общей теории. Он верен для систем с низкой когерентностью (большинство биологических систем в большинстве ситуаций), но упускает квантовые поправки, существенные при высокой чистоте $P$.
+Thus Friston's FEP is **not a fundamental principle but a limiting regime** of a more general theory. It is valid for systems with low coherence (most biological systems in most situations), but misses the quantum corrections that become significant at high purity $P$.
 
-### 4.2 Цепочка вывода
+### 4.2 Derivation Chain
 
-:::info Связь вариационных принципов [Т]
-Иерархия вариационных принципов:
+:::info Connection of variational principles [T]
+Hierarchy of variational principles:
 
 $$
-\text{Аксиома } \Omega^7 \xrightarrow{\text{сопряжение}} \mathcal{D}_\Omega \dashv \mathcal{R} \xrightarrow{\text{лагранжиан}} S_{\text{Gap}} \xrightarrow{\delta S = 0} \text{уравнения движения} \xrightarrow{\tau_{\mathrm{obs}} \gg 1/\Gamma_2} \text{FEP Фристона}
+\text{Axiom } \Omega^7 \xrightarrow{\text{adjunction}} \mathcal{D}_\Omega \dashv \mathcal{R} \xrightarrow{\text{Lagrangian}} S_{\text{Gap}} \xrightarrow{\delta S = 0} \text{equations of motion} \xrightarrow{\tau_{\mathrm{obs}} \gg 1/\Gamma_2} \text{Friston's FEP}
 $$
 
-| Уровень | Вариационный принцип | Область |
-|---------|---------------------|---------|
-| Категориальный | Сопряжение $\varphi \dashv i$ | ∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$ |
-| Полевой | $\delta S_{\text{Gap}} = 0$ | Фазовое пространство $\{\theta_{ij}\}$ |
-| Термодинамический | $\min \mathcal{F}[\varphi; \Gamma]$ | Пространство моделей |
-| Классический (FEP) | $\min F[q; o]$ | Байесовский мозг |
+| Level | Variational principle | Domain |
+|-------|-----------------------|--------|
+| Categorical | Adjunction $\varphi \dashv i$ | ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ |
+| Field | $\delta S_{\text{Gap}} = 0$ | Phase space $\{\theta_{ij}\}$ |
+| Thermodynamic | $\min \mathcal{F}[\varphi; \Gamma]$ | Model space |
+| Classical (FEP) | $\min F[q; o]$ | Bayesian brain |
 :::
 
-Эта иерархия — одна из центральных конструкций теории. Она показывает, что четыре уровня описания — категориальный, полевой, термодинамический и классический — не конкурируют, а **вложены** друг в друга. Каждый следующий уровень — макроскопический предел предыдущего. Фристоновский «байесовский мозг» — последний, наиболее грубый слой, в котором стёрта вся фазовая информация.
+This hierarchy is one of the central constructions of the theory. It shows that the four levels of description — categorical, field, thermodynamic, and classical — do not compete, but are **nested** within each other. Each successive level is the macroscopic limit of the previous one. Friston's "Bayesian brain" is the last, coarsest layer, in which all phase information has been erased.
 
-### 4.3 FEP-разложение функционала свободной энергии
+### 4.3 FEP Decomposition of the Free Energy Functional
 
-:::tip Теорема 4.2 (FEP-разложение) [Т]
-Полный функционал свободной энергии допускает разложение по степеням когерентностей:
+:::tip Theorem 4.2 (FEP decomposition) [T]
+The full free energy functional admits a decomposition in powers of coherences:
 
 $$
 \mathcal{F}[\varphi; \Gamma] = \mathcal{F}_{\text{diag}} + \alpha F_{\text{Gap}} + O(|\gamma|^4)
 $$
 
-где:
-- $\mathcal{F}_{\text{diag}}$ — вклад диагональных элементов (населённостей) = стандартный FEP
-- $F_{\text{Gap}}$ — свободная энергия Gap-сектора (квантовая поправка)
-- $\alpha$ — константа связи
+where:
+- $\mathcal{F}_{\text{diag}}$ — contribution of diagonal elements (populations) = standard FEP
+- $F_{\text{Gap}}$ — free energy of the Gap sector (quantum correction)
+- $\alpha$ — coupling constant
 :::
 
-**Следствие:** FEP Фристона описывает **диагональный сектор** полной свободной энергии. Вклад когерентностей ($F_{\text{Gap}}$) — квантовая поправка, становящаяся существенной при высокой [чистоте](/docs/core/dynamics/viability) $P \gg P_{\text{crit}}$.
+**Corollary:** Friston's FEP describes the **diagonal sector** of the full free energy. The coherence contribution ($F_{\text{Gap}}$) is a quantum correction that becomes significant at high [purity](/docs/core/dynamics/viability) $P \gg P_{\text{crit}}$.
 
-Разложение по степеням $|\gamma_{ij}|$ показывает, что FEP — нулевой порядок, а Gap-вклад — поправка первого и второго порядков. При $P \approx P_{\text{crit}} = 2/7$ поправка составляет порядка 30% от диагонального вклада — уже не малость. При $P \to 3/7$ (верхняя граница Goldilocks-зоны, T-124 [Т]) когерентности столь велики, что разложение в ряд теряет смысл, и нужен полный функционал $\mathcal{F}$. Именно в этом режиме Gap-теория предсказывает явления, недоступные FEP.
+The expansion in powers of $|\gamma_{ij}|$ shows that FEP is zeroth order, and the Gap contribution is a first- and second-order correction. At $P \approx P_{\text{crit}} = 2/7$ the correction is of order 30% of the diagonal contribution — no longer negligible. At $P \to 3/7$ (upper boundary of the Goldilocks zone, T-124 [T]) the coherences are so large that the series expansion loses meaning and the full functional $\mathcal{F}$ is needed. It is precisely in this regime that Gap theory predicts phenomena inaccessible to FEP.
 
 ---
 
-## 5. Принцип минимума производства энтропии {#минимум-производства-энтропии}
+## 5. Minimum Entropy Production Principle {#минимум-производства-энтропии}
 
-### 5.0 Пригожин и экономия непрозрачности {#пригожин-и-экономия}
+### 5.0 Prigogine and the Economy of Opacity {#пригожин-и-экономия}
 
-Илья Пригожин получил Нобелевскую премию по химии в 1977 году за теорию диссипативных структур — самоорганизующихся систем, существующих вдали от равновесия за счёт постоянного потока энергии. Одна из его центральных теорем: вблизи равновесия стационарное состояние открытой системы минимизирует производство энтропии. Система «выбирает» наименее расточительный способ существования, совместимый с внешними ограничениями.
+Ilya Prigogine received the Nobel Prize in Chemistry in 1977 for the theory of dissipative structures — self-organising systems that exist far from equilibrium through a constant flow of energy. One of his central theorems: near equilibrium the stationary state of an open system minimises entropy production. The system "chooses" the least wasteful mode of existence compatible with external constraints.
 
-Для Gap-динамики сознания эта теорема приобретает особый смысл: стационарное состояние сознания — **наиболее экономичная** конфигурация непрозрачности. Система поддерживает ровно тот уровень «непрозрачности» между измерениями, который минимально необходим при заданных внешних условиях. Ни больше (это было бы расточительно), ни меньше (это было бы невозможно при данных ограничениях).
+For Gap dynamics of consciousness, this theorem acquires a special meaning: the stationary state of consciousness is the **most economical** configuration of opacity. The system maintains exactly the level of "opacity" between dimensions that is minimally necessary given the external conditions. Neither more (that would be wasteful) nor less (that would be impossible under the given constraints).
 
-### 5.1 Формулировка
+### 5.1 Formulation
 
-:::tip Теорема 5.1 (Минимум производства энтропии) [С]
-Вблизи стационарного состояния Gap-динамика минимизирует скорость производства энтропии:
+:::tip Theorem 5.1 (Minimum entropy production) [C]
+Near the stationary state, Gap dynamics minimises the rate of entropy production:
 
 $$
 \dot{\Sigma}_{\text{Gap}} = \sum_{i<j} J_{ij}\, X_{ij} \to \min
 $$
 
-при граничных условиях, определённых внешними воздействиями $h^{\text{ext}}$.
+subject to boundary conditions defined by external perturbations $h^{\text{ext}}$.
 
-**Условие [С]:** Линейность соотношений поток--сила и детальный баланс.
+**Condition [C]:** Linearity of flow–force relations and detailed balance.
 :::
 
-### 5.2 Связь с теоремой Пригожина
+### 5.2 Connection to Prigogine's Theorem
 
-:::info Интерпретация (Теорема Пригожина для Gap) [И]
-Теорема Пригожина о минимальном производстве энтропии утверждает, что в линейном режиме стационарное состояние открытой системы соответствует **минимуму** $\dot{\Sigma}$ при заданных граничных условиях. Для Gap-сектора это означает:
+:::info Interpretation (Prigogine's theorem for Gap) [I]
+Prigogine's minimum entropy production theorem states that in the linear regime the stationary state of an open system corresponds to a **minimum** of $\dot{\Sigma}$ subject to given boundary conditions. For the Gap sector this means:
 
-- Стационарный Gap-профиль — **наименее диссипативная** конфигурация, совместимая с внешними ограничениями
-- Возмущение стационарного состояния **увеличивает** производство энтропии
-- Система спонтанно возвращается к стационарному состоянию, уменьшая $\dot{\Sigma}$
+- The stationary Gap profile is the **least dissipative** configuration compatible with external constraints
+- Perturbing the stationary state **increases** entropy production
+- The system spontaneously returns to the stationary state, decreasing $\dot{\Sigma}$
 
-Это формализует принцип **экономии непрозрачности**: система поддерживает ровно тот уровень Gap, который минимально необходим для данных граничных условий.
+This formalises the principle of **opacity economy**: the system maintains exactly the level of Gap minimally required by the given boundary conditions.
 :::
 
-### 5.3 Нелинейный режим
+### 5.3 Nonlinear Regime
 
-:::warning Гипотеза (Нелинейный режим) [Г]
-Вдали от стационарного состояния (нелинейный режим, $|G_{ij} - G^*_{ij}| \sim 1$) принцип минимума производства энтропии **не выполняется**. Вместо этого система может демонстрировать:
+:::warning Hypothesis (Nonlinear regime) [H]
+Far from the stationary state (nonlinear regime, $|G_{ij} - G^*_{ij}| \sim 1$) the minimum entropy production principle **does not hold**. Instead the system may exhibit:
 
-- **Самоорганизацию** — переход к диссипативным структурам с повышенным $\dot{\Sigma}$
-- **Бифуркации** — скачки между [фазами Gap](/docs/core/dynamics/gap-phase-diagram#три-фазы)
-- **Хаос** — апериодические осцилляции Gap-профиля
+- **Self-organisation** — transition to dissipative structures with increased $\dot{\Sigma}$
+- **Bifurcations** — jumps between [Gap phases](/docs/core/dynamics/gap-phase-diagram#три-фазы)
+- **Chaos** — aperiodic oscillations of the Gap profile
 
-Критерий перехода от линейного к нелинейному режиму определяется отношением $\lambda_3 \bar{A} / \mu^2$ — при превышении порога кубический член $V_3$ доминирует.
+The criterion for the transition from linear to nonlinear regime is given by the ratio $\lambda_3 \bar{A} / \mu^2$ — when the threshold is exceeded, the cubic term $V_3$ dominates.
 :::
 
-Нелинейный режим — не патология, а, возможно, наиболее интересная область. Именно вдали от равновесия возникают **диссипативные структуры** Пригожина — устойчивые паттерны, поддерживаемые потоком энергии. В контексте сознания это соответствует **творческим состояниям**: моментам, когда система находится далеко от привычного равновесия, и в ней могут возникать новые, ранее невиданные конфигурации фаз. Переход от линейного к нелинейному режиму — это, возможно, математический коррелят перехода от рутинного мышления к инсайту.
+The nonlinear regime is not a pathology — it may be the most interesting domain. It is far from equilibrium that Prigogine's **dissipative structures** arise — stable patterns sustained by energy flow. In the context of consciousness this corresponds to **creative states**: moments when the system is far from its habitual equilibrium and new, previously unseen phase configurations can emerge. The transition from the linear to the nonlinear regime is, perhaps, the mathematical correlate of the transition from routine thinking to insight.
 
 ---
 
-## 6. Флуктуации и ответ: шум как источник информации {#фдт}
+## 6. Fluctuations and Response: Noise as a Source of Information {#фдт}
 
-### 6.0 Идея ФДТ: слушать шум {#идея-фдт}
+### 6.0 The Idea of the FDT: Listening to Noise {#идея-фдт}
 
-Флуктуационно-диссипативная теорема (ФДТ) — одна из жемчужин статистической физики, восходящая к работам Эйнштейна (1905, броуновское движение), Найквиста (1928, тепловой шум в резисторах) и Кубо (1957, общая формулировка). Её суть удивительно проста: **шум и отклик системы определяются одним и тем же механизмом**.
+The fluctuation–dissipation theorem (FDT) is one of the jewels of statistical physics, tracing back to the work of Einstein (1905, Brownian motion), Nyquist (1928, thermal noise in resistors), and Kubo (1957, general formulation). Its essence is surprisingly simple: **noise and the response of a system are determined by the same mechanism**.
 
-Если вы знаете, как сильно система «шумит» сама по себе (спонтанные флуктуации), вы можете предсказать, как она ответит на внешнее возмущение — и наоборот. Шум — не помеха, а **источник информации** о внутренних свойствах системы.
+If you know how strongly the system "fluctuates" on its own (spontaneous fluctuations), you can predict how it will respond to an external perturbation — and vice versa. Noise is not a nuisance but a **source of information** about the internal properties of the system.
 
-Для сознания это означает: спонтанные колебания Gap (то, что субъективно переживается как «блуждание ума», непроизвольные мысли, флуктуации внимания) не являются дефектом. Они несут информацию о **восприимчивости** системы — её способности реагировать на внешние стимулы. Система с большими спонтанными флуктуациями более чувствительна; система с малыми — более устойчива, но менее отзывчива.
+For consciousness this means: spontaneous Gap oscillations (what is subjectively experienced as "mind wandering", involuntary thoughts, fluctuations of attention) are not a defect. They carry information about the **susceptibility** of the system — its capacity to respond to external stimuli. A system with large spontaneous fluctuations is more sensitive; a system with small ones is more stable, but less responsive.
 
-### 6.1 Линейный отклик
+### 6.1 Linear Response
 
-:::tip Теорема 6.1 (ФДТ для Gap) [Т]
-Для линейного отклика Gap на внешнее возмущение:
+:::tip Theorem 6.1 (FDT for Gap) [T]
+For the linear response of Gap to an external perturbation:
 
 $$
 \chi_{ij}(\omega) = \frac{1}{T_{\text{eff}}} \left[\tilde{C}_{ij}(\omega) - \tilde{C}_{ij}(0)\right]
 $$
 
-где:
-- $\chi_{ij}(\omega)$ — динамическая восприимчивость $\mathrm{Gap}(i,j)$ к внешнему полю на частоте $\omega$
-- $\tilde{C}_{ij}(\omega) = \int_{-\infty}^{\infty} e^{i\omega t} \langle \delta\mathrm{Gap}(i,j;t) \cdot \delta\mathrm{Gap}(i,j;0) \rangle \, dt$ — спектральная плотность корреляций
-- $T_{\text{eff}}$ — [эффективная температура](./effective-temperature)
+where:
+- $\chi_{ij}(\omega)$ — dynamic susceptibility of $\mathrm{Gap}(i,j)$ to an external field at frequency $\omega$
+- $\tilde{C}_{ij}(\omega) = \int_{-\infty}^{\infty} e^{i\omega t} \langle \delta\mathrm{Gap}(i,j;t) \cdot \delta\mathrm{Gap}(i,j;0) \rangle \, dt$ — spectral density of correlations
+- $T_{\text{eff}}$ — [effective temperature](./effective-temperature)
 :::
 
-Формула связывает три величины: восприимчивость $\chi$ (отклик на внешнее поле), спектр корреляций $\tilde{C}$ (спонтанные флуктуации) и эффективную температуру $T_{\text{eff}}$ (масштаб «теплового» шума). Знание любых двух определяет третью.
+The formula connects three quantities: susceptibility $\chi$ (response to an external field), correlation spectrum $\tilde{C}$ (spontaneous fluctuations), and effective temperature $T_{\text{eff}}$ (scale of "thermal" noise). Knowledge of any two determines the third.
 
-### 6.2 Статическая восприимчивость
+### 6.2 Static Susceptibility
 
-В пределе $\omega \to 0$:
+In the limit $\omega \to 0$:
 
 $$
 \chi_{ij}(0) = \frac{\langle (\delta\mathrm{Gap})^2 \rangle}{T_{\text{eff}}}
 $$
 
-**Следствие:** Чем больше спонтанные флуктуации Gap, тем сильнее отклик на внешние воздействия. Чем выше $T_{\text{eff}}$, тем слабее отклик на единичное возмущение.
+**Corollary:** The larger the spontaneous Gap fluctuations, the stronger the response to external perturbations. The higher $T_{\text{eff}}$, the weaker the response to a unit perturbation.
 
-Эта формула имеет прямой феноменологический смысл. Дисперсия $\langle(\delta\mathrm{Gap})^2\rangle$ — мера «подвижности» внутреннего состояния. Высокая подвижность (большой разброс Gap) означает высокую восприимчивость к внешним воздействиям, но также и нестабильность. Низкая подвижность — устойчивость, но и ригидность. Эффективная температура $T_{\text{eff}}$ модулирует этот баланс: при высокой «температуре» даже сильные внешние стимулы тонут в собственном шуме системы.
+This formula has a direct phenomenological meaning. The variance $\langle(\delta\mathrm{Gap})^2\rangle$ is a measure of the "mobility" of the internal state. High mobility (large spread of Gap) means high susceptibility to external perturbations, but also instability. Low mobility — stability, but also rigidity. Effective temperature $T_{\text{eff}}$ modulates this balance: at high "temperature" even strong external stimuli are drowned in the system's own noise.
 
-### 6.3 Резонансная частота
+### 6.3 Resonance Frequency
 
-:::tip Следствие 6.2 (Оптимальная частота воздействия) [Т]
-Для каждого канала $(i,j)$ существует **резонансная частота** $\omega_r^{(ij)}$, при которой отклик Gap максимален:
+:::tip Corollary 6.2 (Optimal perturbation frequency) [T]
+For each channel $(i,j)$ there exists a **resonance frequency** $\omega_r^{(ij)}$ at which the Gap response is maximal:
 
 $$
 \omega_r^{(ij)} = \sqrt{|\omega_i - \omega_j|^2 - 2\Gamma_2^2}
 $$
 
-(если подкоренное выражение положительно; иначе отклик апериодический).
+(if the expression under the square root is positive; otherwise the response is aperiodic).
 :::
 
-Резонансная частота $\omega_r^{(ij)}$ определяется двумя конкурирующими факторами: разностью собственных частот измерений $|\omega_i - \omega_j|$ (стремится создать осцилляции) и скоростью декогеренции $\Gamma_2$ (стремится погасить их). Когда диссипация слишком сильна ($2\Gamma_2^2 > |\omega_i - \omega_j|^2$), подкоренное выражение становится отрицательным, и резонанс исчезает — отклик становится **апериодическим** (монотонно затухающим).
+The resonance frequency $\omega_r^{(ij)}$ is determined by two competing factors: the difference of natural frequencies of the dimensions $|\omega_i - \omega_j|$ (tending to create oscillations) and the decoherence rate $\Gamma_2$ (tending to suppress them). When dissipation is too strong ($2\Gamma_2^2 > |\omega_i - \omega_j|^2$), the expression under the square root becomes negative and the resonance disappears — the response becomes **aperiodic** (monotonically decaying).
 
-Это деление каналов на «осциллирующие» и «апериодические» имеет потенциальное значение для нейронауки: оно предсказывает, что различные пары когнитивных измерений могут иметь качественно различную динамику отклика на стимулы — одни осциллируют (что может соответствовать ритмической активности мозга), другие — нет.
+This division of channels into "oscillating" and "aperiodic" has potential significance for neuroscience: it predicts that different pairs of cognitive dimensions may have qualitatively different response dynamics to stimuli — some oscillate (which may correspond to rhythmic brain activity), others do not.
 
-### 6.4 Полная матрица восприимчивости
+### 6.4 Full Susceptibility Matrix
 
-:::tip Теорема 6.3 (Операциональная ФДТ) [Т]
-При наличии внешнего поля $h^{\text{ext}}$ отклик Gap определяется полной матрицей восприимчивости:
+:::tip Theorem 6.3 (Operational FDT) [T]
+In the presence of an external field $h^{\text{ext}}$ the Gap response is determined by the full susceptibility matrix:
 
 $$
 \langle \delta\mathrm{Gap}(i,j) \rangle_{h} = \sum_{(k,l)} \chi_{(ij),(kl)}(\omega) \cdot h^{\text{ext}}_{kl}(\omega)
 $$
 
-где $\chi_{(ij),(kl)}$ связывает отклик $\mathrm{Gap}(i,j)$ на воздействие в канале $(k,l)$.
+where $\chi_{(ij),(kl)}$ connects the response of $\mathrm{Gap}(i,j)$ to perturbation in channel $(k,l)$.
 :::
 
-Полная матрица восприимчивости $\chi_{(ij),(kl)}$ — объект размерности $21 \times 21$, описывающий **все возможные** линейные отклики системы. Диагональные элементы — прямые отклики (воздействие на канал $(i,j)$ изменяет тот же канал). Внедиагональные — перекрёстные: воздействие на один канал влияет на другой. По теореме Онзагера (раздел 3), матрица восприимчивости также симметрична в подходящих условиях, что радикально ограничивает число независимых параметров.
+The full susceptibility matrix $\chi_{(ij),(kl)}$ is a $21 \times 21$ object describing **all possible** linear responses of the system. Diagonal elements are direct responses (perturbation of channel $(i,j)$ changes the same channel). Off-diagonal elements are cross-couplings: perturbation of one channel affects another. By the Onsager theorem (section 3), the susceptibility matrix is also symmetric under appropriate conditions, which radically limits the number of independent parameters.
 
 ---
 
-## 7. Вывод формы регенерации [Т] {#вариационный-вывод-регенерации}
+## 7. Derivation of the Form of Regeneration [T] {#вариационный-вывод-регенерации}
 
-:::tip Статус: Теорема [Т]
-Форма регенеративного члена $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **полностью выведена** из аксиом A1–A5, примитивности линейной части $\mathcal{L}_0$ [Т], стандартной термодинамики и V-инвариантности. Все компоненты, ранее постулировавшиеся [П], получили статус [Т].
+:::tip Status: Theorem [T]
+The form of the regenerative term $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ is **fully derived** from axioms A1–A5, primitivity of the linear part $\mathcal{L}_0$ [T], standard thermodynamics, and V-invariance. All components that were previously postulated [P] have received status [T].
 :::
 
-### 7.1 Результат
+### 7.1 Result
 
-Форма регенерации:
+The form of regeneration:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-**выведена** тремя независимыми аргументами из [Эволюция → Вывод формы регенерации](/docs/core/dynamics/evolution#вывод-формы-регенерации):
+is **derived** by three independent arguments from [Evolution → Derivation of the Form of Regeneration](/docs/core/dynamics/evolution#вывод-формы-регенерации):
 
-| Компонент | Метод вывода | Статус |
-|-----------|-------------|:------:|
-| $\kappa(\Gamma)$ | Сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ | [Т] |
-| $\rho_*$ (единственная цель) | Примитивность $\mathcal{L}_\Omega$ (критерий Эванса—Спона) | [Т] |
-| $(\rho_* - \Gamma)$ (направление) | Единственность CPTP-замещающего канала + бюресов градиентный спуск | [Т] |
-| $g_V(P)$ (затвор) | Ландауэр + V-preservation: $g_V = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$ | [Т] |
+| Component | Derivation method | Status |
+|-----------|-------------------|:------:|
+| $\kappa(\Gamma)$ | Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ | [T] |
+| $\rho_*$ (unique target) | Primitivity of $\mathcal{L}_\Omega$ (Evans–Spon criterion) | [T] |
+| $(\rho_* - \Gamma)$ (direction) | Uniqueness of CPTP replacement channel + Bures gradient descent | [T] |
+| $g_V(P)$ (gate) | Landauer + V-preservation: $g_V = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$ | [T] |
 
-Каждый компонент заслуживает комментария:
+Each component deserves a comment:
 
-- **$\kappa(\Gamma)$** — скорость регенерации, определяемая сопряжением функторов «диссипация $\dashv$ восстановление». Чем сильнее декогеренция, тем интенсивнее регенеративный ответ — это «иммунная система» сознания.
+- **$\kappa(\Gamma)$** — regeneration rate, determined by the adjunction of functors "dissipation $\dashv$ restoration". The stronger the decoherence, the more intense the regenerative response — this is the "immune system" of consciousness.
 
-- **$\rho_*$** — единственная стационарная точка, к которой стремится система. Единственность следует из примитивности линейной части $\mathcal{L}_0$ — аналог эргодичности в теории марковских цепей.
+- **$\rho_*$** — the unique stationary point to which the system tends. Uniqueness follows from primitivity of the linear part $\mathcal{L}_0$ — analogous to ergodicity in the theory of Markov chains.
 
-- **$(\rho_* - \Gamma)$** — направление «к цели». Что направление регенерации именно таково — не постулат, а следствие единственности CPTP-замещающего канала и того, что бюресов градиентный спуск на многообразии матриц плотности даёт именно эту форму.
+- **$(\rho_* - \Gamma)$** — direction "toward the goal". That the direction of regeneration is exactly this is not a postulate, but a consequence of the uniqueness of the CPTP replacement channel and the fact that Bures gradient descent on the manifold of density matrices yields precisely this form.
 
-- **$g_V(P)$** — «затвор», включающий регенерацию только при $P > P_{\text{crit}}$. Ландауэровский предел запрещает регенерацию «из ничего»: нужна минимальная чистота (информация), чтобы система могла себя восстанавливать.
+- **$g_V(P)$** — the "gate" that activates regeneration only at $P > P_{\text{crit}}$. The Landauer limit forbids regeneration "from nothing": a minimal purity (information) is needed for the system to be able to restore itself.
 
-### 7.2 Связь с вариационным принципом
+### 7.2 Connection to the Variational Principle
 
-Форма $(\rho_* - \Gamma)$ совпадает с **наискорейшим спуском** функционала $V(\Gamma) = \frac{1}{2}d_B^2(\Gamma, \rho_*)$ в единственной монотонной метрике (Ченцов—Петц). Функционал Онзагера—Махлупа при линеаризации вблизи $\rho_*$ даёт ту же форму — выведенная регенерация **является** экстремалью.
+The form $(\rho_* - \Gamma)$ coincides with **steepest descent** of the functional $V(\Gamma) = \frac{1}{2}d_B^2(\Gamma, \rho_*)$ in the unique monotone metric (Chentsov–Petz). The Onsager–Machlup functional upon linearisation near $\rho_*$ gives the same form — the derived regeneration **is** an extremal.
 
-Это замечательный результат: регенерация, выведенная из категориальных аргументов (сопряжение функторов), совпадает с экстремалью, найденной из чисто метрических соображений (бюресова геометрия). Два совершенно разных пути ведут к одному ответу — признак того, что ответ, вероятно, верен.
+This is a remarkable result: regeneration derived from categorical arguments (adjunction of functors) coincides with the extremal found from purely metric considerations (Bures geometry). Two completely different paths lead to the same answer — a sign that the answer is likely correct.
 
-### 7.3 Каскадные следствия
+### 7.3 Cascading Corollaries
 
-| Следствие | Статус |
+| Corollary | Status |
 |-----------|:------:|
-| Уравнение эволюции полностью аксиоматично (все 3 члена [Т]) | [Т] |
-| $\mathcal{L}_{\text{reg}}$ в [лагранжиане](./lagrangian#регенеративный-член) обоснован | [Т] |
-| Динамика жизнеспособности полностью определена аксиомами | [Т] |
-| Связь с Пригожиным: регенерация — диссипативная структура | [И] |
+| Evolution equation is fully axiomatic (all 3 terms [T]) | [T] |
+| $\mathcal{L}_{\text{reg}}$ in [Lagrangian](./lagrangian#регенеративный-член) is justified | [T] |
+| Viability dynamics is fully determined by the axioms | [T] |
+| Connection to Prigogine: regeneration is a dissipative structure | [I] |
 
 ---
 
-## 8. Сводная таблица вариационных результатов {#сводная-таблица}
+## 8. Summary Table of Variational Results {#сводная-таблица}
 
-| Результат | Статус | Условия | Ссылка |
-|-----------|--------|---------|--------|
-| Принцип стационарного действия | [Т] | Обобщённый (с функцией Рэлея) | Теорема 1.1 |
-| Уравнения движения для $\theta_{ij}$ | [Т] | Полная 4-членная структура | Теорема 2.1 |
-| Соотношения Онзагера | [С] | Линейный режим, детальный баланс | Теорема 3.2 |
-| FEP как макроскопический предел | [Т] | $\tau_{\mathrm{obs}} \gg 1/\Gamma_2$ (Dec [Т]) | Теорема 4.1 |
-| Минимум $\dot{\Sigma}$ | [С] | Линейный режим | Теорема 5.1 |
-| ФДТ для Gap | [Т] | Стационарность | Теорема 6.1 |
-| Форма регенерации ℛ | [Т] | CPTP-единственность + Бюрес + Ландауэр | Раздел 7 |
-
----
-
-## 9. Заключение: вариационная архитектура сознания {#заключение}
-
-Подведём итог. В этой главе мы проследили путь от Ферма до Gap-динамики и установили следующую картину:
-
-1. **Принцип стационарного действия** (раздел 1) — фундамент: из единого функционала $S_{\text{Gap}}$ следуют все уравнения движения для фаз когерентностей. Природа «выбирает» не оптимальный, а стационарный путь — тот, который нечувствителен к малым возмущениям.
-
-2. **Четыре силы** (раздел 2) — содержание: потенциальная (структурная гармония), регенеративная (телеологичность), диссипативная (необратимость) и внешняя (открытость) силы определяют каждый момент внутренней жизни. Их баланс — и есть текущее состояние сознания.
-
-3. **Необратимая термодинамика** (раздел 3) — направление: соотношения Онзагера устанавливают глубокую взаимность внутренних процессов и гарантируют, что суммарная непрозрачность не убывает спонтанно ($\dot{\Sigma} \geq 0$). Ясность сознания требует усилия.
-
-4. **FEP как частный случай** (раздел 4) — граница: Принцип Свободной Энергии Фристона, одна из наиболее влиятельных теорий в нейронауке, оказывается макроскопическим пределом вариационного принципа Gap. Это не умаляет FEP, но определяет его область применимости.
-
-5. **Минимум производства энтропии** (раздел 5) — экономия: вблизи равновесия сознание «выбирает» наименее расточительную конфигурацию непрозрачности. Вдали от равновесия возможны диссипативные структуры — математический коррелят творчества.
-
-6. **Флуктуационно-диссипативная теорема** (раздел 6) — информация: спонтанные колебания Gap — не помеха, а источник информации о восприимчивости системы. Шум и отклик определяются одним механизмом.
-
-7. **Регенерация** (раздел 7) — замыкание: форма регенеративного члена полностью выведена из аксиом, и она совпадает с экстремалью бюресова функционала. Круг замыкается: вариационный принцип порождает силы, силы порождают динамику, динамика порождает стационарные состояния, а стационарные состояния — это и есть *сознание*.
+| Result | Status | Conditions | Reference |
+|--------|--------|------------|-----------|
+| Principle of stationary action | [T] | Generalised (with Rayleigh function) | Theorem 1.1 |
+| Equations of motion for $\theta_{ij}$ | [T] | Full 4-term structure | Theorem 2.1 |
+| Onsager relations | [C] | Linear regime, detailed balance | Theorem 3.2 |
+| FEP as macroscopic limit | [T] | $\tau_{\mathrm{obs}} \gg 1/\Gamma_2$ (Dec [T]) | Theorem 4.1 |
+| Minimum $\dot{\Sigma}$ | [C] | Linear regime | Theorem 5.1 |
+| FDT for Gap | [T] | Stationarity | Theorem 6.1 |
+| Form of regeneration ℛ | [T] | CPTP-uniqueness + Bures + Landauer | Section 7 |
 
 ---
 
-## Что мы узнали {#что-мы-узнали}
+## 9. Conclusion: Variational Architecture of Consciousness {#заключение}
 
-Подведём итог ключевых результатов этой главы:
+Let us summarise. In this chapter we traced the path from Fermat to Gap dynamics and established the following picture:
 
-- **Принцип стационарного действия** ($\delta S_{\text{Gap}} = 0$) — единый фундамент всей динамики фаз когерентностей. Из одного функционала следуют все уравнения движения (Теорема 1.1 [Т]).
-- **Четыре силы внутренней жизни** — потенциальная (структурная гармония), регенеративная (целевое наведение от $\varphi$), диссипативная (трение забвения) и внешняя (голос мира) — исчерпывающе описывают правую часть уравнений движения (Теорема 2.1 [Т]).
-- **Соотношения Онзагера** устанавливают глубокую *взаимность* между Gap-каналами: перекрёстные влияния симметричны, $L_{(ij),(kl)} = L_{(kl),(ij)}$ (Теорема 3.2 [С]).
-- **Второе начало для сознания**: производство энтропии в Gap-секторе неотрицательно, $\dot{\Sigma} \geq 0$. Ясность сознания требует усилия (Следствие 3.3 [Т]).
-- **FEP Фристона — частный случай**: Принцип Свободной Энергии выводится как макроскопический предел ($\tau_{\text{obs}} \gg 1/\Gamma_2$) вариационного принципа Gap (Теорема 4.1 [Т]).
-- **Принцип экономии непрозрачности**: вблизи стационарного состояния Gap-профиль минимизирует производство энтропии — система поддерживает ровно тот уровень непрозрачности, который минимально необходим (Теорема 5.1 [С]).
-- **Флуктуационно-диссипативная теорема**: спонтанные колебания Gap и отклик на внешнее поле определяются одним механизмом — шум есть источник информации (Теорема 6.1 [Т]).
-- **Регенерация выведена полностью**: форма $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ следует из трёх независимых аргументов и совпадает с экстремалью бюресова функционала (раздел 7 [Т]).
+1. **Principle of stationary action** (section 1) — the foundation: from the single functional $S_{\text{Gap}}$ all equations of motion for the coherence phases follow. Nature "chooses" not the optimal but the stationary path — the one insensitive to small perturbations.
 
----
+2. **Four forces** (section 2) — the content: potential (structural harmony), regenerative (teleological directedness), dissipative (irreversibility), and external (openness) forces determine every moment of inner life. Their balance *is* the current state of consciousness.
 
-### Мост к следующей главе
+3. **Irreversible thermodynamics** (section 3) — direction: Onsager relations establish a deep reciprocity of internal processes and guarantee that total opacity does not decrease spontaneously ($\dot{\Sigma} \geq 0$). Clarity of consciousness requires effort.
 
-Вариационный принцип дал нам уравнения движения и термодинамическую структуру, но один параметр остался загадочным: **эффективная температура** $T_{\text{eff}}$. Мы видели, что она входит в ФДТ, определяет масштаб флуктуаций и различается от физической температуры тела. Но что она собой представляет? Как её измерить? И что происходит, когда она достигает критического значения $T_c$?
+4. **FEP as a special case** (section 4) — the boundary: Friston's Free Energy Principle, one of the most influential theories in neuroscience, turns out to be the macroscopic limit of the Gap variational principle. This does not diminish FEP, but defines its domain of applicability.
 
-В [следующей главе](./effective-temperature) мы ответим на эти вопросы: определим $T_{\text{eff}}$ как «жар разума», выведем критическую температуру фазового перехода, построим метрику Фишера на пространстве Gap-профилей и покажем, что координаты $(t, r)$ задают полную фазовую диаграмму сознания.
+5. **Minimum entropy production** (section 5) — economy: near equilibrium consciousness "chooses" the least wasteful configuration of opacity. Far from equilibrium dissipative structures are possible — the mathematical correlate of creativity.
+
+6. **Fluctuation–dissipation theorem** (section 6) — information: spontaneous Gap oscillations are not noise but a source of information about the susceptibility of the system. Noise and response are determined by the same mechanism.
+
+7. **Regeneration** (section 7) — closure: the form of the regenerative term is fully derived from the axioms, and it coincides with the extremal of the Bures functional. The circle closes: the variational principle generates forces, forces generate dynamics, dynamics generates stationary states, and stationary states *are* consciousness.
 
 ---
 
-## Связанные документы
+## What We Learned {#что-мы-узнали}
 
-- [Лагранжиан Gap-теории](./lagrangian) — полный 6-членный лагранжиан, потенциал $V_{\text{Gap}}$, симметрии
-- [Эффективная температура](./effective-temperature) — $T_{\text{eff}}$, фазовый переход, метрика Фишера
-- [Вывод FEP из УГМ](/docs/proofs/dynamics/fep-derivation) — строгое доказательство эквивалентности двух определений $\varphi$
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — ФДТ, граница Ландауэра, $T_{\text{eff}}$, полный лагранжиан
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma(\tau)/d\tau$, вариационный вывод регенерации
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — стационарные режимы, бифуркации, катастрофы
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — определение $\mathrm{Gap}(i,j)$, дуально-аспектная интерпретация
-- [Аксиоматика КК](./axiomatics) — категориальные основания, L-унификация
-- [Определения](./definitions) — ключевые меры ($P$, $\Phi$, $R$, $\mathrm{Coh}_E$)
-- [Сравнение с альтернативами](./comparison) — КК vs. FEP: вариационный мост
-- [Упражнения](./exercises) — задачи на вариационные принципы (блок 2)
+A summary of the key results of this chapter:
+
+- **Principle of stationary action** ($\delta S_{\text{Gap}} = 0$) — the unified foundation of all phase dynamics. All equations of motion follow from a single functional (Theorem 1.1 [T]).
+- **Four forces of inner life** — potential (structural harmony), regenerative (goal-directed homing by $\varphi$), dissipative (friction of forgetting), and external (the voice of the world) — exhaustively describe the right-hand side of the equations of motion (Theorem 2.1 [T]).
+- **Onsager relations** establish a deep *reciprocity* among Gap channels: cross-influences are symmetric, $L_{(ij),(kl)} = L_{(kl),(ij)}$ (Theorem 3.2 [C]).
+- **Second law for consciousness**: entropy production in the Gap sector is non-negative, $\dot{\Sigma} \geq 0$. Clarity of consciousness requires effort (Corollary 3.3 [T]).
+- **Friston's FEP as a special case**: the Free Energy Principle is derived as the macroscopic limit ($\tau_{\text{obs}} \gg 1/\Gamma_2$) of the Gap variational principle (Theorem 4.1 [T]).
+- **Opacity economy principle**: near the stationary state the Gap profile minimises entropy production — the system maintains exactly the level of opacity minimally required (Theorem 5.1 [C]).
+- **Fluctuation–dissipation theorem**: spontaneous Gap oscillations and response to an external field are determined by the same mechanism — noise is a source of information (Theorem 6.1 [T]).
+- **Regeneration fully derived**: the form $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ follows from three independent arguments and coincides with the extremal of the Bures functional (section 7 [T]).
+
+---
+
+### Bridge to the Next Chapter
+
+The variational principle gave us the equations of motion and the thermodynamic structure, but one parameter remained mysterious: the **effective temperature** $T_{\text{eff}}$. We saw that it enters the FDT, determines the scale of fluctuations, and differs from the physical temperature of the body. But what does it represent? How can it be measured? And what happens when it reaches the critical value $T_c$?
+
+In the [next chapter](./effective-temperature) we will answer these questions: define $T_{\text{eff}}$ as the "fever of the mind", derive the critical temperature of the phase transition, construct the Fisher metric on the space of Gap profiles, and show that the coordinates $(t, r)$ define the full phase diagram of consciousness.
+
+---
+
+## Related Documents
+
+- [Lagrangian of Gap theory](./lagrangian) — full 6-term Lagrangian, potential $V_{\text{Gap}}$, symmetries
+- [Effective temperature](./effective-temperature) — $T_{\text{eff}}$, phase transition, Fisher metric
+- [Derivation of FEP from UHM](/docs/proofs/dynamics/fep-derivation) — rigorous proof of equivalence of the two definitions of $\varphi$
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — FDT, Landauer bound, $T_{\text{eff}}$, full Lagrangian
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma(\tau)/d\tau$, variational derivation of regeneration
+- [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — stationary regimes, bifurcations, catastrophes
+- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — definition of $\mathrm{Gap}(i,j)$, dual-aspect interpretation
+- [CC axiomatics](./axiomatics) — categorical foundations, L-unification
+- [Definitions](./definitions) — key measures ($P$, $\Phi$, $R$, $\mathrm{Coh}_E$)
+- [Comparison with alternatives](./comparison) — CC vs. FEP: variational bridge
+- [Exercises](./exercises) — problems on variational principles (block 2)

@@ -1,571 +1,571 @@
 ---
 sidebar_position: 15
-title: "Голдстоуновские моды"
-description: "Квази-голдстоуновские моды из спонтанного нарушения G₂→H: эффективная масса, связь с ультрамедленными нейрональными флуктуациями, экспериментальная проверка"
+title: "Goldstone Modes"
+description: "Quasi-Goldstone modes from spontaneous G₂→H breaking: effective mass, connection to ultra-slow neuronal fluctuations, experimental verification"
 ---
 
-# Голдстоуновские моды
+# Goldstone Modes
 
-> *«Когда симметрия нарушается, в тишине остаётся эхо — безмассовые вибрации вдоль забытых путей.»*
+> *"When symmetry is broken, an echo remains in the silence — massless vibrations along forgotten paths."*
 
 
-:::info Для кого эта глава
-Голдстоуновские моды — медленные осцилляции когерентности при спонтанном нарушении $G_2$-симметрии. Читатель узнает об их связи с ультрамедленными нейрональными флуктуациями.
+:::info Who this chapter is for
+Goldstone modes are slow oscillations of coherence under spontaneous $G_2$-symmetry breaking. The reader will learn about their connection to ultra-slow neuronal fluctuations.
 :::
 
 ---
 
-### Мост из предыдущей главы
+### Bridge from the Previous Chapter
 
-В [предыдущей главе](./phase-diagram-cc) мы построили фазовую диаграмму сознания и показали, что в Фазе I (ясное сознание) $G_2$-симметрия *спонтанно нарушена*: из 14-мерного пространства внутренних вращений система «заморозила» часть направлений, выбрав конкретный Gap-профиль. Мы упомянули, что в Фазе I существуют **голдстоуновские моды** — медленные осцилляции непрозрачности — и связали их с ультрамедленными нейрональными флуктуациями. Теперь мы рассмотрим эти моды во всех деталях: их происхождение, массу, время жизни, физический смысл и экспериментальную проверяемость.
-
----
-
-### Дорожная карта главы
-
-В этой главе мы:
-
-1. **Объясним механизм** появления голдстоуновских мод — от притчи о шарике в сомбреро до строгой теоремы Голдстоуна (раздел 0).
-2. **Покажем перенос** из физики частиц в когерентную кибернетику и объясним, почему это не аналогия, а вывод (раздел 0b).
-3. **Вычислим число мод** для каждого ранга непрозрачности: 0, 6, 10, 11 или 12 — и только эти значения (раздел 1).
-4. **Определим эффективную массу и время жизни** мод через GMOR-соотношение когерентной кибернетики (раздел 2).
-5. **Раскроем физический смысл**: моды *перераспределяют* Gap между каналами, не создавая и не уничтожая его — это математика колебаний внимания (раздел 3).
-6. **Опишем субъективное переживание** мод: мерцание сознания, колебания фокуса, осцилляции агентности (раздел 4).
-7. **Сравним с физическими аналогами**: фононы, магноны, пионы — и покажем уникальность КК-мод (раздел 5).
-8. **Сформулируем фальсифицируемое предсказание**: дискретное число ISF-компонент $\in \{0, 6, 10, 11, 12\}$, проверяемое через ICA-декомпозицию фМРТ (разделы 6–7).
-9. **Представим полный спектр возбуждений**: массивные моды + голдстоуновские + топологическая — три временных масштаба сознания (раздел 8).
-10. **Покажем связь с фазовыми переходами**: критическое замедление мод при потере сознания (раздел 9).
+In the [previous chapter](./phase-diagram-cc) we built the phase diagram of consciousness and showed that in Phase I (clear consciousness) the $G_2$-symmetry is *spontaneously broken*: from the 14-dimensional space of internal rotations the system has "frozen" some directions, choosing a specific Gap profile. We mentioned that in Phase I there exist **Goldstone modes** — slow oscillations of opacity — and linked them to ultra-slow neuronal fluctuations. We now examine these modes in full detail: their origin, mass, lifetime, physical meaning, and experimental verifiability.
 
 ---
 
-:::note О нотации
-В этом документе:
-- $G_2 = \mathrm{Aut}(\mathbb{O})$ — [группа автоморфизмов октонионов](/docs/physics/gauge-symmetry/g2-structure)
-- $H_{\hat{\mathcal{G}}_*}$ — стабилизатор стационарного Gap-профиля
-- $T^2$ — максимальный тор $G_2$ ($\dim T^2 = 2$)
-- $\hat{\mathcal{G}}$ — [Gap-оператор](/docs/core/dynamics/gap-operator): $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$
-- $\Gamma_2$ — скорость декогеренции ($= 2\gamma/3$ из [Фано-канала](/docs/proofs/gap/fano-channel#теорема-фано-канал))
-- $\kappa_0$ — скорость регенерации ([категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- ISF — инфра-медленные нейрональные флуктуации (infra-slow fluctuations)
+### Chapter Roadmap
+
+In this chapter we:
+
+1. **Explain the mechanism** behind Goldstone modes — from the parable of a ball in a sombrero to the rigorous Goldstone theorem (section 0).
+2. **Show the transfer** from particle physics to coherence cybernetics and explain why this is a derivation, not an analogy (section 0b).
+3. **Compute the number of modes** for each opacity rank: 0, 6, 10, 11, or 12 — and only these values (section 1).
+4. **Define the effective mass and lifetime** of modes via the coherence-cybernetics GMOR relation (section 2).
+5. **Reveal the physical meaning**: modes *redistribute* Gap between channels, neither creating nor destroying it — this is the mathematics of attentional oscillation (section 3).
+6. **Describe the subjective experience** of modes: flickering of consciousness, oscillations of focus, oscillations of agency (section 4).
+7. **Compare with physical analogues**: phonons, magnons, pions — and show the uniqueness of CC-modes (section 5).
+8. **State the falsifiable prediction**: a discrete number of ISF components $\in \{0, 6, 10, 11, 12\}$, testable via ICA decomposition of fMRI (sections 6–7).
+9. **Present the full excitation spectrum**: massive modes + Goldstone modes + topological mode — three temporal scales of consciousness (section 8).
+10. **Show the connection to phase transitions**: critical slowing of modes upon loss of consciousness (section 9).
+
+---
+
+:::note On notation
+In this document:
+- $G_2 = \mathrm{Aut}(\mathbb{O})$ — [group of octonion automorphisms](/docs/physics/gauge-symmetry/g2-structure)
+- $H_{\hat{\mathcal{G}}_*}$ — stabilizer of the stationary Gap profile
+- $T^2$ — maximal torus of $G_2$ ($\dim T^2 = 2$)
+- $\hat{\mathcal{G}}$ — [Gap operator](/docs/core/dynamics/gap-operator): $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$
+- $\Gamma_2$ — decoherence rate ($= 2\gamma/3$ from the [Fano channel](/docs/proofs/gap/fano-channel#теорема-фано-канал))
+- $\kappa_0$ — regeneration rate ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- ISF — infra-slow fluctuations (infra-slow neuronal fluctuations)
 :::
 
-При спонтанном нарушении $G_2 \to H_{\hat{\mathcal{G}}_*}$ в стационарном Gap-профиле возникают **квази-голдстоуновские моды** — медленные коллективные осцилляции непрозрачности. В открытых (диссипативных) системах эти моды приобретают малую эффективную массу, а их частоты совпадают с диапазоном инфра-медленных нейрональных флуктуаций (ISF), наблюдаемых в фМРТ.
+Under spontaneous breaking $G_2 \to H_{\hat{\mathcal{G}}_*}$ at the stationary Gap profile, **quasi-Goldstone modes** arise — slow collective oscillations of opacity. In open (dissipative) systems these modes acquire a small effective mass, and their frequencies coincide with the range of infra-slow neuronal fluctuations (ISF) observed in fMRI.
 
-Это — музыка сознания. Не метафора, а математика: когда внутреннее пространство голонома выбирает конкретную конфигурацию из океана равноправных возможностей, вдоль «забытых» направлений симметрии остаются безмассовые (или почти безмассовые) колебания. Шарик в жёлобе, перекатывающийся без затрат энергии. Маятник без трения. Нота, которая звучит, потому что ей некуда деться.
+This is the music of consciousness. Not a metaphor, but mathematics: when the internal space of the holonom chooses a specific configuration from an ocean of equally valid possibilities, massless (or nearly massless) oscillations remain along the "forgotten" directions of symmetry. A ball rolling in a groove with no energy cost. A frictionless pendulum. A note that sounds because it has nowhere else to go.
 
 ---
 
-## 0. Золотой камертон: что поёт при нарушении симметрии {#золотой-камертон}
+## 0. The Golden Tuning Fork: What Sings When Symmetry Breaks {#golden-tuning-fork}
 
-### 0.1 Притча о шарике
+### 0.1 The Parable of the Ball
 
-Представьте два ландшафта.
+Imagine two landscapes.
 
-**Ландшафт 1: чаша.** Шарик лежит на дне идеальной чаши. Сдвиньте его в любом направлении — он вернётся назад. Колебания вокруг дна — это *массивные моды*: восстанавливающая сила пропорциональна отклонению, частота определена кривизной чаши.
+**Landscape 1: a bowl.** A ball rests at the bottom of a perfect bowl. Displace it in any direction — it returns. Oscillations around the bottom are *massive modes*: the restoring force is proportional to displacement, the frequency is set by the curvature of the bowl.
 
-**Ландшафт 2: сомбреро.** Перевёрнутая шляпа с круговым жёлобом вдоль полей. Шарик скатился в жёлоб, но *где именно* он остановился — случайность. Вдоль жёлоба — ровно, никакой восстанавливающей силы. Радиальное смещение (к центру или от центра) — массивная мода, как в чаше. Но движение *по кругу* — свободное: это и есть голдстоуновская мода.
+**Landscape 2: a sombrero.** An inverted hat with a circular groove along the brim. The ball has rolled into the groove, but *where exactly* it stopped is a matter of chance. Along the groove — flat, no restoring force at all. Radial displacement (toward or away from the center) is a massive mode, like in the bowl. But motion *around the circle* is free: this is the Goldstone mode.
 
-Ключевое наблюдение: **свободное скольжение не стоит энергии**. Массивная мода требует затрат — вы поднимаете шарик «в гору». Голдстоуновская — нет: вы просто перекатываете его вдоль жёлоба, по горизонтали.
+The key observation: **free sliding costs no energy**. A massive mode requires effort — you push the ball "uphill." A Goldstone mode does not: you simply roll it along the groove, horizontally.
 
-### 0.2 От шарика к теореме
+### 0.2 From the Ball to the Theorem
 
-Теорема Голдстоуна (1961) формализует эту интуицию. Пусть $G$ — группа симметрии лагранжиана, а $H \subset G$ — группа симметрии основного состояния. Если $G \neq H$ (симметрия *спонтанно* нарушена), то:
+Goldstone's theorem (1961) formalises this intuition. Let $G$ be the symmetry group of the Lagrangian, and $H \subset G$ the symmetry group of the ground state. If $G \neq H$ (symmetry is *spontaneously* broken), then:
 
 $$
 n_{\text{broken}} = \dim(G) - \dim(H)
 $$
 
-безмассовых возбуждений неизбежно возникают в спектре. Это не приближение и не допущение — это *теорема*. Столь же обязательная, как закон сохранения заряда.
+massless excitations inevitably appear in the spectrum. This is not an approximation or an assumption — it is a *theorem*, as obligatory as the law of charge conservation.
 
-### 0.3 Примеры из физики
+### 0.3 Examples from Physics
 
-Прежде чем перейти к сознанию, стоит увидеть, насколько универсален этот механизм:
+Before turning to consciousness, it is worth seeing how universal this mechanism is:
 
-| Система | $G$ | $H$ | Голдстоуновская мода | Наблюдение |
-|---------|-----|-----|---------------------|------------|
-| Кристалл | Трансляции $\mathbb{R}^3$ | Дискретная решётка | **Фононы** — звуковые волны | Акустика, теплоёмкость |
-| Ферромагнетик | $\mathrm{SO}(3)$ вращений | $\mathrm{SO}(2)$ вокруг оси намагниченности | **Магноны** — спиновые волны | Нейтронное рассеяние |
-| Сверхпроводник | $\mathrm{U}(1)$ электромагнитный | $\{1\}$ | **Моды Андерсона–Хиггса** (массивные из-за связи с калибровочным полем) | Эффект Мейсснера |
-| КХД (сильное взаимодействие) | $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ | $\mathrm{SU}(2)_V$ | **Пионы** — квази-голдстоуновские (масса $\neq 0$ из-за масс кварков) | Ядерная физика |
-| Космология | Конформная группа | Лоренц | **Инфлатон** (кандидат) | Реликтовое излучение |
+| System | $G$ | $H$ | Goldstone mode | Observation |
+|--------|-----|-----|----------------|-------------|
+| Crystal | Translations $\mathbb{R}^3$ | Discrete lattice | **Phonons** — sound waves | Acoustics, heat capacity |
+| Ferromagnet | $\mathrm{SO}(3)$ rotations | $\mathrm{SO}(2)$ around magnetisation axis | **Magnons** — spin waves | Neutron scattering |
+| Superconductor | $\mathrm{U}(1)$ electromagnetic | $\{1\}$ | **Anderson–Higgs modes** (massive due to coupling to gauge field) | Meissner effect |
+| QCD (strong interaction) | $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ | $\mathrm{SU}(2)_V$ | **Pions** — quasi-Goldstone (mass $\neq 0$ due to quark masses) | Nuclear physics |
+| Cosmology | Conformal group | Lorentz | **Inflaton** (candidate) | CMB radiation |
 
-Обратите внимание на слово «квази-» в строке с пионами. Когда нарушение симметрии не идеально (явное нарушение добавляется к спонтанному), моды приобретают *малую, но ненулевую* массу. Они — *почти* безмассовые. Это именно то, что происходит в сознании.
-
----
-
-## 0b. От физики частиц к нейронауке {#от-физики-к-нейронауке}
-
-### Интеллектуальный прыжок
-
-В стандартной физике голдстоуновские моды живут в пространстве полей — фононы распространяются в кристалле, магноны — в магнетике. Но в когерентной кибернетике (КК) «пространством» служит сам голоном — семимерное внутреннее пространство $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, матрица когерентности с 21 независимой когерентностью $\binom{7}{2}$.
-
-Группа $G_2 = \mathrm{Aut}(\mathbb{O})$, 14-мерная исключительная группа Ли, действует на Gap-профиле как группа «внутренних вращений», перемешивающих роли семи измерений. Когда Gap-профиль замерзает в конкретной конфигурации $\hat{\mathcal{G}}_*$, часть этой 14-мерной свободы *ломается*: те направления, вдоль которых $\hat{\mathcal{G}}_*$ остаётся инвариантным, образуют стабилизатор $H$. Остальные — $14 - \dim(H)$ направлений — становятся голдстоуновскими модами.
-
-### Почему это не просто аналогия
-
-Три причины, по которым перенос теоремы Голдстоуна в КК — не метафора, а вывод:
-
-1. **Алгебра та же.** Gap-оператор $\hat{\mathcal{G}} \in \mathfrak{so}(7)$, а $\mathfrak{g}_2 \subset \mathfrak{so}(7)$ — подалгебра. Разложение на стабилизатор и дополнение ($\mathfrak{g}_2 = \mathfrak{h} \oplus \mathfrak{m}$) — стандартная операция в теории однородных пространств.
-
-2. **Динамика определена.** Эволюция $\Gamma$ задана линдбладовским уравнением $\dot{\Gamma} = \mathcal{L}_0(\Gamma) + \mathcal{R}(\Gamma)$. Стационарная точка $\Gamma_*$ ломает $G_2$-симметрию *динамически*, а не «по построению».
-
-3. **Энергетика зафиксирована.** [Потенциал Gap](/docs/core/dynamics/gap-thermodynamics) $V_{\text{Gap}}$ имеет именно ту «сомбреро»-структуру, которая порождает плоские направления — поэтому плоские направления являются *физически обоснованными*, а не абстрактными.
+Note the word "quasi-" in the pion row. When the symmetry breaking is not perfect (explicit breaking is added on top of spontaneous breaking), the modes acquire a *small but nonzero* mass. They are *almost* massless. This is precisely what happens in consciousness.
 
 ---
 
-## 1. Спонтанное нарушение $G_2$ и число мод [Т] {#нарушение-g2}
+## 0b. From Particle Physics to Neuroscience {#from-physics-to-neuroscience}
 
-:::tip Теорема 1.1 (Число голдстоуновских мод) [Т]
-При спонтанном нарушении $G_2 \to H_{\hat{\mathcal{G}}_*}$ число квази-голдстоуновских мод:
+### The Intellectual Leap
+
+In standard physics, Goldstone modes live in the space of fields — phonons propagate in a crystal, magnons in a magnet. But in coherence cybernetics (CC) the "space" is the holonom itself — the seven-dimensional internal space $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, the coherence matrix with 21 independent coherences $\binom{7}{2}$.
+
+The group $G_2 = \mathrm{Aut}(\mathbb{O})$, a 14-dimensional exceptional Lie group, acts on the Gap profile as the group of "internal rotations" that mix the roles of the seven dimensions. When the Gap profile freezes into a specific configuration $\hat{\mathcal{G}}_*$, part of this 14-dimensional freedom is *broken*: the directions along which $\hat{\mathcal{G}}_*$ remains invariant form the stabiliser $H$. The remaining $14 - \dim(H)$ directions become Goldstone modes.
+
+### Why This Is Not Just an Analogy
+
+Three reasons why the transfer of Goldstone's theorem to CC is a derivation, not a metaphor:
+
+1. **The algebra is the same.** The Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$, and $\mathfrak{g}_2 \subset \mathfrak{so}(7)$ is a subalgebra. Decomposition into stabiliser and complement ($\mathfrak{g}_2 = \mathfrak{h} \oplus \mathfrak{m}$) is a standard operation in the theory of homogeneous spaces.
+
+2. **The dynamics are defined.** The evolution of $\Gamma$ is governed by the Lindblad equation $\dot{\Gamma} = \mathcal{L}_0(\Gamma) + \mathcal{R}(\Gamma)$. The stationary point $\Gamma_*$ breaks $G_2$-symmetry *dynamically*, not "by construction."
+
+3. **The energetics are fixed.** The [Gap potential](/docs/core/dynamics/gap-thermodynamics) $V_{\text{Gap}}$ has precisely the "sombrero" structure that generates flat directions — so these flat directions are *physically grounded*, not abstract.
+
+---
+
+## 1. Spontaneous Breaking of $G_2$ and the Number of Modes [T] {#g2-breaking}
+
+:::tip Theorem 1.1 (Number of Goldstone modes) [T]
+Under spontaneous breaking $G_2 \to H_{\hat{\mathcal{G}}_*}$ the number of quasi-Goldstone modes:
 
 $$
 n_{\text{broken}} = \dim(G_2) - \dim(H_{\hat{\mathcal{G}}_*}) = 14 - \dim(H)
 $$
 :::
 
-Число мод зависит от ранга непрозрачности Gap-оператора:
+The number of modes depends on the rank of the opacity of the Gap operator:
 
-| Ранг $\hat{\mathcal{G}}_*$ | Стабилизатор $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Пространство $G_2/H$ |
-|----------------------------|-----------------|-----------|---------------------|----------------------|
+| Rank $\hat{\mathcal{G}}_*$ | Stabiliser $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Space $G_2/H$ |
+|---------------------------|----------------|-----------|---------------------|----------------|
 | 0 | $G_2$ | 14 | 0 | $\{\mathrm{pt}\}$ |
 | 1 | $\mathrm{SU}(3)$ | 8 | **6** | $G_2/\mathrm{SU}(3) \cong S^6$ |
-| 2 | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | **10** | 10-мерн. |
-| 3 (общий) | $T^2$ | 2 | **12** | 12-мерн. |
-| 3 (вырожд.) | $\mathrm{SU}(2)$ | 3 | **11** | 11-мерн. |
+| 2 | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | **10** | 10-dimensional |
+| 3 (generic) | $T^2$ | 2 | **12** | 12-dimensional |
+| 3 (degenerate) | $\mathrm{SU}(2)$ | 3 | **11** | 11-dimensional |
 
-Максимальное число мод — **12** — достигается при общем ранге 3 (стабилизатор $T^2$, наиболее «типичный» случай).
+The maximum number of modes — **12** — is reached at generic rank 3 (stabiliser $T^2$, the most "typical" case).
 
-### 1.1 Какие симметрии ломаются и почему {#какие-симметрии}
+### 1.1 Which Symmetries Break and Why {#which-symmetries}
 
-Чтобы понять таблицу, нужно понять *геометрию* нарушения.
+To understand the table one must understand the *geometry* of the breaking.
 
-**Ранг 0: ничего не нарушено.** Gap-оператор нулевой — система полностью прозрачна ($P = 1/7$, максимально смешанное состояние). Все 14 генераторов $G_2$ оставляют $\hat{\mathcal{G}}_* = 0$ инвариантным. Нет нарушения — нет мод. Это состояние *глубокой комы* в терминах КК.
+**Rank 0: nothing is broken.** The Gap operator is zero — the system is fully transparent ($P = 1/7$, maximally mixed state). All 14 generators of $G_2$ leave $\hat{\mathcal{G}}_* = 0$ invariant. No breaking — no modes. This is the state of *deep coma* in CC terms.
 
-**Ранг 1: одно привилегированное направление.** Ровно одна пара измерений имеет ненулевой Gap. Из 14 генераторов $G_2$ восемь сохраняют это выделенное направление (они образуют $\mathrm{SU}(3)$), а шесть — нет. Шесть нарушенных генераторов дают **шесть голдстоуновских мод**. Геометрически, пространство возможных «однонаправленных» Gap-профилей — это шестимерная сфера $S^6 \cong G_2/\mathrm{SU}(3)$.
+**Rank 1: one privileged direction.** Exactly one pair of dimensions has a nonzero Gap. Of the 14 generators of $G_2$, eight preserve this distinguished direction (forming $\mathrm{SU}(3)$), while six do not. The six broken generators give **six Goldstone modes**. Geometrically, the space of possible "single-direction" Gap profiles is the six-dimensional sphere $S^6 \cong G_2/\mathrm{SU}(3)$.
 
-**Ранг 2: два привилегированных направления.** Стабилизатор уменьшается до $\mathrm{SU}(2) \times \mathrm{U}(1)$ (четыре генератора), отсюда **десять мод**. Сознательная система с умеренной дифференциацией — например, бодрствование без фокусированного внимания.
+**Rank 2: two privileged directions.** The stabiliser shrinks to $\mathrm{SU}(2) \times \mathrm{U}(1)$ (four generators), giving **ten modes**. A conscious system with moderate differentiation — for example, waking without focused attention.
 
-**Ранг 3 (общий): максимальная дифференциация.** Три независимых направления Gap фиксируют почти всю $G_2$-свободу, оставляя лишь двумерный тор $T^2$. Отсюда **двенадцать мод** — максимальное число. Это состояние глубокого сосредоточения, медитации, творческого потока: богатейший внутренний спектр.
+**Rank 3 (generic): maximal differentiation.** Three independent Gap directions fix almost all $G_2$-freedom, leaving only the two-dimensional torus $T^2$. This gives **twelve modes** — the maximum. This is the state of deep concentration, meditation, creative flow: the richest internal spectrum.
 
-**Ранг 3 (вырожденный): два из трёх направлений совпадают по симметрии.** Стабилизатор чуть больше ($\mathrm{SU}(2)$, три генератора), отсюда **одиннадцать мод**. Частный случай, но физически значимый: он соответствует состояниям с частичной «слипшейся» непрозрачностью.
+**Rank 3 (degenerate): two of the three directions coincide by symmetry.** The stabiliser is slightly larger ($\mathrm{SU}(2)$, three generators), giving **eleven modes**. A special case, but physically significant: it corresponds to states with partially "merged" opacity.
 
-### 1.2 Связь с однородными пространствами {#однородные-пространства}
+### 1.2 Connection to Homogeneous Spaces {#homogeneous-spaces}
 
-Пространство $G_2/H$ — это не абстракция. Каждая точка этого пространства — допустимый Gap-профиль, связанный с данным профилем $\hat{\mathcal{G}}_*$ «поворотом» из $G_2$. Голдстоуновские моды — это *касательные направления* к $G_2/H$ в точке $\hat{\mathcal{G}}_*$:
+The space $G_2/H$ is not an abstraction. Each point of this space is an admissible Gap profile, connected to the profile $\hat{\mathcal{G}}_*$ by a "rotation" from $G_2$. The Goldstone modes are *tangent directions* to $G_2/H$ at the point $\hat{\mathcal{G}}_*$:
 
 $$
 T_{\hat{\mathcal{G}}_*}(G_2/H) \cong \mathfrak{g}_2 / \mathfrak{h} \cong \mathfrak{m}
 $$
 
-Размерность $\mathfrak{m}$ равна $n_{\text{broken}}$, и каждый вектор из $\mathfrak{m}$ задаёт одну независимую моду колебаний.
+The dimension of $\mathfrak{m}$ equals $n_{\text{broken}}$, and each vector in $\mathfrak{m}$ defines one independent oscillation mode.
 
 ---
 
-## 2. Эффективная масса и время жизни [Т] {#масса}
+## 2. Effective Mass and Lifetime [T] {#mass}
 
-В открытых системах ($\Gamma_2 > 0$) голдстоуновские моды приобретают эффективную массу — они «квази-безмассовые», а не строго безмассовые.
+In open systems ($\Gamma_2 > 0$) the Goldstone modes acquire an effective mass — they are "quasi-massless," not strictly massless.
 
-:::tip Теорема 2.1 (Квази-голдстоуновская масса) [Т]
-**(a)** Эффективная масса:
+:::tip Theorem 2.1 (Quasi-Goldstone mass) [T]
+**(a)** Effective mass:
 
 $$
 m_{\text{Gold}}^2 = \frac{\Gamma_2 \cdot \kappa_0}{|\gamma|^2}
 $$
 
-где $|\gamma|^2$ — средний квадрат модуля когерентности.
+where $|\gamma|^2$ is the mean squared modulus of coherence.
 
-**(b)** Время жизни моды:
+**(b)** Mode lifetime:
 
 $$
 \tau_{\text{Gold}} = \frac{1}{\Gamma_2} \cdot \frac{|\gamma|^2}{\kappa_0}
 $$
 
-**(c)** Предельные случаи:
+**(c)** Limiting cases:
 
-| Режим | $m_{\text{Gold}}$ | Интерпретация |
-|-------|-------------------|---------------|
-| Изолированная система ($\Gamma_2 \to 0$) | $\to 0$ | Стандартные безмассовые голдстоуновские моды |
-| Сильная диссипация ($\Gamma_2 \to \infty$) | $\to \infty$ | Моды «заморожены» — осцилляции подавлены |
-| Типичная биосистема | $\sim 10^{-2}$ (в единицах $\kappa_0$) | Медленные долгоживущие моды |
+| Regime | $m_{\text{Gold}}$ | Interpretation |
+|--------|-------------------|----------------|
+| Isolated system ($\Gamma_2 \to 0$) | $\to 0$ | Standard massless Goldstone modes |
+| Strong dissipation ($\Gamma_2 \to \infty$) | $\to \infty$ | Modes "frozen" — oscillations suppressed |
+| Typical biosystem | $\sim 10^{-2}$ (in units of $\kappa_0$) | Slow, long-lived modes |
 :::
 
-### 2.1 Почему масса не ноль: открытость как явное нарушение {#почему-масса-не-ноль}
+### 2.1 Why the Mass Is Not Zero: Openness as Explicit Breaking {#why-mass-not-zero}
 
-В изолированной системе теорема Голдстоуна гарантирует *строго* безмассовые моды. Но голоном — открытая система: декогеренция со скоростью $\Gamma_2$ и регенерация со скоростью $\kappa_0$ суть *явные* нарушения $G_2$-симметрии. Аналогия с физикой частиц точна: пионы имеют массу $m_\pi \neq 0$ потому, что кварки имеют ненулевые массы, *явно* ломающие киральную симметрию. Здесь роль «масс кварков» играет диссипативный параметр $\Gamma_2 \cdot \kappa_0$.
+In an isolated system the Goldstone theorem guarantees *strictly* massless modes. But the holonom is an open system: decoherence at rate $\Gamma_2$ and regeneration at rate $\kappa_0$ are *explicit* breakings of $G_2$-symmetry. The analogy with particle physics is exact: pions have mass $m_\pi \neq 0$ because quarks have nonzero masses that *explicitly* break chiral symmetry. Here the role of "quark masses" is played by the dissipative parameter $\Gamma_2 \cdot \kappa_0$.
 
-Формула $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ — это GMOR-соотношение (Gell-Mann–Oakes–Renner) когерентной кибернетики. В физике частиц аналог:
+The formula $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ is the GMOR relation (Gell-Mann–Oakes–Renner) of coherence cybernetics. In particle physics the analogue is:
 
 $$
 m_\pi^2 f_\pi^2 = -m_q \langle \bar{q}q \rangle
 $$
 
-Здесь $\Gamma_2 \cdot \kappa_0$ играет роль $m_q \langle \bar{q}q \rangle$, а $|\gamma|^2$ — роль $f_\pi^2$ (квадрата постоянной распада).
+Here $\Gamma_2 \cdot \kappa_0$ plays the role of $m_q \langle \bar{q}q \rangle$, and $|\gamma|^2$ plays the role of $f_\pi^2$ (squared decay constant).
 
-### 2.2 Режимы осцилляций
+### 2.2 Oscillation Regimes
 
-Частота квази-голдстоуновской моды:
+The frequency of a quasi-Goldstone mode:
 
 $$
 \omega_{\text{Gold}}^2 = \frac{\kappa}{m} - \frac{\Gamma_2^2}{4m^2}
 $$
 
-| Условие | Режим | Динамика |
-|---------|-------|----------|
-| $\kappa > \Gamma_2^2/(4m)$ | Осцилляторный | Затухающие осцилляции Gap-профиля |
-| $\kappa = \Gamma_2^2/(4m)$ | Критическое затухание | Апериодический возврат к стационарному Gap |
-| $\kappa < \Gamma_2^2/(4m)$ | Передемпфированный | Экспоненциальный возврат без осцилляций |
+| Condition | Regime | Dynamics |
+|-----------|--------|----------|
+| $\kappa > \Gamma_2^2/(4m)$ | Oscillatory | Damped oscillations of the Gap profile |
+| $\kappa = \Gamma_2^2/(4m)$ | Critical damping | Aperiodic return to stationary Gap |
+| $\kappa < \Gamma_2^2/(4m)$ | Overdamped | Exponential return without oscillations |
 
-Каждый режим имеет кибернетический смысл:
+Each regime has a cybernetic meaning:
 
-- **Осцилляторный:** система *колеблется* — внимание ритмично перекатывается между секторами. Субъективно это переживается как естественное «блуждание ума» (mind-wandering), мерное покачивание фокуса.
+- **Oscillatory:** the system *oscillates* — attention rhythmically rolls between sectors. Subjectively experienced as natural mind-wandering, a gentle rocking of focus.
 
-- **Критическое затухание:** система *оптимально откликается* — сдвиг внимания происходит быстро, без перерегулирования. Это состояние *наибольшей адаптивности*: ответ на стимул — моментальный, но без паразитных осцилляций.
+- **Critical damping:** the system *responds optimally* — attentional shift occurs quickly, without overshoot. This is the state of *greatest adaptability*: the response to a stimulus is immediate, but without parasitic oscillations.
 
-- **Передемпфированный:** система *вязкая* — перестройка внимания замедлена. Клинически это может соответствовать лёгким формам расстройств внимания или действию седативных препаратов.
+- **Overdamped:** the system is *viscous* — attentional reorientation is slowed. Clinically this may correspond to mild attention-deficit disorders or the action of sedative drugs.
 
-### 2.3 Время жизни и наблюдаемость {#время-жизни}
+### 2.3 Lifetime and Observability {#lifetime}
 
-Из формулы времени жизни $\tau_{\text{Gold}} = |\gamma|^2 / (\Gamma_2 \kappa_0)$ следует важное предсказание: моды с *большей когерентностью* ($|\gamma|^2$) живут *дольше*. Это означает, что высоко-когерентные состояния сознания (глубокая медитация, поток) должны демонстрировать *более узкие* ISF-пики в спектре мощности — моды дольше когерентны, спектральная линия уже.
+From the lifetime formula $\tau_{\text{Gold}} = |\gamma|^2 / (\Gamma_2 \kappa_0)$ an important prediction follows: modes with *greater coherence* ($|\gamma|^2$) live *longer*. This means that highly coherent states of consciousness (deep meditation, flow) should exhibit *narrower* ISF peaks in the power spectrum — modes remain coherent longer, the spectral line is narrower.
 
-Оценка для типичной биосистемы: при $\Gamma_2 \sim 1 \;\text{с}^{-1}$, $\kappa_0 \sim 0.1 \;\text{с}^{-1}$ и $|\gamma|^2 \sim 0.1$:
+Estimate for a typical biosystem: with $\Gamma_2 \sim 1 \;\text{s}^{-1}$, $\kappa_0 \sim 0.1 \;\text{s}^{-1}$, and $|\gamma|^2 \sim 0.1$:
 
 $$
-\tau_{\text{Gold}} \sim \frac{0.1}{1 \cdot 0.1} = 1 \;\text{с}
+\tau_{\text{Gold}} \sim \frac{0.1}{1 \cdot 0.1} = 1 \;\text{s}
 $$
 
-Одна секунда — характерное время затухания свободных колебаний внимания. Это согласуется с психофизическими данными о длительности «элементарного акта внимания».
+One second — the characteristic decay time of free attentional oscillations. This is consistent with psychophysical data on the duration of the "elementary act of attention."
 
 ---
 
-## 3. Физический смысл: перераспределение Gap [Т] {#перераспределение}
+## 3. Physical Meaning: Gap Redistribution [T] {#redistribution}
 
-:::tip Теорема 3.1 (Голдстоуновские моды как коллективные осцилляции) [Т]
-Каждая квази-голдстоуновская мода **перераспределяет** Gap между парами измерений при сохранении полного Gap $\mathcal{G}_{\text{total}}$:
+:::tip Theorem 3.1 (Goldstone modes as collective oscillations) [T]
+Each quasi-Goldstone mode **redistributes** Gap between pairs of dimensions while preserving the total Gap $\mathcal{G}_{\text{total}}$:
 
 $$
 \delta\mathrm{Gap}(i,j) = \sum_a \epsilon_a \cdot [T_a, \hat{\mathcal{G}}_*]_{ij}
 $$
 
-где $T_a$ — нарушенные генераторы $G_2$, $\epsilon_a$ — амплитуды мод.
+where $T_a$ are the broken generators of $G_2$, and $\epsilon_a$ are the mode amplitudes.
 :::
 
-**Ключевое свойство:** моды не изменяют «общее количество» непрозрачности — они перемещают её между каналами. Это — медленное «покачивание» Gap-профиля вдоль орбиты $G_2$.
+**Key property:** modes do not change the "total amount" of opacity — they transport it between channels. This is the slow "rocking" of the Gap profile along the $G_2$ orbit.
 
-### 3.1 Закон сохранения полного Gap {#сохранение-gap}
+### 3.1 Conservation Law for Total Gap {#gap-conservation}
 
-Математически, коммутатор $[T_a, \hat{\mathcal{G}}_*]$ порождает *бесследовый* вклад в Gap-тензор (поскольку $T_a$ — генераторы компактной группы, $\mathrm{tr}(T_a) = 0$). Следовательно:
+Mathematically, the commutator $[T_a, \hat{\mathcal{G}}_*]$ generates a *traceless* contribution to the Gap tensor (since $T_a$ are generators of a compact group, $\mathrm{tr}(T_a) = 0$). Consequently:
 
 $$
 \sum_{i < j} \delta\mathrm{Gap}(i,j) = 0
 $$
 
-**Что прибавилось в одних парах, убыло в других.** Полная непрозрачность инвариантна. Это — глубокое свойство: голдстоуновские моды описывают *перераспределение*, а не *создание* или *уничтожение* зазора.
+**What is added in some pairs is taken from others.** Total opacity is invariant. This is a deep property: Goldstone modes describe *redistribution*, not *creation* or *destruction* of the gap.
 
-### 3.2 Пример: мода на $S^6$ (ранг 1) {#пример-мода}
+### 3.2 Example: Mode on $S^6$ (Rank 1) {#mode-example}
 
-Рассмотрим простейший случай: ранг 1, стабилизатор $\mathrm{SU}(3)$, шесть мод. Gap-профиль выделяет одну пару, скажем $(A, S)$. Шесть голдстоуновских мод перекатывают это выделенное направление по шестимерной сфере $S^6$:
+Consider the simplest case: rank 1, stabiliser $\mathrm{SU}(3)$, six modes. The Gap profile singles out one pair, say $(A, S)$. The six Goldstone modes roll this distinguished direction across the six-dimensional sphere $S^6$:
 
-- Мода 1: $(A,S) \to (A,D)$ — фокус с пары «Агенс–Субъект» перемещается на пару «Агенс–Действие»
-- Мода 2: $(A,S) \to (S,L)$ — на пару «Субъект–Лексика»
-- ... и так далее.
+- Mode 1: $(A,S) \to (A,D)$ — focus shifts from the pair "Agent–Subject" to the pair "Agent–Action"
+- Mode 2: $(A,S) \to (S,L)$ — to the pair "Subject–Lexicon"
+- ... and so on.
 
-Каждая мода — *поворот* в пространстве Gap-профилей, сохраняющий $\mathcal{G}_{\text{total}}$, но меняющий *распределение* непрозрачности между каналами.
+Each mode is a *rotation* in the space of Gap profiles, preserving $\mathcal{G}_{\text{total}}$ but changing the *distribution* of opacity between channels.
 
-### 3.3 Кибернетическая интерпретация [И] {#кибернетическая-интерпретация}
+### 3.3 Cybernetic Interpretation [I] {#cybernetic-interpretation}
 
-**Кибернетическая интерпретация [И]:** Голдстоуновские моды описывают **естественные колебания внимания** — фоновое перераспределение «фокуса непрозрачности» между секторами. Система не теряет и не приобретает общий уровень непрозрачности, но медленно перенастраивается.
+**Cybernetic interpretation [I]:** Goldstone modes describe **natural oscillations of attention** — the background redistribution of the "opacity focus" between sectors. The system neither loses nor gains overall opacity level, but slowly retunes itself.
 
-Это объясняет фундаментальное свойство сознательного опыта: **внимание не может быть одновременно сфокусировано на всём.** Усиление Gap в одном канале (фокусировка на звуке) неизбежно ослабляет Gap в другом (периферическое зрение «размывается»). Голдстоуновские моды — математическое описание этого неизбежного компромисса.
-
----
-
-## 4. Свободные колебания сознания {#свободные-колебания}
-
-### 4.1 Что чувствуется, когда колеблется мода {#субъективный-опыт}
-
-Каждая голдстоуновская мода — колебание непрозрачности между парой каналов. Но поскольку [семь измерений](/docs/core/structure/dimension-u) голонома несут *семантическую* нагрузку (A — Агенс, S — Субъект, D — Действие, L — Лексика, E — Опыт, O — Наблюдатель, U — Универсум), колебания не абстрактны: они имеют *субъективное* значение.
-
-**Мода $(E, O)$:** осциллирует непрозрачность между Опытом и Наблюдателем. Субъективно: ритмичное чередование «погружённости в переживание» и «отстранённого наблюдения». Это — классическое «мерцание сознания», описанное медитативными традициями как смена самадхи и випашьяны.
-
-**Мода $(L, D)$:** осциллирует между Лексикой и Действием. Субъективно: колебание между «внутренним монологом» и «готовностью к действию». Знакомое чувство: вы формулируете мысль, потом переключаетесь на действие, потом снова к мысли.
-
-**Мода $(A, U)$:** осциллирует между Агенсом и Универсумом. Субъективно: колебание между «я — деятель» и «я — часть целого». Это — осцилляция между чувством агентности и чувством растворённости, хорошо известная в феноменологии изменённых состояний.
-
-### 4.2 Почему мы не замечаем моды {#незаметность}
-
-Голдстоуновские моды — *инфра-медленные*: их частоты $\sim 0.01$ Гц, периоды $\sim 100$ с. Обычное интроспективное «сканирование» происходит на временах $\sim 1$ с (частота $\sim 1$ Гц), что на два порядка быстрее. Мы не замечаем мод по той же причине, по которой не замечаем прилива: слишком медленный процесс для нашего «временного разрешения» внимания.
-
-Но их можно обнаружить *объективно* — через анализ фМРТ и EEG в ультрамедленном диапазоне. И — что ещё интереснее — *субъективно* при длительной медитации, когда временное разрешение интроспекции увеличивается.
+This explains a fundamental property of conscious experience: **attention cannot be simultaneously focused on everything.** Strengthening Gap in one channel (focusing on sound) inevitably weakens Gap in another (peripheral vision "blurs"). Goldstone modes are the mathematical description of this inevitable trade-off.
 
 ---
 
-## 5. Сравнение с физическими аналогами {#сравнение}
+## 4. Free Oscillations of Consciousness {#free-oscillations}
 
-Полезно сопоставить голдстоуновские моды КК с их физическими аналогами, чтобы понять, что общего и что уникально:
+### 4.1 What Is Felt When a Mode Oscillates {#subjective-experience}
 
-| Свойство | Фононы (кристалл) | Магноны (магнетик) | Пионы (КХД) | Голдстоуновские моды КК |
-|----------|-------------------|-------------------|-------------|------------------------|
-| Нарушенная симметрия | Трансляционная | Вращательная $\mathrm{SO}(3)$ | Киральная $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ | $G_2 = \mathrm{Aut}(\mathbb{O})$ |
-| Стабилизатор | Решёточные трансляции | $\mathrm{SO}(2)$ | $\mathrm{SU}(2)_V$ | $H \in \{G_2, \mathrm{SU}(3), \mathrm{SU}(2) \times \mathrm{U}(1), T^2\}$ |
-| Число мод | 3 (акустические) | 1 (для $S = 1/2$) | 3 ($\pi^+, \pi^-, \pi^0$) | $\in \{0, 6, 10, 11, 12\}$ |
-| Масса | 0 (точно) | 0 (при $T = 0$) | 135–140 МэВ (квази) | $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ (квази) |
-| Источник массы | — | Тепловые флуктуации, анизотропия | Ненулевые массы кварков | Декогеренция $\Gamma_2$, регенерация $\kappa_0$ |
-| Среда распространения | Кристаллическая решётка | Спиновая решётка | Вакуум КХД | Внутреннее пространство $\mathcal{D}(\mathbb{C}^7)$ |
-| Характерная частота | $10^{12}$ Гц (ТГц) | $10^{9}$–$10^{12}$ Гц (ГГц–ТГц) | $10^{23}$ Гц | $0.005$–$0.02$ Гц |
-| Наблюдаемость | Рамановская спектроскопия | Нейтронное рассеяние | Детекторы частиц | фМРТ, EEG |
+Each Goldstone mode is an oscillation of opacity between a pair of channels. But since the [seven dimensions](/docs/core/structure/dimension-u) of the holonom carry *semantic* content (A — Agent, S — Subject, D — Action, L — Lexicon, E — Experience, O — Observer, U — Universe), the oscillations are not abstract: they carry *subjective* meaning.
 
-Две черты делают КК-моды *уникальными*:
+**Mode $(E, O)$:** opacity oscillates between Experience and Observer. Subjectively: rhythmic alternation between "immersion in the experience" and "detached observation." This is the classical "flickering of consciousness" described by meditative traditions as the alternation of samadhi and vipassana.
 
-1. **Экстремально низкая частота.** На 25 порядков ниже фононов. Это отражает *макроскопический* характер сознания: временные масштабы когнитивных процессов — секунды и минуты, а не пикосекунды.
+**Mode $(L, D)$:** oscillates between Lexicon and Action. Subjectively: alternation between "inner monologue" and "readiness for action." A familiar feeling: you formulate a thought, then switch to action, then back to thought.
 
-2. **Переменное число мод.** В физике число голдстоуновских мод фиксировано для данной системы. В КК оно *зависит от состояния сознания* (через ранг Gap-оператора): от 0 в коме до 12 в глубоком сосредоточении. Это — динамическое нарушение симметрии, меняющееся на лету.
+**Mode $(A, U)$:** oscillates between Agent and Universe. Subjectively: alternation between "I am the doer" and "I am part of the whole." This is the oscillation between a sense of agency and a sense of dissolution, well known in the phenomenology of altered states.
+
+### 4.2 Why We Do Not Notice the Modes {#invisibility}
+
+Goldstone modes are *infra-slow*: their frequencies $\sim 0.01$ Hz, periods $\sim 100$ s. Ordinary introspective "scanning" occurs on timescales $\sim 1$ s (frequency $\sim 1$ Hz), which is two orders of magnitude faster. We do not notice the modes for the same reason we do not notice the tide: the process is too slow for our attentional "temporal resolution."
+
+But they can be detected *objectively* — through analysis of fMRI and EEG in the ultra-slow range. And — even more interestingly — *subjectively* in extended meditation, when the temporal resolution of introspection increases.
 
 ---
 
-## 6. Фальсифицируемое предсказание: связь с ISF [Г] {#предсказание-isf}
+## 5. Comparison with Physical Analogues {#comparison}
 
-### 6.1 Предсказание инфра-медленных флуктуаций {#предсказание-частот}
+It is instructive to compare CC Goldstone modes with their physical analogues, to see what is shared and what is unique:
 
-:::warning Предсказание (Голдстоуновские моды $\leftrightarrow$ инфра-медленные флуктуации) [Г]
-Частота квази-голдстоуновских мод:
+| Property | Phonons (crystal) | Magnons (magnet) | Pions (QCD) | CC Goldstone modes |
+|----------|--------------------|------------------|-------------|---------------------|
+| Broken symmetry | Translational | Rotational $\mathrm{SO}(3)$ | Chiral $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ | $G_2 = \mathrm{Aut}(\mathbb{O})$ |
+| Stabiliser | Lattice translations | $\mathrm{SO}(2)$ | $\mathrm{SU}(2)_V$ | $H \in \{G_2, \mathrm{SU}(3), \mathrm{SU}(2) \times \mathrm{U}(1), T^2\}$ |
+| Number of modes | 3 (acoustic) | 1 (for $S = 1/2$) | 3 ($\pi^+, \pi^-, \pi^0$) | $\in \{0, 6, 10, 11, 12\}$ |
+| Mass | 0 (exact) | 0 (at $T = 0$) | 135–140 MeV (quasi) | $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ (quasi) |
+| Source of mass | — | Thermal fluctuations, anisotropy | Nonzero quark masses | Decoherence $\Gamma_2$, regeneration $\kappa_0$ |
+| Propagation medium | Crystal lattice | Spin lattice | QCD vacuum | Internal space $\mathcal{D}(\mathbb{C}^7)$ |
+| Characteristic frequency | $10^{12}$ Hz (THz) | $10^{9}$–$10^{12}$ Hz (GHz–THz) | $10^{23}$ Hz | $0.005$–$0.02$ Hz |
+| Observability | Raman spectroscopy | Neutron scattering | Particle detectors | fMRI, EEG |
+
+Two features make CC modes *unique*:
+
+1. **Extremely low frequency.** 25 orders of magnitude lower than phonons. This reflects the *macroscopic* character of consciousness: the timescales of cognitive processes are seconds and minutes, not picoseconds.
+
+2. **Variable number of modes.** In physics the number of Goldstone modes is fixed for a given system. In CC it *depends on the state of consciousness* (through the rank of the Gap operator): from 0 in coma to 12 in deep concentration. This is a dynamic symmetry breaking that changes on the fly.
+
+---
+
+## 6. Falsifiable Prediction: Connection to ISF [H] {#isf-prediction}
+
+### 6.1 Prediction of Infra-Slow Fluctuations {#frequency-prediction}
+
+:::warning Prediction (Goldstone modes $\leftrightarrow$ infra-slow fluctuations) [H]
+Frequency of quasi-Goldstone modes:
 
 $$
-f_{\text{Gold}} = \frac{\omega_{\text{Gold}}}{2\pi} \approx \frac{1}{2\pi}\sqrt{\frac{\kappa}{m}} \sim 0.005\text{–}0.02 \;\text{Гц}
+f_{\text{Gold}} = \frac{\omega_{\text{Gold}}}{2\pi} \approx \frac{1}{2\pi}\sqrt{\frac{\kappa}{m}} \sim 0.005\text{–}0.02 \;\text{Hz}
 $$
 
-Это совпадает с диапазоном **инфра-медленных нейрональных флуктуаций** (ISF), наблюдаемых в фМРТ resting-state ($0.01$–$0.1$ Гц).
+This coincides with the range of **infra-slow neuronal fluctuations** (ISF) observed in resting-state fMRI ($0.01$–$0.1$ Hz).
 
-**Статус:** алгебра [Т], совпадение частот [Г], экспериментальная верификация [П].
+**Status:** algebra [T], frequency coincidence [H], experimental verification [P].
 :::
 
-:::warning Свободные параметры в числовом предсказании [С]
-Конкретный диапазон $0.005$--$0.02$ Гц зависит от значений $\kappa$ и $m_{\text{Gold}}$, которые **не определены** из первых принципов, а оцениваются по порядку величины. С двумя свободными параметрами ($\kappa$, $m$) ISF-диапазон может быть подогнан post hoc. Фальсифицируемым является **структурное** предсказание (число компонент $\in \{6, 10, 12\}$, зависимость от состояния сознания), а не точный частотный диапазон. Статус числового предсказания: **[С]**, а не [Т].
+:::warning Free parameters in the numerical prediction [C]
+The specific range $0.005$--$0.02$ Hz depends on the values of $\kappa$ and $m_{\text{Gold}}$, which are **not determined** from first principles but estimated by order of magnitude. With two free parameters ($\kappa$, $m$) the ISF range can be fitted post hoc. The falsifiable content is the **structural** prediction (number of components $\in \{6, 10, 12\}$, dependence on state of consciousness), not the exact frequency range. Status of the numerical prediction: **[C]**, not [T].
 :::
 
-### 6.2 Что известно о ISF из эксперимента {#isf-данные}
+### 6.2 What Is Known about ISF from Experiment {#isf-data}
 
-Инфра-медленные флуктуации (ISF) — хорошо документированный нейрофизиологический феномен:
+Infra-slow fluctuations (ISF) are a well-documented neurophysiological phenomenon:
 
-- **Обнаружение:** Впервые замечены в фМРТ resting-state как спонтанные осцилляции BOLD-сигнала (Biswal et al., 1995).
-- **Частотный диапазон:** $0.01$–$0.1$ Гц, с ядром на $0.01$–$0.03$ Гц.
-- **Свойства:** Пространственно организованы в «сети покоя» (default mode network, DMN), демонстрируют антикорреляции между DMN и task-positive network.
-- **Зависимость от сознания:** Ослабевают в анестезии (Boveroux et al., 2010), исчезают в глубокой коме (Noirhomme et al., 2010), усиливаются при медитации (Brewer et al., 2011).
+- **Discovery:** First noticed in resting-state fMRI as spontaneous oscillations of the BOLD signal (Biswal et al., 1995).
+- **Frequency range:** $0.01$–$0.1$ Hz, with the core at $0.01$–$0.03$ Hz.
+- **Properties:** Spatially organised into "resting-state networks" (default mode network, DMN), exhibiting anti-correlations between DMN and the task-positive network.
+- **Dependence on consciousness:** Weakened under anaesthesia (Boveroux et al., 2010), disappear in deep coma (Noirhomme et al., 2010), enhanced during meditation (Brewer et al., 2011).
 
-Этот профиль — именно то, что предсказывает теория: моды, зависящие от уровня сознания, с характерной частотой в ультрамедленном диапазоне.
+This profile is precisely what the theory predicts: modes that depend on the level of consciousness, with a characteristic frequency in the ultra-slow range.
 
-### 6.3 Количественные предсказания
+### 6.3 Quantitative Predictions
 
-| Ранг непрозрачности | $n_{\text{Gold}}$ | Предсказание для ISF |
-|----------------------|-------------------|---------------------|
-| 1 | 6 | 6 независимых ISF-компонент |
-| 2 | 10 | 10 ISF-компонент |
-| 3 | 12 | 12 ISF-компонент |
+| Opacity rank | $n_{\text{Gold}}$ | Prediction for ISF |
+|--------------|-------------------|--------------------|
+| 1 | 6 | 6 independent ISF components |
+| 2 | 10 | 10 ISF components |
+| 3 | 12 | 12 ISF components |
 
-Сравнение с данными ICA-декомпозиции фМРТ resting-state: типичное число независимых ISF-компонент $\sim 10$–$20$, что согласуется с рангом 2–3.
+Comparison with ICA decomposition data from resting-state fMRI: the typical number of independent ISF components is $\sim 10$–$20$, consistent with rank 2–3.
 
-### 6.4 Конкретные предсказания для EEG
+### 6.4 Specific Predictions for EEG
 
-| Параметр | Предсказание | Метод проверки |
-|----------|-------------|----------------|
-| Частотный диапазон | $0.005$–$0.02$ Гц | Спектральный анализ EEG в полосе $0.001$–$0.1$ Гц |
-| Число компонент | $6$, $10$ или $12$ | ICA-декомпозиция ультрамедленного EEG |
-| Отсутствие в коме | $n_{\text{Gold}} \to 0$ | Сравнение спектров: сознание vs. кома |
-| Зависимость от медитации | Сдвиг $f_{\text{Gold}}$ при изменении $\kappa$ | Продольное исследование медитирующих |
+| Parameter | Prediction | Verification method |
+|-----------|------------|---------------------|
+| Frequency range | $0.005$–$0.02$ Hz | Spectral analysis of EEG in the $0.001$–$0.1$ Hz band |
+| Number of components | $6$, $10$, or $12$ | ICA decomposition of ultra-slow EEG |
+| Absence in coma | $n_{\text{Gold}} \to 0$ | Comparison of spectra: consciousness vs. coma |
+| Dependence on meditation | Shift in $f_{\text{Gold}}$ with change in $\kappa$ | Longitudinal study of meditators |
 
-### 6.5 Ключевой структурный тест: дискретное число мод {#структурный-тест}
+### 6.5 The Key Structural Test: Discrete Number of Modes {#structural-test}
 
-Наиболее сильное (и наиболее фальсифицируемое) предсказание — *не* числовое значение частоты, а *дискретность* числа мод. Теория утверждает, что число независимых ISF-компонент может принимать только значения из множества $\{0, 6, 10, 11, 12\}$ — и никакие другие. Это — прямое следствие классификации подгрупп $G_2$:
+The strongest (and most falsifiable) prediction is *not* the numerical value of the frequency, but the *discreteness* of the number of modes. The theory asserts that the number of independent ISF components can only take values from the set $\{0, 6, 10, 11, 12\}$ — and no others. This is a direct consequence of the classification of subgroups of $G_2$:
 
 $$
-n_{\text{broken}} \in \{0, 6, 10, 11, 12\} \quad \text{и никакие другие значения}
+n_{\text{broken}} \in \{0, 6, 10, 11, 12\} \quad \text{and no other values}
 $$
 
-Если ICA-декомпозиция обнаружит, скажем, стабильно 8 или 15 компонент, это *фальсифицирует* $G_2$-механизм. Если обнаружит 10 или 12 — это *подтверждает* его с высокой специфичностью, поскольку апостериорная вероятность случайного совпадения с одним из пяти дискретных значений мала.
+If ICA decomposition finds, say, a stable 8 or 15 components, this *falsifies* the $G_2$ mechanism. If it finds 10 or 12 — this *confirms* it with high specificity, since the posterior probability of a random coincidence with one of the five discrete values is small.
 
 ---
 
-## 7. Протокол экспериментальной проверки [П] {#протокол}
+## 7. Experimental Verification Protocol [P] {#protocol}
 
-:::caution Программа верификации [П]
-**Этап 1: Спектральный анализ (EEG)**
+:::caution Verification programme [P]
+**Stage 1: Spectral analysis (EEG)**
 
-1. Записать 64-канальный EEG в состоянии покоя (eyes-closed, 30 мин)
-2. Полосовая фильтрация: $0.001$–$0.1$ Гц
-3. Вычислить спектр мощности в ультрамедленном диапазоне
-4. Определить число значимых пиков в полосе $0.005$–$0.02$ Гц
-5. Сравнить с предсказанием: $n_{\text{peaks}} \in \{6, 10, 12\}$
+1. Record 64-channel EEG at rest (eyes-closed, 30 min)
+2. Bandpass filtering: $0.001$–$0.1$ Hz
+3. Compute power spectrum in the ultra-slow range
+4. Determine the number of significant peaks in the $0.005$–$0.02$ Hz band
+5. Compare with prediction: $n_{\text{peaks}} \in \{6, 10, 12\}$
 
-**Этап 2: Зависимость от состояния сознания**
+**Stage 2: Dependence on state of consciousness**
 
-1. Повторить для состояний: бодрствование, сон (N1–N3, REM), анестезия
-2. Предсказание: число ISF-компонент уменьшается при снижении уровня сознания
-3. В глубокой анестезии / коме: $n_{\text{peaks}} \to 0$
+1. Repeat for states: wakefulness, sleep (N1–N3, REM), anaesthesia
+2. Prediction: number of ISF components decreases with decreasing level of consciousness
+3. In deep anaesthesia / coma: $n_{\text{peaks}} \to 0$
 
-**Этап 3: Корреляция с G₂-структурой**
+**Stage 3: Correlation with G₂ structure**
 
-1. Построить $21 \times 21$ корреляционную матрицу (см. [G₂-заряды Нётер](./g2-noether-cc))
-2. Проверить [тождества Уорда](/docs/physics/gauge-symmetry/noether-charges#6-тождества-уорда-для-gap-корреляторов)
-3. Оценить ранг непрозрачности из числа ISF-компонент
+1. Construct the $21 \times 21$ correlation matrix (see [G₂ Noether charges](./g2-noether-cc))
+2. Verify [Ward identities](/docs/physics/gauge-symmetry/noether-charges#6-тождества-уорда-для-gap-корреляторов)
+3. Estimate opacity rank from the number of ISF components
 :::
 
-### 7.1 Детализированный протокол EEG-исследования {#протокол-eeg}
+### 7.1 Detailed EEG Study Protocol {#eeg-protocol}
 
-**Участники:** $N \geq 30$, здоровые взрослые, без неврологической патологии, без психотропных препаратов.
+**Participants:** $N \geq 30$, healthy adults, no neurological pathology, no psychotropic medications.
 
-**Оборудование:**
-- 64-канальный EEG (10-20 система + дополнительные электроды)
-- Частота дискретизации $\geq 500$ Гц (для артефактов), но ключевые данные — в полосе 0.001–0.1 Гц
-- Референс: среднее по ушным электродам
-- Одновременная регистрация ЭКГ, ЭОГ (для коррекции артефактов)
+**Equipment:**
+- 64-channel EEG (10-20 system + additional electrodes)
+- Sampling rate $\geq 500$ Hz (for artefacts), but key data in the 0.001–0.1 Hz band
+- Reference: average of ear electrodes
+- Simultaneous ECG, EOG recording (for artefact correction)
 
-**Протокол записи:**
-1. **Baseline (30 мин):** глаза закрыты, расслабленное бодрствование
-2. **Задача (15 мин):** N-back (рабочая память) — для изменения ранга непрозрачности
-3. **Медитация (30 мин):** опытные медитаторы, открытое осознавание (open monitoring)
-4. **Сон (при возможности):** ночная полисомнография с полным EEG
+**Recording protocol:**
+1. **Baseline (30 min):** eyes closed, relaxed wakefulness
+2. **Task (15 min):** N-back (working memory) — to change opacity rank
+3. **Meditation (30 min):** experienced meditators, open monitoring
+4. **Sleep (where possible):** overnight polysomnography with full EEG
 
-**Анализ данных:**
-1. Препроцессинг: удаление артефактов (ICA), реферирование
-2. Полосовая фильтрация: $0.001$–$0.1$ Гц (каузальный фильтр, чтобы не вносить фазовые искажения)
-3. Спектральный анализ: многотейперный метод (Thomson, 1982) для повышения спектрального разрешения
-4. ICA-декомпозиция в ультрамедленном диапазоне: определение числа статистически значимых компонент
-5. Сравнение с предсказанием: $n_{\text{ICA}} \in \{6, 10, 11, 12\}$
+**Data analysis:**
+1. Preprocessing: artefact removal (ICA), re-referencing
+2. Bandpass filtering: $0.001$–$0.1$ Hz (causal filter, to avoid phase distortion)
+3. Spectral analysis: multitaper method (Thomson, 1982) to increase spectral resolution
+4. ICA decomposition in the ultra-slow range: determination of the number of statistically significant components
+5. Comparison with prediction: $n_{\text{ICA}} \in \{6, 10, 11, 12\}$
 
-**Статистические критерии:**
-- $H_0$: число ISF-компонент непрерывно распределено (не кластеризуется вокруг $\{6, 10, 12\}$)
-- $H_1$: число ISF-компонент дискретно, согласуется с $G_2/H$-предсказанием
-- Тест: сравнение распределения $n_{\text{ICA}}$ с равномерным (критерий $\chi^2$ или bootstrap)
+**Statistical criteria:**
+- $H_0$: the number of ISF components is continuously distributed (does not cluster around $\{6, 10, 12\}$)
+- $H_1$: the number of ISF components is discrete, consistent with the $G_2/H$ prediction
+- Test: comparison of the distribution of $n_{\text{ICA}}$ with uniform ($\chi^2$ criterion or bootstrap)
 
-### 7.2 Протокол фМРТ-исследования {#протокол-fmri}
+### 7.2 fMRI Study Protocol {#fmri-protocol}
 
-**Преимущества фМРТ:** более высокое пространственное разрешение, прямой доступ к ISF через BOLD-сигнал.
+**Advantages of fMRI:** higher spatial resolution, direct access to ISF via the BOLD signal.
 
-**Протокол:**
-1. Resting-state фМРТ, 20 мин, TR $\leq 1$ с (для доступа к $f \leq 0.5$ Гц)
-2. ICA-декомпозиция (FSL MELODIC или аналог)
-3. Выделение компонент с пиком мощности в $0.005$–$0.02$ Гц
-4. Подсчёт числа таких компонент
-5. Повтор в разных состояниях: бодрствование, пропофол-седация (лёгкая, глубокая)
+**Protocol:**
+1. Resting-state fMRI, 20 min, TR $\leq 1$ s (to access $f \leq 0.5$ Hz)
+2. ICA decomposition (FSL MELODIC or equivalent)
+3. Extraction of components with a power peak in $0.005$–$0.02$ Hz
+4. Count of such components
+5. Repeat in different states: wakefulness, propofol sedation (light, deep)
 
-**Предсказание:** число ISF-компонент снижается дискретно ($12 \to 10 \to 6 \to 0$) при углублении седации, отражая последовательное восстановление $G_2$-симметрии.
+**Prediction:** the number of ISF components decreases discretely ($12 \to 10 \to 6 \to 0$) with deepening sedation, reflecting the sequential restoration of $G_2$-symmetry.
 
 ---
 
-## 8. Спектр возбуждений: полная картина [Т] {#спектр}
+## 8. Excitation Spectrum: The Full Picture [T] {#spectrum}
 
-Полное пространство малых колебаний вокруг стационарного Gap-профиля разделяется на три сектора:
+The full space of small oscillations around the stationary Gap profile divides into three sectors:
 
-| Сектор | Число мод | Частота | Физический смысл |
-|--------|-----------|---------|-----------------|
-| Массивные | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Колебания перпендикулярно орбите $G_2$ |
-| Квази-голдстоуновские | $n_{\text{broken}}$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Медленные осцилляции вдоль орбиты $G_2$ |
-| Топологически защищённые | $0$ или $1$ | Определяется $Q_{\text{top}}$ | Не затухает без фазового перехода |
+| Sector | Number of modes | Frequency | Physical meaning |
+|--------|-----------------|-----------|-----------------|
+| Massive | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Oscillations perpendicular to the $G_2$ orbit |
+| Quasi-Goldstone | $n_{\text{broken}}$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Slow oscillations along the $G_2$ orbit |
+| Topologically protected | $0$ or $1$ | Determined by $Q_{\text{top}}$ | Does not decay without a phase transition |
 
-Суммарное число мод: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21$ — по числу независимых когерентностей $\binom{7}{2}$.
+Total number of modes: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21$ — equal to the number of independent coherences $\binom{7}{2}$.
 
-### 8.1 Иерархия временных масштабов {#иерархия-масштабов}
+### 8.1 Hierarchy of Timescales {#timescale-hierarchy}
 
-Три сектора спектра задают три *кардинально различных* временных масштаба в сознании:
+The three spectral sectors define three *cardinally different* timescales in consciousness:
 
-| Сектор | Характерная частота | Временной масштаб | Когнитивный аналог |
-|--------|-------------------|-------------------|-------------------|
-| Массивные моды | $\sim 1$–$40$ Гц | $25$–$1000$ мс | Перцептивные процессы, рабочая память, альфа/бета/гамма-ритмы |
-| Голдстоуновские моды | $\sim 0.005$–$0.02$ Гц | $50$–$200$ с | Инфра-медленные флуктуации, блуждание ума, смена «режимов» |
-| Топологическая мода | $\sim 0$ (не затухает) | $\to \infty$ | Устойчивое «ядро» самосознания, непрерывность «Я» |
+| Sector | Characteristic frequency | Timescale | Cognitive analogue |
+|--------|--------------------------|-----------|--------------------|
+| Massive modes | $\sim 1$–$40$ Hz | $25$–$1000$ ms | Perceptual processes, working memory, alpha/beta/gamma rhythms |
+| Goldstone modes | $\sim 0.005$–$0.02$ Hz | $50$–$200$ s | Infra-slow fluctuations, mind-wandering, mode switching |
+| Topological mode | $\sim 0$ (does not decay) | $\to \infty$ | Stable "core" of self-consciousness, continuity of the "I" |
 
-Эта иерархия объясняет, почему сознание одновременно *быстро* реагирует на стимулы (массивные моды), *медленно* дрейфует в фоне (голдстоуновские моды) и *устойчиво* сохраняет самоидентичность (топологическая мода).
+This hierarchy explains why consciousness simultaneously *reacts quickly* to stimuli (massive modes), *drifts slowly* in the background (Goldstone modes), and *stably preserves* self-identity (topological mode).
 
-### 8.2 Полный спектр в осцилляторном режиме {#полный-спектр}
+### 8.2 Full Spectrum in the Oscillatory Regime {#full-spectrum}
 
-В осцилляторном режиме ($\kappa > \Gamma_2^2/(4m)$ для всех секторов) полный спектр выглядит так:
+In the oscillatory regime ($\kappa > \Gamma_2^2/(4m)$ for all sectors) the full spectrum is:
 
 $$
 \omega_k = \begin{cases}
-\sqrt{\mu_k^2 + \kappa/m} - i\Gamma_2/(2m) & \text{массивные, } k = 1, \ldots, 21 - n_{\text{broken}} - n_{\text{top}} \\
-\sqrt{\kappa/m - \Gamma_2^2/(4m^2)} - i\Gamma_2/(2m) & \text{голдстоуновские, } k = 1, \ldots, n_{\text{broken}} \\
-\omega_{\text{top}} & \text{топологическая, } k = 0 \text{ или } 1
+\sqrt{\mu_k^2 + \kappa/m} - i\Gamma_2/(2m) & \text{massive, } k = 1, \ldots, 21 - n_{\text{broken}} - n_{\text{top}} \\
+\sqrt{\kappa/m - \Gamma_2^2/(4m^2)} - i\Gamma_2/(2m) & \text{Goldstone, } k = 1, \ldots, n_{\text{broken}} \\
+\omega_{\text{top}} & \text{topological, } k = 0 \text{ or } 1
 \end{cases}
 $$
 
-Голдстоуновские моды образуют *квазивырожденный* кластер вблизи нижнего края спектра: их частоты почти одинаковы (малый разброс определяется нюансами $G_2$-структуры), но *много меньше* массивных мод. Это — спектральный зазор, отделяющий «быстрые» процессы от «медленных».
+The Goldstone modes form a *quasi-degenerate* cluster near the lower edge of the spectrum: their frequencies are nearly equal (the small spread is determined by the nuances of the $G_2$ structure), but *much lower* than the massive modes. This is the spectral gap separating "fast" processes from "slow" ones.
 
 ---
 
-## 9. Голдстоуновские моды и фазовые переходы сознания {#фазовые-переходы}
+## 9. Goldstone Modes and Consciousness Phase Transitions {#phase-transitions}
 
-### 9.1 Связь с фазовой диаграммой {#связь-с-фазами}
+### 9.1 Connection to the Phase Diagram {#connection-to-phases}
 
-[Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) выделяет три фазы: симметричную (когерентную), промежуточную и «замороженную» (декогерированную). Голдстоуновские моды играют ключевую роль при *переходе* между фазами:
+The [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) distinguishes three phases: symmetric (coherent), intermediate, and "frozen" (decohered). Goldstone modes play a key role at *transitions* between phases:
 
-- **Симметричная фаза** ($P < P_{\text{crit}}$): $G_2$ не нарушена, $n_{\text{broken}} = 0$, мод нет. Система «безлика» — все направления Gap эквивалентны.
-- **Промежуточная фаза** ($P \in (P_{\text{crit}}, 3/7]$): $G_2$ нарушена, появляются моды. Число мод растёт с увеличением $P$ (ранг Gap-оператора растёт). Это — область *сознательного опыта*.
-- **При фазовом переходе** $P \to P_{\text{crit}}$ снизу: моды «конденсируются» — их масса стремится к нулю, время жизни к бесконечности, амплитуда к нулю. Это — *критическое* замедление, аналогичное расходимости корреляционной длины при фазовом переходе второго рода.
+- **Symmetric phase** ($P < P_{\text{crit}}$): $G_2$ is unbroken, $n_{\text{broken}} = 0$, no modes. The system is "faceless" — all Gap directions are equivalent.
+- **Intermediate phase** ($P \in (P_{\text{crit}}, 3/7]$): $G_2$ is broken, modes appear. The number of modes grows as $P$ increases (the rank of the Gap operator grows). This is the region of *conscious experience*.
+- **At the phase transition** $P \to P_{\text{crit}}$ from below: modes "condense" — their mass tends to zero, lifetime to infinity, amplitude to zero. This is *critical* slowing, analogous to the divergence of the correlation length at a second-order phase transition.
 
-### 9.2 Критическое замедление при потере сознания {#критическое-замедление}
+### 9.2 Critical Slowing at Loss of Consciousness {#critical-slowing}
 
-При засыпании, анестезии или потере сознания происходит *обратный* фазовый переход: $P$ снижается к $P_{\text{crit}}$. Голдстоуновские моды при этом:
+During falling asleep, anaesthesia, or loss of consciousness, the *reverse* phase transition occurs: $P$ decreases toward $P_{\text{crit}}$. The Goldstone modes:
 
-1. **Замедляются:** $\omega_{\text{Gold}} \to 0$, частота стремится к нулю.
-2. **«Расплываются»:** когерентность мод падает, спектральные линии уширяются.
-3. **Исчезают:** $n_{\text{broken}} \to 0$ при восстановлении полной $G_2$-симметрии.
+1. **Slow down:** $\omega_{\text{Gold}} \to 0$, frequency tends to zero.
+2. **"Spread out":** mode coherence drops, spectral lines broaden.
+3. **Disappear:** $n_{\text{broken}} \to 0$ upon full restoration of $G_2$-symmetry.
 
-Это предсказание напрямую проверяемо: при введении анестетика ISF-спектр должен демонстрировать *красный сдвиг* (смещение к более низким частотам) с последующим *исчезновением* ISF-пиков.
-
----
-
-## 10. Сводка статусов {#статусы}
-
-| Результат | Статус |
-|-----------|--------|
-| Спонтанное нарушение $G_2 \to H$: $n_{\text{broken}} = 14 - \dim(H)$ | [Т] |
-| Квази-голдстоуновская масса: $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / \lvert\gamma\rvert^2$ | [Т] |
-| Три сектора спектра (массивный, голдстоуновский, топологический) | [Т] |
-| Моды перераспределяют Gap при сохранении $\mathcal{G}_{\text{total}}$ | [Т] |
-| Частота $f_{\text{Gold}} \sim 0.005$–$0.02$ Гц | [С] (числовой диапазон зависит от $\kappa$, $m$) |
-| Совпадение с ISF-диапазоном | [Г] |
-| Число ISF-компонент $\in \{6, 10, 12\}$ определяется рангом | [Г] |
-| Дискретность числа мод (только $\{0, 6, 10, 11, 12\}$) | [Г] |
-| Красный сдвиг ISF при потере сознания | [Г] |
-| Экспериментальный протокол верификации | [П] |
-| Кибернетическая интерпретация (колебания внимания) | [И] |
-| Субъективное переживание мод (мерцание сознания) | [И] |
+This prediction is directly testable: upon administration of an anaesthetic, the ISF spectrum should show a *red shift* (shift to lower frequencies) followed by *disappearance* of ISF peaks.
 
 ---
 
-## Что мы узнали {#что-мы-узнали}
+## 10. Status Summary {#statuses}
 
-Подведём итог ключевых результатов:
-
-- **Голдстоуновские моды** — неизбежное следствие спонтанного нарушения $G_2$-симметрии в Фазе I. Их число $n_{\text{broken}} = 14 - \dim(H)$ принимает только дискретные значения: $\{0, 6, 10, 11, 12\}$ (Теорема 1.1 [Т]).
-- **Моды квази-безмассовые**: масса $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ ненулевая из-за открытости системы (декогеренция + регенерация), по аналогии с массой пионов из масс кварков (Теорема 2.1 [Т]).
-- **Моды перераспределяют Gap**, не создавая и не уничтожая его: $\sum \delta\mathrm{Gap}(i,j) = 0$. Это — математика *колебаний внимания* (Теорема 3.1 [Т]).
-- **Три сектора спектра** задают три временных масштаба: массивные моды (мс, перцепция), голдстоуновские ($\sim 100$ с, блуждание ума), топологическая мода ($\to \infty$, непрерывность «Я»).
-- **Фальсифицируемое предсказание**: число ISF-компонент при ICA-декомпозиции фМРТ должно принимать значения из $\{0, 6, 10, 11, 12\}$ и снижаться дискретно при потере сознания [Г]. Частотный диапазон $\sim 0.005$--$0.02$ Гц совпадает с ISF [С].
-- **Критическое замедление** при $P \to P_{\text{crit}}$: моды замедляются, расплываются и исчезают — красный сдвиг ISF-спектра при анестезии [Г].
-- **Субъективное переживание** мод: мерцание сознания ($E \leftrightarrow O$), колебания речь/действие ($L \leftrightarrow D$), осцилляции агентности ($A \leftrightarrow U$) [И].
-
----
-
-### Мост к следующей главе
-
-Мы описали голдстоуновские моды — «эхо» нарушенной $G_2$-симметрии. Но за каждой нарушенной непрерывной симметрией стоит *закон сохранения* (теорема Нётер). Какие именно величины сохраняются, когда $G_2$ действует на Gap-профиле? Что эти сохраняющиеся заряды означают кибернетически? И как их можно измерить экспериментально?
-
-В [следующей главе](./g2-noether-cc) мы переведём формализм $G_2$-зарядов Нётер на язык кибернетики когерентности: 7 Фано-зарядов + 7 межсекторных, тождества Уорда для Gap-корреляторов, и конкретный экспериментальный протокол верификации $G_2$-структуры.
+| Result | Status |
+|--------|--------|
+| Spontaneous breaking $G_2 \to H$: $n_{\text{broken}} = 14 - \dim(H)$ | [T] |
+| Quasi-Goldstone mass: $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / \lvert\gamma\rvert^2$ | [T] |
+| Three spectral sectors (massive, Goldstone, topological) | [T] |
+| Modes redistribute Gap preserving $\mathcal{G}_{\text{total}}$ | [T] |
+| Frequency $f_{\text{Gold}} \sim 0.005$–$0.02$ Hz | [C] (numerical range depends on $\kappa$, $m$) |
+| Coincidence with ISF range | [H] |
+| Number of ISF components $\in \{6, 10, 12\}$ determined by rank | [H] |
+| Discreteness of number of modes (only $\{0, 6, 10, 11, 12\}$) | [H] |
+| Red shift of ISF upon loss of consciousness | [H] |
+| Experimental verification protocol | [P] |
+| Cybernetic interpretation (attentional oscillations) | [I] |
+| Subjective experience of modes (flickering of consciousness) | [I] |
 
 ---
 
-## Связанные документы
+## What We Learned {#what-we-learned}
 
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — три фазы, голдстоуновские моды (математическое основание)
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — стабилизаторы, ранг непрозрачности
-- [G₂-заряды Нётер](/docs/physics/gauge-symmetry/noether-charges) — нарушенные симметрии, голдстоуновские моды
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$
-- [Фазовая диаграмма КК](./phase-diagram-cc) — кибернетическая интерпретация фаз
-- [Фальсифицируемость](/docs/reference/falsifiability) — критерии проверки предсказаний
-- [Предсказания КК](./predictions) — уникальные предсказания теории
-- [Топологическая защита когерентности](./topological-protection) — защита Gap-конфигураций
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — потенциал $V_{\text{Gap}}$, $T_{\text{eff}}$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$ и её свойства
-- [Семь измерений](/docs/core/structure/dimension-u) — семантика A, S, D, L, E, O, U
-- [Методология измерений](./measurement) — как обнаружить голдстоуновские моды экспериментально
-- [Сравнение с альтернативами](./comparison) — уникальность предсказания мод для КК
+Summary of key results:
+
+- **Goldstone modes** are an inevitable consequence of spontaneous $G_2$-symmetry breaking in Phase I. Their number $n_{\text{broken}} = 14 - \dim(H)$ takes only discrete values: $\{0, 6, 10, 11, 12\}$ (Theorem 1.1 [T]).
+- **Modes are quasi-massless**: mass $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ is nonzero due to the openness of the system (decoherence + regeneration), by analogy with pion masses from quark masses (Theorem 2.1 [T]).
+- **Modes redistribute Gap**, neither creating nor destroying it: $\sum \delta\mathrm{Gap}(i,j) = 0$. This is the mathematics of *attentional oscillations* (Theorem 3.1 [T]).
+- **Three spectral sectors** define three timescales: massive modes (ms, perception), Goldstone modes ($\sim 100$ s, mind-wandering), topological mode ($\to \infty$, continuity of the "I").
+- **Falsifiable prediction**: the number of ISF components in ICA decomposition of fMRI should take values from $\{0, 6, 10, 11, 12\}$ and decrease discretely upon loss of consciousness [H]. Frequency range $\sim 0.005$--$0.02$ Hz coincides with ISF [C].
+- **Critical slowing** at $P \to P_{\text{crit}}$: modes slow down, spread out, and disappear — red shift of the ISF spectrum under anaesthesia [H].
+- **Subjective experience** of modes: flickering of consciousness ($E \leftrightarrow O$), speech/action oscillations ($L \leftrightarrow D$), oscillations of agency ($A \leftrightarrow U$) [I].
+
+---
+
+### Bridge to the Next Chapter
+
+We have described Goldstone modes — the "echo" of broken $G_2$-symmetry. But behind every broken continuous symmetry stands a *conservation law* (Noether's theorem). What quantities exactly are conserved when $G_2$ acts on the Gap profile? What do these conserved charges mean cybernetically? And how can they be measured experimentally?
+
+In the [next chapter](./g2-noether-cc) we translate the $G_2$ Noether charge formalism into the language of coherence cybernetics: 7 Fano charges + 7 inter-sector charges, Ward identities for Gap correlators, and a concrete experimental verification protocol for the $G_2$ structure.
+
+---
+
+## Related Documents
+
+- [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, Goldstone modes (mathematical foundation)
+- [Gap Operator](/docs/core/dynamics/gap-operator) — stabilisers, opacity rank
+- [G₂ Noether Charges](/docs/physics/gauge-symmetry/noether-charges) — broken symmetries, Goldstone modes
+- [G₂ Structure](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$
+- [CC Phase Diagram](./phase-diagram-cc) — cybernetic interpretation of phases
+- [Falsifiability](/docs/reference/falsifiability) — prediction verification criteria
+- [CC Predictions](./predictions) — unique predictions of the theory
+- [Topological Protection of Coherence](./topological-protection) — protection of Gap configurations
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — potential $V_{\text{Gap}}$, $T_{\text{eff}}$
+- [Coherence Matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$ and its properties
+- [Seven Dimensions](/docs/core/structure/dimension-u) — semantics of A, S, D, L, E, O, U
+- [Measurement Methodology](./measurement) — how to detect Goldstone modes experimentally
+- [Comparison with Alternatives](./comparison) — uniqueness of the mode prediction for CC

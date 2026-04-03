@@ -1,390 +1,390 @@
 ---
 sidebar_position: 5
-title: Теория моделей
-description: Формальная спецификация и категорная семантика КК
+title: Model Theory
+description: Formal specification and categorical semantics of CC
 ---
 
-# Теория Моделей КК
+# Model Theory of CC
 
-:::info Мост из предыдущей главы
-В [предыдущей главе](./theorems) мы доказали фундаментальные теоремы КК: от существования динамики до невозможности зомби и эмерджентности. Эти теоремы — мощный формальный аппарат. Но чтобы понять его *границы*, необходимо задать вопрос, который математики задают с 1930-х годов: *о чём* эти теоремы? Существует ли конкретная математическая структура, в которой все аксиомы КК истинны? Единственна ли она? Как КК *соотносится* с другими теориями сознания? Теория моделей отвечает на эти вопросы строго.
+:::info Bridge from the Previous Chapter
+In the [previous chapter](./theorems) we proved the fundamental theorems of CC: from the existence of dynamics to the impossibility of zombies and emergence. Those theorems form a powerful formal apparatus. But to understand its *limits*, one must ask the question mathematicians have been asking since the 1930s: *what are* these theorems about? Does a concrete mathematical structure exist in which all CC axioms are true? Is it unique? How does CC *relate* to other theories of consciousness? Model theory answers these questions rigorously.
 :::
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Поймём, что такое теория моделей** и зачем она нужна КК (раздел «[Что такое теория моделей](#что-такое-теория-моделей)»)
-2. **Определим формальную сигнатуру** КК — её «алфавит»: сорта, функции, предикаты (раздел «[Сигнатура теории](#что-такое-сигнатура)»)
-3. **Построим стандартную модель** $\mathfrak{M}_{\mathrm{CC}}$ — каноническую интерпретацию всех символов (раздел «[Стандартная модель](#что-значит-иметь-модель)»)
-4. **Исследуем корректность и полноту** — что можно и чего нельзя доказать (раздел «[Корректность и полнота](#корректность-полнота-введение)»)
-5. **Рассмотрим нестандартные модели** — может ли КК быть интерпретирована иначе? (раздел «[Нестандартные модели](#нестандартные-модели)»)
-6. **Построим категорную семантику** — категория Голономов $\mathbf{Hol}$ и её свойства (раздел «[Категорная семантика](#зачем-нужны-категории)»)
-7. **Определим функторные мосты** к IIT, FEP, GNW — КК как метатеория (раздел «[Переводимость](#переводимость)»)
-8. **Определим границы объяснения** — что КК может и чего не может объяснить (раздел «Границы объяснения»)
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Understand what model theory is** and why CC needs it (section "[What Is Model Theory](#что-такое-теория-моделей)")
+2. **Define the formal signature** of CC — its "alphabet": sorts, functions, predicates (section "[Signature of the Theory](#что-такое-сигнатура)")
+3. **Build the standard model** $\mathfrak{M}_{\mathrm{CC}}$ — the canonical interpretation of all symbols (section "[Standard Model](#что-значит-иметь-модель)")
+4. **Investigate soundness and completeness** — what can and cannot be proved (section "[Soundness and Completeness](#корректность-полнота-введение)")
+5. **Examine non-standard models** — can CC be interpreted differently? (section "[Non-Standard Models](#нестандартные-модели)")
+6. **Build categorical semantics** — the category of Holons $\mathbf{Hol}$ and its properties (section "[Categorical Semantics](#зачем-нужны-категории)")
+7. **Define functor bridges** to IIT, FEP, GNW — CC as a metatheory (section "[Translatability](#переводимость)")
+8. **Define the limits of explanation** — what CC can and cannot explain (section "Limits of Explanation")
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\mathbb{H}$ — [Голоном](/docs/core/structure/holon)
-- $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism)
-- $\mathbf{DensityMat}$ — [категория матриц плотности](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat)
-- $\mathbf{Exp}$ — [категория экспериенциальных состояний](/docs/proofs/categorical/categorical-formalism#2-категория-exp)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
+:::note A Note on Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\mathbb{H}$ — [Holon](/docs/core/structure/holon)
+- $\mathbf{Hol}$ — [category of Holons](/docs/proofs/categorical/categorical-formalism)
+- $\mathbf{DensityMat}$ — [category of density matrices](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat)
+- $\mathbf{Exp}$ — [category of experiential states](/docs/proofs/categorical/categorical-formalism#2-категория-exp)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
 :::
 
-## Что такое теория моделей и зачем она нужна {#что-такое-теория-моделей}
+## What Is Model Theory and Why CC Needs It {#что-такое-теория-моделей}
 
-Представьте себе язык — например, русский. Сам по себе язык — это набор правил: грамматика, синтаксис, фонетика. Но язык *означает* что-то лишь тогда, когда его слова обозначают предметы в мире. Слово «стол» приобретает смысл, когда мы указываем на конкретный объект: вот *этот* стол — деревянный, на четырёх ножках, стоящий в кухне. Связь между словом и объектом — это *интерпретация*.
+Consider a language — say, English. The language itself is a set of rules: grammar, syntax, phonetics. But a language *means* something only when its words denote objects in the world. The word "table" acquires meaning when we point to a concrete object: *this* table — wooden, on four legs, standing in the kitchen. The link between a word and an object is an *interpretation*.
 
-Теория моделей, основанная Альфредом Тарским в 1930-х годах, формализует именно эту связь — но для математических теорий. Если теория — это набор аксиом и правил вывода (аналог грамматики), то **модель** — это конкретная математическая структура, в которой все аксиомы оказываются истинными (аналог мира, в котором язык «работает»).
+Model theory, founded by Alfred Tarski in the 1930s, formalises precisely this connection — but for mathematical theories. If a theory is a set of axioms and inference rules (analogous to a grammar), then a **model** is a concrete mathematical structure in which all axioms turn out to be true (analogous to a world in which the language "works").
 
-Центральное понятие теории моделей — **отношение выполнимости** (satisfaction relation), записываемое как $\mathfrak{M} \vDash \phi$: «модель $\mathfrak{M}$ удовлетворяет формуле $\phi$». Это то самое «указывание на стол» — мы проверяем, действительно ли в данной конкретной структуре выполняется утверждение теории.
+The central concept of model theory is the **satisfaction relation**, written $\mathfrak{M} \vDash \phi$: "model $\mathfrak{M}$ satisfies formula $\phi$". This is exactly "pointing to the table" — we check whether the statement of the theory actually holds in the given concrete structure.
 
-### Зачем это нужно для КК
+### Why This Is Needed for CC
 
-Кибернетика Когерентности — это формальная теория. Она делает утверждения вроде «жизнеспособная система имеет чистоту $P > 2/7$» или «сознание требует рефлексии $R \geq 1/3$». Но о *чём* эти утверждения? Каковы «столы» и «стулья» КК?
+Coherence Cybernetics is a formal theory. It makes statements like "a viable system has purity $P > 2/7$" or "consciousness requires reflection $R \geq 1/3$". But *what* are these statements about? What are the "tables" and "chairs" of CC?
 
-Теория моделей заставляет нас ответить на этот вопрос строго:
+Model theory forces us to answer this question rigorously:
 
-1. **Фиксировать язык** — какие символы использует КК, какие типы объектов в ней есть (сигнатура).
-2. **Построить каноническую интерпретацию** — показать, что существует конкретная математическая структура, в которой все аксиомы истинны (стандартная модель).
-3. **Проверить непротиворечивость** — убедиться, что аксиомы не приводят к противоречиям (корректность).
-4. **Понять границы** — выяснить, все ли истины КК можно доказать из аксиом (полнота), и существуют ли иные интерпретации (нестандартные модели).
+1. **Fix the language** — which symbols CC uses, which types of objects it has (signature).
+2. **Build a canonical interpretation** — show that a concrete mathematical structure exists in which all axioms are true (standard model).
+3. **Verify consistency** — ensure the axioms do not lead to contradictions (soundness).
+4. **Understand the limits** — find out whether all truths of CC can be proved from the axioms (completeness), and whether other interpretations exist (non-standard models).
 
-Без теории моделей КК была бы набором формул без явного указания на то, *о чём* эти формулы. С теорией моделей КК становится теорией *о чём-то конкретном* — о матрицах когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, их эволюции и порождаемых ими структурах опыта.
+Without model theory, CC would be a collection of formulas with no explicit indication of *what* these formulas are about. With model theory, CC becomes a theory *about something concrete* — about coherence matrices $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, their evolution, and the experiential structures they generate.
 
-### Историческая перспектива
+### Historical Perspective
 
-Значимость теории моделей для науки о сознании трудно переоценить. В физике язык теории (скажем, уравнения Максвелла) и его модели (электромагнитные поля в пространстве-времени) разделены чётко — никто не путает уравнение с тем, что оно описывает. Но в науках о сознании эта путаница повсеместна: теории IIT, GNW, FEP часто не различают формальный аппарат и его предметную область. КК через теорию моделей делает это различие явным и, как мы увидим, именно оно позволяет строить *функторные мосты* между различными теориями сознания.
+The importance of model theory for the science of consciousness can hardly be overstated. In physics, the language of a theory (say, Maxwell's equations) and its models (electromagnetic fields in spacetime) are clearly separated — nobody confuses an equation with what it describes. But in consciousness science this confusion is pervasive: IIT, GNW, and FEP theories often do not distinguish the formal apparatus from its subject domain. CC, through model theory, makes this distinction explicit — and, as we shall see, this is precisely what makes it possible to build *functor bridges* between different theories of consciousness.
 
-## КК как формальная теория: уровни строгости {#кк-как-формальная-теория}
+## CC as a Formal Theory: Levels of Rigour {#кк-как-формальная-теория}
 
-Не все теории сознания одинаково формализованы. Полезно выделить уровни строгости:
+Not all theories of consciousness are equally formalised. It is useful to distinguish levels of rigour:
 
-| Уровень | Описание | Примеры |
-|---------|----------|---------|
-| 0. Метафора | Качественные описания без формализации | «Сознание — свойство сложных систем» |
-| 1. Полуформальный | Отдельные формулы, нет полной аксиоматики | GNW (Global Neuronal Workspace) |
-| 2. Формальная теория | Явные аксиомы и следствия, но нет мета-анализа | IIT 3.0, FEP |
-| 3. Теоретико-модельный | Сигнатура + аксиомы + стандартная модель + корректность | **КК** |
-| 4. Категорный | Функторные связи между теориями, структурные теоремы | КК (данная глава) |
+| Level | Description | Examples |
+|-------|-------------|---------|
+| 0. Metaphor | Qualitative descriptions without formalisation | "Consciousness is a property of complex systems" |
+| 1. Semi-formal | Some formulas, no complete axiomatics | GNW (Global Neuronal Workspace) |
+| 2. Formal theory | Explicit axioms and consequences, but no meta-analysis | IIT 3.0, FEP |
+| 3. Model-theoretic | Signature + axioms + standard model + soundness | **CC** |
+| 4. Categorical | Functor connections between theories, structural theorems | CC (this chapter) |
 
-КК — единственная из существующих теорий сознания, которая работает на уровнях 3 и 4. Это не означает, что КК «лучше» других теорий в каком-то абсолютном смысле — но это означает, что она более *прозрачна* в своих предположениях и более *проверяема* в своих следствиях.
+CC is the only existing theory of consciousness that operates at levels 3 and 4. This does not mean CC is "better" than other theories in some absolute sense — but it means it is more *transparent* in its assumptions and more *testable* in its consequences.
 
-:::info Сравнение с IIT
-IIT (Integrated Information Theory) работает на уровне 2: она определяет $\Phi$ формально, выводит из него следствия, но не имеет явной сигнатуры, стандартной модели или теорем о полноте. В частности, IIT не разделяет синтаксис (формулы для $\Phi$) и семантику (о чём именно эти формулы). КК, напротив, строит *функтор* $F_{\mathrm{IIT}}: \mathbf{Hol} \to \mathbf{IIT}$, который делает это отношение точным.
+:::info Comparison with IIT
+IIT (Integrated Information Theory) operates at level 2: it defines $\Phi$ formally and derives consequences, but has no explicit signature, standard model, or completeness theorems. In particular, IIT does not separate syntax (formulas for $\Phi$) and semantics (what exactly those formulas are about). CC, by contrast, builds a *functor* $F_{\mathrm{IIT}}: \mathbf{Hol} \to \mathbf{IIT}$ that makes this relationship precise.
 :::
 
-## Сигнатура теории
+## Signature of the Theory
 
-### Что такое сигнатура {#что-такое-сигнатура}
+### What Is a Signature {#что-такое-сигнатура}
 
-Сигнатура — это *алфавит* формальной теории. Как естественный язык имеет существительные, глаголы и прилагательные, сигнатура формальной теории имеет:
+A signature is the *alphabet* of a formal theory. Just as a natural language has nouns, verbs, and adjectives, the signature of a formal theory has:
 
-- **Сорта** (sorts) — типы объектов, о которых теория может говорить. Это *существительные* языка КК: «матрица когерентности», «Голоном», «вещественное число». Сорта определяют *онтологию* теории — какие сущности в ней существуют.
+- **Sorts** — types of objects the theory can speak about. These are the *nouns* of the CC language: "coherence matrix", "Holon", "real number". Sorts define the *ontology* of the theory — which entities exist in it.
 
-- **Функции** (functions) — операции, превращающие одни объекты в другие. Это *глаголы* языка КК: «вычислить чистоту», «провести эволюцию», «найти спектр». Каждая функция имеет *тип* — какие объекты принимает на вход и что выдаёт.
+- **Functions** — operations that transform some objects into others. These are the *verbs* of the CC language: "compute purity", "evolve", "find the spectrum". Each function has a *type* — which objects it takes as input and what it returns.
 
-- **Предикаты** (predicates) — свойства и отношения, которые могут быть истинными или ложными. Это *прилагательные* языка КК: «жизнеспособный», «сознательный», «имеющий интериорность». Предикаты задают *классификацию* объектов.
+- **Predicates** — properties and relations that can be true or false. These are the *adjectives* of the CC language: "viable", "conscious", "having interiority". Predicates define the *classification* of objects.
 
-- **Аксиомы** (axioms) — утверждения, принимаемые без доказательства, определяющие «правила игры». Это *грамматика* языка КК.
+- **Axioms** — statements accepted without proof, defining the "rules of the game". These are the *grammar* of the CC language.
 
-Аналогия с языком поверхностна, но полезна: как знание алфавита и грамматики позволяет понимать тексты, так знание сигнатуры позволяет понимать теоремы КК. Человек, увидевший формулу $P(\Gamma) > P_{\text{crit}}$, без сигнатуры не поймёт ничего; с сигнатурой — поймёт, что речь идёт о функции $P$ (чистота), применённой к объекту сорта $\Gamma$ (матрица когерентности), и сравнении результата с константой.
+The analogy with language is superficial but useful: just as knowing the alphabet and grammar allows one to understand texts, knowing the signature allows one to understand CC theorems. A person seeing the formula $P(\Gamma) > P_{\text{crit}}$ without the signature will understand nothing; with the signature — they will understand that $P$ is a function (purity) applied to an object of sort $\Gamma$ (coherence matrix) and the result is compared with a constant.
 
-### Формальное определение {#определение-сигнатуры}
+### Formal Definition {#определение-сигнатуры}
 
-**Определение (Сигнатура $\Sigma_{\mathrm{CC}}$):**
+**Definition (Signature $\Sigma_{\mathrm{CC}}$):**
 
 $$
 \Sigma_{\mathrm{CC}} = \langle \mathrm{Sorts}, \mathrm{Functions}, \mathrm{Predicates}, \mathrm{Axioms} \rangle
 $$
 
-Сигнатура $\Sigma_{\mathrm{CC}}$ фиксирует *весь* язык КК. Любое утверждение теории — от простейшего неравенства до глубочайших теорем о сознании — записывается символами этой сигнатуры. Вне сигнатуры КК ничего сказать не может: это и есть точное определение предметной области теории.
+The signature $\Sigma_{\mathrm{CC}}$ fixes the *entire* language of CC. Every statement of the theory — from the simplest inequality to the deepest theorems about consciousness — is written using the symbols of this signature. Outside the signature CC can say nothing: this is the precise definition of the theory's subject domain.
 
-### Сорта (Sorts)
+### Sorts
 
-Сорта КК минимальны — их ровно столько, сколько необходимо для формулировки аксиом. Каждый сорт соответствует чёткому математическому объекту:
+The sorts of CC are minimal — there are exactly as many as are needed to formulate the axioms. Each sort corresponds to a well-defined mathematical object:
 
-| Сорт | Обозначение | Интерпретация | Ссылка |
-|------|-------------|---------------|--------|
-| $\Gamma$ | `CoherenceMatrix` | Матрица когерентности | [→](/docs/core/dynamics/coherence-matrix) |
-| $\mathbb{H}$ | `Holon` | Голоном | [→](/docs/core/structure/holon) |
-| $\mathcal{H}$ | `HilbertSpace` | Пространство состояний $\mathbb{C}^7$ ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) | [→](/docs/core/structure/dimensions) |
-| $\mathbb{R}$ | `Real` | Вещественные числа | — |
-| $\mathbb{C}$ | `Complex` | Комплексные числа | — |
-| $\mathbb{N}$ | `Natural` | Натуральные числа | — |
+| Sort | Notation | Interpretation | Ref |
+|------|----------|----------------|-----|
+| $\Gamma$ | `CoherenceMatrix` | Coherence matrix | [→](/docs/core/dynamics/coherence-matrix) |
+| $\mathbb{H}$ | `Holon` | Holon | [→](/docs/core/structure/holon) |
+| $\mathcal{H}$ | `HilbertSpace` | State space $\mathbb{C}^7$ ([justification](/docs/core/foundations/axiom-omega#октонионная-структура)) | [→](/docs/core/structure/dimensions) |
+| $\mathbb{R}$ | `Real` | Real numbers | — |
+| $\mathbb{C}$ | `Complex` | Complex numbers | — |
+| $\mathbb{N}$ | `Natural` | Natural numbers | — |
 
-Обратим внимание на две особенности. Во-первых, сорт $\Gamma$ — *не* произвольная матрица, а матрица плотности: эрмитова, положительно полуопределённая, с единичным следом. Эти ограничения — не аксиомы теории, а часть *определения* сорта (аналогично тому, как в арифметике «натуральное число» — это не любой символ, а конкретный тип объекта).
+Two special features deserve attention. First, the sort $\Gamma$ is *not* an arbitrary matrix, but a density matrix: Hermitian, positive semi-definite, with unit trace. These constraints are not axioms of the theory, but part of the *definition* of the sort (analogously to how in arithmetic "natural number" is not just any symbol but a specific type of object).
 
-Во-вторых, фиксация $\mathcal{H} = \mathbb{C}^7$ — следствие аксиомы Септичности, не произвольный выбор. Размерность 7 выводится из структуры алгебры октонионов и является единственной, совместимой с остальными аксиомами.
+Second, fixing $\mathcal{H} = \mathbb{C}^7$ is a consequence of the Axiom of Septicity, not an arbitrary choice. The dimension 7 is derived from the structure of the octonion algebra and is the only dimension compatible with the remaining axioms.
 
-### Функции (Functions)
+### Functions
 
-Функции — центральный элемент сигнатуры, потому что именно через них формулируются все количественные результаты КК. Каждая функция имеет строгую *типовую сигнатуру*: какие аргументы принимает и что возвращает.
+Functions are the central element of the signature, because all quantitative results of CC are formulated through them. Each function has a strict *type signature*: which arguments it accepts and what it returns.
 
-:::warning Потенциальные конфликты нотации
-- $D_{\text{diff}}$ — мера дифференциации. Не путать с $D$ — [измерением Динамики](/docs/core/structure/dimension-d).
-- $R$ — мера рефлексии. Не путать с $\mathcal{R}$ — [регенеративным членом](/docs/core/dynamics/evolution#3-регенеративный-член).
+:::warning Potential notation conflicts
+- $D_{\text{diff}}$ — differentiation measure. Not to be confused with $D$ — the [Dynamics dimension](/docs/core/structure/dimension-d).
+- $R$ — reflection measure. Not to be confused with $\mathcal{R}$ — the [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член).
 :::
 
-| Функция | Сигнатура | Интерпретация | Ссылка |
-|---------|-----------|---------------|--------|
-| $P$ | $\Gamma \to [1/7, 1]$ | Чистота | [→](/docs/core/dynamics/viability#определение-чистоты) |
-| $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Энтропия фон Неймана | [→](/docs/reference/notation) |
-| $\mathrm{Coh}_E$ | $\Gamma \to [1/7, 1]$ | E-когерентность | [→](./definitions#e-когерентность) |
-| $\mathrm{Spec}$ | $\Gamma \to \mathrm{List}(\mathbb{R} \times \mathcal{H})$ | Спектр | — |
-| $\varphi$ | $\Gamma \to \Gamma$ | Оператор самомоделирования | [→](/docs/proofs/categorical/formalization-phi) |
-| $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Мера сознательности | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
-| $\Phi$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Мера интеграции | [→](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| $D_{\text{diff}}$ | $\Gamma \to \{1, 2, \ldots, 7\}$ | Мера дифференциации | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
-| $R$ | $\Gamma \to [0,1]$ | Мера рефлексии | [→](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
-| $\sigma_{\mathrm{sys}}$ | $\Gamma \to \mathbb{R}^7$ | Тензор напряжений | [→](./definitions#тензор-напряжений) |
-| $\mathrm{compose}$ | $\mathrm{List}(\mathbb{H}) \to \mathbb{H}$ | Композиция Голономов | [→](./theorems#теорема-91-фрактальное-замыкание) |
-| $\mathrm{evolve}$ | $\Gamma \times \mathbb{R} \to \Gamma$ | Эволюция | [→](/docs/core/dynamics/evolution) |
-| $\kappa$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Скорость регенерации | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
+| Function | Signature | Interpretation | Ref |
+|----------|-----------|----------------|-----|
+| $P$ | $\Gamma \to [1/7, 1]$ | Purity | [→](/docs/core/dynamics/viability#определение-чистоты) |
+| $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Von Neumann entropy | [→](/docs/reference/notation) |
+| $\mathrm{Coh}_E$ | $\Gamma \to [1/7, 1]$ | E-coherence | [→](./definitions#e-когерентность) |
+| $\mathrm{Spec}$ | $\Gamma \to \mathrm{List}(\mathbb{R} \times \mathcal{H})$ | Spectrum | — |
+| $\varphi$ | $\Gamma \to \Gamma$ | Self-modelling operator | [→](/docs/proofs/categorical/formalization-phi) |
+| $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Consciousness measure | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| $\Phi$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Integration measure | [→](/docs/core/structure/dimension-u#мера-интеграции-φ) |
+| $D_{\text{diff}}$ | $\Gamma \to \{1, 2, \ldots, 7\}$ | Differentiation measure | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| $R$ | $\Gamma \to [0,1]$ | Reflection measure | [→](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
+| $\sigma_{\mathrm{sys}}$ | $\Gamma \to \mathbb{R}^7$ | Stress tensor | [→](./definitions#тензор-напряжений) |
+| $\mathrm{compose}$ | $\mathrm{List}(\mathbb{H}) \to \mathbb{H}$ | Holon composition | [→](./theorems#теорема-91-фрактальное-замыкание) |
+| $\mathrm{evolve}$ | $\Gamma \times \mathbb{R} \to \Gamma$ | Evolution | [→](/docs/core/dynamics/evolution) |
+| $\kappa$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Regeneration rate | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
 
-Стоит обратить внимание на *замкнутость* функций: оператор самомоделирования $\varphi: \Gamma \to \Gamma$ возвращает объект того же сорта, что и принимает. Это не случайность — это отражение того, что самомоделирование есть *рефлексивная* операция: система строит модель *себя самой*, а модель — объект того же типа, что и моделируемое. Функция $\mathrm{evolve}$ также замкнута: эволюция не выводит систему за пределы пространства матриц когерентности.
+It is worth noting the *closure* of the functions: the self-modelling operator $\varphi: \Gamma \to \Gamma$ returns an object of the same sort as it receives. This is not accidental — it reflects the fact that self-modelling is a *reflexive* operation: the system builds a model of *itself*, and the model is an object of the same type as the modelled thing. The function $\mathrm{evolve}$ is also closed: evolution does not take the system outside the space of coherence matrices.
 
-### Предикаты (Predicates)
+### Predicates
 
-Предикаты КК — это *классификаторы*. Они делят пространство всех возможных Голономов на осмысленные классы:
+The predicates of CC are *classifiers*. They divide the space of all possible Holons into meaningful classes:
 
-| Предикат | Сигнатура | Интерпретация | Ссылка |
-|----------|-----------|---------------|--------|
-| $\mathrm{Viable}$ | $\mathbb{H} \to \mathrm{Bool}$ | Жизнеспособен | [→](/docs/core/dynamics/viability) |
-| $\mathrm{Conscious}$ | $\mathbb{H} \to \mathrm{Bool}$ | Сознателен (L2) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) |
-| $\mathrm{HasInteriority}$ | $\mathbb{H} \to \mathrm{Bool}$ | Имеет интериорность (L0) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority) |
-| $\mathrm{InV}$ | $\Gamma \to \mathrm{Bool}$ | В области $\mathcal{V}$ | [→](/docs/core/dynamics/viability#область-жизнеспособности) |
+| Predicate | Signature | Interpretation | Ref |
+|-----------|-----------|----------------|-----|
+| $\mathrm{Viable}$ | $\mathbb{H} \to \mathrm{Bool}$ | Viable | [→](/docs/core/dynamics/viability) |
+| $\mathrm{Conscious}$ | $\mathbb{H} \to \mathrm{Bool}$ | Conscious (L2) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) |
+| $\mathrm{HasInteriority}$ | $\mathbb{H} \to \mathrm{Bool}$ | Has interiority (L0) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority) |
+| $\mathrm{InV}$ | $\Gamma \to \mathrm{Bool}$ | In region $\mathcal{V}$ | [→](/docs/core/dynamics/viability#область-жизнеспособности) |
 
-Эти предикаты образуют *иерархию*: всякий сознательный Голоном жизнеспособен, но не всякий жизнеспособный — сознателен. Всякий сознательный имеет интериорность, но не наоборот. Эта иерархия — отражение [уровней интериорности L0→L1→L2→L3→L4](/docs/proofs/consciousness/interiority-hierarchy) в языке предикатов.
+These predicates form a *hierarchy*: every conscious Holon is viable, but not every viable Holon is conscious. Every conscious Holon has interiority, but not vice versa. This hierarchy reflects the [interiority levels L0→L1→L2→L3→L4](/docs/proofs/consciousness/interiority-hierarchy) in the language of predicates.
 
-### Аксиомы сигнатуры
+### Signature Axioms
 
-Аксиомы КК подробно изложены в [главе «Аксиоматика»](./axiomatics). Здесь лишь зафиксируем их перечень как элемент сигнатуры:
+The CC axioms are set out in detail in the chapter ["Axiomatics"](./axiomatics). Here we simply record their list as an element of the signature:
 
-- **(Ω)** — Аксиома Бытия: $\Omega = \rho_\Omega \in \mathcal{D}(\mathcal{H}_\Omega)$ ([→](/docs/core/foundations/axiom-omega))
-- **(AP)** — Аксиома Септичности: $\dim \mathcal{H} = 7$ ([→](/docs/core/foundations/axiom-septicity))
-- **(PH)** — Аксиома Иерархии: Голономы образуют фрактальную иерархию ([→](/docs/core/structure/holon))
-- **(QG)** — Аксиома Квантовой Гравитации ([→](/docs/physics/gravity/quantum-gravity))
+- **(Ω)** — Axiom of Being: $\Omega = \rho_\Omega \in \mathcal{D}(\mathcal{H}_\Omega)$ ([→](/docs/core/foundations/axiom-omega))
+- **(AP)** — Axiom of Septicity: $\dim \mathcal{H} = 7$ ([→](/docs/core/foundations/axiom-septicity))
+- **(PH)** — Axiom of Hierarchy: Holons form a fractal hierarchy ([→](/docs/core/structure/holon))
+- **(QG)** — Axiom of Quantum Gravity ([→](/docs/physics/gravity/quantum-gravity))
 
-Заметим, что аксиом всего четыре. Для сравнения: ZFC (основание всей математики) имеет 9 аксиом, общая теория относительности — 2 (принцип эквивалентности и уравнения Эйнштейна). Минимальность аксиоматики КК — не упрощение ради простоты, а следствие глубокой внутренней структуры: из четырёх аксиом выводятся более ста теорем.
+Note that there are just four axioms. By comparison, ZFC (the foundation of all mathematics) has 9 axioms, general relativity has 2 (the equivalence principle and Einstein's equations). The minimality of the CC axiomatics is not a simplification for simplicity's sake, but a consequence of the deep internal structure: more than a hundred theorems are derived from four axioms.
 
-## Стандартная модель
+## Standard Model
 
-### Что значит «иметь модель» {#что-значит-иметь-модель}
+### What It Means to "Have a Model" {#что-значит-иметь-модель}
 
-Рассмотрим аналогию. Евклидова геометрия говорит о «точках», «прямых» и «плоскостях» — но что это за объекты? Евклид думал, что это идеализации физических точек, линий и поверхностей. Гильберт показал, что *любые* объекты, удовлетворяющие аксиомам, могут считаться «точками» и «прямыми» — например, пары вещественных чисел $\mathbb{R}^2$ и линейные уравнения. Это и есть *модель* евклидовой геометрии: конкретная математическая структура, в которой аксиомы истинны.
+Consider an analogy. Euclidean geometry speaks of "points", "lines", and "planes" — but what are these objects? Euclid thought they were idealisations of physical points, lines, and surfaces. Hilbert showed that *any* objects satisfying the axioms can be called "points" and "lines" — for example, pairs of real numbers $\mathbb{R}^2$ and linear equations. This is a *model* of Euclidean geometry: a concrete mathematical structure in which the axioms are true.
 
-Для КК ситуация аналогична: аксиомы говорят об абстрактных $\Gamma$, $\mathbb{H}$, $\varphi$. Стандартная модель — это конкретная реализация: $\Gamma$ = матрицы плотности в $\mathbb{C}^{7 \times 7}$, эволюция = решение уравнения Линдблада, и так далее. Стандартная модель — это «мир», в котором язык КК приобретает значение.
+For CC the situation is analogous: the axioms speak of abstract $\Gamma$, $\mathbb{H}$, $\varphi$. The standard model is a concrete realisation: $\Gamma$ = density matrices in $\mathbb{C}^{7 \times 7}$, evolution = solution of the Lindblad equation, and so on. The standard model is the "world" in which the CC language acquires meaning.
 
-Слово «стандартная» означает *каноническую* — ту модель, которую имели в виду создатели теории. Как мы обсудим ниже, могут существовать и другие модели (нестандартные), но стандартная задаёт *предполагаемую* интерпретацию.
+The word "standard" means *canonical* — the model the theory's authors had in mind. As we shall discuss, other models may exist (non-standard), but the standard model gives the *intended* interpretation.
 
-### Формальное определение {#определение-стандартной-модели}
+### Formal Definition {#определение-стандартной-модели}
 
-**Определение (Стандартная модель $\mathfrak{M}_{\mathrm{CC}}$):**
+**Definition (Standard Model $\mathfrak{M}_{\mathrm{CC}}$):**
 
 $$
 \mathfrak{M}_{\mathrm{CC}} = \langle |\mathfrak{M}|, I \rangle
 $$
 
-**Носитель (Universe):**
+**Universe (Carrier):**
 $$
 |\mathfrak{M}| = \mathcal{L}(\mathbb{C}^7) \cup \mathbb{R} \cup \mathbb{C} \cup \mathbb{N} \cup \ldots
 $$
 
-Носитель — это «вселенная» модели, совокупность всех объектов, о которых теория может говорить. Обратим внимание, что в носитель входит $\mathcal{L}(\mathbb{C}^7)$ — пространство линейных операторов на $\mathbb{C}^7$, которое *содержит* матрицы плотности как подмножество, но не исчерпывается ими. Это важно: носитель модели шире, чем «интересные» объекты теории.
+The universe is the "world" of the model, the totality of all objects the theory can speak about. Note that the universe includes $\mathcal{L}(\mathbb{C}^7)$ — the space of linear operators on $\mathbb{C}^7$, which *contains* density matrices as a subset but is not exhausted by them. This is important: the universe of the model is broader than the "interesting" objects of the theory.
 
-### Интерпретация {#функция-интерпретации}
+### Interpretation {#функция-интерпретации}
 
-**Интерпретация (Interpretation $I$):**
+**Interpretation $I$:**
 
-Функция интерпретации $I$ — это *словарь*, переводящий символы сигнатуры в конкретные математические объекты:
+The interpretation function $I$ is a *dictionary* translating the signature symbols into concrete mathematical objects:
 
-| Символ | Интерпретация |
-|--------|---------------|
+| Symbol | Interpretation |
+|--------|----------------|
 | $I(\text{sort } \Gamma)$ | $\{M \in \mathbb{C}^{7 \times 7} : M^\dagger = M, M \geq 0, \mathrm{Tr}(M) = 1\}$ |
 | $I(P)(M)$ | $\mathrm{Tr}(M^2)$ |
-| $I(\mathrm{evolve})(M, t)$ | Решение [уравнения Линдблада](/docs/core/dynamics/evolution) |
+| $I(\mathrm{evolve})(M, t)$ | Solution of the [Lindblad equation](/docs/core/dynamics/evolution) |
 | $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{crit}} \land dP/d\tau > -\varepsilon_{\text{death}}$ |
-| $I(\mathrm{compose})$ | Тензорное произведение + взаимодействие |
+| $I(\mathrm{compose})$ | Tensor product + interaction |
 
-:::info Выведенные и эмпирические константы
-- $P_{\text{crit}} = 2/7 \approx 0.286$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical)
-- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — порог скорости распада, см. [жизнеспособность](/docs/core/dynamics/viability)
+:::info Derived and empirical constants
+- $P_{\text{crit}} = 2/7 \approx 0.286$ — [theorem](/docs/proofs/dynamics/theorem-purity-critical)
+- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — decay rate threshold, see [viability](/docs/core/dynamics/viability)
 :::
 
-Ключевое свойство стандартной модели: интерпретация каждого символа *непротиворечива* — для любого утверждения, выводимого из аксиом, его интерпретация в $\mathfrak{M}_{\mathrm{CC}}$ истинна. Это свойство (корректность) доказывается ниже.
+The key property of the standard model: the interpretation of each symbol is *consistent* — for every statement derivable from the axioms, its interpretation in $\mathfrak{M}_{\mathrm{CC}}$ is true. This property (soundness) is proved below.
 
-### Почему стандартная модель не тривиальна {#нетривиальность-стандартной-модели}
+### Why the Standard Model Is Non-Trivial {#нетривиальность-стандартной-модели}
 
-На первый взгляд, стандартная модель — тавтология: мы *определяем* интерпретацию так, чтобы аксиомы были истинны. Но это поверхностное впечатление. Нетривиальность состоит в следующем:
+At first glance, the standard model is a tautology: we *define* the interpretation so that the axioms are true. But this is a superficial impression. The non-triviality consists in the following:
 
-1. **Существование модели** = непротиворечивость. Если бы аксиомы КК содержали противоречие (например, из одних следовало бы $P_{\text{crit}} = 2/7$, а из других — $P_{\text{crit}} = 3/7$), то никакая модель не существовала бы. Сам факт того, что стандартная модель построена — доказательство непротиворечивости (относительно ZFC).
+1. **Existence of the model** = consistency. If the CC axioms contained a contradiction (for example, if some implied $P_{\text{crit}} = 2/7$ while others implied $P_{\text{crit}} = 3/7$), then no model would exist. The very fact that the standard model has been constructed proves consistency (relative to ZFC).
 
-2. **Конкретность модели** = вычислимость. Модель КК не абстрактна — она состоит из объектов, с которыми можно работать: матрицы можно перемножать, собственные значения — вычислять, уравнение Линдблада — решать численно. Это делает теорию *фальсифицируемой*.
+2. **Concreteness of the model** = computability. The CC model is not abstract — it consists of objects one can work with: matrices can be multiplied, eigenvalues computed, the Lindblad equation solved numerically. This makes the theory *falsifiable*.
 
-3. **Единственность интерпретации** неочевидна. Может ли чистота $P$ быть чем-то *иным*, чем $\mathrm{Tr}(\Gamma^2)$? Теория моделей позволяет поставить этот вопрос строго — и ответить на него (см. раздел о нестандартных моделях).
+3. **Uniqueness of interpretation** is non-obvious. Could purity $P$ be something *other* than $\mathrm{Tr}(\Gamma^2)$? Model theory allows this question to be posed rigorously — and answered (see the section on non-standard models).
 
-## Корректность и полнота
+## Soundness and Completeness
 
-### О чём этот раздел {#корректность-полнота-введение}
+### What This Section Is About {#корректность-полнота-введение}
 
-В математической логике «корректность» и «полнота» — два фундаментальных свойства формальной теории:
+In mathematical logic, "soundness" and "completeness" are two fundamental properties of a formal theory:
 
-- **Корректность** (soundness): всё, что доказуемо — истинно. Если из аксиом КК следует теорема $\phi$, то $\phi$ действительно верна в стандартной модели. Это свойство *безопасности*: теория не производит ложных утверждений.
+- **Soundness**: everything that is provable is true. If a theorem $\phi$ follows from the CC axioms, then $\phi$ is indeed true in the standard model. This is a *safety* property: the theory does not produce false statements.
 
-- **Полнота** (completeness): всё, что истинно — доказуемо. Если $\phi$ верна в стандартной модели, то её можно вывести из аксиом. Это свойство *мощности*: теория способна доказать всё, что нужно.
+- **Completeness**: everything that is true is provable. If $\phi$ is true in the standard model, it can be derived from the axioms. This is a *power* property: the theory can prove everything it needs to.
 
-Между этими свойствами — глубокая асимметрия, восходящая к теоремам Гёделя. Корректность обычно легко установить; полнота — как правило, недостижима для достаточно богатых теорий.
+There is a deep asymmetry between these properties, going back to Gödel's theorems. Soundness is usually easy to establish; completeness is generally unattainable for sufficiently rich theories.
 
-### Теорема (Корректность)
+### Theorem (Soundness)
 
-:::info Теорема
-Все теоремы КК истинны в $\mathfrak{M}_{\mathrm{CC}}$.
+:::info Theorem
+All CC theorems are true in $\mathfrak{M}_{\mathrm{CC}}$.
 :::
 
-**Доказательство:** Каждая теорема доказана конструктивно из аксиом, которые истинны в $\mathfrak{M}_{\mathrm{CC}}$ по построению. ∎
+**Proof:** Each theorem is proved constructively from the axioms, which are true in $\mathfrak{M}_{\mathrm{CC}}$ by construction. ∎
 
-:::warning Примечание о тривиальности
-Эта «корректность» тривиальна: стандартная модель $\mathfrak{M}_{\mathrm{CC}}$ построена так, чтобы удовлетворять аксиомам. Нетривиальная корректность — совместная непротиворечивость всех аксиом — является **открытой проблемой**. Для её решения необходимо показать, что аксиомы Ω, (AP), (PH), (QG) не порождают противоречия при совместном применении.
+:::warning Note on triviality
+This "soundness" is trivial: the standard model $\mathfrak{M}_{\mathrm{CC}}$ was constructed so as to satisfy the axioms. Non-trivial soundness — joint consistency of all axioms — is an **open problem**. To resolve it, one must show that the axioms Ω, (AP), (PH), (QG) do not produce contradictions when applied jointly.
 :::
 
-### Гёделевский контекст {#гёделевский-контекст}
+### The Gödelian Context {#гёделевский-контекст}
 
-Теоремы Гёделя (1931) показали, что для любой достаточно богатой непротиворечивой теории:
+Gödel's theorems (1931) showed that for any sufficiently rich consistent theory:
 
-1. **Первая теорема о неполноте:** Существуют истинные утверждения, недоказуемые в рамках теории.
-2. **Вторая теорема о неполноте:** Теория не может доказать свою собственную непротиворечивость.
+1. **First incompleteness theorem:** There exist true statements that are unprovable within the theory.
+2. **Second incompleteness theorem:** The theory cannot prove its own consistency.
 
-Как это относится к КК?
+How does this relate to CC?
 
-КК содержит натуральные числа $\mathbb{N}$ (сорт в сигнатуре), а значит, по теореме Гёделя, *не может быть полной*. Существуют утверждения о Голономах, которые истинны в стандартной модели, но не выводимы из аксиом. Это не дефект КК — это фундаментальное ограничение *любой* формальной системы, содержащей арифметику.
+CC contains natural numbers $\mathbb{N}$ (a sort in the signature), so by Gödel's theorem it *cannot be complete*. There exist statements about Holons that are true in the standard model but underivable from the axioms. This is not a defect of CC — it is a fundamental limitation of *any* formal system containing arithmetic.
 
-Однако гёделевская неполнота *не касается* типичных утверждений КК. Утверждения вида «$P(\Gamma) > 2/7$» или «$R(\Gamma) \geq 1/3$» — это арифметические неравенства над конкретными матрицами, которые разрешимы. Неполнота проявляется лишь для *универсально квантифицированных* утверждений обо *всех* Голономах — и даже тогда, только для патологически сконструированных предложений.
+However, Gödelian incompleteness *does not concern* typical CC statements. Statements of the form "$P(\Gamma) > 2/7$" or "$R(\Gamma) \geq 1/3$" are arithmetic inequalities about concrete matrices, which are decidable. Incompleteness manifests only for *universally quantified* statements about *all* Holons — and even then, only for pathologically constructed sentences.
 
-### Гипотеза (Относительная полнота)
+### Hypothesis (Relative Completeness)
 
-:::warning Гипотеза (требует доказательства)
-Для любого утверждения $\phi$ о жизнеспособных Голономах:
+:::warning Hypothesis (requires proof)
+For any statement $\phi$ about viable Holons:
 $$
 \mathfrak{M}_{\mathrm{CC}} \vDash \phi \Rightarrow \mathrm{CC} \vdash \phi
 $$
 :::
 
-**Статус:** Эта гипотеза **не доказана**. Для доказательства требуется формализация логики КК и применение теоремы о полноте. Полнота относительна к классу жизнеспособных Голономов.
+**Status:** This hypothesis has **not been proved**. Its proof requires formalising the logic of CC and applying a completeness theorem. Completeness is relative to the class of viable Holons.
 
-Слово «относительная» здесь ключевое: гипотеза утверждает полноту не для *всех* утверждений языка КК, а лишь для утверждений о *жизнеспособных* Голономах ($P > 2/7$). Ограничение на жизнеспособные Голономы существенно сужает класс рассматриваемых структур и, возможно, делает теорию полной для этого подкласса — аналогично тому, как теория вещественно замкнутых полей полна (теорема Тарского—Зайденберга), хотя общая теория полей — нет.
+The word "relative" is key here: the hypothesis asserts completeness not for *all* statements in the CC language, but only for statements about *viable* Holons ($P > 2/7$). Restricting to viable Holons substantially narrows the class of structures considered and possibly makes the theory complete for this subclass — analogously to how the theory of real closed fields is complete (Tarski–Seidenberg theorem), although the general theory of fields is not.
 
-### Что можно и чего нельзя доказать {#границы-доказуемости}
+### What Can and Cannot Be Proved {#границы-доказуемости}
 
-Подведём итог:
+Summary:
 
-| Свойство | Статус | Комментарий |
-|----------|--------|-------------|
-| Корректность (тривиальная) | **Установлена** | По построению модели |
-| Совместная непротиворечивость аксиом | **Открытая проблема** | Требует доказательства $\mathrm{Con}(\Omega + AP + PH + QG)$ |
-| Относительная полнота | **Гипотеза** | Для жизнеспособных Голономов |
-| Абсолютная полнота | **Невозможна** | Теорема Гёделя |
+| Property | Status | Comment |
+|----------|--------|---------|
+| Soundness (trivial) | **Established** | By construction of the model |
+| Joint consistency of axioms | **Open problem** | Requires proving $\mathrm{Con}(\Omega + AP + PH + QG)$ |
+| Relative completeness | **Hypothesis** | For viable Holons |
+| Absolute completeness | **Impossible** | Gödel's theorem |
 
-## Могут ли быть другие модели {#нестандартные-модели}
+## Can There Be Other Models {#нестандартные-модели}
 
-### Проблема единственности интерпретации
+### The Problem of Uniqueness of Interpretation
 
-До сих пор мы говорили о *стандартной* модели $\mathfrak{M}_{\mathrm{CC}}$ — канонической интерпретации КК в терминах матриц плотности $7 \times 7$. Но в теории моделей центральный вопрос: *единственна ли* модель? Удовлетворяют ли аксиомам КК другие математические структуры — возможно, совершенно непохожие на матрицы плотности?
+Until now we have spoken of the *standard* model $\mathfrak{M}_{\mathrm{CC}}$ — the canonical interpretation of CC in terms of $7 \times 7$ density matrices. But the central question in model theory is: is the model *unique*? Do other mathematical structures satisfy the CC axioms — possibly completely unlike density matrices?
 
-По теореме Лёвенгейма—Скулема, если теория первого порядка имеет бесконечную модель, она имеет модели *любой* бесконечной мощности. Это означает, что наряду со «стандартной» моделью (с обычными вещественными числами $\mathbb{R}$) могут существовать модели с нестандартными вещественными числами, содержащими бесконечно малые и бесконечно большие элементы.
+By the Löwenheim–Skolem theorem, if a first-order theory has an infinite model, it has models of *any* infinite cardinality. This means that alongside the "standard" model (with the usual real numbers $\mathbb{R}$), there may exist models with non-standard real numbers containing infinitesimals and infinitely large elements.
 
-### Типы нестандартных моделей КК
+### Types of Non-Standard CC Models
 
-Можно выделить несколько классов потенциальных нестандартных моделей:
+Several classes of potential non-standard models can be distinguished:
 
-**1. Модели с нестандартной арифметикой.** Если заменить $\mathbb{R}$ на гиперкоторые ${}^*\mathbb{R}$ (нестандартный анализ Робинсона), получим модель, в которой чистота $P$ может принимать бесконечно близкие к $2/7$ значения, не равные $2/7$. Физически такие модели, вероятно, бессодержательны, но математически — легитимны.
+**1. Models with non-standard arithmetic.** If $\mathbb{R}$ is replaced by ${}^*\mathbb{R}$ (Robinson's non-standard analysis), one obtains a model in which purity $P$ can take values infinitely close to $2/7$ but not equal to $2/7$. Physically such models are probably vacuous, but mathematically they are legitimate.
 
-**2. Модели с другой размерностью.** Аксиома Септичности (AP) фиксирует $\dim \mathcal{H} = 7$. Но можно рассмотреть «КК-подобные» теории с $\dim \mathcal{H} = N$ для произвольного $N$. Такие теории — не модели КК (они нарушают аксиому), но важны как *контрфактуалы*: они показывают, *почему* именно $N = 7$ необходимо. Теоремы о минимальности Fano-плоскости и Гаммингова кода $H(7,4)$ [дают ответ](/docs/core/foundations/axiom-septicity): при $N \neq 7$ невозможно одновременно обеспечить оптимальную помехоустойчивость, симметрию $S_7$-группы и структуру проективной плоскости PG(2,2).
+**2. Models with different dimension.** The Axiom of Septicity (AP) fixes $\dim \mathcal{H} = 7$. But one can consider "CC-like" theories with $\dim \mathcal{H} = N$ for arbitrary $N$. Such theories are not models of CC (they violate the axiom), but are important as *counterfactuals*: they show *why* precisely $N = 7$ is necessary. The theorems on minimality of the Fano plane and the Hamming code $H(7,4)$ [give the answer](/docs/core/foundations/axiom-septicity): for $N \neq 7$ it is impossible to simultaneously ensure optimal error-correction, $S_7$-group symmetry, and the structure of the projective plane PG(2,2).
 
-**3. Операторно-алгебраические модели.** Вместо конечномерных матриц $\mathbb{C}^{7 \times 7}$ можно рассмотреть бесконечномерные *C*-алгебры. Такие модели могут описывать «термодинамический предел» — коллективное поведение бесконечного числа Голономов. Это связано с [теоремой T-117 об эмерджентной коммутативности](/docs/proofs/physics/emergent-manifold), где макроскопическое пространство-время возникает как классический предел квантовой системы.
+**3. Operator-algebraic models.** Instead of finite-dimensional matrices $\mathbb{C}^{7 \times 7}$ one can consider infinite-dimensional $C^*$-algebras. Such models may describe the "thermodynamic limit" — the collective behaviour of infinitely many Holons. This is related to [Theorem T-117 on emergent commutativity](/docs/proofs/physics/emergent-manifold), where macroscopic spacetime arises as the classical limit of a quantum system.
 
-### Категоричность
+### Categoricity
 
-Теория называется **категоричной**, если все её модели данной мощности изоморфны. Если бы КК была категоричной (в соответствующей мощности), это означало бы, что стандартная модель — по существу единственная.
+A theory is called **categorical** if all its models of a given cardinality are isomorphic. If CC were categorical (in the appropriate cardinality), this would mean the standard model is essentially unique.
 
-КК, вероятно, *не* категорична в смысле логики первого порядка (из-за теоремы Лёвенгейма—Скулема). Однако она может быть категоричной как *теория второго порядка* — если потребовать стандартную интерпретацию $\mathbb{R}$. Этот вопрос остаётся открытым.
+CC is probably *not* categorical in the sense of first-order logic (due to the Löwenheim–Skolem theorem). However, it may be categorical as a *second-order theory* — if one demands the standard interpretation of $\mathbb{R}$. This question remains open.
 
-:::info Следствие для философии сознания
-Если КК категорична (в подходящем смысле), то сознание *однозначно определяется* аксиомами: любая структура, удовлетворяющая аксиомам КК, «сознательна» в точно том же смысле, что и стандартная модель. Если не категорична — возможны «зомби-модели»: структуры, удовлетворяющие всем аксиомам, но не обладающие сознанием в «нашем» смысле. Аксиома Ω *специально предназначена* для исключения таких моделей, постулируя тождество бытия и опыта.
+:::info Implication for the philosophy of consciousness
+If CC is categorical (in a suitable sense), then consciousness is *uniquely determined* by the axioms: any structure satisfying the CC axioms is "conscious" in exactly the same sense as the standard model. If it is not categorical — "zombie-models" are possible: structures satisfying all axioms but lacking consciousness in "our" sense. Axiom Ω is *specifically designed* to exclude such models, postulating the identity of being and experience.
 :::
 
-## Категорная семантика
+## Categorical Semantics
 
-### Зачем нужны категории {#зачем-нужны-категории}
+### Why Categories Are Needed {#зачем-нужны-категории}
 
-Теория моделей, описанная выше, рассматривает КК как изолированную теорию: вот аксиомы, вот модель, вот теоремы. Но КК не существует в вакууме — она связана с IIT, FEP, квантовой теорией, нейронаукой. Как описать эти связи *формально*?
+The model theory described above treats CC as an isolated theory: here are the axioms, here is the model, here are the theorems. But CC does not exist in a vacuum — it is connected to IIT, FEP, quantum theory, neuroscience. How can these connections be described *formally*?
 
-Здесь вступает в игру **теория категорий** — математический язык, созданный для описания *отношений между структурами*. Если обычная математика — это «наука об объектах» (числа, множества, функции), то теория категорий — это «наука об отношениях между объектами». Ключевые понятия:
+This is where **category theory** enters — the mathematical language created for describing *relations between structures*. If ordinary mathematics is "the science of objects" (numbers, sets, functions), then category theory is "the science of relations between objects". Key concepts:
 
-- **Категория** — коллекция объектов и морфизмов (стрелок) между ними. Можно думать о категории как о «мире»: объекты — «вещи» в этом мире, морфизмы — «способы превращения одной вещи в другую».
+- **Category** — a collection of objects and morphisms (arrows) between them. One can think of a category as a "world": objects are "things" in this world, morphisms are "ways of transforming one thing into another".
 
-- **Функтор** — «перевод» из одной категории в другую, сохраняющий структуру. Если категория — «мир», то функтор — «словарь», переводящий вещи и отношения одного мира в другой.
+- **Functor** — a "translation" from one category to another, preserving structure. If a category is a "world", a functor is a "dictionary" translating the things and relations of one world into another.
 
-- **Естественное преобразование** — «перевод между переводами»: способ сравнивать два функтора.
+- **Natural transformation** — a "translation between translations": a way of comparing two functors.
 
-Для КК категорный язык позволяет:
-1. Определить *пространство* Голономов как категорию $\mathbf{Hol}$.
-2. Описать *отношения* между Голономами как морфизмы.
-3. Построить *переводы* КК на язык других теорий как функторы.
+For CC, the categorical language allows one to:
+1. Define the *space* of Holons as a category $\mathbf{Hol}$.
+2. Describe the *relations* between Holons as morphisms.
+3. Build *translations* of CC into the language of other theories as functors.
 
-### Категория Голономов
+### Category of Holons
 
-**Определение (Категория $\mathbf{Hol}$):**
+**Definition (Category $\mathbf{Hol}$):**
 
-См. [Категорный формализм](/docs/proofs/categorical/categorical-formalism) для полного описания.
+See [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) for the complete description.
 
 $$
 \mathrm{Ob}(\mathbf{Hol}) := \{\mathbb{H} : \mathbb{H} = \langle \Gamma, \mathcal{H}, H, \{L_k\}, E, \varphi \rangle, \mathrm{Viable}(\mathbb{H})\}
 $$
 
 $$
-\mathrm{Hom}(\mathbb{H}_1, \mathbb{H}_2) := \{f: \Gamma_1 \to \Gamma_2 : f \text{ сохраняет структуру}\}
+\mathrm{Hom}(\mathbb{H}_1, \mathbb{H}_2) := \{f: \Gamma_1 \to \Gamma_2 : f \text{ preserves structure}\}
 $$
 
-Объекты категории — жизнеспособные Голономы. Морфизмы — отображения, сохраняющие структуру когерентности. Интуитивно, морфизм $f: \mathbb{H}_1 \to \mathbb{H}_2$ — это «способ увидеть» $\mathbb{H}_1$ как часть или проекцию $\mathbb{H}_2$, сохраняя при этом все существенные свойства.
+The objects of the category are viable Holons. The morphisms are maps that preserve the coherence structure. Intuitively, a morphism $f: \mathbb{H}_1 \to \mathbb{H}_2$ is a "way of seeing" $\mathbb{H}_1$ as a part or projection of $\mathbb{H}_2$, preserving all essential properties.
 
-### Теорема (Симметричная моноидальность)
+### Theorem (Symmetric Monoidality)
 
-:::info Теорема
+:::info Theorem
 $$
-(\mathbf{Hol}, \otimes, \mathbb{H}_{\text{unit}}, \alpha, \lambda, \rho, \sigma) \text{ — симметричная моноидальная категория}
+(\mathbf{Hol}, \otimes, \mathbb{H}_{\text{unit}}, \alpha, \lambda, \rho, \sigma) \text{ is a symmetric monoidal category}
 $$
 :::
 
-| Компонента | Определение |
-|------------|-------------|
+| Component | Definition |
+|-----------|------------|
 | $\otimes$ | $\mathbb{H}_1 \otimes \mathbb{H}_2 = \langle \Gamma_1 \otimes \Gamma_2, \mathcal{H}_1 \otimes \mathcal{H}_2, \ldots \rangle$ |
 | $\mathbb{H}_{\text{unit}}$ | $\langle I/7, \mathbb{C}^7, 0, \{\}, \varnothing, \mathrm{id} \rangle$ |
 | $\alpha$ | $(\mathbb{H}_1 \otimes \mathbb{H}_2) \otimes \mathbb{H}_3 \cong \mathbb{H}_1 \otimes (\mathbb{H}_2 \otimes \mathbb{H}_3)$ |
 | $\sigma$ | $\mathbb{H}_1 \otimes \mathbb{H}_2 \cong \mathbb{H}_2 \otimes \mathbb{H}_1$ |
 
-Симметричная моноидальная структура означает, что Голономы можно *композировать* — объединять в более крупные системы — и эта композиция ведёт себя «правильно»: порядок не важен (симметричность), скобки не важны (ассоциативность), и существует «пустой» Голоном, не влияющий на композицию (единица).
+The symmetric monoidal structure means that Holons can be *composed* — combined into larger systems — and this composition behaves "correctly": order does not matter (symmetry), brackets do not matter (associativity), and there is an "empty" Holon that does not affect composition (unit).
 
-Физическая аналогия: моноидальная структура на $\mathbf{Hol}$ — это *алгебра частей и целого*. Два нейрона можно объединить в нейронную сеть; две нейронных сети — в мозг; два организма — в социальную систему. На каждом уровне работает один и тот же оператор $\otimes$, и на каждом уровне возникает новый Голоном.
+Physical analogy: the monoidal structure on $\mathbf{Hol}$ is an *algebra of parts and wholes*. Two neurons can be combined into a neural network; two neural networks into a brain; two organisms into a social system. At each level the same operator $\otimes$ operates, and at each level a new Holon arises.
 
-:::note О моноидальной единице
-$\mathbb{H}_{\text{unit}}$ с $\Gamma = I/7$ имеет $P(I/7) = 1/7 < P_{\text{crit}} = 2/7$, что формально нарушает условие жизнеспособности. Это **не дефект** категорной структуры: моноидальная единица — формальный элемент для определения изоморфизмов $\mathbb{H} \otimes \mathbb{H}_{\text{unit}} \cong \mathbb{H}$, а не физический Голоном. Жизнеспособные Голономы образуют **полную подкатегорию** $\mathbf{Hol}_{\mathcal{V}} \subset \mathbf{Hol}$.
+:::note On the monoidal unit
+$\mathbb{H}_{\text{unit}}$ with $\Gamma = I/7$ has $P(I/7) = 1/7 < P_{\text{crit}} = 2/7$, which formally violates the viability condition. This is **not a defect** of the categorical structure: the monoidal unit is a formal element for defining isomorphisms $\mathbb{H} \otimes \mathbb{H}_{\text{unit}} \cong \mathbb{H}$, not a physical Holon. Viable Holons form a **full subcategory** $\mathbf{Hol}_{\mathcal{V}} \subset \mathbf{Hol}$.
 :::
 
-## Переводимость: как КК говорит на языках других теорий {#переводимость}
+## Translatability: How CC Speaks the Languages of Other Theories {#переводимость}
 
-### Функторы как переводчики {#функторы-как-переводчики}
+### Functors as Translators {#функторы-как-переводчики}
 
-Если категории — это «миры», то функторы — это «переводы» между мирами. Функтор $F: \mathbf{A} \to \mathbf{B}$ берёт каждый объект мира $\mathbf{A}$ и ставит ему в соответствие объект мира $\mathbf{B}$, при этом сохраняя *отношения*: если в $\mathbf{A}$ есть стрелка (морфизм) из $X$ в $Y$, то в $\mathbf{B}$ будет стрелка из $F(X)$ в $F(Y)$.
+If categories are "worlds", functors are "translations" between worlds. A functor $F: \mathbf{A} \to \mathbf{B}$ takes each object of world $\mathbf{A}$ and assigns to it an object of world $\mathbf{B}$, while preserving *relations*: if in $\mathbf{A}$ there is an arrow (morphism) from $X$ to $Y$, then in $\mathbf{B}$ there will be an arrow from $F(X)$ to $F(Y)$.
 
-Для КК функторы играют роль *трансляторов*: они позволяют формулировать утверждения КК на языке других теорий и обратно. Это не метафора — это математически точная операция с доказуемыми свойствами.
+For CC, functors play the role of *translators*: they allow CC statements to be formulated in the language of other theories and vice versa. This is not a metaphor — it is a mathematically precise operation with provable properties.
 
-Принципиальный вопрос: *какие* свойства сохраняются при переводе, а какие теряются? Каждый функтор — это *проекция*, и каждая проекция что-то отбрасывает. Понимание того, *что именно* теряется, — ключ к пониманию отношений между теориями сознания.
+The crucial question is: *which* properties are preserved in translation, and which are lost? Each functor is a *projection*, and every projection discards something. Understanding *what exactly* is lost is the key to understanding the relations between theories of consciousness.
 
-### Функтор в IIT
+### Functor to IIT
 
-**Определение:**
+**Definition:**
 $$
 F_{\mathrm{IIT}}: \mathbf{Hol} \to \mathbf{IIT}
 $$
@@ -392,43 +392,43 @@ $$
 F_{\mathrm{IIT}}(\mathbb{H}) = (X, p(x), \Phi(X))
 $$
 
-где:
-- $X = \mathrm{discretize}(S)$ — дискретизация состояния
-- $p(x) = \langle x|\Gamma|x \rangle$ — вероятностное распределение (⟨x|Γ|x⟩ уже вещественно и неотрицательно для эрмитовой положительно полуопределённой Γ)
-- $\Phi(X) = \Phi(\Gamma)$ — [интегрированная информация](/docs/core/structure/dimension-u#мера-интеграции-φ)
+where:
+- $X = \mathrm{discretize}(S)$ — discretisation of the state
+- $p(x) = \langle x|\Gamma|x \rangle$ — probability distribution (⟨x|Γ|x⟩ is already real and non-negative for Hermitian positive semi-definite Γ)
+- $\Phi(X) = \Phi(\Gamma)$ — [integrated information](/docs/core/structure/dimension-u#мера-интеграции-φ)
 
-Что *сохраняется* при переводе в IIT: мера интеграции $\Phi$, вероятностная структура состояний. Что *теряется*: семимерная структура когерентности (IIT не различает измерения A, S, D, L, E, O, U), динамика эволюции (IIT работает со статическими состояниями), рефлексивность оператора $\varphi$ (IIT не имеет аналога самомоделирования).
+What is *preserved* in the translation to IIT: the integration measure $\Phi$, the probabilistic structure of states. What is *lost*: the seven-dimensional coherence structure (IIT does not distinguish dimensions A, S, D, L, E, O, U), the dynamics of evolution (IIT works with static states), the reflexivity of operator $\varphi$ (IIT has no analogue of self-modelling).
 
-:::info Следствие
-IIT — *проекция* КК: она видит «тень» Голонома на экране интегрированной информации, но не весь Голоном. Поэтому IIT корректно предсказывает *некоторые* аспекты сознания ($\Phi$), но не может объяснить *структуру* сознательного опыта (для этого нужна полная семимерная Γ).
+:::info Corollary
+IIT is a *projection* of CC: it sees the "shadow" of the Holon on the screen of integrated information, but not the full Holon. Therefore IIT correctly predicts *some* aspects of consciousness ($\Phi$), but cannot explain the *structure* of conscious experience (for that, the full seven-dimensional $\Gamma$ is needed).
 :::
 
-### Функтор в FEP
+### Functor to FEP
 
-**Определение:**
+**Definition:**
 $$
 F_{\mathrm{FEP}}: \mathbf{Hol} \to \mathbf{MarkovBlankets}
 $$
 
-:::warning Гипотеза
-**Гипотеза (FEP как проекция):**
+:::warning Hypothesis
+**Hypothesis (FEP as projection):**
 $$
-\mathrm{FEP} = \pi_D \circ \mathrm{КК}
+\mathrm{FEP} = \pi_D \circ \mathrm{CC}
 $$
-FEP — проекция на [D-измерение](/docs/core/structure/dimension-d) (Динамика).
+FEP is a projection onto the [D-dimension](/docs/core/structure/dimension-d) (Dynamics).
 
-Данное утверждение — *исследовательская гипотеза*, требующая формального доказательства.
+This statement is a *research hypothesis* requiring formal proof.
 :::
 
-Принцип свободной энергии (Free Energy Principle, FEP) Карла Фристона описывает *самоорганизацию* — то, как системы поддерживают своё существование, минимизируя свободную энергию. В языке КК это соответствует *динамическому измерению* $D$: жизнеспособная система ($P > 2/7$) — это система, успешно минимизирующая «удивление» (в терминах FEP) или «напряжение» $\sigma_{\mathrm{sys}}$ (в терминах КК).
+The Free Energy Principle (FEP) of Karl Friston describes *self-organisation* — how systems maintain their existence by minimising free energy. In the CC language this corresponds to the *dynamic dimension* $D$: a viable system ($P > 2/7$) is a system successfully minimising "surprise" (in FEP terms) or "stress" $\sigma_{\mathrm{sys}}$ (in CC terms).
 
-Гипотеза $\mathrm{FEP} = \pi_D \circ \mathrm{КК}$ утверждает, что FEP видит ровно одну из семи граней Голонома — его динамическую составляющую. Это объясняет, почему FEP успешна в нейронауке (динамика мозга — её сильная сторона), но недостаточна для полной теории сознания (для этого нужны и остальные шесть измерений).
+The hypothesis $\mathrm{FEP} = \pi_D \circ \mathrm{CC}$ asserts that FEP sees exactly one of the seven facets of the Holon — its dynamic component. This explains why FEP is successful in neuroscience (brain dynamics is its strength), but insufficient for a complete theory of consciousness (for that, the remaining six dimensions are also needed).
 
-### Функтор в GNW {#функтор-в-gnw}
+### Functor to GNW {#функтор-в-gnw}
 
-Теория Глобального Нейронного Рабочего Пространства (Global Neuronal Workspace, GNW) Бернарда Баарса и Станисласа Деана описывает сознание как *глобальную доступность* информации. В языке КК это соответствует *проекции на подкатегорию с условием* $D_{\text{diff}} \geq 2$ и когерентностью, достаточной для глобального связывания.
+The Global Neuronal Workspace Theory (GNW) of Bernard Baars and Stanislas Dehaene describes consciousness as *global availability* of information. In the CC language this corresponds to a *projection onto the subcategory with condition* $D_{\text{diff}} \geq 2$ and coherence sufficient for global binding.
 
-Функтор $F_{\mathrm{GNW}}$ может быть определён как:
+The functor $F_{\mathrm{GNW}}$ can be defined as:
 
 $$
 F_{\mathrm{GNW}}: \mathbf{Hol}_{\mathcal{V}} \to \mathbf{AccessibleStates}
@@ -438,11 +438,11 @@ $$
 F_{\mathrm{GNW}}(\mathbb{H}) = (\mathrm{GlobalWorkspace}(\Gamma), \mathrm{AccessMap}(\Gamma))
 $$
 
-где $\mathrm{GlobalWorkspace}$ — подпространство $\mathcal{H}$, определяемое собственными векторами $\Gamma$ с наибольшими собственными значениями (доминантные «содержания» сознания), а $\mathrm{AccessMap}$ — структура связей между измерениями, определяемая внедиагональными элементами $\Gamma$.
+where $\mathrm{GlobalWorkspace}$ is the subspace of $\mathcal{H}$ defined by the eigenvectors of $\Gamma$ with the largest eigenvalues (dominant "contents" of consciousness), and $\mathrm{AccessMap}$ is the structure of connections between dimensions, defined by the off-diagonal elements of $\Gamma$.
 
-### Общая картина: КК как метатеория {#кк-как-метатеория}
+### The Overall Picture: CC as Metatheory {#кк-как-метатеория}
 
-Функторы $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ — это не ad hoc соответствия, а проявления единой структуры: **КК есть метатеория**, содержащая IIT, FEP и GNW как проекции.
+The functors $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ are not ad hoc correspondences, but manifestations of a unified structure: **CC is a metatheory**, containing IIT, FEP, and GNW as projections.
 
 $$
 \begin{array}{ccc}
@@ -452,42 +452,42 @@ F_{\mathrm{IIT}} \swarrow & \downarrow F_{\mathrm{FEP}} & \searrow F_{\mathrm{GN
 \end{array}
 $$
 
-Каждый функтор — *проекция* на подмножество структуры Голонома:
-- $F_{\mathrm{IIT}}$ сохраняет $\Phi$ (интеграция), теряет $R$ (рефлексия) и $\sigma$ (динамика).
-- $F_{\mathrm{FEP}}$ сохраняет динамику ($D$-измерение), теряет внутреннюю структуру опыта.
-- $F_{\mathrm{GNW}}$ сохраняет глобальную доступность, теряет метрику феноменального пространства.
+Each functor is a *projection* onto a subset of the Holon's structure:
+- $F_{\mathrm{IIT}}$ preserves $\Phi$ (integration), loses $R$ (reflection) and $\sigma$ (dynamics).
+- $F_{\mathrm{FEP}}$ preserves dynamics ($D$-dimension), loses the internal structure of experience.
+- $F_{\mathrm{GNW}}$ preserves global accessibility, loses the metric of the phenomenal space.
 
-Ни одна из проекций не порождает полную теорию сознания. Только полный Голоном — семимерная матрица когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — содержит всю информацию. В этом смысле КК — не «ещё одна» теория в ряду IIT/FEP/GNW, а *теория, содержащая их как частные случаи*.
+None of the projections yields a complete theory of consciousness. Only the full Holon — the seven-dimensional coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — contains all the information. In this sense CC is not "yet another" theory in the series IIT/FEP/GNW, but a *theory containing them as special cases*.
 
-## Экспериенциальная категория
+## Experiential Category
 
-### Почему нужна отдельная категория опыта {#зачем-категория-опыта}
+### Why a Separate Category of Experience Is Needed {#зачем-категория-опыта}
 
-Функторы $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$ и др. описывают «внешнюю» сторону КК — её отношения с другими научными теориями. Но КК — это теория *сознания*, и её центральная проблема — не динамика и не информация, а *опыт*: почему определённые математические структуры «ощущаются»? Для формализации этого вопроса нужна специальная категория — категория *экспериенциальных состояний*.
+The functors $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, etc. describe the "external" side of CC — its relations with other scientific theories. But CC is a theory of *consciousness*, and its central problem is not dynamics and not information, but *experience*: why do certain mathematical structures "feel"? To formalise this question a special category is needed — the category of *experiential states*.
 
-### Категория матриц плотности
+### Category of Density Matrices
 
-**Определение (Категория $\mathbf{DensityMat}$):**
+**Definition (Category $\mathbf{DensityMat}$):**
 
-См. [Категорный формализм](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat) для полного описания.
+See [Categorical Formalism](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat) for the complete description.
 
 $$
 \mathbf{DensityMat} := (\mathrm{Obj}, \mathrm{Mor})
 $$
 
-где:
+where:
 - $\mathrm{Obj} = \{\rho : \rho^\dagger = \rho, \rho \geq 0, \mathrm{Tr}(\rho) = 1\}$
 - $\mathrm{Mor}(\rho_1, \rho_2) = \{\Psi : \mathrm{CPTP}, \Psi(\rho_1) = \rho_2\}$
 
-CPTP = Completely Positive Trace-Preserving (квантовые каналы).
+CPTP = Completely Positive Trace-Preserving (quantum channels).
 
-Морфизмы этой категории — CPTP-каналы — заслуживают отдельного комментария. В квантовой механике CPTP-канал — это наиболее общее физически допустимое преобразование состояния. Он сохраняет *положительность* (вероятности остаются неотрицательными), *полную положительность* (работает корректно и для составных систем) и *след* (полная вероятность равна 1). В КК это означает, что переход между состояниями Голонома — всегда *физически реализуемый* процесс. Эволюция $\mathrm{evolve}(\Gamma, t)$ — частный случай CPTP-канала.
+The morphisms of this category — CPTP channels — deserve a separate comment. In quantum mechanics a CPTP channel is the most general physically admissible transformation of a state. It preserves *positivity* (probabilities remain non-negative), *complete positivity* (works correctly for composite systems too), and the *trace* (total probability equals 1). In CC this means that the transition between Holon states is always a *physically realisable* process. The evolution $\mathrm{evolve}(\Gamma, t)$ is a special case of a CPTP channel.
 
-### Функтор опыта
+### Experience Functor
 
-**Определение (Полный функтор опыта):**
+**Definition (Complete Experience Functor):**
 
-См. [Категория Exp](/docs/proofs/categorical/categorical-formalism#2-категория-exp) для полного описания.
+See [Category Exp](/docs/proofs/categorical/categorical-formalism#2-категория-exp) for the complete description.
 
 $$
 F_{\mathcal{Q}}: \mathbf{DensityMat} \to \mathbf{Exp}
@@ -496,146 +496,146 @@ $$
 F_{\mathcal{Q}}(\rho) := (\mathrm{Spectrum}(\rho_E), \mathrm{Eigenvectors}(\rho_E), \mathrm{Context}(\Gamma_{-E}), \mathrm{History})
 $$
 
-Функтор опыта $F_{\mathcal{Q}}$ — математическая формализация *перехода от состояния системы к опыту*. Его четырёхкомпонентная структура неслучайна:
+The experience functor $F_{\mathcal{Q}}$ is the mathematical formalisation of the *transition from the system state to experience*. Its four-component structure is not accidental:
 
-1. **Спектр** $\mathrm{Spectrum}(\rho_E)$ — собственные значения $E$-подматрицы. Они задают *интенсивности* компонент опыта: насколько ярко каждое «качество» (qualia) представлено в данный момент.
+1. **Spectrum** $\mathrm{Spectrum}(\rho_E)$ — eigenvalues of the $E$-submatrix. They define the *intensities* of experience components: how vividly each "quality" (qualia) is present at the given moment.
 
-2. **Собственные векторы** $\mathrm{Eigenvectors}(\rho_E)$ — направления в $E$-подпространстве. Они задают *содержание* опыта: *что именно* переживается. Два состояния с одинаковым спектром, но разными собственными векторами — это состояния одинаковой «яркости», но разного «цвета».
+2. **Eigenvectors** $\mathrm{Eigenvectors}(\rho_E)$ — directions in the $E$-subspace. They define the *content* of experience: *what exactly* is being experienced. Two states with the same spectrum but different eigenvectors are states of the same "brightness" but different "colour".
 
-3. **Контекст** $\mathrm{Context}(\Gamma_{-E})$ — оставшиеся шесть измерений матрицы когерентности. Они задают *фон* опыта: какова динамика (D), внимание (A), социальный контекст (S), логическая структура (L), целостность (O), энергетический уровень (U).
+3. **Context** $\mathrm{Context}(\Gamma_{-E})$ — the remaining six dimensions of the coherence matrix. They define the *background* of experience: what the dynamics is (D), attention (A), social context (S), logical structure (L), wholeness (O), energy level (U).
 
-4. **История** $\mathrm{History}$ — временная траектория предшествующих состояний. Она задает *темпоральную* структуру опыта: ощущение длительности, памяти, антиципации.
+4. **History** $\mathrm{History}$ — the temporal trajectory of preceding states. It defines the *temporal* structure of experience: the sense of duration, memory, anticipation.
 
-### Теорема (Невозможность спектрального функтора)
+### Theorem (Impossibility of the Spectral Functor)
 
-:::warning [Теорема](/docs/reference/specification#теорема-невозможность-спектрального-функтора)
-Не существует функтора $F: \mathbf{DensityMat} \to \mathbf{Exp}$, факторизующегося *только* через спектр.
+:::warning [Theorem](/docs/reference/specification#теорема-невозможность-спектрального-функтора)
+There is no functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ that factors *only* through the spectrum.
 :::
 
-**Доказательство:**
-1. Пусть $F = G \circ \mathrm{Spec}$, где $\mathrm{Spec}: \rho \mapsto \mathrm{Spectrum}(\rho)$
-2. Рассмотрим изоспектральные $\rho_1 \neq \rho_2$
-3. Тогда $F(\rho_1) = G(\mathrm{Spec}(\rho_1)) = G(\mathrm{Spec}(\rho_2)) = F(\rho_2)$
-4. Но $\rho_1$ и $\rho_2$ могут описывать *различимые* опыты
-5. Противоречие ∎
+**Proof:**
+1. Suppose $F = G \circ \mathrm{Spec}$, where $\mathrm{Spec}: \rho \mapsto \mathrm{Spectrum}(\rho)$
+2. Consider isospectral $\rho_1 \neq \rho_2$
+3. Then $F(\rho_1) = G(\mathrm{Spec}(\rho_1)) = G(\mathrm{Spec}(\rho_2)) = F(\rho_2)$
+4. But $\rho_1$ and $\rho_2$ may describe *distinguishable* experiences
+5. Contradiction ∎
 
-**Следствие:** Полный функтор $F_{\mathcal{Q}}$ *должен* учитывать собственные векторы, контекст и историю.
+**Corollary:** The complete functor $F_{\mathcal{Q}}$ *must* account for eigenvectors, context, and history.
 
-Эта теорема имеет глубокий философский смысл: *опыт не сводится к количественным характеристикам*. Два состояния с одинаковыми собственными значениями (одинаковыми «количествами» информации, интеграции, когерентности) могут порождать *различный опыт* — потому что важны не только «сколько», но и «чего», «на каком фоне» и «после чего». Это математическое обоснование интуиции о *качественности* (qualitativeness) опыта.
+This theorem has a deep philosophical meaning: *experience is not reducible to quantitative characteristics*. Two states with the same eigenvalues (the same "amounts" of information, integration, coherence) can give rise to *different experiences* — because not only "how much" matters, but also "of what", "against what background", and "after what". This is the mathematical justification for the intuition about the *qualitativeness* of experience.
 
-Аналогия: два музыкальных аккорда могут иметь одинаковые интенсивности звучания (спектр), но разные ноты (собственные векторы) — и переживаться совершенно по-разному. Теорема утверждает, что никакой «детектор громкости» не заменит «детектор гармонии».
+Analogy: two musical chords may have the same sound intensities (spectrum) but different notes (eigenvectors) — and be experienced completely differently. The theorem asserts that no "loudness detector" can replace a "harmony detector".
 
-## Границы объяснения
+## Limits of Explanation
 
-### Категориальный разрыв
+### The Categorical Gap
 
-:::caution Признание
-КК *не объясняет*, почему конкретное числовое значение $\lambda = 0.347$ переживается как *именно это* ощущение.
+:::caution Acknowledgement
+CC does *not explain* why a specific numerical value $\lambda = 0.347$ is experienced as *this particular* sensation.
 :::
 
-Теория устанавливает *структурное соответствие* между математикой и феноменологией, но не дедуцирует одно из другого.
+The theory establishes a *structural correspondence* between mathematics and phenomenology, but does not deduce one from the other.
 
-Этот разрыв — не случайная лакуна, а фундаментальная черта любой математической теории сознания. Чтобы понять его природу, проведём аналогию.
+This gap is not an accidental lacuna, but a fundamental feature of any mathematical theory of consciousness. To understand its nature, consider an analogy.
 
-Физика описывает электромагнитные волны с длиной 700 нм. Она объясняет, как эти волны возникают, распространяются, поглощаются рецепторами глаза, порождают нервные импульсы. Но она *не объясняет*, почему 700 нм — это *красное*. Связь «700 нм → ощущение красного» — не вывод из уравнений Максвелла, а *эмпирический факт*. Уравнения Максвелла работают в мире без наблюдателей; «красное» требует наблюдателя.
+Physics describes electromagnetic waves with wavelength 700 nm. It explains how these waves arise, propagate, are absorbed by retinal receptors, and generate nerve impulses. But it *does not explain* why 700 nm is *red*. The link "700 nm → sensation of red" is not a deduction from Maxwell's equations, but an *empirical fact*. Maxwell's equations work in a world without observers; "red" requires an observer.
 
-КК отличается от физики тем, что она *начинает* с наблюдателя: аксиома Ω постулирует тождество бытия и опыта. Но даже с этим постулатом остаётся разрыв: *структура* опыта (метрика Фубини-Штуди, иерархия уровней) определена, а *качество* (qualia) — нет.
+CC differs from physics in that it *starts* with the observer: axiom Ω postulates the identity of being and experience. But even with this postulate a gap remains: the *structure* of experience (the Fubini–Study metric, the level hierarchy) is defined, but the *quality* (qualia) is not.
 
-### Что теория объясняет
+### What the Theory Explains
 
-1. **Структуру** феноменального пространства ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): метрика Фубини-Штуди)
-2. **Отношения** между качествами (L1: изоморфизм с $\mathbb{P}(\mathcal{H}_E)$)
-3. **Динамику** опыта ([уравнение эволюции](/docs/core/dynamics/evolution))
-4. **Условия** сознательности ([L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
-5. **Необходимость** интериорности ([L0](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority)) для жизнеспособности ([Теорема 8.1 [Т]](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
+1. The **structure** of phenomenal space ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): Fubini–Study metric)
+2. The **relations** between qualities (L1: isomorphism with $\mathbb{P}(\mathcal{H}_E)$)
+3. The **dynamics** of experience ([evolution equation](/docs/core/dynamics/evolution))
+4. The **conditions** for consciousness ([L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
+5. The **necessity** of interiority ([L0](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority)) for viability ([Theorem 8.1 [T]](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
-### Что теория не объясняет
+### What the Theory Does Not Explain
 
-1. *Почему* математические структуры «ощущаются»
-2. *Почему* именно эта структура, а не другая
+1. *Why* mathematical structures "feel"
+2. *Why* this particular structure, and not another
 
-### Природа категориального разрыва {#природа-категориального-разрыва}
+### The Nature of the Categorical Gap {#природа-категориального-разрыва}
 
-Важно понять, что категориальный разрыв — не *эпистемический* (мы чего-то не знаем), а *онтологический* (знание определённого типа *невозможно в принципе*). Это утверждение можно сделать точным:
+It is important to understand that the categorical gap is not *epistemic* (we don't know something), but *ontological* (knowledge of a certain type is *impossible in principle*). This claim can be made precise:
 
-**Утверждение (Невыводимость качества):** Не существует формальной системы $T$, содержащей арифметику, такой что для некоторого предиката $Q$ (качество опыта):
+**Statement (Non-derivability of quality):** There is no formal system $T$ containing arithmetic such that for some predicate $Q$ (quality of experience):
 $$
 T \vdash \forall \rho.\, Q(\rho) \leftrightarrow \Phi(\rho)
 $$
-где $\Phi$ — любая вычислимая функция от $\rho$.
+where $\Phi$ is any computable function of $\rho$.
 
-Другими словами: качество опыта (qualia) *не может быть отождествлено* ни с какой вычислимой характеристикой матрицы плотности. Это не означает, что qualia «нематериальны» — это означает, что отношение «качество ↔ структура» — *базовое* отношение, не сводимое к чему-то более простому.
+In other words: the quality of experience (qualia) *cannot be identified* with any computable characteristic of the density matrix. This does not mean that qualia are "non-material" — it means that the relation "quality ↔ structure" is a *basic* relation, not reducible to anything simpler.
 
-КК обходит эту проблему элегантно, но радикально: аксиома Ω *постулирует* тождество бытия и опыта. Не «бытие *порождает* опыт» (это требовало бы объяснения механизма), а «бытие *есть* опыт» (это — аксиома, не требующая объяснения).
+CC circumvents this problem elegantly but radically: axiom Ω *postulates* the identity of being and experience. Not "being *generates* experience" (which would require explaining the mechanism), but "being *is* experience" (which is an axiom, requiring no explanation).
 
-**Метатеоретический статус:**
-Категориальный разрыв — не *дефект* теории, а *граница объяснения*. Тождество бытия и опыта — [аксиома Ω](/docs/core/foundations/axiom-omega), не теорема.
+**Metatheoretical status:**
+The categorical gap is not a *defect* of the theory, but a *limit of explanation*. The identity of being and experience is [Axiom Ω](/docs/core/foundations/axiom-omega), not a theorem.
 
-### Сравнение с другими теориями {#сравнение-с-другими-теориями}
+### Comparison with Other Theories {#сравнение-с-другими-теориями}
 
-Полезно сравнить, как различные теории сознания обращаются с категориальным разрывом:
+It is useful to compare how different theories of consciousness deal with the categorical gap:
 
-| Теория | Стратегия | Проблема |
-|--------|-----------|----------|
-| **Физикализм** | Сознание = мозговой процесс | Не объясняет qualia |
-| **Функционализм** | Сознание = функция | Аргумент «китайской комнаты» |
-| **IIT** | Сознание = $\Phi$ | Не объясняет, почему $\Phi$ «ощущается» |
-| **FEP** | Сознание = минимизация свободной энергии | Не различает сознательных и бессознательных агентов |
-| **Панпсихизм** | Сознание — фундаментальное свойство | Проблема комбинации |
-| **КК** | Бытие *есть* опыт (Ω) | Категориальный разрыв (признан явно) |
+| Theory | Strategy | Problem |
+|--------|----------|---------|
+| **Physicalism** | Consciousness = brain process | Does not explain qualia |
+| **Functionalism** | Consciousness = function | Chinese Room argument |
+| **IIT** | Consciousness = $\Phi$ | Does not explain why $\Phi$ "feels" |
+| **FEP** | Consciousness = free energy minimisation | Does not distinguish conscious from unconscious agents |
+| **Panpsychism** | Consciousness is a fundamental property | Combination problem |
+| **CC** | Being *is* experience (Ω) | Categorical gap (explicitly acknowledged) |
 
-КК не «решает» hard problem (трудную проблему сознания) — она *переформулирует* её: не «как материя порождает сознание?» (вопрос без ответа), а «какова математическая структура опыта?» (вопрос, на который КК отвечает).
+CC does not "solve" the hard problem of consciousness — it *reformulates* it: not "how does matter generate consciousness?" (a question without an answer), but "what is the mathematical structure of experience?" (a question CC answers).
 
-## Резюме: архитектура теории моделей КК {#резюме}
+## Summary: Architecture of CC Model Theory {#резюме}
 
-Теория моделей КК — это не просто формальный гарнир к содержательной теории. Она выполняет три критические функции:
+CC model theory is not merely formal decoration for a substantive theory. It performs three critical functions:
 
-1. **Фиксация онтологии.** Сигнатура $\Sigma_{\mathrm{CC}}$ точно определяет, о чём КК говорит и о чём — не говорит. Всё, что вне сигнатуры, — не предмет КК.
+1. **Fixing the ontology.** The signature $\Sigma_{\mathrm{CC}}$ precisely defines what CC speaks about and what it does not. Everything outside the signature is not the subject of CC.
 
-2. **Гарантия непротиворечивости.** Стандартная модель $\mathfrak{M}_{\mathrm{CC}}$ доказывает, что аксиомы совместны (по крайней мере, относительно ZFC). Теория, не имеющая модели, — пуста.
+2. **Guarantee of consistency.** The standard model $\mathfrak{M}_{\mathrm{CC}}$ proves that the axioms are compatible (at least relative to ZFC). A theory with no model is empty.
 
-3. **Мосты между теориями.** Функторы $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ строго описывают отношения КК с другими теориями сознания — не как метафоры, а как математически точные проекции с доказуемыми свойствами потери и сохранения информации.
+3. **Bridges between theories.** The functors $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ rigorously describe the relations of CC to other theories of consciousness — not as metaphors, but as mathematically precise projections with provable information-loss and information-preservation properties.
 
-Ключевой результат этой главы — *полная картина* формального статуса КК: это теория с явной сигнатурой, стандартной моделью, доказанной (тривиальной) корректностью, гипотетической относительной полнотой, категорной семантикой и явно признанными границами объяснения. Среди теорий сознания такой уровень формальной прозрачности уникален.
+The key result of this chapter is a *complete picture* of the formal status of CC: a theory with an explicit signature, standard model, proved (trivial) soundness, hypothetical relative completeness, categorical semantics, and explicitly acknowledged limits of explanation. Such a level of formal transparency is unique among theories of consciousness.
 
 ---
 
-## Что мы узнали
+## What We Have Learned
 
-Подведём итоги этой главы. Мы рассмотрели КК «сверху» — не как набор формул, а как формальную теорию с чётко определённым статусом:
+Let us summarise this chapter. We have examined CC "from above" — not as a collection of formulas, but as a formal theory with a clearly defined status:
 
-1. **Сигнатура** $\Sigma_{\mathrm{CC}}$ — формальный «алфавит» КК: 6 сортов (включая $\Gamma$ и $\mathbb{H}$), 12+ функций ($P$, $\Phi$, $R$, $\varphi$, $\sigma_{\mathrm{sys}}$...), 4 предиката ($\mathrm{Viable}$, $\mathrm{Conscious}$, ...) и 4 аксиомы. Любое утверждение КК записывается символами этой сигнатуры.
+1. **Signature** $\Sigma_{\mathrm{CC}}$ — the formal "alphabet" of CC: 6 sorts (including $\Gamma$ and $\mathbb{H}$), 12+ functions ($P$, $\Phi$, $R$, $\varphi$, $\sigma_{\mathrm{sys}}$...), 4 predicates ($\mathrm{Viable}$, $\mathrm{Conscious}$, ...) and 4 axioms. Every CC statement is written in the symbols of this signature.
 
-2. **Стандартная модель** $\mathfrak{M}_{\mathrm{CC}}$ — конкретная реализация: $\Gamma$ = матрицы плотности в $\mathbb{C}^{7 \times 7}$, эволюция = решение уравнения Линдблада. Существование модели доказывает непротиворечивость (относительно ZFC). Конкретность модели делает теорию вычислимой и фальсифицируемой.
+2. **Standard model** $\mathfrak{M}_{\mathrm{CC}}$ — a concrete realisation: $\Gamma$ = density matrices in $\mathbb{C}^{7 \times 7}$, evolution = solution of the Lindblad equation. The existence of the model proves consistency (relative to ZFC). The concreteness of the model makes the theory computable and falsifiable.
 
-3. **Корректность** установлена (тривиально — по построению). **Абсолютная полнота** невозможна (теорема Гёделя). **Относительная полнота** для жизнеспособных Голономов — открытая гипотеза.
+3. **Soundness** is established (trivially — by construction). **Absolute completeness** is impossible (Gödel's theorem). **Relative completeness** for viable Holons is an open hypothesis.
 
-4. **Нестандартные модели** возможны (теорема Лёвенгейма--Скулема), но физически, вероятно, бессодержательны. Вопрос категоричности остаётся открытым.
+4. **Non-standard models** are possible (Löwenheim–Skolem theorem), but physically probably vacuous. The question of categoricity remains open.
 
-5. **Категория Голономов** $\mathbf{Hol}$ — симметричная моноидальная категория. Голономы можно композировать ($\otimes$), и эта композиция ассоциативна, коммутативна и имеет единицу.
+5. **Category of Holons** $\mathbf{Hol}$ is a symmetric monoidal category. Holons can be composed ($\otimes$), and this composition is associative, commutative, and has a unit.
 
-6. **Функторные мосты** $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ — КК как метатеория. Каждая из существующих теорий сознания — *проекция* КК, сохраняющая часть структуры и теряющая остальное. IIT теряет динамику и рефлексию. FEP теряет внутреннюю структуру опыта. GNW теряет метрику феноменального пространства.
+6. **Functor bridges** $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ — CC as metatheory. Each existing theory of consciousness is a *projection* of CC, preserving part of the structure and losing the rest. IIT loses dynamics and reflection. FEP loses the internal structure of experience. GNW loses the metric of the phenomenal space.
 
-7. **Категориальный разрыв** — КК объясняет *структуру* опыта, но не *качество* (qualia). Тождество бытия и опыта — аксиома ($\Omega$), не теорема. Это не дефект, а фундаментальная граница объяснения.
+7. **Categorical gap** — CC explains the *structure* of experience, but not the *quality* (qualia). The identity of being and experience is an axiom ($\Omega$), not a theorem. This is not a defect, but a fundamental limit of explanation.
 
-:::info Мост к следующей главе
-Мы завершили описание *формальных оснований* КК: аксиомы, определения, теоремы, теория моделей. Это — первые пять глав, от «зачем» до «о чём». Теперь начинается *продвинутый математический аппарат*. В [следующей главе](./gap-algebra) мы исследуем **алгебру Gap** — структуру «щели» между измерениями, определяемую геометрией плоскости Фано. Gap-алгебра описывает, как когерентности между измерениями эволюционируют, какие комбинации устойчивы, и как из этой динамики рождаются бифуркации, фазовые переходы и немарковские эффекты памяти.
+:::info Bridge to the Next Chapter
+We have completed the description of the *formal foundations* of CC: axioms, definitions, theorems, model theory. These are the first five chapters, from "why" to "about what". Now the *advanced mathematical apparatus* begins. In the [next chapter](./gap-algebra) we investigate the **Gap algebra** — the structure of the "gap" between dimensions, defined by the geometry of the Fano plane. The Gap algebra describes how coherences between dimensions evolve, which combinations are stable, and how bifurcations, phase transitions, and non-Markovian memory effects arise from this dynamics.
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиоматика](./axiomatics) — аксиомы Ω и Септичности
-- [Теоремы](./theorems) — формальные результаты КК
-- [Определения](./definitions) — базовые определения КК
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — категории $\mathbf{Hol}$, $\mathbf{DensityMat}$, $\mathbf{Exp}$
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
-- [Семь измерений](/docs/core/structure/dimensions) — структура $\mathcal{H} = \mathbb{C}^7$
-- [Глоссарий](/docs/reference/glossary) — терминология и связанные теории
-- [Сравнение с альтернативами](./comparison) — формальные мосты КК↔IIT, КК↔FEP
-- [Философские основания](./philosophy) — эпистемологический статус моделей КК
+**Related Documents:**
+- [Axiomatics](./axiomatics) — axioms Ω and Septicity
+- [Theorems](./theorems) — formal results of CC
+- [Definitions](./definitions) — basic CC definitions
+- [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) — categories $\mathbf{Hol}$, $\mathbf{DensityMat}$, $\mathbf{Exp}$
+- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
+- [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Coherence Matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma/d\tau$
+- [Seven Dimensions](/docs/core/structure/dimensions) — structure $\mathcal{H} = \mathbb{C}^7$
+- [Glossary](/docs/reference/glossary) — terminology and related theories
+- [Comparison with Alternatives](./comparison) — formal bridges CC↔IIT, CC↔FEP
+- [Philosophical Foundations](./philosophy) — epistemological status of CC models

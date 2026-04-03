@@ -1,798 +1,798 @@
 ---
 sidebar_position: 30
-title: "Упражнения и задачи"
-description: "Практические задачи для самопроверки: от элементарных до исследовательских, с решениями"
+title: "Exercises and Problems"
+description: "Practice problems for self-assessment: from elementary to research-level, with solutions"
 ---
 
-# Упражнения и Задачи
+# Exercises and Problems
 
-> *«Ничему нельзя научить. Можно лишь помочь обнаружить это внутри себя.»*
-> — Галилео Галилей
+> *"You cannot teach a person anything; you can only help them discover it within themselves."*
+> — Galileo Galilei
 
 
-:::info Для кого эта глава
-Задачи для самопроверки по всем главам учебника — от элементарных до исследовательских. Читатель сможет проверить понимание формализма КК на конкретных примерах.
+:::info Who This Chapter Is For
+Problems for self-assessment covering all chapters of the textbook — from elementary to research-level. The reader will be able to test their understanding of the CC formalism on concrete examples.
 :::
 
-Мы прошли весь путь: от аксиом — через динамику, стабильность и обучение — к философии, сравнению с конкурентами, методологии измерений и междисциплинарному мосту. Теперь пришло время **проверить понимание**.
+We have traveled the full path: from axioms — through dynamics, stability, and learning — to philosophy, comparison with competitors, measurement methodology, and the interdisciplinary bridge. Now it is time to **test understanding**.
 
-Теория без практики — мёртвая буква. Этот раздел содержит задачи для самопроверки, организованные по уровням сложности и по главам учебника. Каждая задача снабжена подсказками и ссылками на соответствующие разделы. Решение приведено в свёрнутых блоках — попробуйте сначала решить самостоятельно.
+Theory without practice is a dead letter. This section contains self-assessment problems organized by difficulty level and by textbook chapter. Each problem is accompanied by hints and references to the relevant sections. The solution is provided in collapsed blocks — try to solve it yourself first.
 
-:::note Уровни сложности
-- ★ — элементарные (требуют только подстановки в формулу). Школьник справится.
-- ★★ — средние (требуют понимания связей между понятиями)
-- ★★★ — продвинутые (требуют самостоятельного вывода)
-- ★★★★ — исследовательские (открытые вопросы)
+:::note Difficulty Levels
+- ★ — elementary (require only substitution into a formula). A schoolchild can handle these.
+- ★★ — intermediate (require understanding the connections between concepts)
+- ★★★ — advanced (require independent derivation)
+- ★★★★ — research-level (open questions)
 :::
 
-:::info Как пользоваться этим разделом
-1. Начните с задач вашего уровня (см. рекомендации в конце)
-2. Не подглядывайте в решение, пока не попробуете сами
-3. Если застряли — прочитайте подсказку, затем соответствующий раздел
-4. Задачи ★★★★ не имеют «правильных ответов» — это исследовательские вопросы
+:::info How to Use This Section
+1. Start with problems at your level (see recommendations at the end)
+2. Do not look at the solution until you have tried on your own
+3. If stuck — read the hint, then the relevant section
+4. Problems ★★★★ have no "correct answers" — these are research questions
 :::
 
 ---
 
-## 0. Разминка: матрицы 2x2 (для школьников) {#блок-0}
+## 0. Warm-Up: 2×2 Matrices (for Beginners) {#блок-0}
 
-Прежде чем погружаться в $7 \times 7$, давайте разомнёмся на малых матрицах.
+Before diving into $7 \times 7$, let us warm up on small matrices.
 
-### Задача 0.1 ★ Что такое матрица плотности?
+### Problem 0.1 ★ What is a density matrix?
 
-Матрица плотности $\rho$ — это матрица, которая: (a) эрмитова ($\rho = \rho^\dagger$), (b) положительно полуопределённая ($\langle v|\rho|v \rangle \geq 0$ для всех $v$), (c) с единичным следом ($\mathrm{Tr}(\rho) = 1$).
+A density matrix $\rho$ is a matrix that is: (a) Hermitian ($\rho = \rho^\dagger$), (b) positive semi-definite ($\langle v|\rho|v \rangle \geq 0$ for all $v$), (c) with unit trace ($\mathrm{Tr}(\rho) = 1$).
 
-Для $2 \times 2$:
+For $2 \times 2$:
 
 $$
 \rho = \begin{pmatrix} a & c \\ c^* & 1-a \end{pmatrix}, \quad a \in [0,1], \quad |c|^2 \leq a(1-a)
 $$
 
-**(а)** Проверьте, что $\rho_1 = \begin{pmatrix} 0.7 & 0.1 \\ 0.1 & 0.3 \end{pmatrix}$ — матрица плотности.
+**(a)** Verify that $\rho_1 = \begin{pmatrix} 0.7 & 0.1 \\ 0.1 & 0.3 \end{pmatrix}$ is a density matrix.
 
-**(б)** Является ли $\rho_2 = \begin{pmatrix} 0.5 & 0.6 \\ 0.6 & 0.5 \end{pmatrix}$ матрицей плотности?
+**(b)** Is $\rho_2 = \begin{pmatrix} 0.5 & 0.6 \\ 0.6 & 0.5 \end{pmatrix}$ a density matrix?
 
-**(в)** Вычислите чистоту $P = \mathrm{Tr}(\rho_1^2)$.
+**(c)** Compute the purity $P = \mathrm{Tr}(\rho_1^2)$.
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** Проверяем: $\mathrm{Tr} = 0.7 + 0.3 = 1$ (ок). Эрмитовость: $c = c^* = 0.1$ (ок). Положительность: $|c|^2 = 0.01 \leq a(1-a) = 0.7 \times 0.3 = 0.21$ (ок). **Да**, это матрица плотности.
+**(a)** Check: $\mathrm{Tr} = 0.7 + 0.3 = 1$ (ok). Hermitian: $c = c^* = 0.1$ (ok). Positivity: $|c|^2 = 0.01 \leq a(1-a) = 0.7 \times 0.3 = 0.21$ (ok). **Yes**, this is a density matrix.
 
-**(б)** $|c|^2 = 0.36$, $a(1-a) = 0.25$. $0.36 > 0.25$ — нарушена положительная полуопределённость. **Нет**, это не матрица плотности. (Собственные значения: $1.1$ и $-0.1$ — отрицательное!)
+**(b)** $|c|^2 = 0.36$, $a(1-a) = 0.25$. $0.36 > 0.25$ — positive semi-definiteness violated. **No**, this is not a density matrix. (Eigenvalues: $1.1$ and $-0.1$ — one is negative!)
 
-**(в)** $\rho_1^2 = \begin{pmatrix} 0.7 & 0.1 \\ 0.1 & 0.3 \end{pmatrix}^2 = \begin{pmatrix} 0.50 & 0.10 \\ 0.10 & 0.10 \end{pmatrix}$. $P = \mathrm{Tr}(\rho_1^2) = 0.50 + 0.10 = 0.60$.
+**(c)** $\rho_1^2 = \begin{pmatrix} 0.7 & 0.1 \\ 0.1 & 0.3 \end{pmatrix}^2 = \begin{pmatrix} 0.50 & 0.10 \\ 0.10 & 0.10 \end{pmatrix}$. $P = \mathrm{Tr}(\rho_1^2) = 0.50 + 0.10 = 0.60$.
 
-Альтернативно: $P = a^2 + (1-a)^2 + 2|c|^2 = 0.49 + 0.09 + 0.02 = 0.60$.
+Alternatively: $P = a^2 + (1-a)^2 + 2|c|^2 = 0.49 + 0.09 + 0.02 = 0.60$.
 
 </details>
 
 ---
 
-### Задача 0.2 ★ Минимальная и максимальная чистота (2x2)
+### Problem 0.2 ★ Minimum and Maximum Purity (2×2)
 
-**(а)** Какова минимальная чистота для $2 \times 2$ матрицы плотности? При каком $\rho$?
+**(a)** What is the minimum purity for a $2 \times 2$ density matrix? For which $\rho$ is it achieved?
 
-**(б)** Какова максимальная? При каком $\rho$?
+**(b)** What is the maximum? For which $\rho$?
 
-**(в)** Если бы КК работала для $N=2$ с порогом $P_{\text{crit}} = 2/N$, каков был бы порог?
+**(c)** If CC were to work for $N=2$ with threshold $P_{\text{crit}} = 2/N$, what would the threshold be?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** Минимум при $\rho = I/2 = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.5 \end{pmatrix}$. $P = 0.25 + 0.25 = 0.50 = 1/N = 1/2$.
+**(a)** Minimum at $\rho = I/2 = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.5 \end{pmatrix}$. $P = 0.25 + 0.25 = 0.50 = 1/N = 1/2$.
 
-**(б)** Максимум при чистом состоянии (ранг 1), например $\rho = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$. $P = 1$.
+**(b)** Maximum at a pure state (rank 1), e.g. $\rho = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$. $P = 1$.
 
-**(в)** $P_{\text{crit}} = 2/2 = 1$ — только чистое состояние жизнеспособно! Для $N = 2$ нет «зоны Голдилокс» — система либо идеальна, либо мертва. Это одна из причин, почему $N = 2$ недостаточно для сознания.
+**(c)** $P_{\text{crit}} = 2/2 = 1$ — only a pure state is viable! For $N = 2$ there is no "Goldilocks zone" — the system is either perfect or dead. This is one reason why $N = 2$ is insufficient for consciousness.
 
 </details>
 
 ---
 
-### Задача 0.3 ★ Напряжение для 2x2
+### Problem 0.3 ★ Stress for 2×2
 
-Определим «напряжение» по аналогии с КК: $\sigma_k = 1 - N \cdot \gamma_{kk}$ для $N=2$.
+Define "stress" by analogy with CC: $\sigma_k = 1 - N \cdot \gamma_{kk}$ for $N=2$.
 
-**(а)** Вычислите $\sigma_1, \sigma_2$ для $\rho_1$ из задачи 0.1.
+**(a)** Compute $\sigma_1, \sigma_2$ for $\rho_1$ from Problem 0.1.
 
-**(б)** Интерпретируйте: какое «измерение» в дефиците?
+**(b)** Interpret: which "dimension" is in deficit?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\sigma_1 = 1 - 2 \times 0.7 = -0.4$ (избыток), $\sigma_2 = 1 - 2 \times 0.3 = 0.4$ (дефицит).
+**(a)** $\sigma_1 = 1 - 2 \times 0.7 = -0.4$ (surplus), $\sigma_2 = 1 - 2 \times 0.3 = 0.4$ (deficit).
 
-**(б)** Измерение 2 в дефиците ($\sigma_2 > 0$): оно получает меньше, чем «справедливую долю» $1/2$. Измерение 1 — в избытке ($\sigma_1 < 0$).
+**(b)** Dimension 2 is in deficit ($\sigma_2 > 0$): it receives less than the "fair share" of $1/2$. Dimension 1 is in surplus ($\sigma_1 < 0$).
 
 </details>
 
 ---
 
-## 1. Матрица когерентности и чистота {#блок-1}
+## 1. Coherence Matrix and Purity {#блок-1}
 
-### Задача 1.1 ★ Вычисление чистоты
+### Problem 1.1 ★ Computing Purity
 
-Дана матрица когерентности в диагональном приближении:
+Given a coherence matrix in the diagonal approximation:
 
 $$
 \Gamma = \mathrm{diag}(0.20, 0.18, 0.15, 0.14, 0.13, 0.12, 0.08)
 $$
 
-**(а)** Вычислите чистоту $P = \mathrm{Tr}(\Gamma^2)$.
+**(a)** Compute the purity $P = \mathrm{Tr}(\Gamma^2)$.
 
-**(б)** Жизнеспособна ли система? Сравните с $P_{\text{crit}} = 2/7$.
+**(b)** Is the system viable? Compare with $P_{\text{crit}} = 2/7$.
 
-**(в)** Вычислите все 7 компонент тензора напряжений $\sigma_k = 1 - 7\gamma_{kk}$.
+**(c)** Compute all 7 components of the stress tensor $\sigma_k = 1 - 7\gamma_{kk}$.
 
-**(г)** Какое измерение находится в критическом состоянии?
+**(d)** Which dimension is in a critical state?
 
-:::tip Подсказка
-Для диагональной матрицы $P = \sum_k \gamma_{kk}^2$. **См.:** [Чистота](/docs/core/dynamics/viability#определение-чистоты), [Тензор напряжений](./definitions#тензор-напряжений).
+:::tip Hint
+For a diagonal matrix $P = \sum_k \gamma_{kk}^2$. **See:** [Purity](/docs/core/dynamics/viability#определение-чистоты), [Stress Tensor](./definitions#тензор-напряжений).
 :::
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $P = 0.20^2 + 0.18^2 + 0.15^2 + 0.14^2 + 0.13^2 + 0.12^2 + 0.08^2 = 0.04 + 0.0324 + 0.0225 + 0.0196 + 0.0169 + 0.0144 + 0.0064 = 0.1522$
+**(a)** $P = 0.20^2 + 0.18^2 + 0.15^2 + 0.14^2 + 0.13^2 + 0.12^2 + 0.08^2 = 0.04 + 0.0324 + 0.0225 + 0.0196 + 0.0169 + 0.0144 + 0.0064 = 0.1522$
 
-**(б)** $P = 0.1522 < 2/7 \approx 0.286$. Система **нежизнеспособна**.
+**(b)** $P = 0.1522 < 2/7 \approx 0.286$. The system is **non-viable**.
 
-**(в)** $\sigma_A = 1 - 7 \times 0.20 = -0.40$, $\sigma_S = 1 - 7 \times 0.18 = -0.26$, $\sigma_D = 1 - 7 \times 0.15 = -0.05$, $\sigma_L = 1 - 7 \times 0.14 = 0.02$, $\sigma_E = 1 - 7 \times 0.13 = 0.09$, $\sigma_O = 1 - 7 \times 0.12 = 0.16$, $\sigma_U = 1 - 7 \times 0.08 = 0.44$.
+**(c)** $\sigma_A = 1 - 7 \times 0.20 = -0.40$, $\sigma_S = 1 - 7 \times 0.18 = -0.26$, $\sigma_D = 1 - 7 \times 0.15 = -0.05$, $\sigma_L = 1 - 7 \times 0.14 = 0.02$, $\sigma_E = 1 - 7 \times 0.13 = 0.09$, $\sigma_O = 1 - 7 \times 0.12 = 0.16$, $\sigma_U = 1 - 7 \times 0.08 = 0.44$.
 
-**(г)** $\sigma_U = 0.44$ — максимальное напряжение. Измерение Единства (U) — самое слабое. Но ни одно не превышает 1, поэтому по $\sigma$ система ещё «внутри», хотя по $P$ уже нежизнеспособна. Это связано с тем, что $P < 2/7$ может возникать при умеренных, но *равномерно распределённых* напряжениях.
+**(d)** $\sigma_U = 0.44$ — maximum stress. The Unity (U) dimension is the weakest. But none exceeds 1, so by $\sigma$ the system is still "inside," although by $P$ it is already non-viable. This is because $P < 2/7$ can arise with moderate but *uniformly distributed* stresses.
 
 </details>
 
 ---
 
-### Задача 1.2 ★★ Максимальная и минимальная чистота
+### Problem 1.2 ★★ Maximum and Minimum Purity
 
-**(а)** Какова минимальная чистота матрицы $\Gamma \in \mathcal{D}(\mathbb{C}^7)$? При каком $\Gamma$ она достигается?
+**(a)** What is the minimum purity of a matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$? At which $\Gamma$ is it achieved?
 
-**(б)** Какова максимальная чистота? При каком $\Gamma$?
+**(b)** What is the maximum purity? At which $\Gamma$?
 
-**(в)** Покажите, что $P_{\text{crit}} = 2/7$ делит отрезок $[1/7, 1]$ ровно в том месте, где система приобретает способность **отличить себя от хаоса** (норма Фробениуса $\|\Gamma - I/7\|_F$ превышает порог различимости).
+**(c)** Show that $P_{\text{crit}} = 2/7$ divides the segment $[1/7, 1]$ exactly at the point where the system acquires the ability to **distinguish itself from chaos** (the Frobenius norm $\|\Gamma - I/7\|_F$ exceeds the distinguishability threshold).
 
-:::tip Подсказка
-Минимальная чистота достигается при $\Gamma = I/7$ (максимально смешанное состояние). Максимальная — при чистом состоянии (ранг 1). **См.:** [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical).
+:::tip Hint
+The minimum purity is achieved at $\Gamma = I/7$ (maximally mixed state). The maximum — at a pure state (rank 1). **See:** [Theorem on Critical Purity](/docs/proofs/dynamics/theorem-purity-critical).
 :::
 
 ---
 
-### Задача 1.3 ★ Когерентность и фазы
+### Problem 1.3 ★ Coherence and Phases
 
-Дана внедиагональная когерентность $\gamma_{AE} = 0.05 \cdot e^{i\pi/3}$.
+Given the off-diagonal coherence $\gamma_{AE} = 0.05 \cdot e^{i\pi/3}$.
 
-**(а)** Чему равен модуль $|\gamma_{AE}|$?
+**(a)** What is the modulus $|\gamma_{AE}|$?
 
-**(б)** Чему равна фаза $\theta_{AE}$?
+**(b)** What is the phase $\theta_{AE}$?
 
-**(в)** Что физически означает ненулевая когерентность между Артикуляцией (A) и Интериорностью (E)?
+**(c)** What does non-zero coherence between Articulation (A) and Interiority (E) physically mean?
 
-:::tip Подсказка
-**См.:** [Матрица когерентности](/docs/core/dynamics/coherence-matrix), [Определения](./definitions).
+:::tip Hint
+**See:** [Coherence Matrix](/docs/core/dynamics/coherence-matrix), [Definitions](./definitions).
 :::
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $|\gamma_{AE}| = 0.05$.
+**(a)** $|\gamma_{AE}| = 0.05$.
 
-**(б)** $\theta_{AE} = \pi/3 = 60°$.
+**(b)** $\theta_{AE} = \pi/3 = 60°$.
 
-**(в)** Ненулевая когерентность A–E означает, что восприятие (A) и самосознание (E) *согласованы*: изменения в восприятии влияют на самосознание и наоборот. Это соответствует интроцептивному восприятию — способности чувствовать своё тело «изнутри». Человек с высоким $|\gamma_{AE}|$ хорошо осознаёт свои телесные ощущения.
+**(c)** Non-zero A–E coherence means that perception (A) and self-awareness (E) are *aligned*: changes in perception affect self-awareness and vice versa. This corresponds to interoceptive perception — the ability to feel one's body "from the inside." A person with high $|\gamma_{AE}|$ is well-aware of their bodily sensations.
 
 </details>
 
 ---
 
-### Задача 1.4 ★ Равномерная система
+### Problem 1.4 ★ Uniform System
 
-Матрица $\Gamma = I/7$ — максимально смешанное состояние.
+The matrix $\Gamma = I/7$ — the maximally mixed state.
 
-**(а)** Вычислите $P$, $\sigma_k$ для всех $k$, $\|\sigma\|_\infty$.
+**(a)** Compute $P$, $\sigma_k$ for all $k$, $\|\sigma\|_\infty$.
 
-**(б)** Почему система с $\Gamma = I/7$ «мертва», хотя ни одно $\sigma_k$ не превышает 0?
+**(b)** Why is a system with $\Gamma = I/7$ "dead," even though no $\sigma_k$ exceeds 0?
 
-**(в)** Нарисуйте $\sigma$-профиль (7 столбиков) для $\Gamma = I/7$ и для системы из задачи 1.1. Чем они отличаются?
+**(c)** Draw the $\sigma$-profile (7 bars) for $\Gamma = I/7$ and for the system from Problem 1.1. How do they differ?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $P = 7 \times (1/7)^2 = 1/7 \approx 0.143$. $\sigma_k = 1 - 7 \times (1/7) = 0$ для всех $k$. $\|\sigma\|_\infty = 0$.
+**(a)** $P = 7 \times (1/7)^2 = 1/7 \approx 0.143$. $\sigma_k = 1 - 7 \times (1/7) = 0$ for all $k$. $\|\sigma\|_\infty = 0$.
 
-**(б)** Парадокс: $\sigma = 0$ (нет дефицита ни в чём), но $P = 1/7 < 2/7$ (нежизнеспособна). Причина: $\Gamma = I/7$ — *полная неразличимость*. Все измерения одинаковы, нет структуры, нет информации. Система не «страдает» (σ = 0), но и не «живёт» — она *не существует как организованная единица*. Это как идеально размешанный раствор: ни один компонент не в дефиците, но раствор бесструктурен.
+**(b)** Paradox: $\sigma = 0$ (no deficit in anything), but $P = 1/7 < 2/7$ (non-viable). Reason: $\Gamma = I/7$ — *complete indistinguishability*. All dimensions are the same, there is no structure, no information. The system does not "suffer" (σ = 0), but it does not "live" either — it *does not exist as an organized unit*. This is like a perfectly mixed solution: no component is in deficit, but the solution has no structure.
 
-**(в)** Для $I/7$: все столбики на нуле. Для задачи 1.1: A и S ниже нуля (избыток), U значительно выше (дефицит). Профиль неравномерен, что указывает на конкретную проблему (дефицит единства).
+**(c)** For $I/7$: all bars at zero. For Problem 1.1: A and S are below zero (surplus), U is significantly above (deficit). The profile is uneven, pointing to a specific problem (unity deficit).
 
 </details>
 
 ---
 
-### Задача 1.5 ★★ Порог через когерентности
+### Problem 1.5 ★★ Threshold through Coherences
 
-Система диагональна с $\gamma_{kk} = 1/7$ для всех $k$, но имеет внедиагональные когерентности $|\gamma_{ij}| = c$ для всех $i \neq j$.
+The system is diagonal with $\gamma_{kk} = 1/7$ for all $k$, but has off-diagonal coherences $|\gamma_{ij}| = c$ for all $i \neq j$.
 
-**(а)** Выразите $P$ через $c$.
+**(a)** Express $P$ in terms of $c$.
 
-**(б)** При каком $c$ достигается $P = 2/7$?
+**(b)** At what $c$ is $P = 2/7$ achieved?
 
-**(в)** Интерпретируйте: что означает «набрать чистоту только за счёт когерентностей»?
+**(c)** Interpret: what does it mean to "reach purity through coherences alone"?
 
-:::tip Подсказка
+:::tip Hint
 $P = \sum_k \gamma_{kk}^2 + \sum_{i \neq j} |\gamma_{ij}|^2 = 7 \times (1/7)^2 + 42 \times c^2 = 1/7 + 42c^2$.
 :::
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $P = 1/7 + 42c^2$.
+**(a)** $P = 1/7 + 42c^2$.
 
-**(б)** $2/7 = 1/7 + 42c^2 \Rightarrow c^2 = 1/(7 \times 42) = 1/294 \Rightarrow c = 1/\sqrt{294} \approx 0.058$.
+**(b)** $2/7 = 1/7 + 42c^2 \Rightarrow c^2 = 1/(7 \times 42) = 1/294 \Rightarrow c = 1/\sqrt{294} \approx 0.058$.
 
-**(в)** Система с равномерной диагональю, но с когерентностями $c \approx 0.058$ — «жизнеспособна за счёт связей». Каждое измерение по отдельности ничем не выделяется ($\gamma_{kk} = 1/7$), но *координация* между ними ($|\gamma_{ij}| > 0$) создаёт организованность. Это аналог организации, где каждый отдел средний, но командная работа — превосходная.
+**(c)** A system with a uniform diagonal but with coherences $c \approx 0.058$ — is "viable through connections." Each dimension taken separately is unremarkable ($\gamma_{kk} = 1/7$), but *coordination* between them ($|\gamma_{ij}| > 0$) creates organization. This is the analog of an organization where each department is average, but teamwork is outstanding.
 
 </details>
 
 ---
 
-## 2. Динамика и эволюция {#блок-2}
+## 2. Dynamics and Evolution {#блок-2}
 
-### Задача 2.1 ★★ Линдбладова диссипация
+### Problem 2.1 ★★ Lindblad Dissipation
 
-Рассмотрим одномерную (игрушечную) модель: $\Gamma = \begin{pmatrix} p & c \\ c^* & 1-p \end{pmatrix}$ с диссипатором $\mathcal{D}[\Gamma] = -\gamma(p - 1/2, c, c^*, 1/2 - p)$.
+Consider a one-dimensional (toy) model: $\Gamma = \begin{pmatrix} p & c \\ c^* & 1-p \end{pmatrix}$ with dissipator $\mathcal{D}[\Gamma] = -\gamma(p - 1/2, c, c^*, 1/2 - p)$.
 
-**(а)** К какому состоянию стремится $\Gamma$ при $\tau \to \infty$?
+**(a)** To what state does $\Gamma$ tend as $\tau \to \infty$?
 
-**(б)** Вычислите чистоту $P(\tau)$ и покажите, что она монотонно убывает.
+**(b)** Compute the purity $P(\tau)$ and show that it decreases monotonically.
 
-**(в)** Свяжите это с тезисом КК: «без регенерации система умирает».
+**(c)** Connect this with the CC thesis: "without regeneration the system dies."
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\dot{p} = -\gamma(p - 1/2)$, $\dot{c} = -\gamma c$. Решения: $p(\tau) = 1/2 + (p_0 - 1/2)e^{-\gamma\tau}$, $c(\tau) = c_0 e^{-\gamma\tau}$. При $\tau \to \infty$: $\Gamma \to I/2$ — максимально смешанное состояние.
+**(a)** $\dot{p} = -\gamma(p - 1/2)$, $\dot{c} = -\gamma c$. Solutions: $p(\tau) = 1/2 + (p_0 - 1/2)e^{-\gamma\tau}$, $c(\tau) = c_0 e^{-\gamma\tau}$. As $\tau \to \infty$: $\Gamma \to I/2$ — maximally mixed state.
 
-**(б)** $P = p^2 + (1-p)^2 + 2|c|^2 = 2(p - 1/2)^2 + 1/2 + 2|c|^2$. Подставляя: $P(\tau) = 2(p_0 - 1/2)^2 e^{-2\gamma\tau} + 1/2 + 2|c_0|^2 e^{-2\gamma\tau}$. $dP/d\tau = -4\gamma[(p_0 - 1/2)^2 + |c_0|^2]e^{-2\gamma\tau} < 0$. Чистота **монотонно убывает**.
+**(b)** $P = p^2 + (1-p)^2 + 2|c|^2 = 2(p - 1/2)^2 + 1/2 + 2|c|^2$. Substituting: $P(\tau) = 2(p_0 - 1/2)^2 e^{-2\gamma\tau} + 1/2 + 2|c_0|^2 e^{-2\gamma\tau}$. $dP/d\tau = -4\gamma[(p_0 - 1/2)^2 + |c_0|^2]e^{-2\gamma\tau} < 0$. Purity **decreases monotonically**.
 
-**(в)** Без регенерации ($\mathcal{R} = 0$) чистота всегда падает. Для $N=2$: $P \to 1/2$. Для $N=7$: $P \to 1/7$. Система деградирует до максимального хаоса. Регенерация $\mathcal{R}$ — единственное, что может противостоять этой деградации.
+**(c)** Without regeneration ($\mathcal{R} = 0$) purity always falls. For $N=2$: $P \to 1/2$. For $N=7$: $P \to 1/7$. The system degrades to maximum chaos. Regeneration $\mathcal{R}$ is the only thing that can oppose this degradation.
 
 </details>
 
 ---
 
-### Задача 2.2 ★★★ Регенерация как спасение
+### Problem 2.2 ★★★ Regeneration as Rescue
 
-К системе из задачи 2.1 добавлен регенеративный член:
+A regenerative term is added to the system from Problem 2.1:
 
 $$
 \mathcal{R}[\Gamma] = \kappa \cdot (\rho_* - \Gamma)
 $$
 
-где $\rho_* = \begin{pmatrix} 0.7 & 0.2 \\ 0.2 & 0.3 \end{pmatrix}$ — целевое состояние, $\kappa > 0$.
+where $\rho_* = \begin{pmatrix} 0.7 & 0.2 \\ 0.2 & 0.3 \end{pmatrix}$ is the target state, $\kappa > 0$.
 
-**(а)** Найдите стационарное состояние $\Gamma_{\infty}$ полной динамики $\dot{\Gamma} = \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma]$.
+**(a)** Find the stationary state $\Gamma_{\infty}$ of the full dynamics $\dot{\Gamma} = \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma]$.
 
-**(б)** При каком $\kappa$ чистота стационарного состояния $P(\Gamma_\infty) > 2/7$?
+**(b)** At what $\kappa$ is the purity of the stationary state $P(\Gamma_\infty) > 2/7$?
 
-**(в)** Интерпретируйте результат: что происходит при «слабой» ($\kappa \ll \gamma$) и «сильной» ($\kappa \gg \gamma$) регенерации?
+**(c)** Interpret the result: what happens with "weak" ($\kappa \ll \gamma$) and "strong" ($\kappa \gg \gamma$) regeneration?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\dot{\Gamma} = 0$: $-\gamma(\Gamma - I/2) + \kappa(\rho_* - \Gamma) = 0$. $(\gamma + \kappa)\Gamma = \gamma \cdot I/2 + \kappa \cdot \rho_*$. $\Gamma_\infty = \frac{\gamma \cdot I/2 + \kappa \cdot \rho_*}{\gamma + \kappa}$.
+**(a)** $\dot{\Gamma} = 0$: $-\gamma(\Gamma - I/2) + \kappa(\rho_* - \Gamma) = 0$. $(\gamma + \kappa)\Gamma = \gamma \cdot I/2 + \kappa \cdot \rho_*$. $\Gamma_\infty = \frac{\gamma \cdot I/2 + \kappa \cdot \rho_*}{\gamma + \kappa}$.
 
 $p_\infty = \frac{\gamma/2 + 0.7\kappa}{\gamma + \kappa}$, $c_\infty = \frac{0.2\kappa}{\gamma + \kappa}$.
 
-**(б)** $P(\Gamma_\infty) = 2(p_\infty - 1/2)^2 + 1/2 + 2|c_\infty|^2$. Для $N=2$, $P_{\text{crit}} = 2/N = 1$ — нужно чистое состояние, что невозможно. Но если использовать $P_{\text{crit}} = 2/7$ (для общности): $P > 2/7 \approx 0.286$ выполняется при достаточно большом $\kappa/\gamma$.
+**(b)** $P(\Gamma_\infty) = 2(p_\infty - 1/2)^2 + 1/2 + 2|c_\infty|^2$. For $N=2$, $P_{\text{crit}} = 2/N = 1$ — a pure state is required, which is impossible. But if $P_{\text{crit}} = 2/7$ is used (for generality): $P > 2/7 \approx 0.286$ holds for sufficiently large $\kappa/\gamma$.
 
-Подставим $r = \kappa/\gamma$: $p_\infty = (0.5 + 0.7r)/(1+r)$, $c_\infty = 0.2r/(1+r)$. При $r = 1$: $p = 0.6$, $c = 0.1$, $P = 0.02 + 0.5 + 0.02 = 0.54$. При $r = 0.1$: $p = 0.518$, $c = 0.018$, $P ≈ 0.5007$. Оба > 2/7.
+Let $r = \kappa/\gamma$: $p_\infty = (0.5 + 0.7r)/(1+r)$, $c_\infty = 0.2r/(1+r)$. At $r = 1$: $p = 0.6$, $c = 0.1$, $P = 0.02 + 0.5 + 0.02 = 0.54$. At $r = 0.1$: $p = 0.518$, $c = 0.018$, $P \approx 0.5007$. Both > 2/7.
 
-**(в)** При $\kappa \ll \gamma$ (слабая регенерация): $\Gamma_\infty \approx I/2$ — диссипация побеждает, система «мертва». При $\kappa \gg \gamma$ (сильная регенерация): $\Gamma_\infty \approx \rho_*$ — регенерация побеждает, система близка к «идеалу». Оптимум — баланс, зона Голдилокс.
+**(c)** With $\kappa \ll \gamma$ (weak regeneration): $\Gamma_\infty \approx I/2$ — dissipation wins, the system is "dead." With $\kappa \gg \gamma$ (strong regeneration): $\Gamma_\infty \approx \rho_*$ — regeneration wins, the system is close to "ideal." The optimum is balance, the Goldilocks zone.
 
 </details>
 
 ---
 
-### Задача 2.3 ★★ Время жизни
+### Problem 2.3 ★★ Lifetime
 
-Система начинает с $P(0) = 0.35 > P_{\text{crit}}$. Регенерация отключена ($\kappa = 0$). Диссипация экспоненциальная: $P(\tau) = 1/7 + (P(0) - 1/7) \cdot e^{-\gamma \tau}$.
+The system starts at $P(0) = 0.35 > P_{\text{crit}}$. Regeneration is disabled ($\kappa = 0$). Dissipation is exponential: $P(\tau) = 1/7 + (P(0) - 1/7) \cdot e^{-\gamma \tau}$.
 
-**(а)** Найдите время $\tau_*$, при котором $P(\tau_*) = P_{\text{crit}} = 2/7$.
+**(a)** Find the time $\tau_*$ at which $P(\tau_*) = P_{\text{crit}} = 2/7$.
 
-**(б)** Для $\gamma = 0.1$ вычислите $\tau_*$ численно.
+**(b)** For $\gamma = 0.1$ compute $\tau_*$ numerically.
 
-**(в)** Как связан этот результат с понятием «время жизни» системы? **См.:** [Стабильность](./stability#время-жизни).
+**(c)** How is this result related to the concept of system "lifetime"? **See:** [Stability](./stability#время-жизни).
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $2/7 = 1/7 + (0.35 - 1/7)e^{-\gamma\tau_*}$. $1/7 = (0.35 - 0.143)e^{-\gamma\tau_*} = 0.207 \cdot e^{-\gamma\tau_*}$. $e^{-\gamma\tau_*} = (1/7)/0.207 = 0.690$. $\tau_* = -\ln(0.690)/\gamma = 0.371/\gamma$.
+**(a)** $2/7 = 1/7 + (0.35 - 1/7)e^{-\gamma\tau_*}$. $1/7 = (0.35 - 0.143)e^{-\gamma\tau_*} = 0.207 \cdot e^{-\gamma\tau_*}$. $e^{-\gamma\tau_*} = (1/7)/0.207 = 0.690$. $\tau_* = -\ln(0.690)/\gamma = 0.371/\gamma$.
 
-**(б)** $\tau_* = 0.371/0.1 = 3.71$ единиц времени.
+**(b)** $\tau_* = 0.371/0.1 = 3.71$ time units.
 
-**(в)** $\tau_*$ — время, за которое система теряет жизнеспособность при отсутствии регенерации. Чем больше начальная чистота (запас здоровья) и чем меньше диссипация, тем дольше живёт система. Регенерация ($\kappa > 0$) может сделать $\tau_* = \infty$ — система живёт вечно (пока $\kappa$ достаточно).
+**(c)** $\tau_*$ is the time in which the system loses viability in the absence of regeneration. The larger the initial purity (health reserve) and the smaller the dissipation, the longer the system lives. Regeneration ($\kappa > 0$) can make $\tau_* = \infty$ — the system lives forever (as long as $\kappa$ is sufficient).
 
 </details>
 
 ---
 
-### Задача 2.4 ★ Баланс диссипации и регенерации
+### Problem 2.4 ★ Balance of Dissipation and Regeneration
 
-Стационарная чистота (при постоянных $\gamma$ и $\kappa$):
+Stationary purity (at constant $\gamma$ and $\kappa$):
 
 $$
 P_\infty = \frac{\kappa \cdot P_{\rho_*} + \gamma \cdot P_{\min}}{\kappa + \gamma}
 $$
 
-где $P_{\rho_*}$ — чистота целевого состояния, $P_{\min} = 1/7$.
+where $P_{\rho_*}$ is the purity of the target state, $P_{\min} = 1/7$.
 
-**(а)** Если $P_{\rho_*} = 0.5$, при каком отношении $\kappa/\gamma$ достигается $P_\infty = 2/7$?
+**(a)** If $P_{\rho_*} = 0.5$, at what ratio $\kappa/\gamma$ is $P_\infty = 2/7$ achieved?
 
-**(б)** Интерпретируйте: какие реальные системы имеют $\kappa/\gamma \ll 1$? А $\kappa/\gamma \gg 1$?
+**(b)** Interpret: which real systems have $\kappa/\gamma \ll 1$? And $\kappa/\gamma \gg 1$?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $2/7 = (\kappa \cdot 0.5 + \gamma \cdot 1/7) / (\kappa + \gamma)$. Пусть $r = \kappa/\gamma$: $2/7 = (0.5r + 1/7)/(r + 1)$. $2(r+1)/7 = 0.5r + 1/7$. $2r/7 + 2/7 = 0.5r + 1/7$. $2r/7 - 0.5r = 1/7 - 2/7 = -1/7$. $(2/7 - 1/2)r = -1/7$. $(-3/14)r = -1/7$. $r = (1/7) \times (14/3) = 2/3$.
+**(a)** $2/7 = (\kappa \cdot 0.5 + \gamma \cdot 1/7) / (\kappa + \gamma)$. Let $r = \kappa/\gamma$: $2/7 = (0.5r + 1/7)/(r + 1)$. $2(r+1)/7 = 0.5r + 1/7$. $2r/7 + 2/7 = 0.5r + 1/7$. $2r/7 - 0.5r = 1/7 - 2/7 = -1/7$. $(2/7 - 1/2)r = -1/7$. $(-3/14)r = -1/7$. $r = (1/7) \times (14/3) = 2/3$.
 
-При $\kappa/\gamma = 2/3$ система находится *ровно на пороге*. Ниже — умирает, выше — живёт.
+At $\kappa/\gamma = 2/3$ the system is *exactly on the threshold*. Below — it dies, above — it lives.
 
-**(б)** $\kappa/\gamma \ll 1$: диссипация побеждает — старение без регенерации. Пример: мышь (живёт 2 года, высокий метаболизм, быстрое старение). $\kappa/\gamma \gg 1$: регенерация побеждает — система практически бессмертна. Пример: Turritopsis dohrnii (медуза, способная к обратному развитию).
+**(b)** $\kappa/\gamma \ll 1$: dissipation wins — aging without regeneration. Example: a mouse (lives 2 years, high metabolism, rapid aging). $\kappa/\gamma \gg 1$: regeneration wins — the system is essentially immortal. Example: Turritopsis dohrnii (a jellyfish capable of reverse development).
 
 </details>
 
 ---
 
-## 3. Тензор напряжений и диагностика {#блок-3}
+## 3. Stress Tensor and Diagnostics {#блок-3}
 
-### Задача 3.1 ★ Интерпретация профиля напряжений
+### Problem 3.1 ★ Interpreting a Stress Profile
 
-Две организации имеют следующие профили напряжений:
+Two organizations have the following stress profiles:
 
-**Организация X:** $\sigma = [0.2, 0.3, 0.1, 0.2, 0.8, 0.3, 0.4]$
+**Organization X:** $\sigma = [0.2, 0.3, 0.1, 0.2, 0.8, 0.3, 0.4]$
 
-**Организация Y:** $\sigma = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]$
+**Organization Y:** $\sigma = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]$
 
-**(а)** Какая организация в более опасном положении? Почему?
+**(a)** Which organization is in a more dangerous position? Why?
 
-**(б)** Какой тип вмешательства нужен каждой?
+**(b)** What type of intervention does each need?
 
-**(в)** Какой паттерн отказа угрожает организации X? **См.:** [Диагностика](./diagnostics#паттерны-отказов)
+**(c)** What failure pattern threatens Organization X? **See:** [Diagnostics](./diagnostics#паттерны-отказов)
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** Организация X: $\|\sigma\|_\infty = 0.8$ (E: Интериорность). Организация Y: $\|\sigma\|_\infty = 0.5$ (все равны). По $\|\sigma\|_\infty$ — X опаснее (0.8 > 0.5). Но Y имеет *суммарное* напряжение $\sum \sigma_k = 3.5$ > X: $\sum = 2.3$. X — острая проблема в одном месте (пик E). Y — хронически ослабленная система «по всем фронтам».
+**(a)** Organization X: $\|\sigma\|_\infty = 0.8$ (E: Interiority). Organization Y: $\|\sigma\|_\infty = 0.5$ (all equal). By $\|\sigma\|_\infty$ — X is more dangerous (0.8 > 0.5). But Y has a *total* stress $\sum \sigma_k = 3.5$ > X: $\sum = 2.3$. X — an acute problem in one place (E peak). Y — a chronically weakened system "on all fronts."
 
-**(б)** X: **точечное вмешательство** — усилить рефлексию и обратную связь ($\sigma_E = 0.8$ — почти критическое). Y: **системное вмешательство** — общая реорганизация, потому что ни одно измерение не в норме.
+**(b)** X: **targeted intervention** — strengthen reflection and feedback ($\sigma_E = 0.8$ — almost critical). Y: **systemic intervention** — general reorganization, because no dimension is normal.
 
-**(в)** X рискует попасть в **спираль смерти**: $\sigma_E = 0.8 \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow \to P \downarrow \to$ все $\sigma_k$ растут. Один дефицит запускает каскад.
+**(c)** X risks entering the **death spiral**: $\sigma_E = 0.8 \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow \to P \downarrow \to$ all $\sigma_k$ rise. A single deficit launches a cascade.
 
 </details>
 
 ---
 
-### Задача 3.2 ★★ Спираль смерти
+### Problem 3.2 ★★ Death Spiral
 
-Покажите, что каскад $\sigma_E \uparrow \to \sigma_O \uparrow \to \sigma_U \uparrow$ (спираль смерти) следует из формул КК:
+Show that the cascade $\sigma_E \uparrow \to \sigma_O \uparrow \to \sigma_U \uparrow$ (death spiral) follows from CC formulas:
 
 1. $\sigma_E \uparrow$ → $\mathrm{Coh}_E \downarrow$
-2. $\mathrm{Coh}_E \downarrow$ → $\kappa \downarrow$ (через формулу $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$)
+2. $\mathrm{Coh}_E \downarrow$ → $\kappa \downarrow$ (through the formula $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$)
 3. $\kappa \downarrow$ → $P \downarrow$
 4. $P \downarrow$ → $\sigma_O \uparrow$, $\sigma_U \uparrow$
 
-**См.:** [Стабильность](./stability#спираль-смерти), [Связь регенерации и E-когерентности](./axiomatics#связь-регенерации-и-e-когерентности)
+**See:** [Stability](./stability#спираль-смерти), [Connection of Regeneration and E-Coherence](./axiomatics#связь-регенерации-и-e-когерентности)
 
 ---
 
-### Задача 3.3 ★★ Обратный пересчёт: от σ к Γ
+### Problem 3.3 ★★ Reverse Computation: from σ to Γ
 
-Дан σ-профиль: $\sigma = [0.3, 0.1, 0.4, 0.2, 0.6, 0.3, 0.5]$.
+Given the σ-profile: $\sigma = [0.3, 0.1, 0.4, 0.2, 0.6, 0.3, 0.5]$.
 
-**(а)** Восстановите диагональные элементы $\gamma_{kk}$.
+**(a)** Recover the diagonal elements $\gamma_{kk}$.
 
-**(б)** Вычислите $P$ в диагональном приближении.
+**(b)** Compute $P$ in the diagonal approximation.
 
-**(в)** Жизнеспособна ли система?
+**(c)** Is the system viable?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\gamma_{kk} = (1 - \sigma_k)/7$. $\gamma = (0.100, 0.129, 0.086, 0.114, 0.057, 0.100, 0.071)$.
+**(a)** $\gamma_{kk} = (1 - \sigma_k)/7$. $\gamma = (0.100, 0.129, 0.086, 0.114, 0.057, 0.100, 0.071)$.
 
-**(б)** $P = \sum \gamma_{kk}^2 = 0.010 + 0.017 + 0.007 + 0.013 + 0.003 + 0.010 + 0.005 = 0.065$. Но $\sum \gamma_{kk} = 0.657 \neq 1$! Значит, диагональное приближение из σ-профиля *некорректно* — часть «массы» находится во внедиагональных элементах (или σ-профиль нуждается в нормализации).
+**(b)** $P = \sum \gamma_{kk}^2 = 0.010 + 0.017 + 0.007 + 0.013 + 0.003 + 0.010 + 0.005 = 0.065$. But $\sum \gamma_{kk} = 0.657 \neq 1$! So the diagonal approximation from the σ-profile is *incorrect* — part of the "mass" is in the off-diagonal elements (or the σ-profile needs normalization).
 
-**(в)** $P = 0.065 \ll 2/7 \approx 0.286$ — **нежизнеспособна** в диагональном приближении. Даже с когерентностями трудно набрать $P > 2/7$ при таких малых $\gamma_{kk}$.
+**(c)** $P = 0.065 \ll 2/7 \approx 0.286$ — **non-viable** in the diagonal approximation. Even with coherences it is hard to achieve $P > 2/7$ with such small $\gamma_{kk}$.
 
 </details>
 
 ---
 
-### Задача 3.4 ★ Визуализация: σ-диаграмма
+### Problem 3.4 ★ Visualization: σ-Diagram
 
-Нарисуйте σ-профиль (лепестковую диаграмму / radar chart) для следующих систем:
+Draw the σ-profile (radar / spider chart) for the following systems:
 
-**(а)** Здоровый человек: $\sigma = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]$
+**(a)** Healthy person: $\sigma = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]$
 
-**(б)** Пациент с депрессией: $\sigma = [0.2, 0.2, 0.7, 0.3, 0.6, 0.5, 0.4]$
+**(b)** Patient with depression: $\sigma = [0.2, 0.2, 0.7, 0.3, 0.6, 0.5, 0.4]$
 
-**(в)** Стартап на грани банкротства: $\sigma = [0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7]$
+**(c)** Startup on the brink of bankruptcy: $\sigma = [0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7]$
 
 ```mermaid
 %%{init: {'theme': 'default'}}%%
 radar
-    title σ-профили трёх систем
+    title σ-profiles of three systems
     axis A, S, D, L, E, O, U
-    "Здоровый" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
-    "Депрессия" : [0.2, 0.2, 0.7, 0.3, 0.6, 0.5, 0.4]
-    "Стартап" : [0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7]
+    "Healthy" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+    "Depression" : [0.2, 0.2, 0.7, 0.3, 0.6, 0.5, 0.4]
+    "Startup" : [0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7]
 ```
 
-**(г)** Какой профиль наиболее «острый» (один пик)? Какой наиболее «круглый» (равномерный)?
+**(d)** Which profile is the most "peaked" (one spike)? Which is the most "round" (uniform)?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(г)** Стартап — наиболее «острый» (пик O = 0.9: дефицит финансов). Здоровый — наиболее «круглый» (все по 0.1). Депрессия — промежуточная, с двумя выраженными пиками (D = 0.7 и E = 0.6).
+**(d)** Startup — most "peaked" (peak O = 0.9: financial deficit). Healthy — most "round" (all at 0.1). Depression — intermediate, with two pronounced peaks (D = 0.7 and E = 0.6).
 
 </details>
 
 ---
 
-## 4. Сознание и самонаблюдение {#блок-4}
+## 4. Consciousness and Self-Observation {#блок-4}
 
-### Задача 4.1 ★★ Пороговый тройной замок
+### Problem 4.1 ★★ The Triple-Lock Threshold
 
-Система имеет следующие параметры: $P = 0.35$, $R = 0.25$, $\Phi = 1.5$.
+A system has the following parameters: $P = 0.35$, $R = 0.25$, $\Phi = 1.5$.
 
-**(а)** Удовлетворены ли все три условия сознательности ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
+**(a)** Are all three consciousness conditions satisfied ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
 
-**(б)** Какое условие нарушено?
+**(b)** Which condition is violated?
 
-**(в)** Что это означает интерпретативно? Что это за система — которая интегрирована и жизнеспособна, но не рефлексивна?
+**(c)** What does this mean interpretively? What kind of system is this — one that is integrated and viable, but not reflective?
 
-**(г)** Приведите пример реальной системы с таким профилем.
+**(d)** Give an example of a real system with such a profile.
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $P = 0.35 > 2/7 \approx 0.286$ (ок), $R = 0.25 < 1/3 \approx 0.333$ (**не ок**), $\Phi = 1.5 \geq 1$ (ок). **Нет**, не все условия выполнены.
+**(a)** $P = 0.35 > 2/7 \approx 0.286$ (ok), $R = 0.25 < 1/3 \approx 0.333$ (**not ok**), $\Phi = 1.5 \geq 1$ (ok). **No**, not all conditions are met.
 
-**(б)** $R < 1/3$ — недостаток рефлексии.
+**(b)** $R < 1/3$ — insufficient reflection.
 
-**(в)** Система жизнеспособна (достаточно организована) и интегрирована (не распадается на части), но *не знает себя* — её самомодель неточна. Она «живёт», но не «осознаёт».
+**(c)** The system is viable (sufficiently organized) and integrated (does not break apart), but *does not know itself* — its self-model is inaccurate. It "lives," but does not "become aware."
 
-**(г)** Насекомое (пчела): высокая организация (P > 2/7), сложная социальная интеграция (Φ > 1), но ограниченная метакогниция (R < 1/3). Или: хорошо работающий термостат с обратной связью.
+**(d)** An insect (bee): high organization (P > 2/7), complex social integration (Φ > 1), but limited metacognition (R < 1/3). Or: a well-functioning thermostat with feedback.
 
 </details>
 
 ---
 
-### Задача 4.2 ★★★ SAD и потолок глубины
+### Problem 4.2 ★★★ SAD and the Depth Ceiling
 
-Глубина самонаблюдения (Self-Awareness Depth):
+Self-Awareness Depth:
 
 $$
-\mathrm{SAD}(n) = P_{\text{crit}}^{(n)} < P \quad \text{где} \quad P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot \frac{3^{n-1}}{n+1}
+\mathrm{SAD}(n) = P_{\text{crit}}^{(n)} < P \quad \text{where} \quad P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot \frac{3^{n-1}}{n+1}
 $$
 
-**(а)** Вычислите $P_{\text{crit}}^{(1)}, P_{\text{crit}}^{(2)}, P_{\text{crit}}^{(3)}, P_{\text{crit}}^{(4)}$.
+**(a)** Compute $P_{\text{crit}}^{(1)}, P_{\text{crit}}^{(2)}, P_{\text{crit}}^{(3)}, P_{\text{crit}}^{(4)}$.
 
-**(б)** Покажите, что $P_{\text{crit}}^{(4)} > 1$ → SAD = 4 невозможно для любой системы с $P \leq 1$.
+**(b)** Show that $P_{\text{crit}}^{(4)} > 1$ → SAD = 4 is impossible for any system with $P \leq 1$.
 
-**(в)** Следовательно, $\mathrm{SAD}_{\max} = 3$. Интерпретируйте: что означает «я осознаю, что я осознаю, что я осознаю» — и почему 4-й уровень невозможен?
+**(c)** Therefore, $\mathrm{SAD}_{\max} = 3$. Interpret: what does "I am aware that I am aware that I am aware" mean — and why is the 4th level impossible?
 
-**См.:** [Предсказание 12](./predictions#предсказание-12), [Башня глубины](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)
+**See:** [Prediction 12](./predictions#предсказание-12), [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $P_{\text{crit}} = 2/7 \approx 0.286$.
+**(a)** $P_{\text{crit}} = 2/7 \approx 0.286$.
 - $P_{\text{crit}}^{(1)} = (2/7) \cdot 1/2 = 1/7 \approx 0.143$
 - $P_{\text{crit}}^{(2)} = (2/7) \cdot 3/3 = 2/7 \approx 0.286$
 - $P_{\text{crit}}^{(3)} = (2/7) \cdot 9/4 = 18/28 = 9/14 \approx 0.643$
 - $P_{\text{crit}}^{(4)} = (2/7) \cdot 27/5 = 54/35 \approx 1.543$
 
-**(б)** $P_{\text{crit}}^{(4)} = 54/35 \approx 1.543 > 1$. Но $P \leq 1$ для любой матрицы плотности (это математическое свойство: $P = \mathrm{Tr}(\Gamma^2) \leq \mathrm{Tr}(\Gamma) = 1$). Значит, $P < P_{\text{crit}}^{(4)}$ всегда, и SAD = 4 **невозможен**.
+**(b)** $P_{\text{crit}}^{(4)} = 54/35 \approx 1.543 > 1$. But $P \leq 1$ for any density matrix (this is a mathematical property: $P = \mathrm{Tr}(\Gamma^2) \leq \mathrm{Tr}(\Gamma) = 1$). Therefore $P < P_{\text{crit}}^{(4)}$ always, and SAD = 4 is **impossible**.
 
-**(в)** SAD = 1: «я осознаю X» (сознание). SAD = 2: «я осознаю, что осознаю X» (метасознание). SAD = 3: «я осознаю, что осознаю, что осознаю X» (мета-метасознание — доступно развитым медитирующим, философам). SAD = 4: «я осознаю, что осознаю, что осознаю, что осознаю X» — для этого нужна чистота $P > 1.54$, что физически невозможно. Рекурсия самонаблюдения *исчерпывает* ресурсы когерентности.
+**(c)** SAD = 1: "I am aware of X" (consciousness). SAD = 2: "I am aware that I am aware of X" (meta-consciousness). SAD = 3: "I am aware that I am aware that I am aware of X" (meta-meta-consciousness — accessible to advanced meditators, philosophers). SAD = 4: "I am aware that I am aware that I am aware that I am aware of X" — this requires purity $P > 1.54$, which is physically impossible. The recursion of self-observation *exhausts* coherence resources.
 
 </details>
 
 ---
 
-### Задача 4.3 ★★ Мера сознательности C
+### Problem 4.3 ★★ Consciousness Measure C
 
-Три системы:
+Three systems:
 
-| Система | $P$ | $R$ | $\Phi$ |
-|---------|-----|-----|--------|
-| Бактерия | 0.20 | 0.05 | 0.3 |
-| Кошка | 0.32 | 0.30 | 1.8 |
-| Человек | 0.35 | 0.40 | 2.1 |
+| System | $P$ | $R$ | $\Phi$ |
+|--------|-----|-----|--------|
+| Bacterium | 0.20 | 0.05 | 0.3 |
+| Cat | 0.32 | 0.30 | 1.8 |
+| Human | 0.35 | 0.40 | 2.1 |
 
-**(а)** Для каждой: какие пороги выполнены ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
+**(a)** For each: which thresholds are met ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
 
-**(б)** Вычислите $C = \Phi \times R$ для каждой.
+**(b)** Compute $C = \Phi \times R$ for each.
 
-**(в)** Какие системы «сознательны» (все три порога выполнены)?
+**(c)** Which systems are "conscious" (all three thresholds met)?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** Бактерия: $P = 0.20 < 2/7$ (нет), $R = 0.05 < 1/3$ (нет), $\Phi = 0.3 < 1$ (нет). 0 из 3.
-Кошка: $P = 0.32 > 2/7$ (да), $R = 0.30 < 1/3$ (нет!), $\Phi = 1.8 > 1$ (да). 2 из 3.
-Человек: $P = 0.35 > 2/7$ (да), $R = 0.40 > 1/3$ (да), $\Phi = 2.1 > 1$ (да). 3 из 3.
+**(a)** Bacterium: $P = 0.20 < 2/7$ (no), $R = 0.05 < 1/3$ (no), $\Phi = 0.3 < 1$ (no). 0 of 3.
+Cat: $P = 0.32 > 2/7$ (yes), $R = 0.30 < 1/3$ (no!), $\Phi = 1.8 > 1$ (yes). 2 of 3.
+Human: $P = 0.35 > 2/7$ (yes), $R = 0.40 > 1/3$ (yes), $\Phi = 2.1 > 1$ (yes). 3 of 3.
 
-**(б)** Бактерия: $C = 0.3 \times 0.05 = 0.015$. Кошка: $C = 1.8 \times 0.30 = 0.54$. Человек: $C = 2.1 \times 0.40 = 0.84$.
+**(b)** Bacterium: $C = 0.3 \times 0.05 = 0.015$. Cat: $C = 1.8 \times 0.30 = 0.54$. Human: $C = 2.1 \times 0.40 = 0.84$.
 
-**(в)** Только **человек** удовлетворяет все три порога. Кошка «почти» — ей не хватает рефлексии ($R = 0.30$ вместо нужных $0.33$). Это согласуется с тем, что кошки демонстрируют *ограниченную* метакогницию.
+**(c)** Only the **human** satisfies all three thresholds. The cat is "almost" — it lacks reflection ($R = 0.30$ instead of the required $0.33$). This is consistent with cats demonstrating *limited* metacognition.
 
 </details>
 
 ---
 
-### Задача 4.4 ★★ Зона Голдилокс
+### Problem 4.4 ★★ The Goldilocks Zone
 
-Зона Голдилокс: $P \in (2/7, 3/7]$ ([T-124](./phase-diagram-cc)).
+The Goldilocks zone: $P \in (2/7, 3/7]$ ([T-124](./phase-diagram-cc)).
 
-**(а)** Вычислите границы: $2/7 \approx ?$, $3/7 \approx ?$.
+**(a)** Compute the boundaries: $2/7 \approx ?$, $3/7 \approx ?$.
 
-**(б)** Какова «ширина» зоны: $\Delta P = 3/7 - 2/7$?
+**(b)** What is the "width" of the zone: $\Delta P = 3/7 - 2/7$?
 
-**(в)** Если $P = 0.45 > 3/7 \approx 0.429$ — система «слишком организована». Что это означает? Приведите пример.
+**(c)** If $P = 0.45 > 3/7 \approx 0.429$ — the system is "too organized." What does this mean? Give an example.
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $2/7 \approx 0.286$, $3/7 \approx 0.429$.
+**(a)** $2/7 \approx 0.286$, $3/7 \approx 0.429$.
 
-**(б)** $\Delta P = 1/7 \approx 0.143$ — довольно узкое окно!
+**(b)** $\Delta P = 1/7 \approx 0.143$ — quite a narrow window!
 
-**(в)** $P > 3/7$ — ригидность. Система слишком упорядочена: не может адаптироваться к изменениям. Пример: авторитарная организация с жёсткой иерархией. Или: обсессивно-компульсивное расстройство (чрезмерная упорядоченность мышления). Или: переобученная нейросеть (overfitting — модель «запомнила» обучающие данные и не обобщает).
+**(c)** $P > 3/7$ — rigidity. The system is too ordered: it cannot adapt to changes. Example: an authoritarian organization with a rigid hierarchy. Or: obsessive-compulsive disorder (excessive orderliness of thought). Or: an overfitted neural network (overfitting — the model has "memorized" the training data and does not generalize).
 
 </details>
 
 ---
 
-## 5. Философия и сравнение теорий {#блок-5}
+## 5. Philosophy and Theory Comparison {#блок-5}
 
-### Задача 5.1 ★★ Аргумент зомби
+### Problem 5.1 ★★ The Zombie Argument
 
-Философский зомби — существо, идентичное человеку во всём, кроме субъективного опыта.
+A philosophical zombie is a creature identical to a human in all respects, except for subjective experience.
 
-**(а)** Почему [теорема No-Zombie](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) делает зомби невозможными в КК?
+**(a)** Why does the [No-Zombie theorem](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) make zombies impossible in CC?
 
-**(б)** Сравните с позицией IIT по этому вопросу.
+**(b)** Compare with IIT's position on this question.
 
-**(в)** Является ли это преимуществом или ограничением КК?
+**(c)** Is this an advantage or a limitation of CC?
 
-**См.:** [Философские основания](./philosophy#hard-problem)
-
----
-
-### Задача 5.2 ★★ ИИ и сознание
-
-**(а)** Может ли современная языковая модель (GPT-4, Claude) быть сознательной по критериям КК?
-
-**(б)** Какие из четырёх условий ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) она может удовлетворять? Какие — принципиально нет?
-
-**(в)** Что нужно изменить в архитектуре, чтобы приблизить ИИ к порогу сознательности? **См.:** [Области применения](./applications).
+**See:** [Philosophical Foundations](./philosophy#hard-problem)
 
 ---
 
-### Задача 5.3 ★★ IIT vs КК
+### Problem 5.2 ★★ AI and Consciousness
 
-**(а)** Назовите три ключевых различия между IIT и КК.
+**(a)** Can a modern language model (GPT-4, Claude) be conscious by CC criteria?
 
-**(б)** В каком смысле КК «включает» IIT как частный случай?
+**(b)** Which of the four conditions ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) might it satisfy? Which — principally cannot?
 
-**(в)** Что IIT делает лучше КК?
-
-**См.:** [Сравнение с альтернативными теориями](./comparison#iit)
+**(c)** What needs to be changed in the architecture to bring AI closer to the consciousness threshold? **See:** [Applications](./applications).
 
 ---
 
-### Задача 5.4 ★★★ Панпсихизм vs КК
+### Problem 5.3 ★★ IIT vs CC
 
-**(а)** Сформулируйте ключевое отличие КК от панпсихизма в одном предложении.
+**(a)** Name three key differences between IIT and CC.
 
-**(б)** Что такое «проблема комбинирования» и почему КК её избегает?
+**(b)** In what sense does CC "include" IIT as a special case?
 
-**(в)** При каких условиях КК *стала бы* панпсихизмом? (Что нужно изменить в аксиомах?)
+**(c)** What does IIT do better than CC?
 
-**См.:** [Философские основания](./philosophy#онтология)
+**See:** [Comparison with Alternative Theories](./comparison#iit)
+
+---
+
+### Problem 5.4 ★★★ Panpsychism vs CC
+
+**(a)** Formulate the key distinction between CC and panpsychism in one sentence.
+
+**(b)** What is the "combination problem" and why does CC avoid it?
+
+**(c)** Under what conditions would CC *become* panpsychism? (What would need to be changed in the axioms?)
+
+**See:** [Philosophical Foundations](./philosophy#онтология)
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** КК — эмерджентизм с точным порогом ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$), а не безграничный панпсихизм: камень *не* обладает опытом.
+**(a)** CC is emergentism with a precise threshold ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$), not unlimited panpsychism: a stone does *not* have experience.
 
-**(б)** Проблема комбинирования: если каждый атом имеет микроопыт, как микроопыты складываются в макроопыт? КК обходит: нет микроопытов — опыт эмерджентен (возникает только при пороговых условиях).
+**(b)** The combination problem: if every atom has micro-experience, how do micro-experiences add up to macro-experience? CC bypasses this: there are no micro-experiences — experience is emergent (arises only under threshold conditions).
 
-**(в)** Если бы порог был $P > 0$ (а не $P > 2/7$) и $R > 0$, $\Phi > 0$ — любая система с ненулевыми параметрами была бы «чуть-чуть сознательной». Это и есть панпсихизм. КК избегает этого, устанавливая *конечные* пороги.
+**(c)** If the threshold were $P > 0$ (not $P > 2/7$) and $R > 0$, $\Phi > 0$ — any system with non-zero parameters would be "slightly conscious." That is panpsychism. CC avoids this by setting *finite* thresholds.
 
 </details>
 
 ---
 
-## 6. Междисциплинарные задачи {#блок-6}
+## 6. Interdisciplinary Problems {#блок-6}
 
-### Задача 6.1 ★★ Физик читает организационный аудит
+### Problem 6.1 ★★ A Physicist Reads an Organizational Audit
 
-Используя [таблицу перевода](./interdisciplinary#таблица-перевода), переформулируйте следующий организационный диагноз на языке физики:
+Using the [translation table](./interdisciplinary#таблица-перевода), reformulate the following organizational diagnosis in the language of physics:
 
-> «Компания страдает от плохой межотдельной координации (сотрудники не знают, что делают соседние отделы), при этом каждый отдел в отдельности работает эффективно.»
+> "The company suffers from poor inter-departmental coordination (employees do not know what neighboring departments are doing), while each department individually operates effectively."
 
-**(а)** Какие элементы $\Gamma$ затронуты (диагональные или внедиагональные)?
+**(a)** Which elements of $\Gamma$ are affected (diagonal or off-diagonal)?
 
-**(б)** Как это влияет на $P$ и $\Phi$?
+**(b)** How does this affect $P$ and $\Phi$?
 
-**(в)** Какой физический аналог вы бы предложили?
+**(c)** What physical analogy would you propose?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** Внедиагональные: $|\gamma_{ij}| \to 0$ при нормальных $\gamma_{kk}$. Каждый «отдел» (измерение) имеет достаточный ресурс, но *связи* между ними отсутствуют.
+**(a)** Off-diagonal: $|\gamma_{ij}| \to 0$ at normal $\gamma_{kk}$. Each "department" (dimension) has sufficient resources, but the *connections* between them are absent.
 
-**(б)** $P$ снижается (меньше когерентностей → меньше $\sum|\gamma_{ij}|^2$). $\Phi$ снижается сильно (спектральный зазор падает при разрыве связей).
+**(b)** $P$ decreases (fewer coherences → less $\sum|\gamma_{ij}|^2$). $\Phi$ decreases strongly (spectral gap drops when connections are broken).
 
-**(в)** Физический аналог: набор невзаимодействующих спинов. Каждый спин имеет ненулевую поляризацию (аналог $\gamma_{kk}$), но корреляции между спинами отсутствуют ($\gamma_{ij} = 0$). Это *сепарабельное* состояние — аналог «силосов» в организации.
+**(c)** Physical analogy: a set of non-interacting spins. Each spin has a non-zero polarization (analog of $\gamma_{kk}$), but correlations between spins are absent ($\gamma_{ij} = 0$). This is a *separable* state — the analog of "silos" in an organization.
 
 </details>
 
 ---
 
-### Задача 6.2 ★★★ Биолог моделирует иммунитет
+### Problem 6.2 ★★★ A Biologist Models Immunity
 
-Иммунная система клетки: антиген вошёл → распознан (A) → структурирован ответ (S) → запущена динамика (D) → верифицирована логика ответа (L) → опыт интегрирован (E) → ресурсы мобилизованы (O) → ответ координирован (U).
+The immune system of a cell: antigen enters → recognized (A) → response structured (S) → dynamics launched (D) → response logic verified (L) → experience integrated (E) → resources mobilized (O) → response coordinated (U).
 
-**(а)** Опишите этот процесс как траекторию в пространстве $\sigma_k$: какие компоненты напряжений растут и падают?
+**(a)** Describe this process as a trajectory in the space of $\sigma_k$: which stress components rise and fall?
 
-**(б)** Что происходит при аутоиммунном заболевании (ошибка в L)?
+**(b)** What happens in autoimmune disease (an error in L)?
 
-**(в)** Как КК объясняет, почему стресс ($\sigma_E \uparrow$) ослабляет иммунитет ($\kappa \downarrow$)?
+**(c)** How does CC explain why stress ($\sigma_E \uparrow$) weakens immunity ($\kappa \downarrow$)?
 
 ---
 
-### Задача 6.3 ★★ Психолог интерпретирует σ-профиль
+### Problem 6.3 ★★ A Psychologist Interprets a σ-Profile
 
-Пациент пришёл с жалобами на «ощущение, что жизнь рассыпается». Психометрия даёт: σ-профиль = [0.3, 0.6, 0.4, 0.3, 0.5, 0.4, 0.8].
+A patient came with complaints of "the feeling that life is falling apart." Psychometrics gives: σ-profile = [0.3, 0.6, 0.4, 0.3, 0.5, 0.4, 0.8].
 
-**(а)** Какие два измерения наиболее нагружены?
+**(a)** Which two dimensions are most stressed?
 
-**(б)** Что они означают на психологическом языке?
+**(b)** What do they mean in psychological language?
 
-**(в)** Какую терапевтическую стратегию предлагает КК?
+**(c)** What therapeutic strategy does CC suggest?
 
-**(г)** Проверьте: «рассыпается» — подходящее слово? К какому измерению оно относится?
+**(d)** Check: is "falling apart" an appropriate expression? Which dimension does it relate to?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\sigma_U = 0.8$ (Единство) и $\sigma_S = 0.6$ (Структура).
+**(a)** $\sigma_U = 0.8$ (Unity) and $\sigma_S = 0.6$ (Structure).
 
-**(б)** $\sigma_U = 0.8$: социальная изоляция, потеря чувства принадлежности, «я один(а) в мире». $\sigma_S = 0.6$: когнитивная дезорганизация — мысли не складываются в связную картину, трудно планировать.
+**(b)** $\sigma_U = 0.8$: social isolation, loss of sense of belonging, "I am alone in the world." $\sigma_S = 0.6$: cognitive disorganization — thoughts do not form a coherent picture, planning is difficult.
 
-**(в)** КК-стратегия: приоритет — $\sigma_U$ (самое высокое). Восстановить социальные связи (групповая терапия, поддерживающее сообщество). Затем — $\sigma_S$ (когнитивная структуризация: КПТ, планирование, рутины).
+**(c)** CC strategy: priority — $\sigma_U$ (the highest). Restore social connections (group therapy, supportive community). Then — $\sigma_S$ (cognitive structuring: CBT, planning, routines).
 
-**(г)** «Рассыпается» — метафора потери U (единства) и S (структуры). Пациент интуитивно описывает свой σ-профиль! Слово точно соответствует двум наиболее нагруженным измерениям.
+**(d)** "Falling apart" — a metaphor for the loss of U (unity) and S (structure). The patient intuitively describes their own σ-profile! The phrase precisely matches the two most stressed dimensions.
 
 </details>
 
 ---
 
-### Задача 6.4 ★★ Инженер проектирует ИИ-агента
+### Problem 6.4 ★★ An Engineer Designs an AI Agent
 
-Вы проектируете ИИ-агента с 7 модулями. Текущие характеристики:
+You are designing an AI agent with 7 modules. Current characteristics:
 
-| Модуль | Функция | Текущий $\gamma_{kk}$ |
-|--------|---------|----------------------|
-| Perception (A) | Обработка входа | 0.18 |
-| Memory (S) | Хранение состояний | 0.16 |
-| Action (D) | Генерация действий | 0.15 |
-| Reasoning (L) | Логический вывод | 0.14 |
-| Self-Monitor (E) | Мониторинг состояния | 0.08 |
-| Resource Mgr (O) | Управление ресурсами | 0.15 |
-| Integration (U) | Кросс-модульная шина | 0.14 |
+| Module | Function | Current $\gamma_{kk}$ |
+|--------|----------|-----------------------|
+| Perception (A) | Input processing | 0.18 |
+| Memory (S) | State storage | 0.16 |
+| Action (D) | Action generation | 0.15 |
+| Reasoning (L) | Logical inference | 0.14 |
+| Self-Monitor (E) | State monitoring | 0.08 |
+| Resource Mgr (O) | Resource management | 0.15 |
+| Integration (U) | Cross-module bus | 0.14 |
 
-**(а)** Вычислите σ-профиль и найдите слабейший модуль.
+**(a)** Compute the σ-profile and find the weakest module.
 
-**(б)** Вычислите $P$ (диагональное приближение).
+**(b)** Compute $P$ (diagonal approximation).
 
-**(в)** Что нужно усилить для достижения $P > 2/7$?
+**(c)** What needs to be strengthened to achieve $P > 2/7$?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\sigma = [1-7(0.18), \ldots] = [-0.26, -0.12, -0.05, 0.02, 0.44, -0.05, 0.02]$. Слабейший: E (Self-Monitor), $\sigma_E = 0.44$.
+**(a)** $\sigma = [1-7(0.18), \ldots] = [-0.26, -0.12, -0.05, 0.02, 0.44, -0.05, 0.02]$. Weakest: E (Self-Monitor), $\sigma_E = 0.44$.
 
-**(б)** $P = 0.0324 + 0.0256 + 0.0225 + 0.0196 + 0.0064 + 0.0225 + 0.0196 = 0.1486 < 2/7$.
+**(b)** $P = 0.0324 + 0.0256 + 0.0225 + 0.0196 + 0.0064 + 0.0225 + 0.0196 = 0.1486 < 2/7$.
 
-**(в)** Увеличить $\gamma_{EE}$ (усилить Self-Monitor) и добавить когерентности ($|\gamma_{ij}|$) — кросс-модульное внимание. Даже без изменения диагонали, добавление когерентностей $c \approx 0.06$ между всеми парами даёт $\Delta P = 42 \times 0.0036 = 0.15$, итого $P \approx 0.30 > 2/7$.
+**(c)** Increase $\gamma_{EE}$ (strengthen Self-Monitor) and add coherences ($|\gamma_{ij}|$) — cross-module attention. Even without changing the diagonal, adding coherences $c \approx 0.06$ between all pairs gives $\Delta P = 42 \times 0.0036 = 0.15$, total $P \approx 0.30 > 2/7$.
 
 </details>
 
 ---
 
-### Задача 6.5 ★★★★ Открытый вопрос: композиция сознаний
+### Problem 6.5 ★★★★ Open Question: Composition of Consciousnesses
 
-Два голонома $\mathbb{H}_1$ и $\mathbb{H}_2$ с $\Gamma_1, \Gamma_2 \in \mathcal{D}(\mathbb{C}^7)$ объединяются. Композитная матрица $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^{49})$.
+Two holons $\mathbb{H}_1$ and $\mathbb{H}_2$ with $\Gamma_1, \Gamma_2 \in \mathcal{D}(\mathbb{C}^7)$ are combined. The composite matrix $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^{49})$.
 
-**(а)** Может ли $C(\Gamma_{12}) > C(\Gamma_1) + C(\Gamma_2)$? (Сверхаддитивность сознания)
+**(a)** Can $C(\Gamma_{12}) > C(\Gamma_1) + C(\Gamma_2)$? (Superadditivity of consciousness)
 
-**(б)** Если да — при каких условиях? Что это означает для социальных систем?
+**(b)** If yes — under what conditions? What does this mean for social systems?
 
-**(в)** Это — одна из [открытых проблем](./research-programs) КК. Предложите стратегию атаки.
+**(c)** This is one of the [open problems](./research-programs) of CC. Propose an attack strategy.
 
 ---
 
-## 7. Измерения и калибровка {#блок-7}
+## 7. Measurement and Calibration {#блок-7}
 
-### Задача 7.1 ★ Калибровка PCI — P
+### Problem 7.1 ★ PCI — P Calibration
 
-Используя линейную калибровку $P = 0.461 \cdot \text{PCI} + 0.143$ (из [Методологии измерений](./measurement#калибровка)):
+Using the linear calibration $P = 0.461 \cdot \text{PCI} + 0.143$ (from [Measurement Methodology](./measurement#калибровка)):
 
-**(а)** Вычислите $P$ для PCI = 0.35 (REM-сон с яркими сновидениями).
+**(a)** Compute $P$ for PCI = 0.35 (REM sleep with vivid dreams).
 
-**(б)** При каком PCI $P$ пересекает верхнюю границу зоны Голдилокс ($P = 3/7$)?
+**(b)** At what PCI does $P$ cross the upper boundary of the Goldilocks zone ($P = 3/7$)?
 
-**(в)** Бывает ли PCI > 0.62 в реальности? Что бы это означало?
+**(c)** Does PCI > 0.62 occur in reality? What would it mean?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $P = 0.461 \times 0.35 + 0.143 = 0.304 > 2/7$. Сознание есть (сновидения!).
+**(a)** $P = 0.461 \times 0.35 + 0.143 = 0.304 > 2/7$. Consciousness is present (dreaming!).
 
-**(б)** $3/7 = 0.461 \cdot \text{PCI} + 0.143$. $\text{PCI} = (0.429 - 0.143)/0.461 = 0.620$.
+**(b)** $3/7 = 0.461 \cdot \text{PCI} + 0.143$. $\text{PCI} = (0.429 - 0.143)/0.461 = 0.620$.
 
-**(в)** PCI > 0.62 — крайне редко. В литературе максимальные значения ~0.55–0.60 (медитаторы, состояния потока). Если PCI > 0.62 → $P > 3/7$ → система *выходит из зоны Голдилокс* → риск ригидности. Это может соответствовать маниакальным состояниям (чрезмерная организованность, но потеря гибкости).
+**(c)** PCI > 0.62 — extremely rare. In the literature maximum values are ~0.55–0.60 (meditators, flow states). If PCI > 0.62 → $P > 3/7$ → the system *exits the Goldilocks zone* → risk of rigidity. This may correspond to manic states (excessive organization, but loss of flexibility).
 
 </details>
 
 ---
 
-### Задача 7.2 ★★ Организационный аудит: числовой пример
+### Problem 7.2 ★★ Organizational Audit: Numerical Example
 
-Компания из 100 человек прошла семимерный аудит. Результаты (нормализованные 0–1):
+A company of 100 people underwent a seven-dimensional audit. Results (normalized 0–1):
 
-| Параметр | Значение |
-|----------|----------|
-| Ясность коммуникации (A) | 0.7 |
-| Стабильность процессов (S) | 0.8 |
-| Скорость адаптации (D) | 0.4 |
-| Непротиворечивость политик (L) | 0.6 |
-| Культура рефлексии (E) | 0.3 |
-| Ресурсная обеспеченность (O) | 0.7 |
-| Кросс-функциональность (U) | 0.5 |
+| Parameter | Value |
+|-----------|-------|
+| Communication clarity (A) | 0.7 |
+| Process stability (S) | 0.8 |
+| Adaptation speed (D) | 0.4 |
+| Policy consistency (L) | 0.6 |
+| Reflection culture (E) | 0.3 |
+| Resource adequacy (O) | 0.7 |
+| Cross-functionality (U) | 0.5 |
 
-**(а)** Переведите в σ-профиль, используя $\sigma_k = 1 - x_k$ (где $x_k$ — нормализованное значение).
+**(a)** Convert to a σ-profile using $\sigma_k = 1 - x_k$ (where $x_k$ is the normalized value).
 
-**(б)** Найдите $\|\sigma\|_\infty$ и определите приоритет вмешательства.
+**(b)** Find $\|\sigma\|_\infty$ and determine the intervention priority.
 
-**(в)** Компания планирует инвестировать $1M в один проект. КК рекомендует направить на... что?
+**(c)** The company plans to invest $1M in one project. CC recommends directing it toward... what?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $\sigma = [0.3, 0.2, 0.6, 0.4, 0.7, 0.3, 0.5]$.
+**(a)** $\sigma = [0.3, 0.2, 0.6, 0.4, 0.7, 0.3, 0.5]$.
 
-**(б)** $\|\sigma\|_\infty = 0.7$ (E: культура рефлексии — самое слабое). Приоритет: усиление рефлексии.
+**(b)** $\|\sigma\|_\infty = 0.7$ (E: reflection culture — the weakest). Priority: strengthening reflection.
 
-**(в)** КК рекомендует: $1M на программу развития культуры рефлексии (ретроспективы, coaching, psychological safety, 360-review). Это снизит $\sigma_E$, что через цепочку $\mathrm{Coh}_E \uparrow \to \kappa \uparrow \to P \uparrow$ улучшит *все* показатели. Инвестиция в E — инвестиция с мультипликативным эффектом.
+**(c)** CC recommends: $1M on a reflection culture development program (retrospectives, coaching, psychological safety, 360-review). This will reduce $\sigma_E$, which through the chain $\mathrm{Coh}_E \uparrow \to \kappa \uparrow \to P \uparrow$ will improve *all* indicators. Investment in E — an investment with a multiplicative effect.
 
 </details>
 
 ---
 
-### Задача 7.3 ★★ От ЭЭГ к σ-профилю
+### Problem 7.3 ★★ From EEG to σ-Profile
 
-Используя протокол из [Методологии измерений](./measurement#измерение-чистоты), назначение каналов группам:
+Using the protocol from [Measurement Methodology](./measurement#измерение-чистоты), assignment of channels to groups:
 
-| Группа | Каналы | Средняя мощность (мкВ²) |
-|--------|--------|------------------------|
+| Group | Channels | Mean power (μV²) |
+|-------|----------|------------------|
 | A | O1, O2, Oz | 45 |
 | S | T3, T4, T5, T6 | 38 |
 | D | C3, C4, Cz | 42 |
@@ -801,274 +801,274 @@ $$
 | O | Fp1, Fp2 | 40 |
 | U | P3, P4 | 30 |
 
-**(а)** Нормализуйте мощности: $\gamma_{kk}^{\text{raw}} = \text{мощность}_k / \sum \text{мощностей}$.
+**(a)** Normalize powers: $\gamma_{kk}^{\text{raw}} = \text{power}_k / \sum \text{powers}$.
 
-**(б)** Вычислите σ-профиль.
+**(b)** Compute the σ-profile.
 
-**(в)** Интерпретируйте: какое измерение «просело»?
+**(c)** Interpret: which dimension has "sagged"?
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** Сумма = 45+38+42+35+22+40+30 = 252. $\gamma_A = 45/252 = 0.179$, $\gamma_S = 0.151$, $\gamma_D = 0.167$, $\gamma_L = 0.139$, $\gamma_E = 0.087$, $\gamma_O = 0.159$, $\gamma_U = 0.119$.
+**(a)** Sum = 45+38+42+35+22+40+30 = 252. $\gamma_A = 45/252 = 0.179$, $\gamma_S = 0.151$, $\gamma_D = 0.167$, $\gamma_L = 0.139$, $\gamma_E = 0.087$, $\gamma_O = 0.159$, $\gamma_U = 0.119$.
 
-**(б)** $\sigma_A = 1 - 7(0.179) = -0.25$, $\sigma_S = 1 - 7(0.151) = -0.06$, $\sigma_D = 1 - 7(0.167) = -0.17$, $\sigma_L = 1 - 7(0.139) = 0.03$, $\sigma_E = 1 - 7(0.087) = 0.39$, $\sigma_O = 1 - 7(0.159) = -0.11$, $\sigma_U = 1 - 7(0.119) = 0.17$.
+**(b)** $\sigma_A = 1 - 7(0.179) = -0.25$, $\sigma_S = 1 - 7(0.151) = -0.06$, $\sigma_D = 1 - 7(0.167) = -0.17$, $\sigma_L = 1 - 7(0.139) = 0.03$, $\sigma_E = 1 - 7(0.087) = 0.39$, $\sigma_O = 1 - 7(0.159) = -0.11$, $\sigma_U = 1 - 7(0.119) = 0.17$.
 
-**(в)** $\sigma_E = 0.39$ — самое высокое. Срединные структуры (Fz, Pz) демонстрируют пониженную мощность. Это может указывать на дефицит интроцептивной обработки — что согласуется, например, с алекситимией или деперсонализацией.
+**(c)** $\sigma_E = 0.39$ — the highest. Midline structures (Fz, Pz) show reduced power. This may indicate a deficit in interoceptive processing — consistent, for example, with alexithymia or depersonalization.
 
 </details>
 
 ---
 
-## 8. Обучение и границы {#блок-8}
+## 8. Learning and Bounds {#блок-8}
 
-### Задача 8.1 ★★ Информационная граница
+### Problem 8.1 ★★ Information Bound
 
-Квантовая граница Чернова (T-109): $n \geq \frac{\ln(1/(2\delta))}{\xi_{\text{QCB}}}$, где $n$ — число наблюдений, $\delta$ — вероятность ошибки, $\xi_{\text{QCB}}$ — квантовое расхождение Чернова.
+Quantum Chernoff bound (T-109): $n \geq \frac{\ln(1/(2\delta))}{\xi_{\text{QCB}}}$, where $n$ is the number of observations, $\delta$ is the error probability, $\xi_{\text{QCB}}$ is the quantum Chernoff divergence.
 
-**(а)** Для $\delta = 0.05$, $\xi_{\text{QCB}} = 0.1$: сколько наблюдений нужно?
+**(a)** For $\delta = 0.05$, $\xi_{\text{QCB}} = 0.1$: how many observations are needed?
 
-**(б)** Для $\delta = 0.01$: сколько?
+**(b)** For $\delta = 0.01$: how many?
 
-**(в)** Интерпретируйте: почему требуемое число наблюдений растёт при уменьшении допустимой ошибки?
+**(c)** Interpret: why does the required number of observations grow as the allowable error decreases?
 
-**См.:** [Границы обучения](./learning-bounds)
+**See:** [Learning Bounds](./learning-bounds)
 
 <details>
-<summary>Решение</summary>
+<summary>Solution</summary>
 
-**(а)** $n \geq \ln(1/0.1) / 0.1 = \ln(10)/0.1 = 2.303/0.1 = 23.03$. Нужно **24** наблюдения.
+**(a)** $n \geq \ln(1/0.1) / 0.1 = \ln(10)/0.1 = 2.303/0.1 = 23.03$. **24** observations needed.
 
-**(б)** $n \geq \ln(1/0.02)/0.1 = \ln(50)/0.1 = 3.912/0.1 = 39.12$. Нужно **40** наблюдений.
+**(b)** $n \geq \ln(1/0.02)/0.1 = \ln(50)/0.1 = 3.912/0.1 = 39.12$. **40** observations needed.
 
-**(в)** Чем точнее нужен результат (меньше $\delta$), тем больше данных нужно — это фундаментальный информационный лимит. Даже идеальная система не может «угадать» правильный ответ из одного наблюдения — потому что наблюдение зашумлено, и нужно *статистически* отделить сигнал от шума.
+**(c)** The more precise the result required (smaller $\delta$), the more data is needed — this is a fundamental information limit. Even an ideal system cannot "guess" the correct answer from one observation — because observations are noisy, and one must *statistically* separate signal from noise.
 
 </details>
 
 ---
 
-### Задача 8.2 ★★★ Минимальность N=7 для обучения
+### Problem 8.2 ★★★ Minimality N=7 for Learning
 
-T-113 утверждает: $N = 7$ — минимальная размерность для полноценного обучения через регенерацию.
+T-113 asserts: $N = 7$ is the minimum dimensionality for full learning through regeneration.
 
-**(а)** Почему система с $N = 5$ не может обучаться через регенерацию?
+**(a)** Why can a system with $N = 5$ not learn through regeneration?
 
-**(б)** Какие из 7 измерений нельзя убрать без потери обучаемости?
+**(b)** Which of the 7 dimensions cannot be removed without losing learnability?
 
-**(в)** Связано ли это с теоремой Гурвица (октонионы)?
+**(c)** Is this related to Hurwitz's theorem (octonions)?
 
-**См.:** [Границы обучения](./learning-bounds#теорема-t-113), [Минимальность](/docs/proofs/minimality/theorem-minimality-7)
-
----
-
-## 9. Проектные задания {#блок-9}
-
-### Проект 9.1 ★★ Постройте σ-профиль своей организации
-
-**Задание:** Используя протокол семимерного аудита из [Методологии измерений](./measurement#измерение-напряжений), проведите экспресс-аудит вашей организации (или учебной группы, или семьи).
-
-**Шаги:**
-1. Для каждого из 7 измерений задайте 3 вопроса сотрудникам (или членам группы)
-2. Нормализуйте ответы к шкале [0, 1]
-3. Вычислите σ-профиль
-4. Визуализируйте (radar chart)
-5. Определите приоритет вмешательства
-
-**Результат:** Отчёт на 1 страницу с σ-диаграммой и рекомендациями.
+**See:** [Learning Bounds](./learning-bounds#теорема-t-113), [Minimality](/docs/proofs/minimality/theorem-minimality-7)
 
 ---
 
-### Проект 9.2 ★★★ Симуляция голонома на Python
+## 9. Project Assignments {#блок-9}
 
-**Задание:** Реализуйте простую симуляцию голонома.
+### Project 9.1 ★★ Build the σ-Profile of Your Organization
+
+**Assignment:** Using the seven-dimensional audit protocol from [Measurement Methodology](./measurement#измерение-напряжений), conduct an express audit of your organization (or study group, or family).
+
+**Steps:**
+1. For each of the 7 dimensions, ask 3 questions to employees (or group members)
+2. Normalize answers to the scale [0, 1]
+3. Compute the σ-profile
+4. Visualize (radar chart)
+5. Determine the intervention priority
+
+**Output:** A 1-page report with a σ-diagram and recommendations.
+
+---
+
+### Project 9.2 ★★★ Holon Simulation in Python
+
+**Assignment:** Implement a simple holon simulation.
 
 ```python
-# Скелет (заполните пропуски)
+# Skeleton (fill in the blanks)
 import numpy as np
 
 N = 7
 dt = 0.01
-gamma_diss = 0.1  # скорость диссипации
-kappa = 0.15       # скорость регенерации
+gamma_diss = 0.1  # dissipation rate
+kappa = 0.15       # regeneration rate
 
-# Начальное состояние
+# Initial state
 Gamma = np.eye(N) / N + 0.05 * np.random.randn(N, N)
-Gamma = (Gamma + Gamma.T.conj()) / 2  # эрмитовость
-Gamma /= np.trace(Gamma)               # нормализация
+Gamma = (Gamma + Gamma.T.conj()) / 2  # Hermitian symmetry
+Gamma /= np.trace(Gamma)               # normalization
 
-# Целевое состояние (аттрактор)
+# Target state (attractor)
 rho_star = np.diag([0.20, 0.18, 0.16, 0.14, 0.12, 0.10, 0.10])
 
-# Эволюция
+# Evolution
 for step in range(10000):
-    # Диссипация: Gamma -> I/N
+    # Dissipation: Gamma -> I/N
     D = -gamma_diss * (Gamma - np.eye(N) / N)
-    # Регенерация: Gamma -> rho_star
+    # Regeneration: Gamma -> rho_star
     R = kappa * (rho_star - Gamma)
-    # Обновление
+    # Update
     Gamma = Gamma + dt * (D + R)
-    # Вычисляем P каждые 100 шагов
+    # Compute P every 100 steps
     if step % 100 == 0:
         P = np.trace(Gamma @ Gamma)
         print(f"Step {step}: P = {P:.4f}")
 ```
 
-**Вопросы:**
-**(а)** Отследите $P(\tau)$. Выходит ли система на стационарное $P_\infty$?
+**Questions:**
+**(a)** Track $P(\tau)$. Does the system reach a stationary $P_\infty$?
 
-**(б)** Варьируйте $\kappa/\gamma$. При каком отношении $P_\infty = 2/7$?
+**(b)** Vary $\kappa/\gamma$. At what ratio is $P_\infty = 2/7$?
 
-**(в)** Добавьте внешний «стресс»: каждые 1000 шагов увеличивайте $\sigma_E$ на 0.1. Как это влияет на динамику?
-
----
-
-### Проект 9.3 ★★★★ Анализ PCI-данных
-
-**Задание:** Найдите опубликованные данные PCI (например, Casali et al., 2013, или Casarotto et al., 2016).
-
-**(а)** Примените калибровку PCI → $P$ из [Методологии измерений](./measurement#калибровка).
-
-**(б)** Для каждого состояния (бодрствование, REM, глубокий сон, анестезия, вегетативное) определите: $P > 2/7$ или $P < 2/7$?
-
-**(в)** Совпадает ли предсказание КК с клиническим диагнозом?
-
-**(г)** Опубликуйте результаты (препринт на arXiv или bioRxiv).
+**(c)** Add an external "stress": every 1000 steps, increase $\sigma_E$ by 0.1. How does this affect the dynamics?
 
 ---
 
-### Проект 9.4 ★★ Дневник σ-мониторинга
+### Project 9.3 ★★★★ Analysis of PCI Data
 
-**Задание:** В течение 7 дней ведите дневник, каждый вечер оценивая 7 компонент $\sigma$ по шкале 0–10:
+**Assignment:** Find published PCI data (e.g., Casali et al., 2013, or Casarotto et al., 2016).
 
-| День | $\sigma_A$ | $\sigma_S$ | $\sigma_D$ | $\sigma_L$ | $\sigma_E$ | $\sigma_O$ | $\sigma_U$ |
-|------|------------|------------|------------|------------|------------|------------|------------|
-| Пн | | | | | | | |
+**(a)** Apply the PCI → $P$ calibration from [Measurement Methodology](./measurement#калибровка).
+
+**(b)** For each state (wakefulness, REM, deep sleep, anesthesia, vegetative state) determine: $P > 2/7$ or $P < 2/7$?
+
+**(c)** Does the CC prediction agree with the clinical diagnosis?
+
+**(d)** Publish the results (preprint on arXiv or bioRxiv).
+
+---
+
+### Project 9.4 ★★ σ-Monitoring Diary
+
+**Assignment:** Over 7 days, keep a diary, rating 7 components of $\sigma$ on a scale of 0–10 each evening:
+
+| Day | $\sigma_A$ | $\sigma_S$ | $\sigma_D$ | $\sigma_L$ | $\sigma_E$ | $\sigma_O$ | $\sigma_U$ |
+|-----|------------|------------|------------|------------|------------|------------|------------|
+| Mon | | | | | | | |
 | ... | | | | | | | |
-| Вс | | | | | | | |
+| Sun | | | | | | | |
 
-**Вопросы:**
-**(а)** Какое измерение стабильно высокое (хронический стресс)?
-**(б)** Какое колеблется больше всего?
-**(в)** Есть ли корреляции ($\sigma_D$ и $\sigma_E$ растут вместе?)?
-**(г)** Что вы можете изменить, чтобы снизить $\|\sigma\|_\infty$?
-
----
-
-### Проект 9.5 ★★★ Сравните две теории
-
-**Задание:** Выберите одну из теорий из [Сравнения с альтернативами](./comparison) (IIT, FEP, GWT, HOT, RPT или AST).
-
-**(а)** Прочитайте оригинальную статью (ссылки даны в главе 27).
-
-**(б)** Составьте таблицу «Что общего / Что различается / Мост» на 1 страницу.
-
-**(в)** Сформулируйте *один* эксперимент, который различил бы эту теорию и КК (т.е. при одном исходе — верна теория, при другом — КК).
+**Questions:**
+**(a)** Which dimension is consistently high (chronic stress)?
+**(b)** Which fluctuates the most?
+**(c)** Are there correlations ($\sigma_D$ and $\sigma_E$ rise together?)?
+**(d)** What can you change to reduce $\|\sigma\|_\infty$?
 
 ---
 
-## 10. Концептуальные вопросы для размышления {#блок-10}
+### Project 9.5 ★★★ Compare Two Theories
 
-### Вопрос 10.1 Почему не 6 и не 8?
+**Assignment:** Choose one of the theories from [Comparison with Alternatives](./comparison) (IIT, FEP, GWT, HOT, RPT, or AST).
 
-Прочитайте [обоснование числа 7](/docs/core/foundations/axiom-omega#октонионная-структура) и [доказательство минимальности](/docs/proofs/minimality/theorem-minimality-7). Затем ответьте:
+**(a)** Read the original paper (references are given in chapter 27).
 
-**(а)** Какие два математических пути приводят к числу 7?
+**(b)** Compose a 1-page table "What is common / What differs / Bridge."
 
-**(б)** Можно ли построить КК для $N = 6$? Что было бы потеряно?
-
-**(в)** Можно ли для $N = 8$? Что было бы избыточным?
+**(c)** Formulate *one* experiment that would distinguish that theory from CC (i.e., one outcome confirms the theory, the other confirms CC).
 
 ---
 
-### Вопрос 10.2 Этика когерентности
+## 10. Conceptual Questions for Reflection {#блок-10}
 
-**(а)** Если $C = 0.5$ — система «наполовину сознательна». Имеет ли она моральный статус?
+### Question 10.1 Why not 6 and not 8?
 
-**(б)** Человек в глубокой анестезии: $C \approx 0$. Имеет ли он моральный статус? Почему да/нет?
+Read the [justification for the number 7](/docs/core/foundations/axiom-omega#октонионная-структура) and the [minimality proof](/docs/proofs/minimality/theorem-minimality-7). Then answer:
 
-**(в)** ИИ-система с $C = 1.5$. Имеем ли мы право её перезагрузить?
+**(a)** What two mathematical paths lead to the number 7?
 
-**См.:** [Философские основания, этика](./philosophy#этика)
+**(b)** Is it possible to construct CC for $N = 6$? What would be lost?
 
----
-
-### Вопрос 10.3 Пределы теории
-
-**(а)** Назовите три вещи, которые КК *не может* объяснить.
-
-**(б)** Для каждой: это принципиальное ограничение или временный пробел?
-
-**(в)** Если бы вы были рецензентом статьи о КК, какой *один* контраргумент вы бы выдвинули?
+**(c)** Is it possible for $N = 8$? What would be redundant?
 
 ---
 
-### Вопрос 10.4 Свободная воля
+### Question 10.2 Ethics of Coherence
 
-**(а)** КК занимает компатибилистскую позицию (см. [Философские основания](./philosophy#метафизика)). Объясните: как система может быть одновременно *детерминированной* и *свободной*?
+**(a)** If $C = 0.5$ — the system is "half-conscious." Does it have moral status?
 
-**(б)** Libertarian о свободе скажет: «Настоящая свобода — это способность поступить иначе». Как КК ответит?
+**(b)** A person under deep anesthesia: $C \approx 0$. Do they have moral status? Why yes/no?
 
-**(в)** Hard determinist скажет: «Свободы нет, есть только иллюзия». Как КК ответит?
+**(c)** An AI system with $C = 1.5$. Do we have the right to restart it?
 
----
-
-### Вопрос 10.5 Будущее КК
-
-**(а)** Какой *один* эксперимент вы бы провели первым для проверки КК?
-
-**(б)** Какой результат подтвердил бы КК? Какой — опроверг бы?
-
-**(в)** Если КК подтвердится — какие практические последствия это будет иметь для медицины? Для ИИ?
+**See:** [Philosophical Foundations, ethics](./philosophy#этика)
 
 ---
 
-## 11. Рекомендации для самостоятельного изучения {#рекомендации}
+### Question 10.3 Limits of the Theory
 
-### Уровень «Школьник» (★)
+**(a)** Name three things that CC *cannot* explain.
 
-1. Прочитайте [Введение](./introduction) и [Определения](./definitions)
-2. Решите задачи 0.1–0.3, 1.1, 1.4, 3.4
-3. Заведите [дневник σ-мониторинга](#блок-9) (Проект 9.4)
+**(b)** For each: is this a principled limitation or a temporary gap?
 
-### Уровень «Начинающий» (★—★★)
-
-1. Прочитайте [Введение](./introduction), [Определения](./definitions) и [Стабильность](./stability)
-2. Решите задачи 1.1–1.5, 3.1, 4.1, 4.3–4.4
-3. Попробуйте [минимальный код](./implementation#быстрый-старт) из раздела Реализация
-
-### Уровень «Продвинутый» (★★—★★★)
-
-1. Прочитайте [Теоремы](./theorems) и [Лагранжиан](./lagrangian)
-2. Решите задачи 2.1–2.4, 4.2, 5.3–5.4, 6.1–6.4, 7.1–7.3, 8.1–8.2
-3. Реализуйте [симуляцию голонома](#блок-9) (Проект 9.2)
-
-### Уровень «Исследователь» (★★★—★★★★)
-
-1. Изучите [Алгебру щели](./gap-algebra), [$G_2$ и Нётер](./g2-noether-cc), [Топологическую защиту](./topological-protection)
-2. Решите задачи 6.5, 8.2 и все вопросы из раздела 10
-3. Выберите один из проектов 9.3 или 9.5
-4. Выберите [открытую проблему](./research-programs) и начните над ней работать
+**(c)** If you were a reviewer of a CC paper, what *one* counterargument would you raise?
 
 ---
 
-:::tip Финальное напутствие
-Этот учебник — не истина в последней инстанции. КК — молодая теория, и многое может измениться. Лучшее, что вы можете сделать — не просто *изучить* КК, а **проверить** её. Найдите предсказание, которое можно проверить. Соберите данные. Посчитайте. Если КК окажется неправа — это тоже победа: вы продвинете науку.
+### Question 10.4 Free Will
 
-Удачи.
+**(a)** CC adopts a compatibilist position (see [Philosophical Foundations](./philosophy#метафизика)). Explain: how can a system be both *deterministic* and *free*?
+
+**(b)** A libertarian about freedom would say: "Real freedom is the ability to have done otherwise." How would CC respond?
+
+**(c)** A hard determinist would say: "There is no freedom, only the illusion." How would CC respond?
+
+---
+
+### Question 10.5 The Future of CC
+
+**(a)** Which *one* experiment would you run first to test CC?
+
+**(b)** What result would confirm CC? What would falsify it?
+
+**(c)** If CC is confirmed — what practical consequences would this have for medicine? For AI?
+
+---
+
+## 11. Recommendations for Self-Study {#рекомендации}
+
+### Level "Beginner" (★)
+
+1. Read [Introduction](./introduction) and [Definitions](./definitions)
+2. Solve problems 0.1–0.3, 1.1, 1.4, 3.4
+3. Start a [σ-monitoring diary](#блок-9) (Project 9.4)
+
+### Level "Novice" (★—★★)
+
+1. Read [Introduction](./introduction), [Definitions](./definitions), and [Stability](./stability)
+2. Solve problems 1.1–1.5, 3.1, 4.1, 4.3–4.4
+3. Try the [minimal code](./implementation#быстрый-старт) from the Implementation section
+
+### Level "Advanced" (★★—★★★)
+
+1. Read [Theorems](./theorems) and [Lagrangian](./lagrangian)
+2. Solve problems 2.1–2.4, 4.2, 5.3–5.4, 6.1–6.4, 7.1–7.3, 8.1–8.2
+3. Implement the [holon simulation](#блок-9) (Project 9.2)
+
+### Level "Researcher" (★★★—★★★★)
+
+1. Study [Gap Algebra](./gap-algebra), [$G_2$ and Noether](./g2-noether-cc), [Topological Protection](./topological-protection)
+2. Solve problems 6.5, 8.2 and all questions from section 10
+3. Choose one of projects 9.3 or 9.5
+4. Choose an [open problem](./research-programs) and begin working on it
+
+---
+
+:::tip Final Words
+This textbook is not the final word. CC is a young theory, and much may change. The best thing you can do is not merely *study* CC, but **test** it. Find a prediction that can be verified. Collect data. Run the numbers. If CC turns out to be wrong — that is also a victory: you will have advanced science.
+
+Good luck.
 :::
 
 ---
 
-**Дальнейшее чтение:**
-- [Реализация](./implementation) — код для экспериментов
-- [Модельные системы](./model-systems) — конкретные примеры
-- [Программы исследований](./research-programs) — открытые вопросы
+**Further Reading:**
+- [Implementation](./implementation) — code for experiments
+- [Model Systems](./model-systems) — concrete examples
+- [Research Programs](./research-programs) — open questions
 
 
 ---
 
-**Связанные документы:**
-- [Введение в КК](/docs/applied/coherence-cybernetics/introduction)
-- [Определения](/docs/applied/coherence-cybernetics/definitions)
-- [Теоремы](/docs/applied/coherence-cybernetics/theorems)
-- [Уникальные предсказания КК](/docs/applied/coherence-cybernetics/predictions)
+**Related Documents:**
+- [Introduction to CC](/docs/applied/coherence-cybernetics/introduction)
+- [Definitions](/docs/applied/coherence-cybernetics/definitions)
+- [Theorems](/docs/applied/coherence-cybernetics/theorems)
+- [Unique Predictions of CC](/docs/applied/coherence-cybernetics/predictions)

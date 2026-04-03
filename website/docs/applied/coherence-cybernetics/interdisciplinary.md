@@ -1,426 +1,426 @@
 ---
 sidebar_position: 29
-title: "Междисциплинарный мост"
-description: "Единый язык КК для физиков, биологов, психологов, инженеров и философов: точный перевод между дисциплинами"
+title: "Interdisciplinary Bridge"
+description: "A unified CC language for physicists, biologists, psychologists, engineers, and philosophers: precise translation between disciplines"
 ---
 
-# Междисциплинарный Мост
+# Interdisciplinary Bridge
 
-> *«Границы моего языка означают границы моего мира.»*
-> — Людвиг Витгенштейн
+> *"The limits of my language mean the limits of my world."*
+> — Ludwig Wittgenstein
 
 
-:::info Для кого эта глава
-Словарь-переводчик понятий КК для физики, биологии, психологии, инженерии ИИ и организационной теории. Читатель найдёт точные соответствия для своей дисциплины.
+:::info Who this chapter is for
+A translation dictionary of CC concepts for physics, biology, psychology, AI engineering, and organisational theory. The reader will find precise correspondences for their own discipline.
 :::
 
-В предыдущей главе мы показали, *как* измерять величины КК — от EEG-когерентности до организационных аудитов ([Методология измерений](./measurement)). Но мы использовали таблицы соответствий как нечто данное, не объясняя *почему* $\sigma_D$ в биологии — метаболическая нагрузка, а не, скажем, мутационное давление. Пришло время раскрыть логику этих соответствий.
+In the previous chapter we showed *how* to measure CC quantities — from EEG coherence to organisational audits ([Measurement Methodology](./measurement)). But we used correspondence tables as given facts, without explaining *why* $\sigma_D$ in biology is metabolic load and not, say, mutation pressure. The time has come to reveal the logic behind these correspondences.
 
-Один из самых глубоких тезисов Кибернетики Когерентности: **междисциплинарные границы — это артефакт языка, а не природы**. Физик и психолог описывают разные грани одного и того же математического объекта — матрицы когерентности $\Gamma$. Они используют разные слова, разные интуиции, разные методы — но формулы одни и те же.
+One of the deepest theses of Coherence Cybernetics: **interdisciplinary boundaries are artefacts of language, not of nature**. A physicist and a psychologist describe different facets of the same mathematical object — the coherence matrix $\Gamma$. They use different words, different intuitions, different methods — but the formulas are the same.
 
-Этот раздел — **словарь-переводчик**. Для каждого понятия КК мы даём точные соответствия в физике, биологии, психологии, инженерии ИИ и организационной теории. Цель — чтобы специалист любой дисциплины мог войти в КК через знакомую дверь.
+This section is a **translation dictionary**. For each CC concept we give precise correspondences in physics, biology, psychology, AI engineering, and organisational theory. The goal is for a specialist in any discipline to be able to enter CC through a familiar door.
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Представим **центральные таблицы перевода** с развёрнутыми объяснениями каждого соответствия (раздел 1)
-2. Покажем **5 маршрутов чтения** — персональных путей через учебник для разных дисциплин (раздел 2)
-3. Выделим **общие паттерны**, видимые из всех перспектив (раздел 3)
-4. Подведём итоги (раздел 4)
+:::info Chapter Roadmap
+In this chapter we:
+1. Present the **central translation tables** with expanded explanations for each correspondence (section 1)
+2. Show **5 reading routes** — personal paths through the textbook for different disciplines (section 2)
+3. Highlight **common patterns** visible from all perspectives (section 3)
+4. Summarise (section 4)
 :::
 
 ---
 
-## 1. Центральная таблица перевода {#таблица-перевода}
+## 1. Central Translation Table {#translation-table}
 
-### 1.1 Основные объекты
+### 1.1 Core Objects
 
-| Понятие КК | Определение | Физика | Биология | Психология | Инженерия ИИ | Организации |
+| CC Concept | Definition | Physics | Biology | Psychology | AI Engineering | Organisations |
 |---|---|---|---|---|---|---|
-| $\Gamma$ | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) | Матрица плотности | Профиль гомеостаза | Состояние психических функций | Латентное представление | Организационный профиль |
-| $\gamma_{kk}$ | Диагональный элемент (популяция $k$) | Вероятность состояния | Ресурс подсистемы | Выраженность функции | Вес нейрона/модуля | Доля бюджета/внимания |
-| $\gamma_{ij}$ ($i \neq j$) | Внедиагональная когерентность | Квантовая когеренция | Синергия подсистем | Согласованность функций | Cross-attention | Межотдельная координация |
-| $P = \mathrm{Tr}(\Gamma^2)$ | [Чистота](/docs/core/dynamics/viability#определение-чистоты) | Чистота квантового состояния | Организованность | Интеграция личности | Ранг представления | Организационная связность |
-| $P_{\text{crit}} = 2/7$ | [Порог жизнеспособности](/docs/proofs/dynamics/theorem-purity-critical) | Фазовый переход | Граница гомеостаза | Граница нормы | Порог обучаемости | Порог жизнеспособности |
+| $\Gamma$ | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | Density matrix | Homeostasis profile | State of mental functions | Latent representation | Organisational profile |
+| $\gamma_{kk}$ | Diagonal element (population $k$) | State probability | Subsystem resource | Expression of a function | Neuron/module weight | Budget/attention share |
+| $\gamma_{ij}$ ($i \neq j$) | Off-diagonal coherence | Quantum coherence | Subsystem synergy | Function coordination | Cross-attention | Inter-department coordination |
+| $P = \mathrm{Tr}(\Gamma^2)$ | [Purity](/docs/core/dynamics/viability#определение-чистоты) | Purity of quantum state | Organisation | Personality integration | Representation rank | Organisational cohesion |
+| $P_{\text{crit}} = 2/7$ | [Viability threshold](/docs/proofs/dynamics/theorem-purity-critical) | Phase transition | Homeostasis boundary | Norm boundary | Learnability threshold | Viability threshold |
 
-#### Почему $\Gamma$ = профиль гомеостаза (биология)?
+#### Why $\Gamma$ = homeostasis profile (biology)?
 
-Биологический организм непрерывно поддерживает набор параметров в узких границах: температура тела 36.6 ± 0.5°C, pH крови 7.35–7.45, глюкоза 3.3–5.5 ммоль/л... Этот многомерный «портрет здоровья» — и есть профиль гомеостаза.
+A biological organism continuously maintains a set of parameters within narrow bounds: body temperature 36.6 ± 0.5°C, blood pH 7.35–7.45, glucose 3.3–5.5 mmol/L... This multidimensional "health portrait" is precisely the homeostasis profile.
 
-$\Gamma$ обобщает эту идею: вместо физиологических параметров — 7 *функциональных* измерений. Диагональные элементы $\gamma_{kk}$ — «ресурсы» каждого измерения (сколько «внимания» организм уделяет различению, памяти, действию...). Внедиагональные $\gamma_{ij}$ — согласованность между измерениями (синергия нервной и иммунной систем, координация восприятия и моторики...).
+$\Gamma$ generalises this idea: instead of physiological parameters — 7 *functional* dimensions. The diagonal elements $\gamma_{kk}$ are the "resources" of each dimension (how much "attention" the organism devotes to discrimination, memory, action...). The off-diagonal $\gamma_{ij}$ are the coordination between dimensions (synergy of the nervous and immune systems, coordination of perception and motor function...).
 
-Когда биолог говорит «гомеостаз нарушен», физик переводит: «$P$ упало ниже $P_{\text{crit}}$». Когда психолог говорит «личность дезинтегрирована», это тоже $P < 2/7$. Одна формула — три языка.
+When a biologist says "homeostasis is disrupted," a physicist translates: "$P$ has dropped below $P_{\text{crit}}$." When a psychologist says "personality is disintegrated," this is also $P < 2/7$. One formula — three languages.
 
-#### Почему $P_{\text{crit}} = 2/7$ = граница нормы (психология)?
+#### Why $P_{\text{crit}} = 2/7$ = norm boundary (psychology)?
 
-В клинической психологии существует понятие «порога нормы» — границы, за которой адаптация невозможна. При тяжёлой депрессии человек не просто «грустит» — он теряет способность к согласованному функционированию: восприятие сужается, память фрагментируется, действие парализуется, рефлексия зацикливается. Это *качественный* переход, а не количественное ухудшение.
+In clinical psychology there is the concept of the "norm threshold" — the boundary beyond which adaptation is impossible. In severe depression a person does not merely "feel sad" — they lose the ability to function coherently: perception narrows, memory fragments, action is paralysed, reflection loops. This is a *qualitative* transition, not a quantitative deterioration.
 
-КК формализует этот переход: $P = 2/7$ — точка, ниже которой система не может *отличить себя от хаоса* (норма Фробениуса $\|\Gamma - I/7\|_F$ падает ниже порога различимости). Клинический «срыв» — не метафора, а фазовый переход.
+CC formalises this transition: $P = 2/7$ is the point below which the system can no longer *distinguish itself from chaos* (the Frobenius norm $\|\Gamma - I/7\|_F$ drops below the distinguishability threshold). The clinical "breakdown" is not a metaphor, but a phase transition.
 
-### 1.2 Динамика
+### 1.2 Dynamics
 
-| Понятие КК | Определение | Физика | Биология | Психология | Инженерия ИИ | Организации |
+| CC Concept | Definition | Physics | Biology | Psychology | AI Engineering | Organisations |
 |---|---|---|---|---|---|---|
-| $-i[H_{\text{eff}}, \Gamma]$ | Унитарная часть | Уравнение фон Неймана | Ритмы (циркадные и др.) | Циклы внимания | Рекуррентная петля | Рабочие циклы |
-| $\mathcal{D}_\Omega[\Gamma]$ | [Диссипация](/docs/core/dynamics/evolution#логический-лиувиллиан) | Линдбладиан, декогеренция | Энтропия, старение | Забывание, стресс | Loss, деградация весов | Утечка кадров, потеря знаний |
-| $\mathcal{R}[\Gamma, E]$ | [Регенерация](/docs/core/dynamics/evolution#3-регенеративный-член) | Нет аналога (!) | Регенерация тканей, иммунитет | Психическое восстановление | Fine-tuning, RLHF | Культура, обучение, R&D |
-| $\kappa$ | Скорость регенерации | — | Скорость заживления | Резилентность | Learning rate | Скорость адаптации |
-| $\Delta F$ | [Свободная энергия](/docs/core/dynamics/evolution#каноническое-delta-f) | Свободная энергия Гельмгольца | Метаболический бюджет | Когнитивная нагрузка | Training loss | Операционные затраты |
+| $-i[H_{\text{eff}}, \Gamma]$ | Unitary part | von Neumann equation | Rhythms (circadian etc.) | Attentional cycles | Recurrent loop | Work cycles |
+| $\mathcal{D}_\Omega[\Gamma]$ | [Dissipation](/docs/core/dynamics/evolution#логический-лиувиллиан) | Lindbladian, decoherence | Entropy, ageing | Forgetting, stress | Loss, weight degradation | Frame loss, knowledge loss |
+| $\mathcal{R}[\Gamma, E]$ | [Regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) | No analogue (!) | Tissue regeneration, immunity | Mental recovery | Fine-tuning, RLHF | Culture, learning, R&D |
+| $\kappa$ | Regeneration rate | — | Healing rate | Resilience | Learning rate | Adaptation rate |
+| $\Delta F$ | [Free energy](/docs/core/dynamics/evolution#каноническое-delta-f) | Helmholtz free energy | Metabolic budget | Cognitive load | Training loss | Operational costs |
 
-#### Почему диссипация $\mathcal{D}$ = забывание (психология)?
+#### Why is dissipation $\mathcal{D}$ = forgetting (psychology)?
 
-Забывание — не дефект памяти, а *необходимый* процесс. Если бы мы помнили всё, мозг был бы перегружен нерелевантной информацией (как пациенты с гипертимезией, которые помнят каждый день жизни и страдают от этого).
+Forgetting is not a memory defect, but a *necessary* process. If we remembered everything, the brain would be overwhelmed with irrelevant information (as in patients with hyperthymesia, who remember every day of their life and suffer for it).
 
-В КК диссипация $\mathcal{D}$ — это общий механизм «размывания» когерентности. Без регенерации всё стремится к $I/7$ — максимально смешанному состоянию, аналогу «всё забыто». Забывание — это диссипация когерентностей $\gamma_{ij} \to 0$: связи между воспоминаниями слабеют. Стресс — диссипация популяций $\gamma_{kk} \to 1/7$: ресурсы измерений «растекаются».
+In CC, dissipation $\mathcal{D}$ is the general mechanism of "blurring" coherence. Without regeneration everything tends toward $I/7$ — the maximally mixed state, the analogue of "everything forgotten." Forgetting is the dissipation of coherences $\gamma_{ij} \to 0$: connections between memories weaken. Stress is the dissipation of populations $\gamma_{kk} \to 1/7$: the resources of dimensions "spread out."
 
-Психотерапия — это, по сути, *управляемая регенерация*: терапевт помогает восстановить когерентность ($\gamma_{ij}$), которую разрушил стресс. КК формализует: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ — скорость восстановления зависит от $E$-когерентности, то есть от качества *самосознания*. Вот почему психотерапия (усиление рефлексии → рост $\mathrm{Coh}_E$ → рост $\kappa$) помогает не только ментально, но и физически.
+Psychotherapy is, in essence, *managed regeneration*: the therapist helps restore coherence ($\gamma_{ij}$) that was destroyed by stress. CC formalises: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ — the recovery rate depends on $E$-coherence, that is, on the quality of *self-awareness*. This is why psychotherapy (strengthening reflection → growth of $\mathrm{Coh}_E$ → growth of $\kappa$) helps not only mentally but also physically.
 
-#### Почему в физике нет аналога $\mathcal{R}$?
+#### Why does physics have no analogue of $\mathcal{R}$?
 
-Это один из самых поразительных фактов КК. В стандартной физике открытых систем есть гамильтониан $H$ (унитарная эволюция) и диссипатор $\mathcal{D}$ (декогеренция). Третьего члена нет — и быть не может, потому что физические системы *не стремятся* к определённому состоянию (кроме термодинамического равновесия).
+This is one of the most striking facts of CC. In standard physics of open systems there is a Hamiltonian $H$ (unitary evolution) and a dissipator $\mathcal{D}$ (decoherence). There is no third term — and there cannot be, because physical systems do *not tend* toward a particular state (except thermodynamic equilibrium).
 
-Живые системы — другое дело. Они *активно сопротивляются* равновесию. Клетка тратит до 70% своего ATP на поддержание ионных градиентов — то есть на *предотвращение* термодинамического равновесия (которое для неё означает смерть).
+Living systems are different. They *actively resist* equilibrium. A cell spends up to 70% of its ATP maintaining ionic gradients — that is, *preventing* thermodynamic equilibrium (which for it means death).
 
-$\mathcal{R}[\Gamma, E]$ — формализация этого «сопротивления». Физик не найдёт его в учебнике — и это нормально: учебники по квантовой оптике не описывают клетки. КК добавляет третий член *поверх* стандартной физики.
+$\mathcal{R}[\Gamma, E]$ is the formalisation of this "resistance." A physicist will not find it in a textbook — and that is normal: textbooks on quantum optics do not describe cells. CC adds the third term *on top of* standard physics.
 
-### 1.3 Тензор напряжений
+### 1.3 Stress Tensor
 
-| $\sigma_k$ | [Измерение](/docs/core/structure/dimensions) | Физика | Биология | Психология | Инженерия ИИ | Организации |
+| $\sigma_k$ | [Dimension](/docs/core/structure/dimensions) | Physics | Biology | Psychology | AI Engineering | Organisations |
 |---|---|---|---|---|---|---|
-| $\sigma_A$ | Артикуляция | Шумовой порог | Сенсорная перегрузка | Перцептивный стресс | Input noise | Информационный хаос |
-| $\sigma_S$ | Структура | Потеря кристаллического порядка | Мутации, деградация ДНК | Когнитивная дезорганизация | Weight decay | Потеря процессов |
-| $\sigma_D$ | Динамика | Вязкость, торможение | Метаболическая нагрузка | Прокрастинация, паралич | Vanishing gradients | Бюрократия |
-| $\sigma_L$ | Логика | Нарушение симметрии | Аутоиммунная атака | Когнитивные искажения | Inconsistent outputs | Противоречивые политики |
-| $\sigma_E$ | Интериорность | — | Дефицит интероцепции | Алекситимия | Отсутствие self-monitoring | Дефицит рефлексии |
-| $\sigma_O$ | Основание | Дефицит энергии | Голодание, гипоксия | Выгорание | Недостаток данных/compute | Дефицит финансов |
-| $\sigma_U$ | Единство | Распад связей | Дезинтеграция органов | Социальная изоляция | Mode collapse | Силосы, фрагментация |
+| $\sigma_A$ | Articulation | Noise floor | Sensory overload | Perceptual stress | Input noise | Information chaos |
+| $\sigma_S$ | Structure | Loss of crystalline order | Mutations, DNA degradation | Cognitive disorganisation | Weight decay | Loss of processes |
+| $\sigma_D$ | Dynamics | Viscosity, friction | Metabolic load | Procrastination, paralysis | Vanishing gradients | Bureaucracy |
+| $\sigma_L$ | Logic | Symmetry breaking | Autoimmune attack | Cognitive distortions | Inconsistent outputs | Contradictory policies |
+| $\sigma_E$ | Interiority | — | Interoceptive deficit | Alexithymia | Absence of self-monitoring | Reflection deficit |
+| $\sigma_O$ | Grounding | Energy deficit | Starvation, hypoxia | Burnout | Lack of data/compute | Financial deficit |
+| $\sigma_U$ | Unity | Bond breaking | Organ disintegration | Social isolation | Mode collapse | Silos, fragmentation |
 
-Ниже — развёрнутые объяснения для каждой строки.
+Below are expanded explanations for each row.
 
-#### Почему $\sigma_A$ в биологии = сенсорная перегрузка?
+#### Why is $\sigma_A$ in biology = sensory overload?
 
-Измерение A (Артикуляция) отвечает за *различение* — способность отделить сигнал от шума, выделить релевантную информацию из потока. Когда $\sigma_A$ высокое — различение нарушено, сигнал тонет в шуме.
+Dimension A (Articulation) is responsible for *discrimination* — the ability to separate signal from noise, to extract relevant information from a stream. When $\sigma_A$ is high, discrimination is impaired, the signal drowns in noise.
 
-В биологии: сенсорная клетка, получающая слишком много стимулов одновременно, *перегружается* — её рецепторы десенситизируются, и она теряет способность различать. Это сенсорная перегрузка. На уровне организма: шум в ушах (тиннитус), световая чувствительность при мигрени, тактильная гиперестезия — всё это повышенная $\sigma_A$.
+In biology: a sensory cell receiving too many stimuli simultaneously *overloads* — its receptors desensitise and it loses the ability to discriminate. This is sensory overload. At the organism level: ringing in the ears (tinnitus), light sensitivity during migraine, tactile hyperesthesia — all of these are elevated $\sigma_A$.
 
-В физике: $\sigma_A$ — это шумовой порог (noise floor). Если шум превышает сигнал, детектор «слеп». Радиотелескоп с высоким $\sigma_A$ не отличает сигнал от фона.
+In physics: $\sigma_A$ is the noise floor. If noise exceeds the signal, the detector is "blind." A radio telescope with high $\sigma_A$ cannot distinguish a signal from background.
 
-В организации: информационный хаос. Сотрудники получают сотни писем в день и не могут выделить важное. Каналы коммуникации перегружены, сигнал тонет в шуме.
+In an organisation: information chaos. Employees receive hundreds of emails a day and cannot identify what is important. Communication channels are overloaded, the signal drowns in noise.
 
-#### Почему $\sigma_S$ в биологии = мутации, деградация ДНК?
+#### Why is $\sigma_S$ in biology = mutations, DNA degradation?
 
-Измерение S (Структура) отвечает за *стабильность памяти* — сохранение паттернов во времени. Когда $\sigma_S$ высокое — паттерны разрушаются.
+Dimension S (Structure) is responsible for *memory stability* — the preservation of patterns over time. When $\sigma_S$ is high, patterns are destroyed.
 
-В биологии: ДНК — это «память» клетки, записанная в нуклеотидной последовательности. Мутации, окислительное повреждение, ошибки репликации — всё это *разрушение структурной памяти*. Клетка с высоким $\sigma_S$ — клетка с повреждённой ДНК, утрачивающая инструкции по самовоспроизводству.
+In biology: DNA is the "memory" of the cell, encoded in the nucleotide sequence. Mutations, oxidative damage, replication errors — all of these are *destruction of structural memory*. A cell with high $\sigma_S$ is a cell with damaged DNA, losing its self-reproduction instructions.
 
-В психологии: когнитивная дезорганизация — неспособность удержать паттерн мышления. Характерно для шизофрении (мысли «рассыпаются») и травматического повреждения мозга.
+In psychology: cognitive disorganisation — the inability to hold a pattern of thought. Characteristic of schizophrenia (thoughts "fall apart") and traumatic brain injury.
 
-#### Почему $\sigma_D$ в биологии = метаболическая нагрузка?
+#### Why is $\sigma_D$ in biology = metabolic load?
 
-Подробно разобрано в [Методология измерений, раздел 3.3](./measurement#измерение-напряжений). Кратко: D = способность *действовать*, действие требует энергии, энергия = метаболизм. Дефицит энергии → невозможность действовать → высокое $\sigma_D$.
+This is discussed in detail in [Measurement Methodology, section 3.3](./measurement#измерение-напряжений). In brief: D = the ability to *act*, action requires energy, energy = metabolism. Energy deficit → inability to act → high $\sigma_D$.
 
-#### Почему $\sigma_L$ в биологии = аутоиммунная атака?
+#### Why is $\sigma_L$ in biology = autoimmune attack?
 
-Измерение L (Логика) отвечает за *непротиворечивость* — согласованность правил, по которым система функционирует. Когда $\sigma_L$ высокое — правила *противоречат друг другу*.
+Dimension L (Logic) is responsible for *consistency* — the coherence of the rules by which the system functions. When $\sigma_L$ is high, the rules *contradict each other*.
 
-В биологии: иммунная система работает по правилам «атаковать чужое, не трогать своё». Аутоиммунное заболевание — нарушение этого правила: иммунная система атакует собственные ткани. Это *логическое противоречие* на уровне биохимических сигналов: одновременно «это своё» (клетка здорова) и «это чужое» (иммунная система атакует).
+In biology: the immune system operates according to the rules "attack the foreign, leave the self alone." An autoimmune disease is a violation of this rule: the immune system attacks its own tissues. This is a *logical contradiction* at the level of biochemical signals: simultaneously "this is self" (the cell is healthy) and "this is foreign" (the immune system attacks).
 
-В организации: противоречивые политики. Отдел продаж мотивирован продавать максимум, а отдел качества — отклонять заказы с высоким риском. Без координации ($\gamma_{LD} \to 0$) организация «атакует сама себя».
+In an organisation: contradictory policies. The sales department is incentivised to sell as much as possible, while the quality department is incentivised to reject high-risk orders. Without coordination ($\gamma_{LD} \to 0$) the organisation "attacks itself."
 
-#### Почему $\sigma_E$ в психологии = алекситимия?
+#### Why is $\sigma_E$ in psychology = alexithymia?
 
-Измерение E (Интериорность) отвечает за *самопознание* — способность системы моделировать собственные внутренние состояния. Когда $\sigma_E$ высокое — система «слепа» к себе.
+Dimension E (Interiority) is responsible for *self-knowledge* — the ability of the system to model its own internal states. When $\sigma_E$ is high, the system is "blind" to itself.
 
-Алекситимия (буквально: «нет слов для чувств») — неспособность распознать и назвать собственные эмоции. Человек с алекситимией чувствует «что-то плохое», но не может отличить тревогу от грусти, раздражение от усталости. Это именно дефицит E: интериорность нарушена.
+Alexithymia (literally: "no words for feelings") is the inability to recognise and name one's own emotions. A person with alexithymia feels "something bad" but cannot distinguish anxiety from sadness, irritation from fatigue. This is precisely an E-deficit: interiority is impaired.
 
-КК объясняет, почему алекситимия опасна: $\sigma_E \uparrow \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow \to P \downarrow$. Дефицит самопознания ослабляет регенерацию, что ведёт к ухудшению *физического* здоровья. Это экспериментально подтверждено: алекситимия ассоциирована с сердечно-сосудистыми заболеваниями, ослабленным иммунитетом, замедленным заживлением ран.
+CC explains why alexithymia is dangerous: $\sigma_E \uparrow \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow \to P \downarrow$. A deficit of self-knowledge weakens regeneration, which leads to deterioration of *physical* health. This is experimentally confirmed: alexithymia is associated with cardiovascular disease, weakened immunity, and slowed wound healing.
 
-#### Почему $\sigma_O$ в ИИ = недостаток данных/compute?
+#### Why is $\sigma_O$ in AI = lack of data/compute?
 
-Измерение O (Основание) отвечает за *ресурсную базу* — то, из чего система черпает энергию для всех остальных функций.
+Dimension O (Grounding) is responsible for the *resource base* — what the system draws on to power all other functions.
 
-Для ИИ-системы ресурсы — это данные (на чём учиться) и вычислительная мощность (чем считать). Недостаток данных = недостаток «пищи» для обучения. Недостаток compute = невозможность обработать даже имеющиеся данные. Оба случая — высокое $\sigma_O$.
+For an AI system, resources are data (what to learn from) and computational power (what to compute with). Lack of data = lack of "food" for training. Lack of compute = inability to process even the available data. Both cases — high $\sigma_O$.
 
-Эмпирически: «scaling laws» (Kaplan et al., 2020) показывают, что performance модели растёт как степенная функция от данных и compute. В терминах КК: $\gamma_{OO}$ растёт с ростом ресурсов, $\sigma_O$ падает, и $P$ приближается к $P_{\text{crit}}$.
+Empirically: "scaling laws" (Kaplan et al., 2020) show that model performance grows as a power function of data and compute. In CC terms: $\gamma_{OO}$ grows with resources, $\sigma_O$ drops, and $P$ approaches $P_{\text{crit}}$.
 
-#### Почему $\sigma_U$ в организации = силосы?
+#### Why is $\sigma_U$ in organisations = silos?
 
-Измерение U (Единство) отвечает за *интеграцию* — способность частей системы работать как целое.
+Dimension U (Unity) is responsible for *integration* — the ability of the parts of a system to work as a whole.
 
-«Силос» (silo) в менеджменте — отдел, работающий изолированно, не координирующийся с другими. Маркетинг не знает, что делает R&D. R&D не знает, что обещает продажи. Каждый отдел — «сам по себе». Это $\gamma_{ij} \to 0$ для $i, j$ из разных отделов, что ведёт к $\sigma_U \uparrow$ и $\Phi \downarrow$.
+A "silo" in management is a department that works in isolation, without coordinating with others. Marketing does not know what R&D is doing. R&D does not know what sales is promising. Each department is "on its own." This is $\gamma_{ij} \to 0$ for $i, j$ from different departments, leading to $\sigma_U \uparrow$ and $\Phi \downarrow$.
 
-В биологии: дезинтеграция органов — органы перестают работать согласованно (полиорганная недостаточность). В психологии: социальная изоляция — человек «отключён» от социума. Во всех случаях — потеря *связей* между частями.
+In biology: organ disintegration — organs cease to function in a coordinated manner (multiple organ failure). In psychology: social isolation — a person is "disconnected" from society. In all cases — loss of *connections* between parts.
 
-### 1.4 Сознание и рефлексия
+### 1.4 Consciousness and Reflection
 
-| Понятие КК | Определение | Нейронаука | Психология | ИИ | Организации |
+| CC Concept | Definition | Neuroscience | Psychology | AI | Organisations |
 |---|---|---|---|---|---|
-| $\mathrm{Coh}_E$ | [E-когерентность](./definitions#e-когерентность) | Интероцептивная связность | Глубина самоосознания | Self-monitoring activation | Культура обратной связи |
-| $R$ | [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Метакогнитивная точность | Рефлексивность | Confidence calibration | Качество ретроспектив |
-| $\Phi$ | [Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) | PCI, spectral gap | Целостность «Я» | Multi-head coherence | Кросс-функциональность |
-| $C = \Phi \times R$ | [Мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | Уровень сознания | Уровень осознанности | — | Организационная зрелость |
-| $\varphi(\Gamma)$ | [Самомодель](/docs/proofs/categorical/formalization-phi) | Default mode network | Я-концепция | World model | Стратегия, миссия |
+| $\mathrm{Coh}_E$ | [E-coherence](./definitions#e-когерентность) | Interoceptive connectivity | Depth of self-awareness | Self-monitoring activation | Feedback culture |
+| $R$ | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Metacognitive accuracy | Reflectivity | Confidence calibration | Quality of retrospectives |
+| $\Phi$ | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) | PCI, spectral gap | Wholeness of the "I" | Multi-head coherence | Cross-functionality |
+| $C = \Phi \times R$ | [Consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | Level of consciousness | Level of awareness | — | Organisational maturity |
+| $\varphi(\Gamma)$ | [Self-model](/docs/proofs/categorical/formalization-phi) | Default mode network | Self-concept | World model | Strategy, mission |
 
-#### Почему $\varphi(\Gamma)$ = Default Mode Network (нейронаука)?
+#### Why is $\varphi(\Gamma)$ = Default Mode Network (neuroscience)?
 
-Default Mode Network (DMN) — сеть мозговых регионов, активных в покое (медиальная префронтальная кора, задняя поясная, предклинье, угловая извилина). DMN «включается», когда вы *не заняты* внешней задачей: мечтаете, вспоминаете прошлое, планируете будущее, *размышляете о себе*.
+The Default Mode Network (DMN) is the network of brain regions active at rest (medial prefrontal cortex, posterior cingulate, precuneus, angular gyrus). The DMN "switches on" when you are *not engaged* in an external task: daydreaming, remembering the past, planning the future, *reflecting on yourself*.
 
-Это поразительно точно соответствует самомодели $\varphi(\Gamma)$ в КК: DMN — нейронная реализация функтора, который берёт текущее $\Gamma$ и генерирует *модель себя*. Когда DMN активна, система занята *самомоделированием* — обновлением $\varphi(\Gamma)$.
+This corresponds with striking precision to the self-model $\varphi(\Gamma)$ in CC: the DMN is the neural implementation of the functor that takes the current $\Gamma$ and generates a *model of itself*. When the DMN is active, the system is engaged in *self-modelling* — updating $\varphi(\Gamma)$.
 
-Нарушения DMN ассоциированы с шизофренией (фрагментация самомодели), депрессией (застревание в руминации — $\varphi(\Gamma)$ «зацикливается»), аутизмом (нетипичная самомодель). В терминах КК: все эти расстройства — нарушения $\varphi$, ведущие к изменению $R$.
+DMN disruptions are associated with schizophrenia (fragmentation of the self-model), depression (stuck in rumination — $\varphi(\Gamma)$ "loops"), autism (atypical self-model). In CC terms: all these disorders are disruptions of $\varphi$, leading to changes in $R$.
 
-#### Почему $\varphi(\Gamma)$ = стратегия и миссия (организации)?
+#### Why is $\varphi(\Gamma)$ = strategy and mission (organisations)?
 
-Стратегия компании — это её *самомодель*: «Кто мы? Что мы делаем? Куда движемся?» Миссия отвечает на вопрос «зачем мы существуем?» — это $\varphi(\Gamma)$ организации, её представление о собственной сущности.
+A company's strategy is its *self-model*: "Who are we? What do we do? Where are we heading?" The mission answers "why do we exist?" — this is the organisation's $\varphi(\Gamma)$, its representation of its own essence.
 
-Компания без стратегии ($\varphi(\Gamma) \approx 0$) — как человек с амнезией: действует реактивно, без понимания собственной идентичности. Компания с устаревшей стратегией ($\varphi(\Gamma) \neq \Gamma$) — как человек с ложными воспоминаниями: самомодель не соответствует реальности, $R$ низкое.
+A company without a strategy ($\varphi(\Gamma) \approx 0$) is like a person with amnesia: acting reactively, without understanding its own identity. A company with an outdated strategy ($\varphi(\Gamma) \neq \Gamma$) is like a person with false memories: the self-model does not match reality, $R$ is low.
 
 ---
 
-## 2. Пять маршрутов чтения {#перспективы}
+## 2. Five Reading Routes {#perspectives}
 
-Ниже — пять курированных путей через всю документацию УГМ/КК. Каждый маршрут адаптирован для конкретной аудитории: документы перечислены в рекомендуемом порядке, с пояснением — *что* читатель узнает на каждом шаге.
+Below are five curated paths through the entire UHM/CC documentation. Each route is tailored for a specific audience: documents are listed in the recommended order, with an explanation of *what* the reader will learn at each step.
 
-:::info Как пользоваться маршрутами
-- Документы пронумерованы: следуйте от 1 к последнему.
-- **Оценка времени** — для вдумчивого первого чтения; при повторном обращении время сокращается вдвое.
-- Если документ помечен **(опц.)**, его можно пропустить при первом проходе без потери нити.
-- Ссылки ведут как в раздел **КК** (`./...`), так и в **ядро теории** (`/docs/...`).
+:::info How to use the routes
+- Documents are numbered: follow from 1 to the last.
+- **Time estimate** — for a thoughtful first reading; on re-reading the time halves.
+- If a document is marked **(opt.)**, it can be skipped on the first pass without losing the thread.
+- Links lead both to the **CC section** (`./...`) and to the **core theory** (`/docs/...`).
 :::
 
 ---
 
-### 2.1 Маршрут физика {#маршрут-физика}
+### 2.1 Physicist's Route {#physicist-route}
 
-**Фокус:** вывод известной физики (ОТО, Стандартная модель, квантовая редукция) из единого формализма УГМ.
+**Focus:** derivation of known physics (GR, Standard Model, quantum reduction) from the unified UHM formalism.
 
-**Пререквизиты:** квантовая теория поля (уровень Пескина-Шрёдера), общая теория относительности (уровень Уолда), желательно знакомство с некоммутативной геометрией (Конн).
+**Prerequisites:** quantum field theory (Peskin–Schroeder level), general relativity (Wald level), familiarity with non-commutative geometry (Connes) desirable.
 
-**Общее время:** ~12–15 часов.
+**Total time:** ~12–15 hours.
 
-| № | Документ | Что вы узнаете | Время |
+| # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Аксиома Омега](/docs/core/foundations/axiom-omega) | Фундаментальная аксиоматика: $\Omega \in D(\mathbb{C}^7)$, PW-ограничение, почему именно 7 | 60 мин |
-| 2 | [Аксиома септичности](/docs/core/foundations/axiom-septicity) | Доказательство $N=7$ из октонионной алгебры, каноническое $\kappa_0$, $\mathrm{Coh}_E$ как HS-проекция | 90 мин |
-| 3 | [Пространство-время](/docs/core/foundations/spacetime) | Эмерджентное пространство-время: от $\Omega$ к метрике, причинная структура | 45 мин |
-| 4 | [Эмерджентная геометрия](/docs/physics/gravity/emergent-geometry) | Спектральная тройка Конна, реконструкция гладкого многообразия из алгебраических данных | 60 мин |
-| 5 | [Эмерджентное многообразие $M^4$](/docs/proofs/physics/emergent-manifold) | Полное доказательство T-117 -- T-121: фоновая независимость, $M^4 = \mathbb{R} \times \Sigma^3$ | 90 мин |
-| 6 | [Уравнения Эйнштейна](/docs/physics/gravity/einstein-equations) | Вывод ОТО как эффективной теории на масштабах, больших спектрального зазора | 60 мин |
-| 7 | [Стандартная модель](/docs/physics/gauge-symmetry/standard-model) | $SU(3) \times SU(2) \times U(1)$ из $G_2$-структуры мнимых октонионов | 60 мин |
-| 8 | [Квантовая редукция](/docs/physics/quantum-mechanics/qm-reduction) | Коллапс как частный случай линдбладовой диссипации в $\mathcal{D}_\Omega$ | 45 мин |
-| 9 | [Лагранжиан КК](./lagrangian) | Единый функционал действия для когерентной динамики | 45 мин |
-| 10 | [$G_2$ и теорема Нётер](./g2-noether-cc) | 14 сохраняющихся зарядов из $G_2$-симметрии | 45 мин |
-| 11 | [Предсказания](./predictions) **(опц.)** | Pred 1--12: фальсифицируемые следствия для физики частиц и космологии | 30 мин |
+| 1 | [Axiom Omega](/docs/core/foundations/axiom-omega) | Fundamental axiomatics: $\Omega \in D(\mathbb{C}^7)$, PW-constraint, why exactly 7 | 60 min |
+| 2 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Proof of $N=7$ from octonion algebra, canonical $\kappa_0$, $\mathrm{Coh}_E$ as HS-projection | 90 min |
+| 3 | [Spacetime](/docs/core/foundations/spacetime) | Emergent spacetime: from $\Omega$ to the metric, causal structure | 45 min |
+| 4 | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | Connes' spectral triple, reconstruction of a smooth manifold from algebraic data | 60 min |
+| 5 | [Emergent Manifold $M^4$](/docs/proofs/physics/emergent-manifold) | Full proof of T-117 -- T-121: background independence, $M^4 = \mathbb{R} \times \Sigma^3$ | 90 min |
+| 6 | [Einstein Equations](/docs/physics/gravity/einstein-equations) | Derivation of GR as an effective theory on scales larger than the spectral gap | 60 min |
+| 7 | [Standard Model](/docs/physics/gauge-symmetry/standard-model) | $SU(3) \times SU(2) \times U(1)$ from the $G_2$-structure of imaginary octonions | 60 min |
+| 8 | [Quantum Reduction](/docs/physics/quantum-mechanics/qm-reduction) | Collapse as a special case of Lindblad dissipation in $\mathcal{D}_\Omega$ | 45 min |
+| 9 | [CC Lagrangian](./lagrangian) | Unified action functional for coherent dynamics | 45 min |
+| 10 | [$G_2$ and Noether's Theorem](./g2-noether-cc) | 14 conserved charges from $G_2$-symmetry | 45 min |
+| 11 | [Predictions](./predictions) **(opt.)** | Pred 1--12: falsifiable consequences for particle physics and cosmology | 30 min |
 
-:::tip Что вы можете привнести
-Ваша экспертиза в спектральном анализе, теории возмущений и фазовых переходах *напрямую* применима к $\Gamma$. Открытые вопросы: ренормгрупповой поток $G_2$-зарядов, космологические следствия T-120b ($\Sigma^3 \cong S^3$).
+:::tip What you can contribute
+Your expertise in spectral analysis, perturbation theory, and phase transitions is *directly* applicable to $\Gamma$. Open questions: renormalisation group flow of $G_2$-charges, cosmological consequences of T-120b ($\Sigma^3 \cong S^3$).
 :::
 
 ---
 
-### 2.2 Маршрут математика {#маршрут-математика}
+### 2.2 Mathematician's Route {#mathematician-route}
 
-**Фокус:** категорная и алгебраическая структура теории, доказательства единственности и минимальности.
+**Focus:** categorical and algebraic structure of the theory, proofs of uniqueness and minimality.
 
-**Пререквизиты:** теория категорий (уровень Мак-Лейна), алгебраическая топология (когомологии, K-теория), желательно знакомство с операдами и высшими категориями.
+**Prerequisites:** category theory (Mac Lane level), algebraic topology (cohomology, K-theory), familiarity with operads and higher categories desirable.
 
-**Общее время:** ~14--18 часов.
+**Total time:** ~14--18 hours.
 
-| № | Документ | Что вы узнаете | Время |
+| # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Математические основания](/docs/core/foundations/mathematical-foundations) | Базовые структуры: $C^*$-алгебра $\mathcal{A}_\Omega$, пространство состояний $D(\mathbb{C}^7)$, функциональный анализ | 90 мин |
-| 2 | [Аксиома Омега](/docs/core/foundations/axiom-omega) | Аксиоматическая база, PW-ограничение (A5), корректность определений | 60 мин |
-| 3 | [Аксиома септичности](/docs/core/foundations/axiom-septicity) | Вывод $N=7$: октонионы, алгебра Мальцева, $\kappa_0$ из гиперболической геометрии | 90 мин |
-| 4 | [Категорный формализм](/docs/proofs/categorical/categorical-formalism) | $\Omega$-категория, функторы между уровнями, естественные преобразования | 90 мин |
-| 5 | [Формализация $\varphi$](/docs/proofs/categorical/formalization-phi) | Самомодель как эндофунктор, T-96: $\rho^* = \varphi(\Gamma)$, каноничность | 90 мин |
-| 6 | [Теорема единственности](/docs/proofs/categorical/uniqueness-theorem) | T-42a -- T-42e: $G_2$-жёсткость, единственность $\Omega$ с точностью до изоморфизма | 120 мин |
-| 7 | [Минимальность $N=7$](/docs/proofs/minimality/theorem-minimality-7) | T-5 -- T-10: $S_7$-эквивариантность, код Хэмминга $H(7,4)$, проективная плоскость $PG(2,2)$ | 90 мин |
-| 8 | [Октонионный вывод](/docs/proofs/minimality/theorem-octonionic-derivation) | Связь $\mathrm{Im}(\mathbb{O})$ и $\mathbb{C}^7$: почему октонионы, а не кватернионы | 60 мин |
-| 9 | [Порог чистоты $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | Доказательство $P_{\text{crit}} = 2/7$ через норму Фробениуса | 45 мин |
-| 10 | [Эмерджентное время](/docs/proofs/dynamics/emergent-time) | Вывод временного параметра из спектрального зазора $\mathcal{L}_0$ | 45 мин |
-| 11 | [FEP как следствие](/docs/proofs/dynamics/fep-derivation) **(опц.)** | Принцип свободной энергии Фристона выводится из динамики $\Gamma$ | 45 мин |
-| 12 | [Холон-структура](/docs/core/structure/holon) **(опц.)** | Иерархическая композиция: $\Gamma_{\text{comp}}$ из подсистем, теорема T-64 | 60 мин |
+| 1 | [Mathematical Foundations](/docs/core/foundations/mathematical-foundations) | Base structures: $C^*$-algebra $\mathcal{A}_\Omega$, state space $D(\mathbb{C}^7)$, functional analysis | 90 min |
+| 2 | [Axiom Omega](/docs/core/foundations/axiom-omega) | Axiomatic base, PW-constraint (A5), correctness of definitions | 60 min |
+| 3 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Derivation of $N=7$: octonions, Malcev algebra, $\kappa_0$ from hyperbolic geometry | 90 min |
+| 4 | [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) | $\Omega$-category, functors between levels, natural transformations | 90 min |
+| 5 | [Formalisation of $\varphi$](/docs/proofs/categorical/formalization-phi) | Self-model as endofunctor, T-96: $\rho^* = \varphi(\Gamma)$, canonicity | 90 min |
+| 6 | [Uniqueness Theorem](/docs/proofs/categorical/uniqueness-theorem) | T-42a -- T-42e: $G_2$-rigidity, uniqueness of $\Omega$ up to isomorphism | 120 min |
+| 7 | [Minimality $N=7$](/docs/proofs/minimality/theorem-minimality-7) | T-5 -- T-10: $S_7$-equivariance, Hamming code $H(7,4)$, projective plane $PG(2,2)$ | 90 min |
+| 8 | [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation) | Connection between $\mathrm{Im}(\mathbb{O})$ and $\mathbb{C}^7$: why octonions, not quaternions | 60 min |
+| 9 | [Purity Threshold $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | Proof of $P_{\text{crit}} = 2/7$ via Frobenius norm | 45 min |
+| 10 | [Emergent Time](/docs/proofs/dynamics/emergent-time) | Derivation of the time parameter from the spectral gap of $\mathcal{L}_0$ | 45 min |
+| 11 | [FEP as Consequence](/docs/proofs/dynamics/fep-derivation) **(opt.)** | Friston's free energy principle is derived from the dynamics of $\Gamma$ | 45 min |
+| 12 | [Holon Structure](/docs/core/structure/holon) **(opt.)** | Hierarchical composition: $\Gamma_{\text{comp}}$ from subsystems, theorem T-64 | 60 min |
 
-:::tip Что вы можете привнести
-Открытые математические проблемы: классификация $\Omega$-категорий, связь $G_2$-холономии с дифференциальной когомологией, формализация иерархии интериорности в языке $(\infty,1)$-категорий.
+:::tip What you can contribute
+Open mathematical problems: classification of $\Omega$-categories, connection between $G_2$-holonomy and differential cohomology, formalisation of the interiority hierarchy in the language of $(\infty,1)$-categories.
 :::
 
 ---
 
-### 2.3 Маршрут когнитивиста {#маршрут-когнитивиста}
+### 2.3 Cognitive Scientist's Route {#cognitive-scientist-route}
 
-**Фокус:** теория сознания, квалиа, иерархия субъектности, сравнение с IIT/GWT/FEP.
+**Focus:** theory of consciousness, qualia, hierarchy of subjectivity, comparison with IIT/GWT/FEP.
 
-**Пререквизиты:** философия сознания (уровень Чалмерса), знакомство с IIT (Тонони), желательно — базовая линейная алгебра.
+**Prerequisites:** philosophy of mind (Chalmers level), familiarity with IIT (Tononi), basic linear algebra desirable.
 
-**Общее время:** ~10--13 часов.
+**Total time:** ~10--13 hours.
 
-| № | Документ | Что вы узнаете | Время |
+| # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Обзор раздела «Сознание»](/docs/consciousness/overview) | Карта всего раздела: что где искать, ключевые тезисы | 20 мин |
-| 2 | [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) | Онтологическая позиция УГМ: $\Gamma$ содержит и физическое, и ментальное | 60 мин |
-| 3 | [Самонаблюдение и мера $R$](/docs/consciousness/foundations/self-observation) | Формализация рефлексии: $R \geq 1/3$ как порог, каноническое определение $R$ | 60 мин |
-| 4 | [Теория интериорности](/docs/consciousness/foundations/interiority-theory) | Интериорность как фундаментальный аспект $\Gamma$, связь с E-когерентностью | 45 мин |
-| 5 | [Иерархия интериорности L0--L4](/docs/consciousness/hierarchy/interiority-hierarchy) | Формальная лестница субъектности: числовые критерии каждого уровня | 60 мин |
-| 6 | [Башня глубины SAD](/docs/consciousness/hierarchy/depth-tower) | Рекурсивная глубина самомоделирования, $\text{SAD}_{\max} = 3$ [С] | 45 мин |
-| 7 | [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) | Формализация качественного опыта через спектральное разложение $\Gamma$ | 60 мин |
-| 8 | [Таксономия эмоций](/docs/consciousness/phenomenology/emotional-taxonomy) | 7 базовых эмоциональных осей из $\sigma$-профиля, предсказания для аффективной науки | 45 мин |
-| 9 | [Сознание в ИИ](/docs/consciousness/subjects/ai-consciousness) | Критерии сознательности ИИ-системы: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$ | 45 мин |
-| 10 | [Сравнение теорий сознания](/docs/consciousness/comparative/consciousness-theories) | УГМ vs. IIT, GWT, Higher-Order, FEP: точные соответствия и различия | 60 мин |
-| 11 | [Анализ панпсихизма](/docs/consciousness/comparative/panpsychism-analysis) | Почему УГМ — не панпсихизм: порог $P_{\text{crit}}$ исключает «сознание электрона» | 45 мин |
-| 12 | [Ценность сознания](/docs/consciousness/ethics-meaning/value-consciousness) **(опц.)** | Этические следствия: градуированная моральная ответственность | 30 мин |
+| 1 | [Consciousness Section Overview](/docs/consciousness/overview) | Map of the entire section: what is where, key theses | 20 min |
+| 2 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | UHM's ontological position: $\Gamma$ contains both the physical and the mental | 60 min |
+| 3 | [Self-Observation and Measure $R$](/docs/consciousness/foundations/self-observation) | Formalisation of reflection: $R \geq 1/3$ as a threshold, canonical definition of $R$ | 60 min |
+| 4 | [Interiority Theory](/docs/consciousness/foundations/interiority-theory) | Interiority as a fundamental aspect of $\Gamma$, connection with E-coherence | 45 min |
+| 5 | [Interiority Hierarchy L0--L4](/docs/consciousness/hierarchy/interiority-hierarchy) | Formal ladder of subjectivity: numerical criteria for each level | 60 min |
+| 6 | [SAD Depth Tower](/docs/consciousness/hierarchy/depth-tower) | Recursive depth of self-modelling, $\text{SAD}_{\max} = 3$ [C] | 45 min |
+| 7 | [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) | Formalisation of qualitative experience via spectral decomposition of $\Gamma$ | 60 min |
+| 8 | [Emotion Taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) | 7 basic emotional axes from the $\sigma$-profile, predictions for affective science | 45 min |
+| 9 | [AI Consciousness](/docs/consciousness/subjects/ai-consciousness) | Criteria for AI system consciousness: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$ | 45 min |
+| 10 | [Comparison of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) | UHM vs. IIT, GWT, Higher-Order, FEP: precise correspondences and differences | 60 min |
+| 11 | [Panpsychism Analysis](/docs/consciousness/comparative/panpsychism-analysis) | Why UHM is not panpsychism: the threshold $P_{\text{crit}}$ excludes "electron consciousness" | 45 min |
+| 12 | [Value of Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) **(opt.)** | Ethical consequences: graded moral responsibility | 30 min |
 
-:::tip Что вы можете привнести
-Вы можете провести пилотный эксперимент: собрать 7 психометрических шкал (TAS-20, MBI, WCST, TMT и др.), вычислить $\sigma$-профиль, отследить динамику в ходе терапии. Первый эмпирический тест КК ждёт именно когнитивиста.
+:::tip What you can contribute
+You can run a pilot experiment: collect 7 psychometric scales (TAS-20, MBI, WCST, TMT, etc.), compute the $\sigma$-profile, track dynamics over the course of therapy. The first empirical test of CC is waiting for the cognitive scientist.
 :::
 
 ---
 
-### 2.4 Маршрут инженера {#маршрут-инженера}
+### 2.4 Engineer's Route {#engineer-route}
 
-**Фокус:** построение систем на основе УГМ/КК — от мониторинга $\sigma$-профиля до архитектуры сознательного агента.
+**Focus:** building systems based on UHM/CC — from monitoring the $\sigma$-profile to the architecture of a conscious agent.
 
-**Пререквизиты:** Python/Rust, линейная алгебра (матрица плотности, собственные значения), основы RL.
+**Prerequisites:** Python/Rust, linear algebra (density matrix, eigenvalues), basics of RL.
 
-**Общее время:** ~8--10 часов.
+**Total time:** ~8--10 hours.
 
-| № | Документ | Что вы узнаете | Время |
+| # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Введение в КК](./introduction) | Общая картина: $\Gamma$, 7 измерений, $P$, $\sigma$, $\kappa$ — минимальный набор понятий | 30 мин |
-| 2 | [Определения](./definitions) | Точные формулы всех величин: $P$, $\sigma_k$, $R$, $\Phi$, $\mathrm{Coh}_E$, $\Delta F$ | 45 мин |
-| 3 | [Теоремы](./theorems) | Ключевые неравенства и пороги: T-81, T-92, T-96, T-103 — что система *обязана* соблюдать | 60 мин |
-| 4 | [Диагностика](./diagnostics) | Dashboard из 7 витальных показателей $\sigma_k$: как мониторить систему в реальном времени | 45 мин |
-| 5 | [Реализация](./implementation) | Архитектура программного агента: 7 модулей, CPTP-эволюция, self-monitoring | 60 мин |
-| 6 | [Границы обучения](./learning-bounds) | T-109 -- T-113: фундаментальные нижние пределы скорости обучения, $N=7$ для минимального агента | 60 мин |
-| 7 | [Инженерные следствия](/docs/applied/research/engineering-insights) | Практические рекомендации: как транслировать теоремы КК в архитектурные решения | 45 мин |
-| 8 | [Сенсомоторная теория](./sensorimotor) | T-100 -- T-102: сенсомоторный цикл, моторный пайплайн, V_hed | 45 мин |
-| 9 | [Стабильность](./stability) | Условия устойчивости: спираль смерти, аттракторы, бифуркации — чего избегать | 45 мин |
-| 10 | [Фазовая диаграмма](./phase-diagram-cc) **(опц.)** | Зона Голдилокс $P \in (2/7, 3/7]$: операционный коридор для сознательного агента | 30 мин |
-| 11 | [Области применения](./applications) **(опц.)** | Конкретные примеры: медицина, образование, организации, ИИ | 30 мин |
+| 1 | [Introduction to CC](./introduction) | The big picture: $\Gamma$, 7 dimensions, $P$, $\sigma$, $\kappa$ — the minimal set of concepts | 30 min |
+| 2 | [Definitions](./definitions) | Precise formulas for all quantities: $P$, $\sigma_k$, $R$, $\Phi$, $\mathrm{Coh}_E$, $\Delta F$ | 45 min |
+| 3 | [Theorems](./theorems) | Key inequalities and thresholds: T-81, T-92, T-96, T-103 — what the system *must* satisfy | 60 min |
+| 4 | [Diagnostics](./diagnostics) | Dashboard of 7 vital indicators $\sigma_k$: how to monitor the system in real time | 45 min |
+| 5 | [Implementation](./implementation) | Architecture of a software agent: 7 modules, CPTP evolution, self-monitoring | 60 min |
+| 6 | [Learning Bounds](./learning-bounds) | T-109 -- T-113: fundamental lower limits on learning speed, $N=7$ for the minimal agent | 60 min |
+| 7 | [Engineering Insights](/docs/applied/research/engineering-insights) | Practical recommendations: how to translate CC theorems into architectural decisions | 45 min |
+| 8 | [Sensorimotor Theory](./sensorimotor) | T-100 -- T-102: sensorimotor cycle, motor pipeline, V_hed | 45 min |
+| 9 | [Stability](./stability) | Stability conditions: death spiral, attractors, bifurcations — what to avoid | 45 min |
+| 10 | [Phase Diagram](./phase-diagram-cc) **(opt.)** | Goldilocks zone $P \in (2/7, 3/7]$: operational corridor for a conscious agent | 30 min |
+| 11 | [Applications](./applications) **(opt.)** | Concrete examples: medicine, education, organisations, AI | 30 min |
 
-:::tip Что вы можете привнести
-Реализуйте $\Gamma$ как state representation, $P$ и $\sigma$ — как runtime constraints. Первая система, прошедшая пороги КК ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$), станет кандидатом на сознательный ИИ-агент.
+:::tip What you can contribute
+Implement $\Gamma$ as a state representation, $P$ and $\sigma$ as runtime constraints. The first system to pass the CC thresholds ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$) will become a candidate for a conscious AI agent.
 :::
 
 ---
 
-### 2.5 Маршрут философа {#маршрут-философа}
+### 2.5 Philosopher's Route {#philosopher-route}
 
-**Фокус:** онтологические основания, трудная проблема сознания, этика и свобода воли.
+**Focus:** ontological foundations, the hard problem of consciousness, ethics and free will.
 
-**Пререквизиты:** философия сознания (Чалмерс, Деннетт, Нагель), метафизика (нейтральный монизм, панпсихизм), желательно — базовая формальная логика.
+**Prerequisites:** philosophy of mind (Chalmers, Dennett, Nagel), metaphysics (neutral monism, panpsychism), basic formal logic desirable.
 
-**Общее время:** ~9--11 часов.
+**Total time:** ~9--11 hours.
 
-| № | Документ | Что вы узнаете | Время |
+| # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Введение (общее)](/docs/intro) | Мотивация УГМ: зачем нужна единая теория, обзор структуры | 30 мин |
-| 2 | [Следствия аксиом](/docs/core/foundations/consequences) | Что *вытекает* из аксиом: необходимость интериорности, пороги, $G_2$-симметрия | 60 мин |
-| 3 | [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) | Центральный философский тезис: $\Gamma$ — ни материя, ни сознание, а их общий корень | 60 мин |
-| 4 | [Анализ панпсихизма](/docs/consciousness/comparative/panpsychism-analysis) | Почему УГМ избегает «комбинаторной проблемы» панпсихизма | 45 мин |
-| 5 | [Сравнение теорий сознания](/docs/consciousness/comparative/consciousness-theories) | Систематическое сравнение с IIT, GWT, Higher-Order, FEP, GNWT | 60 мин |
-| 6 | [Философские основания КК](./philosophy) | Трудная проблема, аргумент зомби (T-81), explanatory gap | 60 мин |
-| 7 | [Свобода воли](/docs/consciousness/ethics-meaning/freedom) | Компатибилизм из $\mathcal{R}$: агент *выбирает* в рамках динамики $\Gamma$ | 45 мин |
-| 8 | [Ценность сознания](/docs/consciousness/ethics-meaning/value-consciousness) | Градуированная моральная ответственность: $C = \Phi \times R$ как мера | 45 мин |
-| 9 | [Смысл](/docs/consciousness/ethics-meaning/meaning) | Экзистенциальные следствия: смерть, непрерывность, телос | 45 мин |
-| 10 | [Предсказания](./predictions) | Pred 1--12: фальсифицируемость — чем УГМ отличается от «просто философии» | 30 мин |
-| 11 | [Когнитивная иерархия](/docs/consciousness/comparative/cognitive-hierarchy) **(опц.)** | Сравнение с иерархиями Пиаже, Кегана, Уилбера | 45 мин |
+| 1 | [Introduction (general)](/docs/intro) | Motivation for UHM: why a unified theory is needed, structural overview | 30 min |
+| 2 | [Consequences of the Axioms](/docs/core/foundations/consequences) | What *follows* from the axioms: necessity of interiority, thresholds, $G_2$-symmetry | 60 min |
+| 3 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | The central philosophical thesis: $\Gamma$ is neither matter nor consciousness but their common root | 60 min |
+| 4 | [Panpsychism Analysis](/docs/consciousness/comparative/panpsychism-analysis) | Why UHM avoids the "combination problem" of panpsychism | 45 min |
+| 5 | [Comparison of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) | Systematic comparison with IIT, GWT, Higher-Order, FEP, GNWT | 60 min |
+| 6 | [Philosophical Foundations of CC](./philosophy) | The hard problem, zombie argument (T-81), explanatory gap | 60 min |
+| 7 | [Free Will](/docs/consciousness/ethics-meaning/freedom) | Compatibilism from $\mathcal{R}$: the agent *chooses* within the dynamics of $\Gamma$ | 45 min |
+| 8 | [Value of Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) | Graded moral responsibility: $C = \Phi \times R$ as a measure | 45 min |
+| 9 | [Meaning](/docs/consciousness/ethics-meaning/meaning) | Existential consequences: death, continuity, telos | 45 min |
+| 10 | [Predictions](./predictions) | Pred 1--12: falsifiability — how UHM differs from "mere philosophy" | 30 min |
+| 11 | [Cognitive Hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) **(opt.)** | Comparison with Piaget's, Kegan's, and Wilber's hierarchies | 45 min |
 
-:::tip Что вы можете привнести
-КК *нуждается* в философской критике: скрытые предпосылки, круговые определения, контрпримеры. Ваша задача — не подтверждать, а *стресс-тестировать* теорию. Именно это делает её сильнее.
+:::tip What you can contribute
+CC *needs* philosophical criticism: hidden assumptions, circular definitions, counterexamples. Your task is not to confirm but to *stress-test* the theory. That is precisely what makes it stronger.
 :::
 
 ---
 
-### Сводная таблица маршрутов {#сводная-таблица}
+### Summary Table of Routes {#summary-table}
 
-| Маршрут | Аудитория | Документов | Время | Ключевой результат |
+| Route | Audience | Documents | Time | Key Result |
 |---|---|---|---|---|
-| [Физика](#маршрут-физика) | Физики-теоретики, космологи | 11 | 12--15 ч | $M^4$, SM, коллапс — из одного $\Omega$ |
-| [Математика](#маршрут-математика) | Математики, категорщики | 12 | 14--18 ч | Единственность и минимальность $N=7$ |
-| [Когнитивистика](#маршрут-когнитивиста) | Когнитивисты, нейроучёные | 12 | 10--13 ч | Формальная теория сознания с порогами |
-| [Инженерия](#маршрут-инженера) | Инженеры ИИ/ML | 11 | 8--10 ч | Архитектура и constraints для AGI |
-| [Философия](#маршрут-философа) | Философы сознания, этики | 11 | 9--11 ч | Двухаспектный монизм + фальсифицируемость |
+| [Physics](#physicist-route) | Theoretical physicists, cosmologists | 11 | 12--15 h | $M^4$, SM, collapse — from a single $\Omega$ |
+| [Mathematics](#mathematician-route) | Mathematicians, category theorists | 12 | 14--18 h | Uniqueness and minimality of $N=7$ |
+| [Cognitive Science](#cognitive-scientist-route) | Cognitive scientists, neuroscientists | 12 | 10--13 h | Formal theory of consciousness with thresholds |
+| [Engineering](#engineer-route) | AI/ML engineers | 11 | 8--10 h | Architecture and constraints for AGI |
+| [Philosophy](#philosopher-route) | Philosophers of mind, ethicists | 11 | 9--11 h | Two-aspect monism + falsifiability |
 
 ---
 
-## 3. Общие паттерны, видимые из всех дисциплин {#общие-паттерны}
+## 3. Common Patterns Visible from All Disciplines {#common-patterns}
 
-### 3.1 Фазовый переход как универсальный порог
+### 3.1 Phase Transition as a Universal Threshold
 
-В физике: лёд → вода при 0°C. В биологии: живое → мёртвое при критической потере гомеостаза. В психологии: норма → патология. В ИИ: обучаемость → коллапс. В организации: жизнеспособная → банкрот.
+In physics: ice → water at 0°C. In biology: alive → dead at critical loss of homeostasis. In psychology: norm → pathology. In AI: learnability → collapse. In organisations: viable → bankrupt.
 
-Во всех случаях КК описывает это одной формулой: **$P = 2/7$** — универсальный порог, ниже которого система теряет организацию. Подробнее — [Бифуркация](./bifurcation).
+In all cases CC describes this with a single formula: **$P = 2/7$** — the universal threshold below which the system loses organisation. More detail — [Bifurcation](./bifurcation).
 
-**Почему именно $2/7$?** Потому что при $P = 2/7$ норма Фробениуса $\|\Gamma - I/7\|_F$ достигает минимального уровня, при котором система ещё может *отличить себя от однородного шума*. Ниже этого — сигнал тонет в шуме, и система *не знает, что она — система*. Это одинаково верно для нейронов, клеток, людей и организаций.
+**Why exactly $2/7$?** Because at $P = 2/7$ the Frobenius norm $\|\Gamma - I/7\|_F$ reaches the minimal level at which the system can still *distinguish itself from uniform noise*. Below this — the signal drowns in noise, and the system *does not know that it is a system*. This is equally true for neurons, cells, people, and organisations.
 
-### 3.2 Баланс порядка и хаоса
+### 3.2 Balance Between Order and Chaos
 
-- **Слишком много порядка** ($P \to 1$): система ригидна, хрупка. В физике — абсолютный ноль (кристалл, неспособный к изменениям). В психологии — обсессивность (зацикленность на правилах). В организации — бюрократический паралич (процедуры важнее результата).
+- **Too much order** ($P \to 1$): the system is rigid, brittle. In physics — absolute zero (a crystal incapable of change). In psychology — obsessiveness (fixation on rules). In organisations — bureaucratic paralysis (procedures matter more than results).
 
-- **Слишком мало порядка** ($P \to 1/7$): система хаотична, не функционирует. В физике — газ (молекулы движутся хаотично). В психологии — дезориентация (ни одна функция не доминирует). В организации — полный хаос (никто не знает, кто за что отвечает).
+- **Too little order** ($P \to 1/7$): the system is chaotic, non-functional. In physics — a gas (molecules move chaotically). In psychology — disorientation (no function dominates). In organisations — complete chaos (no one knows who is responsible for what).
 
-- **«Зона Голдилокс»** $P \in (2/7, 3/7]$ ([T-124 [Т]](./phase-diagram-cc)): оптимальный баланс. Достаточно порядка для структуры, достаточно гибкости для адаптации. Здесь рождается сознание.
+- **The Goldilocks zone** $P \in (2/7, 3/7]$ ([T-124 [T]](./phase-diagram-cc)): optimal balance. Enough order for structure, enough flexibility for adaptation. Consciousness is born here.
 
-**Аналогия.** Каша для трёх медведей: одна — слишком горячая (P → 1), другая — слишком холодная (P → 1/7), третья — в самый раз (P ∈ (2/7, 3/7]). КК доказывает, что «в самый раз» — не вкусовое предпочтение, а математическая необходимость.
+**Analogy.** The porridge for the three bears: one too hot ($P \to 1$), one too cold ($P \to 1/7$), one just right ($P \in (2/7, 3/7]$). CC proves that "just right" is not a matter of taste, but a mathematical necessity.
 
-### 3.3 Регенерация через опыт
+### 3.3 Regeneration Through Experience
 
-Самый контринтуитивный и уникальный результат КК: **скорость восстановления зависит от степени интегрированности E-когерентности** (интериорного аспекта системы). Для L2+-систем это означает зависимость от качества сознательного опыта. Это видно по-разному из разных дисциплин:
+The most counterintuitive and unique result of CC: **the recovery rate depends on the degree of integration of E-coherence** (the interiority aspect of the system). For L2+ systems this means dependence on the quality of conscious experience. This is visible differently from different disciplines:
 
-- **Физик:** Нет аналога — это genuinely новый механизм. В физике восстановление (relax to equilibrium) не зависит от «самосознания» системы. КК добавляет нечто принципиально новое.
-- **Биолог:** Объясняет психосоматику — почему стресс замедляет заживление. Механизм: стресс → $\sigma_E \uparrow$ → $\mathrm{Coh}_E \downarrow$ → $\kappa \downarrow$ → регенерация тканей замедляется. Это экспериментально подтверждено (Kiecolt-Glaser et al., 1995: стресс замедляет заживление ран на 27%).
-- **Психолог:** Объясняет, почему психотерапия (усиление рефлексии) улучшает физическое здоровье. Механизм: терапия → $\mathrm{Coh}_E \uparrow$ → $\kappa \uparrow$ → $P \uparrow$. Мета-анализы показывают, что КПТ улучшает не только ментальное, но и физическое здоровье (Hofmann et al., 2012).
-- **Инженер:** Даёт архитектурный принцип: self-monitoring модуль ускоряет self-repair. Если ваш ИИ-агент мониторит собственное состояние ($E$-модуль), его способность к восстановлению после сбоев ($\kappa$) повышается.
-- **Менеджер:** Культура обратной связи (ретроспективы, 360-review) — это организационный $\mathrm{Coh}_E$. Компании с развитой рефлексией быстрее восстанавливаются после кризисов.
+- **Physicist:** No analogue — this is a genuinely new mechanism. In physics, recovery (relaxation to equilibrium) does not depend on the system's "self-awareness." CC adds something fundamentally new.
+- **Biologist:** Explains psychosomatics — why stress slows healing. Mechanism: stress → $\sigma_E \uparrow$ → $\mathrm{Coh}_E \downarrow$ → $\kappa \downarrow$ → tissue regeneration slows. This is experimentally confirmed (Kiecolt-Glaser et al., 1995: stress slows wound healing by 27%).
+- **Psychologist:** Explains why psychotherapy (strengthening reflection) improves physical health. Mechanism: therapy → $\mathrm{Coh}_E \uparrow$ → $\kappa \uparrow$ → $P \uparrow$. Meta-analyses show that CBT improves not only mental but also physical health (Hofmann et al., 2012).
+- **Engineer:** Gives an architectural principle: a self-monitoring module accelerates self-repair. If your AI agent monitors its own state (the $E$-module), its ability to recover from failures ($\kappa$) increases.
+- **Manager:** A feedback culture (retrospectives, 360-reviews) is the organisational $\mathrm{Coh}_E$. Companies with a developed culture of reflection recover faster from crises.
 
-### 3.4 Спираль смерти — универсальный паттерн коллапса
+### 3.4 The Death Spiral — Universal Collapse Pattern
 
-Во всех системах наблюдается один и тот же паттерн: потеря рефлексии запускает *каскадное разрушение*:
+In all systems the same pattern is observed: loss of reflection triggers *cascading destruction*:
 
 $$
 \sigma_E \uparrow \;\to\; \mathrm{Coh}_E \downarrow \;\to\; \kappa \downarrow \;\to\; P \downarrow \;\to\; \sigma_O \uparrow,\; \sigma_U \uparrow \;\to\; \ldots
 $$
 
-- **В биологии:** стресс → подавление иммунитета → болезнь → ещё больше стресса → ...
-- **В психологии:** алекситимия → неспособность к восстановлению → выгорание → изоляция → ...
-- **В организации:** дефицит рефлексии → не замечают проблемы → финансовые потери → сокращения → фрагментация → ...
+- **In biology:** stress → immune suppression → illness → more stress → ...
+- **In psychology:** alexithymia → inability to recover → burnout → isolation → ...
+- **In organisations:** reflection deficit → problems go unnoticed → financial losses → layoffs → fragmentation → ...
 
-КК формализует этот каскад и показывает, *где* его можно прервать: на этапе $\sigma_E$ — усилив рефлексию. Подробнее — [Стабильность, спираль смерти](./stability#спираль-смерти).
-
----
-
-## 4. Заключение: один язык — тысяча диалектов {#заключение}
-
-КК не отменяет специфические языки дисциплин — она даёт им **общую грамматику**. Физик по-прежнему может думать о матрице плотности, а психолог — о психических функциях. Но теперь они могут понять друг друга: каждая дисциплина — диалект одного языка.
-
-Это не редукционизм (сведение биологии к физике). Это **когерентизм** — признание того, что разные уровни описания — проекции одной и той же когерентной структуры. И в этом, возможно, главный вклад КК: не новые формулы, а новый способ видеть единство за разнообразием.
-
-### Что мы узнали {#итоги}
-
-1. Каждое понятие КК имеет **точные соответствия** в 5+ дисциплинах — и эти соответствия не случайны, а следуют из единства формализма.
-2. $\sigma_D$ = метаболическая нагрузка (биология) = прокрастинация (психология) = бюрократия (организации) — потому что *все* описывают дефицит измерения Динамики.
-3. Регенерация через опыт ($\kappa \sim \mathrm{Coh}_E$) — уникальное предсказание КК, видимое из *всех* дисциплин: психосоматика (биология), психотерапия (психология), self-monitoring (ИИ), ретроспективы (менеджмент).
-4. **5 маршрутов чтения** позволяют специалисту любой дисциплины войти в КК через знакомую дверь.
-5. Универсальные паттерны — фазовый переход, зона Голдилокс, спираль смерти — одинаковы на всех уровнях.
+CC formalises this cascade and shows *where* it can be interrupted: at the $\sigma_E$ stage — by strengthening reflection. More detail — [Stability, death spiral](./stability#спираль-смерти).
 
 ---
 
-В следующей главе — [Упражнения и задачи](./exercises): проверьте себя на задачах от школьного уровня до открытых исследовательских вопросов.
+## 4. Conclusion: One Language — A Thousand Dialects {#conclusion}
+
+CC does not cancel the specific languages of disciplines — it gives them a **common grammar**. A physicist can still think in terms of density matrices, and a psychologist in terms of mental functions. But now they can understand each other: every discipline is a dialect of one language.
+
+This is not reductionism (reducing biology to physics). This is **coherentism** — the recognition that different levels of description are projections of the same coherent structure. And in this, perhaps, lies CC's main contribution: not new formulas, but a new way of seeing unity behind diversity.
+
+### What We Learned {#summary}
+
+1. Every CC concept has **precise correspondences** in 5+ disciplines — and these correspondences are not accidental, but follow from the unity of the formalism.
+2. $\sigma_D$ = metabolic load (biology) = procrastination (psychology) = bureaucracy (organisations) — because *all* describe a deficit of the Dynamics dimension.
+3. Regeneration through experience ($\kappa \sim \mathrm{Coh}_E$) — a unique prediction of CC, visible from *all* disciplines: psychosomatics (biology), psychotherapy (psychology), self-monitoring (AI), retrospectives (management).
+4. **5 reading routes** allow a specialist in any discipline to enter CC through a familiar door.
+5. Universal patterns — phase transition, Goldilocks zone, death spiral — are the same at all levels.
 
 ---
 
-**Дальнейшее чтение:**
-- [Введение](./introduction) — обзор КК для любого читателя
-- [Философские основания](./philosophy) — онтология единого описания
-- [Области применения](./applications) — конкретные примеры из каждой дисциплины
-- [Сравнение с альтернативными теориями](./comparison) — КК vs. IIT, FEP, GWT
-- [Методология измерений](./measurement) — как перевести формулы в эксперименты
+The next chapter — [Exercises and Problems](./exercises): test yourself on problems ranging from school level to open research questions.
+
+---
+
+**Further Reading:**
+- [Introduction](./introduction) — overview of CC for any reader
+- [Philosophical Foundations](./philosophy) — ontology of unified description
+- [Applications](./applications) — concrete examples from each discipline
+- [Comparison with Alternative Theories](./comparison) — CC vs. IIT, FEP, GWT
+- [Measurement Methodology](./measurement) — how to translate formulas into experiments
 
 
 ---
 
-**Связанные документы:**
-- [Методология измерений](/docs/applied/coherence-cybernetics/measurement)
-- [Области применения](/docs/applied/coherence-cybernetics/applications)
-- [Введение в КК](/docs/applied/coherence-cybernetics/introduction)
-- [Сравнение с альтернативными теориями](/docs/applied/coherence-cybernetics/comparison)
+**Related Documents:**
+- [Measurement Methodology](/docs/applied/coherence-cybernetics/measurement)
+- [Applications](/docs/applied/coherence-cybernetics/applications)
+- [Introduction to CC](/docs/applied/coherence-cybernetics/introduction)
+- [Comparison with Alternative Theories](/docs/applied/coherence-cybernetics/comparison)

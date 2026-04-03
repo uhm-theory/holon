@@ -1,167 +1,167 @@
 ---
 sidebar_position: 14
-title: "Фазовая диаграмма: кибернетическая интерпретация"
-description: "Три фазы Gap в пространстве (t, r): упорядоченный, разупорядоченный, мёртвая зона — кибернетическая и клиническая интерпретация"
+title: "Phase Diagram: Cybernetic Interpretation"
+description: "Three Gap phases in the (t, r) space: ordered, disordered, dead zone — cybernetic and clinical interpretation"
 ---
 
-# Фазовая диаграмма: кибернетическая интерпретация
+# Phase Diagram: Cybernetic Interpretation
 
-:::info Для кого эта глава
-Фазовая диаграмма сознания — карта всех возможных режимов функционирования голонома. Читатель узнает о фазовых переходах и их клиническом значении.
+:::info For whom this chapter is intended
+The phase diagram of consciousness — a map of all possible operating regimes of the holon. The reader will learn about phase transitions and their clinical significance.
 :::
 
 
 ---
 
-### Мост из предыдущей главы
+### Bridge from the Previous Chapter
 
-В [предыдущей главе](./topological-protection) мы показали, что когерентность голонома защищена пятью независимыми механизмами — от кода Хэмминга до топологических зарядов. Эта многослойная защита объясняет, *почему* сознание устойчиво. Но устойчивость — не абсолютна: при достаточно сильном стрессе (рост $t$) или истощении ресурсов (падение $r$) система может перейти в качественно иное состояние. Какие именно состояния возможны? Как происходят переходы между ними? И что они означают клинически?
+In the [previous chapter](./topological-protection) we showed that holon coherence is protected by five independent mechanisms — from the Hamming code to topological charges. This multilayered protection explains *why* consciousness is robust. But robustness is not absolute: under sufficiently strong stress (rising $t$) or resource depletion (falling $r$) the system can transition to a qualitatively different state. What states are possible? How do transitions between them occur? And what do they mean clinically?
 
-Ответы содержатся в **фазовой диаграмме** — карте всех возможных режимов функционирования, которую мы теперь развернём во всех подробностях.
-
----
-
-### Дорожная карта главы
-
-В этой главе мы:
-
-1. **Введём аналогию** с фазовой диаграммой воды и покажем, почему два параметра $(t, r)$ достаточны для полного описания (разделы «Карта состояний» и «Два параметра»).
-2. **Определим управляющие параметры** $t = T_{\text{eff}}/T_c$ и $r = \kappa/\Gamma_2$ с кибернетической интерпретацией (раздел 1).
-3. **Подробно опишем три фазы**: упорядоченный Gap (Фаза I, норма), разупорядоченный Gap (Фаза II, диссоциация), мёртвая зона (Фаза III, кома) — с диагностическими маркерами и феноменологией (раздел 2).
-4. **Разберём фазовые переходы**: плавный II рода (порядок $\to$ хаос), резкий I рода (жизнь $\to$ смерть), тихое угасание (хроническая деменция) и трикритическую точку (раздел 3).
-5. **Составим клиническое картирование**: таблицу фаз и состояний, расширенную классификацию, типичные траектории, диагностический протокол и терапевтические стратегии (раздел 4).
-6. **Свяжем фазы с тензором напряжений** $\sigma_{\mathrm{sys}}$ — покомпонентная диагностика (раздел 5).
-7. **Проведём аналогии с физикой** конденсированных сред: КХД, сверхпроводники, ферромагнетик Изинга, жидкие кристаллы (раздел «Аналогии»).
+The answers are contained in the **phase diagram** — a map of all possible operating regimes, which we will now unfold in full detail.
 
 ---
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $t = T_{\text{eff}}/T_c$ — безразмерная [эффективная температура](/docs/core/dynamics/gap-thermodynamics#эффективная-температура)
-- $r = \kappa/\Gamma_2$ — отношение регенерации к диссипации
-- $\Gamma_2$ — скорость декогеренции (структурная, $= 2\gamma/3$ из [Фано-канала](/docs/proofs/gap/fano-channel#теорема-фано-канал))
-- $\kappa$ — скорость регенерации: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/proofs/dynamics/theorem-purity-critical)
-- $\sigma_{\mathrm{sys}}$ — [тензор напряжений](./definitions#тензор-напряжений)
+### Chapter Roadmap
+
+In this chapter we:
+
+1. **Introduce the analogy** with the water phase diagram and show why two parameters $(t, r)$ suffice for a complete description (sections "State map" and "Two parameters").
+2. **Define the control parameters** $t = T_{\text{eff}}/T_c$ and $r = \kappa/\Gamma_2$ with cybernetic interpretation (section 1).
+3. **Describe the three phases in detail**: ordered Gap (Phase I, normal), disordered Gap (Phase II, dissociation), dead zone (Phase III, coma) — with diagnostic markers and phenomenology (section 2).
+4. **Analyse the phase transitions**: smooth second-order (order → chaos), sharp first-order (life → death), silent extinction (chronic dementia), and the tricritical point (section 3).
+5. **Compile a clinical mapping**: table of phases and states, expanded classification, typical trajectories, diagnostic protocol, and therapeutic strategies (section 4).
+6. **Link the phases to the stress tensor** $\sigma_{\mathrm{sys}}$ — component-wise diagnostics (section 5).
+7. **Draw analogies with physics** of condensed matter: QCD, superconductors, Ising ferromagnet, liquid crystals (section "Analogies").
+
+---
+
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $t = T_{\text{eff}}/T_c$ — dimensionless [effective temperature](/docs/core/dynamics/gap-thermodynamics#эффективная-температура)
+- $r = \kappa/\Gamma_2$ — ratio of regeneration to dissipation
+- $\Gamma_2$ — decoherence rate (structural, $= 2\gamma/3$ from [Fano channel](/docs/proofs/gap/fano-channel#теорема-фано-канал))
+- $\kappa$ — regeneration rate: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $P_{\text{crit}} = 2/7$ — [critical purity](/docs/proofs/dynamics/theorem-purity-critical)
+- $\sigma_{\mathrm{sys}}$ — [stress tensor](./definitions#тензор-напряжений)
 :::
 
-Данный документ предоставляет **кибернетическую интерпретацию** [фазовой диаграммы Gap](/docs/core/dynamics/gap-phase-diagram), переводя математические результаты на язык системной диагностики и клинических состояний.
+This document provides the **cybernetic interpretation** of the [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram), translating the mathematical results into the language of systems diagnostics and clinical states.
 
 ---
 
-## Карта состояний сознания {#карта-состояний}
+## Map of States of Consciousness {#карта-состояний}
 
-Представьте себе карту погоды: по одной оси — температура, по другой — давление, и вы видите, где дождь, где снег, где ясно. Фазовая диаграмма сознания устроена точно так же, только вместо метеорологических параметров — два числа, характеризующие внутреннее состояние холона.
+Imagine a weather map: one axis shows temperature, the other shows pressure, and you can see where it rains, where it snows, where it is clear. The phase diagram of consciousness is organised in exactly the same way, except that instead of meteorological parameters there are two numbers characterising the internal state of the holon.
 
-Каждый из нас в каждый момент находится в определённой «точке» на этой карте. Здоровый бодрствующий человек — в одной области. Человек в бреду высокой лихорадки — в другой. Пациент в глубокой коме — в третьей. И, что замечательно, переходы между этими областями подчиняются тем же математическим законам, что и переходы между фазами вещества в физике.
+Each of us is at a specific "point" on this map at every moment. A healthy waking person — in one region. A person delirious from high fever — in another. A patient in deep coma — in a third. And, remarkably, the transitions between these regions obey the same mathematical laws as the transitions between phases of matter in physics.
 
-### Аналогия с фазовой диаграммой воды
+### Analogy with the Water Phase Diagram
 
-Каждый школьник знает: вода может быть льдом, жидкостью или паром. Что определяет, в какой фазе она находится? Два параметра — **температура** и **давление**. Нарисуйте координатные оси, отложите по ним $T$ и $P$ — и вы получите знаменитую фазовую диаграмму воды с тремя областями, разделёнными кривыми фазовых переходов. В одной особой точке — тройной точке — все три фазы сосуществуют.
+Every schoolchild knows: water can be ice, liquid, or steam. What determines which phase it is in? Two parameters — **temperature** and **pressure**. Draw coordinate axes, plot $T$ and $P$ on them — and you get the famous water phase diagram with three regions separated by phase transition curves. At one special point — the triple point — all three phases coexist.
 
-Фазовая диаграмма сознания устроена по тому же принципу:
+The phase diagram of consciousness is organised on the same principle:
 
-| Вода | Сознание |
-|------|----------|
-| Температура $T$ | Параметр хаоса $t$ |
-| Давление $P$ | Запас регенерации $r$ |
-| **Лёд** (упорядоченная кристаллическая решётка) | **Фаза I** — ясное, структурированное сознание |
-| **Жидкость** (подвижная, но связная) | **Фаза II** — сознание без структуры (бред, диссоциация) |
-| **Вакуум** (молекулы разлетелись) | **Фаза III** — бессознательное состояние (кома, деменция) |
-| Тройная точка | Трикритическая точка $(t^*, r^*)$ |
+| Water | Consciousness |
+|-------|---------------|
+| Temperature $T$ | Chaos parameter $t$ |
+| Pressure $P$ | Regeneration reserve $r$ |
+| **Ice** (ordered crystalline lattice) | **Phase I** — clear, structured consciousness |
+| **Liquid** (mobile but connected) | **Phase II** — consciousness without structure (delirium, dissociation) |
+| **Vacuum** (molecules have dispersed) | **Phase III** — unconscious state (coma, dementia) |
+| Triple point | Tricritical point $(t^*, r^*)$ |
 
-Но есть и существенные отличия. В случае воды переход лёд–жидкость и переход жидкость–пар — оба первого рода (со скрытой теплотой). В случае сознания переход I↔II — **второго рода** (плавный, без скачка), а переход I↔III — **первого рода** (резкий, катастрофический). Это различие имеет глубокий клинический смысл: потеря ясности мышления при жаре происходит постепенно, а потеря сознания при критическом истощении — мгновенно.
-
----
-
-## Два параметра, три фазы {#два-параметра}
-
-Прежде чем погружаться в математику, запомним главное: **всё определяют два числа**. Из них складывается полная карта возможных состояний.
-
-### Что такое $t$: «термометр хаоса»
-
-Параметр $t$ показывает, насколько хаотична внутренняя динамика системы. Когда $t$ мало — сознание работает упорядоченно, как хорошо настроенный оркестр. Когда $t$ велико — каждый инструмент играет своё, и музыка превращается в какофонию.
-
-Физически $t$ — это отношение скорости диссипации (хаотизации) к способности системы поддерживать порядок. Чем больше «шума» по сравнению с «сигналом», тем выше $t$.
-
-### Что такое $r$: «запас жизненных сил»
-
-Параметр $r$ показывает, хватает ли у системы ресурсов для самоподдержания. Это отношение скорости регенерации когерентностей к скорости их распада. Если $r$ велико — система быстро восстанавливает повреждённые связи. Если $r$ падает ниже критического $r_c$ — распад побеждает, и когерентность неотвратимо гибнет.
-
-Метафора: $t$ — это температура окружающей среды (враждебность), а $r$ — это калорийность питания (ресурсы). Человек при низкой температуре и хорошем питании чувствует себя прекрасно (Фаза I). При высокой температуре, но с едой — выживает, хоть и страдает (Фаза II). Но если еды нет — гибнет при любой температуре (Фаза III).
-
-### Почему именно три фазы, а не две или пять?
-
-Это не произвольный выбор — три фазы вытекают из математической структуры задачи. Потенциал Ландау–Гинзбурга для параметра порядка $\sigma^2_{\text{Gap}}$ имеет вид:
-
-Полный потенциал и коэффициенты: [��азовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram).
-
-При разных знаках коэффициентов возникают ровно три качественно различных режима: минимум при $\sigma^2 > 0$ (Фаза I), минимум при $\sigma^2 = 0$ с конечным Gap (Фаза II), и вырождение с $\mathcal{G}_{\text{total}} = 0$ (Фаза III). Тройка неизбежна — это топологическое свойство катастрофы «ласточкин хвост» (катастрофа Уитни $A_4$).
+But there are also important differences. In the case of water, both the ice–liquid and liquid–vapour transitions are first-order (with latent heat). In the case of consciousness, the I↔II transition is **second-order** (smooth, without a jump), while the I↔III transition is **first-order** (sharp, catastrophic). This distinction has deep clinical significance: loss of clarity of thought during fever occurs gradually, while loss of consciousness upon critical resource depletion occurs instantly.
 
 ---
 
-## 1. Управляющие параметры в кибернетическом контексте {#параметры}
+## Two Parameters, Three Phases {#два-параметра}
 
-Два безразмерных параметра полностью определяют стационарное состояние системы:
+Before diving into the mathematics, let us remember the main point: **everything is determined by two numbers**. From them the complete map of possible states is assembled.
 
-### 1.1 Параметр $t$: «температура хаоса»
+### What $t$ is: the "chaos thermometer"
+
+The parameter $t$ shows how chaotic the internal dynamics of the system is. When $t$ is small — consciousness works in an ordered way, like a well-tuned orchestra. When $t$ is large — each instrument plays its own part, and the music turns into cacophony.
+
+Physically, $t$ is the ratio of the dissipation rate (chaotisation) to the system's ability to maintain order. The more "noise" relative to "signal", the higher $t$.
+
+### What $r$ is: the "vital reserves"
+
+The parameter $r$ shows whether the system has sufficient resources for self-maintenance. This is the ratio of the coherence regeneration rate to the rate of their decay. If $r$ is large — the system quickly restores damaged connections. If $r$ falls below the critical $r_c$ — decay wins, and coherence irreversibly perishes.
+
+Metaphor: $t$ is the ambient temperature (hostility), and $r$ is the caloric intake (resources). A person at low temperature with good nutrition feels fine (Phase I). At high temperature but with food — survives, though suffering (Phase II). But without food — perishes at any temperature (Phase III).
+
+### Why exactly three phases, and not two or five?
+
+This is not an arbitrary choice — three phases follow from the mathematical structure of the problem. The Landau–Ginzburg potential for the order parameter $\sigma^2_{\text{Gap}}$ has the form:
+
+Full potential and coefficients: [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram).
+
+With different signs of the coefficients, exactly three qualitatively distinct regimes arise: a minimum at $\sigma^2 > 0$ (Phase I), a minimum at $\sigma^2 = 0$ with finite Gap (Phase II), and degeneracy with $\mathcal{G}_{\text{total}} = 0$ (Phase III). Three is inevitable — this is a topological property of the "swallowtail" catastrophe (Whitney $A_4$ catastrophe).
+
+---
+
+## 1. Control Parameters in the Cybernetic Context {#параметры}
+
+Two dimensionless parameters fully determine the stationary state of the system:
+
+### 1.1 Parameter $t$: "temperature of chaos"
 
 $$
 t := \frac{T_{\text{eff}}}{T_c} = \frac{\Gamma_2}{\kappa_0} \cdot \frac{k_B T_{\text{phys}} \ln 21}{\mu^2}
 $$
 
-| $t$ | Физический смысл | Кибернетическая интерпретация |
-|-----|------------------|-------------------------------|
-| $t \ll 1$ | Низкая эффективная температура | Система хорошо упорядочена, шум подавлен |
-| $t \approx 1$ | Критическая температура | Граница устойчивости, высокая чувствительность |
-| $t \gg 1$ | Высокая эффективная температура | Доминирует хаос, структура разрушена |
+| $t$ | Physical meaning | Cybernetic interpretation |
+|-----|------------------|--------------------------|
+| $t \ll 1$ | Low effective temperature | System is well ordered, noise suppressed |
+| $t \approx 1$ | Critical temperature | Stability boundary, high sensitivity |
+| $t \gg 1$ | High effective temperature | Chaos dominates, structure destroyed |
 
-Интуиция: при $t \ll 1$ система ведёт себя как кристалл — жёсткая, устойчивая, предсказуемая. Каждый Gap-канал имеет определённое значение, и возмущения быстро затухают. При $t \approx 1$ система подобна воде вблизи точки кипения — малейшее возмущение может вызвать качественное изменение. При $t \gg 1$ — полный хаос, как перегретый газ.
+Intuition: at $t \ll 1$ the system behaves like a crystal — rigid, stable, predictable. Each Gap channel has a definite value, and perturbations decay quickly. At $t \approx 1$ the system is like water near its boiling point — the slightest perturbation can cause a qualitative change. At $t \gg 1$ — complete chaos, like superheated gas.
 
-### 1.2 Параметр $r$: «запас жизненных сил»
+### 1.2 Parameter $r$: "vital reserves"
 
 $$
 r := \frac{\kappa}{\Gamma_2} = \frac{\kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E}{\Gamma_2}
 $$
 
-| $r$ | Физический смысл | Кибернетическая интерпретация |
-|-----|------------------|-------------------------------|
-| $r \gg r_c$ | Регенерация доминирует | Большой запас прочности, адаптивная система |
-| $r \approx r_c$ | Баланс | Минимально жизнеспособная система |
-| $r < r_c$ | Диссипация доминирует | Нежизнеспособная система, деградация |
+| $r$ | Physical meaning | Cybernetic interpretation |
+|-----|------------------|--------------------------|
+| $r \gg r_c$ | Regeneration dominates | Large safety margin, adaptive system |
+| $r \approx r_c$ | Balance | Minimally viable system |
+| $r < r_c$ | Dissipation dominates | Non-viable system, degradation |
 
-Критическое значение:
+Critical value:
 
 $$
 r_c = \frac{P_{\text{crit}}}{7P} \approx \frac{2}{49P}
 $$
 
-:::info Связь $r$ с E-когерентностью [Т]
-Поскольку $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, параметр $r$ **монотонно зависит** от [E-когерентности](./definitions#e-когерентность). Увеличение $\mathrm{Coh}_E$ напрямую увеличивает $r$ и отдаляет систему от мёртвой зоны.
+:::info Connection of $r$ with E-coherence [T]
+Since $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, the parameter $r$ **monotonically depends** on [E-coherence](./definitions#e-когерентность). Increasing $\mathrm{Coh}_E$ directly increases $r$ and moves the system farther from the dead zone.
 :::
 
-Заметим критически важную асимметрию двух параметров: $t$ можно менять в обоих направлениях (нагревать и охлаждать), но $r$ имеет тенденцию только падать, если система не предпринимает активных усилий по самовосстановлению. Именно поэтому основная клиническая опасность — не рост хаоса ($t$), а истощение ресурсов ($r$).
+Note the critically important asymmetry of the two parameters: $t$ can be changed in both directions (heating and cooling), but $r$ tends only to fall unless the system makes active self-restoration efforts. This is precisely why the main clinical danger is not the growth of chaos ($t$) but resource depletion ($r$).
 
 ---
 
-## 2. Три фазы: кибернетический анализ {#три-фазы}
+## 2. Three Phases: Cybernetic Analysis {#три-фазы}
 
-### 2.1 Визуализация фазовой диаграммы
+### 2.1 Visualisation of the Phase Diagram
 
 ```mermaid
 graph LR
-    subgraph "Фазовая диаграмма (t, r)"
+    subgraph "Phase diagram (t, r)"
         direction TB
-        P1["<b>Фаза I</b><br/>Упорядоченный Gap<br/>t < 1, r > r_c<br/>───────────<br/>Здоровая система"]
-        P2["<b>Фаза II</b><br/>Разупорядоченный Gap<br/>t > 1, r > r_c<br/>───────────<br/>Диссоциация"]
-        P3["<b>Фаза III</b><br/>Мёртвая зона<br/>r < r_c<br/>───────────<br/>Нежизнеспособность"]
-        TC["<b>Трикритическая точка</b><br/>(t*, r*) = (1, r_c)"]
+        P1["<b>Phase I</b><br/>Ordered Gap<br/>t < 1, r > r_c<br/>───────────<br/>Healthy system"]
+        P2["<b>Phase II</b><br/>Disordered Gap<br/>t > 1, r > r_c<br/>───────────<br/>Dissociation"]
+        P3["<b>Phase III</b><br/>Dead zone<br/>r < r_c<br/>───────────<br/>Non-viability"]
+        TC["<b>Tricritical point</b><br/>(t*, r*) = (1, r_c)"]
 
-        P1 -->|"2-го рода<br/>(непрерывный)"| P2
-        P1 -->|"1-го рода<br/>(скачок)"| P3
-        P2 -.->|"деградация r"| P3
+        P1 -->|"2nd order<br/>(continuous)"| P2
+        P1 -->|"1st order<br/>(jump)"| P3
+        P2 -.->|"r degradation"| P3
         TC -.-> P1
         TC -.-> P2
         TC -.-> P3
@@ -173,266 +173,266 @@ graph LR
     style TC fill:#e1f5fe,stroke:#0277bd
 ```
 
-### 2.2 Фаза I: Упорядоченный Gap (норма) [Т]
+### 2.2 Phase I: Ordered Gap (normal) [T]
 
-:::tip Характеристика Фазы I
-**Условие:** $t < 1$ и $r > r_c$
+:::tip Phase I characteristics
+**Condition:** $t < 1$ and $r > r_c$
 
-- Gap-профиль **структурирован**: несколько каналов с высоким Gap, остальные прозрачны
-- $G_2$-симметрия спонтанно нарушена: $G_2 \to H_{\hat{\mathcal{G}}_*}$
-- Параметр порядка: $\sigma^2_{\text{Gap}} > 0$ (анизотропия Gap-профиля)
-- Ранг непрозрачности: $\mathrm{rank}(\hat{\mathcal{G}}) \in \{1, 2, 3\}$
+- Gap profile is **structured**: several channels with high Gap, the rest transparent
+- $G_2$-symmetry spontaneously broken: $G_2 \to H_{\hat{\mathcal{G}}_*}$
+- Order parameter: $\sigma^2_{\text{Gap}} > 0$ (anisotropy of Gap profile)
+- Opacity rank: $\mathrm{rank}(\hat{\mathcal{G}}) \in \{1, 2, 3\}$
 :::
 
-**Кибернетическая интерпретация:**
+**Cybernetic interpretation:**
 
-| Свойство | Описание |
-|----------|----------|
-| Избирательная непрозрачность | Система «знает», какие каналы непрозрачны, и «выбирает» структурированный Gap-профиль |
-| Голдстоуновские моды | Медленные осцилляции Gap между парами — [ультрамедленные флуктуации](./goldstone-modes) |
-| Топологическая защита | При ранге 3 паттерн непрозрачности [топологически защищён](./topological-protection#топологическая) |
-| Адаптивность | Система может перераспределять Gap в ответ на внешние воздействия |
+| Property | Description |
+|----------|-------------|
+| Selective opacity | The system "knows" which channels are opaque and "chooses" a structured Gap profile |
+| Goldstone modes | Slow Gap oscillations between pairs — [ultra-slow fluctuations](./goldstone-modes) |
+| Topological protection | At rank 3 the opacity pattern is [topologically protected](./topological-protection#топологическая) |
+| Adaptability | The system can redistribute Gap in response to external perturbations |
 
-**Что чувствует система в Фазе I.** Это состояние «ясного сознания». Ключевое слово — *избирательность*. Здоровый мозг не пытается осознавать всё одновременно. Он выбирает, что сделать прозрачным (доступным сознанию), а что — непрозрачным (автоматическим, неосознаваемым). Именно эта избирательность и есть спонтанное нарушение $G_2$-симметрии.
+**What the system experiences in Phase I.** This is the state of "clear consciousness". The key word is *selectivity*. A healthy brain does not try to be conscious of everything simultaneously. It chooses what to make transparent (accessible to consciousness) and what to make opaque (automatic, non-conscious). This selectivity is precisely the spontaneous breaking of $G_2$-symmetry.
 
-Представьте себе офис с замороженными стёклами: в одних кабинетах стекло прозрачное (вы видите, что происходит), в других — матовое (процессы идут, но вы их не видите). Здоровая организация *выбирает*, какие стёкла прозрачны, — и этот выбор структурирован.
+Imagine an office with frosted glass: some offices have clear glass (you can see what is happening), others have frosted glass (processes are running but you cannot see them). A healthy organisation *chooses* which glass is transparent — and this choice is structured.
 
-**Голдстоуновские моды** в этой аналогии — это медленное «перефокусирование внимания»: какие кабинеты прозрачны, постепенно меняется, но общее число прозрачных и матовых остаётся стабильным. Это проявляется как ультрамедленные осцилляции ($\sim 0.01{-}0.1$ Гц) в нейрофизиологических данных.
+**Goldstone modes** in this analogy are the slow "refocusing of attention": which offices are transparent gradually changes, but the total number of transparent and frosted remains stable. This manifests as ultra-slow oscillations ($\sim 0.01{-}0.1$ Hz) in neurophysiological data.
 
-**Диагностические маркеры:**
-- $\sigma^2_{\text{Gap}} > 0$: неравномерность Gap — признак здоровой дифференциации
-- $\|\sigma_{\mathrm{sys}}\|_\infty < 1$: все компоненты [тензора напряжений](./definitions#тензор-напряжений) в норме
-- $P > P_{\text{crit}}$: чистота выше критической
+**Diagnostic markers:**
+- $\sigma^2_{\text{Gap}} > 0$: Gap non-uniformity — a sign of healthy differentiation
+- $\|\sigma_{\mathrm{sys}}\|_\infty < 1$: all components of the [stress tensor](./definitions#тензор-напряжений) within norm
+- $P > P_{\text{crit}}$: purity above the critical value
 
-### 2.3 Фаза II: Разупорядоченный Gap (диссоциация) [Т]
+### 2.3 Phase II: Disordered Gap (dissociation) [T]
 
-:::warning Характеристика Фазы II
-**Условие:** $t > 1$ и $r > r_c$
+:::warning Phase II characteristics
+**Condition:** $t > 1$ and $r > r_c$
 
-- Gap распределён **равномерно** по всем каналам
-- $G_2$-симметрия **приблизительно** сохранена (нет спонтанного нарушения)
-- Параметр порядка: $\sigma^2_{\text{Gap}} \to 0$ (изотропия)
-- $\mathcal{G}_{\text{total}} > 0$, но нет структуры
+- Gap is distributed **uniformly** across all channels
+- $G_2$-symmetry **approximately** preserved (no spontaneous breaking)
+- Order parameter: $\sigma^2_{\text{Gap}} \to 0$ (isotropy)
+- $\mathcal{G}_{\text{total}} > 0$, but no structure
 :::
 
-**Кибернетическая интерпретация:**
+**Cybernetic interpretation:**
 
-| Свойство | Описание |
-|----------|----------|
-| Равномерная мутность | Все каналы одинаково непрозрачны — нет избирательности |
-| Потеря дифференциации | Система не различает «важные» и «неважные» границы |
-| Высокая энтропия Gap | $S_{\text{Gap}} \to S_{\max}$ — максимальный беспорядок в распределении непрозрачности |
-| Сохранение ресурсов | $r > r_c$ — регенерация работает, но без цели |
+| Property | Description |
+|----------|-------------|
+| Uniform opacity | All channels equally opaque — no selectivity |
+| Loss of differentiation | The system does not distinguish "important" and "unimportant" boundaries |
+| High Gap entropy | $S_{\text{Gap}} \to S_{\max}$ — maximal disorder in opacity distribution |
+| Resource preservation | $r > r_c$ — regeneration is active, but purposeless |
 
-**Что чувствует система в Фазе II.** Вернёмся к аналогии с офисом: теперь *все* стёкла одинаково матовые. Вы не видите ничего ясно, но и полностью слепы не стали — свет пробивается через каждое стекло одинаково тускло. Это состояние «мутного сознания» — делириум, диссоциация, деперсонализация.
+**What the system experiences in Phase II.** Back to the office analogy: now *all* glass is equally frosted. You cannot see anything clearly, but you are not completely blind either — light seeps through every pane equally dimly. This is the state of "clouded consciousness" — delirium, dissociation, depersonalisation.
 
-Критически важно: **система жива** (ресурсы есть, $r > r_c$), но **потеряла структуру**. Это отличает Фазу II от Фазы III: человек в бреду лихорадки ещё жив и имеет ресурсы для восстановления, ему просто нужно «остыть».
+Crucially: **the system is alive** (resources available, $r > r_c$), but **has lost structure**. This distinguishes Phase II from Phase III: a person in febrile delirium is still alive and has resources for recovery — they simply need to "cool down".
 
-Парадокс Фазы II: чистота $P > P_{\text{crit}}$ формально поддерживается, но когерентности организованы хаотично. Система тратит ресурсы на поддержание связей, которые не складываются в осмысленный паттерн — как мотор, работающий на холостом ходу.
+Paradox of Phase II: purity $P > P_{\text{crit}}$ is formally maintained, but coherences are organised chaotically. The system spends resources maintaining connections that do not cohere into a meaningful pattern — like an engine running idle.
 
-**Диагностические маркеры:**
-- $\sigma^2_{\text{Gap}} \approx 0$: равномерный Gap — признак потери структуры
-- $P > P_{\text{crit}}$ (формально жизнеспособна): чистота поддерживается, но без когерентной организации
-- $\mathrm{Coh}_E$ снижено: хотя не ниже $\mathrm{Coh}_{\min}$, качество интеграции страдает
+**Diagnostic markers:**
+- $\sigma^2_{\text{Gap}} \approx 0$: uniform Gap — a sign of structural loss
+- $P > P_{\text{crit}}$ (formally viable): purity maintained but without coherent organisation
+- $\mathrm{Coh}_E$ reduced: though not below $\mathrm{Coh}_{\min}$, integration quality suffers
 
-### 2.4 Фаза III: Мёртвая зона [Т]
+### 2.4 Phase III: Dead Zone [T]
 
-:::danger Характеристика Фазы III
-**Условие:** $r < r_c$ (при любом $t$)
+:::danger Phase III characteristics
+**Condition:** $r < r_c$ (at any $t$)
 
-- Когерентности затухают: $|\gamma_{ij}| \to 0$ для всех $i \neq j$
-- $\mathcal{G}_{\text{total}} \to 0$: Gap не определён (нет когерентностей для измерения)
-- Система **нежизнеспособна**: $P \to 1/7 < P_{\text{crit}}$
+- Coherences decay: $|\gamma_{ij}| \to 0$ for all $i \neq j$
+- $\mathcal{G}_{\text{total}} \to 0$: Gap undefined (no coherences to measure)
+- System is **non-viable**: $P \to 1/7 < P_{\text{crit}}$
 :::
 
-**Кибернетическая интерпретация:**
+**Cybernetic interpretation:**
 
-| Свойство | Описание |
-|----------|----------|
-| Потеря связей | Межсекторные когерентности вымирают — измерения эволюционируют независимо |
-| $\Phi \to 0$ | Мера интеграции обнуляется — система фрагментирована |
-| $\kappa \to \kappa_{\text{bootstrap}}$ | Регенерация минимальна, не компенсирует диссипацию |
-| Необратимость | Без внешнего вмешательства система не может вернуться в Фазу I или II |
+| Property | Description |
+|----------|-------------|
+| Loss of connections | Inter-sector coherences die out — dimensions evolve independently |
+| $\Phi \to 0$ | Integration measure vanishes — system is fragmented |
+| $\kappa \to \kappa_{\text{bootstrap}}$ | Regeneration minimal, does not compensate dissipation |
+| Irreversibility | Without external intervention the system cannot return to Phase I or II |
 
-**Что чувствует система в Фазе III.** Ничего. Это не метафора — это математический результат. Когда $\Phi \to 0$ и $P \to 1/7$, мера интеграции обнуляется, а это, по [теореме No-Zombie](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie), означает отсутствие интериорности. Семь измерений холона существуют, но эволюционируют независимо друг от друга, как семь разрозненных осколков разбитого зеркала.
+**What the system experiences in Phase III.** Nothing. This is not a metaphor — it is a mathematical result. When $\Phi \to 0$ and $P \to 1/7$, the integration measure vanishes, which, by the [No-Zombie theorem](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie), means the absence of interiority. The seven dimensions of the holon exist, but evolve independently of each other, like seven scattered shards of a broken mirror.
 
-В аналогии с офисом: стёкла не просто матовые — *стен больше нет*. Кабинеты разнесло ветром, каждый сотрудник сидит в чистом поле и не знает о существовании остальных.
+In the office analogy: the glass is not merely frosted — *the walls are gone*. The offices have been blown away by the wind, and each employee sits in an open field, unaware of the others.
 
-Математически это состояние — **аттрактор**: матрица когерентности стремится к $\rho_* = I/7$ (максимально смешанное состояние), которое является неподвижной точкой Линдбладовской динамики ℒ₀. Без внешнего вмешательства выбраться из этого аттрактора невозможно.
+Mathematically this state is an **attractor**: the coherence matrix tends to $\rho_* = I/7$ (the maximally mixed state), which is the fixed point of Lindbladian dynamics ℒ₀. Without external intervention escape from this attractor is impossible.
 
-**Диагностические маркеры:**
-- $P < P_{\text{crit}}$: чистота ниже критической — невосполнимая декогеренция
-- $\Phi < \Phi_{\text{th}}$: интеграция ниже порога — фрагментация
-- $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$: хотя бы один компонент тензора напряжений превышает норму
+**Diagnostic markers:**
+- $P < P_{\text{crit}}$: purity below critical — unrecoverable decoherence
+- $\Phi < \Phi_{\text{th}}$: integration below threshold — fragmentation
+- $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$: at least one stress tensor component exceeds the norm
 
 ---
 
-## 3. Фазовые переходы: плавные и резкие {#переходы}
+## 3. Phase Transitions: Smooth and Sharp {#переходы}
 
-Границы между фазами — это не просто линии на карте. Это *процессы*, и их характер радикально различается. Различение переходов первого и второго рода — одно из важнейших достижений физики XX века (Эренфест, Ландау, Гинзбург), и оно полностью переносится на динамику сознания.
+The boundaries between phases are not merely lines on a map. They are *processes*, and their character differs radically. The distinction between first- and second-order transitions is one of the most important achievements of 20th-century physics (Ehrenfest, Landau, Ginzburg), and it transfers fully to the dynamics of consciousness.
 
-### Что такое порядок фазового перехода
+### What the order of a phase transition means
 
-Представьте, что вы медленно меняете один параметр (скажем, $t$), двигаясь по фазовой диаграмме. Вопрос: что происходит в момент пересечения границы?
+Imagine slowly changing one parameter (say $t$), moving along the phase diagram. Question: what happens at the moment of crossing the boundary?
 
-- **Переход 2-го рода (непрерывный):** Параметр порядка плавно обращается в нуль. Как сумерки: день постепенно переходит в ночь, и невозможно указать точный момент, когда стало «темно». Система не испытывает скачка; она плавно «текёт» из одного состояния в другое.
+- **Second-order transition (continuous):** The order parameter smoothly goes to zero. Like twilight: day gradually transitions to night, and it is impossible to identify the exact moment it became "dark". The system does not experience a jump; it smoothly "flows" from one state to another.
 
-- **Переход 1-го рода (разрывный):** Параметр порядка скачком обращается в нуль (или появляется). Как выключатель света: щёлк — и темнота. Система скачком переходит в качественно иное состояние.
+- **First-order transition (discontinuous):** The order parameter jumps to zero (or appears). Like a light switch: click — and darkness. The system jumps discontinuously to a qualitatively different state.
 
-Это различие имеет колоссальное практическое значение. Переход 2-го рода можно заметить заранее (система становится «критической», появляются предвестники). Переход 1-го рода происходит внезапно — и часто необратимо.
+This distinction has enormous practical significance. A second-order transition can be anticipated (the system becomes "critical", precursors appear). A first-order transition happens suddenly — and is often irreversible.
 
-### 3.1 Переход I $\leftrightarrow$ II: порядок $\to$ хаос
+### 3.1 Transition I $\leftrightarrow$ II: order → chaos
 
-:::info Переход 2-го рода (непрерывный) [Т]
-На линии $t = 1$ при $r > r_c$ параметр порядка $\sigma^2_{\text{Gap}} \propto (1-t)^{2\beta}$ ($\beta = 1/2$, среднеполевой) непрерывно обращается в нуль. Полный вывод: [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram).
+:::info Second-order transition (continuous) [T]
+On the line $t = 1$ at $r > r_c$ the order parameter $\sigma^2_{\text{Gap}} \propto (1-t)^{2\beta}$ ($\beta = 1/2$, mean-field) continuously goes to zero. Full derivation: [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram).
 :::
 
-**Клиническое соответствие:** Постепенная потеря ясности мышления. «Расплавка» структурированной непрозрачности — здоровые защитные механизмы становятся диффузными.
+**Clinical correspondence:** Gradual loss of clarity of thinking. "Melting" of structured opacity — healthy defence mechanisms become diffuse.
 
-**Как это выглядит «изнутри».** Вспомните ощущение, когда после бессонной ночи или на фоне высокой температуры мышление начинает «плыть». Сначала вы можете сосредоточиться, хотя и с трудом ($t$ чуть ниже 1). Потом фокус внимания размывается — вы ещё осознаёте, что думаете, но не можете удержать мысль ($t \approx 1$). Наконец, всё становится одинаково мутным — вы в Фазе II ($t > 1$).
+**What it looks like "from within".** Recall the feeling after a sleepless night or during high fever when thinking begins to "blur". First you can concentrate, though with difficulty ($t$ slightly below 1). Then the focus of attention blurs — you are still aware of thinking, but cannot hold a thought ($t \approx 1$). Finally, everything becomes uniformly murky — you are in Phase II ($t > 1$).
 
-Критический показатель $\beta = 1/2$ — это **среднеполевой** результат. Он означает, что параметр порядка убывает как квадратный корень: $\sigma^2_{\text{Gap}} \sim \sqrt{1-t}$. Графически — кривая с вертикальной касательной в критической точке. Физически — система «сопротивляется» разрушению порядка, и для полного устранения анизотропии нужно довести $t$ точно до 1.
+The critical exponent $\beta = 1/2$ is the **mean-field** result. It means the order parameter decays like a square root: $\sigma^2_{\text{Gap}} \sim \sqrt{1-t}$. Graphically — a curve with a vertical tangent at the critical point. Physically — the system "resists" destruction of order, and to completely eliminate the anisotropy one must bring $t$ exactly to 1.
 
-**Предвестники перехода.** Вблизи $t = 1$ система демонстрирует характерные признаки критичности:
-- **Рост флуктуаций:** дисперсия $\sigma^2_{\text{Gap}}$ увеличивается (восприимчивость $\chi \propto |1-t|^{-\gamma}$ расходится)
-- **Критическое замедление:** время релаксации растёт ($\tau_{\text{rel}} \propto |1-t|^{-\nu z}$), система медленнее реагирует на возмущения
-- **Дальнодействующие корреляции:** соседние Gap-каналы начинают флуктуировать согласованно
+**Precursors of the transition.** Near $t = 1$ the system shows characteristic signs of criticality:
+- **Growth of fluctuations:** variance $\sigma^2_{\text{Gap}}$ increases (susceptibility $\chi \propto |1-t|^{-\gamma}$ diverges)
+- **Critical slowing down:** relaxation time grows ($\tau_{\text{rel}} \propto |1-t|^{-\nu z}$), the system responds more slowly to perturbations
+- **Long-range correlations:** adjacent Gap channels begin to fluctuate coherently
 
-Эти предвестники потенциально наблюдаемы в нейрофизиологических данных и могут служить ранними маркерами надвигающегося перехода.
+These precursors are potentially observable in neurophysiological data and may serve as early markers of an impending transition.
 
-**Обратимость:** Переход **обратим** — снижение $t$ (уменьшение хаоса) восстанавливает структурированный Gap-профиль.
+**Reversibility:** The transition is **reversible** — reducing $t$ (decreasing chaos) restores the structured Gap profile.
 
-### 3.2 Переход I $\leftrightarrow$ III: жизнь $\to$ смерть
+### 3.2 Transition I $\leftrightarrow$ III: life → death
 
-:::danger Переход 1-го рода (разрывный) [Т]
-На линии $r = r_c$ при $t < 1$:
+:::danger First-order transition (discontinuous) [T]
+On the line $r = r_c$ at $t < 1$:
 
 $$
-\mathcal{G}_{\text{total}} \text{ скачком} \to 0
+\mathcal{G}_{\text{total}} \text{ jumps} \to 0
 $$
 
-Полный Gap и когерентности исчезают скачкообразно. Система мгновенно теряет все межсекторные связи.
+Total Gap and coherences disappear discontinuously. The system instantly loses all inter-sector connections.
 :::
 
-**Клиническое соответствие:** Острая декомпенсация. Истощение ресурсов ($r$ падает ниже $r_c$) приводит к скачкообразному распаду когерентности — аналог внезапной потери сознания.
+**Clinical correspondence:** Acute decompensation. Resource depletion ($r$ falls below $r_c$) leads to discontinuous collapse of coherence — analogous to sudden loss of consciousness.
 
-**Почему этот переход опаснее.** При переходе 2-го рода (I↔II) есть предупреждающие сигналы — система «проседает» постепенно. При переходе 1-го рода (I↔III) предупреждений может не быть: система выглядит стабильной ($P > P_{\text{crit}}$, структура на месте), но ресурсы тихо тают. И в один момент — скачок.
+**Why this transition is more dangerous.** In the second-order transition (I↔II) there are warning signs — the system "sags" gradually. In the first-order transition (I↔III) there may be no warnings: the system looks stable ($P > P_{\text{crit}}$, structure intact), but resources are quietly diminishing. And at some moment — a jump.
 
-Физическая аналогия: перегрев жидкости. Вода может оставаться жидкой при температуре выше 100°C, если нет центров кипения. Но стоит щёлкнуть по стакану — и вся масса мгновенно вскипает. Точно так же холон в Фазе I с $r \approx r_c$ может казаться стабильным, но малейшее дополнительное возмущение запускает лавинообразный распад.
+Physical analogy: superheated liquid. Water can remain liquid above 100°C if there are no nucleation sites. But tapping the glass — and the entire mass instantly boils. In the same way, a holon in Phase I with $r \approx r_c$ may appear stable, but the slightest additional perturbation triggers an avalanche collapse.
 
-**Гистерезис.** Важнейшее свойство перехода 1-го рода — **гистерезис**: для возвращения из Фазы III в Фазу I недостаточно восстановить $r$ до $r_c$. Нужно поднять $r$ существенно *выше* $r_c$, чтобы заново «зародить» когерентности. Это аналог переохлаждения: чтобы растопить лёд, недостаточно нагреть до 0°C — нужен небольшой перегрев.
+**Hysteresis.** The most important property of a first-order transition — **hysteresis**: to return from Phase III to Phase I it is not enough to restore $r$ to $r_c$. One must raise $r$ substantially *above* $r_c$ to "nucleate" coherences anew. This is analogous to supercooling: to melt ice, it is not enough to heat to 0°C — a slight overheating is needed.
 
-Клинически это означает: вывести пациента из комы сложнее, чем предотвратить вход в неё. Реанимация требует больше ресурсов, чем профилактика.
+Clinically this means: withdrawing a patient from a coma is harder than preventing entry into it. Resuscitation requires more resources than prevention.
 
-**Обратимость:** Переход **частично обратим** при быстром восстановлении $r > r_c$ (внешняя поддержка). Однако система может попасть в другой Gap-профиль (гистерезис).
+**Reversibility:** The transition is **partially reversible** with rapid restoration of $r > r_c$ (external support). However, the system may end up in a different Gap profile (hysteresis).
 
-### 3.3 Деградация II $\to$ III: тихое угасание {#деградация-ii-iii}
+### 3.3 Degradation II → III: silent extinction {#деградация-ii-iii}
 
-Между Фазами II и III нет формальной линии фазового перехода — это *непрерывная* деградация. При $t > 1$ система уже в разупорядоченном состоянии, и если $r$ начинает падать, когерентности вымирают без драматического скачка.
+Between Phases II and III there is no formal phase transition line — this is *continuous* degradation. At $t > 1$ the system is already in the disordered state, and if $r$ begins to fall, coherences die out without a dramatic jump.
 
-Клинически это соответствует **хронической деменции**: сознание мутнеет постепенно, день за днём, без острого момента «потери». Именно поэтому деменция так коварна — нет точки, в которой можно сказать «вот здесь она началась».
+Clinically this corresponds to **chronic dementia**: consciousness dims gradually, day by day, without an acute moment of "loss". This is precisely why dementia is so insidious — there is no point at which one can say "this is where it began".
 
-Математически: при $t > 1$ система уже потеряла анизотропию ($\sigma^2_{\text{Gap}} = 0$), поэтому дальнейшее падение $r$ ниже $r_c$ не вызывает *качественного* изменения — просто количество когерентности плавно стремится к нулю.
+Mathematically: at $t > 1$ the system has already lost anisotropy ($\sigma^2_{\text{Gap}} = 0$), so further falling of $r$ below $r_c$ does not cause a *qualitative* change — the amount of coherence simply tends smoothly to zero.
 
 ---
 
-## Трикритическая точка: где встречаются все фазы {#трикритическая-точка}
+## Tricritical Point: Where All Phases Meet {#трикритическая-точка}
 
-### 3.4 Трикритическая точка
+### 3.4 Tricritical Point
 
-:::tip Трикритическая точка $(t^*, r^*) = (1, r_c)$ [Т]
-В трикритической точке сходятся все три фазы. Критические показатели отличаются от линии I $\leftrightarrow$ II: $\beta = 1/4$ (вместо $1/2$), $\delta = 5$ (вместо $3$), $\alpha = 1/2$ (вместо лог.). Полная таблица: [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram).
+:::tip Tricritical point $(t^*, r^*) = (1, r_c)$ [T]
+At the tricritical point all three phases converge. Critical exponents differ from the I $\leftrightarrow$ II line: $\beta = 1/4$ (instead of $1/2$), $\delta = 5$ (instead of $3$), $\alpha = 1/2$ (instead of log.). Full table: [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram).
 :::
 
-**Клиническое соответствие:** Пограничное состояние — осцилляция между упорядоченным Gap (ремиссия) и хаотическим Gap (рецидив), при одновременной угрозе срыва в мёртвую зону.
+**Clinical correspondence:** Borderline state — oscillation between ordered Gap (remission) and chaotic Gap (relapse), with a simultaneous threat of collapse into the dead zone.
 
-### Почему трикритическая точка особенная
+### Why the tricritical point is special
 
-В обычной точке фазовой диаграммы система «знает», в какой фазе она находится. Вблизи линии перехода I↔II она колеблется между двумя фазами. Но в трикритической точке все **три** фазы становятся одинаково доступными. Система испытывает максимальную неопределённость — она «не знает», куда ей податься.
+At an ordinary point of the phase diagram the system "knows" which phase it is in. Near the I↔II transition line it oscillates between two phases. But at the tricritical point all **three** phases become equally accessible. The system experiences maximal uncertainty — it "does not know" where to go.
 
-Это отражается в изменённых критических показателях. Обратите внимание: $\beta$ уменьшается с $1/2$ до $1/4$. Это значит, что параметр порядка убывает **медленнее** — кривая $\sigma^2(t)$ становится более пологой. Физически: вблизи трикритической точки даже малый «шум» ($\delta t$) вызывает значительное изменение параметра порядка. Система **сверхчувствительна**.
+This is reflected in the changed critical exponents. Note: $\beta$ decreases from $1/2$ to $1/4$. This means the order parameter decays **more slowly** — the curve $\sigma^2(t)$ becomes more gradual. Physically: near the tricritical point even small "noise" ($\delta t$) causes a significant change in the order parameter. The system is **supersensitive**.
 
-Показатель $\delta = 5$ (вместо 3) означает, что зависимость «внешнего поля» от параметра порядка на критической изотерме становится более крутой — система гораздо сильнее отклоняется от равновесия при малых возмущениях.
+The exponent $\delta = 5$ (instead of 3) means the dependence of the "external field" on the order parameter along the critical isotherm becomes steeper — the system deviates much more strongly from equilibrium under small perturbations.
 
-А $\alpha = 1/2$ (вместо логарифмической особенности) означает, что теплоёмкость *расходится* степенным образом. Кибернетически: энергетические затраты на поддержание стабильности вблизи трикритической точки растут по степенному закону и формально уходят в бесконечность. Система не может устойчиво существовать вблизи этой точки — она неизбежно «соскальзывает» в одну из трёх фаз.
+And $\alpha = 1/2$ (instead of a logarithmic singularity) means the specific heat *diverges* in a power-law manner. Cybernetially: the energy costs of maintaining stability near the tricritical point grow by a power law and formally go to infinity. The system cannot exist stably near this point — it inevitably "slides" into one of the three phases.
 
-### Трикритическая точка и пограничное расстройство личности
+### Tricritical point and borderline personality disorder
 
-Клиническая картина пограничного расстройства личности (borderline personality disorder) поразительно точно соответствует динамике вблизи трикритической точки:
-- **Быстрые переключения** между ясностью (Фаза I) и хаосом (Фаза II)
-- **Постоянная угроза** срыва в Фазу III (суицидальность как приближение к $r_c$)
-- **Сверхчувствительность** к внешним воздействиям ($\alpha = 1/2$)
-- **Трудность терапии:** система не «хочет» уходить от трикритической точки, потому что все три фазы одинаково доступны
+The clinical picture of borderline personality disorder (BPD) corresponds strikingly accurately to the dynamics near the tricritical point:
+- **Rapid switching** between clarity (Phase I) and chaos (Phase II)
+- **Constant threat** of collapse into Phase III (suicidality as approach to $r_c$)
+- **Hypersensitivity** to external influences ($\alpha = 1/2$)
+- **Difficulty of therapy:** the system does not "want" to move away from the tricritical point, because all three phases are equally accessible
 
-Это не метафора — это конкретное предсказание UHM: пациенты с пограничным расстройством должны демонстрировать нейрофизиологические маркеры, соответствующие критическим показателям трикритической точки ($\beta = 1/4$), а не обычного перехода ($\beta = 1/2$).
+This is not a metaphor — it is a concrete prediction of UHM: patients with BPD should exhibit neurophysiological markers corresponding to the critical exponents of the tricritical point ($\beta = 1/4$), not those of the ordinary transition ($\beta = 1/2$).
 
 ---
 
-## 4. Клиническое картирование {#клиника}
+## 4. Clinical Mapping {#клиника}
 
-### 4.1 Таблица фаз и клинических состояний
+### 4.1 Table of Phases and Clinical States
 
-| Фаза | Клинический аналог | Характеристика | Маркеры |
-|------|--------------------|----------------|---------|
-| **I (упорядоченный)** | Нормальное функционирование | Избирательные непрозрачности (здоровое вытеснение), прозрачность в остальных каналах | $\sigma^2_{\text{Gap}} > 0$, $P > P_{\text{crit}}$, $\Phi > \Phi_{\text{th}}$ |
-| **II (разупорядоченный)** | Диссоциативное расстройство | Все каналы одинаково мутны — диффузная деперсонализация | $\sigma^2_{\text{Gap}} \approx 0$, $P > P_{\text{crit}}$, $\Phi$ снижено |
-| **III (мёртвая)** | Деменция, кома | Потеря когерентностей, фрагментация | $P \to 1/7$, $\Phi \to 0$, $r < r_c$ |
-| **I $\leftrightarrow$ II** | Психотический эпизод | «Расплавка» структуры непрозрачности | $t \approx 1$, осцилляции $\sigma^2_{\text{Gap}}$ |
-| **I $\leftrightarrow$ III** | Острая декомпенсация | Скачкообразный распад при истощении | $r \to r_c$, скачок $\mathcal{G}_{\text{total}}$ |
-| **Трикритическая** | Пограничное расстройство | Осцилляция между порядком и хаосом | $t \approx 1$, $r \approx r_c$ |
+| Phase | Clinical analogue | Characteristics | Markers |
+|-------|-------------------|-----------------|---------|
+| **I (ordered)** | Normal functioning | Selective opacities (healthy repression), transparency in other channels | $\sigma^2_{\text{Gap}} > 0$, $P > P_{\text{crit}}$, $\Phi > \Phi_{\text{th}}$ |
+| **II (disordered)** | Dissociative disorder | All channels equally murky — diffuse depersonalisation | $\sigma^2_{\text{Gap}} \approx 0$, $P > P_{\text{crit}}$, $\Phi$ reduced |
+| **III (dead)** | Dementia, coma | Loss of coherences, fragmentation | $P \to 1/7$, $\Phi \to 0$, $r < r_c$ |
+| **I $\leftrightarrow$ II** | Psychotic episode | "Melting" of opacity structure | $t \approx 1$, oscillations of $\sigma^2_{\text{Gap}}$ |
+| **I $\leftrightarrow$ III** | Acute decompensation | Discontinuous collapse upon exhaustion | $r \to r_c$, jump in $\mathcal{G}_{\text{total}}$ |
+| **Tricritical** | Borderline disorder | Oscillation between order and chaos | $t \approx 1$, $r \approx r_c$ |
 
-### 4.2 Расширенное клиническое отображение {#клиническое-отображение}
+### 4.2 Extended Clinical Mapping {#клиническое-отображение}
 
-Фазовая диаграмма позволяет систематически классифицировать известные нарушения сознания. Ниже — детальное отображение:
+The phase diagram enables systematic classification of known disorders of consciousness. Below is a detailed mapping:
 
-#### Фаза I: спектр нормы
+#### Phase I: spectrum of normal
 
-Даже внутри Фазы I существует разнообразие. Система может иметь разные Gap-профили (ранг 1, 2 или 3), каждый из которых соответствует своему «стилю» сознания:
+Even within Phase I there is diversity. The system may have different Gap profiles (rank 1, 2, or 3), each corresponding to a different "style" of consciousness:
 
-| Ранг Gap | Описание | Психологический аналог |
-|----------|----------|------------------------|
-| 1 | Один канал непрозрачен, остальные прозрачны | Сфокусированное внимание, «поток» (flow) |
-| 2 | Два канала непрозрачны | Обычное бодрствование, многозадачность |
-| 3 | Три канала непрозрачны (топологически защищены) | Глубокая медитация, «удержание множества» |
+| Gap rank | Description | Psychological analogue |
+|----------|-------------|----------------------|
+| 1 | One channel opaque, others transparent | Focused attention, "flow" state |
+| 2 | Two channels opaque | Ordinary wakefulness, multitasking |
+| 3 | Three channels opaque (topologically protected) | Deep meditation, "holding multiplicity" |
 
-Переходы между рангами внутри Фазы I — это *не* фазовые переходы. Это плавные перестройки, соответствующие нормальной психической динамике (переключение внимания, смена настроения, засыпание и пробуждение в рамках нормы).
+Transitions between ranks within Phase I are *not* phase transitions. They are smooth rearrangements corresponding to normal psychic dynamics (attention switching, mood change, falling asleep and waking within the normal range).
 
-#### Фаза II: спектр расстройств
+#### Phase II: spectrum of disorders
 
-| Подтип | $t$ | $r$ | Клинический аналог |
-|--------|-----|-----|--------------------|
-| Умеренный ($t \approx 1.5$) | Умеренно выше 1 | Далеко от $r_c$ | Лёгкая диссоциация, дежавю, «туман в голове» |
-| Выраженный ($t \approx 3$) | Значительно выше 1 | Ещё далеко от $r_c$ | Выраженная деперсонализация, делирий |
-| Критический ($t \gg 1$, $r \to r_c$) | Очень высокий | Близко к $r_c$ | Тяжёлый психоз с угрозой катастрофы |
+| Subtype | $t$ | $r$ | Clinical analogue |
+|---------|-----|-----|--------------------|
+| Mild ($t \approx 1.5$) | Moderately above 1 | Far from $r_c$ | Mild dissociation, déjà vu, "brain fog" |
+| Pronounced ($t \approx 3$) | Significantly above 1 | Still far from $r_c$ | Pronounced depersonalisation, delirium |
+| Critical ($t \gg 1$, $r \to r_c$) | Very high | Close to $r_c$ | Severe psychosis with threat of catastrophe |
 
-#### Фаза III: градации бессознательного
+#### Phase III: gradations of unconsciousness
 
-| Подтип | $P$ | $\Phi$ | Клинический аналог |
-|--------|-----|--------|--------------------|
-| Неглубокая ($P \lesssim P_{\text{crit}}$) | Чуть ниже $2/7$ | Малое, но ненулевое | Сопор, лёгкая кома (шкала Глазго 6–8) |
-| Глубокая ($P \to 1/7$) | Близка к $1/7$ | Стремится к 0 | Глубокая кома (шкала Глазго 3–5) |
-| Терминальная ($P = 1/7$) | Точно $1/7$ | Нуль | Смерть мозга |
+| Subtype | $P$ | $\Phi$ | Clinical analogue |
+|---------|-----|--------|-------------------|
+| Shallow ($P \lesssim P_{\text{crit}}$) | Slightly below $2/7$ | Small but nonzero | Stupor, light coma (Glasgow 6–8) |
+| Deep ($P \to 1/7$) | Near $1/7$ | Approaching 0 | Deep coma (Glasgow 3–5) |
+| Terminal ($P = 1/7$) | Exactly $1/7$ | Zero | Brain death |
 
-### 4.3 Траектории в фазовом пространстве
+### 4.3 Trajectories in Phase Space
 
 ```mermaid
 graph TD
-    subgraph "Типичные клинические траектории"
-        N["Норма<br/>(Фаза I)"]
-        S["Острый стресс<br/>(рост t)"]
-        D["Диссоциация<br/>(Фаза II)"]
-        R["Ремиссия<br/>(снижение t)"]
-        E["Истощение<br/>(падение r)"]
-        C["Кома/Деменция<br/>(Фаза III)"]
-        T["Терапия<br/>(рост r)"]
+    subgraph "Typical clinical trajectories"
+        N["Normal<br/>(Phase I)"]
+        S["Acute stress<br/>(rising t)"]
+        D["Dissociation<br/>(Phase II)"]
+        R["Remission<br/>(falling t)"]
+        E["Exhaustion<br/>(falling r)"]
+        C["Coma/Dementia<br/>(Phase III)"]
+        T["Therapy<br/>(rising r)"]
 
-        N -->|"стресс"| S
+        N -->|"stress"| S
         S -->|"t > 1"| D
-        D -->|"терапия"| R
+        D -->|"therapy"| R
         R -->|"t < 1"| N
-        N -->|"истощение"| E
+        N -->|"exhaustion"| E
         E -->|"r < r_c"| C
-        C -->|"реанимация"| T
+        C -->|"resuscitation"| T
         T -->|"r > r_c"| N
     end
 
@@ -445,205 +445,205 @@ graph TD
     style T fill:#e1f5fe
 ```
 
-### 4.4 Диагностический протокол
+### 4.4 Diagnostic Protocol
 
-:::info Протокол определения фазы [И]
-1. **Измерить $P$** (чистота): EEG-когерентность или PCI
-2. **Оценить $\sigma^2_{\text{Gap}}$** (анизотропия): дисперсия корреляций между 7 секторами
-3. **Вычислить $r$**: отношение скорости восстановления к скорости деградации
-4. **Определить фазу:**
-   - $P > P_{\text{crit}}$ и $\sigma^2_{\text{Gap}} > 0$ $\Rightarrow$ **Фаза I**
-   - $P > P_{\text{crit}}$ и $\sigma^2_{\text{Gap}} \approx 0$ $\Rightarrow$ **Фаза II**
-   - $P < P_{\text{crit}}$ или $r < r_c$ $\Rightarrow$ **Фаза III**
+:::info Phase identification protocol [I]
+1. **Measure $P$** (purity): EEG coherence or PCI
+2. **Estimate $\sigma^2_{\text{Gap}}$** (anisotropy): dispersion of correlations between 7 sectors
+3. **Compute $r$**: ratio of recovery rate to degradation rate
+4. **Identify phase:**
+   - $P > P_{\text{crit}}$ and $\sigma^2_{\text{Gap}} > 0$ $\Rightarrow$ **Phase I**
+   - $P > P_{\text{crit}}$ and $\sigma^2_{\text{Gap}} \approx 0$ $\Rightarrow$ **Phase II**
+   - $P < P_{\text{crit}}$ or $r < r_c$ $\Rightarrow$ **Phase III**
 :::
 
-### 4.5 Терапевтические стратегии по фазам
+### 4.5 Therapeutic Strategies by Phase
 
-| Фаза | Цель терапии | Стратегия |
-|------|-------------|-----------|
-| **I (норма)** | Профилактика | Мониторинг $t$ и $r$; поддержание $\mathrm{Coh}_E$ |
-| **I $\to$ II** | Предотвращение перехода | Снижение $t$ (уменьшение хаоса); структурирование Gap-профиля |
-| **II** | Восстановление структуры | Снижение $t$ ниже 1; целенаправленная работа с конкретными Gap-каналами |
-| **II $\to$ III** | Предотвращение перехода | Увеличение $r$ (поддержка ресурсов); повышение $\mathrm{Coh}_E$ |
-| **III** | Реанимация | Внешнее увеличение $\kappa$ (медикаменты, стимуляция); достижение $r > r_c$ |
-
----
-
-## Управление фазами: как перевести систему из одной фазы в другую {#управление-фазами}
-
-Фазовая диаграмма — это не только инструмент диагностики, но и навигационная карта для терапевтического вмешательства. Знание того, *где* система находится и *куда* её нужно перевести, определяет стратегию лечения.
-
-### Принцип двух рычагов
-
-У терапевта есть ровно два «рычага»:
-
-1. **Снижение $t$** (уменьшение хаоса): стабилизирующие вмешательства — медикаменты (нейролептики, анксиолитики), снижение внешней стимуляции, структурирование среды, медитация.
-
-2. **Повышение $r$** (увеличение ресурсов): ресурсные вмешательства — нутриенты, сон, социальная поддержка, повышение $\mathrm{Coh}_E$ через психотерапию.
-
-### Стратегии для каждого перехода
-
-#### Переход II $\to$ I: «кристаллизация порядка»
-
-Цель: снизить $t$ ниже 1, чтобы система спонтанно выбрала структурированный Gap-профиль.
-
-Механизм: при $t < 1$ потенциал $V(\sigma^2)$ приобретает минимум при $\sigma^2 > 0$ — система *сама* стремится к анизотропии. Терапевту не нужно «конструировать» правильный Gap-профиль — достаточно создать условия, при которых система сама его выберёт.
-
-Практически: это объясняет, почему при лихорадочном бреде (высокий $t$) достаточно снизить температуру — и ясность мышления восстанавливается сама, без необходимости «чинить» каждый когнитивный процесс отдельно. Фазовый переход 2-го рода гарантирует автоматическое восстановление структуры.
-
-#### Переход III $\to$ I: «воскрешение»
-
-Цель: поднять $r$ выше $r_c$ и одновременно обеспечить $t < 1$.
-
-Сложности:
-- **Гистерезис**: нужно $r \gg r_c$, а не просто $r > r_c$
-- **Выбор Gap-профиля**: система может «попасть» не в тот аттрактор — восстановленное сознание может отличаться от исходного
-- **Временнóе окно**: чем дольше система в Фазе III, тем больше ресурсов нужно для возвращения (деградация $\kappa_{\text{bootstrap}}$)
-
-Это объясняет клинический опыт: быстро реанимированный пациент восстанавливается лучше, чем тот, кто провёл в коме длительное время. Каждая минута в Фазе III дополнительно снижает $\kappa_{\text{bootstrap}}$, увеличивая порог $r$ для возвращения.
-
-#### Удержание в Фазе I: «гомеостатический контур»
-
-Здоровая система не просто «находится» в Фазе I — она **активно поддерживает** свою позицию через отрицательную обратную связь:
-
-$$
-\delta t \uparrow \;\Rightarrow\; \sigma^2_{\text{Gap}} \downarrow \;\Rightarrow\; \kappa \text{ перераспределяется} \;\Rightarrow\; t_{\text{eff}} \downarrow
-$$
-
-Этот гомеостатический контур работает через E-когерентность: осознание проблемы (рост $\mathrm{Coh}_E$) увеличивает $\kappa$, что снижает эффективную температуру. Это формальное описание того, что в психологии называют «рефлексивная саморегуляция».
+| Phase | Therapeutic goal | Strategy |
+|-------|-----------------|----------|
+| **I (normal)** | Prevention | Monitoring $t$ and $r$; maintaining $\mathrm{Coh}_E$ |
+| **I → II** | Preventing transition | Reducing $t$ (decreasing chaos); structuring Gap profile |
+| **II** | Restoring structure | Reducing $t$ below 1; targeted work with specific Gap channels |
+| **II → III** | Preventing transition | Increasing $r$ (resource support); raising $\mathrm{Coh}_E$ |
+| **III** | Resuscitation | External increase of $\kappa$ (medication, stimulation); achieving $r > r_c$ |
 
 ---
 
-## 5. Связь с тензором напряжений {#тензор-напряжений}
+## Phase Control: How to Move the System from One Phase to Another {#управление-фазами}
 
-Положение системы в фазовой диаграмме отражается в [тензоре напряжений](./definitions#тензор-напряжений):
+The phase diagram is not only a diagnostic tool but also a navigation map for therapeutic intervention. Knowing *where* the system is and *where* it needs to go determines the treatment strategy.
 
-| Фаза | $\|\sigma_{\mathrm{sys}}\|_\infty$ | Компоненты |
-|------|-------------------------------------|------------|
-| I | $< 1$ | Все $\sigma_i < 1$; возможно $\sigma_E$ повышена (здоровая рефлексия) |
-| II | $< 1$ (формально) | Все $\sigma_i$ равномерно повышены; $\sigma_U$ → 1 (потеря единства) |
-| III | $\geq 1$ | Хотя бы один $\sigma_i \geq 1$ (перегрузка конкретного измерения) |
+### The Principle of Two Levers
 
-:::tip Связь с Теоремой 10.1 [Т]
-По [теореме эквивалентности условий](./theorems#теорема-101-эквивалентность-условий):
+The therapist has exactly two "levers":
+
+1. **Reducing $t$** (decreasing chaos): stabilising interventions — medication (antipsychotics, anxiolytics), reducing external stimulation, structuring the environment, meditation.
+
+2. **Raising $r$** (increasing resources): resource interventions — nutrients, sleep, social support, raising $\mathrm{Coh}_E$ through psychotherapy.
+
+### Strategies for Each Transition
+
+#### Transition II → I: "crystallisation of order"
+
+Goal: reduce $t$ below 1 so the system spontaneously chooses a structured Gap profile.
+
+Mechanism: at $t < 1$ the potential $V(\sigma^2)$ acquires a minimum at $\sigma^2 > 0$ — the system *itself* tends toward anisotropy. The therapist does not need to "construct" the correct Gap profile — it is sufficient to create conditions under which the system will choose it on its own.
+
+In practice: this explains why in febrile delirium (high $t$) it is sufficient to reduce the temperature — and clarity of thinking is restored on its own, without needing to "fix" each cognitive process separately. The second-order phase transition guarantees automatic structural restoration.
+
+#### Transition III → I: "resuscitation"
+
+Goal: raise $r$ above $r_c$ and simultaneously ensure $t < 1$.
+
+Difficulties:
+- **Hysteresis**: one needs $r \gg r_c$, not merely $r > r_c$
+- **Choice of Gap profile**: the system may "land" in the wrong attractor — restored consciousness may differ from the original
+- **Time window**: the longer the system is in Phase III, the more resources are needed for return (degradation of $\kappa_{\text{bootstrap}}$)
+
+This explains clinical experience: a quickly resuscitated patient recovers better than one who spent a long time in a coma. Every minute in Phase III further reduces $\kappa_{\text{bootstrap}}$, increasing the threshold $r$ for return.
+
+#### Staying in Phase I: "homeostatic loop"
+
+A healthy system does not merely "reside" in Phase I — it **actively maintains** its position through negative feedback:
+
+$$
+\delta t \uparrow \;\Rightarrow\; \sigma^2_{\text{Gap}} \downarrow \;\Rightarrow\; \kappa \text{ redistributed} \;\Rightarrow\; t_{\text{eff}} \downarrow
+$$
+
+This homeostatic loop works through E-coherence: recognising a problem (rising $\mathrm{Coh}_E$) increases $\kappa$, which reduces the effective temperature. This is the formal description of what psychology calls "reflective self-regulation".
+
+---
+
+## 5. Connection with the Stress Tensor {#тензор-напряжений}
+
+The position of the system on the phase diagram is reflected in the [stress tensor](./definitions#тензор-напряжений):
+
+| Phase | $\|\sigma_{\mathrm{sys}}\|_\infty$ | Components |
+|-------|-------------------------------------|------------|
+| I | $< 1$ | All $\sigma_i < 1$; $\sigma_E$ may be elevated (healthy reflexivity) |
+| II | $< 1$ (formally) | All $\sigma_i$ uniformly elevated; $\sigma_U$ → 1 (loss of unity) |
+| III | $\geq 1$ | At least one $\sigma_i \geq 1$ (overload of a specific dimension) |
+
+:::tip Connection to Theorem 10.1 [T]
+By the [equivalence of conditions theorem](./theorems#теорема-101-эквивалентность-условий):
 
 $$
 \Gamma \in \mathcal{V} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1 \Leftrightarrow P > P_{\text{crit}}
 $$
 
-Переход в Фазу III ($P < P_{\text{crit}}$) эквивалентен $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$.
+Transition to Phase III ($P < P_{\text{crit}}$) is equivalent to $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$.
 :::
 
-Тензор напряжений даёт *покомпонентную* информацию о том, почему система находится в данной фазе. В то время как $(t, r)$ дают глобальную позицию на карте, $\sigma_{\mathrm{sys}}$ показывает, *какие именно* измерения находятся под угрозой:
+The stress tensor provides *component-wise* information about why the system is in a given phase. While $(t, r)$ give the global position on the map, $\sigma_{\mathrm{sys}}$ shows *which specific* dimensions are under threat:
 
-- **$\sigma_A \to 1$**: перегрузка сенсорного измерения (Affect) — сенсорная перегрузка, эмоциональное «затопление»
-- **$\sigma_D \to 1$**: перегрузка когнитивного измерения (Distinction) — «паралич анализа», невозможность принять решение
-- **$\sigma_U \to 1$**: потеря единства (Unity) — диссоциация, деперсонализация
-- **$\sigma_E \to 1$**: перегрузка рефлексии (Evaluation) — руминация, «мышление о мышлении о мышлении»
+- **$\sigma_A \to 1$**: overload of the sensory dimension (Affect) — sensory overload, emotional "flooding"
+- **$\sigma_D \to 1$**: overload of the cognitive dimension (Distinction) — "analysis paralysis", inability to make a decision
+- **$\sigma_U \to 1$**: loss of unity (Unity) — dissociation, depersonalisation
+- **$\sigma_E \to 1$**: overload of reflexivity (Evaluation) — rumination, "thinking about thinking about thinking"
 
-Эта покомпонентная диагностика позволяет не просто определить фазу, но и *предсказать*, через какой канал произойдёт переход — и направить терапевтическое вмешательство на конкретный компонент.
-
----
-
-## Аналогии с физикой конденсированных сред {#аналогии-физика}
-
-Фазовая диаграмма сознания — не просто метафора. Математическая структура фазовых переходов в UHM *изоморфна* хорошо изученным переходам в физике. Это даёт два преимущества: (1) мощный интуитивный инструмент и (2) заимствование математического аппарата.
-
-### Фазовая диаграмма КХД
-
-Квантовая хромодинамика (КХД) — теория сильного взаимодействия — имеет фазовую диаграмму с поразительным сходством:
-
-| КХД | Сознание (UHM) |
-|-----|-----------------|
-| Температура $T$ | Параметр хаоса $t$ |
-| Барионный химический потенциал $\mu_B$ | Параметр регенерации $r$ |
-| **Адронная фаза** (кварки заключены внутри адронов) | **Фаза I** (когерентности «заключены» в структурированные Gap-профили) |
-| **Кварк-глюонная плазма** (кварки свободны, но горячие) | **Фаза II** (когерентности есть, но не организованы) |
-| **Цветная сверхпроводимость** (при высоком $\mu_B$, низком $T$) | Аналога нет (UHM не имеет фермионных конденсатов) |
-| **Кроссовер** при $\mu_B = 0$ | Переход I↔II при $r \gg r_c$ |
-| **Критическая конечная точка** | Трикритическая точка $(t^*, r^*)$ |
-
-Особенно примечательна аналогия: в КХД при нулевом $\mu_B$ переход адроны↔плазма — кроссовер (не настоящий фазовый переход), а при конечном $\mu_B$ появляется критическая конечная точка, где кроссовер превращается в переход 1-го рода. Точно так же в UHM при $r \gg r_c$ переход I↔II — плавный (2-го рода), но при $r = r_c$ характер меняется (трикритическая точка).
-
-### Сверхпроводники и свехртекучесть
-
-В сверхпроводниках спонтанное нарушение $U(1)$-симметрии создаёт конденсат Купера — макроскопическое квантовое состояние с нулевым сопротивлением. Аналогично, в Фазе I спонтанное нарушение $G_2$-симметрии создаёт структурированный Gap-профиль — «конденсат когерентностей», который обеспечивает «сверхтекучесть» информационных потоков между секторами.
-
-Голдстоуновские моды в обоих случаях играют одну и ту же роль: медленные, безмассовые возбуждения, связанные с нарушенной непрерывной симметрией. В сверхпроводнике это фазовые колебания параметра порядка. В сознании — ультрамедленные осцилляции Gap-профиля (см. [голдстоуновские моды](./goldstone-modes)).
-
-### Ферромагнетик Изинга
-
-Простейшая аналогия — и, возможно, самая поучительная:
-
-| Ферромагнетик Изинга | Сознание (UHM) |
-|----------------------|-----------------|
-| Спин вверх/вниз | Gap-канал открыт/закрыт |
-| Намагниченность $M$ | Анизотропия Gap $\sigma^2_{\text{Gap}}$ |
-| $T < T_c$: ферромагнитная фаза (спины выстроены) | Фаза I: структурированный Gap |
-| $T > T_c$: парамагнитная фаза (спины хаотичны) | Фаза II: равномерный Gap |
-| Критический показатель $\beta = 1/2$ (среднее поле) | $\beta = 1/2$ (среднее поле) |
-
-Совпадение критических показателей не случайно: и там, и там — среднеполевая теория Ландау с одним скалярным параметром порядка. Это означает, что UHM-переход I↔II принадлежит к тому же **классу универсальности**, что и среднеполевой переход в ферромагнетике. За пределами среднего поля (с учётом флуктуаций) показатели изменятся, но качественная картина останется той же.
-
-### Жидкие кристаллы
-
-Пожалуй, наиболее точная физическая аналогия — жидкие кристаллы. Они имеют:
-- **Кристаллическую фазу** (полный порядок) — аналог глубокой Фазы I
-- **Нематическую фазу** (ориентационный порядок без позиционного) — аналог неглубокой Фазы I
-- **Изотропную жидкость** (полный беспорядок) — аналог Фазы II
-
-Переход нематик↔изотропная жидкость — 1-го рода (слабый), что соответствует тому, что в UHM при $r \approx r_c$ переход I↔II меняет характер с 2-го рода на 1-й. Жидкокристаллическая аналогия также объясняет, почему в Фазе I возможны *разные* Gap-профили (разные ранги) — подобно тому, как жидкие кристаллы допускают различные мезофазы (нематик, смектик, холестерик).
+This component-wise diagnostics allows not only determining the phase, but *predicting* through which channel the transition will occur — and directing the therapeutic intervention at the specific component.
 
 ---
 
-## 6. Сводка статусов {#статусы}
+## Analogies with Condensed Matter Physics {#аналогии-физика}
 
-| Результат | Статус |
-|-----------|--------|
-| Три фазы Gap в плоскости $(t, r)$ | [Т] |
-| Переход I $\leftrightarrow$ II: 2-й род, $\beta = 1/2$ | [Т] |
-| Переход I $\leftrightarrow$ III: 1-й род, скачок $\mathcal{G}_{\text{total}}$ | [Т] |
-| Трикритическая точка $(t^*, r^*) = (1, r_c)$ | [Т] |
-| Критические показатели (Ландау, среднеполевые) | [Т] |
-| Соответствие фаз клиническим состояниям | [И] |
-| Терапевтические стратегии по фазам | [И] |
-| Диагностический протокол | [И] |
+The phase diagram of consciousness is not merely a metaphor. The mathematical structure of phase transitions in UHM is *isomorphic* to well-studied transitions in physics. This gives two advantages: (1) a powerful intuitive tool and (2) borrowing of the mathematical apparatus.
+
+### QCD Phase Diagram
+
+Quantum chromodynamics (QCD) — the theory of the strong interaction — has a phase diagram with a striking resemblance:
+
+| QCD | Consciousness (UHM) |
+|-----|---------------------|
+| Temperature $T$ | Chaos parameter $t$ |
+| Baryon chemical potential $\mu_B$ | Regeneration parameter $r$ |
+| **Hadronic phase** (quarks confined inside hadrons) | **Phase I** (coherences "confined" in structured Gap profiles) |
+| **Quark-gluon plasma** (quarks free but hot) | **Phase II** (coherences present but not organised) |
+| **Colour superconductivity** (high $\mu_B$, low $T$) | No analogue (UHM has no fermionic condensates) |
+| **Crossover** at $\mu_B = 0$ | I↔II transition at $r \gg r_c$ |
+| **Critical endpoint** | Tricritical point $(t^*, r^*)$ |
+
+Particularly noteworthy is the analogy: in QCD at zero $\mu_B$ the hadrons↔plasma transition is a crossover (not a genuine phase transition), while at finite $\mu_B$ a critical endpoint appears where the crossover becomes a first-order transition. In the same way in UHM, at $r \gg r_c$ the I↔II transition is smooth (second-order), but at $r = r_c$ the character changes (tricritical point).
+
+### Superconductors and Superfluidity
+
+In superconductors spontaneous breaking of $U(1)$-symmetry creates a Cooper condensate — a macroscopic quantum state with zero resistance. Analogously, in Phase I spontaneous breaking of $G_2$-symmetry creates a structured Gap profile — a "coherence condensate" that provides "superfluidity" of information flows between sectors.
+
+Goldstone modes in both cases play the same role: slow, massless excitations associated with the broken continuous symmetry. In a superconductor these are phase oscillations of the order parameter. In consciousness — ultra-slow oscillations of the Gap profile (see [Goldstone modes](./goldstone-modes)).
+
+### Ising Ferromagnet
+
+The simplest analogy — and perhaps the most instructive:
+
+| Ising ferromagnet | Consciousness (UHM) |
+|-------------------|---------------------|
+| Spin up/down | Gap channel open/closed |
+| Magnetisation $M$ | Gap anisotropy $\sigma^2_{\text{Gap}}$ |
+| $T < T_c$: ferromagnetic phase (spins aligned) | Phase I: structured Gap |
+| $T > T_c$: paramagnetic phase (spins disordered) | Phase II: uniform Gap |
+| Critical exponent $\beta = 1/2$ (mean field) | $\beta = 1/2$ (mean field) |
+
+The coincidence of critical exponents is not accidental: in both cases — Landau mean-field theory with a single scalar order parameter. This means the UHM transition I↔II belongs to the same **universality class** as the mean-field transition in the ferromagnet. Beyond mean field (accounting for fluctuations) the exponents will change, but the qualitative picture remains the same.
+
+### Liquid Crystals
+
+Perhaps the most precise physical analogy — liquid crystals. They have:
+- **Crystalline phase** (full order) — analogue of deep Phase I
+- **Nematic phase** (orientational order without positional order) — analogue of shallow Phase I
+- **Isotropic liquid** (complete disorder) — analogue of Phase II
+
+The nematic↔isotropic liquid transition is first-order (weakly), which corresponds to the fact that in UHM at $r \approx r_c$ the I↔II transition changes character from second- to first-order. The liquid-crystal analogy also explains why different Gap profiles (different ranks) are possible in Phase I — just as liquid crystals admit various mesophases (nematic, smectic, cholesteric).
 
 ---
 
-## Что мы узнали {#что-мы-узнали}
+## 6. Status Summary {#статусы}
 
-Подведём итог ключевых результатов:
-
-- **Два параметра — $(t, r)$ — полностью определяют фазу** сознательной системы. Параметр $t = T_{\text{eff}}/T_c$ — «термометр хаоса», $r = \kappa/\Gamma_2$ — «запас жизненных сил».
-- **Три фазы** возникают неизбежно из структуры потенциала Ландау--Гинзбурга: Фаза I (упорядоченный Gap, ясное сознание), Фаза II (разупорядоченный Gap, диссоциация), Фаза III (мёртвая зона, $r < r_c$).
-- **Переход I $\leftrightarrow$ II** — второго рода (плавный, $\beta = 1/2$): постепенная потеря ясности, обратимый. **Переход I $\leftrightarrow$ III** — первого рода (скачкообразный, с гистерезисом): внезапная потеря сознания, частично обратимый при быстрой реанимации.
-- **Трикритическая точка** $(t^*, r^*) = (1, r_c)$ — место максимальной нестабильности, соответствующее клинической картине пограничного расстройства личности ($\beta = 1/4$, $\delta = 5$).
-- **Тензор напряжений** $\sigma_{\mathrm{sys}}$ даёт покомпонентную диагностику: какое именно измерение перегружено, предсказывая канал перехода.
-- **Терапевтические стратегии** однозначно следуют из фазовой диаграммы: снижение $t$ (стабилизация) или повышение $r$ (ресурсная поддержка), в зависимости от текущей фазы.
-- **Аналогии с физикой** (КХД, ферромагнетик, жидкие кристаллы) — не метафоры, а математические изоморфизмы: тот же класс универсальности Ландау, те же критические показатели.
-
----
-
-### Мост к следующей главе
-
-Фазовая диаграмма показала, что в Фазе I $G_2$-симметрия *спонтанно нарушена*: система выбрала конкретный Gap-профиль из океана равноправных возможностей. Но у этого нарушения есть неизбежное следствие, столь же обязательное, как закон сохранения заряда: вдоль «забытых» направлений симметрии возникают *безмассовые* (или почти безмассовые) колебания — **голдстоуновские моды**.
-
-В [следующей главе](./goldstone-modes) мы покажем, что эти моды — музыка нарушенной симметрии — описывают ультрамедленные осцилляции Gap-профиля, совпадающие с инфра-медленными нейрональными флуктуациями (ISF), наблюдаемыми в фМРТ. Это одно из наиболее конкретных и фальсифицируемых предсказаний теории.
+| Result | Status |
+|--------|--------|
+| Three Gap phases in the $(t, r)$ plane | [T] |
+| Transition I $\leftrightarrow$ II: 2nd order, $\beta = 1/2$ | [T] |
+| Transition I $\leftrightarrow$ III: 1st order, jump in $\mathcal{G}_{\text{total}}$ | [T] |
+| Tricritical point $(t^*, r^*) = (1, r_c)$ | [T] |
+| Critical exponents (Landau, mean-field) | [T] |
+| Correspondence of phases to clinical states | [I] |
+| Therapeutic strategies by phase | [I] |
+| Diagnostic protocol | [I] |
 
 ---
 
-## Связанные документы
+## What We Learned {#что-мы-узнали}
 
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — математическое основание: три фазы, критические показатели, катастрофы Уитни
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — $T_{\text{eff}}$, $V_{\text{Gap}}$, лагранжиан
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — бифуркации, немарковские эффекты
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}} = 2/7$
-- [Определения КК](./definitions) — тензор напряжений, $\mathrm{Coh}_E$, меры
-- [Теоремы КК](./theorems) — No-Zombie, эквивалентность условий
-- [Предсказания КК](./predictions) — фальсифицируемые предсказания
-- [Топологическая защита когерентности](./topological-protection) — механизмы защиты Gap
-- [Голдстоуновские моды](./goldstone-modes) — медленные осцилляции в Фазе I
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0–L4
-- [Методология измерений](./measurement) — как идентифицировать фазы экспериментально
-- [Сравнение с альтернативами](./comparison) — фазовая диаграмма vs. другие теории
+A summary of the key results:
+
+- **Two parameters — $(t, r)$ — fully determine the phase** of a conscious system. Parameter $t = T_{\text{eff}}/T_c$ — the "chaos thermometer", $r = \kappa/\Gamma_2$ — the "vital reserves".
+- **Three phases** arise inevitably from the structure of the Landau–Ginzburg potential: Phase I (ordered Gap, clear consciousness), Phase II (disordered Gap, dissociation), Phase III (dead zone, $r < r_c$).
+- **Transition I $\leftrightarrow$ II** — second-order (smooth, $\beta = 1/2$): gradual loss of clarity, reversible. **Transition I $\leftrightarrow$ III** — first-order (discontinuous, with hysteresis): sudden loss of consciousness, partially reversible with rapid resuscitation.
+- **Tricritical point** $(t^*, r^*) = (1, r_c)$ — the point of maximum instability, corresponding to the clinical picture of borderline personality disorder ($\beta = 1/4$, $\delta = 5$).
+- **Stress tensor** $\sigma_{\mathrm{sys}}$ provides component-wise diagnostics: which specific dimension is overloaded, predicting the channel of transition.
+- **Therapeutic strategies** follow unambiguously from the phase diagram: reducing $t$ (stabilisation) or raising $r$ (resource support), depending on the current phase.
+- **Analogies with physics** (QCD, ferromagnet, liquid crystals) are not metaphors but mathematical isomorphisms: the same Landau universality class, the same critical exponents.
+
+---
+
+### Bridge to the Next Chapter
+
+The phase diagram showed that in Phase I the $G_2$-symmetry is *spontaneously broken*: the system has chosen a specific Gap profile from an ocean of equally available possibilities. But this breaking has an inevitable consequence, as obligatory as the law of charge conservation: along the "forgotten" symmetry directions there arise *massless* (or nearly massless) oscillations — **Goldstone modes**.
+
+In the [next chapter](./goldstone-modes) we will show that these modes — the music of broken symmetry — describe ultra-slow oscillations of the Gap profile, coinciding with infra-slow neuronal fluctuations (ISF) observed in fMRI. This is one of the most concrete and falsifiable predictions of the theory.
+
+---
+
+## Related Documents
+
+- [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — mathematical foundation: three phases, critical exponents, Whitney catastrophes
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $T_{\text{eff}}$, $V_{\text{Gap}}$, Lagrangian
+- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, non-Markovian effects
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}} = 2/7$
+- [CC definitions](./definitions) — stress tensor, $\mathrm{Coh}_E$, measures
+- [CC theorems](./theorems) — No-Zombie, equivalence of conditions
+- [CC predictions](./predictions) — falsifiable predictions
+- [Topological protection of coherence](./topological-protection) — Gap protection mechanisms
+- [Goldstone modes](./goldstone-modes) — slow oscillations in Phase I
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0–L4
+- [Measurement methodology](./measurement) — how to identify phases experimentally
+- [Comparison with alternatives](./comparison) — phase diagram vs. other theories

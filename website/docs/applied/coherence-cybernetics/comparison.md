@@ -1,271 +1,271 @@
 ---
 sidebar_position: 27
-title: "Сравнение с альтернативными теориями"
-description: "Систематическое сопоставление КК с IIT, FEP, GWT, автопоэзисом и другими теориями сознания и самоорганизации"
+title: "Comparison with Alternative Theories"
+description: "Systematic comparison of CC with IIT, FEP, GWT, autopoiesis, and other theories of consciousness and self-organization"
 ---
 
-# Сравнение с Альтернативными Теориями
+# Comparison with Alternative Theories
 
-> *«Настоящая проверка теории — не то, может ли она объяснить известные факты, а то, предсказывает ли она новые.»*
-> — Имре Лакатос
+> *"The real test of a theory is not whether it can explain known facts, but whether it predicts new ones."*
+> — Imre Lakatos
 
 
-:::info Для кого эта глава
-Систематическое сравнение КК с девятью конкурирующими теориями сознания: IIT, FEP, GWT, автопоэзис, Orch-OR, HOT, RPT и AST.
+:::info Who This Chapter Is For
+A systematic comparison of CC with nine competing theories of consciousness: IIT, FEP, GWT, autopoiesis, Orch-OR, HOT, RPT, and AST.
 :::
 
-В предыдущей главе мы исследовали философский фундамент КК — унитарный монизм, необходимость сознания, этику порога. Всё это звучит впечатляюще, но научная теория живёт не в вакууме. Её ценность определяется не только внутренней красотой, но и тем, *что она может, чего не могут другие*. Пришло время поставить КК рядом с конкурентами — честно, отмечая как преимущества, так и ограничения каждого.
+In the previous chapter we explored the philosophical foundation of CC — unitary monism, the necessity of consciousness, the ethics of the threshold. All of this sounds impressive, but a scientific theory does not live in a vacuum. Its value is determined not only by internal beauty, but by *what it can do that others cannot*. It is time to place CC alongside its competitors — honestly, noting both the advantages and the limitations of each.
 
-Если вы учёный, работающий в одной из этих традиций, этот раздел покажет, как перевести ваши идеи на язык КК — и наоборот. Если вы новичок, он поможет понять интеллектуальный ландшафт, в котором существует КК.
+If you are a scientist working in one of these traditions, this section will show how to translate your ideas into the language of CC — and vice versa. If you are a newcomer, it will help you understand the intellectual landscape in which CC exists.
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Обрисуем **теоретический ландшафт** — мастер-таблица 9 теорий (раздел 1)
-2. Покажем **мосты КК — каждая теория** с компактными сравнениями (раздел 2). Развёрнутый анализ всех 35 теорий: [Теории сознания](/docs/consciousness/comparative/consciousness-theories)
-3. Сведём всё в **таблицу предсказаний** (раздел 3) и честно оценим **ограничения КК** (раздел 4)
+:::info Chapter Roadmap
+In this chapter we:
+1. Sketch the **theoretical landscape** — a master table of 9 theories (section 1)
+2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 35 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
+3. Consolidate everything into a **predictions table** (section 3) and honestly assess the **limitations of CC** (section 4)
 :::
 
 ---
 
-## 1. Обзор теоретического ландшафта {#обзор}
+## 1. Overview of the Theoretical Landscape {#обзор}
 
-### 1.1 Девять теорий за одним столом
+### 1.1 Nine Theories at One Table
 
-Представим, что за круглым столом сидят девять теорий. Каждая из них пытается ответить на вопрос: «Как устроена система, способная к опыту?»
+Imagine nine theories seated around a round table. Each of them tries to answer the question: "How is a system capable of experience structured?"
 
 ```mermaid
 graph TD
-    Q["Как устроена система, способная к опыту?"] --> IIT["IIT: Интегрированная информация"]
-    Q --> FEP["FEP: Свободная энергия"]
-    Q --> GWT["GWT: Глобальное рабочее пространство"]
-    Q --> AUTO["Автопоэзис: Самовоспроизводство"]
-    Q --> ORCH["Orch-OR: Квантовое сознание"]
-    Q --> HOT["HOT: Мысли высшего порядка"]
-    Q --> RPT["RPT: Рекуррентная обработка"]
-    Q --> AST["AST: Схема внимания"]
-    Q --> CC["КК: Когерентная кибернетика"]
+    Q["How is a system capable of experience structured?"] --> IIT["IIT: Integrated Information"]
+    Q --> FEP["FEP: Free Energy"]
+    Q --> GWT["GWT: Global Workspace"]
+    Q --> AUTO["Autopoiesis: Self-reproduction"]
+    Q --> ORCH["Orch-OR: Quantum Consciousness"]
+    Q --> HOT["HOT: Higher-Order Thoughts"]
+    Q --> RPT["RPT: Recurrent Processing"]
+    Q --> AST["AST: Attention Schema"]
+    Q --> CC["CC: Coherence Cybernetics"]
 
     style CC fill:#d4edda,stroke:#28a745,stroke-width:3px
 ```
 
-Эти теории можно разделить на три семейства:
+These theories can be divided into three families:
 
-- **Информационные:** IIT, GWT, RPT — фокусируются на обработке и интеграции информации
-- **Биологические:** FEP, автопоэзис — фокусируются на выживании и самоорганизации
-- **Когнитивные:** HOT, AST — фокусируются на репрезентациях и внимании
-- **Физические:** Orch-OR — привязывает сознание к квантовой гравитации
-- **КК** — претендует на объединение всех четырёх перспектив
+- **Informational:** IIT, GWT, RPT — focus on information processing and integration
+- **Biological:** FEP, autopoiesis — focus on survival and self-organization
+- **Cognitive:** HOT, AST — focus on representations and attention
+- **Physical:** Orch-OR — ties consciousness to quantum gravity
+- **CC** — claims to unite all four perspectives
 
-### 1.2 Мастер-таблица сравнения
+### 1.2 Master Comparison Table
 
-| Характеристика | IIT (Тонони) | FEP (Фристон) | GWT (Баарс) | Автопоэзис (Матурана) | Orch-OR (Пенроуз) | HOT (Розенталь) | RPT (Ламме) | AST (Грациано) | **КК** |
+| Characteristic | IIT (Tononi) | FEP (Friston) | GWT (Baars) | Autopoiesis (Maturana) | Orch-OR (Penrose) | HOT (Rosenthal) | RPT (Lamme) | AST (Graziano) | **CC** |
 |---|---|---|---|---|---|---|---|---|---|
-| **Центральный объект** | Структура $\Phi$ | Модель $q(\theta)$ | Раб. простр. | Живая клетка | Микротрубочки | Мысль 2-го порядка | Рекуррентные петли | Модель внимания | **$\Gamma$** |
-| **Мера сознания** | $\Phi_{\text{IIT}}$ | Нет явной | Доступ к GW | Нет кол. | Объект. редукция | Нет кол. | Нет кол. | Нет кол. | **$C = \Phi \times R$** |
-| **Динамика** | Нет | Вар. вывод | Нет | Качест. | Кв. гравитация | Нет | Нет | Нет | **$\mathcal{L}_\Omega$ (полная)** |
-| **Порог** | $\Phi > 0$ | Нет | Доступ | Автопоэзис | OR-событие | HOT о HOT | Рек. петля | Модель | **$P{>}2/7 \land R{\geq}1/3 \land \Phi{\geq}1$** |
-| **Фальсифицируемость** | Слабая | Слабая | Умеренная | Слабая | Слабая | Умеренная | Умеренная | Умеренная | **Сильная** |
-| **Вычислимость** | NP-hard | Аппрокс. | Нет | Нет | Неясно | Нет | Нет | Нет | **$O(N^3)$, $N{=}7$** |
+| **Central object** | Structure $\Phi$ | Model $q(\theta)$ | Workspace | Living cell | Microtubules | 2nd-order thought | Recurrent loops | Attention model | **$\Gamma$** |
+| **Measure of consciousness** | $\Phi_{\text{IIT}}$ | None explicit | GW access | None quant. | Objective reduction | None quant. | None quant. | None quant. | **$C = \Phi \times R$** |
+| **Dynamics** | None | Var. inference | None | Qualitative | Quantum gravity | None | None | None | **$\mathcal{L}_\Omega$ (full)** |
+| **Threshold** | $\Phi > 0$ | None | Access | Autopoiesis | OR-event | HOT of HOT | Rec. loop | Model | **$P{>}2/7 \land R{\geq}1/3 \land \Phi{\geq}1$** |
+| **Falsifiability** | Weak | Weak | Moderate | Weak | Weak | Moderate | Moderate | Moderate | **Strong** |
+| **Computability** | NP-hard | Approx. | None | None | Unclear | None | None | None | **$O(N^3)$, $N{=}7$** |
 
 ---
 
-## 2. Детальное сравнение с каждой теорией {#детальное-сравнение}
+## 2. Detailed Comparison with Each Theory {#детальное-сравнение}
 
-:::info Подробный анализ
-Полный анализ 35 теорий сознания (включая 8 ниже) с историей, формализмом и критикой: [Теории сознания → 35 теорий](/docs/consciousness/comparative/consciousness-theories). Здесь — **только мосты** между каждой теорией и КК.
+:::info Detailed Analysis
+Full analysis of 35 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 35 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
 :::
 
-### 2.1 IIT (Тонони) {#iit}
+### 2.1 IIT (Tononi) {#iit}
 
-**Мост:** $\Phi_{\text{IIT}} \approx \Phi_{\text{КК}}$ при $P \to 1$. При $P \to 2/7$ расхождение растёт. PCI в лаборатории — прокси для $P$ ([Методология измерений](./measurement#измерение-чистоты)).
+**Bridge:** $\Phi_{\text{IIT}} \approx \Phi_{\text{CC}}$ at $P \to 1$. At $P \to 2/7$ the divergence grows. PCI in the laboratory is a proxy for $P$ ([Measurement Methodology](./measurement#измерение-чистоты)).
 
-| Аспект | IIT | КК |
+| Aspect | IIT | CC |
 |---|---|---|
-| **Мера** | $\Phi_{\text{IIT}}$ (NP-hard) | $\Phi_{\text{КК}}$ ($O(N^2)$) |
-| **Порог** | $\Phi > 0$ | $P > 2/7 \land R \geq 1/3 \land \Phi \geq 1$ |
-| **Динамика** | Нет | Полная ($\mathcal{L}_\Omega$) |
-| **Преимущество IIT** | Экспериментальная база (PCI) | — |
+| **Measure** | $\Phi_{\text{IIT}}$ (NP-hard) | $\Phi_{\text{CC}}$ ($O(N^2)$) |
+| **Threshold** | $\Phi > 0$ | $P > 2/7 \land R \geq 1/3 \land \Phi \geq 1$ |
+| **Dynamics** | None | Full ($\mathcal{L}_\Omega$) |
+| **IIT advantage** | Experimental base (PCI) | — |
 
 ---
 
-### 2.2 FEP (Фристон) {#fep}
+### 2.2 FEP (Friston) {#fep}
 
-FEP (Фристон, 2010) утверждает, что любая устойчивая система минимизирует вариационную свободную энергию $F$. КК разделяет идею активного самоподдержания и использует марковское одеяло (Enc-функтор). Каноническое $\Delta F$ голонома ([определение](/docs/core/dynamics/evolution#каноническое-delta-f) [Т]) — аналог свободной энергии Фристона.
+FEP (Friston, 2010) asserts that any stable system minimizes variational free energy $F$. CC shares the idea of active self-maintenance and uses the Markov blanket (Enc-functor). The canonical $\Delta F$ of the holon ([definition](/docs/core/dynamics/evolution#каноническое-delta-f) [T]) is the analog of Friston's free energy.
 
-**Мост:** FEP — частный случай КК при двух упрощениях: (1) игнорируется E-измерение, (2) регенерация $\mathcal{R}$ поглощается в вариационный вывод. Подробнее — [Вариационная формулировка](./variational).
+**Bridge:** FEP is a special case of CC under two simplifications: (1) the E-dimension is ignored, (2) regeneration $\mathcal{R}$ is absorbed into variational inference. More details — [Variational Formulation](./variational).
 
-| Аспект | FEP | КК |
+| Aspect | FEP | CC |
 |---|---|---|
-| **Сознание** | Не объясняется | Явные меры: $C$, $R$, $\Phi$, $\mathrm{Coh}_E$ |
-| **Область** | Любая устойчивая система (включая камни) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, порог $P > 2/7$ |
-| **Обучение** | Нет нижних границ | T-109--T-113: точные нижние границы |
-| **Преимущество FEP** | Масштабируемость, сотни экспериментов, predictive coding | — |
+| **Consciousness** | Not explained | Explicit measures: $C$, $R$, $\Phi$, $\mathrm{Coh}_E$ |
+| **Scope** | Any stable system (including rocks) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, threshold $P > 2/7$ |
+| **Learning** | No lower bounds | T-109--T-113: exact lower bounds |
+| **FEP advantage** | Scalability, hundreds of experiments, predictive coding | — |
 
-:::info Подробное сравнение
-Развёрнутый анализ FEP (формализм, active inference, марковское одеяло): [Теории сознания — FEP](/docs/consciousness/comparative/consciousness-theories#fep).
+:::info Detailed Comparison
+Extended analysis of FEP (formalism, active inference, Markov blanket): [Theories of Consciousness — FEP](/docs/consciousness/comparative/consciousness-theories#fep).
 :::
 
 ---
 
-### 2.3 GWT (Баарс, Деан) {#gwt}
+### 2.3 GWT (Baars, Dehaene) {#gwt}
 
-GWT (Баарс, 1988; GNWT — Деан, Шанжё, 2001) связывает сознание с глобальной трансляцией информации («театр сознания»). В КК это соответствует высокой $\Phi$ (информация доступна всем 7 измерениям). КК формализует метафору: $\Gamma$, $\mathcal{L}_\Omega$, непрерывные меры вместо бинарного «на сцене / за кулисами». GWT превосходит КК в нейронной специфичности (GNWT: «зажигание», P300) и клиническом применении.
+GWT (Baars, 1988; GNWT — Dehaene, Changeux, 2001) ties consciousness to global broadcasting of information ("theatre of consciousness"). In CC this corresponds to high $\Phi$ (information accessible to all 7 dimensions). CC formalizes the metaphor: $\Gamma$, $\mathcal{L}_\Omega$, continuous measures instead of binary "on stage / backstage." GWT surpasses CC in neural specificity (GNWT: "ignition," P300) and clinical application.
 
-:::info Подробное сравнение
-[Теории сознания — GWT](/docs/consciousness/comparative/consciousness-theories#gwt).
+:::info Detailed Comparison
+[Theories of Consciousness — GWT](/docs/consciousness/comparative/consciousness-theories#gwt).
 :::
 
 ---
 
-### 2.4 Автопоэзис (Матурана, Варела) {#autopoeisis}
+### 2.4 Autopoiesis (Maturana, Varela) {#autopoeisis}
 
-Автопоэзис (1972) — **необходимое, но не достаточное** условие для сознания в КК: $\varphi(\Gamma^*) = \Gamma^*$ ([аксиома AP](/docs/core/foundations/axiom-septicity)). Бактерия автопоэтична, но бессознательна ($R < 1/3$). КК наследует операциональную замкнутость, структурное сопряжение (Enc-функтор T-100) и различение организации/структуры ($\rho_*$ vs. $\Gamma(\tau)$). Автопоэзис превосходит КК в биологической конкретности и социальной теории (Луманн, энактивизм Варелы).
+Autopoiesis (1972) is a **necessary but not sufficient** condition for consciousness in CC: $\varphi(\Gamma^*) = \Gamma^*$ ([axiom AP](/docs/core/foundations/axiom-septicity)). A bacterium is autopoietic but unconscious ($R < 1/3$). CC inherits operational closure, structural coupling (Enc-functor T-100), and the organization/structure distinction ($\rho_*$ vs. $\Gamma(\tau)$). Autopoiesis surpasses CC in biological concreteness and social theory (Luhmann, Varela's enactivism).
 
-:::info Подробное сравнение
-[Теории сознания — Автопоэзис](/docs/consciousness/comparative/consciousness-theories#автопоэзис).
+:::info Detailed Comparison
+[Theories of Consciousness — Autopoiesis](/docs/consciousness/comparative/consciousness-theories#автопоэзис).
 :::
 
 ---
 
-### 2.5 Orch-OR (Пенроуз, Хамерофф) {#orch-or}
+### 2.5 Orch-OR (Penrose, Hameroff) {#orch-or}
 
-Orch-OR (1996) привязывает сознание к квантовой гравитации в микротрубочках. КК использует квантовый формализм ($\Gamma$ — матрица плотности), но не привязывает его к субстрату: мультиреализуемость, вычислимость $O(N^3)$, проверяемость через макро-наблюдаемые. Orch-OR превосходит КК в физической укоренённости и связи с квантовой гравитацией.
+Orch-OR (1996) ties consciousness to quantum gravity in microtubules. CC uses quantum formalism ($\Gamma$ — density matrix) but does not bind it to a substrate: multi-realizability, computability $O(N^3)$, verifiability through macro-observables. Orch-OR surpasses CC in physical groundedness and connection to quantum gravity.
 
-:::info Подробное сравнение
-[Теории сознания — Orch-OR](/docs/consciousness/comparative/consciousness-theories#orch-or).
+:::info Detailed Comparison
+[Theories of Consciousness — Orch-OR](/docs/consciousness/comparative/consciousness-theories#orch-or).
 :::
 
 ---
 
-### 2.6 HOT (Розенталь) {#hot}
+### 2.6 HOT (Rosenthal) {#hot}
 
-HOT (1986) — прямой предшественник концепции рефлексии $R$ и глубины самонаблюдения SAD. Порядки мысли в HOT точно соответствуют уровням SAD (1-й порядок = SAD 0, 2-й = SAD 1, 3-й = SAD 2). КК формализует HOT количественно ($R \in [0,1]$, порог $R \geq 1/3$) и доказывает потолок $\text{SAD}_{\max} = 3$ ([Pred 12](./predictions#предсказание-12)). HOT превосходит КК в 40-летней философской проработке и связи с метакогницией.
+HOT (1986) is the direct precursor of the concept of reflection $R$ and self-observation depth SAD. Orders of thought in HOT correspond precisely to SAD levels (1st order = SAD 0, 2nd = SAD 1, 3rd = SAD 2). CC formalizes HOT quantitatively ($R \in [0,1]$, threshold $R \geq 1/3$) and proves the ceiling $\text{SAD}_{\max} = 3$ ([Pred 12](./predictions#предсказание-12)). HOT surpasses CC in 40 years of philosophical development and connection to metacognition.
 
-:::info Подробное сравнение
-[Теории сознания — HOT](/docs/consciousness/comparative/consciousness-theories#hot).
+:::info Detailed Comparison
+[Theories of Consciousness — HOT](/docs/consciousness/comparative/consciousness-theories#hot).
 :::
 
 ---
 
-### 2.7 RPT (Ламме) {#rpt}
+### 2.7 RPT (Lamme) {#rpt}
 
-RPT (Ламме, 2003) отождествляет сознание с рекуррентной обработкой. В КК рекуррентность соответствует формированию внедиагональных $\gamma_{ij}$ (когерентностей), определяющих $P$ и $\Phi$. КК универсальнее (любая система, не только зрение) и даёт точный порог ($P > 2/7$). RPT превосходит КК в временных предсказаниях (прямой проход ~100 мс, рекурсия ~200+ мс) и нейронной конкретности (V1→V4→IT→PFC→V1).
+RPT (Lamme, 2003) identifies consciousness with recurrent processing. In CC recurrence corresponds to the formation of off-diagonal $\gamma_{ij}$ (coherences), determining $P$ and $\Phi$. CC is more universal (any system, not only vision) and gives an exact threshold ($P > 2/7$). RPT surpasses CC in temporal predictions (feedforward ~100 ms, recurrence ~200+ ms) and neural concreteness (V1→V4→IT→PFC→V1).
 
-:::info Подробное сравнение
-[Теории сознания — RPT](/docs/consciousness/comparative/consciousness-theories#rpt).
+:::info Detailed Comparison
+[Theories of Consciousness — RPT](/docs/consciousness/comparative/consciousness-theories#rpt).
 :::
 
 ---
 
-### 2.8 AST (Грациано) {#ast}
+### 2.8 AST (Graziano) {#ast}
 
-AST (2013) предполагает, что сознание — модель собственного внимания. Это замечательно перекликается с самомоделью $\varphi(\Gamma)$ в КК, где $R$ — точность модели. КК делает самомодель *необходимой* (No-Zombie), количественной ($R \in [0,1]$), и охватывает все 7 измерений (не только внимание). AST превосходит КК в объяснении иллюзий сознания и theory of mind.
+AST (2013) proposes that consciousness is a model of one's own attention. This remarkably resonates with the self-model $\varphi(\Gamma)$ in CC, where $R$ is the accuracy of the model. CC makes the self-model *necessary* (No-Zombie), quantitative ($R \in [0,1]$), and covers all 7 dimensions (not only attention). AST surpasses CC in explaining consciousness illusions and theory of mind.
 
-:::info Подробное сравнение
-[Теории сознания — AST](/docs/consciousness/comparative/consciousness-theories#ast).
+:::info Detailed Comparison
+[Theories of Consciousness — AST](/docs/consciousness/comparative/consciousness-theories#ast).
 :::
 
 ---
 
-## 3. Сводная таблица предсказаний {#сводная-таблица}
+## 3. Summary Predictions Table {#сводная-таблица}
 
-Что предсказывает каждая теория и что — нет? Это ключевая таблица: теория ценна ровно настолько, насколько конкретны её предсказания.
+What does each theory predict and what does it not? This is the key table: a theory is valuable precisely to the extent that its predictions are concrete.
 
-| Предсказание | IIT | FEP | GWT | Автопоэзис | Orch-OR | HOT | RPT | AST | **КК** |
+| Prediction | IIT | FEP | GWT | Autopoiesis | Orch-OR | HOT | RPT | AST | **CC** |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Невозможность зомби | ? | Нет | Нет | Нет | Да | Нет | Нет | Нет | **Да [Т]** |
-| Точный порог сознания | ~Да | Нет | Нет | Нет | Нет | Нет | Нет | Нет | **Да [Т]** |
-| Семимерная классификация стресса | Нет | Нет | Нет | Нет | Нет | Нет | Нет | Нет | **Да [Т]** |
-| Связь опыта и регенерации | Нет | Нет | Нет | Нет | Нет | Нет | Нет | Нет | **Да [Т]** |
-| Потолок SAD = 3 | Нет | Нет | Нет | Нет | Нет | Нет | Нет | Нет | **Да [С]** |
-| Доязыковое познание | Да | Да | Нет | Да | ? | Нет | Да | Нет | **Да [И]** |
-| Нейроосцилляции из щели | Нет | Нет | Нет | Нет | ? | Нет | Нет | Нет | **Да [Г]** |
-| Оптимальность N=7 для обучения | Нет | Нет | Нет | Нет | Нет | Нет | Нет | Нет | **Да [Т]** |
-| Верхняя граница P=3/7 | Нет | Нет | Нет | Нет | Нет | Нет | Нет | Нет | **Да [Т]** |
-| Время рекуррентной обработки ~200 мс | Нет | Нет | ~Да | Нет | Нет | Нет | **Да** | Нет | Нет |
-| Теория сознания других (Theory of Mind) | Нет | Частично | Нет | Нет | Нет | Частично | Нет | **Да** | Нет |
-| Нейронная реализация (конкретные пути) | Нет | **Да** | **Да** | Нет | **Да** | Нет | **Да** | Частично | Нет |
+| Impossibility of zombies | ? | No | No | No | Yes | No | No | No | **Yes [T]** |
+| Exact consciousness threshold | ~Yes | No | No | No | No | No | No | No | **Yes [T]** |
+| Seven-dimensional stress classification | No | No | No | No | No | No | No | No | **Yes [T]** |
+| Experience–regeneration link | No | No | No | No | No | No | No | No | **Yes [T]** |
+| SAD ceiling = 3 | No | No | No | No | No | No | No | No | **Yes [C]** |
+| Pre-linguistic cognition | Yes | Yes | No | Yes | ? | No | Yes | No | **Yes [I]** |
+| Neural oscillations from gap | No | No | No | No | ? | No | No | No | **Yes [H]** |
+| Optimality N=7 for learning | No | No | No | No | No | No | No | No | **Yes [T]** |
+| Upper bound P=3/7 | No | No | No | No | No | No | No | No | **Yes [T]** |
+| Recurrent processing time ~200 ms | No | No | ~Yes | No | No | No | **Yes** | No | No |
+| Theory of mind | No | Partially | No | No | No | Partially | No | **Yes** | No |
+| Neural implementation (specific pathways) | No | **Yes** | **Yes** | No | **Yes** | No | **Yes** | Partially | No |
 
-:::tip Как читать эту таблицу
-- **Да [Т]** = КК доказывает это как теорему
-- **Да [С]** = КК доказывает при условии
-- **Да [Г]** = КК выдвигает как гипотезу
-- **Да [И]** = КК интерпретирует
-- **Да** (без маркера) = теория предсказывает
-- **~Да** = теория предсказывает, но с оговорками
-- **Нет** = теория не адресует этот вопрос
+:::tip How to Read This Table
+- **Yes [T]** = CC proves this as a theorem
+- **Yes [C]** = CC proves conditionally
+- **Yes [H]** = CC proposes as a hypothesis
+- **Yes [I]** = CC interprets
+- **Yes** (no marker) = the theory predicts
+- **~Yes** = the theory predicts, but with caveats
+- **No** = the theory does not address this question
 :::
 
 ---
 
-## 4. Честная оценка ограничений КК {#ограничения}
+## 4. Honest Assessment of CC's Limitations {#ограничения}
 
-Ни одна теория не совершенна. Вот что КК пока **не может**:
+No theory is perfect. Here is what CC currently **cannot** do:
 
-1. **Эмпирическая проверка.** Главная слабость — отсутствие экспериментальных подтверждений. КК генерирует предсказания, но ни одно из них пока не проверено в лаборатории. IIT, FEP, GWT и RPT значительно опережают КК в этом отношении.
+1. **Empirical verification.** The main weakness is the absence of experimental confirmation. CC generates predictions, but none of them have yet been tested in the laboratory. IIT, FEP, GWT, and RPT are significantly ahead of CC in this respect.
 
-2. **Калибровка.** Формулы содержат параметры (пороги $\theta_i$ для [диагностики](./diagnostics)), которые требуют эмпирической калибровки для конкретных систем. Перевод «EEG-когерентность → элемент $\Gamma$» — нерешённая задача.
+2. **Calibration.** The formulas contain parameters (thresholds $\theta_i$ for [diagnostics](./diagnostics)) that require empirical calibration for specific systems. Translating "EEG coherence → element $\Gamma$" is an unsolved problem.
 
-3. **Масштабирование.** Композиция голономов теоретически описана, но практическая работа с большими системами (общество из миллионов агентов) вычислительно сложна.
+3. **Scaling.** The composition of holons is theoretically described, but practical work with large systems (a society of millions of agents) is computationally complex.
 
-4. **Феноменологическая адекватность.** Вопрос, *адекватно* ли 7 измерений описывают реальный субъективный опыт, остаётся открытым [С]. Возможно, реальная феноменология богаче — и 7 измерений лишь грубое приближение.
+4. **Phenomenological adequacy.** Whether 7 dimensions *adequately* describe real subjective experience remains an open question [C]. Real phenomenology may be richer — and 7 dimensions merely a rough approximation.
 
-5. **Нейронный субстрат.** КК не предлагает конкретных нейронных механизмов — это и сила (мультиреализуемость), и слабость (трудно проверить в нейронауке).
+5. **Neural substrate.** CC does not propose specific neural mechanisms — this is both a strength (multi-realizability) and a weakness (difficult to test in neuroscience).
 
-6. **Social cognition.** КК не развита в направлении социального познания, теории сознания других (theory of mind), эмпатии — областей, где AST и FEP имеют интересные результаты.
+6. **Social cognition.** CC is not developed in the direction of social cognition, theory of mind, empathy — domains where AST and FEP have interesting results.
 
-Эти ограничения — не фатальные дефекты, а **открытые проблемы**, определяющие программу исследований (см. [Программы исследований](./research-programs)).
+These limitations are not fatal defects, but **open problems** defining the research program (see [Research Programs](./research-programs)).
 
-:::note Честность как принцип
-Этот раздел написан с намеренной честностью. КК — молодая теория, и было бы нечестно скрывать её слабости. Но обратите внимание: *каждая* из конкурирующих теорий имеет *свои* фатальные ограничения. IIT невычислима. FEP нефальсифицируема. GWT неформализована. Автопоэзис некванититативен. Orch-OR непроверяем. Идеальной теории сознания пока не существует — и КК, при всех её ограничениях, имеет наименьшее число фатальных дефектов.
+:::note Honesty as a Principle
+This section is written with deliberate honesty. CC is a young theory, and it would be dishonest to hide its weaknesses. But note: *every* competing theory has *its own* fatal limitations. IIT is incomputable. FEP is non-falsifiable. GWT is non-formalized. Autopoiesis is non-quantitative. Orch-OR is untestable. A perfect theory of consciousness does not yet exist — and CC, for all its limitations, has the fewest fatal defects.
 :::
 
 ---
 
-## 5. Заключение: КК как метатеория {#заключение}
+## 5. Conclusion: CC as a Metatheory {#заключение}
 
-Современная наука о сознании и самоорганизации напоминает вавилонскую башню: множество языков, мало взаимопонимания. IIT говорит на языке информации, FEP — на языке байесовского вывода, GWT — на языке когнитивной архитектуры, автопоэзис — на языке биологической организации, HOT — на языке репрезентаций.
+Modern science of consciousness and self-organization resembles the Tower of Babel: many languages, little mutual understanding. IIT speaks the language of information, FEP — the language of Bayesian inference, GWT — the language of cognitive architecture, autopoiesis — the language of biological organization, HOT — the language of representations.
 
-КК претендует на роль **единого языка** — не потому, что все остальные ошибаются, а потому, что все они описывают разные проекции одного и того же формализма:
+CC claims the role of a **common language** — not because all the others are wrong, but because they all describe different projections of the same formalism:
 
-| Теория | Проекция КК |
-|--------|-------------|
-| IIT | $\Phi$-компонента |
-| FEP | $\Delta F$ (вариационная формулировка) |
-| GWT | Глобальная доступность ($\Phi \geq 1$) |
-| Автопоэзис | $\varphi(\Gamma^*) = \Gamma^*$ |
-| HOT | $R$ и SAD |
-| RPT | Формирование $\gamma_{ij}$ (когерентностей) |
-| AST | $\varphi(\Gamma)$ (самомодель) |
+| Theory | CC Projection |
+|--------|---------------|
+| IIT | $\Phi$-component |
+| FEP | $\Delta F$ (variational formulation) |
+| GWT | Global accessibility ($\Phi \geq 1$) |
+| Autopoiesis | $\varphi(\Gamma^*) = \Gamma^*$ |
+| HOT | $R$ and SAD |
+| RPT | Formation of $\gamma_{ij}$ (coherences) |
+| AST | $\varphi(\Gamma)$ (self-model) |
 
-Это амбициозное притязание. Но оно фальсифицируемо: если найдётся теория, которая делает все предсказания КК плюс ещё что-то, значит, КК — не метатеория. Пока что таких конкурентов нет.
+This is an ambitious claim. But it is falsifiable: if a theory is found that makes all of CC's predictions plus something more, then CC is not a metatheory. So far no such competitors exist.
 
-### Что мы узнали {#итоги}
+### What We Have Learned {#итоги}
 
-1. Мы сравнили КК с **8 альтернативными теориями** — от IIT до AST.
-2. КК **наследует** ключевые идеи каждой: интеграцию (IIT), активное самоподдержание (FEP), глобальную доступность (GWT), самопроизводство (автопоэзис), рефлексию (HOT), рекуррентность (RPT), самомодель (AST).
-3. КК **превосходит** каждую в конкретных аспектах: формализация, вычислимость, фальсифицируемость, полнота.
-4. Каждая теория **превосходит** КК в своих сильных сторонах: экспериментальная база, нейронная конкретность, философская проработка.
-5. КК — **метатеория**: она включает другие как частные случаи или проекции.
-
----
-
-В следующей главе мы перейдём от теории к практике: [Методология измерений](./measurement) покажет, *как* перевести формулы КК в конкретные эксперименты, тесты и аудиты.
+1. We compared CC with **8 alternative theories** — from IIT to AST.
+2. CC **inherits** the key ideas of each: integration (IIT), active self-maintenance (FEP), global accessibility (GWT), self-production (autopoiesis), reflection (HOT), recurrence (RPT), self-model (AST).
+3. CC **surpasses** each in specific aspects: formalization, computability, falsifiability, completeness.
+4. Each theory **surpasses** CC in its own strengths: experimental base, neural concreteness, philosophical development.
+5. CC is a **metatheory**: it includes the others as special cases or projections.
 
 ---
 
-**Дальнейшее чтение:**
-- [Уникальные предсказания](./predictions) — полный перечень фальсифицируемых предсказаний
-- [Философские основания](./philosophy) — онтологический статус КК
-- [Сравнение теорий сознания](/docs/consciousness/comparative/consciousness-theories) — подробный анализ
-- [Панпсихизм: критический анализ](/docs/consciousness/comparative/panpsychism-analysis) — почему КК ≠ панпсихизм
-- [Вариационная формулировка](./variational) — мост КК — FEP
+In the next chapter we move from theory to practice: [Measurement Methodology](./measurement) will show *how* to translate CC formulas into concrete experiments, tests, and audits.
+
+---
+
+**Further Reading:**
+- [Unique Predictions](./predictions) — the complete list of falsifiable predictions
+- [Philosophical Foundations](./philosophy) — the ontological status of CC
+- [Comparison of Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories) — detailed analysis
+- [Panpsychism: A Critical Analysis](/docs/consciousness/comparative/panpsychism-analysis) — why CC ≠ panpsychism
+- [Variational Formulation](./variational) — the CC — FEP bridge
 
 
 ---
 
-**Связанные документы:**
-- [Философские основания](/docs/applied/coherence-cybernetics/philosophy)
-- [Уникальные предсказания КК](/docs/applied/coherence-cybernetics/predictions)
-- [Методология измерений](/docs/applied/coherence-cybernetics/measurement)
-- [Введение в КК](/docs/applied/coherence-cybernetics/introduction)
+**Related documents:**
+- [Philosophical Foundations](/docs/applied/coherence-cybernetics/philosophy)
+- [Unique Predictions of CC](/docs/applied/coherence-cybernetics/predictions)
+- [Measurement Methodology](/docs/applied/coherence-cybernetics/measurement)
+- [Introduction to CC](/docs/applied/coherence-cybernetics/introduction)

@@ -1,372 +1,372 @@
 ---
 sidebar_position: 1
-title: Введение
-description: Что такое Кибернетика Когерентности и почему она важна
+title: Introduction
+description: What Coherence Cybernetics is and why it matters
 ---
 
-# Введение в Кибернетику Когерентности
+# Introduction to Coherence Cybernetics
 
-> *«Мы утонули в информации и изголодались по мудрости.»*
-> — Эдвард Осборн Уилсон
+> *"We are drowning in information and starving for wisdom."*
+> — Edward Osborne Wilson
 
 
-:::info Для кого эта глава
-Введение в Кибернетику Когерентности — единый математический формализм для динамики, целостности и интериорности систем. Читатель узнает, зачем нужна новая кибернетика и как устроен центральный объект теории.
+:::info Who this chapter is for
+An introduction to Coherence Cybernetics — a unified mathematical formalism for the dynamics, integrity, and interiority of systems. The reader will learn why a new cybernetics is needed and how the central object of the theory is structured.
 :::
 
-Физик записывает уравнение Шрёдингера. Биолог рисует петлю гомеостаза. Психолог строит шкалу субъективного благополучия. Философ спрашивает: «Почему вообще что-то переживается изнутри?» Инженер ИИ тренирует нейросеть и задумывается: есть ли у неё хоть тень опыта?
+A physicist writes down the Schrödinger equation. A biologist draws a homeostasis loop. A psychologist constructs a scale of subjective well-being. A philosopher asks: "Why is anything experienced from the inside at all?" An AI engineer trains a neural network and wonders: does it have even a shadow of experience?
 
-Все они описывают **одну и ту же реальность** — систему, которая поддерживает себя, адаптируется, а иногда и **переживает** свою собственную активность. Но их языки не пересекаются. Уравнения физика молчат о субъективном. Метафоры психолога не конвертируются в дифференциальные уравнения. Философ и инженер разговаривают, как будто живут в разных вселенных.
+All of them are describing **the same reality** — a system that maintains itself, adapts, and sometimes **experiences** its own activity. But their languages do not intersect. The physicist's equations say nothing about the subjective. The psychologist's metaphors do not convert into differential equations. The philosopher and the engineer talk as though they live in different universes.
 
-**Кибернетика Когерентности** (КК) — это попытка дать им общий язык. Не аналогию, не метафору, а единый математический формализм, в котором динамика системы, её структурная целостность и её интериорность оказываются **разными проекциями одного и того же объекта** — матрицы когерентности $\Gamma$.
+**Coherence Cybernetics** (CC) is an attempt to give them a common language. Not an analogy, not a metaphor, but a unified mathematical formalism in which the dynamics of a system, its structural integrity, and its interiority turn out to be **different projections of one and the same object** — the coherence matrix $\Gamma$.
 
-Эта глава — приглашение к путешествию. Мы начнём с вопроса «зачем?», затем покажем, как устроен центральный объект теории, и закончим картой всего раздела — чтобы каждый читатель нашёл свой маршрут.
+This chapter is an invitation to a journey. We will begin with the question "why?", then show how the central object of the theory is structured, and finish with a map of the entire section — so that every reader can find their own route.
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Разберёмся, зачем нужна новая кибернетика** — три волны кибернетики и их незакрытые вопросы (раздел «Зачем нужна новая кибернетика?»)
-2. **Познакомимся с центральным объектом** — матрицей когерентности $\Gamma$ и уравнением эволюции (раздел «Что такое Кибернетика Когерентности»)
-3. **Увидим, как один формализм работает для всех наук** — таблица междисциплинарных соответствий (раздел «Единый язык для всех наук»)
-4. **Освоим ключевые концепции** — семь измерений ASDLEOU, чистота $P$, пороги жизнеспособности, иерархия интериорности L0-L4 (раздел «Ключевые концепции»)
-5. **Поймём, чем КК отличается от альтернатив** — сравнение с IIT, FEP, панпсихизмом (раздел «Почему КК?»)
-6. **Получим карту документации** — маршруты чтения для разных аудиторий (раздел «Карта документации»)
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Understand why a new cybernetics is needed** — three waves of cybernetics and their open questions (section "Why Is a New Cybernetics Needed?")
+2. **Get acquainted with the central object** — the coherence matrix $\Gamma$ and the evolution equation (section "What Is Coherence Cybernetics")
+3. **See how one formalism works for all sciences** — table of interdisciplinary correspondences (section "A Unified Language for All Sciences")
+4. **Master the key concepts** — seven dimensions ASDLEOU, purity $P$, viability thresholds, interiority hierarchy L0-L4 (section "Key Concepts")
+5. **Understand what distinguishes CC from alternatives** — comparison with IIT, FEP, panpsychism (section "Why CC?")
+6. **Receive the documentation map** — reading routes for different audiences (section "Documentation Map")
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $\mathcal{H} = \mathbb{C}^7$ — гильбертово пространство состояний
-- L0, L1, L2, L3, L4 — [уровни интериорности](/docs/proofs/consciousness/interiority-hierarchy)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $\mathcal{H} = \mathbb{C}^7$ — Hilbert state space
+- L0, L1, L2, L3, L4 — [interiority levels](/docs/proofs/consciousness/interiority-hierarchy)
 :::
-
----
-
-## Зачем нужна новая кибернетика?
-
-### Три эпохи кибернетики и их незакрытые вопросы
-
-В XX веке кибернетика прошла три волны:
-
-1. **Кибернетика-I (Винер, 1948)** открыла обратную связь — механизм, благодаря которому термостат удерживает температуру, а зенитная ракета находит самолёт. Это был прорыв: впервые машины и живые существа описывались одним языком. Но Винер смотрел только на **динамику** — на потоки сигналов. Он не задавался вопросом, кто или что *наблюдает* эти сигналы.
-
-2. **Кибернетика-II (фон Фёрстер, 1970-е)** ввела наблюдателя. «Кибернетика кибернетики» — наука о том, как системы моделируют сами себя. Это был важный шаг: появилась самореференция, рекурсия, автопоэзис (Матурана и Варела). Но формализм остался качественным. Что именно значит «система моделирует себя»? В каких единицах измерять глубину самонаблюдения?
-
-3. **Кибернетика-III (Луман, 1990-е)** масштабировала идеи на социальные системы: право, экономику, искусство. Луман показал, что общество — это сеть коммуникаций, самовоспроизводящая свои границы. Но математический аппарат был скорее социологическим, чем физико-математическим.
-
-Каждая волна расширяла горизонт, но оставляла открытыми фундаментальные вопросы:
-
-- **Откуда берётся субъективность?** Ни одна из трёх кибернетик не могла объяснить, почему некоторые системы *переживают* свою активность изнутри, а не просто обрабатывают информацию.
-- **Где математика?** Автопоэзис красив как концепция, но как записать его в виде уравнения, которое можно решить?
-- **Как связать масштабы?** Нейрон, мозг, общество — можно ли описать их одним формализмом, не теряя специфику каждого уровня?
-
-### Параллельные попытки — и их ограничения
-
-Помимо кибернетики, к этим вопросам подходили с других сторон:
-
-- **Теория интегрированной информации (IIT, Тонони)** предложила меру сознания $\Phi$ и постулировала, что сознание — это интегрированная информация. Но IIT не содержит динамики: она говорит, *чему равно* сознание в данный момент, но не *как* оно возникает и эволюционирует.
-
-- **Принцип свободной энергии (FEP, Фристон)** описал живые системы как минимизирующие вариационную свободную энергию. Это мощный фреймворк для восприятия и действия. Но FEP не объясняет, почему минимизация свободной энергии иногда сопровождается *переживанием*, а иногда — нет.
-
-- **Панпсихизм** постулирует, что опыт фундаментален. Но без математического формализма это остаётся философской позицией, а не теорией с предсказаниями.
-
-Каждый из этих подходов освещает часть картины, но ни один не охватывает целое. **КК претендует на то, чтобы собрать эти фрагменты в единую мозаику** — и вывести их все из одного набора аксиом.
 
 ---
 
-## Что такое Кибернетика Когерентности
+## Why Is a New Cybernetics Needed?
 
-**Кибернетика Когерентности (КК)** — единственная полная кибернетика, строго выводимая из Унитарного Голономного Монизма (УГМ). Она описывает динамику **любых** систем — от элементарных частиц до биологических организмов и социальных структур — через эволюцию матрицы когерентности:
+### Three Epochs of Cybernetics and Their Open Questions
+
+In the 20th century cybernetics went through three waves:
+
+1. **Cybernetics-I (Wiener, 1948)** discovered feedback — the mechanism by which a thermostat holds temperature and an anti-aircraft missile finds an aircraft. This was a breakthrough: for the first time machines and living beings were described in one language. But Wiener looked only at **dynamics** — at flows of signals. He did not ask who or what *observes* those signals.
+
+2. **Cybernetics-II (von Foerster, 1970s)** introduced the observer. "Cybernetics of cybernetics" — the science of how systems model themselves. This was an important step: self-reference, recursion, and autopoiesis (Maturana and Varela) appeared. But the formalism remained qualitative. What exactly does "a system models itself" mean? In what units do we measure the depth of self-observation?
+
+3. **Cybernetics-III (Luhmann, 1990s)** scaled these ideas to social systems: law, economy, art. Luhmann showed that society is a network of communications that reproduces its own boundaries. But the mathematical apparatus was more sociological than physico-mathematical.
+
+Each wave expanded the horizon but left fundamental questions open:
+
+- **Where does subjectivity come from?** None of the three cybernetics could explain why some systems *experience* their activity from the inside, rather than simply processing information.
+- **Where is the mathematics?** Autopoiesis is beautiful as a concept, but how do you write it as an equation that can be solved?
+- **How to connect scales?** Neuron, brain, society — can they be described with one formalism without losing the specifics of each level?
+
+### Parallel Attempts — and Their Limitations
+
+Besides cybernetics, these questions were approached from other sides:
+
+- **Integrated Information Theory (IIT, Tononi)** proposed a measure of consciousness $\Phi$ and postulated that consciousness is integrated information. But IIT contains no dynamics: it says *what* consciousness equals at a given moment, but not *how* it arises and evolves.
+
+- **The Free Energy Principle (FEP, Friston)** described living systems as minimising variational free energy. This is a powerful framework for perception and action. But FEP does not explain why minimisation of free energy is sometimes accompanied by *experience* and sometimes not.
+
+- **Panpsychism** postulates that experience is fundamental. But without a mathematical formalism this remains a philosophical position, not a theory with predictions.
+
+Each of these approaches illuminates part of the picture, but none covers the whole. **CC claims to assemble these fragments into a single mosaic** — and to derive all of them from a single set of axioms.
+
+---
+
+## What Is Coherence Cybernetics
+
+**Coherence Cybernetics (CC)** is the only complete cybernetics strictly derivable from Unitary Holonomic Monism (UHM). It describes the dynamics of **any** systems — from elementary particles to biological organisms and social structures — through the evolution of the coherence matrix:
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-Прежде чем разбирать это уравнение, поймём его смысл на уровне интуиции. Представьте себе оркестр:
+Before analysing this equation, let us understand its meaning at the intuitive level. Imagine an orchestra:
 
-- $-i[H_{eff}, \Gamma]$ — **гамильтониан** — это дирижёр. Он задаёт унитарную, обратимую динамику: колебания, ритм, внутренние частоты системы. Физик узнает здесь уравнение фон Неймана. Биолог увидит циркадные ритмы. Психолог — ритмы внимания и бодрствования.
+- $-i[H_{eff}, \Gamma]$ — the **Hamiltonian** — is the conductor. It sets the unitary, reversible dynamics: oscillations, rhythm, the internal frequencies of the system. A physicist will recognise the von Neumann equation here. A biologist will see circadian rhythms. A psychologist — rhythms of attention and wakefulness.
 
-- $\mathcal{D}[\Gamma]$ — **диссипатор** — это зал, поглощающий звук. Это необратимые процессы: декогеренция, диссипация, потеря структуры. Без него оркестр играл бы вечно. С ним — звук затухает, если не восполняется.
+- $\mathcal{D}[\Gamma]$ — the **dissipator** — is the hall absorbing the sound. These are irreversible processes: decoherence, dissipation, loss of structure. Without it the orchestra would play forever. With it — the sound dies away if it is not replenished.
 
-- $\mathcal{R}[\Gamma, E]$ — **регенератор** — это сами музыканты, которые вдыхают и играют заново. Это уникальный для КК член: он описывает, как система *восстанавливает* свою когерентность. И ключевой момент: скорость восстановления зависит от $E$ — от степени интериорности системы (её внутреннего аспекта). Оркестр, который *слышит* себя, играет слаженнее.
+- $\mathcal{R}[\Gamma, E]$ — the **regenerator** — is the musicians themselves, who breathe and play again. This term is unique to CC: it describes how the system *restores* its coherence. And the key point: the rate of restoration depends on $E$ — on the degree of interiority of the system (its inner aspect). An orchestra that *hears* itself plays more coherently.
 
-Это уравнение — не постулат. Оно **выводится** из пяти аксиом УГМ, записанных на языке $\infty$-топосов. Но для работы с КК глубокое знание теории категорий не требуется — достаточно понимать, что все конструкции имеют аксиоматический фундамент.
+This equation is not a postulate. It is **derived** from five axioms of UHM, written in the language of $\infty$-toposes. But working with CC does not require a deep knowledge of category theory — it is enough to understand that all constructions have an axiomatic foundation.
 
-КК не является ещё одной кибернетикой в ряду существующих — в рамках данной интерпретации она претендует быть **метатеорией**, из которой все частные кибернетики (Винер, фон Фёрстер, Луман) выводятся как проекции на подмножество измерений.
-
----
-
-## Единый язык для всех наук
-
-Почему один формализм может работать для физики, биологии, психологии и инженерии? Потому что КК оперирует на уровне **структурных инвариантов** — свойств, общих для любой системы, описываемой матрицей когерентности Γ, независимо от её субстрата. Самоорганизация при этом не предполагается — она *возникает* как следствие динамики при достаточной чистоте P.
-
-Вот как разные дисциплины видят одну и ту же математику:
-
-| Понятие КК | Физик видит | Биолог видит | Психолог видит | Инженер ИИ видит |
-|------------|-------------|--------------|----------------|------------------|
-| $\Gamma$ | Матрица плотности | Состояние гомеостаза | Профиль психических функций | Внутреннее состояние агента |
-| $P = \mathrm{Tr}(\Gamma^2)$ | Чистота квантового состояния | Степень организованности | Уровень интеграции личности | Качество латентного представления |
-| $\sigma_k = 1 - 7\gamma_{kk}$ | Отклонение от равновесия | Стресс в подсистеме | Напряжение в сфере жизни | Аномалия в канале |
-| $\mathcal{R}[\Gamma, E]$ | Нетривиальный канал | Регенерация тканей | Психическое восстановление | Самокоррекция модели |
-| $P_{\text{crit}} = 2/7$ | Фазовый переход | Порог жизнеспособности | Граница нормы и патологии | Порог осмысленности |
-
-Это не аналогии «для красоты». Каждое соответствие имеет точный математический смысл: **одни и те же теоремы** КК, применённые к разным системам, дают предсказания в терминах соответствующей дисциплины. Формула одна — интерпретации разные.
+CC is not yet another cybernetics alongside existing ones — within this interpretation it claims to be a **metatheory**, from which all particular cybernetics (Wiener, von Foerster, Luhmann) are derived as projections onto a subset of dimensions.
 
 ---
 
-## Ключевые концепции
+## A Unified Language for All Sciences
 
-### Матрица когерентности Γ
+Why can one formalism work for physics, biology, psychology, and engineering? Because CC operates at the level of **structural invariants** — properties common to any system described by the coherence matrix Γ, regardless of its substrate. Self-organisation is not assumed — it *emerges* as a consequence of the dynamics at sufficient purity P.
 
-Центральный объект теории — [матрица когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma$, описывающая состояние системы в 7-мерном пространстве. Это эрмитова положительно полуопределённая матрица с единичным следом.
+Here is how different disciplines see the same mathematics:
 
-Что это значит на пальцах? Представьте систему из семи «голосов», каждый из которых отвечает за свою функцию (подробнее ниже). Диагональные элементы $\gamma_{kk}$ показывают, насколько активен каждый голос. Внедиагональные $\gamma_{ij}$ показывают, насколько эти голоса **согласованы** друг с другом — отсюда и слово *когерентность*.
+| CC Concept | Physicist sees | Biologist sees | Psychologist sees | AI Engineer sees |
+|------------|----------------|----------------|-------------------|-----------------|
+| $\Gamma$ | Density matrix | Homeostasis state | Profile of mental functions | Agent's internal state |
+| $P = \mathrm{Tr}(\Gamma^2)$ | Purity of quantum state | Degree of organisation | Level of personality integration | Quality of latent representation |
+| $\sigma_k = 1 - 7\gamma_{kk}$ | Deviation from equilibrium | Stress in a subsystem | Tension in a life domain | Anomaly in a channel |
+| $\mathcal{R}[\Gamma, E]$ | Non-trivial channel | Tissue regeneration | Mental recovery | Model self-correction |
+| $P_{\text{crit}} = 2/7$ | Phase transition | Viability threshold | Boundary of norm and pathology | Meaningfulness threshold |
 
-Если все голоса звучат одинаково тихо и не скоррелированы, $\Gamma = I/7$ — максимальная энтропия, полный хаос. Если один голос доминирует и все остальные подстроены под него — $\Gamma$ близка к чистому состоянию. Реальные системы живут между этими полюсами, и именно **где** они находятся — определяет их жизнеспособность, сознательность и устойчивость.
+These are not analogies "for beauty." Each correspondence has a precise mathematical meaning: **the same theorems** of CC, applied to different systems, give predictions in the terms of the corresponding discipline. The formula is one — the interpretations differ.
 
-Для физика $\Gamma$ — это обычная матрица плотности, только не в гильбертовом пространстве спинов или фотонов, а в пространстве семантических измерений. Для биолога — многомерный профиль гомеостаза. Для психолога — состояние психических функций в семи измерениях.
+---
 
-**См.:** [Матрица когерентности](/docs/core/dynamics/coherence-matrix)
+## Key Concepts
 
-### Семь измерений ASDLEOU
+### Coherence Matrix Γ
 
-Любая система, описываемая голономом $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, существует в [семи измерениях](/docs/core/structure/dimensions):
+The central object of the theory is the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma$, describing the state of a system in a 7-dimensional space. It is a Hermitian positive-semidefinite matrix with unit trace.
 
-| Символ | Измерение | Функция |
-|--------|-----------|---------|
-| $A$ | [Артикуляция](/docs/core/structure/dimension-a) | Различать |
-| $S$ | [Структура](/docs/core/structure/dimension-s) | Удерживать |
-| $D$ | [Динамика](/docs/core/structure/dimension-d) | Изменяться |
-| $L$ | [Логика](/docs/core/structure/dimension-l) | Согласовывать |
-| $E$ | [Интериорность](/docs/core/structure/dimension-e) | Переживать |
-| $O$ | [Основание](/docs/core/structure/dimension-o) | Питать |
-| $U$ | [Единство](/docs/core/structure/dimension-u) | Интегрировать |
+What does this mean in plain terms? Imagine a system of seven "voices," each responsible for its own function (more detail below). The diagonal elements $\gamma_{kk}$ show how active each voice is. The off-diagonal $\gamma_{ij}$ show how much these voices are **coordinated** with each other — hence the word *coherence*.
 
-Эти семь измерений — не произвольный выбор. Каждое отвечает на фундаментальный вопрос о системе:
+If all voices sound equally quiet and are uncorrelated, $\Gamma = I/7$ — maximum entropy, complete chaos. If one voice dominates and all others have adjusted to it — $\Gamma$ is close to a pure state. Real systems live between these poles, and exactly *where* they are — determines their viability, consciousness, and stability.
 
-- **A — Артикуляция**: *Может ли система провести границу?* Различить «я» и «не-я», сигнал и шум, фигуру и фон. Без этого нет субъекта. Бактерия различает сахар и кислоту. Нейросеть различает классы. Сознание различает «до» и «после».
+For a physicist $\Gamma$ is an ordinary density matrix, only not in the Hilbert space of spins or photons, but in the space of semantic dimensions. For a biologist — a multidimensional homeostasis profile. For a psychologist — the state of mental functions in seven dimensions.
 
-- **S — Структура**: *Может ли она запомнить?* Удержать форму, паттерн, идентичность. ДНК хранит план организма. Нейронная сеть хранит веса. Культура хранит нарративы.
+**See:** [Coherence Matrix](/docs/core/dynamics/coherence-matrix)
 
-- **D — Динамика**: *Может ли она измениться?* Адаптироваться, эволюционировать, обучиться. Камень не обучается — он не динамичен в этом смысле. Бактерия переключает метаболизм. Мозг перестраивает синапсы.
+### Seven Dimensions ASDLEOU
 
-- **L — Логика**: *Может ли она быть непротиворечивой?* Согласовать свои части, устранить внутренние конфликты. Иммунная система отличает своё от чужого (когда логика работает) или атакует собственные ткани (когда ломается).
+Any system described by a holonom $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ exists in [seven dimensions](/docs/core/structure/dimensions):
 
-- **E — Интериорность**: *Есть ли у этой системы внутренний аспект?* Самое загадочное измерение. E-проекция существует у любой системы (L0+), но только на уровне L2+ она приобретает характер сознательного переживания (квалиа, субъективный опыт). Именно $E$ отличает КК от всех предшествующих кибернетик.
+| Symbol | Dimension | Function |
+|--------|-----------|----------|
+| $A$ | [Articulation](/docs/core/structure/dimension-a) | Discriminate |
+| $S$ | [Structure](/docs/core/structure/dimension-s) | Retain |
+| $D$ | [Dynamics](/docs/core/structure/dimension-d) | Change |
+| $L$ | [Logic](/docs/core/structure/dimension-l) | Coordinate |
+| $E$ | [Interiority](/docs/core/structure/dimension-e) | Experience |
+| $O$ | [Grounding](/docs/core/structure/dimension-o) | Nourish |
+| $U$ | [Unity](/docs/core/structure/dimension-u) | Integrate |
 
-- **O — Основание**: *Откуда она берёт ресурсы?* Энергия, питание, информация — то, что система потребляет для поддержания себя. Метаболизм клетки. Потребление данных нейросетью. Экономика общества.
+These seven dimensions are not an arbitrary choice. Each answers a fundamental question about the system:
 
-- **U — Единство**: *Является ли она чем-то целым?* Не просто набором частей, а интегрированной системой, где целое больше суммы. Мера $\Phi$ (интегрированная информация) живёт именно здесь.
+- **A — Articulation**: *Can the system draw a boundary?* Distinguish "self" from "non-self," signal from noise, figure from ground. Without this there is no subject. A bacterium distinguishes sugar from acid. A neural network distinguishes classes. Consciousness distinguishes "before" from "after."
 
-**Теорема:** Именно 7 измерений — минимальное число, необходимое для системы с автопоэзисом, феноменологией и квантовым основанием ([двухтрековое обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)). **См.:** [Доказательство минимальности](/docs/proofs/minimality/theorem-minimality-7)
+- **S — Structure**: *Can it remember?* Hold a shape, a pattern, an identity. DNA stores the blueprint of the organism. A neural network stores weights. Culture stores narratives.
 
-Почему не 5? Потому что без $E$ и $U$ система может быть сколь угодно сложной, но не будет иметь интериорности и интеграции — а это принципиально другой класс систем. Почему не 10? Потому что 7 — это **минимальное** число, которое закрывает все необходимые функции. Любое восьмое измерение оказывается проекцией или комбинацией существующих семи.
+- **D — Dynamics**: *Can it change?* Adapt, evolve, learn. A stone does not learn — it is not dynamic in this sense. A bacterium switches its metabolism. The brain rewires synapses.
 
-### Жизнеспособность: P больше P_crit
+- **L — Logic**: *Can it be consistent?* Coordinate its parts, eliminate internal conflicts. The immune system distinguishes self from foreign (when logic works) or attacks its own tissues (when it breaks down).
 
-Система жизнеспособна, если её [чистота](/docs/core/dynamics/viability#определение-чистоты) превышает критический порог:
+- **E — Interiority**: *Does this system have an inner aspect?* The most mysterious dimension. The E-projection exists in any system (L0+), but only at level L2+ does it acquire the character of conscious experience (qualia, subjective experience). It is precisely $E$ that distinguishes CC from all preceding cybernetics.
+
+- **O — Grounding**: *Where does it get its resources?* Energy, nutrition, information — what the system consumes to sustain itself. Cell metabolism. Data consumption by a neural network. The economy of society.
+
+- **U — Unity**: *Is it something whole?* Not merely a collection of parts, but an integrated system where the whole is greater than the sum. The measure $\Phi$ (integrated information) lives precisely here.
+
+**Theorem:** Exactly 7 dimensions is the minimum number necessary for a system with autopoiesis, phenomenology, and a quantum foundation ([two-track justification](/docs/core/foundations/axiom-omega#октонионная-структура)). **See:** [Minimality Proof](/docs/proofs/minimality/theorem-minimality-7)
+
+Why not 5? Because without $E$ and $U$ a system may be arbitrarily complex, but will have neither interiority nor integration — which is a fundamentally different class of systems. Why not 10? Because 7 is the **minimum** number that covers all necessary functions. Any eighth dimension turns out to be a projection or combination of the existing seven.
+
+### Viability: P greater than P_crit
+
+A system is viable if its [purity](/docs/core/dynamics/viability#определение-чистоты) exceeds the critical threshold:
 
 $$
 \mathrm{Viable}(\mathbb{H}) := P(\Gamma) > P_{\text{crit}} = \frac{2}{7} \approx 0.286
 $$
 
-Значение $P_{\text{crit}} = 2/7$ **строго выводится** из геометрии 7-мерного пространства. **См.:** [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical)
+The value $P_{\text{crit}} = 2/7$ is **strictly derived** from the geometry of 7-dimensional space. **See:** [Theorem on Critical Purity](/docs/proofs/dynamics/theorem-purity-critical)
 
-Что такое чистота $P$ интуитивно? Вспомним аналогию с оркестром. Если все 7 инструментов играют независимо и с одинаковой громкостью, $P = 1/7 \approx 0.143$ — это максимальный хаос. Если весь оркестр слился в один голос, $P = 1$ — максимальный порядок (но и максимальная хрупкость: один фальшивый звук — и всё рушится).
+What is purity $P$ intuitively? Recall the orchestra analogy. If all 7 instruments play independently and at equal volume, $P = 1/7 \approx 0.143$ — this is maximum chaos. If the whole orchestra merges into a single voice, $P = 1$ — maximum order (but also maximum fragility: one wrong note and everything collapses).
 
-Жизнеспособная система живёт в промежутке $P \in (2/7, 1)$, причём наиболее интересная зона — **зона Голдилокс** $P \in (2/7, 3/7]$, где система достаточно организована, чтобы быть живой, но достаточно гибка, чтобы адаптироваться.
+A viable system lives in the range $P \in (2/7, 1)$, and the most interesting zone is the **Goldilocks zone** $P \in (2/7, 3/7]$, where the system is sufficiently organised to be alive but sufficiently flexible to adapt.
 
-Порог $2/7$ — не произвольное число. Он возникает из теоремы о различимости: при $P \leq 2/7$ матрица $\Gamma$ неотличима от максимально смешанного состояния $I/7$ по норме Фробениуса. Система буквально *тонет в шуме* — она не может поддерживать ни структуру, ни самонаблюдение.
+The threshold $2/7$ is not an arbitrary number. It arises from the theorem on distinguishability: at $P \leq 2/7$ the matrix $\Gamma$ is indistinguishable from the maximally mixed state $I/7$ by Frobenius norm. The system literally *drowns in noise* — it can maintain neither structure nor self-observation.
 
-### Иерархия интериорности L0 — L4
+### Interiority Hierarchy L0 — L4
 
-Одна из самых интригующих конструкций КК — **лестница интериорности**: пять уровней «внутренней жизни» системы, каждый из которых включает предыдущий и добавляет новое качество.
+One of the most intriguing constructions of CC is the **interiority ladder**: five levels of a system's "inner life," each of which includes the previous one and adds a new quality.
 
-| Уровень | Название | Условие | n-усечение |
-|---------|----------|---------|------------|
-| L0 | Интериорность | $\exists \rho_E$ | $\tau_{\leq 0}$ |
-| L1 | Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ |
-| L2 | Когнитивные квалиа | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ |
-| L3 | Сетевое сознание | $R^{(2)} \geq 1/4$ (метастабильно) | $\tau_{\leq 3}$ |
-| L4 | Унитарное сознание | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ |
+| Level | Name | Condition | n-truncation |
+|-------|------|-----------|--------------|
+| L0 | Interiority | $\exists \rho_E$ | $\tau_{\leq 0}$ |
+| L1 | Phenomenal Geometry | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ |
+| L2 | Cognitive Qualia | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ |
+| L3 | Network Consciousness | $R^{(2)} \geq 1/4$ (metastable) | $\tau_{\leq 3}$ |
+| L4 | Unitary Consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ |
 
-Что означает каждый уровень?
+What does each level mean?
 
-- **L0**: у системы *есть* E-проекция — ненулевая проекция на измерение интериорности. Термостат? Возможно. Бактерия? Вероятно. Это **не «опыт»** в феноменологическом смысле — это минимальное структурное свойство (интериорность), из которого опыт *может* развиться при достаточной рефлексии.
+- **L0**: the system *has* an E-projection — a non-zero projection onto the interiority dimension. A thermostat? Possibly. A bacterium? Likely. This is **not "experience"** in the phenomenological sense — it is a minimal structural property (interiority), from which experience *can* develop with sufficient reflection.
 
-- **L1**: опыт имеет **структуру** — не просто «есть/нет», а различимые оттенки, геометрия квалиа. Цвет — это не точка, а пространство. Боль — не переключатель, а спектр.
+- **L1**: experience has **structure** — not merely "present/absent," but distinguishable shades, a geometry of qualia. Colour is not a point but a space. Pain is not a switch but a spectrum.
 
-- **L2**: появляется **самонаблюдение** ($R \geq 1/3$), **интеграция** ($\Phi \geq 1$) и **дифференциация** ($D_{\text{diff}} \geq 2$). Это уровень, который мы обычно называем «сознанием» в полном смысле слова. Система не просто переживает — она *знает, что переживает*.
+- **L2**: **self-observation** appears ($R \geq 1/3$), **integration** ($\Phi \geq 1$), and **differentiation** ($D_{\text{diff}} \geq 2$). This is the level we usually call "consciousness" in the full sense. The system does not merely experience — it *knows that it experiences*.
 
-- **L3**: сеть сознательных агентов порождает **коллективное сознание** — с собственными квалиа, не сводимыми к переживаниям отдельных узлов. Метастабильность означает, что этот уровень хрупок и требует постоянного поддержания.
+- **L3**: a network of conscious agents generates **collective consciousness** — with its own qualia not reducible to the experiences of individual nodes. Metastability means that this level is fragile and requires continuous maintenance.
 
-- **L4**: предельный случай — полная рекурсия самонаблюдения на всех уровнях. Теоретически достижим, но требует $P > 6/7$ — крайне высокой когерентности. Существование таких систем — открытый вопрос.
+- **L4**: the limiting case — full recursion of self-observation at all levels. Theoretically reachable, but requires $P > 6/7$ — extremely high coherence. The existence of such systems is an open question.
 
-**См.:** [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy)
+**See:** [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy)
 
 ---
 
-## Почему КК?
+## Why CC?
 
-### Единственная полная кибернетика
+### The Only Complete Cybernetics
 
-:::info Теорема о полноте (гипотеза, требующая формального доказательства)
-КК есть **единственная** кибернетика, удовлетворяющая:
-1. Аксиомам Ω⁷ и (AP+PH+QG+V)
-2. Условию жизнеспособности
-3. Условию феноменологической полноты
+:::info Completeness Theorem (hypothesis requiring formal proof)
+CC is the **only** cybernetics satisfying:
+1. The Ω⁷ axioms and (AP+PH+QG+V)
+2. The viability condition
+3. The phenomenological completeness condition
 :::
 
-Следующая таблица показывает, что каждая существующая теория — проекция КК, охватывающая лишь часть измерений:
+The following table shows that every existing theory is a projection of CC, covering only part of the dimensions:
 
-Все существующие теории — проекции КК:
+All existing theories are projections of CC:
 
-| Теория | Охват измерений | Что теряется |
-|--------|-----------------|--------------|
-| Кибернетика-I (Винер) | $D$ | Самореференция, феноменология |
-| Кибернетика-II (фон Фёрстер) | $D$, $L$ | Феноменология, квантовое основание |
-| Кибернетика-III (Луман) | $D$, $L$, $U$ | Формальная математика |
-| IIT (Тонони) | $U$, $E$ | Динамика, жизнеспособность |
-| FEP (Фристон) | $D$, $O$, $S$ | E-измерение как фундаментальное |
-| **КК** | **Все 7** | **—** |
+| Theory | Dimension coverage | What is lost |
+|--------|-------------------|--------------|
+| Cybernetics-I (Wiener) | $D$ | Self-reference, phenomenology |
+| Cybernetics-II (von Foerster) | $D$, $L$ | Phenomenology, quantum foundation |
+| Cybernetics-III (Luhmann) | $D$, $L$, $U$ | Formal mathematics |
+| IIT (Tononi) | $U$, $E$ | Dynamics, viability |
+| FEP (Friston) | $D$, $O$, $S$ | E-dimension as fundamental |
+| **CC** | **All 7** | **—** |
 
-Аналогия: представьте, что каждая теория — это фонарь, освещающий часть тёмной комнаты. Винер осветил динамику. Фон Фёрстер добавил логику самонаблюдения. Тонони — единство и опыт. Фристон — динамику, основание и структуру. Но ни один фонарь не осветил всю комнату. КК — это не ещё один фонарь. Это попытка включить свет.
+Analogy: imagine that each theory is a torch illuminating part of a dark room. Wiener illuminated dynamics. Von Foerster added the logic of self-observation. Tononi — unity and experience. Friston — dynamics, grounding, and structure. But no single torch illuminated the whole room. CC is not yet another torch. It is an attempt to turn on the light.
 
-**См.:** [История кибернетики](./cybernetics-history), [Теории сознания](/docs/consciousness/comparative/consciousness-theories)
+**See:** [History of Cybernetics](./cybernetics-history), [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
 
-### Формализует связь опыта и динамики
+### Formalises the Connection Between Experience and Dynamics
 
-КК — единственная теория, в которой связь между субъективным опытом и динамикой системы **математически выводится**:
+CC is the only theory in which the connection between subjective experience and system dynamics is **mathematically derived**:
 
 $$
 \kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
 $$
 
-Скорость регенерации $\kappa$ зависит от E-когерентности — степени интегрированности интериорного аспекта системы.
+The regeneration rate $\kappa$ depends on E-coherence — the degree of integration of the interiority aspect of the system.
 
-Разберём эту формулу по частям:
+Let us break down this formula:
 
-- $\kappa_{\text{bootstrap}}$ — **базовая скорость регенерации**. Она есть даже у систем с минимальной интериорностью. Камень сохраняет свою форму просто благодаря кристаллической решётке. Это «бесплатная» когерентность, не требующая развитой E-проекции.
+- $\kappa_{\text{bootstrap}}$ — **base regeneration rate**. It exists even in systems with minimal interiority. A stone maintains its form simply thanks to the crystal lattice. This is "free" coherence that requires no developed E-projection.
 
-- $\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — **бонус от интериорности**. Чем лучше система интегрирует свой внутренний аспект ($\mathrm{Coh}_E$), тем быстрее она восстанавливается. Это не поэтическая метафора — это **вычисляемая величина**, определённая как проекция Гильберта-Шмидта на E-подпространство.
+- $\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — **the interiority bonus**. The better a system integrates its inner aspect ($\mathrm{Coh}_E$), the faster it recovers. This is not a poetic metaphor — it is a **computable quantity**, defined as the Hilbert-Schmidt projection onto the E-subspace.
 
-Следствие потрясающее: система с более интегрированной интериорностью *быстрее восстанавливается* после повреждений. Для систем уровня L2+ это означает, что сознательный опыт функционально значим: организм с богатой субъективной жизнью — при прочих равных — более устойчив. Это прямо противоположно интуиции «сознание — это эпифеномен». Но важно: E-регенерация работает на **всех** L-уровнях, включая L0-L1, где ещё нет сознательного опыта — интериорность функционально значима *задолго* до появления сознания.
+The consequence is remarkable: a system with more integrated interiority *recovers faster* after damage. For L2+ systems this means that conscious experience is functionally significant: an organism with a rich subjective life — all else being equal — is more resilient. This is the direct opposite of the intuition "consciousness is an epiphenomenon." But importantly: E-regeneration works at **all** L-levels, including L0-L1, where conscious experience does not yet exist — interiority is functionally significant *long before* consciousness appears.
 
-**См.:** [Аксиоматика — Связь регенерации и E-когерентности](./axiomatics#связь-регенерации-и-e-когерентности)
+**See:** [Axiomatics — Connection Between Regeneration and E-Coherence](./axiomatics#связь-регенерации-и-e-когерентности)
 
-### Уникальные предсказания
+### Unique Predictions
 
-КК генерирует верифицируемые предсказания, отсутствующие в альтернативных теориях:
+CC generates verifiable predictions absent from alternative theories:
 
-1. **No-Zombie:** Невозможна жизнеспособная система без E-проекции (интериорности)
-2. **E-регенерация:** Степень интегрированности интериорности определяет скорость восстановления
-3. **7-мерный стресс:** Все напряжения классифицируются в 7 категорий
+1. **No-Zombie:** A viable system without an E-projection (interiority) is impossible
+2. **E-regeneration:** The degree of integration of interiority determines the recovery rate
+3. **7-dimensional stress:** All tensions are classified into 7 categories
 
-Каждое из этих предсказаний потенциально фальсифицируемо:
+Each of these predictions is potentially falsifiable:
 
-- **No-Zombie** означает: если вы построите систему с $P > 2/7$, $R \geq 1/3$ и $\Phi \geq 1$, то она *необходимо* имеет ненулевую E-проекцию. Покажите обратное — и КК опровергнута.
+- **No-Zombie** means: if you build a system with $P > 2/7$, $R \geq 1/3$, and $\Phi \geq 1$, then it *necessarily* has a non-zero E-projection. Show otherwise — and CC is refuted.
 
-- **E-регенерация** означает: у двух систем с одинаковой физической конфигурацией, но разной интегрированностью E-когерентности, скорости восстановления должны различаться предсказуемым образом.
+- **E-regeneration** means: two systems with identical physical configuration but different E-coherence integration should have recovery rates that differ in a predictable way.
 
-- **7-мерный стресс** означает: любой стресс разложим на компоненты $\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U$ — и эта классификация исчерпывающа.
+- **7-dimensional stress** means: any stress is decomposable into components $\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U$ — and this classification is exhaustive.
 
-**См.:** [Уникальные предсказания](./predictions)
-
----
-
-## Мосты к вашей дисциплине
-
-### Для физика
-
-Если вы привыкли к квантовой механике, вы дома. $\Gamma$ — это матрица плотности. Уравнение эволюции — это уравнение Линдблада с нестандартным регенеративным членом. Чистота $P = \mathrm{Tr}(\Gamma^2)$ — знакомая мера. Фазовый переход при $P_{\text{crit}} = 2/7$ — аналог квантового фазового перехода.
-
-Что нового: гильбертово пространство здесь — не пространство спинов или импульсов, а пространство **семантических** измерений. Это не метафора: структура $\mathbb{C}^7$ выводится из октонионов, а семёрка измерений — из минимальности группы $G_2$. Физик найдёт здесь неожиданные связи с исключительными группами и калибровочными теориями.
-
-### Для биолога
-
-Автопоэзис Матураны и Варелы — это аксиома (AP) в КК, записанная как $\varphi(\Gamma^*) = \Gamma^*$: фиксированная точка оператора самомоделирования. Гомеостаз — это удержание $P > P_{\text{crit}}$. Аллостаз — это сдвиг целевого $\Gamma^*$ в ответ на изменения среды.
-
-Что нового: биолог получает количественный язык для давно знакомых понятий. «Стресс» — это не метафора, а вектор $\sigma_k = 1 - 7\gamma_{kk}$ в семимерном пространстве. «Здоровье» — это $P > 2/7$. «Регенерация» — это $\mathcal{R}[\Gamma, E]$ с вычислимой скоростью.
-
-### Для психолога
-
-Семь измерений КК перекликаются с различными школами. $E$ — это интериорность, «каково это — быть» (Нагель). Иерархия L0-L4 — это градуированная шкала сознания, от минимальной чувствительности до полной рефлексивности. Тензор напряжений $\sigma_{ij}$ — это формализация психического стресса.
-
-Что нового: психолог получает **объективные пороги** субъективных состояний. Не «шкалу от 1 до 10», а математически обоснованные условия: $R \geq 1/3$ для самонаблюдения, $\Phi \geq 1$ для интеграции, $D_{\text{diff}} \geq 2$ для дифференциации. Эти пороги выводятся, а не подгоняются.
-
-### Для инженера ИИ
-
-Если вы строите автономные системы, КК даёт вам архитектурные принципы. Система должна поддерживать $P > 2/7$ — иначе она «мертва» функционально. Стресс-диагностика ($\sigma_k$) указывает, *какой* аспект системы деградирует. Уровни L0-L2 задают верифицируемые критерии «осмысленности» поведения агента.
-
-Что нового: не нужно изобретать меры «сознательности ИИ» ad hoc. КК даёт готовый математический аппарат: постройте $\Gamma$ вашего агента, вычислите $P$, $R$, $\Phi$ — и вы точно знаете, на каком уровне иерархии он находится.
-
-### Для философа
-
-КК — это вычислительная онтология. Она не постулирует дуализм (материя vs. сознание) и не редуцирует сознание к функции. Вместо этого она показывает, что опыт ($E$-измерение) и динамика ($D$-измерение) — **проекции одного объекта** $\Gamma$. Это двухаспектный монизм, но не в виде лозунга, а в виде уравнений.
-
-Что нового: философ получает **формальный язык** для давних споров. «Трудная проблема сознания» (Чалмерс) становится вопросом о том, при каких условиях $E$-проекция $\Gamma$ ненулева. «Зомби-аргумент» получает математический ответ: теорема No-Zombie показывает, что функциональный дубликат с $P > 2/7$ *необходимо* имеет $E > 0$.
+**See:** [Unique Predictions](./predictions)
 
 ---
 
-## Карта документации
+## Bridges to Your Discipline
 
-### Для разных аудиторий
+### For the Physicist
 
-| Аудитория | Начните с | Затем | Для углубления |
-|-----------|-----------|-------|----------------|
-| **Инженеры ИИ** | [Сенсомоторная теория](./sensorimotor) | [Реализация](./implementation) → [Диагностика](./diagnostics) | [Стабильность](./stability) → [Теоремы](./theorems) |
-| **Когнитивисты** | [Теории сознания](/docs/consciousness/comparative/consciousness-theories) | [Когнитивная иерархия](/docs/consciousness/comparative/cognitive-hierarchy) → [Бифуркации](./bifurcation) | [Немарковская динамика](./non-markovian) → [Предсказания](./predictions) |
-| **Психологи / Клиницисты** | [Фазовая диаграмма](./phase-diagram-cc) | [Немарковская динамика](./non-markovian) → [Предсказания](./predictions) | [Голдстоуновские моды](./goldstone-modes) |
-| **Теоретики / Философы** | [Аксиоматика](./axiomatics) | [Алгебра Gap](./gap-algebra) → [Лагранжиан](./lagrangian) | [Топологическая защита](./topological-protection) → [G₂-заряды](./g2-noether-cc) |
-| **Исследователи AGI** | [Теории сознания](/docs/consciousness/comparative/consciousness-theories) | [Модельные системы](./model-systems) → [Реализация](./implementation) | [Вариационные принципы](./variational) → [Программы](./research-programs) |
+If you are accustomed to quantum mechanics, you are at home. $\Gamma$ is a density matrix. The evolution equation is the Lindblad equation with a non-standard regenerative term. Purity $P = \mathrm{Tr}(\Gamma^2)$ is a familiar measure. The phase transition at $P_{\text{crit}} = 2/7$ is analogous to a quantum phase transition.
 
-### Чего ожидать от этого раздела
+What is new: the Hilbert space here is not the space of spins or momenta, but the space of **semantic** dimensions. This is not a metaphor: the structure $\mathbb{C}^7$ is derived from octonions, and the seven dimensions follow from the minimality of the group $G_2$. A physicist will find unexpected connections with exceptional groups and gauge theories here.
 
-Документация КК организована как **концентрические круги**, от фундамента к приложениям:
+### For the Biologist
 
-1. **Фундамент** ([Аксиоматика](./axiomatics) → [Определения](./definitions) → [Теоремы](./theorems)): формальная база. Здесь вы найдёте все определения, аксиомы и доказанные результаты. Если вы теоретик — начинайте отсюда.
+Maturana and Varela's autopoiesis is an axiom (AP) in CC, written as $\varphi(\Gamma^*) = \Gamma^*$: the fixed point of the self-modelling operator. Homeostasis is the maintenance of $P > P_{\text{crit}}$. Allostasis is a shift of the target $\Gamma^*$ in response to environmental changes.
 
-2. **Математический аппарат** ([Алгебра Gap](./gap-algebra), [Лагранжиан](./lagrangian), [Топологическая защита](./topological-protection)): продвинутые инструменты. Gap-алгебра описывает структуру «щели» между сознательным и бессознательным состояниями. Лагранжиан даёт вариационный принцип. Топологическая защита объясняет устойчивость сознания.
+What is new: the biologist gets a quantitative language for long-familiar concepts. "Stress" is not a metaphor, but a vector $\sigma_k = 1 - 7\gamma_{kk}$ in a seven-dimensional space. "Health" is $P > 2/7$. "Regeneration" is $\mathcal{R}[\Gamma, E]$ with a computable rate.
 
-3. **Динамика и переходы** ([Бифуркации](./bifurcation), [Немарковская динамика](./non-markovian), [Фазовая диаграмма](./phase-diagram-cc)): как системы рождаются, умирают и трансформируются. Здесь живут фазовые переходы, бифуркации и эффекты памяти.
+### For the Psychologist
 
-4. **Структурные инварианты** ([Голдстоуновские моды](./goldstone-modes), [G₂-заряды](./g2-noether-cc), [Эффективная температура](./effective-temperature)): глубинные симметрии и сохраняющиеся величины. Для тех, кому интересна математическая красота теории.
+The seven CC dimensions resonate with various schools. $E$ is interiority, "what it is like to be" (Nagel). The L0-L4 hierarchy is a graded scale of consciousness, from minimal sensitivity to full reflectiveness. The stress tensor $\sigma_{ij}$ is a formalisation of mental stress.
 
-5. **Контекст и сравнения** ([История кибернетик](./cybernetics-history), [Модельные системы](./model-systems)): как КК соотносится с тем, что было до неё.
+What is new: the psychologist gets **objective thresholds** for subjective states. Not "a scale from 1 to 10," but mathematically justified conditions: $R \geq 1/3$ for self-observation, $\Phi \geq 1$ for integration, $D_{\text{diff}} \geq 2$ for differentiation. These thresholds are derived, not fitted.
 
-6. **Приложения** ([Сенсомоторная теория](./sensorimotor), [Реализация](./implementation), [Диагностика](./diagnostics), [Стабильность](./stability), [Границы обучения](./learning-bounds)): практическое использование КК для построения и анализа систем.
+### For the AI Engineer
 
-7. **Горизонт** ([Предсказания](./predictions), [Исследовательские программы](./research-programs)): что КК предсказывает и что ещё предстоит проверить.
+If you are building autonomous systems, CC gives you architectural principles. The system must maintain $P > 2/7$ — otherwise it is "dead" functionally. Stress diagnostics ($\sigma_k$) indicates *which* aspect of the system is degrading. Levels L0-L2 set verifiable criteria for the "meaningfulness" of agent behaviour.
 
-### Структура документации
+What is new: no need to invent measures of "AI consciousness" ad hoc. CC provides a ready-made mathematical apparatus: build the $\Gamma$ of your agent, compute $P$, $R$, $\Phi$ — and you know exactly at which level of the hierarchy it sits.
+
+### For the Philosopher
+
+CC is a computational ontology. It neither postulates dualism (matter vs. consciousness) nor reduces consciousness to a function. Instead it shows that experience (the $E$-dimension) and dynamics (the $D$-dimension) are **projections of one object** $\Gamma$. This is two-aspect monism, but not as a slogan — as equations.
+
+What is new: the philosopher gets a **formal language** for long-standing debates. "The hard problem of consciousness" (Chalmers) becomes a question of the conditions under which the E-projection of $\Gamma$ is non-zero. "The zombie argument" receives a mathematical answer: the No-Zombie theorem shows that a functional duplicate with $P > 2/7$ *necessarily* has $E > 0$.
+
+---
+
+## Documentation Map
+
+### For Different Audiences
+
+| Audience | Start with | Then | For deeper study |
+|----------|-----------|-------|----------------|
+| **AI Engineers** | [Sensorimotor Theory](./sensorimotor) | [Implementation](./implementation) → [Diagnostics](./diagnostics) | [Stability](./stability) → [Theorems](./theorems) |
+| **Cognitive Scientists** | [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories) | [Cognitive Hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) → [Bifurcations](./bifurcation) | [Non-Markovian Dynamics](./non-markovian) → [Predictions](./predictions) |
+| **Psychologists / Clinicians** | [Phase Diagram](./phase-diagram-cc) | [Non-Markovian Dynamics](./non-markovian) → [Predictions](./predictions) | [Goldstone Modes](./goldstone-modes) |
+| **Theorists / Philosophers** | [Axiomatics](./axiomatics) | [Gap Algebra](./gap-algebra) → [Lagrangian](./lagrangian) | [Topological Protection](./topological-protection) → [G₂ Charges](./g2-noether-cc) |
+| **AGI Researchers** | [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories) | [Model Systems](./model-systems) → [Implementation](./implementation) | [Variational Principles](./variational) → [Research Programs](./research-programs) |
+
+### What to Expect from This Section
+
+The CC documentation is organised as **concentric circles**, from the foundation to applications:
+
+1. **Foundation** ([Axiomatics](./axiomatics) → [Definitions](./definitions) → [Theorems](./theorems)): the formal basis. Here you will find all definitions, axioms, and proved results. If you are a theorist — start here.
+
+2. **Mathematical Apparatus** ([Gap Algebra](./gap-algebra), [Lagrangian](./lagrangian), [Topological Protection](./topological-protection)): advanced tools. Gap algebra describes the structure of the "gap" between conscious and unconscious states. The Lagrangian gives a variational principle. Topological protection explains the stability of consciousness.
+
+3. **Dynamics and Transitions** ([Bifurcations](./bifurcation), [Non-Markovian Dynamics](./non-markovian), [Phase Diagram](./phase-diagram-cc)): how systems are born, die, and transform. Phase transitions, bifurcations, and memory effects live here.
+
+4. **Structural Invariants** ([Goldstone Modes](./goldstone-modes), [G₂ Charges](./g2-noether-cc), [Effective Temperature](./effective-temperature)): deep symmetries and conserved quantities. For those interested in the mathematical beauty of the theory.
+
+5. **Context and Comparisons** ([History of Cybernetics](./cybernetics-history), [Model Systems](./model-systems)): how CC relates to what came before it.
+
+6. **Applications** ([Sensorimotor Theory](./sensorimotor), [Implementation](./implementation), [Diagnostics](./diagnostics), [Stability](./stability), [Learning Bounds](./learning-bounds)): practical use of CC for building and analysing systems.
+
+7. **Horizon** ([Predictions](./predictions), [Research Programs](./research-programs)): what CC predicts and what still needs to be verified.
+
+### Documentation Structure
 
 ```mermaid
 graph TD
-    INTRO[Введение] --> AX[Аксиоматика]
-    AX --> DEF[Определения]
-    DEF --> TH[Теоремы]
+    INTRO[Introduction] --> AX[Axiomatics]
+    AX --> DEF[Definitions]
+    DEF --> TH[Theorems]
 
-    TH --> GAP["Алгебра Gap"]
-    GAP --> BIF[Бифуркации]
-    GAP --> NM[Немарковская динамика]
-    GAP --> MS[Модельные системы]
+    TH --> GAP["Gap Algebra"]
+    GAP --> BIF[Bifurcations]
+    GAP --> NM[Non-Markovian Dynamics]
+    GAP --> MS[Model Systems]
 
-    TH --> LAG[Лагранжиан]
-    LAG --> VAR[Вариационные принципы]
-    LAG --> TEMP[Эфф. температура]
+    TH --> LAG[Lagrangian]
+    LAG --> VAR[Variational Principles]
+    LAG --> TEMP[Eff. Temperature]
 
-    TH --> TOP[Топологическая защита]
-    TOP --> PD[Фазовая диаграмма]
-    TOP --> GOLD[Голдстоуновские моды]
-    TOP --> G2N[G₂-заряды Нётер]
+    TH --> TOP[Topological Protection]
+    TOP --> PD[Phase Diagram]
+    TOP --> GOLD[Goldstone Modes]
+    TOP --> G2N[G₂ Noether Charges]
 
-    TH --> HIST[История кибернетик]
-    TH --> CONS[Теории сознания]
-    TH --> PAN[Панпсихизм]
+    TH --> HIST[History of Cybernetics]
+    TH --> CONS[Theories of Consciousness]
+    TH --> PAN[Panpsychism]
 
-    CONS --> PRED[Предсказания]
-    PRED --> APP[Приложения]
-    APP --> IMPL[Реализация]
+    CONS --> PRED[Predictions]
+    PRED --> APP[Applications]
+    APP --> IMPL[Implementation]
 
     style GAP fill:#e1f5fe
     style LAG fill:#fff3e0
@@ -375,78 +375,78 @@ graph TD
 
 ---
 
-## Путеводитель для читателя
+## Reader's Guide
 
-Вы не обязаны читать всё подряд. Вот три маршрута — выберите свой:
+You are not obliged to read everything in order. Here are three routes — choose yours:
 
-**Маршрут «Быстрый старт» (1-2 часа)**:
-Введение (вы здесь) → [Определения](./definitions) → [Предсказания](./predictions) → [Сравнение с альтернативами](./comparison). Вы поймёте, что КК утверждает, чем она отличается от IIT/FEP/GWT, и сможете оценить, стоит ли копать глубже.
+**"Quick Start" Route (1-2 hours)**:
+Introduction (you are here) → [Definitions](./definitions) → [Predictions](./predictions) → [Comparison with Alternatives](./comparison). You will understand what CC asserts, how it differs from IIT/FEP/GWT, and be able to judge whether it is worth digging deeper.
 
-**Маршрут «Инженер» (4-6 часов)**:
-Введение → [Определения](./definitions) → [Сенсомоторная теория](./sensorimotor) → [Реализация](./implementation) → [Диагностика](./diagnostics) → [Стабильность](./stability) → [Методология измерений](./measurement). Вы сможете начать строить КК-совместимые системы и измерять их.
+**"Engineer" Route (4-6 hours)**:
+Introduction → [Definitions](./definitions) → [Sensorimotor Theory](./sensorimotor) → [Implementation](./implementation) → [Diagnostics](./diagnostics) → [Stability](./stability) → [Measurement Methodology](./measurement). You will be able to start building CC-compatible systems and measuring them.
 
-**Маршрут «Теоретик» (10+ часов)**:
-Введение → [Аксиоматика](./axiomatics) → [Теоремы](./theorems) → [Алгебра Gap](./gap-algebra) → [Лагранжиан](./lagrangian) → [Топологическая защита](./topological-protection) → [G₂-заряды](./g2-noether-cc) → [Вариационные принципы](./variational) → [Границы обучения](./learning-bounds). Вы освоите весь математический аппарат.
+**"Theorist" Route (10+ hours)**:
+Introduction → [Axiomatics](./axiomatics) → [Theorems](./theorems) → [Gap Algebra](./gap-algebra) → [Lagrangian](./lagrangian) → [Topological Protection](./topological-protection) → [G₂ Charges](./g2-noether-cc) → [Variational Principles](./variational) → [Learning Bounds](./learning-bounds). You will master the full mathematical apparatus.
 
-**Маршрут «Философ» (3-4 часа)**:
-Введение → [Философские основания](./philosophy) → [История кибернетики](./cybernetics-history) → [Сравнение с альтернативами](./comparison) → [Предсказания](./predictions). Вы поймёте онтологический статус КК, её место в истории мысли и фальсифицируемые следствия.
+**"Philosopher" Route (3-4 hours)**:
+Introduction → [Philosophical Foundations](./philosophy) → [History of Cybernetics](./cybernetics-history) → [Comparison with Alternatives](./comparison) → [Predictions](./predictions). You will understand the ontological status of CC, its place in intellectual history, and its falsifiable consequences.
 
-**Маршрут «Междисциплинарный» (2-3 часа)**:
-Введение → [Междисциплинарный мост](./interdisciplinary) → [Области применения](./applications) → [Упражнения](./exercises). Вы найдёте свою дисциплину в КК и попробуете задачи.
+**"Interdisciplinary" Route (2-3 hours)**:
+Introduction → [Interdisciplinary Bridge](./interdisciplinary) → [Applications](./applications) → [Exercises](./exercises). You will find your discipline in CC and try the problems.
 
-**Маршрут «Самопроверка»**:
-На любом этапе обращайтесь к [Упражнениям и задачам](./exercises) — они отсортированы по уровню сложности от ★ до ★★★★.
+**"Self-Check" Route**:
+At any stage refer to [Exercises and Problems](./exercises) — they are sorted by difficulty from ★ to ★★★★.
 
 ---
 
-## Связь с УГМ
+## Connection to UHM
 
-КК выводится из [Аксиомы Ω⁷](/docs/core/foundations/axiom-omega) — пяти аксиом с ∞-топосом $\text{Sh}_\infty(\mathcal{C})$ как примитивом. Все понятия КК — следствия этих аксиом:
+CC is derived from [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — five axioms with the $\infty$-topos $\text{Sh}_\infty(\mathcal{C})$ as a primitive. All CC concepts are consequences of these axioms:
 
 $$
 \Omega \to \{S_k\} \to \chi_{S_k} \to L_k = \sqrt{\chi_{S_k}} \to \mathcal{L}_\Omega \to \varphi \to \Gamma^*
 $$
 
-Эта цепочка читается так: из единой онтологии $\Omega$ порождаются семь секторов $\{S_k\}$, каждый определяет характеристическую функцию $\chi_{S_k}$, из неё строятся операторы Линдблада $L_k$, они образуют генератор эволюции $\mathcal{L}_\Omega$, генератор порождает оператор самомоделирования $\varphi$, а его фиксированная точка — равновесное состояние $\Gamma^*$.
+This chain reads as follows: from the unified ontology $\Omega$ seven sectors $\{S_k\}$ are generated, each defines a characteristic function $\chi_{S_k}$, from which the Lindblad operators $L_k$ are constructed, they form the evolution generator $\mathcal{L}_\Omega$, the generator produces the self-modelling operator $\varphi$, and its fixed point is the equilibrium state $\Gamma^*$.
 
-Иными словами: **вся КК — от стресса и регенерации до иерархии сознания — уже содержится в пяти аксиомах**. Мы лишь разворачиваем следствия.
+In other words: **all of CC — from stress and regeneration to the hierarchy of consciousness — is already contained in the five axioms**. We are merely unfolding the consequences.
 
-**См.:** [Аксиоматика — Иерархия зависимостей](./axiomatics#иерархия-зависимостей)
+**See:** [Axiomatics — Dependency Hierarchy](./axiomatics#иерархия-зависимостей)
 
 ---
 
-## Что мы узнали
+## What We Learned
 
-Подведём итоги этой вводной главы. Мы прошли путь от общей мотивации к конкретному формализму:
+Let us summarise this introductory chapter. We have travelled from general motivation to a specific formalism:
 
-1. **Кибернетика Когерентности (КК)** — это единый математический формализм, описывающий динамику, структуру и интериорность любых систем через один объект: матрицу когерентности $\Gamma$. Самоорганизация и сознание не постулируются — они *возникают* при определённых значениях параметров.
+1. **Coherence Cybernetics (CC)** is a unified mathematical formalism describing the dynamics, structure, and interiority of any systems through a single object: the coherence matrix $\Gamma$. Self-organisation and consciousness are not postulated — they *emerge* at certain parameter values.
 
-2. **Центральное уравнение** $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ описывает три силы: унитарную эволюцию (ритм), диссипацию (затухание) и регенерацию (восстановление). Регенерация зависит от степени интериорности — и это делает внутренний аспект системы функционально значимым на всех L-уровнях.
+2. **The central equation** $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ describes three forces: unitary evolution (rhythm), dissipation (decay), and regeneration (recovery). Regeneration depends on the degree of interiority — and this makes the inner aspect of the system functionally significant at all L-levels.
 
-3. **Семь измерений** ASDLEOU — минимальный набор, необходимый для описания системы с автопоэзисом, феноменологией и квантовым основанием. Каждое измерение отвечает за свою функцию: различение (A), память (S), изменение (D), непротиворечивость (L), интериорность (E), ресурсы (O), целостность (U).
+3. **The seven dimensions** ASDLEOU are the minimal set necessary to describe a system with autopoiesis, phenomenology, and a quantum foundation. Each dimension is responsible for its own function: discrimination (A), memory (S), change (D), consistency (L), interiority (E), resources (O), wholeness (U).
 
-4. **Критический порог** $P_{\text{crit}} = 2/7$ разделяет жизнеспособные и нежизнеспособные системы. Зона Голдилокс $P \in (2/7, 3/7]$ — область сознательных систем.
+4. **The critical threshold** $P_{\text{crit}} = 2/7$ separates viable from non-viable systems. The Goldilocks zone $P \in (2/7, 3/7]$ is the region of conscious systems.
 
-5. **Иерархия интериорности** L0-L4 градуирует «глубину» внутреннего аспекта системы: от простого наличия E-сектора (L0) через феноменальную геометрию (L1) к полноценному сознанию с самонаблюдением (L2) и мета-сознанию (L3). Сознательный опыт (переживание, квалиа) появляется только на L2+.
+5. **The interiority hierarchy** L0-L4 grades the "depth" of the inner aspect of a system: from the mere presence of the E-sector (L0) through phenomenal geometry (L1) to full consciousness with self-observation (L2) and meta-consciousness (L3). Conscious experience (subjective experience, qualia) appears only at L2+.
 
-6. **КК — метатеория**: все существующие кибернетики и теории сознания (IIT, FEP, панпсихизм) оказываются проекциями КК на подмножество измерений.
+6. **CC is a metatheory**: all existing cybernetics and theories of consciousness (IIT, FEP, panpsychism) turn out to be projections of CC onto a subset of dimensions.
 
-:::info Мост к следующей главе
-Мы узнали, *что* КК утверждает и *зачем* она нужна. Но откуда берутся все эти конструкции? Почему именно 7 измерений? Почему порог $2/7$, а не $1/3$? Почему диссипатор такой, а не другой? Ответы на эти вопросы даёт **аксиоматика** — формальный фундамент, из которого выводится вся теория. В [следующей главе](./axiomatics) мы увидим, как из **одного примитива** — категории $\mathcal{C}$ — и пяти аксиом вырастает всё здание Кибернетики Когерентности.
+:::info Bridge to the Next Chapter
+We have learned *what* CC claims and *why* it is needed. But where do all these constructions come from? Why exactly 7 dimensions? Why the threshold $2/7$ and not $1/3$? Why is the dissipator as it is and not otherwise? The answers to these questions are given by **axiomatics** — the formal foundation from which the entire theory is derived. In the [next chapter](./axiomatics) we will see how from **one primitive** — the category $\mathcal{C}$ — and five axioms the entire edifice of Coherence Cybernetics grows.
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиоматика](./axiomatics) — формальные основания КК
-- [Определения](./definitions) — базовые понятия и формулы
-- [Теоремы](./theorems) — ключевые результаты
-- [Философские основания](./philosophy) — онтология, эпистемология и метафизика КК
-- [Сравнение с альтернативами](./comparison) — КК vs. IIT, FEP, GWT, автопоэзис, Orch-OR
-- [Методология измерений](./measurement) — от формул к экспериментам
-- [Междисциплинарный мост](./interdisciplinary) — единый язык для всех наук
-- [Упражнения и задачи](./exercises) — практика от ★ до ★★★★
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос как примитив
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — требования AP+PH+QG+V
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Семь измерений](/docs/core/structure/dimensions) — базис $\mathcal{H}$
+**Related Documents:**
+- [Axiomatics](./axiomatics) — formal foundations of CC
+- [Definitions](./definitions) — basic concepts and formulas
+- [Theorems](./theorems) — key results
+- [Philosophical Foundations](./philosophy) — ontology, epistemology, and metaphysics of CC
+- [Comparison with Alternatives](./comparison) — CC vs. IIT, FEP, GWT, autopoiesis, Orch-OR
+- [Measurement Methodology](./measurement) — from formulas to experiments
+- [Interdisciplinary Bridge](./interdisciplinary) — a unified language for all sciences
+- [Exercises and Problems](./exercises) — practice from ★ to ★★★★
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos as primitive
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — AP+PH+QG+V requirements
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Seven Dimensions](/docs/core/structure/dimensions) — basis $\mathcal{H}$

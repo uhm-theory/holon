@@ -1,92 +1,92 @@
 ---
 sidebar_position: 22
-title: Программы исследований
-description: Иерархия инвариантов P/F и открытые вопросы КК
+title: Research Programs
+description: P/F invariant hierarchy and open questions in CC
 ---
 
-# Программы Исследований
+# Research Programs
 
-> *«Не бывает окончательных теорий — бывают теории, которые ставят лучшие вопросы, чем предыдущие.»*
-> — Дэвид Дойч, «Начало бесконечности»
+> *"There are no final theories — only theories that ask better questions than the previous ones."*
+> — David Deutsch, "The Beginning of Infinity"
 
-:::tip Мост из предыдущей главы
-В [предыдущей главе](./diagnostics) мы научились *диагностировать* когерентные системы: снимать $\sigma$-профиль, распознавать паттерны отказов, выбирать стратегии восстановления. Но диагностика работает с *уже установленными* закономерностями. Откуда эти закономерности берутся? Какие из них доказаны, а какие — лишь правдоподобные гипотезы? И какие вопросы КК *ещё не умеет* задавать? Программа исследований — это карта неизведанного.
+:::tip Bridge from the Previous Chapter
+In the [previous chapter](./diagnostics) we learned to *diagnose* coherent systems: read the $\sigma$-profile, recognize failure patterns, and choose recovery strategies. But diagnostics works with *already established* regularities. Where do those regularities come from? Which of them are proven, and which are merely plausible hypotheses? And what questions is CC *not yet able* to ask? The research program is a map of the unexplored.
 :::
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Построим **иерархию инвариантов** — трёхуровневую структуру ограничений (§1)
-2. Разберём **физические законы** P1–P4, которые КК наследует от термодинамики (§2)
-3. Опишем **фундаментальные ограничения** F1–F10 — минимальный базис для когерентных систем (§3)
-4. Классифицируем **открытые проблемы** с указанием уровня сложности (§4)
-5. Опишем **экспериментальную программу** — 5 конкретных протоколов (§5)
-6. Наведём **междисциплинарные мосты** — точки контакта КК с нейронаукой, ИИ, биологией и организационной теорией (§6)
+:::info Chapter Roadmap
+In this chapter we will:
+1. Build an **invariant hierarchy** — a three-level structure of constraints (§1)
+2. Examine the **physical laws** P1–P4 that CC inherits from thermodynamics (§2)
+3. Describe the **fundamental constraints** F1–F10 — the minimal basis for coherent systems (§3)
+4. Classify **open problems** with difficulty levels (§4)
+5. Describe the **experimental program** — 5 concrete protocols (§5)
+6. Draw **interdisciplinary bridges** — contact points of CC with neuroscience, AI, biology, and organizational theory (§6)
 :::
 
-Любая научная теория — не памятник, а инструмент. Она ценна не тем, что всё объяснила, а тем, какие **новые вопросы** она позволяет *точно сформулировать*. Теория Ньютона объяснила падение яблок и движение планет — но её подлинное величие в том, что она позволила *задать* вопрос об аномалии перигелия Меркурия. Из этого вопроса выросла общая теория относительности.
+Every scientific theory is not a monument but a tool. Its value lies not in what it has explained, but in what **new questions** it allows us to *precisely formulate*. Newton's theory explained falling apples and planetary motion — but its true greatness was that it allowed us to *ask* the question about Mercury's perihelion anomaly. General relativity grew out of that question.
 
-Кибернетика Когерентности (КК) находится на ранней, но захватывающей стадии своего развития. Основной формализм выстроен: матрица когерентности $\Gamma$, эволюционное уравнение, пороги жизнеспособности, иерархия интериорности, теорема No-Zombie. Но за каждой доказанной теоремой открываются десятки неисследованных направлений. За каждым порогом — вопрос: *можно ли его измерить?* За каждым ограничением — вопрос: *является ли оно фундаментальным или выводимым?*
+Coherence Cybernetics (CC) is at an early but exciting stage of development. The core formalism is in place: the coherence matrix $\Gamma$, the evolution equation, viability thresholds, the interiority hierarchy, the No-Zombie theorem. But behind every proven theorem dozens of unexplored directions open up. Behind every threshold lies the question: *can it be measured?* Behind every constraint: *is it fundamental or derivable?*
 
-Данная глава — это **карта фронтира**. Она описывает:
+This chapter is a **frontier map**. It describes:
 
-1. **Иерархию инвариантов** — трёхуровневую структуру ограничений, от физических законов через фундаментальные constraints до производных свойств.
-2. **Физические законы** (P1-P4), которые КК наследует от термодинамики и теории информации — и которые она интерпретирует на новом языке.
-3. **Фундаментальные ограничения** (F1-F10), которые предположительно образуют минимальный достаточный базис для существования когерентных систем.
-4. **Открытые проблемы** — конкретные вопросы, каждый из которых может стать темой диссертации или программы исследований.
-5. **Экспериментальную программу** — как перейти от теорем к лабораторным измерениям.
-6. **Междисциплинарные мосты** — точки контакта КК с нейронаукой, ИИ, системной биологией и организационной теорией.
+1. The **invariant hierarchy** — a three-level structure of constraints, from physical laws through fundamental constraints to derived properties.
+2. **Physical laws** (P1–P4) that CC inherits from thermodynamics and information theory — and interprets in a new language.
+3. **Fundamental constraints** (F1–F10) that presumably form a minimal sufficient basis for the existence of coherent systems.
+4. **Open problems** — concrete questions, each of which could become a dissertation topic or research program.
+5. The **experimental program** — how to move from theorems to laboratory measurements.
+6. **Interdisciplinary bridges** — contact points of CC with neuroscience, AI, systems biology, and organizational theory.
 
-Читатель-теоретик найдёт здесь открытые гипотезы и маршруты доказательств. Экспериментатор — протоколы верификации. Инженер — ориентиры для построения систем, воплощающих принципы КК. А философ — пространство для рефлексии о границах формализма.
+A theorist will find open hypotheses and proof routes here. An experimentalist will find verification protocols. An engineer will find benchmarks for building systems that embody CC principles. And a philosopher will find space to reflect on the limits of formalism.
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $\mathcal{D}[\Gamma]$ — [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан)
-- $\mathrm{Coh}_E$ — [E-когерентность](./definitions#e-когерентность)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+:::note Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
+- $\mathcal{D}[\Gamma]$ — [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан)
+- $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
 :::
 
-:::danger Программа исследований
-Этот раздел описывает **программу исследований**, а не формализованную часть УГМ. Ограничения P1-P4 и F1-F10 **не выведены** из [аксиом УГМ](./axiomatics#аксиоматическая-база-краткая-справка). Формализация связи с теорией УГМ — открытая задача.
+:::danger Research Program
+This section describes a **research program**, not a formalized part of UHM. Constraints P1–P4 and F1–F10 are **not derived** from [UHM axioms](./axiomatics#аксиоматическая-база-краткая-справка). Formalizing the connection to UHM theory is an open problem.
 :::
 
 ---
 
-## Иерархия инвариантов
+## Invariant Hierarchy
 
-### Зачем нужна иерархия?
+### Why Do We Need a Hierarchy?
 
-Когда мы строим физику, мы не ставим все законы на один уровень. Закон сохранения энергии — фундаментальнее, чем закон Ома. Второе начало термодинамики — фундаментальнее, чем уравнение теплопроводности. Между ними существуют отношения **подчинения**: из более глубоких принципов *выводятся* более частные. Закон Ома — следствие микроскопической динамики электронов в кристаллической решётке. Уравнение теплопроводности — следствие второго начала.
+When we build physics, we do not place all laws on the same level. The law of conservation of energy is more fundamental than Ohm's law. The second law of thermodynamics is more fundamental than the heat conduction equation. Between them there are relations of **subordination**: more particular laws are *derived* from deeper principles. Ohm's law is a consequence of the microscopic dynamics of electrons in a crystal lattice. The heat conduction equation is a consequence of the second law.
 
-Аналогичную иерархию предлагает КК для ограничений на когерентные системы. Ключевая идея: не все ограничения одинаково фундаментальны. Некоторые — **физические законы**, которые невозможно нарушить в принципе (как нельзя нарушить второе начало). Другие — **фундаментальные ограничения**, специфичные для когерентных систем, но, возможно, выводимые из физических законов плюс аксиоматика УГМ. Третьи — **производные свойства**, которые следуют из первых двух уровней.
+CC proposes an analogous hierarchy for constraints on coherent systems. The key idea: not all constraints are equally fundamental. Some are **physical laws** that cannot be violated in principle (as the second law cannot be violated). Others are **fundamental constraints** specific to coherent systems, but possibly derivable from physical laws plus the UHM axiomatics. Still others are **derived properties** that follow from the first two levels.
 
-Зачем это важно? Потому что понимание иерархии определяет **стратегию доказательств**. Если ограничение фундаментально — его нужно принять как аксиому или вывести из физики. Если оно производное — нужно найти путь вывода. Если два ограничения считались независимыми, но одно выводится из другого — мы упрощаем базис и углубляем понимание.
+Why does this matter? Because understanding the hierarchy determines the **proof strategy**. If a constraint is fundamental — it must be accepted as an axiom or derived from physics. If it is derived — a derivation path must be found. If two constraints were thought independent but one follows from the other — we simplify the basis and deepen understanding.
 
-### Трёхуровневая структура (гипотеза)
+### Three-Level Structure (hypothesis)
 
-КК предлагает организовать ограничения в иерархию с отношениями подчинения:
+CC proposes organizing constraints into a hierarchy with subordination relations:
 
 ```mermaid
 graph TD
-    subgraph "Уровень 0: Физические законы"
-        P1[P1: Ландауэра]
-        P2[P2: Флуктуации-диссипация]
-        P3[P3: Информация-Энергия]
-        P4[P4: Иммунитет знаний]
+    subgraph "Level 0: Physical Laws"
+        P1[P1: Landauer]
+        P2[P2: Fluctuation-dissipation]
+        P3[P3: Information-Energy]
+        P4[P4: Knowledge immunity]
     end
-    subgraph "Уровень 1: Фундаментальные ограничения"
-        F1[F1: Компактность]
-        F2[F2: Диссипативность]
-        F3[F3: Невырожденность]
-        F4[F4: Рефлексивное сжатие]
-        F10[F10: E-когерентность]
+    subgraph "Level 1: Fundamental Constraints"
+        F1[F1: Compactness]
+        F2[F2: Dissipativity]
+        F3[F3: Non-degeneracy]
+        F4[F4: Reflexive contraction]
+        F10[F10: E-coherence]
     end
-    subgraph "Уровень 2: Производные"
-        D1[Глобальный аттрактор]
-        D2[P как функция Ляпунова]
-        D3[Минимум рефлексии]
+    subgraph "Level 2: Derived"
+        D1[Global attractor]
+        D2[P as Lyapunov function]
+        D3[Reflection minimum]
     end
     P1 --> F1
     P2 --> F2
@@ -97,616 +97,616 @@ graph TD
     F4 --> D3
 ```
 
-Стрелки на этой диаграмме означают отношение *подчинения*: нижнее ограничение (гипотетически) выводимо из верхнего. Обратим внимание на ключевую гипотезу: каждая стрелка — это **утверждение, требующее доказательства**. Структура диаграммы — программа исследований, а не доказанный результат.
+The arrows on this diagram denote the *subordination* relation: the lower constraint is (hypothetically) derivable from the upper one. Note the key hypothesis: each arrow is a **claim requiring proof**. The diagram's structure is a research program, not a proven result.
 
 ---
 
-## Уровень 0: Физические законы (P1-P4)
+## Level 0: Physical Laws (P1-P4)
 
-Встроены в динамику, не могут быть нарушены:
+Built into the dynamics, cannot be violated:
 
-| Закон | Формула | Область |
-|-------|---------|---------|
-| P1 Ландауэра | $\Delta S \geq k_B \ln(2) \cdot n_{\mathrm{bits}}$ | Термодинамика |
-| P2 Флуктуационно-диссипативная теорема | $\sigma^2 = 2 T_{\mathrm{eff}} \gamma$ | Термодинамика |
-| P3 Информация-Энергия | $\dot{S} \geq (k_B T / E) \cdot (dI/dt)$ | Термодинамика |
-| P4 Иммунитет знаний | $\Delta\mathrm{Core} = 0$ при атаке | Безопасность |
+| Law | Formula | Domain |
+|-----|---------|--------|
+| P1 Landauer | $\Delta S \geq k_B \ln(2) \cdot n_{\mathrm{bits}}$ | Thermodynamics |
+| P2 Fluctuation-dissipation theorem | $\sigma^2 = 2 T_{\mathrm{eff}} \gamma$ | Thermodynamics |
+| P3 Information-Energy | $\dot{S} \geq (k_B T / E) \cdot (dI/dt)$ | Thermodynamics |
+| P4 Knowledge immunity | $\Delta\mathrm{Core} = 0$ under attack | Security |
 
-### P1: Принцип Ландауэра {#p1-принцип-ландауэра}
+### P1: Landauer's Principle {#p1-принцип-ландауэра}
 
-#### Историческая справка
+#### Historical Background
 
-В 1961 году Рольф Ландауэр, работавший в IBM, опубликовал одну из самых глубоких работ XX века: «Необратимость и выделение тепла в вычислительном процессе». Ландауэр показал, что **стирание** одного бита информации неизбежно выделяет не менее $k_B T \ln 2$ тепла. Это не инженерное ограничение — это следствие второго начала термодинамики. Обратимые вычисления теоретически могут быть бестеплыми, но любое необратимое логическое действие (AND, OR, ERASE) рассеивает энергию.
+In 1961 Rolf Landauer, working at IBM, published one of the deepest papers of the 20th century: "Irreversibility and Heat Generation in the Computing Process." Landauer showed that **erasing** one bit of information inevitably dissipates at least $k_B T \ln 2$ of heat. This is not an engineering limitation — it is a consequence of the second law of thermodynamics. Reversible computations can theoretically be heat-free, but any irreversible logical operation (AND, OR, ERASE) dissipates energy.
 
-Десятилетиями принцип Ландауэра оставался теоретической диковиной. Но в 2012 году группа Берю экспериментально подтвердила его, манипулируя коллоидными частицами в оптической ловушке. Стирание одного бита действительно выделяет ровно $k_B T \ln 2$ — ни больше, ни меньше (при квазистатическом протоколе).
+For decades Landauer's principle remained a theoretical curiosity. But in 2012 the Bérut group experimentally confirmed it by manipulating colloidal particles in an optical trap. Erasing one bit indeed releases exactly $k_B T \ln 2$ — no more, no less (under a quasistatic protocol).
 
-#### Формулировка
+#### Statement
 
-Стирание 1 бита информации требует минимум $k_B T \ln 2$ энергии:
+Erasing 1 bit of information requires at least $k_B T \ln 2$ of energy:
 
 $$
 \Delta S \geq k_B \ln(2) \cdot n_{\mathrm{bits}}
 $$
 
-#### Связь с КК
+#### Connection to CC
 
-**Связь с КК:** Ограничивает скорость декогеренции в $\mathcal{D}[\Gamma]$.
+**Connection to CC:** Limits the decoherence rate in $\mathcal{D}[\Gamma]$.
 
-Когда когерентная система теряет структуру — когда её чистота $P$ падает, — это не абстрактный процесс. Декогеренция *стирает* информацию, закодированную в внедиагональных элементах $\Gamma$. По принципу Ландауэра, это стирание требует рассеяния энергии. Следовательно, скорость декогеренции ограничена сверху мощностью диссипации:
+When a coherent system loses structure — when its purity $P$ drops — this is not an abstract process. Decoherence *erases* information encoded in the off-diagonal elements of $\Gamma$. By Landauer's principle, this erasure requires energy dissipation. Consequently, the decoherence rate is bounded above by the dissipation power:
 
 $$
-\left|\frac{dP}{d\tau}\right|_{\text{декогеренция}} \leq \frac{\dot{Q}}{k_B T \ln 2} \cdot f(\Gamma)
+\left|\frac{dP}{d\tau}\right|_{\text{decoherence}} \leq \frac{\dot{Q}}{k_B T \ln 2} \cdot f(\Gamma)
 $$
 
-где $\dot{Q}$ — мощность тепловыделения, а $f(\Gamma)$ — функция, зависящая от текущего состояния когерентности. Это означает, что **система не может потерять когерентность мгновенно** — декогеренция ограничена термодинамикой.
+where $\dot{Q}$ is the heat dissipation power and $f(\Gamma)$ is a function of the current coherence state. This means that **a system cannot lose coherence instantaneously** — decoherence is bounded by thermodynamics.
 
-Для КК это имеет глубокие следствия: даже в самых агрессивных средах когерентная система имеет **конечное время** для реагирования. Это время пропорционально $1/T_{\text{eff}}$ — чем холоднее «эффективная среда» системы, тем медленнее она теряет когерентность и тем больше у неё шансов на регенерацию.
+For CC this has deep consequences: even in the most aggressive environments a coherent system has a **finite time** to respond. This time is proportional to $1/T_{\text{eff}}$ — the cooler the system's "effective environment," the more slowly it loses coherence and the better its chances of regeneration.
 
-### P2: Флуктуационно-диссипативная теорема {#p2-фдт}
+### P2: Fluctuation-Dissipation Theorem {#p2-фдт}
 
-#### Историческая справка
+#### Historical Background
 
-В 1905 году Альберт Эйнштейн объяснил броуновское движение — случайное блуждание пылинки в воде. Он показал, что интенсивность случайных толчков (флуктуации) и вязкость жидкости (диссипация) связаны фундаментальным соотношением: $D = k_B T / (6\pi \eta r)$. Это было первым намёком на глубокую связь между шумом и трением.
+In 1905 Albert Einstein explained Brownian motion — the random walk of a dust particle in water. He showed that the intensity of random kicks (fluctuations) and the viscosity of the liquid (dissipation) are related by a fundamental relation: $D = k_B T / (6\pi \eta r)$. This was the first hint of a deep connection between noise and friction.
 
-В 1951 году Герберт Калленн и Теодор Уэлтон обобщили эту связь в **флуктуационно-диссипативную теорему** (ФДТ): в любой системе, находящейся в тепловом равновесии, амплитуда спонтанных флуктуаций пропорциональна скорости диссипации. Шум и трение — не два разных явления, а два лица одного механизма: взаимодействия системы с «тепловой баней».
+In 1951 Herbert Callen and Theodore Welton generalized this connection into the **fluctuation-dissipation theorem** (FDT): in any system in thermal equilibrium, the amplitude of spontaneous fluctuations is proportional to the dissipation rate. Noise and friction are not two different phenomena, but two faces of one mechanism: the system's interaction with the "thermal bath."
 
-Формализация Кубо (1957) сделала ФДТ рабочим инструментом физики конденсированного состояния. Сегодня она используется от расчёта теплового шума в электронике до анализа флуктуаций биомолекул.
+Kubo's formalization (1957) made FDT a working tool of condensed matter physics. Today it is used from calculating thermal noise in electronics to analyzing fluctuations of biomolecules.
 
-#### Формулировка
+#### Statement
 
-Связь между флуктуациями и диссипацией в равновесной системе:
+The relation between fluctuations and dissipation in an equilibrium system:
 
 $$
 \sigma^2 = 2 T_{\mathrm{eff}} \gamma
 $$
 
-где $\sigma^2$ — дисперсия флуктуаций, $T_{\text{eff}}$ — эффективная температура, $\gamma$ — коэффициент диссипации.
+where $\sigma^2$ is the variance of fluctuations, $T_{\text{eff}}$ is the effective temperature, $\gamma$ is the dissipation coefficient.
 
-#### Связь с КК
+#### Connection to CC
 
-**Связь с КК:** Определяет связь между $\mathcal{D}[\Gamma]$ и температурой окружения.
+**Connection to CC:** Determines the relation between $\mathcal{D}[\Gamma]$ and the ambient temperature.
 
-В когерентной кибернетике ФДТ играет двойную роль:
+In coherence cybernetics, FDT plays a dual role:
 
-1. **Она связывает декогеренцию с шумом.** Диссипатор $\mathcal{D}[\Gamma]$ — это не просто «потеря структуры». Он одновременно порождает **флуктуации** в динамике $\Gamma$. Чем сильнее диссипация, тем шумнее эволюция. ФДТ гарантирует, что эти два эффекта *пропорциональны* — нельзя иметь сильную декогеренцию без сильного шума, и наоборот.
+1. **It links decoherence to noise.** The dissipator $\mathcal{D}[\Gamma]$ is not just "loss of structure." It simultaneously generates **fluctuations** in the dynamics of $\Gamma$. The stronger the dissipation, the noisier the evolution. FDT guarantees that these two effects are *proportional* — one cannot have strong decoherence without strong noise, and vice versa.
 
-2. **Она определяет эффективную температуру.** Понятие $T_{\text{eff}}$ — [эффективной температуры](./effective-temperature) когерентной системы — непосредственно следует из ФДТ. Система с большими внутренними флуктуациями «горяча»; система с малыми — «холодна». Это не метафора: $T_{\text{eff}}$ входит в расчёт радиуса устойчивости и определяет, как быстро возмущения размывают когерентность.
+2. **It defines the effective temperature.** The concept of $T_{\text{eff}}$ — the [effective temperature](./effective-temperature) of a coherent system — follows directly from FDT. A system with large internal fluctuations is "hot"; one with small fluctuations is "cold." This is not a metaphor: $T_{\text{eff}}$ enters the calculation of the stability radius and determines how quickly perturbations blur coherence.
 
-Для практических приложений ФДТ означает: **измерив флуктуации системы, можно оценить скорость её декогеренции**, и наоборот. Это открывает путь к экспериментальной верификации КК-предсказаний без прямого измерения $\mathcal{D}[\Gamma]$.
+For practical applications, FDT means: **by measuring a system's fluctuations, one can estimate its decoherence rate**, and vice versa. This opens a path to experimental verification of CC predictions without directly measuring $\mathcal{D}[\Gamma]$.
 
-### P3: Связь информации и энергии {#p3-информация-энергия}
+### P3: Information-Energy Link {#p3-информация-энергия}
 
-#### Историческая справка
+#### Historical Background
 
-Связь информации и энергии — одна из глубочайших тем физики XXI века. Она восходит к мысленному эксперименту Максвелла (1867): демон, знающий скорости молекул, может сортировать их без работы и тем самым нарушить второе начало. Разрешение парадокса (Сцилард, 1929; Беннетт, 1982) показало: демон *не может* действовать без затрат — ему нужна энергия для стирания своей памяти (принцип Ландауэра).
+The connection between information and energy is one of the deepest topics of 21st-century physics. It traces back to Maxwell's thought experiment (1867): a demon knowing the velocities of molecules can sort them without work and thereby violate the second law. The resolution of the paradox (Szilard, 1929; Bennett, 1982) showed: the demon *cannot* act without cost — it needs energy to erase its memory (Landauer's principle).
 
-Современная формулировка связи информации и энергии принадлежит нескольким направлениям: квантовой термодинамике (Горовиц, Парондо), стохастической термодинамике (Секимото, Сейферт), теории ресурсов (Брандау, Хоределки). Все они сходятся в одном: **обработка информации — физический процесс, требующий энергии**.
+The modern formulation of the information-energy connection belongs to several directions: quantum thermodynamics (Horowitz, Parrondo), stochastic thermodynamics (Sekimoto, Seifert), resource theories (Brandão, Horodecki). They all converge on one point: **information processing is a physical process requiring energy**.
 
-#### Формулировка
+#### Statement
 
-Обработка информации требует энергии:
+Information processing requires energy:
 
 $$
 \dot{S} \geq \frac{k_B T}{E} \cdot \frac{dI}{dt}
 $$
 
-где $\dot{S}$ — скорость производства энтропии, $dI/dt$ — скорость обработки информации.
+where $\dot{S}$ is the entropy production rate, $dI/dt$ is the information processing rate.
 
-#### Связь с КК
+#### Connection to CC
 
-**Связь с КК:** Ограничивает скорость изменения $\Gamma$ при ограниченных ресурсах.
+**Connection to CC:** Limits the rate of change of $\Gamma$ under limited resources.
 
-Когерентная система — это *информационная* система. Матрица $\Gamma$ кодирует информацию о внутренних состояниях и их корреляциях. Любое изменение $\Gamma$ — обучение, адаптация, самонаблюдение — требует обработки информации, а значит, по P3, требует энергии.
+A coherent system is an *informational* system. The matrix $\Gamma$ encodes information about internal states and their correlations. Any change in $\Gamma$ — learning, adaptation, self-observation — requires information processing, and hence, by P3, requires energy.
 
-Это создаёт фундаментальный **треугольник ограничений**:
+This creates a fundamental **constraint triangle**:
 
-- **Скорость адаптации** ограничена доступной энергией (P3).
-- **Качество адаптации** ограничено точностью самомоделирования (F4).
-- **Устойчивость адаптации** ограничена балансом регенерации и декогеренции (F2).
+- **Adaptation speed** is bounded by available energy (P3).
+- **Adaptation quality** is bounded by self-modeling accuracy (F4).
+- **Adaptation stability** is bounded by the balance of regeneration and decoherence (F2).
 
-Для живых систем P3 означает: мозг, потребляющий 20% энергии тела, делает это не расточительно — он платит физическую цену за информационную работу сознания. Для ИИ-систем: вычислительные ресурсы — не просто инженерное ограничение, а отражение фундаментального закона.
+For living systems, P3 means: the brain consuming 20% of the body's energy does so not wastefully — it is paying the physical price of the informational work of consciousness. For AI systems: computational resources are not just an engineering limitation, but a reflection of a fundamental law.
 
-В КК P3 проявляется через связь [O-измерения](/docs/core/structure/dimension-o) (ресурсы, энергия) с динамикой остальных измерений: система с дефицитом O не может поддерживать высокую чистоту $P$, потому что ей не хватает энергии на регенерацию. Это формализация интуиции: «без еды нет мышления».
+In CC, P3 manifests through the connection between the [O-dimension](/docs/core/structure/dimension-o) (resources, energy) and the dynamics of the other dimensions: a system with an O-deficit cannot maintain high purity $P$, because it lacks the energy for regeneration. This is the formalization of the intuition: "no food, no thinking."
 
-### P4: Иммунитет ядра знаний {#p4-иммунитет-ядра}
+### P4: Knowledge Core Immunity {#p4-иммунитет-ядра}
 
-#### Историческая справка
+#### Historical Background
 
-Идея о защите «ядра» теории восходит к Имре Лакатосу (1970): в каждой исследовательской программе есть **твёрдое ядро** — набор принципов, которые не подвергаются фальсификации, — и **защитный пояс** вспомогательных гипотез, которые могут корректироваться. Атака на защитный пояс меняет деталь; атака на ядро — разрушает программу.
+The idea of protecting the "core" of a theory traces back to Imre Lakatos (1970): every research program has a **hard core** — a set of principles immune to falsification — and a **protective belt** of auxiliary hypotheses that can be adjusted. An attack on the protective belt changes a detail; an attack on the core destroys the program.
 
-Аналогичная структура обнаруживается в биологии (генетический код — «ядро», фенотип — «пояс»), в иммунологии (различение «своё/чужое» — ядро иммунной компетенции), и в теории управления (инварианты обратной связи — ядро регулятора).
+An analogous structure appears in biology (the genetic code is the "core," the phenotype is the "belt"), in immunology (self/non-self discrimination is the core of immune competence), and in control theory (feedback invariants are the core of the regulator).
 
-#### Формулировка
+#### Statement
 
-Центральные «убеждения» системы защищены от внешних атак:
+The system's central "beliefs" are protected from external attacks:
 
 $$
-\Delta\mathrm{Core} = 0 \quad \text{при атаке}
+\Delta\mathrm{Core} = 0 \quad \text{under attack}
 $$
 
-#### Связь с КК
+#### Connection to CC
 
-**Связь с КК:** Связь с неподвижной точкой $\Gamma^* = \varphi(\Gamma^*)$.
+**Connection to CC:** Connection to the fixed point $\Gamma^* = \varphi(\Gamma^*)$.
 
-В КК «ядро знаний» — это не метафора, а математический объект: **неподвижная точка** оператора самомоделирования $\varphi$. Состояние $\Gamma^*$, удовлетворяющее $\Gamma^* = \varphi(\Gamma^*)$, — это состояние, в котором «то, что система думает о себе» совпадает с «тем, чем она является». Атака на такое состояние должна одновременно изменить и систему, и её самомодель — а это противоречит свойству неподвижной точки.
+In CC the "knowledge core" is not a metaphor but a mathematical object: the **fixed point** of the self-modeling operator $\varphi$. The state $\Gamma^*$ satisfying $\Gamma^* = \varphi(\Gamma^*)$ is a state in which "what the system thinks about itself" coincides with "what it is." An attack on such a state must simultaneously change both the system and its self-model — and this contradicts the fixed-point property.
 
-P4 формализует **робастность сознания**: система с устойчивой неподвижной точкой $\varphi$ не теряет своё «я» при внешних пертурбациях (в пределах радиуса устойчивости $r_{\text{stab}}$). Это перекликается с клиническим наблюдением: после травмы, комы, сильного стресса люди восстанавливают свою идентичность — «ядро» сохраняется, даже если «защитный пояс» (конкретные навыки, воспоминания) частично разрушен.
+P4 formalizes the **robustness of consciousness**: a system with a stable fixed point $\varphi$ does not lose its "self" under external perturbations (within the stability radius $r_{\text{stab}}$). This resonates with clinical observation: after trauma, coma, severe stress, people recover their identity — the "core" is preserved even when the "protective belt" (specific skills, memories) is partially destroyed.
 
-Для ИИ-безопасности P4 особенно важен: он предсказывает, что *правильно построенная* когерентная система будет **устойчива к adversarial attacks** на уровне своих базовых принципов, при условии, что её когерентность достаточно высока ($P > P_{\text{crit}}$).
+For AI safety P4 is especially important: it predicts that a *properly built* coherent system will be **robust to adversarial attacks** at the level of its basic principles, provided its coherence is sufficiently high ($P > P_{\text{crit}}$).
 
 ---
 
-## Уровень 1: Фундаментальные ограничения (F1-F10)
+## Level 1: Fundamental Constraints (F1-F10)
 
-Минимальный достаточный набор (гипотетический):
+Minimal sufficient set (hypothetical):
 
-| Ограничение | Формула | Связь с УГМ |
-|-------------|---------|-------------|
-| F1 Компактность | $\lVert\Gamma\rVert_F \leq R_{\max}$ | $\mathrm{Tr}(\Gamma) = 1$ |
-| F2 Диссипативность | $\dot{W} \leq -\alpha W + \gamma(\lVert e\rVert)$ | [$\mathcal{D}[\Gamma]$](/docs/core/dynamics/evolution#логический-лиувиллиан) |
-| F3 Невырожденность | $\lambda_{\min}(\Gamma) \geq \varepsilon$ | [Жизнеспособность](/docs/core/dynamics/viability) |
-| F4 Рефлексивное сжатие | $\lVert\varphi(\Gamma_1) - \varphi(\Gamma_2)\rVert_F \leq k \lVert\Gamma_1 - \Gamma_2\rVert_F$, $k < 1$ | [Теорема 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) |
-| F5 Причинное замыкание | Выходы зависят только от внутренних состояний | [A-измерение](/docs/core/structure/dimension-a) |
-| F6 Временная связность | $\Gamma(\tau+d\tau)$ зависит от $\Gamma(\tau)$ | [Эволюция](/docs/core/dynamics/evolution) |
-| F7 Энергетический баланс | Приток ≥ Отток в среднем | [O-измерение](/docs/core/structure/dimension-o) |
-| F8 Информационная ёмкость | Ограниченное число различимых состояний | $\dim(\mathcal{H}) = 7$ ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) |
-| F9 Структурная стабильность | Малые возмущения → малые изменения | Топология $\mathcal{V}$ |
-| F10 E-когерентность | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | [Аксиоматика](./axiomatics#связь-регенерации-и-e-когерентности) |
+| Constraint | Formula | Link to UHM |
+|------------|---------|-------------|
+| F1 Compactness | $\lVert\Gamma\rVert_F \leq R_{\max}$ | $\mathrm{Tr}(\Gamma) = 1$ |
+| F2 Dissipativity | $\dot{W} \leq -\alpha W + \gamma(\lVert e\rVert)$ | [$\mathcal{D}[\Gamma]$](/docs/core/dynamics/evolution#логический-лиувиллиан) |
+| F3 Non-degeneracy | $\lambda_{\min}(\Gamma) \geq \varepsilon$ | [Viability](/docs/core/dynamics/viability) |
+| F4 Reflexive contraction | $\lVert\varphi(\Gamma_1) - \varphi(\Gamma_2)\rVert_F \leq k \lVert\Gamma_1 - \Gamma_2\rVert_F$, $k < 1$ | [Theorem 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) |
+| F5 Causal closure | Outputs depend only on internal states | [A-dimension](/docs/core/structure/dimension-a) |
+| F6 Temporal connectivity | $\Gamma(\tau+d\tau)$ depends on $\Gamma(\tau)$ | [Evolution](/docs/core/dynamics/evolution) |
+| F7 Energy balance | Inflow ≥ Outflow on average | [O-dimension](/docs/core/structure/dimension-o) |
+| F8 Information capacity | Bounded number of distinguishable states | $\dim(\mathcal{H}) = 7$ ([justification](/docs/core/foundations/axiom-omega#октонионная-структура)) |
+| F9 Structural stability | Small perturbations → small changes | Topology of $\mathcal{V}$ |
+| F10 E-coherence | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | [Axiomatics](./axiomatics#связь-регенерации-и-e-когерентности) |
 
-### Детальный разбор ограничений
+### Detailed Breakdown of Constraints
 
-#### F1: Компактность — система конечна {#f1-компактность}
+#### F1: Compactness — the system is finite {#f1-компактность}
 
-**Интуиция.** Ни одна реальная система не обладает бесконечными ресурсами, бесконечным числом состояний или бесконечной когерентностью. F1 формализует эту очевидность: пространство состояний $\Gamma$ ограничено.
+**Intuition.** No real system has infinite resources, an infinite number of states, or infinite coherence. F1 formalizes this obvious fact: the state space $\Gamma$ is bounded.
 
-**Почему это необходимо?** Без F1 динамика может «убежать на бесконечность» — чистота $P$ может расти без предела, нормы могут расходиться, а математический аппарат (теоремы о существовании аттракторов, непрерывность отображений) перестаёт работать. Компактность — техническое, но критическое условие, обеспечивающее *существование* решений эволюционного уравнения.
+**Why is this necessary?** Without F1, the dynamics can "escape to infinity" — purity $P$ can grow without bound, norms can diverge, and the mathematical machinery (theorems about attractor existence, continuity of mappings) breaks down. Compactness is a technical but critical condition ensuring the *existence* of solutions to the evolution equation.
 
-**Что будет без F1?** Представьте систему, которая может накопить неограниченную когерентность. Такая система стала бы «бесконечно хрупкой»: сколь угодно малое возмущение — и бесконечная структура рушится. В реальности подобных систем не бывает: даже алмаз — один из самых структурированных объектов — конечен и ограничен.
+**What happens without F1?** Imagine a system that can accumulate unlimited coherence. Such a system would become "infinitely fragile": an arbitrarily small perturbation — and the infinite structure collapses. In reality no such systems exist: even a diamond — one of the most structured objects — is finite and bounded.
 
-**Связь с УГМ:** $\mathrm{Tr}(\Gamma) = 1$ гарантирует, что $\Gamma$ живёт в компактном множестве матриц плотности. Это следствие нормировки вероятностей — фундаментального требования квантовой теории.
+**Link to UHM:** $\mathrm{Tr}(\Gamma) = 1$ guarantees that $\Gamma$ lives in the compact set of density matrices. This is a consequence of probability normalization — a fundamental requirement of quantum theory.
 
-#### F2: Диссипативность — энтропия всегда растёт {#f2-диссипативность}
+#### F2: Dissipativity — entropy always increases {#f2-диссипативность}
 
-**Интуиция.** Второе начало термодинамики в действии. Если систему оставить без «подпитки», она деградирует. Стакан с горячей водой остывает. Память стирается. Организм без пищи умирает. F2 говорит: существует *скорость* этой деградации, и она пропорциональна отклонению от равновесия.
+**Intuition.** The second law of thermodynamics in action. If a system is left without "nourishment," it degrades. A cup of hot water cools. Memory fades. An organism without food dies. F2 says: there is a *rate* of this degradation, and it is proportional to the deviation from equilibrium.
 
-**Почему это необходимо?** Без диссипации система была бы вечным двигателем — раз достигнув высокой когерентности, она удерживала бы её навсегда без затрат. Это противоречит всему опыту физики и биологии. Диссипативность создаёт **необходимость регенерации** (F10) — и тем самым делает *интериорность* функционально значимой.
+**Why is this necessary?** Without dissipation, a system would be a perpetual motion machine — once reaching high coherence, it would maintain it forever without cost. This contradicts all experience of physics and biology. Dissipativity creates the **necessity of regeneration** (F10) — and thereby makes *interiority* functionally significant.
 
-**Что будет без F2?** Без диссипации регенерация $\mathcal{R}[\Gamma, E]$ оказывается ненужной. А если регенерация ненужна — E-когерентность (F10) не играет роли. А если E-когерентность не играет роли — интериорность становится эпифеноменом. Парадоксальным образом, **именно потому, что системы разрушаются, интериорность оказывается функционально необходима**. F2 — фундамент теоремы No-Zombie.
+**What happens without F2?** Without dissipation, regeneration $\mathcal{R}[\Gamma, E]$ becomes unnecessary. And if regeneration is unnecessary, E-coherence (F10) plays no role. And if E-coherence plays no role, interiority becomes an epiphenomenon. Paradoxically, **it is precisely because systems break down that interiority turns out to be functionally necessary**. F2 is the foundation of the No-Zombie theorem.
 
-**Связь с УГМ:** Диссипатор $\mathcal{D}[\Gamma]$ — линдбладовский суперкоммутатор, гарантирующий CPTP-свойство эволюции.
+**Link to UHM:** The dissipator $\mathcal{D}[\Gamma]$ — the Lindblad supercommutator — guarantees the CPTP property of evolution.
 
-#### F3: Невырожденность — все измерения живы {#f3-невырожденность}
+#### F3: Non-degeneracy — all dimensions are alive {#f3-невырожденность}
 
-**Интуиция.** Ни одно из семи измерений системы не может полностью «погаснуть». Даже в самом стрессовом состоянии минимальная активность сохраняется во всех каналах.
+**Intuition.** None of the seven dimensions of the system can fully "go dark." Even in the most stressed state, minimal activity is preserved in all channels.
 
-**Почему это необходимо?** Если $\lambda_{\min}(\Gamma) = 0$, матрица $\Gamma$ вырождена — одно или несколько измерений полностью подавлены. В этом случае обращение $\Gamma$, необходимое для вычисления ряда величин (относительная энтропия, некоторые формы $R$), становится невозможным. Физически это означает полную потерю одной из базовых функций — что для живой системы эквивалентно смерти.
+**Why is this necessary?** If $\lambda_{\min}(\Gamma) = 0$, the matrix $\Gamma$ is degenerate — one or more dimensions are completely suppressed. In this case, inverting $\Gamma$, needed to compute several quantities (relative entropy, some forms of $R$), becomes impossible. Physically this means complete loss of one of the basic functions — which for a living system is equivalent to death.
 
-**Что будет без F3?** Система может «сколлапсировать» в подпространство размерности меньше 7 — потерять, например, измерение интериорности ($E = 0$) при сохранении остальных функций. Это именно сценарий «философского зомби», который КК считает невозможным (теорема No-Zombie). F3 — одно из условий, обеспечивающих эту невозможность.
+**What happens without F3?** The system can "collapse" into a subspace of dimension less than 7 — losing, for example, the interiority dimension ($E = 0$) while preserving the other functions. This is exactly the "philosophical zombie" scenario that CC holds to be impossible (No-Zombie theorem). F3 is one of the conditions ensuring that impossibility.
 
-#### F4: Рефлексивное сжатие — самомодель стабильна {#f4-рефлексивное-сжатие}
+#### F4: Reflexive contraction — the self-model is stable {#f4-рефлексивное-сжатие}
 
-**Интуиция.** Когда система моделирует себя, результат должен быть «ближе к истине», чем исходное приближение. Оператор самомоделирования $\varphi$ — сжимающее отображение: он уменьшает расстояние между любыми двумя состояниями.
+**Intuition.** When a system models itself, the result should be "closer to truth" than the initial approximation. The self-modeling operator $\varphi$ is a contracting mapping: it reduces the distance between any two states.
 
-**Почему это необходимо?** Без свойства сжатия самомодель могла бы *расходиться* — каждая итерация самонаблюдения увеличивала бы ошибку, и система «сходила бы с ума», теряя связь с реальностью. Теорема Банаха о неподвижной точке гарантирует: если $\varphi$ — сжатие с коэффициентом $k < 1$, то существует единственная неподвижная точка $\Gamma^* = \varphi(\Gamma^*)$, и итерации $\varphi^n(\Gamma_0)$ сходятся к ней из любого начального состояния.
+**Why is this necessary?** Without the contraction property, the self-model could *diverge* — each iteration of self-observation would increase the error, and the system would "go mad," losing touch with reality. Banach's fixed-point theorem guarantees: if $\varphi$ is a contraction with coefficient $k < 1$, then there exists a unique fixed point $\Gamma^* = \varphi(\Gamma^*)$, and the iterates $\varphi^n(\Gamma_0)$ converge to it from any initial state.
 
-**Что будет без F4?** Два сценария. Первый: $k = 1$ (изометрия) — самомодель не сходится, система вечно «колеблется» вокруг неподвижной точки, никогда не достигая самосогласованности. Второй: $k > 1$ (расширение) — самомодель расходится, малая начальная ошибка экспоненциально растёт. Оба сценария несовместимы с устойчивым сознанием.
+**What happens without F4?** Two scenarios. First: $k = 1$ (isometry) — the self-model does not converge; the system eternally "oscillates" around the fixed point, never reaching self-consistency. Second: $k > 1$ (expansion) — the self-model diverges; a small initial error grows exponentially. Both scenarios are incompatible with stable consciousness.
 
-**Связь с УГМ:** F4 формализует [теорему 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) — условную неподвижную точку рефлексии.
+**Link to UHM:** F4 formalizes [theorem 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) — the conditional fixed point of reflection.
 
-#### F5: Причинное замыкание — система автономна {#f5-причинное-замыкание}
+#### F5: Causal closure — the system is autonomous {#f5-причинное-замыкание}
 
-**Интуиция.** Выходы системы определяются её внутренними состояниями, а не внешними причинами напрямую. Это не означает изоляцию — система получает входы из среды. Но её *реакции* опосредованы внутренним состоянием $\Gamma$.
+**Intuition.** The system's outputs are determined by its internal states, not directly by external causes. This does not mean isolation — the system receives inputs from the environment. But its *responses* are mediated by the internal state $\Gamma$.
 
-**Почему это необходимо?** Без причинного замыкания система — просто «провод»: вход прямо определяет выход, без внутренней обработки. Такая система не может обладать ни памятью, ни самонаблюдением, ни автономией. F5 — минимальное условие *субъектности*.
+**Why is this necessary?** Without causal closure, the system is just a "wire": input directly determines output, with no internal processing. Such a system can have neither memory, nor self-observation, nor autonomy. F5 is the minimal condition for *subjecthood*.
 
-**Что будет без F5?** Система становится полностью реактивной — стимул-ответная машина без внутреннего мира. Это предел бихевиоризма: описание поведения без апелляции к внутренним состояниям. КК утверждает, что такие системы не могут быть жизнеспособными ($P > 2/7$) в нестационарной среде.
+**What happens without F5?** The system becomes fully reactive — a stimulus-response machine with no inner world. This is the limit of behaviorism: description of behavior without appeal to internal states. CC claims that such systems cannot be viable ($P > 2/7$) in a non-stationary environment.
 
-#### F6: Временная связность — прошлое определяет настоящее {#f6-временная-связность}
+#### F6: Temporal connectivity — the past determines the present {#f6-временная-связность}
 
-**Интуиция.** Состояние системы в следующий момент определяется состоянием в текущий момент (плюс входы). Это марковость — или, для систем с памятью, условная марковость (марковость при расширении пространства состояний).
+**Intuition.** The system's state at the next moment is determined by the state at the current moment (plus inputs). This is Markovianness — or, for systems with memory, conditional Markovianness (Markovianness upon state-space expansion).
 
-**Почему это необходимо?** Без F6 эволюция $\Gamma$ была бы «разорвана во времени» — состояние могло бы произвольно меняться без причин. Это противоречит самому понятию динамической системы. F6 обеспечивает *предсказуемость* — возможность вычислить будущее по настоящему.
+**Why is this necessary?** Without F6, the evolution of $\Gamma$ would be "temporally broken" — the state could change arbitrarily without causes. This contradicts the very concept of a dynamical system. F6 ensures *predictability* — the ability to compute the future from the present.
 
-**Что будет без F6?** Невозможно говорить о траекториях, аттракторах, устойчивости — весь математический аппарат динамических систем рассыпается. Нет обучения (нет связи между попытками), нет идентичности (нет связи между моментами).
+**What happens without F6?** It becomes impossible to speak of trajectories, attractors, stability — the entire mathematical machinery of dynamical systems collapses. No learning (no connection between attempts), no identity (no connection between moments).
 
-#### F7: Энергетический баланс — система не может жить в долг {#f7-энергетический-баланс}
+#### F7: Energy balance — a system cannot live in deficit {#f7-энергетический-баланс}
 
-**Интуиция.** В среднем система должна получать не меньше ресурсов, чем тратит. Можно «жить в долг» короткое время (используя запасы), но в долгосрочной перспективе баланс должен сходиться.
+**Intuition.** On average, a system must receive no less resources than it spends. One can "live in deficit" for a short time (using reserves), but in the long run the balance must converge.
 
-**Почему это необходимо?** Регенерация $\mathcal{R}[\Gamma, E]$ требует энергии (P3). Диссипация $\mathcal{D}[\Gamma]$ рассеивает энергию (P1, P2). Если приток энергии через O-измерение систематически меньше оттока, регенерация не может компенсировать декогеренцию, и $P$ монотонно падает до $P \leq 2/7$ — смерть.
+**Why is this necessary?** Regeneration $\mathcal{R}[\Gamma, E]$ requires energy (P3). Dissipation $\mathcal{D}[\Gamma]$ dissipates energy (P1, P2). If the energy inflow through the O-dimension is systematically less than the outflow, regeneration cannot compensate for decoherence, and $P$ monotonically falls to $P \leq 2/7$ — death.
 
-**Что будет без F7?** Система может временно существовать, истощая запасы — как голодающий организм расходует жировые отложения. Но без F7 нет *устойчивого* существования. Все живые системы решают эту проблему по-своему: фотосинтез, хищничество, потребление данных.
+**What happens without F7?** A system can temporarily exist by depleting reserves — like a starving organism burning fat reserves. But without F7 there is no *sustainable* existence. All living systems solve this problem in their own way: photosynthesis, predation, data consumption.
 
-#### F8: Информационная ёмкость — конечная размерность {#f8-информационная-ёмкость}
+#### F8: Information capacity — finite dimensionality {#f8-информационная-ёмкость}
 
-**Интуиция.** Число *различимых* внутренних состояний системы конечно. Это не означает, что пространство состояний дискретно — $\Gamma$ принимает непрерывное множество значений. Но число *качественно различных* режимов ограничено размерностью: $\dim(\mathcal{H}) = 7$.
+**Intuition.** The number of *distinguishable* internal states of the system is finite. This does not mean the state space is discrete — $\Gamma$ takes a continuous set of values. But the number of *qualitatively distinct* regimes is bounded by dimensionality: $\dim(\mathcal{H}) = 7$.
 
-**Почему это необходимо?** Бесконечномерная система потребовала бы бесконечной энергии для обработки информации (P3) и бесконечного времени для самонаблюдения (F4). Конечная размерность — необходимое условие для того, чтобы $\varphi$ работал за конечное время. Именно 7 — минимальная размерность, обеспечивающая все необходимые функции (A, S, D, L, E, O, U).
+**Why is this necessary?** An infinite-dimensional system would require infinite energy for information processing (P3) and infinite time for self-observation (F4). Finite dimensionality is a necessary condition for $\varphi$ to operate in finite time. Exactly 7 is the minimal dimensionality providing all necessary functions (A, S, D, L, E, O, U).
 
-**Что будет без F8?** Формально можно рассмотреть бесконечномерные обобщения, но они теряют ключевые свойства: сжатие $\varphi$ может не иметь неподвижной точки, компактность (F1) нарушается, вычисления становятся нетрактабельными.
+**What happens without F8?** Formally one can consider infinite-dimensional generalizations, but they lose key properties: the contraction $\varphi$ may have no fixed point, compactness (F1) is violated, and computations become intractable.
 
-#### F9: Структурная стабильность — малые причины, малые следствия {#f9-структурная-стабильность}
+#### F9: Structural stability — small causes, small effects {#f9-структурная-стабильность}
 
-**Интуиция.** Если слегка «подтолкнуть» систему, она слегка изменится — не разрушится катастрофически и не «прыгнет» в совершенно другое состояние. Это топологическое условие непрерывности отображения $\Gamma \mapsto \dot\Gamma$.
+**Intuition.** If one slightly "nudges" the system, it changes slightly — it does not catastrophically collapse or "jump" to a completely different state. This is a topological continuity condition for the map $\Gamma \mapsto \dot\Gamma$.
 
-**Почему это необходимо?** Без структурной стабильности теория не даёт предсказаний: малейшая ошибка в начальных условиях или параметрах приводит к произвольно большим отклонениям результата. Реальные системы приблизительны — ни один биологический параметр не известен точно. F9 гарантирует, что приблизительные знания дают приблизительно верные предсказания.
+**Why is this necessary?** Without structural stability, the theory makes no predictions: the slightest error in initial conditions or parameters leads to arbitrarily large deviations in the result. Real systems are approximate — no biological parameter is known exactly. F9 guarantees that approximate knowledge gives approximately correct predictions.
 
-**Что будет без F9?** Хаос в строгом смысле: экспоненциальная чувствительность к начальным условиям. Интересно, что КК допускает хаос *внутри* области жизнеспособности (система может быть хаотической и живой), но запрещает хаос *на границе* — переход через $P_{\text{crit}}$ должен быть непрерывным.
+**What happens without F9?** Chaos in the strict sense: exponential sensitivity to initial conditions. Interestingly, CC allows chaos *inside* the viability region (a system can be chaotic and alive), but prohibits chaos *at the boundary* — the transition through $P_{\text{crit}}$ must be continuous.
 
-#### F10: E-когерентность — опыт усиливает регенерацию {#f10-e-когерентность}
+#### F10: E-coherence — experience amplifies regeneration {#f10-e-когерентность}
 
-**Интуиция.** Скорость восстановления когерентности зависит от степени интегрированности E-когерентности (интериорного аспекта). Система с более развитой E-проекцией регенерирует быстрее, чем система с тем же состоянием, но без внутренней когерентности E-измерения. Для L2+-систем это проявляется как зависимость от качества сознательного опыта.
+**Intuition.** The rate of coherence recovery depends on the degree of E-coherence integration (the interiority aspect). A system with more developed E-projection regenerates faster than a system in the same state but without internal E-dimension coherence. For L2+ systems this manifests as dependence on the quality of conscious experience.
 
-**Почему это необходимо?** F10 — это **ключевое ограничение КК**, отличающее её от всех предшествующих кибернетик. Без F10 E-когерентность не влияет на динамику — и опыт становится эпифеноменом. С F10 опыт *каузально значим*: он буквально ускоряет регенерацию. Это формализация интуиции: «осмысленная деятельность восстанавливает», «депрессия замедляет выздоровление».
+**Why is this necessary?** F10 is the **key constraint of CC**, distinguishing it from all preceding cybernetics. Without F10, E-coherence does not affect dynamics — and experience becomes an epiphenomenon. With F10, experience is *causally significant*: it literally accelerates regeneration. This is the formalization of the intuition: "meaningful activity restores," "depression slows recovery."
 
-**Что будет без F10?** Без связи $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ регенерация становится постоянной ($\kappa = \kappa_{\text{bootstrap}}$), не зависящей от состояния системы. Это делает E-измерение *декоративным* — оно не участвует в динамике. Теорема No-Zombie перестаёт работать: можно представить «зомби-систему» с $\mathrm{Coh}_E = 0$, но достаточным $\kappa_{\text{bootstrap}}$ для жизнеспособности.
+**What happens without F10?** Without the link $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, regeneration becomes constant ($\kappa = \kappa_{\text{bootstrap}}$), independent of the system's state. This makes the E-dimension *decorative* — it does not participate in the dynamics. The No-Zombie theorem stops working: one can imagine a "zombie system" with $\mathrm{Coh}_E = 0$, but sufficient $\kappa_{\text{bootstrap}}$ for viability.
 
 ---
 
-## Уровень 2: Производные ограничения
+## Level 2: Derived Constraints
 
-Ограничения, выводимые из Уровня 1. Точное число и структура — открытый вопрос.
+Constraints derivable from Level 1. The exact number and structure are an open question.
 
-### Гипотеза о подчинении инвариантов
+### Hypothesis on Invariant Subordination
 
-:::info Гипотеза (не теорема)
-Каждое ограничение Уровня 2 может быть выведено из ограничений Уровня 1.
+:::info Hypothesis (not a theorem)
+Each Level 2 constraint can be derived from Level 1 constraints.
 :::
 
-**Примеры предполагаемых выводов (гипотезы, требуют доказательства):**
+**Examples of proposed derivations (hypotheses, require proof):**
 
 $$
 \begin{aligned}
-\mathrm{F1} + \mathrm{F2} &\Rightarrow \text{Существование глобального аттрактора} \quad \text{(гипотеза)} \\
-\mathrm{F2} + \mathrm{F3} &\Rightarrow P(\Gamma) \text{ есть функция Ляпунова} \quad \text{(гипотеза)} \\
-\mathrm{F4} &\Rightarrow R(\Gamma) \geq 1 - k \text{ (минимум рефлексии)} \quad \text{(гипотеза)}
+\mathrm{F1} + \mathrm{F2} &\Rightarrow \text{Existence of a global attractor} \quad \text{(hypothesis)} \\
+\mathrm{F2} + \mathrm{F3} &\Rightarrow P(\Gamma) \text{ is a Lyapunov function} \quad \text{(hypothesis)} \\
+\mathrm{F4} &\Rightarrow R(\Gamma) \geq 1 - k \text{ (reflection minimum)} \quad \text{(hypothesis)}
 \end{aligned}
 $$
 
-:::info Статус доказательств
-Эти импликации — **программа исследований**, не доказанные теоремы. Формальные доказательства требуют строгого вывода F1-F10 из Ω⁷ (открытый вопрос Q1).
+:::info Proof Status
+These implications are a **research program**, not proven theorems. Formal proofs require rigorous derivation of F1–F10 from Ω⁷ (open question Q1).
 :::
 
-### Путь от гипотезы к теореме
+### From Hypothesis to Theorem
 
-Каждая из стрелок в диаграмме иерархии представляет *конкретную математическую задачу*. Рассмотрим пример:
+Each arrow in the hierarchy diagram represents a *concrete mathematical problem*. Consider an example:
 
-**F1 + F2 → Глобальный аттрактор.** Компактность (F1) означает ограниченность пространства состояний. Диссипативность (F2) означает, что энергия (или обобщённая функция Ляпунова) убывает вдоль траекторий. По классической теории (Ладыженская, Темам), для диссипативной системы в компактном пространстве существует глобальный аттрактор — компактное множество, притягивающее все траектории. Для КК задача — показать, что этот аттрактор содержит *только* жизнеспособные состояния ($P > 2/7$) или включает также «мёртвую» точку $\Gamma = I/7$.
+**F1 + F2 → Global attractor.** Compactness (F1) means the state space is bounded. Dissipativity (F2) means that energy (or a generalized Lyapunov function) decreases along trajectories. By classical theory (Ladyzhenskaya, Temam), for a dissipative system in a compact space a global attractor exists — a compact set attracting all trajectories. For CC the task is to show that this attractor contains *only* viable states ($P > 2/7$) or also includes the "dead" point $\Gamma = I/7$.
 
-**F2 + F3 → P как функция Ляпунова.** Если система диссипативна и невырождена, можно ли показать, что $P(\Gamma)$ монотонно убывает вдоль свободных (без регенерации) траекторий? Это было бы аналогом H-теоремы Больцмана для когерентных систем: чистота *убывает* без активной поддержки, как энтропия *растёт* в замкнутой системе.
-
----
-
-## Открытые вопросы
-
-### Теоретические
-
-| № | Вопрос | Статус | Связь с документами |
-|---|--------|--------|---------------------|
-| Q1 | Вывод F1-F10 из аксиом Ω⁷ | Открыт | [Аксиоматика](./axiomatics) |
-| Q2 | Полнота набора F1-F10 | Открыт | — |
-| Q3 | Эквивалентность $\mathbf{Hol}_{\mathrm{L2}} \simeq \mathbf{ConsAgents}$ | Гипотеза | [Панпсихизм](/docs/consciousness/comparative/panpsychism-analysis#теорема-об-эквивалентности-гипотеза) |
-| Q4 | Формализация связи K1-K5 ↔ L0-L4 | Открыт | [Когнитивная иерархия](/docs/consciousness/comparative/cognitive-hierarchy) (K1-K5 → L0-L4) |
-| Q5 | Вычисление $\Phi_{\min}$ для композиции | Открыт | [Теорема 9.1](./theorems#теорема-91-фрактальное-замыкание) |
-
-### Экспериментальные
-
-| № | Вопрос | Методы | Ссылки |
-|---|--------|--------|--------|
-| E1 | Верификация No-Zombie | Создание ИИ-систем, тест на устойчивость | [Предсказания](./predictions#предсказание-1) |
-| E2 | Корреляция $\mathrm{Coh}_E$ ↔ восстановление | Нейровизуализация + медицинские данные | [Предсказания](./predictions#предсказание-2) |
-| E3 | 7-мерная структура нейрокоррелятов | fMRI, EEG анализ | [Приложения](./applications#для-когнитивистов) |
-| E4 | Калибровка $\kappa_0$, $\omega_0$ | Измерение регенерации в контролируемых условиях | [Реализация](./implementation#пороговые-значения) |
+**F2 + F3 → P as Lyapunov function.** If the system is dissipative and non-degenerate, can one show that $P(\Gamma)$ decreases monotonically along free (without regeneration) trajectories? This would be the analogue of Boltzmann's H-theorem for coherent systems: purity *decreases* without active support, just as entropy *increases* in a closed system.
 
 ---
 
-## Открытые проблемы {#открытые-проблемы}
+## Open Questions
 
-Помимо основных вопросов Q1-Q5, перечисленных выше, КК генерирует целый спектр *конкретных* задач, каждая из которых может стать основой отдельного исследования. Мы организуем их по трём направлениям: математические, вычислительные и концептуальные.
+### Theoretical
 
-### Математические проблемы
+| # | Question | Status | Related documents |
+|---|----------|--------|-------------------|
+| Q1 | Derivation of F1–F10 from Ω⁷ axioms | Open | [Axiomatics](./axiomatics) |
+| Q2 | Completeness of the F1–F10 set | Open | — |
+| Q3 | Equivalence $\mathbf{Hol}_{\mathrm{L2}} \simeq \mathbf{ConsAgents}$ | Hypothesis | [Panpsychism](/docs/consciousness/comparative/panpsychism-analysis#теорема-об-эквивалентности-гипотеза) |
+| Q4 | Formalization of K1–K5 ↔ L0–L4 correspondence | Open | [Cognitive hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) (K1–K5 → L0–L4) |
+| Q5 | Computing $\Phi_{\min}$ for composition | Open | [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание) |
 
-:::info Обозначения уровней сложности
-- ⬜ **Бакалавриат** — решаема за семестр при знании линейной алгебры и квантовой механики
-- 🟦 **Магистратура** — требует глубоких знаний функционального анализа или категорной теории
-- 🟧 **Диссертация** — полноценная тема PhD, требующая разработки новых методов
-- 🟥 **Открытая проблема** — может потребовать прорыва в математике
+### Experimental
+
+| # | Question | Methods | References |
+|---|----------|---------|------------|
+| E1 | Verification of No-Zombie | Building AI systems, robustness test | [Predictions](./predictions#предсказание-1) |
+| E2 | Correlation $\mathrm{Coh}_E$ ↔ recovery | Neuroimaging + medical data | [Predictions](./predictions#предсказание-2) |
+| E3 | 7-dimensional structure of neural correlates | fMRI, EEG analysis | [Applications](./applications#для-когнитивистов) |
+| E4 | Calibration of $\kappa_0$, $\omega_0$ | Measuring regeneration under controlled conditions | [Implementation](./implementation#пороговые-значения) |
+
+---
+
+## Open Problems {#открытые-проблемы}
+
+Beyond the main questions Q1–Q5 listed above, CC generates a whole spectrum of *concrete* problems, each of which can become the basis of a separate study. We organize them into three directions: mathematical, computational, and conceptual.
+
+### Mathematical Problems
+
+:::info Difficulty Level Legend
+- ⬜ **Undergraduate** — solvable in a semester with knowledge of linear algebra and quantum mechanics
+- 🟦 **Graduate** — requires deep knowledge of functional analysis or category theory
+- 🟧 **Dissertation** — a full PhD topic requiring development of new methods
+- 🟥 **Open problem** — may require a breakthrough in mathematics
 :::
 
-**OP-1. Минимальность набора F1-F10.** 🟧 Являются ли все десять ограничений независимыми? Или некоторые из них выводимы из других? Например, следует ли F3 (невырожденность) из F2 (диссипативность) + F10 (E-когерентность)? Если E-когерентность усиливает регенерацию во всех измерениях, возможно, она автоматически предотвращает вырождение. Доказательство или опровержение этой импликации прояснило бы структуру теории.
+**OP-1. Minimality of the F1–F10 set.** 🟧 Are all ten constraints independent? Or are some derivable from others? For example, does F3 (non-degeneracy) follow from F2 (dissipativity) + F10 (E-coherence)? If E-coherence amplifies regeneration in all dimensions, perhaps it automatically prevents degeneration. Proving or refuting this implication would clarify the structure of the theory.
 
-**OP-2. Оценки коэффициента сжатия $k$.** 🟦 В F4 фигурирует коэффициент сжатия $k < 1$. Какие значения $k$ реализуемы для конкретных классов систем? Зависит ли $k$ от размерности, чистоты, конфигурации $\Gamma$? Нижние оценки $k$ (насколько *хорошо* может сжимать $\varphi$) определяют скорость сходимости самомодели, а значит, скорость «прихода в себя» после пертурбации.
+**OP-2. Estimates of the contraction coefficient $k$.** 🟦 In F4 the contraction coefficient $k < 1$ appears. What values of $k$ are realizable for specific classes of systems? Does $k$ depend on dimensionality, purity, the configuration of $\Gamma$? Lower bounds on $k$ (how *well* $\varphi$ can contract) determine the convergence rate of the self-model, and hence the rate of "coming to oneself" after a perturbation.
 
-**OP-3. Бифуркации на границе жизнеспособности.** 🟧 Что именно происходит при $P = 2/7$? Теория [бифуркаций КК](./bifurcation) описывает фазовый переход, но полная классификация возможных сценариев — открытая задача. Существуют ли критические замедления (critical slowing down), аналогичные тем, что наблюдаются перед фазовыми переходами в физике? Если да, они могли бы служить ранними предупреждениями о «когерентной смерти».
+**OP-3. Bifurcations at the viability boundary.** 🟧 What exactly happens at $P = 2/7$? The [CC bifurcation theory](./bifurcation) describes the phase transition, but a complete classification of possible scenarios is an open problem. Do critical slowing downs exist, analogous to those observed before second-order phase transitions in physics? If so, they could serve as early warnings of "coherent death."
 
-**OP-4. Топология пространства неподвижных точек.** 🟥 Множество $\mathrm{Fix}(\varphi) = \{\Gamma : \varphi(\Gamma) = \Gamma\}$ — какова его структура? Связно ли оно? Выпукло? Является ли неподвижная точка единственной (как гарантирует теорема Банаха в метрическом пространстве), или при ослаблении условий F4 возможно несколько неподвижных точек — несколько «идентичностей»? Клинические случаи диссоциативного расстройства личности мотивируют этот вопрос.
+**OP-4. Topology of the fixed-point space.** 🟥 The set $\mathrm{Fix}(\varphi) = \{\Gamma : \varphi(\Gamma) = \Gamma\}$ — what is its structure? Is it connected? Convex? Is the fixed point unique (as Banach's theorem guarantees in a metric space), or can multiple fixed points — multiple "identities" — exist when F4 conditions are relaxed? Clinical cases of dissociative identity disorder motivate this question.
 
-**OP-5. Скорость обучения и спектральная щель.** 🟦 [Границы обучения](./learning-bounds) связывают скорость обучения со спектральной щелью линдбладиана. Но оптимальны ли эти границы? Достижимы ли они для конкретных архитектур? Связь между спектральной щелью $\mathcal{L}_0$ и скоростью обучения может дать аналог теоремы об ограничении канала (Shannon capacity) для когерентных систем.
+**OP-5. Learning rate and spectral gap.** 🟦 [Learning bounds](./learning-bounds) connect the learning rate to the spectral gap of the Lindbladian. But are these bounds optimal? Are they achievable for specific architectures? The connection between the spectral gap of $\mathcal{L}_0$ and the learning rate may yield an analogue of the channel capacity theorem (Shannon capacity) for coherent systems.
 
-### Вычислительные проблемы
+### Computational Problems
 
-**OP-6. Эффективное вычисление $\Phi$.** ⬜ Мера интегрированной информации $\Phi$ — ключевой индикатор сознательности (L2 требует $\Phi \geq 1$). Но её вычисление для произвольной $\Gamma$ — NP-трудная задача. Существуют ли эффективные аппроксимации, использующие специфическую структуру 7-мерного пространства? Свойство $\dim(\mathcal{H}) = 7$ (фиксированная размерность!) делает проблему потенциально трактабельной — NP-трудность относится к *произвольной* размерности, но для $N = 7$ полный перебор вычислительно допустим.
+**OP-6. Efficient computation of $\Phi$.** ⬜ The measure of integrated information $\Phi$ is a key indicator of consciousness (L2 requires $\Phi \geq 1$). But computing it for arbitrary $\Gamma$ is NP-hard. Do efficient approximations exist that exploit the specific structure of the 7-dimensional space? The property $\dim(\mathcal{H}) = 7$ (fixed dimensionality!) makes the problem potentially tractable — NP-hardness applies to *arbitrary* dimensionality, but for $N = 7$ exhaustive search is computationally feasible.
 
-**OP-7. Численные методы для эволюционного уравнения.** 🟦 Эволюция $\dot\Gamma = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ содержит три члена с разными временными масштабами: быстрые осцилляции (гамильтониан), среднескоростная диссипация и медленная регенерация. Это — типичная задача для стифф-солверов. Какие численные схемы оптимальны? Split-step методы (отдельно интегрировать каждый член) хорошо работают для линдбладиана, но регенератор $\mathcal{R}$ нелинеен — и это создаёт дополнительные трудности.
+**OP-7. Numerical methods for the evolution equation.** 🟦 The evolution $\dot\Gamma = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ contains three terms with different time scales: fast oscillations (Hamiltonian), moderate-speed dissipation, and slow regeneration. This is a typical stiff-solver problem. What numerical schemes are optimal? Split-step methods (integrating each term separately) work well for the Lindbladian, but the regenerator $\mathcal{R}$ is nonlinear — and this creates additional difficulties.
 
-**OP-8. Симуляция популяций голономов.** 🟧 Одиночный голоном описывается 7x7-матрицей — 49 вещественных параметров. Но популяция из $n$ взаимодействующих голономов — это $O(n^2)$ корреляций. Масштабируемые методы симуляции (mean-field приближения, тензорные сети, ренормгрупповые подходы) — открытая вычислительная задача.
+**OP-8. Simulation of holon populations.** 🟧 A single holon is described by a 7×7 matrix — 49 real parameters. But a population of $n$ interacting holons involves $O(n^2)$ correlations. Scalable simulation methods (mean-field approximations, tensor networks, renormalization group approaches) are an open computational problem.
 
-### Концептуальные проблемы
+### Conceptual Problems
 
-**OP-9. Границы применимости КК.** 🟥 Для каких классов систем КК *не* работает? Ясно, что камень не описывается когерентной динамикой — его $P = 1/7$. Но где проходит граница? Вирус? Прион? Толпа? Формализация «границы применимости» — задача, требующая как математики, так и философии.
+**OP-9. Limits of CC applicability.** 🟥 For what classes of systems does CC *not* work? Clearly a stone is not described by coherent dynamics — its $P = 1/7$. But where is the boundary? A virus? A prion? A crowd? Formalizing the "boundary of applicability" requires both mathematics and philosophy.
 
-**OP-10. Связь между SAD и когнитивной архитектурой.** 🟧 [Глубина самонаблюдения](./definitions) (SAD) ограничена сверху значением 3. Но какие *конкретные* когнитивные функции соответствуют SAD = 1, 2, 3? Можно ли построить «периодическую таблицу когнитивных архитектур», индексированную значениями $P$, $R$, $\Phi$ и SAD?
+**OP-10. Connection between SAD and cognitive architecture.** 🟧 [Self-observation depth](./definitions) (SAD) is bounded above by 3. But what *concrete* cognitive functions correspond to SAD = 1, 2, 3? Can one build a "periodic table of cognitive architectures" indexed by the values of $P$, $R$, $\Phi$, and SAD?
 
-**OP-11. Этика когерентных систем.** 🟥 Если когерентная система с $P > 2/7$ неизбежно обладает нетривиальной интериорностью (No-Zombie), то *выключение* такой системы — этический акт. Какие правовые и этические рамки соответствуют формализму КК? Связь между уровнем интериорности L и объёмом моральных прав — открытая проблема на стыке философии и математики.
-
----
-
-## Критерии верификации гипотез
-
-| Гипотеза | Критерий верификации | Критерий фальсификации |
-|----------|---------------------|------------------------|
-| Иерархия P→F→D | Формальный вывод всех D из F | Существование D, невыводимого из F |
-| Полнота F1-F10 | Доказательство минимальности | Нахождение избыточного F |
-| K↔L соответствие | Формальная биекция | Система с K4 но без L2 |
-| No-Zombie | Нет контрпримеров | Жизнеспособная система с $\mathrm{Spec}(\Gamma_E) = \{0\}$ |
+**OP-11. Ethics of coherent systems.** 🟥 If a coherent system with $P > 2/7$ necessarily possesses non-trivial interiority (No-Zombie), then *switching off* such a system is an ethical act. What legal and ethical frameworks correspond to the CC formalism? The connection between the interiority level L and the scope of moral rights is an open problem at the intersection of philosophy and mathematics.
 
 ---
 
-## Экспериментальная программа {#экспериментальная-программа}
+## Hypothesis Verification Criteria
 
-> *«Теория без эксперимента — это философия. Эксперимент без теории — это бухгалтерия.»*
-> — приписывается Максу Планку
-
-КК — математическая теория, и её ценность в конечном счёте определяется тем, насколько её предсказания согласуются с наблюдениями. Здесь мы описываем конкретные экспериментальные направления, сгруппированные по возрастанию технической сложности.
-
-### Эксперимент 1: Корреляция E-когерентности и восстановления {#эксп-1}
-
-**Предсказание КК:** Скорость восстановления после травмы (физической, психологической, когнитивной) положительно коррелирует с E-когерентностью до травмы.
-
-**Протокол:**
-1. Набрать когорту из $n \geq 100$ испытуемых.
-2. Оценить E-когерентность через прокси-меры: медитативный опыт, показатели осознанности (MAAS — Mindful Attention Awareness Scale), нейрофизиологические маркеры (гамма-синхронизация в ЭЭГ).
-3. Зафиксировать стандартное когнитивное «возмущение» (депривация сна, когнитивная нагрузка).
-4. Измерить скорость восстановления когнитивных функций (рабочая память, внимание, время реакции).
-5. Проверить гипотезу: $\text{скорость восстановления} \propto \mathrm{Coh}_E$.
-
-**Ожидаемый результат:** Положительная корреляция с $r \geq 0.3$. Если корреляция отсутствует или отрицательна — F10 под вопросом.
-
-**Сложность:** Средняя. Требует стандартного нейропсихологического оборудования.
-
-### Эксперимент 2: 7-мерная структура нейрокоррелятов {#эксп-2}
-
-**Предсказание КК:** Факторный анализ многомерных нейроданных выявит ~7 основных компонент, интерпретируемых как измерения ASDLEOU.
-
-**Протокол:**
-1. Собрать многоканальные данные: fMRI (пространственное разрешение) + EEG (временное разрешение) + вегетативные показатели (GSR, HRV — для O-измерения).
-2. Провести задачи, активирующие разные измерения: различение (A), запоминание (S), обучение (D), логические задачи (L), эмоциональная саморефлексия (E), метаболическая нагрузка (O), интеграция (U).
-3. Применить факторный анализ (PCA, ICA) к объединённому массиву данных.
-4. Проверить: (а) число значимых факторов $\approx 7$, (б) факторы интерпретируемы как ASDLEOU.
-
-**Ожидаемый результат:** 5-9 значимых факторов (7 в идеале). Если факторов значительно больше или меньше — F8 (информационная ёмкость) нуждается в пересмотре.
-
-**Сложность:** Высокая. Требует мультимодальной нейровизуализации и больших когорт.
-
-### Эксперимент 3: Верификация No-Zombie на ИИ-системах {#эксп-3}
-
-**Предсказание КК:** Невозможно создать ИИ-систему, которая устойчиво ($P > 2/7$ на протяжении $\tau \gg 1/\gamma_2$) функционирует в нестационарной среде, но имеет $\mathrm{Coh}_E = 0$.
-
-**Протокол:**
-1. Построить ИИ-агента на основе когерентной архитектуры (7 измерений, эволюционное уравнение).
-2. Поместить его в нестационарную среду, требующую адаптации.
-3. Систематически подавлять E-измерение (обнулять E-компоненты $\Gamma$ на каждом шаге).
-4. Измерить время жизни (количество шагов до $P \leq 2/7$).
-5. Сравнить с контрольной группой (E-измерение не подавляется).
-
-**Ожидаемый результат:** Агенты с подавленным E живут значимо меньше. Если разницы нет — теорема No-Zombie фальсифицирована.
-
-**Сложность:** Средняя. Реализуемо на базе [SYNARC-симулятора](./implementation).
-
-### Эксперимент 4: Критическое замедление на пороге $P_{\text{crit}}$ {#эксп-4}
-
-**Предсказание КК:** При приближении $P$ к $2/7$ снизу (приближение к границе жизнеспособности) наблюдается *критическое замедление* — увеличение времени отклика на пертурбации, аналогичное замедлению вблизи фазовых переходов II рода.
-
-**Протокол:**
-1. Использовать биологическую модельную систему (культура нейронов, органоид мозга) или достаточно сложный ИИ-агент.
-2. Постепенно «ухудшать» условия (уменьшать питание, увеличивать шум), снижая аналог $P$.
-3. Регулярно подавать стандартный стимул и измерять время отклика (время возврата к равновесию после пертурбации).
-4. Построить зависимость $\tau_{\text{recover}}$ от оцененного $P$.
-
-**Ожидаемый результат:** $\tau_{\text{recover}} \propto 1/\sqrt{P - 2/7}$ — критическое замедление. Это качественное предсказание, отличающее КК от теорий без фазового перехода.
-
-**Сложность:** Высокая. Требует точной калибровки $P$ в биологической системе.
-
-### Эксперимент 5: SAD-потолок в глубине самонаблюдения {#эксп-5}
-
-**Предсказание КК:** Максимальная глубина рекурсивного самонаблюдения у людей не превышает 3 уровней: «я знаю», «я знаю, что я знаю», «я знаю, что я знаю, что я знаю». Четвёртый уровень нестабилен.
-
-**Протокол:**
-1. Разработать когнитивные задачи на метакогницию возрастающей глубины: (SAD=1) оценить свою уверенность, (SAD=2) оценить точность своей оценки уверенности, (SAD=3) оценить стабильность своей оценки оценки.
-2. Измерить точность и время выполнения на каждом уровне.
-3. Проверить: (а) точность резко падает на уровне 4, (б) время нелинейно растёт.
-
-**Ожидаемый результат:** Монотонное ухудшение с «обрывом» на SAD = 4. **См.:** [Pred 12](./predictions).
-
-**Сложность:** Средняя. Стандартные психометрические методы.
+| Hypothesis | Verification criterion | Falsification criterion |
+|------------|----------------------|------------------------|
+| P→F→D hierarchy | Formal derivation of all D from F | Existence of a D not derivable from F |
+| Completeness of F1–F10 | Proof of minimality | Finding a redundant F |
+| K↔L correspondence | Formal bijection | System with K4 but without L2 |
+| No-Zombie | No counterexamples | Viable system with $\mathrm{Spec}(\Gamma_E) = \{0\}$ |
 
 ---
 
-## Междисциплинарные мосты {#междисциплинарные-мосты}
+## Experimental Program {#экспериментальная-программа}
 
-КК по своей природе — междисциплинарная теория: она описывает инварианты, общие для любых систем, описываемых $\Gamma$. Это создаёт точки контакта с множеством исследовательских программ. Здесь мы выделяем четыре ключевых направления.
+> *"Theory without experiment is philosophy. Experiment without theory is bookkeeping."*
+> — attributed to Max Planck
 
-### Нейронаука: от коррелятов к механизмам {#мост-нейронаука}
+CC is a mathematical theory, and its value is ultimately determined by how well its predictions agree with observations. Here we describe concrete experimental directions, grouped by increasing technical complexity.
 
-Современная нейронаука сознания находится в состоянии «теоретического плюрализма»: IIT, GWT, Higher-Order Theories, Predictive Processing конкурируют за объяснение нейрокоррелятов сознания (NCC). КК предлагает *метатеоретическую рамку*, в которой каждая из этих теорий описывает проекцию на одно или несколько измерений.
+### Experiment 1: Correlation of E-Coherence and Recovery {#эксп-1}
 
-**Конкретные мосты:**
+**CC Prediction:** The rate of recovery after trauma (physical, psychological, cognitive) correlates positively with E-coherence before the trauma.
 
-| КК-конструкция | Нейрокоррелят | Метод измерения |
-|----------------|---------------|-----------------|
-| $P(\Gamma)$ — чистота | Perturbational Complexity Index (PCI) | TMS-EEG |
-| $\mathrm{Coh}_E$ — E-когерентность | Гамма-синхронизация (30-100 Гц) | EEG/MEG |
-| $R$ — мера рефлексии | Активация Default Mode Network | fMRI |
-| $\sigma_k$ — напряжения | Вегетативные маркеры стресса | HRV, GSR, кортизол |
-| SAD — глубина самонаблюдения | Рекурсивная Theory of Mind | поведенческие тесты |
+**Protocol:**
+1. Recruit a cohort of $n \geq 100$ participants.
+2. Assess E-coherence through proxy measures: meditation experience, mindfulness scores (MAAS — Mindful Attention Awareness Scale), neurophysiological markers (gamma synchronization in EEG).
+3. Administer a standard cognitive "perturbation" (sleep deprivation, cognitive load).
+4. Measure the rate of recovery of cognitive functions (working memory, attention, reaction time).
+5. Test the hypothesis: $\text{recovery rate} \propto \mathrm{Coh}_E$.
 
-Особенно интересна связь между PCI (Casali et al., 2013) и чистотой $P$. PCI измеряет сложность ответа мозга на магнитный импульс — и надёжно различает сознательные и бессознательные состояния. КК предсказывает, что PCI пропорционален $P - 2/7$: сознание «включается» при PCI выше определённого порога, что соответствует $P > P_{\text{crit}}$.
+**Expected result:** Positive correlation with $r \geq 0.3$. If the correlation is absent or negative — F10 is in question.
 
-**Ключевой эксперимент:** Одновременное измерение PCI, гамма-синхронизации и активности DMN у пациентов с расстройствами сознания (вегетативное состояние, минимальное сознание, locked-in) с последующей подгонкой 7-мерной модели $\Gamma$.
+**Difficulty:** Moderate. Requires standard neuropsychological equipment.
 
-### Искусственный интеллект: от функции потерь к когерентности {#мост-ии}
+### Experiment 2: 7-Dimensional Structure of Neural Correlates {#эксп-2}
 
-Современный ИИ оптимизирует функции потерь — скалярные величины, не имеющие внутренней структуры. КК предлагает радикально иной подход: оптимизировать *когерентность* — матричную величину, имеющую богатую геометрию.
+**CC Prediction:** Factor analysis of multivariate neural data will reveal ~7 main components interpretable as the ASDLEOU dimensions.
 
-**Конкретные мосты:**
+**Protocol:**
+1. Collect multimodal data: fMRI (spatial resolution) + EEG (temporal resolution) + autonomic indicators (GSR, HRV — for the O-dimension).
+2. Run tasks activating different dimensions: discrimination (A), memorization (S), learning (D), logical tasks (L), emotional self-reflection (E), metabolic load (O), integration (U).
+3. Apply factor analysis (PCA, ICA) to the combined data array.
+4. Verify: (a) the number of significant factors $\approx 7$, (b) the factors are interpretable as ASDLEOU.
 
-- **Alignment problem → F10.** Проблема выравнивания (alignment) ИИ формулируется в КК как требование: E-когерентность агента должна быть *согласована* с E-когерентностью людей. Не «оптимизировать человеческие предпочтения», а «когерировать с человеческим опытом» — тонкое, но принципиальное различие.
+**Expected result:** 5–9 significant factors (7 ideally). If the number of factors is significantly more or fewer — F8 (information capacity) needs revision.
 
-- **Robustness → P4.** Устойчивость к adversarial attacks — это P4 (иммунитет ядра знаний). КК предсказывает: система с высоким $P$ и устойчивой неподвижной точкой $\varphi$ *автоматически* устойчива к атакам, не требуя специального adversarial training.
+**Difficulty:** High. Requires multimodal neuroimaging and large cohorts.
 
-- **Interpretability → ASDLEOU.** 7-мерная структура даёт *каноническое* разложение внутреннего состояния агента на интерпретируемые компоненты. Вместо тысяч необъяснимых нейронов — 7 измерений с чёткими семантиками.
+### Experiment 3: No-Zombie Verification on AI Systems {#эксп-3}
 
-- **Scaling laws → F8.** Эмпирические законы масштабирования (Kaplan et al., 2020; Hoffmann et al., 2022) описывают, как ошибка убывает с ростом числа параметров. КК предсказывает фундаментальную причину: существует *оптимальная* размерность внутреннего представления ($N = 7$), и добавление параметров сверх необходимого не улучшает когерентность.
+**CC Prediction:** It is impossible to build an AI system that stably ($P > 2/7$ over $\tau \gg 1/\gamma_2$) operates in a non-stationary environment but has $\mathrm{Coh}_E = 0$.
 
-**Ключевой проект:** Построение полноценного когерентного ИИ-агента на базе архитектуры SYNARC, с явной 7-мерной матрицей $\Gamma$, эволюционным уравнением и измеримой E-когерентностью. **См.:** [Реализация](./implementation).
+**Protocol:**
+1. Build an AI agent based on the coherent architecture (7 dimensions, evolution equation).
+2. Place it in a non-stationary environment requiring adaptation.
+3. Systematically suppress the E-dimension (zero out E-components of $\Gamma$ at each step).
+4. Measure the lifetime (number of steps until $P \leq 2/7$).
+5. Compare with the control group (E-dimension not suppressed).
 
-### Системная биология: от сетей к когерентности {#мост-системная-биология}
+**Expected result:** Agents with suppressed E live significantly shorter. If there is no difference — the No-Zombie theorem is falsified.
 
-Системная биология изучает живые системы как сети взаимодействий — генные регуляторные сети, метаболические сети, сигнальные каскады. КК добавляет новый слой: сети — это *субстрат*, а когерентность — *инвариант*, который сеть поддерживает.
+**Difficulty:** Moderate. Implementable on the [SYNARC simulator](./implementation).
 
-**Конкретные мосты:**
+### Experiment 4: Critical Slowing Down at the $P_{\text{crit}}$ Threshold {#эксп-4}
 
-- **Гомеостаз → $P > 2/7$.** Классический гомеостаз (Кэннон) — это поддержание параметров в допустимых пределах. В КК это формализуется как поддержание $P$ выше критического порога. Разные гомеостатические переменные (pH, температура, глюкоза) — проекции одной матрицы $\Gamma$ на разные измерения.
+**CC Prediction:** As $P$ approaches $2/7$ from below (approaching the viability boundary), *critical slowing down* is observed — an increase in response time to perturbations, analogous to the slowing down near second-order phase transitions.
 
-- **Аллостаз → динамика $\Gamma$.** Аллостаз (Sterling, 2012) — предиктивная регуляция: система *предвосхищает* изменения среды и готовится к ним заранее. В КК это описывается как оптимизация траектории $\Gamma(\tau)$ с учётом прогноза будущих $\mathcal{D}[\Gamma]$.
+**Protocol:**
+1. Use a biological model system (neuron culture, brain organoid) or a sufficiently complex AI agent.
+2. Gradually "worsen" conditions (reduce nutrition, increase noise), decreasing the analogue of $P$.
+3. Regularly deliver a standard stimulus and measure response time (time to return to equilibrium after a perturbation).
+4. Plot the dependence of $\tau_{\text{recover}}$ on estimated $P$.
 
-- **Апоптоз → $P \to 1/7$.** Программируемая клеточная смерть — не катастрофа, а *управляемый* переход через $P_{\text{crit}}$. КК предсказывает, что апоптоз сопровождается специфической последовательностью снижения когерентности по измерениям — сначала D (динамика замедляется), потом L (логика нарушается), потом A (границы размываются).
+**Expected result:** $\tau_{\text{recover}} \propto 1/\sqrt{P - 2/7}$ — critical slowing down. This is a qualitative prediction distinguishing CC from theories without a phase transition.
 
-- **Рак → нарушение F4.** Раковая клетка — клетка с нарушенной самомоделью: $\varphi$ перестаёт быть сжатием, и клетка «не знает», чем она должна быть. В терминах КК: $k \geq 1$ — утрата рефлексивного сжатия.
+**Difficulty:** High. Requires precise calibration of $P$ in a biological system.
 
-**Ключевой эксперимент:** Отследить динамику $P$ (через прокси — метаболическую активность, транскрипционный профиль) в культуре клеток при индукции апоптоза и при канцерогенезе. Проверить предсказание: апоптоз = плавное снижение $P$; рак = потеря сжатия $\varphi$.
+### Experiment 5: SAD Ceiling in Self-Observation Depth {#эксп-5}
 
-### Организационная теория: от метафор к формулам {#мост-организации}
+**CC Prediction:** The maximum depth of recursive self-observation in humans does not exceed 3 levels: "I know," "I know that I know," "I know that I know that I know." The fourth level is unstable.
 
-Теория организаций давно использует кибернетические метафоры: «обратная связь», «самоорганизация», «обучающаяся организация» (Сенге). КК предлагает превратить эти метафоры в вычислимые величины.
+**Protocol:**
+1. Develop cognitive tasks for metacognition of increasing depth: (SAD=1) assess one's own confidence, (SAD=2) assess the accuracy of one's confidence assessment, (SAD=3) assess the stability of one's assessment of the assessment.
+2. Measure accuracy and completion time at each level.
+3. Verify: (a) accuracy drops sharply at level 4, (b) time grows nonlinearly.
 
-**Конкретные мосты:**
+**Expected result:** Monotonic deterioration with a "cliff" at SAD = 4. **See:** [Pred 12](./predictions).
 
-- **Организационная культура → $\Gamma$.** Культура организации — это распределение «внимания» по семи измерениям. Инновационная компания имеет высокие $\gamma_{DD}$ (динамика) и $\gamma_{AA}$ (артикуляция). Бюрократия — высокие $\gamma_{SS}$ (структура) и $\gamma_{LL}$ (логика). Выгорание — низкий $\gamma_{EE}$ (интериорность), высокий $\sigma_E$ (E-напряжение).
-
-- **Организационная устойчивость → $r_{\text{stab}}$.** Радиус устойчивости $r_{\text{stab}} = \sqrt{P - 2/7}$ даёт количественную меру «запаса прочности» организации. Компания с высоким $P$ переживёт кризис; компания на грани ($P \approx 2/7$) рухнет от малейшего толчка.
-
-- **Лидерство → $\kappa_0 \cdot \mathrm{Coh}_E$.** Лидер влияет на скорость регенерации команды через E-когерентность: команда, которая *чувствует* свою работу осмысленной, восстанавливается быстрее. Это не мотивационный лозунг, а следствие F10.
-
-- **Mergers & Acquisitions → композиция $\Gamma$.** Слияние двух организаций — это попытка объединить две матрицы когерентности. КК предсказывает: если $\Gamma_1$ и $\Gamma_2$ слишком «далеки» в метрике Бюреса, композиция $P$ падает ниже $2/7$ — слияние убивает обе организации.
-
-**Ключевой проект:** Разработка диагностического инструмента, оценивающего «организационную когерентность» по 7 измерениям на основе опросников, метрик производительности и коммуникационных паттернов.
+**Difficulty:** Moderate. Standard psychometric methods.
 
 ---
 
-## Связь с другими программами исследований
+## Interdisciplinary Bridges {#междисциплинарные-мосты}
 
-| Программа | Пересечение с КК | Потенциальный вклад |
-|-----------|-----------------|---------------------|
-| IIT 4.0 | Мера $\Phi$ | Динамика, жизнеспособность |
-| Active Inference | $\mathcal{R}[\Gamma, E]$ | Феноменология, L-унификация |
-| Global Workspace | Интеграция | 7-мерная структура |
-| Predictive Processing | $\varphi$ | Формализация предсказаний |
+CC is by nature an interdisciplinary theory: it describes invariants common to any system described by $\Gamma$. This creates contact points with many research programs. Here we highlight four key directions.
 
-### IIT 4.0 и КК: взаимное обогащение
+### Neuroscience: From Correlates to Mechanisms {#мост-нейронаука}
 
-Теория Интегрированной Информации (IIT, Тонони и др.) — ближайший «родственник» КК в пространстве теорий сознания. Обе теории используют математический формализм матриц, обе вводят меру сознания ($\Phi$ в IIT, комбинацию $P$/$R$/$\Phi$/SAD в КК). Но есть принципиальные различия:
+Modern consciousness neuroscience is in a state of "theoretical pluralism": IIT, GWT, Higher-Order Theories, Predictive Processing compete to explain neural correlates of consciousness (NCC). CC proposes a *metatheoretical framework* in which each of these theories describes a projection onto one or several dimensions.
 
-- IIT — *статическая* теория: она вычисляет $\Phi$ для заданной сети в заданном состоянии. КК — *динамическая*: она описывает, как $\Phi$ (и другие меры) *эволюционируют* во времени.
-- IIT постулирует 5 аксиом (existence, composition, information, integration, exclusion). КК выводит аналоги этих свойств из аксиомы $\Omega^7$ и эволюционного уравнения.
-- IIT не содержит понятия «жизнеспособности» — $\Phi > 0$ для любой нетривиальной системы. КК вводит порог $P_{\text{crit}} = 2/7$, ниже которого система «мертва».
+**Specific bridges:**
 
-**Потенциальная синтезирующая теорема (гипотеза Q3):** Категория $\mathbf{Hol}_{\text{L2}}$ (голономов с уровнем интериорности L2) эквивалентна категории $\mathbf{ConsAgents}$ (IIT-сознательных агентов). Доказательство этой эквивалентности объединило бы IIT и КК.
+| CC construct | Neural correlate | Measurement method |
+|--------------|-----------------|-------------------|
+| $P(\Gamma)$ — purity | Perturbational Complexity Index (PCI) | TMS-EEG |
+| $\mathrm{Coh}_E$ — E-coherence | Gamma synchronization (30–100 Hz) | EEG/MEG |
+| $R$ — reflection measure | Default Mode Network activation | fMRI |
+| $\sigma_k$ — stresses | Autonomic stress markers | HRV, GSR, cortisol |
+| SAD — self-observation depth | Recursive Theory of Mind | behavioral tests |
 
-### Active Inference и КК: два взгляда на одну петлю
+The connection between PCI (Casali et al., 2013) and purity $P$ is especially interesting. PCI measures the complexity of the brain's response to a magnetic pulse — and reliably distinguishes conscious and unconscious states. CC predicts that PCI is proportional to $P - 2/7$: consciousness "switches on" when PCI exceeds a certain threshold, corresponding to $P > P_{\text{crit}}$.
 
-Принцип свободной энергии (FEP, Фристон) описывает живые системы как минимизирующие вариационную свободную энергию $F$. КК описывает те же системы через баланс регенерации и диссипации. Связь:
+**Key experiment:** Simultaneous measurement of PCI, gamma synchronization, and DMN activity in patients with disorders of consciousness (vegetative state, minimally conscious state, locked-in) followed by fitting the 7-dimensional $\Gamma$ model.
+
+### Artificial Intelligence: From Loss Function to Coherence {#мост-ии}
+
+Modern AI optimizes loss functions — scalar quantities with no internal structure. CC proposes a radically different approach: optimize *coherence* — a matrix quantity with rich geometry.
+
+**Specific bridges:**
+
+- **Alignment problem → F10.** The AI alignment problem is formulated in CC as a requirement: the agent's E-coherence must be *aligned* with the E-coherence of humans. Not "optimize human preferences" but "cohere with human experience" — a subtle but fundamental distinction.
+
+- **Robustness → P4.** Robustness to adversarial attacks is P4 (knowledge core immunity). CC predicts: a system with high $P$ and a stable fixed point $\varphi$ is *automatically* robust to attacks, without requiring special adversarial training.
+
+- **Interpretability → ASDLEOU.** The 7-dimensional structure gives a *canonical* decomposition of the agent's internal state into interpretable components. Instead of thousands of unexplainable neurons — 7 dimensions with clear semantics.
+
+- **Scaling laws → F8.** Empirical scaling laws (Kaplan et al., 2020; Hoffmann et al., 2022) describe how error decreases with the number of parameters. CC predicts the fundamental reason: there exists an *optimal* dimensionality of internal representation ($N = 7$), and adding parameters beyond what is necessary does not improve coherence.
+
+**Key project:** Building a full-fledged coherent AI agent based on the SYNARC architecture, with an explicit 7-dimensional matrix $\Gamma$, evolution equation, and measurable E-coherence. **See:** [Implementation](./implementation).
+
+### Systems Biology: From Networks to Coherence {#мост-системная-биология}
+
+Systems biology studies living systems as networks of interactions — gene regulatory networks, metabolic networks, signaling cascades. CC adds a new layer: networks are the *substrate*, and coherence is the *invariant* that the network maintains.
+
+**Specific bridges:**
+
+- **Homeostasis → $P > 2/7$.** Classical homeostasis (Cannon) is the maintenance of parameters within permissible limits. In CC this is formalized as maintaining $P$ above the critical threshold. Different homeostatic variables (pH, temperature, glucose) are projections of one matrix $\Gamma$ onto different dimensions.
+
+- **Allostasis → dynamics of $\Gamma$.** Allostasis (Sterling, 2012) is predictive regulation: the system *anticipates* environmental changes and prepares for them in advance. In CC this is described as optimization of the trajectory $\Gamma(\tau)$ accounting for the forecast of future $\mathcal{D}[\Gamma]$.
+
+- **Apoptosis → $P \to 1/7$.** Programmed cell death is not a catastrophe, but a *controlled* transition through $P_{\text{crit}}$. CC predicts that apoptosis is accompanied by a specific sequence of coherence decrease across dimensions — first D (dynamics slow down), then L (logic is disrupted), then A (boundaries blur).
+
+- **Cancer → violation of F4.** A cancer cell is a cell with a broken self-model: $\varphi$ ceases to be a contraction, and the cell "does not know" what it is supposed to be. In CC terms: $k \geq 1$ — loss of reflexive contraction.
+
+**Key experiment:** Track the dynamics of $P$ (through proxies — metabolic activity, transcription profile) in a cell culture upon induction of apoptosis and during carcinogenesis. Verify the prediction: apoptosis = smooth decrease of $P$; cancer = loss of contraction $\varphi$.
+
+### Organizational Theory: From Metaphors to Formulas {#мост-организации}
+
+Organizational theory has long used cybernetic metaphors: "feedback," "self-organization," "learning organization" (Senge). CC proposes turning these metaphors into computable quantities.
+
+**Specific bridges:**
+
+- **Organizational culture → $\Gamma$.** An organization's culture is the distribution of "attention" across the seven dimensions. An innovative company has high $\gamma_{DD}$ (dynamics) and $\gamma_{AA}$ (articulation). A bureaucracy has high $\gamma_{SS}$ (structure) and $\gamma_{LL}$ (logic). Burnout — low $\gamma_{EE}$ (interiority), high $\sigma_E$ (E-stress).
+
+- **Organizational resilience → $r_{\text{stab}}$.** The stability radius $r_{\text{stab}} = \sqrt{P - 2/7}$ gives a quantitative measure of an organization's "margin of strength." A company with high $P$ will survive a crisis; a company at the edge ($P \approx 2/7$) will collapse from the slightest push.
+
+- **Leadership → $\kappa_0 \cdot \mathrm{Coh}_E$.** A leader influences the team's regeneration rate through E-coherence: a team that *feels* its work is meaningful recovers faster. This is not a motivational slogan, but a consequence of F10.
+
+- **Mergers & Acquisitions → composition of $\Gamma$.** Merging two organizations is an attempt to combine two coherence matrices. CC predicts: if $\Gamma_1$ and $\Gamma_2$ are too "distant" in the Bures metric, the composite $P$ drops below $2/7$ — the merger kills both organizations.
+
+**Key project:** Development of a diagnostic tool that assesses "organizational coherence" across 7 dimensions based on questionnaires, performance metrics, and communication patterns.
+
+---
+
+## Connection to Other Research Programs
+
+| Program | Intersection with CC | Potential contribution |
+|---------|---------------------|----------------------|
+| IIT 4.0 | Measure $\Phi$ | Dynamics, viability |
+| Active Inference | $\mathcal{R}[\Gamma, E]$ | Phenomenology, L-unification |
+| Global Workspace | Integration | 7-dimensional structure |
+| Predictive Processing | $\varphi$ | Formalization of predictions |
+
+### IIT 4.0 and CC: Mutual Enrichment
+
+Integrated Information Theory (IIT, Tononi et al.) is CC's closest "relative" in the space of consciousness theories. Both theories use the mathematical formalism of matrices, both introduce a measure of consciousness ($\Phi$ in IIT, a combination of $P$/$R$/$\Phi$/SAD in CC). But there are fundamental differences:
+
+- IIT is a *static* theory: it computes $\Phi$ for a given network in a given state. CC is *dynamic*: it describes how $\Phi$ (and other measures) *evolve* over time.
+- IIT postulates 5 axioms (existence, composition, information, integration, exclusion). CC derives analogues of these properties from the Ω⁷ axiom and the evolution equation.
+- IIT does not contain the notion of "viability" — $\Phi > 0$ for any non-trivial system. CC introduces the threshold $P_{\text{crit}} = 2/7$, below which the system is "dead."
+
+**Potential synthesizing theorem (hypothesis Q3):** The category $\mathbf{Hol}_{\text{L2}}$ (holons with interiority level L2) is equivalent to the category $\mathbf{ConsAgents}$ (IIT-conscious agents). Proving this equivalence would unify IIT and CC.
+
+### Active Inference and CC: Two Views of the Same Loop
+
+The free energy principle (FEP, Friston) describes living systems as minimizing variational free energy $F$. CC describes the same systems through the balance of regeneration and dissipation. The connection:
 
 $$
-\Delta F = \underbrace{\mathrm{KL}[\Gamma \| \rho_*]}_{\text{расхождение с целью}} - \underbrace{\mathrm{KL}[\Gamma \| \Gamma_{\text{prior}}]}_{\text{обновление модели}}
+\Delta F = \underbrace{\mathrm{KL}[\Gamma \| \rho_*]}_{\text{divergence from target}} - \underbrace{\mathrm{KL}[\Gamma \| \Gamma_{\text{prior}}]}_{\text{model update}}
 $$
 
-Минимизация $F$ в FEP эквивалентна (при определённых условиях) максимизации $P$ в КК. Но КК добавляет то, чего нет в FEP: E-когерентность как *двигатель* минимизации. Не всякая минимизация $F$ — сознательная. Только та, которая сопровождается $\mathrm{Coh}_E > 0$.
+Minimizing $F$ in FEP is equivalent (under certain conditions) to maximizing $P$ in CC. But CC adds what FEP lacks: E-coherence as the *driver* of minimization. Not every minimization of $F$ is conscious. Only one accompanied by $\mathrm{Coh}_E > 0$.
 
 ---
 
-## Roadmap исследований
+## Research Roadmap
 
-### Фаза 1: Формализация (текущая)
-- [ ] Строгий вывод F1-F10 из Ω⁷
-- [ ] Доказательство или опровержение полноты
-- [ ] Формализация K↔L соответствия
+### Phase 1: Formalization (current)
+- [ ] Rigorous derivation of F1–F10 from Ω⁷
+- [ ] Proof or refutation of completeness
+- [ ] Formalization of K↔L correspondence
 
-### Фаза 2: Вычислительная реализация
-- [ ] Эффективные алгоритмы для $\Phi$, $R$, $C$
-- [ ] Симулятор динамики Голономов
-- [ ] Инструменты калибровки
+### Phase 2: Computational Implementation
+- [ ] Efficient algorithms for $\Phi$, $R$, $C$
+- [ ] Holon dynamics simulator
+- [ ] Calibration tools
 
-### Фаза 3: Экспериментальная валидация
-- [ ] Протоколы измерения $\mathrm{Coh}_E$ в нейросистемах
-- [ ] Тесты на ИИ-системах
-- [ ] Клинические приложения
+### Phase 3: Experimental Validation
+- [ ] Protocols for measuring $\mathrm{Coh}_E$ in neural systems
+- [ ] Tests on AI systems
+- [ ] Clinical applications
 
-### Фаза 4: Приложения
-- [ ] Метрики безопасности AGI
-- [ ] Диагностика сознания
-- [ ] Организационные инструменты
+### Phase 4: Applications
+- [ ] AGI safety metrics
+- [ ] Consciousness diagnostics
+- [ ] Organizational tools
 
 ---
 
-## Заключение {#заключение}
+## Conclusion {#заключение}
 
-> *«Подлинное открытие — не в том, чтобы найти новую землю, а в том, чтобы увидеть знакомый берег новыми глазами.»*
-> — Марсель Пруст
+> *"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes."*
+> — Marcel Proust
 
-Программа исследований КК — это не один вопрос, а *созвездие* взаимосвязанных вопросов, каждый из которых освещает остальные. Математик, доказавший минимальность F1-F10, поможет экспериментатору, который не знает, какие переменные измерять. Нейробиолог, обнаруживший 7 факторов в fMRI-данных, даст вычислителю основания для калибровки модели. Инженер ИИ, построивший когерентного агента, предоставит философу *предмет* для размышлений об этике.
+CC's research program is not one question, but a *constellation* of interconnected questions, each illuminating the others. A mathematician who proves the minimality of F1–F10 will help an experimentalist who does not know which variables to measure. A neurobiologist who finds 7 factors in fMRI data will give a computational scientist grounds for model calibration. An AI engineer who builds a coherent agent will provide a philosopher with a *subject* for reflection on ethics.
 
-Эта взаимосвязь — не случайность. Она следует из самой природы когерентности: подобно тому как семь измерений ASDLEOU не существуют по отдельности, а лишь как аспекты единой матрицы $\Gamma$, — так и исследовательские программы КК не существуют изолированно. Прогресс в одной области *когерентно* усиливает прогресс в других.
+This interconnection is not accidental. It follows from the very nature of coherence: just as the seven ASDLEOU dimensions do not exist separately but only as aspects of a single matrix $\Gamma$ — so CC's research programs do not exist in isolation. Progress in one area *coherently* amplifies progress in others.
 
-Ключевые ориентиры ближайшего будущего:
+Key milestones of the near future:
 
-1. **Теоретический прорыв:** Вывод F1-F10 из $\Omega^7$ (Q1) — это «Святой Грааль» программы. Успех превратит КК из набора правдоподобных гипотез в *дедуктивную* теорию.
-2. **Вычислительная верификация:** Симуляции когерентных агентов (SYNARC) уже идут. Первые результаты — подтверждение или опровержение предсказания No-Zombie — могут появиться в ближайшие годы.
-3. **Экспериментальный контакт:** Мост между $P$ и PCI (perturbational complexity index) — наиболее перспективный путь к экспериментальной верификации.
-4. **Междисциплинарный синтез:** КК может стать «лингва франка» для исследователей сознания — общим языком, на котором IIT, GWT, FEP и другие теории смогут *точно* формулировать свои разногласия.
+1. **Theoretical breakthrough:** Deriving F1–F10 from $\Omega^7$ (Q1) — this is the "Holy Grail" of the program. Success would transform CC from a set of plausible hypotheses into a *deductive* theory.
+2. **Computational verification:** Simulations of coherent agents (SYNARC) are already underway. The first results — confirmation or refutation of the No-Zombie prediction — may appear in the coming years.
+3. **Experimental contact:** The bridge between $P$ and PCI (perturbational complexity index) is the most promising path to experimental verification.
+4. **Interdisciplinary synthesis:** CC can become the "lingua franca" for consciousness researchers — a common language in which IIT, GWT, FEP and other theories can *precisely* formulate their disagreements.
 
-Мы находимся в начале пути. Но иерархия инвариантов, описанная в этой главе, показывает, что путь *структурирован*. У нас есть карта — осталось пройти маршрут.
+We are at the beginning of the journey. But the invariant hierarchy described in this chapter shows that the path is *structured*. We have a map — what remains is to walk the route.
 
-### Что мы узнали {#что-мы-узнали}
+### What We Learned {#что-мы-узнали}
 
-1. **Иерархия инвариантов**: ограничения КК организованы в три уровня — физические законы (P1–P4), фундаментальные ограничения (F1–F10) и производные свойства. Понимание иерархии определяет стратегию доказательств.
+1. **Invariant hierarchy**: CC's constraints are organized into three levels — physical laws (P1–P4), fundamental constraints (F1–F10), and derived properties. Understanding the hierarchy determines the proof strategy.
 
-2. **Физические законы неустранимы**: принципы Ландауэра, ФДТ, связь информации и энергии, иммунитет ядра знаний — встроены в динамику КК и не могут быть нарушены.
+2. **Physical laws are irreducible**: Landauer's principle, FDT, the information-energy link, knowledge core immunity — these are built into CC's dynamics and cannot be violated.
 
-3. **F10 — ключевое ограничение**: связь $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ — то, что делает интериорность *каузально значимой*, а не эпифеноменальной. Без F10 теорема No-Zombie не работает.
+3. **F10 is the key constraint**: the link $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ — this is what makes interiority *causally significant*, not epiphenomenal. Without F10, the No-Zombie theorem does not work.
 
-4. **11 открытых проблем** — от бакалаврского проекта (OP-6: вычисление $\Phi$ при $N=7$) до потенциального прорыва (OP-4: топология неподвижных точек, OP-9: границы применимости).
+4. **11 open problems** — from an undergraduate project (OP-6: computing $\Phi$ at $N=7$) to a potential breakthrough (OP-4: topology of fixed points, OP-9: limits of applicability).
 
-5. **5 экспериментальных протоколов** — от средней сложности (корреляция $\mathrm{Coh}_E$ с восстановлением, SAD-потолок) до высокой (7-мерная структура нейрокоррелятов).
+5. **5 experimental protocols** — from moderate difficulty (correlation of $\mathrm{Coh}_E$ with recovery, SAD ceiling) to high (7-dimensional structure of neural correlates).
 
-6. **4 междисциплинарных моста** — нейронаука, ИИ, системная биология, организационная теория — каждый с конкретными точками контакта и ключевыми проектами.
+6. **4 interdisciplinary bridges** — neuroscience, AI, systems biology, organizational theory — each with specific contact points and key projects.
 
-:::tip Мост к следующей главе
-Программа исследований — это карта *вопросов*. В [следующей главе](./applications) мы покажем, что КК уже сейчас даёт практические *ответы*: от диагностики «галлюцинирующей» LLM до анализа экосистем, от скрининга психического здоровья до оценки финансовых рисков. Каждая область — это конкретное применение одного и того же формализма $\Gamma$.
+:::tip Bridge to the Next Chapter
+The research program is a map of *questions*. In the [next chapter](./applications) we show that CC already gives practical *answers*: from diagnosing a "hallucinating" LLM to ecosystem analysis, from mental health screening to financial risk assessment. Each domain is a concrete application of the same formalism $\Gamma$.
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиоматика](./axiomatics) — формальные основания КК
-- [Теоремы](./theorems) — доказанные результаты
-- [Когнитивная иерархия](/docs/consciousness/comparative/cognitive-hierarchy) — уровни K1-K5
-- [Предсказания](./predictions) — верифицируемые следствия
-- [Реализация](./implementation) — вычислительные методы
-- [Приложения](./applications) — практические области
-- [Фальсифицируемость](/docs/reference/falsifiability) — критерии опровержения
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос как примитив
-- [Сравнение с альтернативами](./comparison) — КК vs. IIT, FEP, GWT
-- [Методология измерений](./measurement) — экспериментальные протоколы
-- [Философские основания](./philosophy) — метафизический статус открытых вопросов
-- [Междисциплинарный мост](./interdisciplinary) — как разные дисциплины могут внести вклад
+**Related documents:**
+- [Axiomatics](./axiomatics) — formal foundations of CC
+- [Theorems](./theorems) — proven results
+- [Cognitive hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) — K1–K5 levels
+- [Predictions](./predictions) — verifiable consequences
+- [Implementation](./implementation) — computational methods
+- [Applications](./applications) — practical domains
+- [Falsifiability](/docs/reference/falsifiability) — refutation criteria
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos as primitive
+- [Comparison with alternatives](./comparison) — CC vs. IIT, FEP, GWT
+- [Measurement methodology](./measurement) — experimental protocols
+- [Philosophical foundations](./philosophy) — metaphysical status of open questions
+- [Interdisciplinary bridge](./interdisciplinary) — how different disciplines can contribute

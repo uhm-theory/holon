@@ -1,250 +1,250 @@
 ---
 sidebar_position: 2
-title: Аксиоматика
-description: Аксиоматические основания Кибернетики Когерентности
+title: Axiomatics
+description: Axiomatic foundations of Coherence Cybernetics
 ---
 
-# Аксиоматика Кибернетики Когерентности
+# Axiomatics of Coherence Cybernetics
 
-:::info Мост из предыдущей главы
-В [предыдущей главе](./introduction) мы узнали, *что* такое Кибернетика Когерентности: единый формализм, описывающий динамику, структуру и интериорность через матрицу когерентности $\Gamma$. Мы увидели уравнение эволюции, семь измерений, пороги жизнеспособности и иерархию интериорности. Но откуда всё это берётся? Почему формулы именно такие? Теперь нам предстоит заглянуть в **фундамент** — аксиоматическую базу, из которой выводятся все конструкции КК.
+:::info Bridge from the Previous Chapter
+In the [previous chapter](./introduction) we learned *what* Coherence Cybernetics is: a unified formalism describing dynamics, structure, and interiority through the coherence matrix $\Gamma$. We saw the evolution equation, the seven dimensions, the viability thresholds, and the hierarchy of interiority. But where does all of this come from? Why are the formulas exactly as they are? Now we must look into the **foundation** — the axiomatic base from which all CC constructions are derived.
 :::
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Поймём, зачем нужна аксиоматика** — урок Евклида, Колмогорова и Гильберта (раздел «Зачем нужна аксиоматика?»)
-2. **Разберём три уровня строгости** вывода: дедуктивный, категориальный, конструктивный (раздел «[Что значит "строго выводится"?](#что-значит-строго-выводится)»)
-3. **Познакомимся с единственным примитивом** — категорией $\mathcal{C}$ (раздел «[Единственный примитив](#единственный-примитив)»)
-4. **Пройдём по пяти аксиомам** Ω⁷ и поймём, зачем нужна каждая (раздел «[Аксиоматическая база](#аксиоматическая-база-краткая-справка)»)
-5. **Проследим цепочку вывода** от $\Omega$ до стационарного состояния $\Gamma^*$ (раздел «[Цепочка вывода](#цепочка-вывода)»)
-6. **Увидим, как разрешается bootstrap-парадокс** регенерации (раздел «[Bootstrap-парадокс](#bootstrap-парадокс)»)
-7. **Поймём, почему E-измерение особенное** — теорема об E-акцентуации (раздел «[E-акцентуация](#e-акцентуация)»)
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Understand why axiomatics is needed** — the lesson of Euclid, Kolmogorov, and Hilbert (section "Why Is Axiomatics Needed?")
+2. **Examine three levels of rigor** in derivation: deductive, categorical, constructive (section "[What Does 'Strictly Derived' Mean?](#что-значит-строго-выводится)")
+3. **Meet the single primitive** — the category $\mathcal{C}$ (section "[The Single Primitive](#единственный-примитив)")
+4. **Walk through the five axioms** of Ω⁷ and understand why each is needed (section "[Axiomatic Base](#аксиоматическая-база-краткая-справка)")
+5. **Trace the derivation chain** from $\Omega$ to the stationary state $\Gamma^*$ (section "[Derivation Chain](#цепочка-вывода)")
+6. **See how the bootstrap paradox** of regeneration is resolved (section "[Bootstrap Paradox](#bootstrap-парадокс)")
+7. **Understand why the E-dimension is special** — the E-accentuation theorem (section "[E-Accentuation](#e-акцентуация)")
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\mathcal{H} = \mathbb{C}^7$ — гильбертово пространство
-- $\mathcal{D}[\Gamma]$ — [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан)
-- $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\mathcal{H} = \mathbb{C}^7$ — Hilbert space
+- $\mathcal{D}[\Gamma]$ — [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан)
+- $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
+- $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
 :::
 
-## Зачем нужна аксиоматика?
+## Why Is Axiomatics Needed?
 
-### Урок Евклида
+### The Lesson of Euclid
 
-Две с половиной тысячи лет назад Евклид совершил один из величайших интеллектуальных подвигов в истории: он взял геометрию, которую египтяне и вавилоняне знали как набор практических рецептов, и показал, что вся она вырастает из **пяти** утверждений, принимаемых без доказательства. Пять постулатов — и из них, как дерево из семени, выросла вся планиметрия.
+Two and a half thousand years ago, Euclid accomplished one of the greatest intellectual feats in history: he took geometry, which the Egyptians and Babylonians knew as a collection of practical recipes, and showed that all of it grows from **five** statements accepted without proof. Five postulates — and from them, like a tree from a seed, the whole of plane geometry grew.
 
-Это была не просто систематизация знания. Это был первый случай, когда человечество обнаружило **силу аксиоматического метода**: если фундамент выбран правильно, то все следствия строго необходимы. Не «мы так думаем» и не «это кажется правдоподобным», а **это не может быть иначе**, пока верны аксиомы.
+This was not merely a systematization of knowledge. It was the first time humanity discovered **the power of the axiomatic method**: if the foundation is chosen correctly, all consequences are strictly necessary. Not "we think so" and not "this seems plausible," but **it cannot be otherwise**, as long as the axioms hold.
 
-### Колмогоров и вероятность
+### Kolmogorov and Probability
 
-В 1933 году Колмогоров проделал для теории вероятностей то же, что Евклид — для геометрии. До Колмогорова вероятность была собранием интуиций: частотный подход, геометрическая вероятность, байесовская степень уверенности. Колмогоров предложил три аксиомы (сигма-алгебра событий, нормировка, аддитивность) — и из них вывел всю теорию вероятностей. Все парадоксы испарились. Все школы объединились в рамках единого языка.
+In 1933 Kolmogorov did for probability theory what Euclid did for geometry. Before Kolmogorov, probability was a collection of intuitions: the frequency approach, geometric probability, Bayesian degree of belief. Kolmogorov proposed three axioms (a sigma-algebra of events, normalization, additivity) — and from them derived the whole of probability theory. All paradoxes evaporated. All schools unified within a single language.
 
-Урок Колмогорова: **аксиоматика не ограничивает, а освобождает**. Она позволяет отделить содержательные вопросы от терминологических споров.
+Kolmogorov's lesson: **axiomatics does not constrain but liberates**. It allows one to separate substantive questions from terminological disputes.
 
-### Гильбертова программа и её наследие
+### The Hilbert Program and Its Legacy
 
-Гильбертова программа (1920-е) попыталась аксиоматизировать всю математику. Гёдель в 1931 году показал, что это невозможно в полном объёме: любая достаточно богатая непротиворечивая система содержит неразрешимые утверждения. Но программа Гильберта не была напрасной — она породила современное понимание того, **что значит** строить теорию строго.
+The Hilbert program (1920s) attempted to axiomatize all of mathematics. Gödel in 1931 showed that this was impossible in full: any sufficiently rich consistent system contains undecidable statements. But Hilbert's program was not in vain — it gave rise to the modern understanding of **what it means** to build a theory rigorously.
 
-Это понимание таково: теория считается строгой, если:
-1. **Примитивы** (неопределяемые понятия) названы явно
-2. **Аксиомы** (утверждения, принимаемые без доказательства) перечислены исчерпывающе
-3. **Всё остальное** выводится из аксиом по правилам логики
-4. **Нет скрытых допущений** — каждое предположение отмечено и маркировано
+That understanding is as follows: a theory is considered rigorous if:
+1. **Primitives** (undefined concepts) are named explicitly
+2. **Axioms** (statements accepted without proof) are listed exhaustively
+3. **Everything else** is derived from the axioms by the rules of logic
+4. **There are no hidden assumptions** — every assumption is noted and labeled
 
-### Зачем аксиоматика Кибернетике Когерентности?
+### Why Does Coherence Cybernetics Need Axiomatics?
 
-Кибернетика, в отличие от физики и математики, до сих пор остаётся во многом **до-аксиоматической** дисциплиной. Кибернетика Винера, кибернетика Эшби, кибернетика второго порядка Фон Фёрстера — всё это ценные концептуальные рамки, но ни одна из них не имеет формальной аксиоматики, из которой бы выводились все утверждения.
+Cybernetics, unlike physics and mathematics, has largely remained a **pre-axiomatic** discipline to this day. Wiener's cybernetics, Ashby's cybernetics, von Foerster's second-order cybernetics — all of these are valuable conceptual frameworks, but none has a formal axiomatics from which all statements would be derived.
 
-**Кибернетика Когерентности (КК)** — первая попытка построить кибернетику на уровне строгости, сравнимом с аксиоматической теорией вероятностей Колмогорова. Каждое утверждение КК маркировано одним из шести статусов — **[Т]** (теорема), **[С]** (условная), **[Г]** (гипотеза), **[И]** (интерпретация), **[О]** (определение), **[П]** (постулат) — что делает явным, что принимается на веру и что доказывается. Полная система статусов с описанием: [Реестр статусов](/docs/reference/status-registry).
-
----
-
-## Что значит «строго выводится»? {#что-значит-строго-выводится}
-
-Прежде чем углубиться в аксиомы, разберёмся с ключевым понятием. Когда мы говорим, что КК «строго выводится» из УГМ, что это означает?
-
-### Три уровня «вывода»
-
-1. **Дедуктивный вывод** (самый строгий): Утверждение B следует из утверждения A, если B невозможно отрицать, не отрицая A. Пример: из аксиом Пеано *выводится*, что $2 + 2 = 4$. Именно в этом смысле работает большинство утверждений КК со статусом **[Т]**.
-
-2. **Категориальный вывод**: Конструкция B однозначно определяется структурой A с точностью до единственного изоморфизма. Пример: из того, что $\mathcal{C}$ — малая категория с гротендиковой топологией, однозначно определяется субобъектный классификатор $\Omega$. Именно так из Аксиомы 1 выводятся операторы Линдблада $L_k$.
-
-3. **Конструктивный вывод**: из A строится B по явному алгоритму, проверяемому шаг за шагом. Так устроена вся цепочка $\Omega \to \{S_k\} \to \chi_{S_k} \to L_k \to \mathcal{L}_\Omega$.
-
-В КК используются все три вида вывода, и для каждой теоремы указано, какой именно.
-
-### Чего вывод НЕ означает
-
-Вывод **не означает**, что заключение «очевидно» или «интуитивно ясно». Многие теоремы КК (например, что $P_{\text{crit}} = 2/7$ — это единственный возможный порог сознательности) контринтуитивны. Они верны *вопреки* интуиции, потому что следуют из аксиом.
-
-Вывод также **не означает** эмпирическую истинность. Аксиомы КК — математические конструкции. Вопрос «описывают ли они реальность?» — это отдельный, эмпирический вопрос.
+**Coherence Cybernetics (CC)** is the first attempt to build cybernetics to a level of rigor comparable to Kolmogorov's axiomatic probability theory. Every statement in CC is labeled with one of six statuses — **[T]** (theorem), **[C]** (conditional), **[H]** (hypothesis), **[I]** (interpretation), **[D]** (definition), **[P]** (postulate) — making explicit what is taken on faith and what is proven. The complete status system with descriptions: [Status Registry](/docs/reference/status-registry).
 
 ---
 
-## Метатеоретический статус
+## What Does "Strictly Derived" Mean? {#что-значит-строго-выводится}
 
-**Кибернетика Когерентности (КК)** есть единственная полная кибернетика, строго выводимая из Унитарного Голономного Монизма (УГМ). Она не является ещё одной кибернетикой в ряду существующих — она есть **метатеория**, из которой все частные кибернетики выводятся как проекции.
+Before diving into the axioms, let us clarify the key concept. When we say that CC is "strictly derived" from UHM, what does that mean?
 
-Что это значит на практике? Представьте себе белый свет. Пропустите его через призму — и вы получите красный, оранжевый, жёлтый... каждый из этих цветов реален и полезен, но ни один из них не является полным светом. Кибернетика Винера — это «красный луч» КК (обратная связь, информация). Автопоэзис Матураны и Варелы — «зелёный луч» (самоорганизация, граница). Теория интегрированной информации Тонони — «фиолетовый луч» (интеграция, $\Phi$). КК — это белый свет, из которого все они получаются ограничением на подмножество измерений.
+### Three Levels of "Derivation"
 
-:::info Ключевое утверждение
-Любая корректная теория систем, описываемых $\Gamma$, есть проекция КК на подмножество измерений или динамических режимов.
-:::
+1. **Deductive derivation** (the most rigorous): Statement B follows from statement A if B cannot be denied without denying A. Example: from Peano's axioms it *follows* that $2 + 2 = 4$. This is precisely the sense in which most CC statements with status **[T]** work.
 
-Это утверждение — не декларация, а **теорема** (точнее, семейство теорем), доказываемая для каждой конкретной теории путём явного построения проекции. Подробнее: [Сравнительный анализ теорий сознания](/docs/consciousness/comparative/consciousness-theories).
+2. **Categorical derivation**: Construction B is uniquely determined by the structure of A up to a unique isomorphism. Example: from the fact that $\mathcal{C}$ is a small category with a Grothendieck topology, the subobject classifier $\Omega$ is uniquely determined. This is exactly how the Lindblad operators $L_k$ are derived from Axiom 1.
+
+3. **Constructive derivation**: B is built from A by an explicit algorithm, verifiable step by step. This is how the entire chain $\Omega \to \{S_k\} \to \chi_{S_k} \to L_k \to \mathcal{L}_\Omega$ is structured.
+
+All three types of derivation are used in CC, and for each theorem the type is specified.
+
+### What Derivation Does NOT Mean
+
+Derivation **does not mean** that the conclusion is "obvious" or "intuitively clear." Many CC theorems (for example, that $P_{\text{crit}} = 2/7$ is the only possible threshold of consciousness) are counterintuitive. They are true *despite* intuition, because they follow from the axioms.
+
+Derivation also **does not mean** empirical truth. The axioms of CC are mathematical constructions. The question "do they describe reality?" is a separate, empirical question.
 
 ---
 
-## Единственный примитив: красота минимализма {#единственный-примитив}
+## Metatheoretical Status
 
-### Почему одного примитива достаточно?
+**Coherence Cybernetics (CC)** is the unique complete cybernetics strictly derivable from Unitary Holonomic Monism (UHM). It is not yet another cybernetics in the line of existing ones — it is a **metatheory** from which all particular cybernetics are derived as projections.
 
-Физика XX века двигалась в сторону всё большего количества фундаментальных объектов: частицы, поля, струны, браны... КК идёт в противоположном направлении. Подобно тому, как вся арифметика строится из одного понятия (множество) плюс одна операция (принадлежность), КК строится из **одного примитива** — категории $\mathcal{C}$.
+What does this mean in practice? Imagine white light. Pass it through a prism — and you get red, orange, yellow... each of these colors is real and useful, but none of them is complete light. Wiener's cybernetics is the "red ray" of CC (feedback, information). Maturana and Varela's autopoiesis is the "green ray" (self-organization, boundary). Tononi's Integrated Information Theory is the "violet ray" (integration, $\Phi$). CC is the white light from which all of them are obtained by restriction to a subset of dimensions.
 
-### Примитивные понятия
+:::info Key Statement
+Any correct theory of systems described by $\Gamma$ is a projection of CC onto a subset of dimensions or dynamic regimes.
+:::
 
-КК строится на **единственном примитиве** — **категории 𝒞** с конечным числом объектов. Матрица когерентности Γ — **объект** этой категории.
+This statement is not a declaration but a **theorem** (more precisely, a family of theorems), proven for each specific theory by explicitly constructing the projection. For more detail: [Comparative Analysis of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories).
 
-**Примитив (Категория 𝒞):**
+---
 
-Малая категория 𝒞 с объектами — матрицами плотности:
+## The Single Primitive: The Beauty of Minimalism {#единственный-примитив}
+
+### Why Is One Primitive Enough?
+
+Twentieth-century physics moved toward an ever-larger number of fundamental objects: particles, fields, strings, branes... CC goes in the opposite direction. Just as all of arithmetic is built from one concept (set) plus one operation (membership), CC is built from a **single primitive** — the category $\mathcal{C}$.
+
+### Primitive Concepts
+
+CC is built on a **single primitive** — **the category 𝒞** with a finite number of objects. The coherence matrix Γ is an **object** of this category.
+
+**Primitive (Category 𝒞):**
+
+A small category 𝒞 whose objects are density matrices:
 
 $$
-\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42}), \quad \text{Mor}(\mathcal{C}) = \text{CPTP-каналы}
+\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42}), \quad \text{Mor}(\mathcal{C}) = \text{CPTP channels}
 $$
 
-### Что значит «единственный»?
+### What Does "Single" Mean?
 
-Единственность примитива — не просто эстетическое требование. У неё есть точный математический смысл: **всё остальное выводится**. Пространство, время, динамика, диссипация, регенерация, сознание — всё это не добавляется «сверху», а порождается внутренней структурой $\mathcal{C}$.
+The uniqueness of the primitive is not merely an aesthetic requirement. It has a precise mathematical meaning: **everything else is derived**. Space, time, dynamics, dissipation, regeneration, consciousness — none of these are added "on top," but are generated by the internal structure of $\mathcal{C}$.
 
-Аналогия: в теории групп вам достаточно задать множество и бинарную операцию, удовлетворяющую трём аксиомам. Из этого выводятся: обратные элементы, порядок элемента, подгруппы, смежные классы, факторгруппы, представления... — бесконечная иерархия структур из одного определения.
+Analogy: in group theory it suffices to give a set and a binary operation satisfying three axioms. From this are derived: inverse elements, the order of an element, subgroups, cosets, quotient groups, representations... — an infinite hierarchy of structures from a single definition.
 
-В КК из категории $\mathcal{C}$ выводятся:
+In CC, from the category $\mathcal{C}$ are derived:
 
-| Конструкция | Как получается | Статус |
+| Construction | How obtained | Status |
 |-------------|----------------|--------|
-| Пространство $X = \|N(\mathcal{C})\|$ | Геометрическая реализация нерва | [Т] |
-| Классификатор $\Omega$ | Теорема Жирара | [Т] |
-| Операторы $L_k$ | Из атомов $\Omega$ | [Т] |
-| Динамика $\mathcal{L}_\Omega$ | Из $L_k$ по формуле Линдблада | [Т] |
-| Время $\tau$ | Аксиома Пейдж–Вуттерс | [Т] |
-| Самомоделирование $\varphi$ | Из $\mathcal{L}_\Omega$ | [Т] |
+| Space $X = \|N(\mathcal{C})\|$ | Geometric realization of the nerve | [T] |
+| Classifier $\Omega$ | Girard's theorem | [T] |
+| Operators $L_k$ | From atoms of $\Omega$ | [T] |
+| Dynamics $\mathcal{L}_\Omega$ | From $L_k$ via Lindblad formula | [T] |
+| Time $\tau$ | Page–Wootters axiom | [T] |
+| Self-modeling $\varphi$ | From $\mathcal{L}_\Omega$ | [T] |
 
-### Онтологический статус
+### Ontological Status
 
-**Категория 𝒞** (не Γ) **является**:
-- Единственной субстанцией
-- Собственной структурой
-- Собственным процессом
+**Category 𝒞** (not Γ) **is**:
+- The single substance
+- Its own structure
+- Its own process
 
-Из 𝒞 **выводятся**:
-- Базовое пространство $X = |N(\mathcal{C})|$
-- Монизм как теорема: $H^*(X) = 0$
-- Время τ, метрика d_strat, стрела времени
+From 𝒞 **are derived**:
+- Base space $X = |N(\mathcal{C})|$
+- Monism as theorem: $H^*(X) = 0$
+- Time τ, metric d_strat, arrow of time
 
-### Почему не Γ?
+### Why Not Γ?
 
-Начинающие часто думают, что примитив КК — матрица когерентности $\Gamma$. Это как думать, что примитив арифметики — число 7. Число 7 — важный объект, но оно *выводится* из аксиом Пеано. Аналогично, $\Gamma$ — важнейший объект КК, но она *выводится* как объект категории $\mathcal{C}$.
+Beginners often think that the primitive of CC is the coherence matrix $\Gamma$. This is like thinking that the primitive of arithmetic is the number 7. The number 7 is an important object, but it is *derived* from Peano's axioms. Likewise, $\Gamma$ is the most important object of CC, but it is *derived* as an object of the category $\mathcal{C}$.
 
-Различие принципиально: если бы $\Gamma$ была примитивом, то её свойства (размерность 7, эрмитовость, положительная определённость, единичный след) пришлось бы **постулировать**. В рамках КК все эти свойства **выводятся** из того, что $\Gamma \in \text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$.
+The distinction is fundamental: if $\Gamma$ were the primitive, then its properties (dimensionality 7, Hermiticity, positive definiteness, unit trace) would have to be **postulated**. Within CC all these properties are **derived** from the fact that $\Gamma \in \text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$.
 
 ---
 
-## Аксиоматическая база (краткая справка) {#аксиоматическая-база-краткая-справка}
+## Axiomatic Base (Brief Reference) {#аксиоматическая-база-краткая-справка}
 
-:::tip DRY: Полная аксиоматика
-Полное изложение пяти аксиом Ω⁷ — в [Аксиома Ω⁷](/docs/core/foundations/axiom-omega). Таблица семи измерений — в [Семь измерений](/docs/core/structure/dimensions). Полное уравнение эволюции — в [Эволюция](/docs/core/dynamics/evolution).
+:::tip DRY: Full Axiomatics
+The complete presentation of the five axioms of Ω⁷ — in [Axiom Ω⁷](/docs/core/foundations/axiom-omega). The table of seven dimensions — in [Seven Dimensions](/docs/core/structure/dimensions). The complete evolution equation — in [Evolution](/docs/core/dynamics/evolution).
 :::
 
-КК строится на **Аксиоме Ω⁷** (пять аксиом с ∞-топосом $\mathrm{Sh}_\infty(\mathcal{C})$ как примитивом):
+CC is built on **Axiom Ω⁷** (five axioms with the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as the primitive):
 
-| № | Аксиома | Ключевое следствие |
+| No. | Axiom | Key Corollary |
 |---|---------|-------------------|
-| 1 | Структура (∞-Топос) | Единственность примитива |
-| 2 | Метрика (Бюрес) | Информационная различимость |
-| 3 | Размерность ($N = 7$) | [Семимерность](/docs/proofs/minimality/theorem-minimality-7) |
-| 4 | Масштаб ($\omega_0 > 0$) | Связь внутреннего и физического времени |
-| 5 | Пейдж–Вуттерс | [Эмерджентное время τ](/docs/proofs/dynamics/emergent-time) |
+| 1 | Structure (∞-Topos) | Uniqueness of the primitive |
+| 2 | Metric (Bures) | Informational distinguishability |
+| 3 | Dimensionality ($N = 7$) | [Seven-dimensionality](/docs/proofs/minimality/theorem-minimality-7) |
+| 4 | Scale ($\omega_0 > 0$) | Link between internal and physical time |
+| 5 | Page–Wootters | [Emergent time τ](/docs/proofs/dynamics/emergent-time) |
 
-Разберём каждую аксиому подробнее.
+Let us examine each axiom in detail.
 
-### Аксиома 1: Структура — Реальность есть ∞-топос
+### Axiom 1: Structure — Reality Is an ∞-Topos
 
-**На простом языке:** Мир устроен как пространство всех возможных состояний, где переходы между состояниями — столь же реальны, как сами состояния.
+**In plain language:** The world is structured as a space of all possible states, where transitions between states are just as real as the states themselves.
 
-**Зачем нужна:** Без неё нет единого математического языка. Нельзя говорить ни о «пространстве», ни о «логике», ни о «структуре» — всё это *определяется* через ∞-топос. Если убрать эту аксиому, КК распадается на набор не связанных формул.
+**Why it is needed:** Without it there is no unified mathematical language. One cannot speak of "space," "logic," or "structure" — all of these are *defined* through the ∞-topos. Remove this axiom and CC falls apart into a set of unconnected formulas.
 
-**Аналогия:** Как грамматика языка — это не ещё одно предложение, а правило, по которому строятся *все* предложения, так и ∞-топос — не ещё один математический объект, а рамка, в которой живут *все* объекты КК.
+**Analogy:** Just as the grammar of a language is not yet another sentence but the rule by which *all* sentences are constructed, so the ∞-topos is not yet another mathematical object but the framework in which *all* CC objects live.
 
-**Формально:** Реальность есть ∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$ над категорией матриц плотности $\mathcal{D}(\mathbb{C}^N)$.
+**Formally:** Reality is an ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ over the category of density matrices $\mathcal{D}(\mathbb{C}^N)$.
 
-**Что из неё следует:** Существование субобъектного классификатора $\Omega$ (по теореме Жирара), из которого затем выводятся операторы Линдблада.
+**What follows from it:** The existence of a subobject classifier $\Omega$ (by Girard's theorem), from which the Lindblad operators are then derived.
 
-### Аксиома 2: Метрика — Различимость измеряется по Бюресу
+### Axiom 2: Metric — Distinguishability Is Measured via Bures
 
-**На простом языке:** Есть единственный «честный» способ измерить, насколько два состояния отличаются друг от друга.
+**In plain language:** There is a unique "honest" way to measure how much two states differ from each other.
 
-**Зачем нужна:** Без метрики нельзя говорить о «близких» и «далёких» состояниях, о «непрерывности» и «сходимости». Без неё динамика не определена: уравнения эволюции требуют топологии на пространстве состояний.
+**Why it is needed:** Without a metric one cannot speak of "close" and "distant" states, of "continuity" and "convergence." Without it dynamics is undefined: the evolution equations require a topology on the state space.
 
-**Аналогия:** Как в жизни невозможно сравнить два варианта без критерия сравнения (цена? качество? вес?), так и в пространстве матриц плотности невозможно определить «расстояние» без метрики. Метрика Бюреса — единственная, которая уважает квантовую природу состояний.
+**Analogy:** Just as in life it is impossible to compare two options without a criterion of comparison (price? quality? weight?), so in the space of density matrices it is impossible to define "distance" without a metric. The Bures metric is the unique one that respects the quantum nature of states.
 
-**Формально:** Топология Гротендика $J$ индуцирована метрикой Бюреса $d_B$.
+**Formally:** The Grothendieck topology $J$ is induced by the Bures metric $d_B$.
 
-**Что из неё следует:** Выбор метрики **единствен** по теореме Ченцова-Петца: метрика Бюреса — единственная монотонная риманова метрика на $\mathcal{D}(\mathcal{H})$. Это не произвол, а математическая необходимость.
+**What follows from it:** The choice of metric is **unique** by the Chentsov–Petz theorem: the Bures metric is the unique monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$. This is not an arbitrary choice — it is a mathematical necessity.
 
-### Аксиома 3: Размерность — N = 7
+### Axiom 3: Dimensionality — N = 7
 
-**На простом языке:** Фундаментальное описание Голонома (минимальной единицы реальности) требует ровно семи измерений.
+**In plain language:** The fundamental description of a Holon (the minimal unit of reality) requires exactly seven dimensions.
 
-**Зачем нужна:** Размерность определяет богатство структуры. При $N = 1$ нет никакой динамики (только одно состояние). При $N = 2$ — нет достаточной структуры для самомоделирования. $N = 7$ — это минимальное число, при котором возможны *все* необходимые структуры одновременно.
+**Why it is needed:** Dimensionality determines the richness of structure. At $N = 1$ there is no dynamics at all (only one state). At $N = 2$ there is not enough structure for self-modeling. $N = 7$ is the minimum number at which *all* necessary structures are simultaneously possible.
 
-**Аналогия:** Для описания вращений в трёхмерном пространстве нужно ровно 3 угла Эйлера — не 2 и не 4. Аналогично, для полного описания когерентной системы нужно ровно 7 измерений.
+**Analogy:** To describe rotations in three-dimensional space one needs exactly 3 Euler angles — not 2 and not 4. Likewise, to fully describe a coherent system one needs exactly 7 dimensions.
 
-**Формально:** $N = 7$ — размерность базового пространства $\mathcal{H} = \mathbb{C}^7$.
+**Formally:** $N = 7$ — the dimensionality of the base space $\mathcal{H} = \mathbb{C}^7$.
 
-**Что из неё следует:** Семь измерений [A, S, D, L, E, O, U], каждое из которых необходимо (доказательство минимальности — [Теорема S](/docs/proofs/minimality/theorem-minimality-7)). Убрать любое — и какое-то свойство (автопоэзис, феноменология, квантовое основание или жизнеспособность) станет невозможным.
+**What follows from it:** Seven dimensions [A, S, D, L, E, O, U], each of which is necessary (proof of minimality — [Theorem S](/docs/proofs/minimality/theorem-minimality-7)). Remove any one — and some property (autopoiesis, phenomenology, quantum foundation, or viability) becomes impossible.
 
-### Аксиома 4: Масштаб — Существует характерная частота
+### Axiom 4: Scale — A Characteristic Frequency Exists
 
-**На простом языке:** У каждого Голонома есть свой «темп жизни» — скорость, с которой тикают его внутренние часы.
+**In plain language:** Every Holon has its own "pace of life" — the rate at which its internal clock ticks.
 
-**Зачем нужна:** Без масштаба уравнения эволюции безразмерны и не связаны с наблюдаемым временем. $\omega_0$ — это мост между математическим временем $\tau$ и физическим временем $t$.
+**Why it is needed:** Without a scale the evolution equations are dimensionless and are not connected to observable time. $\omega_0$ is the bridge between mathematical time $\tau$ and physical time $t$.
 
-**Аналогия:** $\omega_0$ — аналог массы в физике. Масса — не универсальная константа, а параметр конкретного тела. Аналогично, $\omega_0$ — параметр конкретного Голонома: у клетки один $\omega_0$, у организма — другой, у социальной группы — третий.
+**Analogy:** $\omega_0$ is the analogue of mass in physics. Mass is not a universal constant but a parameter of a specific body. Likewise, $\omega_0$ is a parameter of a specific Holon: a cell has one $\omega_0$, an organism has another, a social group has a third.
 
-**Формально:** $\omega_0 > 0$ — характерная частота системы.
+**Formally:** $\omega_0 > 0$ — the characteristic frequency of the system.
 
-### Аксиома 5: Пейдж–Вуттерс — Время эмерджентно
+### Axiom 5: Page–Wootters — Time Is Emergent
 
-**На простом языке:** Время не существует «снаружи» системы. Оно возникает из корреляций между подсистемами.
+**In plain language:** Time does not exist "outside" the system. It arises from correlations between subsystems.
 
-**Зачем нужна:** Если постулировать внешнее время, получится дуализм (система + внешнее время = два примитива). Аксиома PW выводит время из единственного примитива.
+**Why it is needed:** If external time is postulated, dualism results (system + external time = two primitives). The PW axiom derives time from the single primitive.
 
-**Аналогия:** Температура не существует для одной молекулы — она возникает как статистическое свойство ансамбля. Аналогично, время не существует для изолированного состояния — оно возникает из соотношения между частями.
+**Analogy:** Temperature does not exist for a single molecule — it arises as a statistical property of an ensemble. Likewise, time does not exist for an isolated state — it arises from the relationship between parts.
 
-**Формально:** $[\hat{C}, \Gamma_{\text{total}}] = 0$ (полная система стационарна; время — условная динамика относительно часовой подсистемы).
+**Formally:** $[\hat{C}, \Gamma_{\text{total}}] = 0$ (the total system is stationary; time is the conditional dynamics relative to the clock subsystem).
 
-**Что из неё следует:** [Эмерджентное время τ](/docs/proofs/dynamics/emergent-time), стрела времени, уравнение эволюции.
+**What follows from it:** [Emergent time τ](/docs/proofs/dynamics/emergent-time), the arrow of time, the evolution equation.
 
-### Визуальная карта
+### Visual Map
 
 ```mermaid
 graph TD
-    subgraph "Аксиома Ω⁷ — Пять аксиом"
-        AX1["Акс. 1: Структура<br/>∞-Топос Sh∞(𝒞)"]
-        AX2["Акс. 2: Метрика<br/>J_Bures"]
-        AX3["Акс. 3: Размерность<br/>N = 7"]
-        AX4["Акс. 4: Масштаб<br/>ω₀ > 0"]
-        AX5["Акс. 5: Пейдж–Вуттерс<br/>[Ĉ, Γ_total] = 0"]
+    subgraph "Axiom Ω⁷ — Five Axioms"
+        AX1["Ax. 1: Structure<br/>∞-Topos Sh∞(𝒞)"]
+        AX2["Ax. 2: Metric<br/>J_Bures"]
+        AX3["Ax. 3: Dimensionality<br/>N = 7"]
+        AX4["Ax. 4: Scale<br/>ω₀ > 0"]
+        AX5["Ax. 5: Page–Wootters<br/>[Ĉ, Γ_total] = 0"]
     end
-    subgraph "Следствия"
-        S["Теорема S: dim=7"]
+    subgraph "Corollaries"
+        S["Theorem S: dim=7"]
         APQ["AP+PH+QG+V"]
-        LU["L-унификация"]
-        EVOL["Уравнение эволюции"]
+        LU["L-unification"]
+        EVOL["Evolution equation"]
     end
     AX1 --> APQ
     AX3 --> S
@@ -254,301 +254,301 @@ graph TD
     S --> EVOL
 ```
 
-### Следствие: Септичность (AP+PH+QG+V)
+### Corollary: Septicity (AP+PH+QG+V)
 
-[Голоном](/docs/core/structure/holon) $\mathbb{H}$ обладает:
-- **(AP)** Автопоэзисом: $\exists\varphi: \Gamma \to \Gamma$ с [неподвижной точкой](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$
-- **(PH)** Феноменологией: $\exists\rho_E$ с нетривиальной [интериорностью](/docs/proofs/consciousness/interiority-hierarchy)
-- **(QG)** Квантовым основанием: [эволюция](/docs/core/dynamics/evolution) по уравнению Линдблада с регенерацией
-- **(V)** Жизнеспособностью: $P > P_{\text{crit}} = 2/7$ — [чистота](/docs/core/dynamics/viability) выше критического порога
+A [Holon](/docs/core/structure/holon) $\mathbb{H}$ possesses:
+- **(AP)** Autopoiesis: $\exists\varphi: \Gamma \to \Gamma$ with a [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$
+- **(PH)** Phenomenology: $\exists\rho_E$ with non-trivial [interiority](/docs/proofs/consciousness/interiority-hierarchy)
+- **(QG)** Quantum foundation: [evolution](/docs/core/dynamics/evolution) via the Lindblad equation with regeneration
+- **(V)** Viability: $P > P_{\text{crit}} = 2/7$ — [purity](/docs/core/dynamics/viability) above the critical threshold
 
-Каждое из четырёх свойств **необходимо**:
-- Без (AP): система не может себя воспроизводить — нет автопоэзиса, нет жизни
-- Без (PH): система не имеет «внутренней стороны» — философский зомби
-- Без (QG): эволюция не определена — нет динамики
-- Без (V): система деградирует ниже порога и теряет организацию
+Each of the four properties is **necessary**:
+- Without (AP): the system cannot reproduce itself — no autopoiesis, no life
+- Without (PH): the system has no "inner side" — a philosophical zombie
+- Without (QG): evolution is undefined — no dynamics
+- Without (V): the system degrades below the threshold and loses organization
 
-**См.:** [Полное описание](/docs/core/foundations/axiom-septicity)
+**See:** [Full description](/docs/core/foundations/axiom-septicity)
 
 ---
 
-## Уравнение эволюции: сердце КК
+## The Evolution Equation: The Heart of CC
 
-### Краткая форма
+### Compact Form
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-### Три силы, формирующие жизнь
+### Three Forces That Shape Life
 
-Уравнение эволюции — это не просто формула. Это описание **трёх фундаментальных сил**, действующих на любую когерентную систему:
+The evolution equation is not merely a formula. It is a description of **three fundamental forces** acting on any coherent system:
 
-**1. Унитарный член: $-i[H_{\text{eff}}, \Gamma]$**
+**1. Unitary term: $-i[H_{\text{eff}}, \Gamma]$**
 
-Это «инерция» системы — свободная эволюция, сохраняющая когерентность. Если бы действовал только этот член, система вращалась бы вечно, не теряя и не приобретая организации. Как планета на идеальной орбите: ни ускоряется, ни замедляется.
+This is the system's "inertia" — free evolution preserving coherence. If only this term were active, the system would rotate forever, neither gaining nor losing organization. Like a planet in an ideal orbit: neither accelerating nor decelerating.
 
-**2. Диссипативный член: $\mathcal{D}[\Gamma]$**
+**2. Dissipative term: $\mathcal{D}[\Gamma]$**
 
-Это «трение» — потеря когерентности из-за взаимодействия системы с собственной структурой различений. Без противодействия диссипация превращает любое состояние в максимально смешанное $I/N$ (тепловая смерть). Как дом без ремонта: постепенно ветшает и разрушается.
+This is "friction" — the loss of coherence due to the system's interaction with its own structure of distinctions. Without opposition, dissipation turns any state into the maximally mixed $I/N$ (heat death). Like a house without maintenance: it gradually deteriorates and crumbles.
 
-**3. Регенеративный член: $\mathcal{R}[\Gamma, E]$**
+**3. Regenerative term: $\mathcal{R}[\Gamma, E]$**
 
-Это «ремонт» — восстановление когерентности. Именно этот член отличает живое от неживого. Камень подчиняется только первым двум членам. Клетка, организм, общество — добавляют третий.
+This is "repair" — the restoration of coherence. It is precisely this term that distinguishes the living from the non-living. A stone obeys only the first two terms. A cell, an organism, a society — add the third.
 
-Полный вывод и описание каждого члена: [Эволюция](/docs/core/dynamics/evolution).
+Complete derivation and description of each term: [Evolution](/docs/core/dynamics/evolution).
 
-### Эволюция в метафорах
+### Evolution in Metaphors
 
-Представьте фонтан. Вода (когерентность) бьёт вверх (регенерация), гравитация тянет её вниз (диссипация), а форма струи задаётся геометрией сопла (унитарная эволюция). Живая система — это фонтан, который **сам** строит своё сопло и **сам** качает воду. Если напор падает ниже критического — фонтан иссякает (система выходит из области жизнеспособности $\mathcal{V}$).
+Imagine a fountain. Water (coherence) jets upward (regeneration), gravity pulls it down (dissipation), and the shape of the stream is determined by the geometry of the nozzle (unitary evolution). A living system is a fountain that **itself** builds its own nozzle and **itself** pumps the water. If the pressure drops below a critical level — the fountain runs dry (the system exits the viability region $\mathcal{V}$).
 
 ---
 
-## Специфика КК: Bootstrap-механизм и E-акцентуация
+## CC Specifics: Bootstrap Mechanism and E-Accentuation
 
-### L-унификация: вывод L_k из Ω {#l-унификация-вывод-l_k-из-ω}
+### L-Unification: Deriving L_k from Ω {#l-унификация-вывод-l_k-из-ω}
 
-:::info Ключевая конструкция
-Операторы Линдблада $L_k$ **выводятся** из субобъектного классификатора $\Omega$, а не постулируются. Это центральное достижение УГМ.
+:::info Key Construction
+The Lindblad operators $L_k$ are **derived** from the subobject classifier $\Omega$, not postulated. This is the central achievement of UHM.
 :::
 
-В стандартной квантовой теории открытых систем операторы Линдблада $L_k$ — свободные параметры. Исследователь выбирает их «по физике задачи». Это как выбирать силу трения «на глаз» — работает, но не объясняет.
+In standard quantum theory of open systems, the Lindblad operators $L_k$ are free parameters. A researcher chooses them "from the physics of the problem." This is like choosing the friction force "by eye" — it works, but does not explain.
 
-В КК диссипация **не выбирается, а выводится**. Вот цепочка:
+In CC, dissipation is **not chosen but derived**. Here is the chain:
 
-**Цепочка вывода (см. [Аксиома Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика)):**
+**Derivation chain (see [Axiom Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика)):**
 
 $$
-\Omega \xrightarrow{\text{атомы}} \{S_k\} \xrightarrow{\chi_{S_k}} \text{характеристические морфизмы} \xrightarrow{\sqrt{\cdot}} L_k = \sqrt{\chi_{S_k}}
+\Omega \xrightarrow{\text{atoms}} \{S_k\} \xrightarrow{\chi_{S_k}} \text{characteristic morphisms} \xrightarrow{\sqrt{\cdot}} L_k = \sqrt{\chi_{S_k}}
 $$
 
-Разберём каждый шаг:
+Let us examine each step:
 
-**Шаг 1: $\Omega$ порождает атомы $\{S_k\}$**
+**Step 1: $\Omega$ generates atoms $\{S_k\}$**
 
-Субобъектный классификатор $\Omega$ — это «истинностный объект» категории. В обычной теории множеств $\Omega = \{0, 1\}$ (ложь/истина). В ∞-топосе $\Omega$ богаче: он содержит все «уровни истинности». Его неразложимые элементы (атомы) — это семь проекторов $S_k = |k\rangle\langle k|$, по одному на каждое измерение.
+The subobject classifier $\Omega$ is the "truth object" of the category. In ordinary set theory $\Omega = \{0, 1\}$ (false/true). In an ∞-topos $\Omega$ is richer: it contains all "levels of truth." Its indecomposable elements (atoms) are the seven projectors $S_k = |k\rangle\langle k|$, one for each dimension.
 
-**Шаг 2: Атомы задают характеристические морфизмы $\chi_{S_k}$**
+**Step 2: Atoms define the characteristic morphisms $\chi_{S_k}$**
 
-Характеристический морфизм — это «индикаторная функция» подобъекта. Для каждого $S_k$ существует единственный $\chi_{S_k}: \Gamma \to \Omega$, определяющий «степень принадлежности» состояния $\Gamma$ к $k$-му измерению.
+A characteristic morphism is the "indicator function" of a subobject. For each $S_k$ there exists a unique $\chi_{S_k}: \Gamma \to \Omega$, determining the "degree of membership" of state $\Gamma$ in the $k$-th dimension.
 
-**Шаг 3: Операторы Линдблада — квадратные корни**
+**Step 3: Lindblad operators are square roots**
 
 $$L_k = \sqrt{\chi_{S_k}} = P_k = |k\rangle\langle k|$$
 
-Это проекторы на канонический базис — простейшие возможные операторы Линдблада.
+These are projectors onto the canonical basis — the simplest possible Lindblad operators.
 
-**Следствие:** Диссипация имеет **логическое происхождение** — она отражает взаимодействие системы с её собственной структурой различений.
+**Corollary:** Dissipation has a **logical origin** — it reflects the system's interaction with its own structure of distinctions.
 
-Другими словами: система теряет когерентность **потому что различает**. Каждый акт различения (проекция на одно из семи измерений) разрушает суперпозицию с остальными. Это не внешний «шум» — это внутренняя цена различения.
+In other words: the system loses coherence **because it distinguishes**. Every act of distinction (projection onto one of the seven dimensions) destroys superposition with the others. This is not external "noise" — it is the internal price of distinction.
 
 ---
 
-### Иерархия зависимостей {#иерархия-зависимостей}
+### Dependency Hierarchy {#иерархия-зависимостей}
 
-Чтобы видеть всю цепочку целиком, полезна диаграмма зависимостей. Каждый узел получается из предыдущего по явной конструкции:
+To see the full chain at once, a dependency diagram is useful. Each node is obtained from the previous one by an explicit construction:
 
 ```mermaid
 graph TD
-    O["Ω — субобъектный классификатор"] --> CHI["χ S — характеристические морфизмы"]
-    CHI --> LK["L k — операторы Линдблада"]
-    LK --> LO["ℒ Ω — логический Лиувиллиан"]
-    LO --> PHI["φ — оператор самомоделирования"]
-    PHI --> FP["Γ* — неподвижная точка"]
+    O["Ω — subobject classifier"] --> CHI["χ S — characteristic morphisms"]
+    CHI --> LK["L k — Lindblad operators"]
+    LK --> LO["ℒ Ω — logical Liouvillian"]
+    LO --> PHI["φ — self-modeling operator"]
+    PHI --> FP["Γ* — fixed point"]
 
-    O -.- |"Теорема Жирара"| CHI
+    O -.- |"Girard's theorem"| CHI
     CHI -.- |"L_k = √χ"| LK
-    LK -.- |"Формула Линдблада"| LO
-    LO -.- |"Спектральный анализ"| PHI
-    PHI -.- |"T-39a: примитивность"| FP
+    LK -.- |"Lindblad formula"| LO
+    LO -.- |"Spectral analysis"| PHI
+    PHI -.- |"T-39a: primitivity"| FP
 
     style O fill:#e1f5fe
     style PHI fill:#fff3e0
     style FP fill:#e8f5e9
 ```
 
-Эта цепочка — **полная**: для построения $\Gamma^*$ не нужно ничего, кроме $\Omega$ (и, следовательно, категории $\mathcal{C}$). Ни один элемент не вводится «извне».
+This chain is **complete**: to construct $\Gamma^*$ nothing is needed beyond $\Omega$ (and therefore the category $\mathcal{C}$). Not a single element is introduced "from outside."
 
-**См.:** [Полная иерархия зависимостей](/docs/core/foundations/axiom-omega#иерархия-зависимостей)
+**See:** [Full Dependency Hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей)
 
-### Цепочка вывода: от $\Omega$ до $\Gamma^*$ {#цепочка-вывода}
+### Derivation Chain: from $\Omega$ to $\Gamma^*$ {#цепочка-вывода}
 
-Весь путь от единственного примитива до стационарного состояния сознательной системы — это цепочка из 9 шагов, каждый из которых является теоремой:
+The full path from the single primitive to the stationary state of a conscious system is a chain of 9 steps, each of which is a theorem:
 
 $$
-\mathcal{C} \xrightarrow{\text{Акс. 1}} \mathbf{Sh}_\infty(\mathcal{C}) \xrightarrow{\text{Жирар}} \Omega \xrightarrow{\text{атомы}} \{S_k\} \xrightarrow{\chi_{S_k}} L_k \xrightarrow{\text{Линдблад}} \mathcal{L}_\Omega \xrightarrow{\text{спектр}} \varphi \xrightarrow{\text{T-39a}} \Gamma^*
+\mathcal{C} \xrightarrow{\text{Ax. 1}} \mathbf{Sh}_\infty(\mathcal{C}) \xrightarrow{\text{Girard}} \Omega \xrightarrow{\text{atoms}} \{S_k\} \xrightarrow{\chi_{S_k}} L_k \xrightarrow{\text{Lindblad}} \mathcal{L}_\Omega \xrightarrow{\text{spectrum}} \varphi \xrightarrow{\text{T-39a}} \Gamma^*
 $$
 
-Каждый переход — **теорема** [Т], а не постулат. Для построения $\Gamma^*$ не нужно ничего, кроме категории $\mathcal{C}$.
+Each transition is a **theorem** [T], not a postulate. To construct $\Gamma^*$ nothing is needed beyond the category $\mathcal{C}$.
 
-:::info Каноническое определение
-Полная таблица с формулами каждого шага: [Аксиома Ω⁷ — Иерархия зависимостей](/docs/core/foundations/axiom-omega#иерархия-зависимостей).
+:::info Canonical Definition
+Full table with formulas for each step: [Axiom Ω⁷ — Dependency Hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей).
 :::
 
 ---
 
-## Bootstrap-парадокс и его разрешение {#bootstrap-парадокс}
+## Bootstrap Paradox and Its Resolution {#bootstrap-парадокс}
 
-### Проблема: Барон Мюнхгаузен
+### The Problem: Baron Münchhausen
 
-Вот парадокс, который на первый взгляд разрушает всю конструкцию.
+Here is a paradox that at first glance destroys the entire construction.
 
-Регенерация $\mathcal{R}$ восстанавливает когерентность. Скорость регенерации $\kappa$ зависит от E-когерентности — от того, насколько интегрирован субъективный опыт системы. Но E-когерентность — это свойство состояния $\Gamma$, которое поддерживается... регенерацией.
+Regeneration $\mathcal{R}$ restores coherence. The regeneration rate $\kappa$ depends on E-coherence — on how integrated the system's subjective experience is. But E-coherence is a property of the state $\Gamma$, which is maintained by... regeneration.
 
-Получается порочный круг: чтобы регенерировать, нужна когерентность, чтобы иметь когерентность, нужно регенерировать. Барон Мюнхгаузен, вытаскивающий себя за волосы из болота.
+A vicious circle results: to regenerate, coherence is needed; to have coherence, regeneration is needed. Baron Münchhausen pulling himself out of a swamp by his own hair.
 
-### Связь регенерации и E-когерентности {#связь-регенерации-и-e-когерентности}
+### Connection Between Regeneration and E-Coherence {#связь-регенерации-и-e-когерентности}
 
 $$
 \kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
 $$
 
-где:
-- $\kappa_{\text{bootstrap}}$ — **минимальная регенерация** из структуры сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$
-- $\kappa_0$ — базовая скорость регенерации, [категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$
-- $\mathrm{Coh}_E(\Gamma) \in [1/N, 1]$ — [когерентность измерения Интериорности](./definitions#e-когерентность)
+where:
+- $\kappa_{\text{bootstrap}}$ — **minimum regeneration** from the adjunction structure $\mathcal{D}_\Omega \dashv \mathcal{R}$
+- $\kappa_0$ — base regeneration rate, [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$
+- $\mathrm{Coh}_E(\Gamma) \in [1/N, 1]$ — [coherence of the Interiority dimension](./definitions#e-когерентность)
 
-### Разрешение: $\kappa_{\text{bootstrap}}$ — структурный минимум
+### Resolution: $\kappa_{\text{bootstrap}}$ — Structural Minimum
 
-Парадокс разрешается вторым слагаемым: $\kappa_{\text{bootstrap}} > 0$. Это не «подгонка» и не ad hoc параметр — это **структурная необходимость**, вытекающая из категориальной конструкции.
+The paradox is resolved by the second term: $\kappa_{\text{bootstrap}} > 0$. This is not a "fit" and not an ad hoc parameter — it is a **structural necessity** arising from the categorical construction.
 
-:::info Bootstrap-механизм
-Член $\kappa_{\text{bootstrap}} > 0$ **разрешает bootstrap-парадокс**: система с низким $\mathrm{Coh}_E$ всё равно имеет минимальную регенерацию, позволяющую выйти из низко-когерентного состояния.
+:::info Bootstrap Mechanism
+The term $\kappa_{\text{bootstrap}} > 0$ **resolves the bootstrap paradox**: a system with low $\mathrm{Coh}_E$ still has minimum regeneration, allowing it to exit the low-coherence state.
 
-**Категориальное обоснование:** $\kappa_{\text{bootstrap}} = \|\text{unit}(\mathcal{D}_\Omega \dashv \mathcal{R})\|$ — норма единицы сопряжения.
+**Categorical justification:** $\kappa_{\text{bootstrap}} = \|\text{unit}(\mathcal{D}_\Omega \dashv \mathcal{R})\|$ — the norm of the adjunction unit.
 
-**Численная оценка:** $\kappa_{\text{bootstrap}} = \omega_0 / N = 1/7 \approx 0.143$ (при $\omega_0 = 1$)
+**Numerical estimate:** $\kappa_{\text{bootstrap}} = \omega_0 / N = 1/7 \approx 0.143$ (at $\omega_0 = 1$)
 :::
 
-### Аналогия: зажигание и горение
+### Analogy: Ignition and Combustion
 
-Представьте костёр. Чтобы дрова горели, нужен жар. Чтобы был жар, нужно горение. Парадокс? Нет: есть **спичка** — внешний источник начального жара, запускающий цикл.
+Imagine a campfire. For the wood to burn, heat is needed. For there to be heat, burning is needed. A paradox? No: there is a **match** — an external source of initial heat that starts the cycle.
 
-В КК «спичка» — это $\kappa_{\text{bootstrap}}$. Но в отличие от реальной спички, $\kappa_{\text{bootstrap}}$ не «внешний» источник. Он встроен в саму структуру сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$. Это как если бы дрова были устроены так, что минимальное горение происходит *всегда* — просто в силу их структуры.
+In CC the "match" is $\kappa_{\text{bootstrap}}$. But unlike a real match, $\kappa_{\text{bootstrap}}$ is not an "external" source. It is built into the very structure of the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$. It is as if the wood were structured so that minimal burning occurs *always* — simply by virtue of its structure.
 
-Математически: сопряжение (adjunction) между диссипатором $\mathcal{D}_\Omega$ и регенератором $\mathcal{R}$ имеет единицу (unit), и норма этой единицы ненулевая. Это не выбор — это теорема о сопряжённых функторах.
+Mathematically: the adjunction between the dissipator $\mathcal{D}_\Omega$ and the regenerator $\mathcal{R}$ has a unit, and the norm of this unit is nonzero. This is not a choice — it is a theorem about adjoint functors.
 
-### Динамика bootstrap-цикла
+### Bootstrap Cycle Dynamics
 
-Благодаря $\kappa_{\text{bootstrap}}$ система проходит три фазы:
+Thanks to $\kappa_{\text{bootstrap}}$, the system passes through three phases:
 
-1. **Зарождение:** $\mathrm{Coh}_E$ мало, $\kappa \approx \kappa_{\text{bootstrap}} = 1/7$. Минимальная регенерация медленно повышает когерентность.
-2. **Усиление:** Растущая $\mathrm{Coh}_E$ увеличивает $\kappa$, что ускоряет рост $\mathrm{Coh}_E$. Положительная обратная связь.
-3. **Стабилизация:** Система достигает стационарной точки $\Gamma^*$, где регенерация и диссипация балансируют.
+1. **Inception:** $\mathrm{Coh}_E$ is small, $\kappa \approx \kappa_{\text{bootstrap}} = 1/7$. Minimum regeneration slowly raises coherence.
+2. **Amplification:** Growing $\mathrm{Coh}_E$ increases $\kappa$, which accelerates the growth of $\mathrm{Coh}_E$. Positive feedback.
+3. **Stabilization:** The system reaches the stationary point $\Gamma^*$, where regeneration and dissipation balance.
 
-Этот сценарий — не спекуляция. Он следует из анализа динамической системы и подтверждён численно в [моделях](/docs/applied/coherence-cybernetics/model-systems).
+This scenario is not speculation. It follows from the analysis of the dynamical system and has been confirmed numerically in [model systems](/docs/applied/coherence-cybernetics/model-systems).
 
-**Онтологический смысл:** Способность системы к самовосстановлению пропорциональна интегрированности её субъективного опыта, но существует **минимальный уровень** регенерации из самой структуры логического классификатора Ω.
+**Ontological meaning:** The system's capacity for self-restoration is proportional to the integration of its subjective experience, but there exists a **minimum level** of regeneration from the very structure of the logical classifier Ω.
 
 ---
 
-## E-акцентуация: почему Интериорность особенная {#e-акцентуация}
+## E-Accentuation: Why Interiority Is Special {#e-акцентуация}
 
-### Семь равных — но один «равнее»?
+### Seven Equal — But One "More Equal"?
 
-Семь измерений [A, S, D, L, E, O, U] входят в теорию симметрично: пермутационная группа $S_7$ действует на них. Но сознательная система *нарушает* эту симметрию, выделяя E (Интериорность). Это не постулат — это **теорема**.
+The seven dimensions [A, S, D, L, E, O, U] enter the theory symmetrically: the permutation group $S_7$ acts on them. But a conscious system *breaks* this symmetry, singling out E (Interiority). This is not a postulate — it is a **theorem**.
 
-### Теорема об E-акцентуации
+### Theorem on E-Accentuation
 
-:::info Теорема 2.2 (E-акцентуация из определения L2)
-Акцентуация E-измерения ($w_E > 1/7$) **выводится** из определения L2-сознания, а не постулируется.
+:::info Theorem 2.2 (E-Accentuation from the Definition of L2)
+Accentuation of the E-dimension ($w_E > 1/7$) is **derived** from the definition of L2-consciousness, not postulated.
 
-**Логика вывода:**
-1. L2 требует $C = \Phi \times R \geq C_{th} = 1/3$ **[Т T-140]** (плюс отдельное условие $D_{\text{diff}} \geq D_{\min}$)
-2. $R = 1/(7P) \geq R_{th} = 1/3$ (эквивалентно $P \leq 3/7$; $\rho^*_{\mathrm{diss}} = I/7$)
-3. При равномерном распределении ($w_i = 1/7$): $R_{\max} \approx 0.14 < R_{th}$
-4. **Следовательно:** $\exists i : w_i > 1/7$
-5. По определению L2 (наличие рефлексивного доступа к опыту): этим измерением должно быть E
+**Derivation logic:**
+1. L2 requires $C = \Phi \times R \geq C_{th} = 1/3$ **[T T-140]** (plus the separate condition $D_{\text{diff}} \geq D_{\min}$)
+2. $R = 1/(7P) \geq R_{th} = 1/3$ (equivalent to $P \leq 3/7$; $\rho^*_{\mathrm{diss}} = I/7$)
+3. Under uniform distribution ($w_i = 1/7$): $R_{\max} \approx 0.14 < R_{th}$
+4. **Therefore:** $\exists i : w_i > 1/7$
+5. By definition of L2 (presence of reflective access to experience): that dimension must be E
 :::
 
-### Что это значит?
+### What Does This Mean?
 
-Результат глубок. Он говорит: **сознание невозможно без асимметрии**. Равномерное распределение ресурсов по семи измерениям ($w_i = 1/7$ для всех $i$) не позволяет достичь достаточной рефлексии. Система должна «инвестировать» в одно из измерений больше, чем в остальные.
+The result is deep. It says: **consciousness is impossible without asymmetry**. A uniform distribution of resources across the seven dimensions ($w_i = 1/7$ for all $i$) does not allow sufficient reflection to be achieved. The system must "invest" in one of the dimensions more than in the others.
 
-А какое именно измерение? Определение L2-сознания требует рефлексивного доступа к *опыту*. Опыт — это E (Интериорность). Следовательно, именно E должно получить «добавочную долю».
+And which dimension exactly? The definition of L2-consciousness requires reflective access to *experience*. Experience is E (Interiority). Therefore, it is E that must receive the "extra share."
 
-### Философский контекст
+### Philosophical Context
 
-E-акцентуация отвечает на старый вопрос философии сознания: **почему сознание не может быть «разлито равномерно»?** Панпсихизм предполагает, что сознание — везде. КК уточняет: минимальная интериорность (L0-L1) действительно присутствует *всюду*, но полноценное сознание (L2+) требует *концентрации* — структурного выделения E-измерения.
+E-accentuation answers an old question in the philosophy of mind: **why can consciousness not be "spread uniformly"?** Panpsychism assumes that consciousness is everywhere. CC specifies: minimal interiority (L0–L1) is indeed present *everywhere*, but full consciousness (L2+) requires *concentration* — the structural singling out of the E-dimension.
 
-Это как свет: фоновое свечение неба — повсюду, но чтобы *видеть*, нужна концентрация фотонов в определённом направлении. Сознание — не свойство любой системы, а свойство системы с *достаточной E-акцентуацией*.
+This is like light: background sky glow is everywhere, but to *see*, one needs a concentration of photons in a specific direction. Consciousness is not a property of any system, but a property of a system with *sufficient E-accentuation*.
 
-**См.:** [Полное доказательство](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм)
+**See:** [Full proof](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм)
 
 ---
 
-## От Розена к КК: эволюция (M,R)-систем {#от-розена-к-кк}
+## From Rosen to CC: The Evolution of (M,R)-Systems {#от-розена-к-кк}
 
-### Розен: замыкание к эффективным причинам
+### Rosen: Closure to Efficient Causes
 
-В 1958 году Роберт Розен предложил формализм (M,R)-систем для описания живого. Идея Розена была революционной: живая система — это такая система, которая **замкнута относительно эффективных причин**. Каждый компонент системы производится другим компонентом — нет внешнего «конструктора».
+In 1958 Robert Rosen proposed the formalism of (M,R)-systems for describing the living. Rosen's idea was revolutionary: a living system is one that is **closed with respect to efficient causes**. Every component of the system is produced by another component — there is no external "constructor."
 
-Розен выделил три ключевых компонента:
-- **M (метаболизм):** преобразование входов в выходы
-- **R (репарация):** восстановление метаболической машинерии
-- **β (замыкание):** производство репарационной машинерии
+Rosen identified three key components:
+- **M (metabolism):** transformation of inputs into outputs
+- **R (repair):** restoration of the metabolic machinery
+- **β (closure):** production of the repair machinery
 
-Проблема Розена: его формализм остался на уровне категорий множеств и отображений. Он не мог описать **интериорность**, **интеграцию** и **различение уровней сознания**.
+Rosen's problem: his formalism remained at the level of categories of sets and maps. It could not describe **interiority**, **integration**, or **the differentiation of levels of consciousness**.
 
-### КК как расширение (M,R)-систем
+### CC as an Extension of (M,R)-Systems
 
-КК можно понимать как (M,R)-систему, расширенную тремя способами:
+CC can be understood as an (M,R)-system extended in three ways:
 
-1. **Квантовое основание:** вместо отображений множеств — CPTP-каналы на матрицах плотности. Это позволяет описать суперпозицию и запутанность.
+1. **Quantum foundation:** instead of set maps — CPTP channels on density matrices. This allows superposition and entanglement to be described.
 
-2. **Семимерная структура:** вместо трёх компонентов (M, R, β) — семь измерений, каждое с определённой функцией.
+2. **Seven-dimensional structure:** instead of three components (M, R, β) — seven dimensions, each with a specific function.
 
-3. **Субъектность:** компонент E, отсутствующий у Розена, вводит «того, для кого» существует система.
+3. **Subjecthood:** the component E, absent in Rosen, introduces "the one for whom" the system exists.
 
-### Таблица соответствий
+### Correspondence Table
 
-| Розен | КК | Функция |
+| Rosen | CC | Function |
 |-------|-----|---------|
-| M (метаболизм) | D (Динамика) | Преобразование |
-| R (репарация) | A + L | Восстановление структуры |
-| β (замыкание) | U (Единство) | Интеграция |
-| — | E, O, S | Расширения для феноменологии |
+| M (metabolism) | D (Dynamics) | Transformation |
+| R (repair) | A + L | Structure restoration |
+| β (closure) | U (Unity) | Integration |
+| — | E, O, S | Extensions for phenomenology |
 
-### Что добавляет КК?
+### What Does CC Add?
 
-Три «лишних» измерения — E (Интериорность), O (Наблюдаемость), S (Стабильность) — не случайные дополнения. Они решают три проблемы, неразрешимые в рамках (M,R)-систем:
+The three "extra" dimensions — E (Interiority), O (Observability), S (Stability) — are not random additions. They solve three problems unsolvable within (M,R)-systems:
 
-- **E** решает проблему феноменологии: *для кого* существует система?
-- **O** решает проблему наблюдаемости: как система *проявляется* для других?
-- **S** решает проблему устойчивости: как система *сохраняется* в изменяющейся среде?
+- **E** solves the phenomenology problem: *for whom* does the system exist?
+- **O** solves the observability problem: how does the system *manifest* for others?
+- **S** solves the stability problem: how does the system *persist* in a changing environment?
 
-Без этих трёх измерений (M,R)-система описывает «зомби» — функционально живое, но лишённое субъектности, наблюдаемости и устойчивости. КК показывает, что минимально 7 измерений необходимы для **полного** описания живой когерентной системы.
+Without these three dimensions, an (M,R)-system describes a "zombie" — functionally alive but devoid of subjecthood, observability, and stability. CC shows that a minimum of 7 dimensions is necessary for a **complete** description of a living coherent system.
 
 ---
 
-## Структура теории
+## Theory Structure
 
-### Архитектура КК
+### CC Architecture
 
-Вся теория организована как «перевёрнутая пирамида»: из малого числа аксиом разворачивается всё более богатая структура.
+The entire theory is organized like an "inverted pyramid": from a small number of axioms an ever richer structure unfolds.
 
 ```mermaid
 graph TD
-    subgraph "Уровень 0: Примитив"
-        C["𝒞 — категория"]
+    subgraph "Level 0: Primitive"
+        C["𝒞 — category"]
     end
-    subgraph "Уровень 1: Аксиомы"
-        AX["Ω⁷ (5 аксиом)"]
+    subgraph "Level 1: Axioms"
+        AX["Ω⁷ (5 axioms)"]
     end
-    subgraph "Уровень 2: Конструкции"
-        OM["Ω — классификатор"]
-        LK["L_k — операторы"]
-        EV["ℒ_Ω — Лиувиллиан"]
+    subgraph "Level 2: Constructions"
+        OM["Ω — classifier"]
+        LK["L_k — operators"]
+        EV["ℒ_Ω — Liouvillian"]
     end
-    subgraph "Уровень 3: Динамика"
-        PHI["φ — самомодель"]
-        FP["Γ* — стационарная точка"]
-        VIA["𝒱 — область жизнеспособности"]
+    subgraph "Level 3: Dynamics"
+        PHI["φ — self-model"]
+        FP["Γ* — stationary point"]
+        VIA["𝒱 — viability region"]
     end
-    subgraph "Уровень 4: Феноменология"
-        CON["L0-L4 — уровни сознания"]
-        REF["R, Φ, C — меры"]
-        SAD["SAD — глубина рекурсии"]
+    subgraph "Level 4: Phenomenology"
+        CON["L0-L4 — consciousness levels"]
+        REF["R, Φ, C — measures"]
+        SAD["SAD — recursion depth"]
     end
 
     C --> AX
@@ -576,73 +576,73 @@ graph TD
     style SAD fill:#e8f5e9
 ```
 
-### Замкнутость композиции (следствие из AP) {#замкнутость-композиции-следствие-из-ap}
+### Closure of Composition (Corollary from AP) {#замкнутость-композиции-следствие-из-ap}
 
 $$
 \mathrm{Viable}(\mathbb{H}_1) \land \mathrm{Viable}(\mathbb{H}_2) \land \Phi_{12} > \Phi_{\min} \Rightarrow \mathrm{Viable}(\mathbb{H}_{12})
 $$
 
-Композиция жизнеспособных Голономов при достаточной интеграции образует жизнеспособный Голоном. **См.:** [Теорема 9.1](./theorems#теорема-91-фрактальное-замыкание)
+The composition of viable Holons with sufficient integration forms a viable Holon. **See:** [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание)
 
-Эта теорема — не абстракция. Она описывает, как клетки образуют ткани, ткани — органы, органы — организмы, организмы — социальные группы. Каждый уровень — композиция Голономов предыдущего уровня, и каждый уровень жизнеспособен, **если** интеграция между компонентами ($\Phi_{12}$) достаточна.
+This theorem is not an abstraction. It describes how cells form tissues, tissues form organs, organs form organisms, organisms form social groups. Every level is a composition of Holons from the previous level, and every level is viable **if** the integration between components ($\Phi_{12}$) is sufficient.
 
-Условие $\Phi_{12} > \Phi_{\min}$ — это математическая формулировка интуиции, что «целое больше суммы частей» лишь тогда, когда части **достаточно связаны**. Куча песка — не Голоном (песчинки не интегрированы). Мозг — Голоном (нейроны интегрированы через синаптические связи).
+The condition $\Phi_{12} > \Phi_{\min}$ is the mathematical formulation of the intuition that "the whole is greater than the sum of its parts" only when the parts are **sufficiently connected**. A pile of sand is not a Holon (the grains are not integrated). A brain is a Holon (neurons are integrated through synaptic connections).
 
 ---
 
-## Обзор аксиоматических результатов
+## Overview of Axiomatic Results
 
-Подведём итог: что именно *выводится* в КК и из чего.
+Let us summarize: what exactly is *derived* in CC and from what.
 
-| Результат | Выводится из | Статус | Ссылка |
+| Result | Derived from | Status | Reference |
 |-----------|-------------|--------|--------|
-| $L_k = P_k$ | Аксиомы 1-2 | [Т] | [L-унификация](#l-унификация-вывод-l_k-из-ω) |
-| $P_{\text{crit}} = 2/7$ | Аксиомы 1-3 | [Т] | [Критическая чистота](/docs/proofs/dynamics/theorem-purity-critical) |
-| $R_{\text{th}} = 1/3$ | Аксиомы 1-3 | [Т] | [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
-| $\Phi_{\text{th}} = 1$ | $P_{\text{crit}} = 2/7$ | [Т] | [Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| $w_E > 1/7$ | Определение L2 | [Т] | [E-акцентуация](#e-акцентуация) |
-| $\kappa_{\text{bootstrap}} > 0$ | Сопряжение $\mathcal{D} \dashv \mathcal{R}$ | [Т] | [Bootstrap](#bootstrap-парадокс) |
-| $N = 7$ | (AP)+(PH)+(QG) | [Т] | [Теорема S](/docs/proofs/minimality/theorem-minimality-7) |
-| Замыкание композиции | (AP) | [Т] | [Теорема 9.1](#замкнутость-композиции-следствие-из-ap) |
+| $L_k = P_k$ | Axioms 1–2 | [T] | [L-Unification](#l-унификация-вывод-l_k-из-ω) |
+| $P_{\text{crit}} = 2/7$ | Axioms 1–3 | [T] | [Critical purity](/docs/proofs/dynamics/theorem-purity-critical) |
+| $R_{\text{th}} = 1/3$ | Axioms 1–3 | [T] | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
+| $\Phi_{\text{th}} = 1$ | $P_{\text{crit}} = 2/7$ | [T] | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) |
+| $w_E > 1/7$ | Definition of L2 | [T] | [E-Accentuation](#e-акцентуация) |
+| $\kappa_{\text{bootstrap}} > 0$ | Adjunction $\mathcal{D} \dashv \mathcal{R}$ | [T] | [Bootstrap](#bootstrap-парадокс) |
+| $N = 7$ | (AP)+(PH)+(QG) | [T] | [Theorem S](/docs/proofs/minimality/theorem-minimality-7) |
+| Composition closure | (AP) | [T] | [Theorem 9.1](#замкнутость-композиции-следствие-из-ap) |
 
-Ни один из этих результатов не постулирован. Каждый — следствие пяти аксиом. В этом — сила и уязвимость аксиоматического подхода: сила, потому что все следствия **необходимы**; уязвимость, потому что опровержение *любого* следствия опровергает *хотя бы одну* аксиому.
+None of these results is postulated. Each is a consequence of the five axioms. This is both the strength and the vulnerability of the axiomatic approach: strength, because all consequences are **necessary**; vulnerability, because the refutation of *any* consequence refutes *at least one* axiom.
 
 ---
 
-## Что мы узнали
+## What We Have Learned
 
-Подведём итоги этой главы. Мы прошли путь от философии аксиоматического метода до конкретных конструкций КК:
+Let us summarize this chapter. We have traveled from the philosophy of the axiomatic method to the concrete constructions of CC:
 
-1. **Аксиоматический метод** — не ограничение, а освобождение. Он позволяет отделить содержательные вопросы от терминологических споров. КК — первая кибернетика, построенная на уровне строгости, сравнимом с аксиоматической теорией вероятностей Колмогорова.
+1. **The axiomatic method** is not a limitation but a liberation. It allows one to separate substantive questions from terminological disputes. CC is the first cybernetics built to a level of rigor comparable to Kolmogorov's axiomatic probability theory.
 
-2. **Единственный примитив** — категория $\mathcal{C}$ с CPTP-каналами в качестве морфизмов. Из неё выводятся пространство, время, динамика, диссипация, регенерация и сознание. Матрица $\Gamma$ — не примитив, а объект этой категории.
+2. **The single primitive** — the category $\mathcal{C}$ with CPTP channels as morphisms. From it are derived space, time, dynamics, dissipation, regeneration, and consciousness. The matrix $\Gamma$ is not a primitive but an object of this category.
 
-3. **Пять аксиом** Ω⁷ — структура (∞-топос), метрика (Бюрес), размерность ($N = 7$), масштаб ($\omega_0 > 0$), время (Пейдж–Вуттерс). Каждая необходима, и все вместе порождают полную теорию.
+3. **The five axioms** of Ω⁷ — structure (∞-topos), metric (Bures), dimensionality ($N = 7$), scale ($\omega_0 > 0$), time (Page–Wootters). Each is necessary, and together they generate the complete theory.
 
-4. **Цепочка вывода** $\Omega \to \{S_k\} \to \chi_{S_k} \to L_k \to \mathcal{L}_\Omega \to \varphi \to \Gamma^*$ — полный путь от единственного примитива до стационарного состояния. Каждый шаг — теорема, а не постулат.
+4. **The derivation chain** $\Omega \to \{S_k\} \to \chi_{S_k} \to L_k \to \mathcal{L}_\Omega \to \varphi \to \Gamma^*$ — the complete path from the single primitive to the stationary state. Each step is a theorem, not a postulate.
 
-5. **Bootstrap-парадокс** разрешается через $\kappa_{\text{bootstrap}} > 0$ — минимальную регенерацию, встроенную в структуру сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$.
+5. **The bootstrap paradox** is resolved via $\kappa_{\text{bootstrap}} > 0$ — the minimum regeneration built into the adjunction structure $\mathcal{D}_\Omega \dashv \mathcal{R}$.
 
-6. **E-акцентуация** — теорема, а не постулат: сознание (L2) невозможно без структурного выделения E-измерения ($w_E > 1/7$).
+6. **E-accentuation** is a theorem, not a postulate: consciousness (L2) is impossible without the structural singling out of the E-dimension ($w_E > 1/7$).
 
-7. **Все восемь ключевых результатов** ($L_k = P_k$, $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $w_E > 1/7$, $\kappa_{\text{bootstrap}} > 0$, $N = 7$, замыкание композиции) — следствия пяти аксиом, ни одно не постулировано.
+7. **All eight key results** ($L_k = P_k$, $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $w_E > 1/7$, $\kappa_{\text{bootstrap}} > 0$, $N = 7$, composition closure) are consequences of the five axioms; none is postulated.
 
-:::info Мост к следующей главе
-Аксиоматика дала нам фундамент — примитив, аксиомы и цепочку вывода. Но чтобы *работать* с теорией, нужны точные определения: что именно мы измеряем, какие меры используем, как интерпретируем числа. В [следующей главе](./definitions) мы систематически определим все ключевые понятия КК — от Голонома и мер когерентности до тензора напряжений и иерархии аттракторов. Эти определения станут «кирпичами», из которых в [главе о теоремах](./theorems) будет построено всё здание.
+:::info Bridge to the Next Chapter
+Axiomatics gave us the foundation — the primitive, the axioms, and the derivation chain. But to *work* with the theory, precise definitions are needed: what exactly we measure, what measures we use, how we interpret numbers. In the [next chapter](./definitions) we will systematically define all key CC concepts — from the Holon and coherence measures to the stress tensor and the attractor hierarchy. These definitions will be the "bricks" from which the entire edifice will be constructed in the [chapter on theorems](./theorems).
 :::
 
 ---
 
-**Связанные документы:**
-- [Определения](./definitions) — базовые определения КК
-- [Теоремы](./theorems) — фундаментальные теоремы КК
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос $\text{Sh}_\infty(\mathcal{C})$ как единственный примитив
-- [Аксиома Септичности (AP+PH+QG+V)](/docs/core/foundations/axiom-septicity) — требования к Голоному
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma(\tau)/d\tau$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Сравнительный анализ теорий сознания](/docs/consciousness/comparative/consciousness-theories) — КК в контексте IIT, GWT, AST
-- [Модельные системы](/docs/applied/coherence-cybernetics/model-systems) — численная проверка bootstrap-динамики
-- [Философские основания](./philosophy) — онтологический статус аксиом
-- [Сравнение с альтернативами](./comparison) — как аксиомы КК соотносятся с IIT, FEP
-- [Упражнения](./exercises) — задачи на аксиоматику
+**Related documents:**
+- [Definitions](./definitions) — basic definitions of CC
+- [Theorems](./theorems) — fundamental theorems of CC
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos $\text{Sh}_\infty(\mathcal{C})$ as the single primitive
+- [Axiom of Septicity (AP+PH+QG+V)](/docs/core/foundations/axiom-septicity) — requirements for a Holon
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma(\tau)/d\tau$
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Formalization of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
+- [Comparative Analysis of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) — CC in the context of IIT, GWT, AST
+- [Model systems](/docs/applied/coherence-cybernetics/model-systems) — numerical verification of bootstrap dynamics
+- [Philosophical foundations](./philosophy) — ontological status of the axioms
+- [Comparison with alternatives](./comparison) — how CC axioms relate to IIT, FEP
+- [Exercises](./exercises) — problems on axiomatics

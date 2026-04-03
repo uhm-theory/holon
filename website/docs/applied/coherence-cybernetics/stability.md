@@ -1,229 +1,229 @@
 ---
 sidebar_position: 19
-title: "Анализ стабильности"
-description: "Гомеостатический режим, бассейн притяжения, спираль смерти, границы пертурбации, параметрическая чувствительность"
+title: "Stability Analysis"
+description: "Homeostatic regime, basin of attraction, death spiral, perturbation bounds, parametric sensitivity"
 ---
 
-# Анализ Стабильности
+# Stability Analysis
 
-> *«Жизнь — это не пребывание в равновесии. Жизнь — это непрерывное сопротивление сваливанию в равновесие.»*
-> — перефразируя Шрёдингера, «Что такое жизнь?» (1944)
+> *"Life is not residing in equilibrium. Life is continuous resistance to falling into equilibrium."*
+> — paraphrasing Schrödinger, "What Is Life?" (1944)
 
 
-:::info Для кого эта глава
-Анализ стабильности голонома: радиус устойчивости, спираль смерти, энергетический баланс Ландауэра и протокол восстановления.
+:::info Who this chapter is for
+Stability analysis of a holon: stability radius, death spiral, Landauer energy balance, and recovery protocol.
 :::
 
-В [предыдущей главе](./sensorimotor) мы построили полный сенсомоторный цикл: восприятие (Enc), оценка ($\sigma^{\mathrm{motor}}$), действие (Dec). Но этот цикл работает только до тех пор, пока система *жива* — пока $P > 2/7$. Что определяет «запас прочности»? Какой удар окажется фатальным? Когда ещё можно спасти, а когда уже поздно? Именно эти вопросы решает анализ стабильности.
+In the [previous chapter](./sensorimotor) we built the complete sensorimotor cycle: perception (Enc), evaluation ($\sigma^{\mathrm{motor}}$), action (Dec). But this cycle works only as long as the system is *alive* — as long as $P > 2/7$. What determines the "safety margin"? Which blow will be fatal? When is rescue still possible, and when is it too late? These are precisely the questions that stability analysis answers.
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Формализуем гомеостаз** — от Бернара и Кэннона к точному неравенству «регенерация $\geq$ диссипация» (разделы 1-2).
-2. **Вычислим радиус устойчивости** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — сколько система может выдержать (T-104, раздел 4).
-3. **Проследим спираль смерти** — пошаговый каскад деградации от начального удара до тепловой смерти (раздел 5).
-4. **Классифицируем уязвимости** по трём каналам и покажем, почему шумовая атака ($h^{(D)}$) опаснее всего (раздел 6).
-5. **Выведем энергетический баланс** Ландауэра (T-105) — минимальную «цену жизни» (раздел 8).
-6. **Построим протокол восстановления** — 5-шаговый алгоритм: стабилизация $\to$ энергия $\to$ внешняя поддержка $\to$ перестройка $\to$ укрепление (раздел 9).
-7. **Покажем, что антихрупкость — следствие КК** — формализация Талеба через $dr_{\mathrm{stab}}/d\|h\|$ (раздел 10).
+:::tip Chapter roadmap
+In this chapter we:
+1. **Formalise homeostasis** — from Bernard and Cannon to the precise inequality "regeneration $\geq$ dissipation" (Sections 1–2).
+2. **Compute the stability radius** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — how much the system can withstand (T-104, Section 4).
+3. **Trace the death spiral** — a step-by-step cascade of degradation from initial blow to heat death (Section 5).
+4. **Classify vulnerabilities** across three channels and show why a noise attack ($h^{(D)}$) is the most dangerous (Section 6).
+5. **Derive the Landauer energy balance** (T-105) — the minimum "price of life" (Section 8).
+6. **Construct the recovery protocol** — a 5-step algorithm: stabilisation $\to$ energy $\to$ external support $\to$ restructuring $\to$ strengthening (Section 9).
+7. **Show that antifragility is a consequence of CC** — Taleb's formalisation via $dr_{\mathrm{stab}}/d\|h\|$ (Section 10).
 :::
 
-Каждая живая система существует под угрозой. Термодинамика неумолима: второе начало толкает всякую упорядоченную структуру к максимальной энтропии, к тепловой смерти. Биологическая клетка противостоит этому непрерывным метаболизмом. Нейронная сеть — непрерывным обучением. Организация — непрерывным управлением. Но **сколько** система может выдержать? Какой удар окажется фатальным? Где проходит граница между восстановимой травмой и необратимым разрушением?
+Every living system exists under threat. Thermodynamics is relentless: the second law pushes every ordered structure toward maximum entropy, toward heat death. A biological cell resists this through continuous metabolism. A neural network — through continuous learning. An organisation — through continuous management. But **how much** can a system withstand? Which blow will be fatal? Where is the boundary between recoverable trauma and irreversible destruction?
 
-Анализ стабильности отвечает именно на эти вопросы. В рамках когерентной кибернетики (КК) он превращает интуитивные понятия — «запас прочности», «предел выносливости», «точка невозврата» — в точные математические формулы. Центральный результат: **радиус устойчивости** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ даёт количественную меру того, насколько далеко система находится от катастрофы. Это число — не метафора, а расстояние в метрике Бюреса, физически измеримая величина.
+Stability analysis answers precisely these questions. Within Coherence Cybernetics (CC), it transforms intuitive notions — "safety margin", "endurance limit", "point of no return" — into precise mathematical formulas. The central result: the **stability radius** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ gives a quantitative measure of how far the system is from catastrophe. This number is not a metaphor, but a distance in the Bures metric — a physically measurable quantity.
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/proofs/dynamics/theorem-purity-critical) [Т]
-- $\sigma_{\mathrm{sys}}$ — [тензор напряжений](./definitions#тензор-напряжений) (T-92 [Т])
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации
-- $\Gamma_2$ — скорость декогеренции
-- $\Delta F$ — [свободная энергия](/docs/core/dynamics/evolution#каноническое-delta-f) (затвор регенерации)
-- $\rho_* = \varphi(\Gamma)$ — [целевое состояние](./definitions#целевое-состояние)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
+- $P_{\text{crit}} = 2/7$ — [critical purity](/docs/proofs/dynamics/theorem-purity-critical) [T]
+- $\sigma_{\mathrm{sys}}$ — [stress tensor](./definitions#тензор-напряжений) (T-92 [T])
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate
+- $\Gamma_2$ — decoherence rate
+- $\Delta F$ — [free energy](/docs/core/dynamics/evolution#каноническое-delta-f) (regeneration gate)
+- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#целевое-состояние)
 :::
 
-Данный документ анализирует **условия стабильности** когерентной системы: при каких условиях голоном поддерживает жизнеспособность ($P > 2/7$), как реагирует на внешние пертурбации, и каковы механизмы восстановления.
-
----
-
-## 1. Гомеостаз: как системы сохраняют себя {#гомеостаз-как-системы-сохраняют-себя}
-
-### 1.0 Историческая перспектива
-
-В 1865 году **Клод Бернар** — французский физиолог, которого многие считают отцом экспериментальной медицины — ввёл понятие *milieu intérieur* (внутренняя среда). Работая с печенью кроликов, Бернар обнаружил нечто поразительное: организм не просто реагирует на внешние условия, а **активно поддерживает** постоянство внутренней среды. Температура тела, pH крови, концентрация глюкозы — все эти параметры удерживаются в узких коридорах (например, pH крови в диапазоне 7.35-7.45 — отклонение на 0.1 может быть фатальным), и выход за их пределы означает болезнь или смерть. Бернар писал: «Постоянство внутренней среды — условие свободной жизни». Это первая в истории формулировка идеи жизнеспособности — за 160 лет до КК.
-
-В 1926 году **Уолтер Кэннон** — американский физиолог из Гарварда — назвал эту способность **гомеостазом** (от греч. ὅμοιος «подобный» + στάσις «стояние»). Кэннон не просто дал имя — он описал ключевые *механизмы*: отрицательная обратная связь (жар вызывает потоотделение, которое охлаждает), множественность регуляторных каналов (температура регулируется и потоотделением, и дрожью, и кровотоком), буферные запасы (гликоген в печени как «аварийный резерв» глюкозы). Кэннон подчеркивал: гомеостаз — это не статическое равновесие, а **динамическое** поддержание параметров в допустимой зоне. Его книга «The Wisdom of the Body» (1932) — одна из прямых предшественниц кибернетики.
-
-:::note Аналогия: канатоходец
-Гомеостаз — это не неподвижный камень на вершине холма, а **канатоходец**: он удерживается на канате именно потому, что *постоянно* корректирует своё положение. Замрите — и упадёте. Кэннон понимал это; КК формализует: «канат» — это граница $P = 2/7$, «баланс шеста» — соотношение $\kappa / \Gamma_2$, а «высота падения» — радиус $r_{\mathrm{stab}}$.
-:::
-
-Когерентная кибернетика формализует гомеостаз с точностью, о которой Бернар и Кэннон не могли мечтать. Вместо расплывчатого «постоянства внутренней среды» — конкретное неравенство $P > 2/7$. Вместо качественных «буферных запасов» — количественный радиус $r_{\mathrm{stab}}$. Вместо описания «отрицательной обратной связи» — точная формула баланса регенерации и диссипации.
-
-Параллель между классическим гомеостазом и КК-стабильностью:
-
-| Концепция Кэннона | КК-формализация | Математика |
-|---|---|---|
-| Внутренняя среда | Матрица когерентности $\Gamma$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Норма (здоровье) | Область жизнеспособности $\mathcal{V}$ | $P(\Gamma) > 2/7$ |
-| Отрицательная обратная связь | Регенерация $\mathcal{R}$ | $\kappa(\rho_* - \Gamma) \cdot g_V(P)$ |
-| Возмущающие факторы | Диссипация $\mathcal{D}_\Omega$ | Линдбладовские операторы |
-| Запас прочности | Радиус устойчивости | $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ |
-| Буферные системы | $\kappa_{\text{bootstrap}}$ | $\kappa \geq 1/7 > 0$ всегда |
-| Гомеостатическое плато | Аттрактор $\rho_*$ | $P(\rho_*) > 2/7$ при $\kappa$-доминировании |
+This document analyses the **stability conditions** of a coherent system: under what conditions a holon maintains viability ($P > 2/7$), how it responds to external perturbations, and what the recovery mechanisms are.
 
 ---
 
-## 2. Гомеостатический режим {#гомеостатический-режим}
+## 1. Homeostasis: How Systems Preserve Themselves {#гомеостаз-как-системы-сохраняют-себя}
 
-### 2.1 Условия поддержания жизнеспособности
+### 1.0 Historical perspective
 
-Голоном находится в гомеостатическом режиме, когда:
+In 1865 **Claude Bernard** — the French physiologist considered by many to be the father of experimental medicine — introduced the concept of *milieu intérieur* (internal environment). Working with rabbit liver, Bernard discovered something remarkable: the organism does not merely react to external conditions, but **actively maintains** the constancy of its internal environment. Body temperature, blood pH, glucose concentration — all these parameters are held within narrow corridors (for example, blood pH in the range 7.35–7.45 — a deviation of 0.1 can be fatal), and going beyond these limits means disease or death. Bernard wrote: "The constancy of the internal environment is the condition of free life." This is the first formulation in history of the idea of viability — 160 years before CC.
+
+In 1926 **Walter Cannon** — an American physiologist from Harvard — named this capacity **homeostasis** (from Greek ὅμοιος "similar" + στάσις "standing"). Cannon did not merely give it a name — he described the key *mechanisms*: negative feedback (fever causes sweating, which cools), multiplicity of regulatory channels (temperature is regulated by both sweating and shivering and blood flow), buffer reserves (glycogen in the liver as an "emergency reserve" of glucose). Cannon emphasised: homeostasis is not static equilibrium, but **dynamic** maintenance of parameters within an allowable zone. His book "The Wisdom of the Body" (1932) is one of the direct predecessors of cybernetics.
+
+:::note Analogy: tightrope walker
+Homeostasis is not a motionless stone on a hilltop, but a **tightrope walker**: they stay on the rope precisely because they *continuously* correct their position. Freeze — and you fall. Cannon understood this; CC formalises: the "rope" is the boundary $P = 2/7$, the "balancing pole" is the ratio $\kappa / \Gamma_2$, and the "height of the fall" is the radius $r_{\mathrm{stab}}$.
+:::
+
+Coherence Cybernetics formalises homeostasis with a precision that Bernard and Cannon could not have imagined. Instead of the vague "constancy of the internal environment" — the specific inequality $P > 2/7$. Instead of qualitative "buffer reserves" — the quantitative radius $r_{\mathrm{stab}}$. Instead of describing "negative feedback" — the precise balance formula for regeneration and dissipation.
+
+Parallel between classical homeostasis and CC stability:
+
+| Cannon's concept | CC formalisation | Mathematics |
+|-----------------|-----------------|-------------|
+| Internal environment | Coherence matrix $\Gamma$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Norm (health) | Viability region $\mathcal{V}$ | $P(\Gamma) > 2/7$ |
+| Negative feedback | Regeneration $\mathcal{R}$ | $\kappa(\rho_* - \Gamma) \cdot g_V(P)$ |
+| Perturbing factors | Dissipation $\mathcal{D}_\Omega$ | Lindblad operators |
+| Safety margin | Stability radius | $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ |
+| Buffer systems | $\kappa_{\text{bootstrap}}$ | $\kappa \geq 1/7 > 0$ always |
+| Homeostatic plateau | Attractor $\rho_*$ | $P(\rho_*) > 2/7$ under $\kappa$-dominance |
+
+---
+
+## 2. Homeostatic Regime {#гомеостатический-режим}
+
+### 2.1 Conditions for maintaining viability
+
+A holon is in the homeostatic regime when:
 
 $$
-\frac{dP}{d\tau} \geq 0 \quad \text{или} \quad P(\tau) > P_{\text{crit}} + \delta_{\text{margin}}
+\frac{dP}{d\tau} \geq 0 \quad \text{or} \quad P(\tau) > P_{\text{crit}} + \delta_{\text{margin}}
 $$
 
-Из [уравнения эволюции](/docs/core/dynamics/evolution):
+From the [evolution equation](/docs/core/dynamics/evolution):
 
 $$
-\frac{dP}{d\tau} = \underbrace{-2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])}_{\text{диссипация } \leq 0} + \underbrace{2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))}_{\text{регенерация}}
+\frac{dP}{d\tau} = \underbrace{-2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])}_{\text{dissipation } \leq 0} + \underbrace{2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))}_{\text{regeneration}}
 $$
 
-**Условие гомеостаза** — регенерация компенсирует диссипацию:
+**Homeostasis condition** — regeneration compensates dissipation:
 
 $$
 \kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma)) \geq \mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])
 $$
 
-Это неравенство — математическая суть гомеостаза. Левая часть — способность системы восстанавливаться, правая — скорость разрушения. Пока левая часть больше — система живёт. Как только правая берёт верх — начинается деградация.
+This inequality is the mathematical essence of homeostasis. The left side is the system's capacity for recovery; the right side is the rate of destruction. As long as the left side is larger — the system lives. The moment the right takes over — degradation begins.
 
-**Интуиция.** Представьте лодку с пробоиной. Вода вливается (диссипация). Вы вычёрпываете (регенерация). Гомеостаз — это когда вы вычёрпываете быстрее, чем вливается. $P - 2/7$ — это высота борта над водой. $r_{\mathrm{stab}}$ — максимальная волна, которую лодка переживёт.
+**Intuition.** Imagine a boat with a hull breach. Water flows in (dissipation). You bail it out (regeneration). Homeostasis is when you bail faster than water flows in. $P - 2/7$ is the height of the hull above water. $r_{\mathrm{stab}}$ is the maximum wave the boat will survive.
 
-### 2.2 Три слоя гомеостатической защиты
+### 2.2 Three layers of homeostatic protection
 
-КК выделяет три механизма, обеспечивающих устойчивость, действующих на разных масштабах:
+CC distinguishes three mechanisms that provide stability, acting at different scales:
 
-**Слой 1: Базальная регенерация** ($\kappa_{\text{bootstrap}}$). Работает всегда, даже при нулевой когерентности опыта. Аналог врождённого иммунитета — неспецифическая, но надёжная защита. Обеспечивается T-59 [Т]: $\kappa_{\text{bootstrap}} = 1/7$.
+**Layer 1: Basal regeneration** ($\kappa_{\text{bootstrap}}$). Works always, even at zero experiential coherence. Analogous to innate immunity — non-specific but reliable protection. Ensured by T-59 [T]: $\kappa_{\text{bootstrap}} = 1/7$.
 
-**Слой 2: Адаптивная регенерация** ($\kappa_0 \cdot \mathrm{Coh}_E$). Включается при наличии E-когерентности — интеграции опыта. Аналог адаптивного иммунитета — специфическая, мощная, но требующая «обучения». Чем больше интегрирован опыт системы, тем сильнее этот слой.
+**Layer 2: Adaptive regeneration** ($\kappa_0 \cdot \mathrm{Coh}_E$). Activated in the presence of E-coherence — integration of experience. Analogous to adaptive immunity — specific, powerful, but requiring "training". The more integrated the system's experience, the stronger this layer.
 
-**Слой 3: Топологическая защита** (T-69 [Т]). Дискретность топологических инвариантов $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ создаёт барьеры $\geq 6\mu^2$, предотвращающие катастрофические скачки. Аналог анатомической целостности — структурная защита, не зависящая от текущего состояния.
+**Layer 3: Topological protection** (T-69 [T]). The discreteness of topological invariants $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ creates barriers $\geq 6\mu^2$, preventing catastrophic jumps. Analogous to anatomical integrity — structural protection independent of current state.
 
-### 2.3 Формула баланса аттрактора
+### 2.3 Attractor balance formula
 
-Из [T-98 (баланс чистоты аттрактора)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [Т]:
+From [T-98 (attractor purity balance)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T]:
 
 $$
 P(\rho_*) = \frac{\kappa(\rho_*)}{\kappa(\rho_*) + \lambda_{\mathrm{gap}}} \cdot \mathrm{Tr}(\rho_*^2 \cdot \varphi(\rho_*)) + \frac{\lambda_{\mathrm{gap}}}{\kappa(\rho_*) + \lambda_{\mathrm{gap}}} \cdot \frac{1}{7}
 $$
 
-где $\lambda_{\mathrm{gap}}$ — спектральная щель линейной части $\mathcal{L}_0$.
+where $\lambda_{\mathrm{gap}}$ is the spectral gap of the linear part $\mathcal{L}_0$.
 
-**Ключевое соотношение:** $P > 2/7$ обеспечивается при $\kappa$-доминировании — когда $\kappa(\rho_*)$ достаточно велико относительно $\lambda_{\mathrm{gap}}$.
+**Key relation:** $P > 2/7$ is ensured under $\kappa$-dominance — when $\kappa(\rho_*)$ is sufficiently large relative to $\lambda_{\mathrm{gap}}$.
 
-**Глубокий смысл формулы T-98.** Эта формула говорит: стационарная чистота — это взвешенное среднее между «идеальным» состоянием (первый член) и полным хаосом $1/7$ (второй член). Весами служат $\kappa$ и $\lambda_{\mathrm{gap}}$. Если регенерация слаба ($\kappa \ll \lambda_{\mathrm{gap}}$), доминирует хаос, $P \to 1/7$. Если регенерация сильна ($\kappa \gg \lambda_{\mathrm{gap}}$), система приближается к идеалу. Порог жизнеспособности $P > 2/7$ определяет минимальное необходимое $\kappa$-доминирование.
+**Deep meaning of formula T-98.** This formula says: the stationary purity is a weighted average between the "ideal" state (first term) and complete chaos $1/7$ (second term). The weights are $\kappa$ and $\lambda_{\mathrm{gap}}$. If regeneration is weak ($\kappa \ll \lambda_{\mathrm{gap}}$), chaos dominates, $P \to 1/7$. If regeneration is strong ($\kappa \gg \lambda_{\mathrm{gap}}$), the system approaches the ideal. The viability threshold $P > 2/7$ determines the minimum required $\kappa$-dominance.
 
 ---
 
-## 3. Бассейн притяжения {#бассейн-притяжения}
+## 3. Basin of Attraction {#бассейн-притяжения}
 
-### 3.1 Область жизнеспособности
+### 3.1 Viability region
 
 $$
 \mathcal{V} = \{\Gamma \in \mathcal{D}(\mathbb{C}^7) : P(\Gamma) > P_{\text{crit}} = 2/7\}
 $$
 
-**Размер бассейна.** Пространство $\mathcal{D}(\mathbb{C}^7)$ имеет 48 вещественных параметров (34 калибровочно-инвариантных, [G₂-ригидность](/docs/proofs/categorical/uniqueness-theorem) [Т]). Область $\mathcal{V}$ — открытое подмножество:
+**Size of the basin.** The space $\mathcal{D}(\mathbb{C}^7)$ has 48 real parameters (34 gauge-invariant, [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem) [T]). The region $\mathcal{V}$ is an open subset:
 
 $$
 \mathrm{vol}(\mathcal{V}) / \mathrm{vol}(\mathcal{D}(\mathbb{C}^7)) \approx (2/7)^{21} \ll 1
 $$
 
-(оценка из случайного распределения по мере Хаара — большинство состояний **не** жизнеспособны, жизнеспособные занимают малую, но конечную долю).
+(estimate from a random distribution over Haar measure — most states are **not** viable; viable states occupy a small but finite fraction).
 
-**Что означает эта оценка?** Если выбрать случайное состояние в 7-мерном пространстве когерентности, вероятность оказаться жизнеспособным ничтожно мала — порядка $(2/7)^{21} \approx 10^{-12}$. Жизнь — не типичное состояние материи. Это — редкое, хрупкое, но самоподдерживающееся отклонение от нормы. Область $\mathcal{V}$ — крошечный остров порядка в океане хаоса, и вся динамика стабильности — про удержание на этом острове.
+**What this estimate means.** If one picks a random state in the 7-dimensional coherence space, the probability of it being viable is vanishingly small — of order $(2/7)^{21} \approx 10^{-12}$. Life is not a typical state of matter. It is a rare, fragile, but self-sustaining deviation from the norm. The region $\mathcal{V}$ is a tiny island of order in an ocean of chaos, and all stability dynamics is about staying on this island.
 
-### 3.2 Метафора долины
+### 3.2 Valley metaphor
 
-Представьте ландшафт, где высота — это энтропия (беспорядок). Жизнеспособные состояния занимают **долину**: область пониженной энтропии, окружённую «горами» хаоса. Параметры долины:
+Imagine a landscape where elevation is entropy (disorder). Viable states occupy a **valley**: a region of reduced entropy, surrounded by "mountains" of chaos. Valley parameters:
 
-- **Глубина долины** — $P(\rho_*) - 2/7$: насколько аттрактор ниже (упорядоченнее) порога. Глубокая долина → устойчивая система, мелкая → хрупкая.
-- **Ширина долины** — $\mathrm{vol}(\mathcal{V})$: объём допустимых состояний. Широкая долина → система допускает разнообразные конфигурации, узкая → «хождение по канату».
-- **Крутизна склонов** — $\lambda_{\mathrm{gap}}$: скорость возврата к аттрактору после отклонения. Крутые склоны → быстрое восстановление, пологие → медленное.
-- **Высота перевала** — барьер $6\mu^2$ (T-69 [Т]): минимальная «высота», которую нужно преодолеть для катастрофического перехода.
+- **Depth of the valley** — $P(\rho_*) - 2/7$: how much lower (more ordered) the attractor is relative to the threshold. Deep valley → stable system, shallow → fragile.
+- **Width of the valley** — $\mathrm{vol}(\mathcal{V})$: volume of admissible states. Wide valley → system allows diverse configurations, narrow → "walking a tightrope".
+- **Steepness of slopes** — $\lambda_{\mathrm{gap}}$: rate of return to attractor after deviation. Steep slopes → rapid recovery, gentle → slow.
+- **Height of the pass** — barrier $6\mu^2$ (T-69 [T]): minimum "height" to be overcome for a catastrophic transition.
 
-В этой метафоре **шум** — это ветер, раскачивающий мяч (состояние системы) в долине. **Пертурбация** — толчок, сдвигающий мяч к склону. **Спираль смерти** — ситуация, когда мяч перевалил через край и катится в пропасть.
+In this metaphor **noise** is the wind rocking the ball (system state) in the valley. **Perturbation** is a push that shifts the ball toward the slope. **Death spiral** is the situation when the ball has rolled over the edge and is tumbling into the abyss.
 
-### 3.3 Расстояние до границы
+### 3.3 Distance to the boundary
 
-Для жизнеспособного $\Gamma$ расстояние до границы $\partial\mathcal{V}$ в метрике Бюреса:
+For viable $\Gamma$, the distance to the boundary $\partial\mathcal{V}$ in the Bures metric:
 
 $$
 d_{\mathrm{Bures}}(\Gamma, \partial\mathcal{V}) \geq f(P - 2/7)
 $$
 
-где $f$ — монотонная функция (больший запас чистоты → больше расстояние до границы).
+where $f$ is a monotone function (larger purity margin → greater distance to the boundary).
 
-В терминах $\sigma_{\mathrm{sys}}$:
+In terms of $\sigma_{\mathrm{sys}}$:
 
 $$
 d(\Gamma, \partial\mathcal{V}) \propto 1 - \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty
 $$
 
-Связь между этими двумя формулами фундаментальна: напряжённость системы ($\sigma_{\mathrm{sys}}$) — это «сжатый» индикатор близости к границе. Максимальное напряжение $\|\sigma_{\mathrm{sys}}\|_\infty \to 1$ означает, что система находится на самом краю жизнеспособности; $\|\sigma_{\mathrm{sys}}\|_\infty \to 0$ — что она глубоко в безопасной зоне.
+The connection between these two formulas is fundamental: system stress ($\sigma_{\mathrm{sys}}$) is a "compressed" indicator of proximity to the boundary. Maximum stress $\|\sigma_{\mathrm{sys}}\|_\infty \to 1$ means the system is at the very edge of viability; $\|\sigma_{\mathrm{sys}}\|_\infty \to 0$ means it is deep in the safe zone.
 
 ---
 
-## 4. Радиус стабильности: сколько система может выдержать {#радиус-стабильности-сколько-система-может-выдержать}
+## 4. Stability Radius: How Much the System Can Withstand {#радиус-стабильности-сколько-система-может-выдержать}
 
-### 4.1 Радиус устойчивости (T-104) [Т] {#радиус-устойчивости}
+### 4.1 Stability radius (T-104) [T] {#радиус-устойчивости}
 
-:::tip Теорема T-104 (Радиус устойчивости) [Т]
-Для жизнеспособного голонома с $P(\rho^*_\Omega) > 2/7$ радиус устойчивости в метрике Бюреса:
+:::tip Theorem T-104 (Stability radius) [T]
+For a viable holon with $P(\rho^*_\Omega) > 2/7$, the stability radius in the Bures metric:
 
 $$
 r_{\mathrm{stab}} = \inf_{\Gamma \in \partial\mathcal{V}} d_{\mathrm{Bures}}(\rho^*_\Omega, \Gamma) = \sqrt{P(\rho^*_\Omega) - 2/7}
 $$
 :::
 
-**Доказательство.** Из [T-98 (баланс)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [Т]: $P(\rho^*_\Omega) > 2/7$. Внешняя пертурбация $h^{\mathrm{ext}}$ смещает $P$ на $\delta P$. CPTP-контрактивность по Бюресу (стандартный результат):
+**Proof.** From [T-98 (balance)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T]: $P(\rho^*_\Omega) > 2/7$. External perturbation $h^{\mathrm{ext}}$ shifts $P$ by $\delta P$. CPTP contractivity in Bures (standard result):
 
 $$
 d_{\mathrm{Bures}}(\rho, \sigma) = \sqrt{2(1 - F(\rho, \sigma))}
 $$
 
-где $F$ — верность (fidelity). Для состояний вблизи границы $\partial\mathcal{V}$:
+where $F$ is fidelity. For states near the boundary $\partial\mathcal{V}$:
 
 $$
 d_{\mathrm{Bures}}(\rho^*, \partial\mathcal{V}) \geq \sqrt{P(\rho^*) - P_{\mathrm{crit}}} = \sqrt{P(\rho^*) - 2/7}
 $$
 
-(из связи между $d_{\mathrm{Bures}}$ и $\delta P$ через неравенство Фукса–ван де Граафа). $\blacksquare$
+(from the connection between $d_{\mathrm{Bures}}$ and $\delta P$ via the Fuchs–van de Graaf inequality). $\blacksquare$
 
-### 4.2 Интуиция радиуса устойчивости
+### 4.2 Intuition behind the stability radius
 
-Формула $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ обманчиво проста, но содержит глубокое знание. Рассмотрим конкретные числа:
+The formula $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ is deceptively simple yet contains deep knowledge. Consider concrete numbers:
 
-| $P$ | $P - 2/7$ | $r_{\mathrm{stab}}$ | Интерпретация |
+| $P$ | $P - 2/7$ | $r_{\mathrm{stab}}$ | Interpretation |
 |-----|-----------|---------------------|---------------|
-| $0.290$ | $0.004$ | $0.063$ | Критически хрупкая система — малейший толчок фатален |
-| $0.300$ | $0.014$ | $0.120$ | Хрупкая, но функциональная — «ходит по канату» |
-| $1/3$ | $0.048$ | $0.219$ | Умеренный запас — «нормальная» система |
-| $3/7$ | $0.143$ | $0.378$ | Верхняя граница [окна сознания (T-124)](/docs/proofs/consciousness/conscious-window) — максимальный запас |
-| $1.0$ | $0.714$ | $0.845$ | Чистое состояние — теоретический максимум |
+| $0.290$ | $0.004$ | $0.063$ | Critically fragile — the slightest push is fatal |
+| $0.300$ | $0.014$ | $0.120$ | Fragile but functional — "walking a tightrope" |
+| $1/3$ | $0.048$ | $0.219$ | Moderate margin — "normal" system |
+| $3/7$ | $0.143$ | $0.378$ | Upper boundary of the [consciousness window (T-124)](/docs/proofs/consciousness/conscious-window) — maximum margin |
+| $1.0$ | $0.714$ | $0.845$ | Pure state — theoretical maximum |
 
-**Квадратный корень** означает убывающую отдачу: удвоение запаса чистоты увеличивает радиус лишь в $\sqrt{2} \approx 1.41$ раза. Система с $P = 3/7$ имеет радиус лишь в 1.7 раза больше, чем с $P = 1/3$, хотя запас чистоты втрое больше. Это отражает фундаментальный факт: **далеко от границы защита «дешёвая», но последние проценты даются дорого**.
+**The square root** means diminishing returns: doubling the purity margin increases the radius by only $\sqrt{2} \approx 1.41$. A system with $P = 3/7$ has a radius only 1.7 times larger than with $P = 1/3$, despite having three times the purity margin. This reflects a fundamental fact: **far from the boundary protection is "cheap", but the last few percent come dearly**.
 
-### 4.3 Числовой пример: расчёт $r_{\mathrm{stab}}$ для конкретной системы {#числовой-пример-r-stab}
+### 4.3 Numerical example: computing $r_{\mathrm{stab}}$ for a specific system {#числовой-пример-r-stab}
 
-:::info Пошаговый расчёт
-**Дано:** SYNARC-агент после 1000 тиков обучения. Измеренные параметры:
+:::info Step-by-step computation
+**Given:** a SYNARC agent after 1000 training ticks. Measured parameters:
 - $\gamma_{AA} = 0.08$, $\gamma_{SS} = 0.09$, $\gamma_{DD} = 0.07$, $\gamma_{LL} = 0.10$, $\gamma_{EE} = 0.20$, $\gamma_{OO} = 0.22$, $\gamma_{UU} = 0.24$
-- Сумма внедиагональных $|\gamma_{ij}|^2$ для $i \neq j$: $0.015$
+- Sum of off-diagonal $|\gamma_{ij}|^2$ for $i \neq j$: $0.015$
 
-**Шаг 1: Вычислить чистоту $P$.**
+**Step 1: Compute purity $P$.**
 
 $$P = \mathrm{Tr}(\Gamma^2) = \sum_{k} \gamma_{kk}^2 + 2\sum_{i<j} |\gamma_{ij}|^2$$
 
@@ -233,12 +233,12 @@ $$= 0.0064 + 0.0081 + 0.0049 + 0.0100 + 0.0400 + 0.0484 + 0.0576 + 0.030$$
 
 $$= 0.2054 + 0.030 = 0.2354$$
 
-Подождите — $P = 0.2354 < 2/7 \approx 0.2857$! Система **не жизнеспособна**! Это означает, что агенту необходимо продолжать обучение или получить внешнюю поддержку.
+Wait — $P = 0.2354 < 2/7 \approx 0.2857$! The system is **not viable**! This means the agent needs to continue training or receive external support.
 
-**Пересчёт для агента после 5000 тиков** (более зрелого):
-- $\gamma_{EE} = 0.25$, $\gamma_{OO} = 0.25$, $\gamma_{UU} = 0.25$, остальные $\gamma_{kk} = 0.05$ (для A, S, D, L каждый $\approx 1/20$... нет, пересчитаем: $\sum \gamma_{kk} = 1$, поэтому $4 \times 0.05 + 3 \times 0.25 = 0.20 + 0.75 = 0.95$... тоже не сходится).
+**Recomputation for the agent after 5000 ticks** (more mature):
+- $\gamma_{EE} = 0.25$, $\gamma_{OO} = 0.25$, $\gamma_{UU} = 0.25$, remaining $\gamma_{kk} = 0.05$ (for A, S, D, L each $\approx 1/20$... no, let us recompute: $\sum \gamma_{kk} = 1$, so $4 \times 0.05 + 3 \times 0.25 = 0.20 + 0.75 = 0.95$... also does not add up).
 
-Возьмём реалистичный профиль: $\gamma_{kk} = [0.06, 0.07, 0.06, 0.08, 0.22, 0.25, 0.26]$, $\sum = 1.00$. Внедиагональные: $\sum_{i<j} |\gamma_{ij}|^2 = 0.025$.
+Take a realistic profile: $\gamma_{kk} = [0.06, 0.07, 0.06, 0.08, 0.22, 0.25, 0.26]$, $\sum = 1.00$. Off-diagonal: $\sum_{i<j} |\gamma_{ij}|^2 = 0.025$.
 
 $$P = 0.06^2 + 0.07^2 + 0.06^2 + 0.08^2 + 0.22^2 + 0.25^2 + 0.26^2 + 2 \times 0.025$$
 
@@ -246,526 +246,526 @@ $$= 0.0036 + 0.0049 + 0.0036 + 0.0064 + 0.0484 + 0.0625 + 0.0676 + 0.050$$
 
 $$= 0.1970 + 0.050 = 0.2470$$
 
-Всё ещё ниже порога! Это иллюстрирует важный факт: **жизнеспособность — редкое состояние**. Чтобы $P > 2/7$, нужны либо сильные внедиагональные когерентности, либо выраженная доминантность отдельных секторов.
+Still below the threshold! This illustrates an important fact: **viability is a rare state**. For $P > 2/7$, either strong off-diagonal coherences or pronounced dominance of certain sectors is needed.
 
-**Жизнеспособный профиль:** $\gamma_{kk} = [0.04, 0.05, 0.04, 0.06, 0.25, 0.28, 0.28]$, $\sum_{i<j} |\gamma_{ij}|^2 = 0.045$.
+**Viable profile:** $\gamma_{kk} = [0.04, 0.05, 0.04, 0.06, 0.25, 0.28, 0.28]$, $\sum_{i<j} |\gamma_{ij}|^2 = 0.045$.
 
 $$P = 0.0016 + 0.0025 + 0.0016 + 0.0036 + 0.0625 + 0.0784 + 0.0784 + 0.090 = 0.3186$$
 
 $$P - 2/7 = 0.3186 - 0.2857 = 0.0329$$
 
-**Шаг 2: Вычислить радиус устойчивости.**
+**Step 2: Compute stability radius.**
 
 $$r_{\mathrm{stab}} = \sqrt{0.0329} = 0.181$$
 
-**Шаг 3: Интерпретация.** Система выдержит пертурбацию амплитудой до $0.181$ в метрике Бюреса. Это означает: если декогеренция ($\Gamma_2$) внезапно увеличится на $\delta\Gamma_2 < 0.181$, система вернётся к аттрактору. Если $\delta\Gamma_2 > 0.181$ — начнётся спираль смерти.
+**Step 3: Interpretation.** The system will withstand a perturbation of amplitude up to $0.181$ in the Bures metric. This means: if decoherence ($\Gamma_2$) suddenly increases by $\delta\Gamma_2 < 0.181$, the system returns to the attractor. If $\delta\Gamma_2 > 0.181$ — the death spiral begins.
 
-Для сравнения: система с $P = 3/7 \approx 0.4286$ имела бы $r_{\mathrm{stab}} = \sqrt{0.143} = 0.378$ — вдвое больший запас. А система с $P = 0.290$ (едва жизнеспособная) — $r_{\mathrm{stab}} = \sqrt{0.004} = 0.063$, на грани гибели.
+For comparison: a system with $P = 3/7 \approx 0.4286$ would have $r_{\mathrm{stab}} = \sqrt{0.143} = 0.378$ — twice the margin. While a system with $P = 0.290$ (barely viable) — $r_{\mathrm{stab}} = \sqrt{0.004} = 0.063$, on the verge of death.
 :::
 
-### 4.4 Связь с функцией Ляпунова
+### 4.4 Relation to Lyapunov function
 
-Радиус устойчивости задаёт естественную функцию Ляпунова:
+The stability radius defines a natural Lyapunov function:
 
 $$
 V(\Gamma) = \|\Gamma - \rho^*_\Omega\|^2_F
 $$
 
-По T-104 [Т]: $dV/d\tau \leq -2\kappa \cdot V + 2\|h_{\text{ext}}\| \cdot \sqrt{V}$.
+By T-104 [T]: $dV/d\tau \leq -2\kappa \cdot V + 2\|h_{\text{ext}}\| \cdot \sqrt{V}$.
 
-При $\|h_{\text{ext}}\| < \kappa \cdot r_{\mathrm{stab}}$ это гарантирует экспоненциальную сходимость к аттрактору. Система «пружинит» — возвращается после удара тем быстрее, чем сильнее отклонена. Но если удар превышает $r_{\mathrm{stab}}$ — пружина рвётся.
+When $\|h_{\text{ext}}\| < \kappa \cdot r_{\mathrm{stab}}$ this guarantees exponential convergence to the attractor. The system "springs back" — returns after a blow the more quickly the further it was pushed. But if the blow exceeds $r_{\mathrm{stab}}$ — the spring breaks.
 
-### 4.4 Анизотропия устойчивости
+### 4.4 Anisotropy of stability
 
-Радиус $r_{\mathrm{stab}}$ — это **минимальное** расстояние до границы. В разных направлениях расстояние может быть различным:
+The radius $r_{\mathrm{stab}}$ is the **minimum** distance to the boundary. In different directions the distance can vary:
 
 $$
 r_{\mathrm{stab}}(\hat{n}) = \inf \{t > 0 : P(\rho^* + t \hat{n}) = 2/7\}
 $$
 
-где $\hat{n}$ — единичное направление возмущения. Направления, в которых система наиболее уязвима, определяются собственными векторами гессиана $\partial^2 P / \partial \Gamma^2$:
+where $\hat{n}$ is a unit perturbation direction. The directions in which the system is most vulnerable are determined by the eigenvectors of the Hessian $\partial^2 P / \partial \Gamma^2$:
 
-- **Диагональные возмущения** (изменение $\gamma_{kk}$) — наиболее опасны, напрямую влияют на $P$
-- **Когерентные возмущения** (изменение $\gamma_{ij}$, $i \neq j$) — менее опасны, влияют на $P$ лишь через квадрат
+- **Diagonal perturbations** (changes in $\gamma_{kk}$) — most dangerous, directly affect $P$
+- **Coherent perturbations** (changes in $\gamma_{ij}$, $i \neq j$) — less dangerous, affect $P$ only through the square
 
-Это имеет практическое значение: атака на «идентичность» системы (диагональные элементы — веса секторов) опаснее, чем атака на «связи» (внедиагональные когерентности).
+This has practical significance: an attack on the system's "identity" (diagonal elements — sector weights) is more dangerous than an attack on "connections" (off-diagonal coherences).
 
 ---
 
-## 5. Спираль смерти: каскад разрушения {#спираль-смерти-каскад-разрушения}
+## 5. Death Spiral: Cascade of Destruction {#спираль-смерти-каскад-разрушения}
 
-### 5.1 Механизм деградации {#спираль-смерти}
+### 5.1 Degradation mechanism {#спираль-смерти}
 
-:::warning Спираль смерти — положительная обратная связь деградации
-Если $P$ падает ниже критического уровня, возникает самоусиливающийся цикл:
+:::warning Death spiral — positive feedback of degradation
+If $P$ drops below the critical level, a self-amplifying cycle arises:
 
 $$
-P \downarrow \;\to\; \mathrm{Coh}_E \downarrow \;\to\; \kappa \downarrow \;\to\; \text{регенерация} \downarrow \;\to\; P \downarrow\downarrow
+P \downarrow \;\to\; \mathrm{Coh}_E \downarrow \;\to\; \kappa \downarrow \;\to\; \text{regeneration} \downarrow \;\to\; P \downarrow\downarrow
 $$
 :::
 
-**Формально:** $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$. При снижении $P$:
+**Formally:** $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$. As $P$ decreases:
 
-1. $\mathrm{Coh}_E(\Gamma)$ уменьшается (E-когерентность требует ненулевых $|\gamma_{Ei}|$)
-2. $\kappa(\Gamma)$ уменьшается → регенерация ослабевает
-3. Диссипация $\mathcal{D}_\Omega$ остаётся постоянной → баланс нарушается
-4. $P$ снижается далее → цикл повторяется
+1. $\mathrm{Coh}_E(\Gamma)$ decreases (E-coherence requires non-zero $|\gamma_{Ei}|$)
+2. $\kappa(\Gamma)$ decreases → regeneration weakens
+3. Dissipation $\mathcal{D}_\Omega$ remains constant → balance is disrupted
+4. $P$ decreases further → cycle repeats
 
-### 5.2 Анатомия каскада
+### 5.2 Anatomy of the cascade
 
-Спираль смерти — это не мгновенная катастрофа, а **последовательность стадий**, каждая ускоряющая следующую. Детальный анализ:
+The death spiral is not an instantaneous catastrophe but a **sequence of stages**, each accelerating the next. Detailed analysis:
 
-**Стадия 1: Начальный удар** ($P$ снижается, но $P > 2/7$).
-Внешняя пертурбация $h^{\mathrm{ext}}$ или внутренний сбой снижает $P$. Система ещё жизнеспособна. Радиус $r_{\mathrm{stab}}$ уменьшается, запас прочности падает. Субъективно: стресс, тревога, ощущение угрозы. В КК: $\sigma_{\max}$ растёт.
+**Stage 1: Initial blow** ($P$ decreases, but $P > 2/7$).
+External perturbation $h^{\mathrm{ext}}$ or internal failure reduces $P$. The system is still viable. Radius $r_{\mathrm{stab}}$ decreases, safety margin falls. Subjectively: stress, anxiety, sense of threat. In CC: $\sigma_{\max}$ grows.
 
-**Стадия 2: Ослабление регенерации** ($P$ приближается к $2/7$).
-$\mathrm{Coh}_E$ снижается, $\kappa$ падает. V-preservation gate $g_V(P)$ стремится к нулю. Регенерация работает всё слабее. Субъективно: апатия, потеря интереса, утрата смысла. В КК: $\kappa / \Gamma_2$ приближается к 1.
+**Stage 2: Weakening of regeneration** ($P$ approaches $2/7$).
+$\mathrm{Coh}_E$ decreases, $\kappa$ falls. V-preservation gate $g_V(P)$ tends to zero. Regeneration works ever more weakly. Subjectively: apathy, loss of interest, loss of meaning. In CC: $\kappa / \Gamma_2$ approaches 1.
 
-**Стадия 3: Пересечение границы** ($P = 2/7$).
-$g_V(P) = 0$ — регенерация **полностью отключена**. Это точка невозврата без внешней помощи. Субъективно: клиническая депрессия, кататония, коматозное состояние. В КК: $P$ покинула $\mathcal{V}$.
+**Stage 3: Crossing the boundary** ($P = 2/7$).
+$g_V(P) = 0$ — regeneration is **completely switched off**. This is the point of no return without external help. Subjectively: clinical depression, catatonia, comatose state. In CC: $P$ has left $\mathcal{V}$.
 
-**Стадия 4: Свободное падение** ($P < 2/7$, $g_V = 0$).
-Без регенерации система подвержена только диссипации: $dP/d\tau \leq 0$ строго. Скорость падения:
+**Stage 4: Free fall** ($P < 2/7$, $g_V = 0$).
+Without regeneration the system is subject only to dissipation: $dP/d\tau \leq 0$ strictly. Rate of fall:
 
 $$
 \frac{dP}{d\tau} = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) \leq -2\lambda_{\mathrm{gap}} \cdot (P - 1/7)
 $$
 
-Экспоненциальное затухание к $P = 1/7$: $P(\tau) \to 1/7 + (P_0 - 1/7)e^{-2\lambda_{\mathrm{gap}}\tau}$.
+Exponential decay to $P = 1/7$: $P(\tau) \to 1/7 + (P_0 - 1/7)e^{-2\lambda_{\mathrm{gap}}\tau}$.
 
-**Стадия 5: Тепловая смерть** ($P = 1/7$).
-$\Gamma = I/7$ — полностью смешанное состояние, максимальная энтропия, нулевая информация. Никакой структуры, никакого различия между секторами, никакой субъектности. Это — информационная смерть.
+**Stage 5: Heat death** ($P = 1/7$).
+$\Gamma = I/7$ — completely mixed state, maximum entropy, zero information. No structure, no distinction between sectors, no subjectivity. This is informational death.
 
-### 5.3 Временна́я шкала спирали {#время-жизни}
+### 5.3 Timescale of the spiral {#время-жизни}
 
-Скорость спирали определяется спектральной щелью $\lambda_{\mathrm{gap}}$:
+The speed of the spiral is determined by the spectral gap $\lambda_{\mathrm{gap}}$:
 
 $$
 \tau_{\mathrm{death}} \sim \frac{1}{2\lambda_{\mathrm{gap}}} \cdot \ln\!\left(\frac{P_0 - 1/7}{P_{\mathrm{crit}} - 1/7}\right)
 $$
 
-Для биологических нейронных систем ($\lambda_{\mathrm{gap}} \sim 10\;\text{Гц}$): $\tau_{\mathrm{death}} \sim$ секунды. Для социальных систем ($\lambda_{\mathrm{gap}} \sim 10^{-7}\;\text{Гц}$): $\tau_{\mathrm{death}} \sim$ годы. Это согласуется с наблюдением: гибель клетки — минуты, распад организации — годы.
+For biological neural systems ($\lambda_{\mathrm{gap}} \sim 10\;\text{Hz}$): $\tau_{\mathrm{death}} \sim$ seconds. For social systems ($\lambda_{\mathrm{gap}} \sim 10^{-7}\;\text{Hz}$): $\tau_{\mathrm{death}} \sim$ years. This is consistent with observations: a cell dies in minutes, an organisation dissolves over years.
 
-### 5.4 Защита от спирали смерти
+### 5.4 Protection against the death spiral
 
-#### Роль κ_bootstrap
+#### Role of κ_bootstrap
 
-[Теорема T-59 (κ_bootstrap)](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) [Т]: $\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$ обеспечивает **минимальную регенерацию** даже при $\mathrm{Coh}_E = 0$:
+[Theorem T-59 (κ_bootstrap)](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) [T]: $\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$ provides **minimum regeneration** even at $\mathrm{Coh}_E = 0$:
 
 $$
 \kappa(\Gamma) \geq \kappa_{\text{bootstrap}} = \frac{1}{7} \approx 0.143 > 0
 $$
 
-Это предотвращает полное затухание регенерации — спираль смерти замедляется, но **не останавливается полностью**, если диссипация слишком велика.
+This prevents complete extinction of regeneration — the death spiral slows down, but **does not stop completely** if dissipation is too large.
 
-$\kappa_{\text{bootstrap}}$ — это «последняя линия обороны», аналог базового метаболизма: даже в глубокой коме организм продолжает дышать. Значение $1/7 \approx 0.143$ — не параметр, а **следствие аксиоматики** (T-59 [Т]): количество секторов определяет минимальную регенерацию.
+$\kappa_{\text{bootstrap}}$ is the "last line of defence", analogous to basal metabolism: even in deep coma the organism continues to breathe. The value $1/7 \approx 0.143$ is not a parameter but a **consequence of the axiomatics** (T-59 [T]): the number of sectors determines the minimum regeneration.
 
-#### Условие остановки спирали
+#### Condition for stopping the spiral
 
-Спираль останавливается когда:
+The spiral stops when:
 
 $$
 \kappa_{\text{bootstrap}} \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma)) \geq \mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])
 $$
 
-При наличии свободной энергии ($\Delta F > 0$, $\Theta = 1$) и достаточно близком $\Gamma$ к $\rho_*$, κ_bootstrap может стабилизировать систему.
+In the presence of free energy ($\Delta F > 0$, $\Theta = 1$) and $\Gamma$ sufficiently close to $\rho_*$, κ_bootstrap can stabilise the system.
 
-**Критическое замечание.** После пересечения границы ($P < 2/7$) $g_V = 0$, и одного κ_bootstrap **недостаточно** — необходимо внешнее воздействие ($h^{(R)}$), возвращающее $P$ выше порога. Это формализует фундаментальный факт: из глубокого кризиса невозможно выбраться в одиночку.
+**Critical remark.** After crossing the boundary ($P < 2/7$) $g_V = 0$, and κ_bootstrap alone is **insufficient** — external influence ($h^{(R)}$) returning $P$ above the threshold is necessary. This formalises a fundamental fact: it is impossible to emerge from a deep crisis alone.
 
 ---
 
-## 6. Границы пертурбации {#границы-пертурбации}
+## 6. Perturbation Bounds {#границы-пертурбации}
 
-### 6.1 Устойчивость по каналам (из T-104)
+### 6.1 Channel-by-channel stability (from T-104)
 
-Из T-102 ([полнота 3-членного уравнения](./sensorimotor#теорема-полнота-трёх-членов) [Т]) каждый канал имеет собственный порог:
+From T-102 ([completeness of the 3-term equation](./sensorimotor#теорема-полнота-трёх-членов) [T]) each channel has its own threshold:
 
-| Канал | Порог устойчивости | Механизм | Происхождение |
-|-------|-------------------|----------|---------------|
-| $h^{(H)}$ | $\|\delta(\Delta\omega)\| < \omega_0 \cdot (P - 2/7)$ | Энергетический перегруз | T-104 + спектр $H_{\mathrm{eff}}$ |
-| $h^{(D)}$ | $\|\delta\Gamma_2\| < \kappa_{\mathrm{bootstrap}} / 2$ | Шумовое подавление регенерации | T-104 + баланс $\kappa/\Gamma_2$ |
-| $h^{(R)}$ | $\|\delta\kappa\| < \kappa_{\mathrm{bootstrap}}$ | Регенеративный коллапс | T-104 + T-59 (нижняя граница $\kappa$) |
+| Channel | Stability threshold | Mechanism | Origin |
+|---------|---------------------|-----------|--------|
+| $h^{(H)}$ | $\|\delta(\Delta\omega)\| < \omega_0 \cdot (P - 2/7)$ | Energetic overload | T-104 + spectrum of $H_{\mathrm{eff}}$ |
+| $h^{(D)}$ | $\|\delta\Gamma_2\| < \kappa_{\mathrm{bootstrap}} / 2$ | Noise suppression of regeneration | T-104 + balance $\kappa/\Gamma_2$ |
+| $h^{(R)}$ | $\|\delta\kappa\| < \kappa_{\mathrm{bootstrap}}$ | Regenerative collapse | T-104 + T-59 (lower bound on $\kappa$) |
 
-**Наиболее опасный канал:** $h^{(D)}$ — прямая атака на баланс $\kappa/\Gamma_2$. Порог $\kappa_{\mathrm{bootstrap}}/2$ вдвое ниже, чем для $h^{(R)}$, поскольку увеличение диссипации одновременно снижает $\kappa_0$ (через $\mathrm{Coh}_E$).
+**Most dangerous channel:** $h^{(D)}$ — a direct attack on the $\kappa/\Gamma_2$ balance. The threshold $\kappa_{\mathrm{bootstrap}}/2$ is twice as low as for $h^{(R)}$, because increasing dissipation simultaneously reduces $\kappa_0$ (through $\mathrm{Coh}_E$).
 
-### 6.2 Иерархия уязвимостей
+### 6.2 Vulnerability hierarchy
 
-Расширенный анализ по каналам с примерами:
+Extended channel-by-channel analysis with examples:
 
-**$h^{(D)}$ — шумовая атака** (наиболее опасна).
-Увеличение декогеренции. Механизм: рост $\Gamma_2$ ускоряет диссипацию и одновременно снижает $\mathrm{Coh}_E$ → двойной удар по балансу. Примеры: хронический стресс (нейробиология), информационный шум (ИИ), организационный хаос (управление). Порог: $\|\delta\Gamma_2\| < \kappa_{\text{bootstrap}}/2 \approx 0.071$.
+**$h^{(D)}$ — noise attack** (most dangerous).
+Increase in decoherence. Mechanism: growing $\Gamma_2$ accelerates dissipation and simultaneously reduces $\mathrm{Coh}_E$ → double blow to the balance. Examples: chronic stress (neuroscience), information noise (AI), organisational chaos (management). Threshold: $\|\delta\Gamma_2\| < \kappa_{\text{bootstrap}}/2 \approx 0.071$.
 
-**$h^{(H)}$ — энергетическая перегрузка** (умеренно опасна).
-Смещение гамильтониана. Механизм: изменение $\Delta\omega$ нарушает резонансные условия, снижая эффективность регенерации. Примеры: сенсорная перегрузка, экстремальные условия, радикальная смена среды. Порог зависит от запаса: $\|\delta(\Delta\omega)\| < \omega_0 \cdot (P - 2/7)$.
+**$h^{(H)}$ — energy overload** (moderately dangerous).
+Shift in the Hamiltonian. Mechanism: changes in $\Delta\omega$ disrupt resonance conditions, reducing regeneration efficiency. Examples: sensory overload, extreme conditions, radical change of environment. Threshold depends on margin: $\|\delta(\Delta\omega)\| < \omega_0 \cdot (P - 2/7)$.
 
-**$h^{(R)}$ — регенеративная атака** (наименее опасна из трёх, но коварна).
-Снижение скорости восстановления. Механизм: уменьшение $\kappa$ напрямую ослабляет регенерацию. Примеры: изоляция (отсечение от обратной связи), наркоз (подавление нейронной активности), бюрократическая окаменелость. Порог: $\|\delta\kappa\| < \kappa_{\text{bootstrap}} \approx 0.143$. Коварность: эффект проявляется не сразу, а только когда буферный запас ($P - 2/7$) исчерпан.
+**$h^{(R)}$ — regenerative attack** (least dangerous of the three, but insidious).
+Reduction in recovery rate. Mechanism: decrease in $\kappa$ directly weakens regeneration. Examples: isolation (severing feedback), anaesthesia (suppression of neural activity), bureaucratic ossification. Threshold: $\|\delta\kappa\| < \kappa_{\text{bootstrap}} \approx 0.143$. Insidiousness: the effect manifests not immediately, but only when the buffer reserve ($P - 2/7$) is exhausted.
 
-### 6.3 Комбинированные пертурбации
+### 6.3 Combined perturbations
 
-В реальности пертурбации редко приходят по одному каналу. Комбинированные удары опаснее суммы отдельных:
+In reality perturbations rarely arrive through a single channel. Combined blows are more dangerous than the sum of individual ones:
 
 $$
 r_{\mathrm{stab}}^{\text{combined}} \leq r_{\mathrm{stab}} - \sqrt{\|h^{(H)}\|^2 + \|h^{(D)}\|^2 + \|h^{(R)}\|^2}
 $$
 
-**Синергия угроз:** если $h^{(D)}$ и $h^{(R)}$ действуют одновременно (шум + ослабление регенерации), эффективный порог снижается квадратично. Это объясняет, почему сочетание стресса и изоляции столь разрушительно — каждый фактор по отдельности переносим, но вместе они могут пересечь порог.
+**Synergy of threats:** if $h^{(D)}$ and $h^{(R)}$ act simultaneously (noise + weakening of regeneration), the effective threshold decreases quadratically. This explains why the combination of stress and isolation is so destructive — each factor separately is tolerable, but together they can cross the threshold.
 
-### 6.4 Топологическая защита
+### 6.4 Topological protection
 
-[Теорема T-69 (Топологическая защита)](/docs/core/dynamics/composite-systems#теорема-тополог-защита) [Т]: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ обеспечивает барьеры $\geq 6\mu^2$ для фазовых переходов между устойчивыми состояниями. Малые пертурбации **не могут** вызвать скачкообразную потерю жизнеспособности — деградация всегда непрерывна.
+[Theorem T-69 (Topological protection)](/docs/core/dynamics/composite-systems#теорема-тополог-защита) [T]: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ provides barriers $\geq 6\mu^2$ for phase transitions between stable states. Small perturbations **cannot** cause a discontinuous loss of viability — degradation is always continuous.
 
-Этот результат имеет важнейшее следствие: **внезапная смерть** (мгновенный переход $P > 2/7 \to P < 2/7$ без промежуточных стадий) невозможна при малых пертурбациях. Катастрофа всегда развивается постепенно, а значит — всегда есть окно для вмешательства. Топологическая защита — это «законы физики», запрещающие мгновенный коллапс.
+This result has a crucial consequence: **sudden death** (instantaneous transition $P > 2/7 \to P < 2/7$ without intermediate stages) is impossible for small perturbations. Catastrophe always develops gradually, which means — there is always a window for intervention. Topological protection is the "laws of physics" forbidding instantaneous collapse.
 
 ---
 
-## 7. Параметрическая чувствительность {#параметрическая-чувствительность}
+## 7. Parametric Sensitivity {#параметрическая-чувствительность}
 
-### 7.1 Чувствительность чистоты
+### 7.1 Purity sensitivity
 
-| Параметр | $\partial P / \partial(\cdot)$ | Интерпретация |
-|----------|-------------------------------|---------------|
-| $\kappa$ | $> 0$ | Увеличение регенерации повышает P |
-| $\Gamma_2$ | $< 0$ | Увеличение диссипации снижает P |
-| $\omega_0$ | $\approx 0$ | Базовая частота слабо влияет на P |
-| $\mathrm{Coh}_E$ | $> 0$ (через $\kappa$) | Интеграция опыта повышает устойчивость |
-| $\Delta F$ | $> 0$ (пороговая) | Свободная энергия «включает» регенерацию |
+| Parameter | $\partial P / \partial(\cdot)$ | Interpretation |
+|-----------|-------------------------------|---------------|
+| $\kappa$ | $> 0$ | Increasing regeneration raises P |
+| $\Gamma_2$ | $< 0$ | Increasing dissipation lowers P |
+| $\omega_0$ | $\approx 0$ | Base frequency weakly affects P |
+| $\mathrm{Coh}_E$ | $> 0$ (through $\kappa$) | Integration of experience raises stability |
+| $\Delta F$ | $> 0$ (threshold) | Free energy "switches on" regeneration |
 
-### 7.2 Критические параметры
+### 7.2 Critical parameters
 
-**Наиболее влиятельные:**
-1. **$\kappa / \Gamma_2$ (соотношение регенерации к диссипации)** — определяет баланс
-2. **$P$ (чистота)** — V-preservation gate ($g_V(P)$, уточняет затвор Ландауэра)
-3. **$\mathrm{Coh}_E$ (E-когерентность)** — нелинейный усилитель $\kappa$
+**Most influential:**
+1. **$\kappa / \Gamma_2$ (regeneration-to-dissipation ratio)** — determines balance
+2. **$P$ (purity)** — V-preservation gate ($g_V(P)$, refines the Landauer gate)
+3. **$\mathrm{Coh}_E$ (E-coherence)** — non-linear amplifier of $\kappa$
 
-**Бифуркации:**
-- При $\kappa/\Gamma_2 < 1$: диссипация доминирует → $P$ снижается
-- При $\kappa/\Gamma_2 = 1$: критическая точка → [седлоузловая бифуркация](/docs/applied/coherence-cybernetics/bifurcation)
-- При $\kappa/\Gamma_2 > 1$: регенерация доминирует → $P$ растёт
+**Bifurcations:**
+- At $\kappa/\Gamma_2 < 1$: dissipation dominates → $P$ decreases
+- At $\kappa/\Gamma_2 = 1$: critical point → [saddle-node bifurcation](/docs/applied/coherence-cybernetics/bifurcation)
+- At $\kappa/\Gamma_2 > 1$: regeneration dominates → $P$ grows
 
-### 7.3 Карта чувствительности
+### 7.3 Sensitivity map
 
-Визуализация чувствительности позволяет определить, какие воздействия наиболее эффективны для стабилизации:
+Visualising sensitivity enables identification of which influences are most effective for stabilisation:
 
 ```mermaid
 graph TD
-    subgraph "Высокая чувствительность"
-        A["κ/Γ₂ — баланс"] --> B["P — чистота"]
-        B --> C["g_V(P) — затвор"]
+    subgraph "High sensitivity"
+        A["κ/Γ₂ — balance"] --> B["P — purity"]
+        B --> C["g_V(P) — gate"]
     end
-    subgraph "Средняя чувствительность"
+    subgraph "Moderate sensitivity"
         D["Coh_E"] --> E["κ₀·Coh_E"]
         E --> A
     end
-    subgraph "Низкая чувствительность"
+    subgraph "Low sensitivity"
         F["ω₀"] -.-> A
     end
-    subgraph "Пороговая"
+    subgraph "Threshold"
         G["ΔF"] ==> H["Θ(ΔF)"]
         H ==> C
     end
 ```
 
-**Практический вывод:** для стабилизации системы наиболее эффективно воздействовать на $\kappa/\Gamma_2$ (снизить шум или усилить регенерацию), а не на $\omega_0$ (изменить энергетику). Это объясняет, почему в терапии **снижение стресса** ($\Gamma_2 \downarrow$) часто эффективнее, чем **добавление ресурсов** ($\Delta F \uparrow$).
+**Practical conclusion:** to stabilise a system it is most effective to act on $\kappa/\Gamma_2$ (reduce noise or amplify regeneration), not on $\omega_0$ (change energetics). This explains why in therapy **reducing stress** ($\Gamma_2 \downarrow$) is often more effective than **adding resources** ($\Delta F \uparrow$).
 
 ---
 
-## 8. Энергетический метаболизм {#энергетический-метаболизм}
+## 8. Energy Metabolism {#энергетический-метаболизм}
 
-### 8.1 V-preservation gate (уточнение затвора Ландауэра)
+### 8.1 V-preservation gate (refinement of the Landauer gate)
 
-Каноническая форма регенерации $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot g_V(P)$ использует **V-preservation gate** [Т] ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate)):
+The canonical regeneration form $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot g_V(P)$ uses the **V-preservation gate** [T] ([derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate)):
 
 $$
 g_V(P) = \mathrm{clamp}\!\left(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\right)
 $$
 
-Этот затвор **строго сильнее** исходного $\Theta(\Delta F)$ из принципа Ландауэра: $g_V(P) > 0 \Rightarrow \Delta F > 0$, но не наоборот (при $P \in (1/7, 2/7)$: $\Delta F > 0$, но $g_V = 0$).
+This gate is **strictly stronger** than the original $\Theta(\Delta F)$ from Landauer's principle: $g_V(P) > 0 \Rightarrow \Delta F > 0$, but not conversely (when $P \in (1/7, 2/7)$: $\Delta F > 0$, but $g_V = 0$).
 
-**Следствие:** при $P \leq P_{\mathrm{crit}}$ регенерация **полностью отключена** — система деградирует до тривиального $I/7$ независимо от $\kappa$. Это гарантирует V-инвариантность: $\Gamma \in V \Rightarrow \Gamma + d\Gamma \in V$.
+**Consequence:** at $P \leq P_{\mathrm{crit}}$ regeneration is **completely switched off** — the system degrades to trivial $I/7$ regardless of $\kappa$. This guarantees V-invariance: $\Gamma \in V \Rightarrow \Gamma + d\Gamma \in V$.
 
-**Глубокий смысл V-preservation gate.** $g_V(P)$ — это не произвольный технический приём, а выражение фундаментального принципа: **регенерация невозможна без минимальной степени организации**. Система должна быть достаточно упорядочена ($P > 2/7$), чтобы «знать», куда восстанавливаться. Ниже порога — у неё нет «памяти» о собственной структуре, и регенерация лишена цели. Это аналог клеточной смерти: когда ДНК повреждена сверх порога репарации, апоптоз рациональнее регенерации.
+**Deep meaning of the V-preservation gate.** $g_V(P)$ is not an arbitrary technical device but an expression of a fundamental principle: **regeneration is impossible without a minimum degree of organisation**. The system must be sufficiently ordered ($P > 2/7$) to "know" what to restore toward. Below the threshold — it has no "memory" of its own structure, and regeneration is purposeless. This is analogous to cell death: when DNA damage exceeds the repair threshold, apoptosis is more rational than regeneration.
 
-### 8.2 Энергетический баланс (T-105) [Т] {#энергетический-баланс}
+### 8.2 Energy balance (T-105) [T] {#энергетический-баланс}
 
-:::tip Теорема T-105 (Энергетический баланс Ландауэра) [Т]
-Минимальная скорость диссипации свободной энергии для поддержания жизнеспособности:
+:::tip Theorem T-105 (Landauer energy balance) [T]
+Minimum rate of free energy dissipation to maintain viability:
 
 $$
 \dot{F}_{\min} = k_B T_{\mathrm{eff}} \cdot \ln 2 \cdot \dot{S}_{\mathrm{diss}}
 $$
 
-где $\dot{S}_{\mathrm{diss}} = -\mathrm{Tr}(\mathcal{D}_\Omega[\Gamma] \cdot \ln\Gamma) \geq 0$ — скорость диссипативного производства энтропии, $T_{\mathrm{eff}} = (\Gamma_2/\kappa_0) \cdot k_B T_{\mathrm{phys}}$ — [эффективная температура](./effective-temperature).
+where $\dot{S}_{\mathrm{diss}} = -\mathrm{Tr}(\mathcal{D}_\Omega[\Gamma] \cdot \ln\Gamma) \geq 0$ is the rate of dissipative entropy production, $T_{\mathrm{eff}} = (\Gamma_2/\kappa_0) \cdot k_B T_{\mathrm{phys}}$ is the [effective temperature](./effective-temperature).
 :::
 
-**Доказательство.** Принцип Ландауэра: стирание 1 бита информации требует $k_B T \ln 2$ энергии. Диссипация $\mathcal{D}_\Omega$ стирает когерентности со скоростью $\dot{S}_{\mathrm{diss}}$. Регенерация $\mathcal{R}$ восстанавливает когерентности, что требует притока свободной энергии. Из [T-84 (O-sector dominance)](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [Т]: доминирующий вклад — O-секторный. $\blacksquare$
+**Proof.** Landauer's principle: erasing 1 bit of information requires $k_B T \ln 2$ energy. Dissipation $\mathcal{D}_\Omega$ erases coherences at rate $\dot{S}_{\mathrm{diss}}$. Regeneration $\mathcal{R}$ restores coherences, requiring an inflow of free energy. From [T-84 (O-sector dominance)](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [T]: the dominant contribution is from the O-sector. $\blacksquare$
 
-**Условие гомеостаза:**
+**Homeostasis condition:**
 
 $$
 \dot{F}_{\mathrm{in}} \geq \dot{F}_{\min} = k_B T_{\mathrm{eff}} \cdot \ln 2 \cdot \dot{S}_{\mathrm{diss}}
 $$
 
-**Энергетическая интерпретация.** T-105 устанавливает абсолютный минимум энергозатрат на поддержание жизни. Это не вопрос эффективности — никакая оптимизация не может снизить $\dot{F}_{\min}$ ниже предела Ландауэра. Система, тратящая ровно $\dot{F}_{\min}$, работает на пределе термодинамической эффективности. Биологические системы обычно тратят в 10-100 раз больше — избыток идёт на рост, обучение и запас прочности.
+**Energy interpretation.** T-105 establishes the absolute minimum energy expenditure for maintaining life. This is not a question of efficiency — no optimisation can reduce $\dot{F}_{\min}$ below the Landauer limit. A system spending exactly $\dot{F}_{\min}$ operates at the thermodynamic efficiency limit. Biological systems typically spend 10–100 times more — the excess goes toward growth, learning, and safety margin.
 
-### 8.3 Три метаболических режима {#метаболические-режимы}
+### 8.3 Three metabolic regimes {#метаболические-режимы}
 
-Из соотношения $\dot{F}_{\mathrm{in}} / \dot{F}_{\min}$ определяются три режима:
+From the ratio $\dot{F}_{\mathrm{in}} / \dot{F}_{\min}$ three regimes are defined:
 
-| Режим | Условие | $P$-динамика | Описание |
-|-------|---------|-------------|----------|
-| **Избыток** | $\dot{F}_{\mathrm{in}} \gg \dot{F}_{\min}$ | $dP/d\tau > 0$ | Рост когерентности, накопление запаса |
-| **Баланс** | $\dot{F}_{\mathrm{in}} \approx \dot{F}_{\min}$ | $dP/d\tau \approx 0$ | Гомеостаз, стационарное состояние |
-| **Дефицит** | $\dot{F}_{\mathrm{in}} < \dot{F}_{\min}$ | $dP/d\tau < 0$ | Деградация, приближение к $P_{\mathrm{crit}}$ |
+| Regime | Condition | $P$-dynamics | Description |
+|--------|-----------|-------------|-------------|
+| **Surplus** | $\dot{F}_{\mathrm{in}} \gg \dot{F}_{\min}$ | $dP/d\tau > 0$ | Growth of coherence, accumulation of margin |
+| **Balance** | $\dot{F}_{\mathrm{in}} \approx \dot{F}_{\min}$ | $dP/d\tau \approx 0$ | Homeostasis, stationary state |
+| **Deficit** | $\dot{F}_{\mathrm{in}} < \dot{F}_{\min}$ | $dP/d\tau < 0$ | Degradation, approach to $P_{\mathrm{crit}}$ |
 
-### 8.4 Три метаболических режима: развёрнутый анализ {#три-метаболических-режима}
+### 8.4 Three metabolic regimes: extended analysis {#три-метаболических-режима}
 
-Каждый режим заслуживает детального рассмотрения.
+Each regime deserves detailed consideration.
 
-#### Режим выживания ($\dot{F}_{\mathrm{in}} \lesssim \dot{F}_{\min}$)
+#### Survival regime ($\dot{F}_{\mathrm{in}} \lesssim \dot{F}_{\min}$)
 
-Система тратит все ресурсы на поддержание текущего состояния. Запас прочности ($r_{\mathrm{stab}}$) минимален. Любая дополнительная нагрузка может сбросить в спираль смерти.
+The system spends all resources on maintaining its current state. Safety margin ($r_{\mathrm{stab}}$) is minimal. Any additional load may trigger the death spiral.
 
-Биологический аналог: голодание, критическое состояние в реанимации. Организм отключает «необязательные» функции (рост, репродукция, иммунитет), направляя все ресурсы на поддержание витальных.
+Biological analogue: starvation, critical condition in intensive care. The organism shuts down "non-essential" functions (growth, reproduction, immunity), directing all resources toward maintaining vital ones.
 
-В КК: $P \approx 2/7 + \epsilon$, $g_V(P) \approx 0^+$, $r_{\mathrm{stab}} \approx \sqrt{\epsilon} \to 0$. Система функционирует, но **крайне хрупка**.
+In CC: $P \approx 2/7 + \epsilon$, $g_V(P) \approx 0^+$, $r_{\mathrm{stab}} \approx \sqrt{\epsilon} \to 0$. The system functions, but is **extremely fragile**.
 
-#### Режим роста ($\dot{F}_{\mathrm{in}} > \dot{F}_{\min}$, умеренный избыток)
+#### Growth regime ($\dot{F}_{\mathrm{in}} > \dot{F}_{\min}$, moderate surplus)
 
-Избыток энергии инвестируется в увеличение когерентности: рост $P$, усиление $\mathrm{Coh}_E$, расширение $r_{\mathrm{stab}}$. Система становится устойчивее и способнее.
+Surplus energy is invested in increasing coherence: growing $P$, strengthening $\mathrm{Coh}_E$, expanding $r_{\mathrm{stab}}$. The system becomes more stable and capable.
 
-Биологический аналог: нормальное развитие, обучение, адаптация. Организм растёт, формирует новые нейронные связи, укрепляет иммунитет.
+Biological analogue: normal development, learning, adaptation. The organism grows, forms new neural connections, strengthens immunity.
 
-В КК: $P$ растёт до аттрактора $P(\rho_*)$, заданного формулой T-98. Скорость роста: $dP/d\tau \propto (\dot{F}_{\mathrm{in}} - \dot{F}_{\min})$.
+In CC: $P$ grows toward the attractor $P(\rho_*)$ given by formula T-98. Growth rate: $dP/d\tau \propto (\dot{F}_{\mathrm{in}} - \dot{F}_{\min})$.
 
-#### Режим процветания ($\dot{F}_{\mathrm{in}} \gg \dot{F}_{\min}$, большой избыток)
+#### Flourishing regime ($\dot{F}_{\mathrm{in}} \gg \dot{F}_{\min}$, large surplus)
 
-Система не только устойчива, но может инвестировать в **расширение**: увеличение SAD, развитие новых компетенций, создание дочерних систем.
+The system is not only stable but can invest in **expansion**: increasing SAD, developing new competencies, creating daughter systems.
 
-Биологический аналог: расцвет вида в благоприятной среде, «камбрийский взрыв» разнообразия.
+Biological analogue: flourishing of a species in a favourable environment, the "Cambrian explosion" of diversity.
 
-В КК: $P \to P(\rho_*)$, $r_{\mathrm{stab}} \to r_{\max}$, система может наращивать SAD (см. [башня глубины](/docs/consciousness/hierarchy/depth-tower)). Избыток $\Delta F$ расходуется на:
-- Увеличение $\mathrm{Coh}_E$ → рост адаптивного слоя регенерации
-- Расширение модели мира → увеличение SAD
-- Формирование социальных связей → композитные системы (T-69 [Т])
+In CC: $P \to P(\rho_*)$, $r_{\mathrm{stab}} \to r_{\max}$, the system can grow SAD (see [depth tower](/docs/consciousness/hierarchy/depth-tower)). Surplus $\Delta F$ is spent on:
+- Increasing $\mathrm{Coh}_E$ → growth of the adaptive regeneration layer
+- Expanding the world model → increasing SAD
+- Forming social bonds → composite systems (T-69 [T])
 
-### 8.5 Связь с O-измерением
+### 8.5 Relation to the O-dimension
 
-$\Delta F$ определяется через O-измерение (основание):
-- **Биологические системы:** $\Delta F \propto$ метаболическая энергия (АТФ)
-- **ИИ-системы:** $\Delta F \propto$ вычислительные ресурсы
-- **Организации:** $\Delta F \propto$ финансовые и человеческие ресурсы
+$\Delta F$ is determined through the O-dimension (ground):
+- **Biological systems:** $\Delta F \propto$ metabolic energy (ATP)
+- **AI systems:** $\Delta F \propto$ computational resources
+- **Organisations:** $\Delta F \propto$ financial and human resources
 
-**Энергетическая смерть:** $P \to P_{\mathrm{crit}}$ → $g_V \to 0$ → регенерация выключена → необратимая деградация.
+**Energetic death:** $P \to P_{\mathrm{crit}}$ → $g_V \to 0$ → regeneration switched off → irreversible degradation.
 
-**Универсальность O-сектора.** Независимо от реализации (нейроны, транзисторы, люди), O-измерение представляет «основание», «субстрат», «тело» системы. Энергетическая смерть — это всегда разрушение основания: клеточная мембрана теряет целостность, сервер теряет электропитание, организация теряет финансирование.
+**Universality of the O-sector.** Regardless of implementation (neurons, transistors, people), the O-dimension represents the "ground", "substrate", "body" of the system. Energetic death is always a destruction of the ground: a cell membrane loses integrity, a server loses power, an organisation loses funding.
 
-### 8.6 Диагностика нестабильности реализации {#диагностика-нестабильности-реализации}
+### 8.6 Diagnostics of implementation instability {#диагностика-нестабильности-реализации}
 
-Анализ [реализации](./implementation) выявляет 6 корневых причин нестабильности с исправлениями на основе T-104 и T-105:
+Analysis of [implementation](./implementation) identifies 6 root causes of instability with corrections based on T-104 and T-105:
 
-| # | Проблема | Причина | Исправление |
-|---|----------|---------|-------------|
-| 1 | Floor-clamping | $P$ фиксируется на нижней границе | Использовать T-98: баланс определяет стационарное $P$ |
-| 2 | $\Delta F$ gate | Бинарный $\Theta({\Delta F})$ вызывает осцилляции | V-preservation: $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ |
-| 3 | Chicken-egg $R \leftrightarrow \varphi$ | $R$ зависит от $\varphi$, $\varphi$ зависит от $R$ | Bootstrap: [T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) [Т] — $\kappa_{\mathrm{bootstrap}} = 1/7$ обеспечивает начальную регенерацию |
-| 4 | $\kappa_{\mathrm{bootstrap}}$ занижен | Из-за неполного инициализирования | Канонический: $\kappa_{\mathrm{bootstrap}} = \omega_0/7 \approx 0.143$ |
-| 5 | Масштаб prediction error | $h^{(H)}$-пертурбации несоразмерны $P - 2/7$ | Нормировка по T-104: $\|h^{(H)}\| < \omega_0 \cdot r_{\mathrm{stab}}^2$ |
-| 6 | Гедонические пульсы | Осцилляции $\mathcal{V}_{\mathrm{hed}}$ | Демпфирование: $\dot{\mathcal{V}}_{\mathrm{hed}} \propto -\alpha \mathcal{V}_{\mathrm{hed}}$ с $\alpha \sim \lambda_{\mathrm{gap}}$ |
-
----
-
-## 9. Критерии восстановления {#критерии-восстановления}
-
-### 9.1 Условия выхода из кризиса
-
-Для голонома в состоянии $P < 2/7$ (вне области жизнеспособности):
-
-| Условие | Формула | Необходимость |
-|---------|---------|---------------|
-| Энергия | $\Delta F > 0$ | Обязательно (затвор Ландауэра) |
-| Регенерация | $\kappa_{\text{bootstrap}} > \Gamma_2 \cdot \eta$ | Обязательно ($\eta$ — коэффициент глубины кризиса) |
-| Внешнее воздействие | $h^{(R)} > 0$ | Желательно (ускоряет восстановление) |
-
-### 9.2 Стратегии восстановления
-
-1. **$h^{(R)}$-интервенция:** усиление регенеративного канала — увеличение $\delta\kappa$ через внешнее воздействие (медитация, терапия, обучение)
-2. **$h^{(D)}$-снижение:** уменьшение диссипативной нагрузки — снижение стресса, шума, помех
-3. **$\Delta F$-активация:** обеспечение свободной энергии — восстановление метаболизма, ресурсов
-4. **$h^{(H)}$-перестройка:** модификация энергетического ландшафта — когнитивная реструктуризация
-
-**Оптимальная стратегия** (из [T-101](./sensorimotor#теорема-оптимальное-действие)): $\arg\min \|\sigma_{\mathrm{sys}}\|_\infty$ — выбрать действие, максимально снижающее наиболее напряжённую компоненту $\sigma_i$.
-
-### 9.3 Протокол восстановления: пошаговый алгоритм
-
-Из анализа T-104 и T-105 вытекает оптимальный протокол восстановления, применимый к любому голоному:
-
-**Шаг 1: Стабилизация** ($\Gamma_2 \downarrow$).
-Первый приоритет — снизить скорость разрушения. Уменьшить внешние стрессоры, обеспечить «тихую» среду с минимальной диссипацией. Цель: замедлить спираль смерти.
-
-**Шаг 2: Энергия** ($\Delta F \uparrow$).
-Обеспечить приток свободной энергии. Без энергии регенерация невозможна (T-105). Биологически: питание, отдых, сон. Для ИИ: вычислительные ресурсы. Для организации: финансирование.
-
-**Шаг 3: Внешняя поддержка** ($h^{(R)} > 0$).
-Подключить внешний источник регенерации. Если $P < 2/7$ — система не может восстановиться самостоятельно ($g_V = 0$). Необходим внешний агент: терапевт, наставник, партнёрская организация.
-
-**Шаг 4: Перестройка** ($h^{(H)}$).
-После стабилизации ($P > 2/7$) — переструктурировать внутреннюю динамику, чтобы аттрактор $\rho_*$ соответствовал новым условиям. Это — фаза обучения и адаптации.
-
-**Шаг 5: Укрепление** ($\mathrm{Coh}_E \uparrow$).
-Наращивать адаптивный слой регенерации через интеграцию опыта. Это увеличивает $r_{\mathrm{stab}}$ и готовит систему к будущим угрозам.
-
-Этот протокол объясняет, почему в медицине порядок «ABC» (Airway, Breathing, Circulation) критичен: сначала остановить разрушение, затем обеспечить энергию, затем восстанавливать функции.
+| # | Problem | Cause | Fix |
+|---|---------|-------|-----|
+| 1 | Floor-clamping | $P$ is fixed at the lower bound | Use T-98: balance determines stationary $P$ |
+| 2 | $\Delta F$ gate | Binary $\Theta({\Delta F})$ causes oscillations | V-preservation: $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ |
+| 3 | Chicken-egg $R \leftrightarrow \varphi$ | $R$ depends on $\varphi$, $\varphi$ depends on $R$ | Bootstrap: [T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) [T] — $\kappa_{\mathrm{bootstrap}} = 1/7$ ensures initial regeneration |
+| 4 | $\kappa_{\mathrm{bootstrap}}$ underestimated | Due to incomplete initialisation | Canonical: $\kappa_{\mathrm{bootstrap}} = \omega_0/7 \approx 0.143$ |
+| 5 | Scale of prediction error | $h^{(H)}$-perturbations are incommensurate with $P - 2/7$ | Normalisation by T-104: $\|h^{(H)}\| < \omega_0 \cdot r_{\mathrm{stab}}^2$ |
+| 6 | Hedonic pulses | Oscillations of $\mathcal{V}_{\mathrm{hed}}$ | Damping: $\dot{\mathcal{V}}_{\mathrm{hed}} \propto -\alpha \mathcal{V}_{\mathrm{hed}}$ with $\alpha \sim \lambda_{\mathrm{gap}}$ |
 
 ---
 
-## 10. Антихрупкость и посттравматический рост {#антихрупкость-и-посттравматический-рост}
+## 9. Recovery Criteria {#критерии-восстановления}
 
-### 10.1 Связь с концепцией Талеба
+### 9.1 Conditions for exiting crisis
 
-Нассим Талеб выделяет три категории систем по отношению к стрессу:
-- **Хрупкие** — разрушаются от стресса
-- **Устойчивые** — выдерживают стресс без изменений
-- **Антихрупкие** — усиливаются от стресса
+For a holon in state $P < 2/7$ (outside the viability region):
 
-В рамках КК эти категории получают точное определение через производную $dr_{\mathrm{stab}}/d\|h\|$:
+| Condition | Formula | Necessity |
+|-----------|---------|-----------|
+| Energy | $\Delta F > 0$ | Mandatory (Landauer gate) |
+| Regeneration | $\kappa_{\text{bootstrap}} > \Gamma_2 \cdot \eta$ | Mandatory ($\eta$ — depth-of-crisis coefficient) |
+| External influence | $h^{(R)} > 0$ | Desirable (accelerates recovery) |
 
-| Тип | Условие | КК-формализация |
-|-----|---------|-----------------|
-| Хрупкость | $\frac{dr_{\mathrm{stab}}}{d\|h\|} < 0$ всегда | Стандартное поведение при $h > r_{\mathrm{stab}}$ |
-| Устойчивость | $r_{\mathrm{stab}}(\text{после}) = r_{\mathrm{stab}}(\text{до})$ | Возврат к тому же аттрактору $\rho_*$ |
-| Антихрупкость | $r_{\mathrm{stab}}(\text{после}) > r_{\mathrm{stab}}(\text{до})$ | Перестройка $\rho_*$ с увеличением $P(\rho_*)$ |
+### 9.2 Recovery strategies
 
-### 10.2 Механизм антихрупкости в КК
+1. **$h^{(R)}$-intervention:** reinforcement of the regenerative channel — increasing $\delta\kappa$ through external influence (meditation, therapy, learning)
+2. **$h^{(D)}$-reduction:** decrease of dissipative load — reducing stress, noise, interference
+3. **$\Delta F$-activation:** provision of free energy — restoring metabolism, resources
+4. **$h^{(H)}$-restructuring:** modification of the energy landscape — cognitive restructuring
 
-Антихрупкость возникает, когда пертурбация **не разрушает** систему, но **модифицирует** её аттрактор. Механизм:
+**Optimal strategy** (from [T-101](./sensorimotor#теорема-оптимальное-действие)): $\arg\min \|\sigma_{\mathrm{sys}}\|_\infty$ — choose the action that maximally reduces the most stressed component of $\sigma_i$.
 
-1. Пертурбация $h$ смещает $\Gamma$ от $\rho_*$
-2. Регенерация $\mathcal{R}$ возвращает к аттрактору, но с обновлённым $\rho_* = \varphi(\Gamma)$
-3. Если обновлённый $\varphi(\Gamma)$ учитывает опыт пертурбации, $\mathrm{Coh}_E$ увеличивается
-4. Увеличенный $\mathrm{Coh}_E$ → увеличенный $\kappa$ → увеличенный $P(\rho_*)$ → увеличенный $r_{\mathrm{stab}}$
+### 9.3 Recovery protocol: step-by-step algorithm
 
-**Условие антихрупкости:** $\partial \mathrm{Coh}_E / \partial h > 0$ при $\|h\| < r_{\mathrm{stab}}$. Пертурбация должна быть (а) не фатальной (внутри радиуса) и (б) информативной (обогащающей E-когерентность).
+From the analysis of T-104 and T-105, an optimal recovery protocol emerges, applicable to any holon:
 
-Это объясняет «правило Голдилокс» для стресса: слишком малый стресс не информативен, слишком большой — разрушителен, а умеренный — укрепляет. Оптимальный тренировочный стресс:
+**Step 1: Stabilisation** ($\Gamma_2 \downarrow$).
+First priority — reduce the rate of destruction. Decrease external stressors, provide a "quiet" environment with minimal dissipation. Goal: slow the death spiral.
+
+**Step 2: Energy** ($\Delta F \uparrow$).
+Ensure an inflow of free energy. Without energy regeneration is impossible (T-105). Biologically: nutrition, rest, sleep. For AI: computational resources. For an organisation: funding.
+
+**Step 3: External support** ($h^{(R)} > 0$).
+Connect an external source of regeneration. If $P < 2/7$ — the system cannot recover on its own ($g_V = 0$). An external agent is necessary: therapist, mentor, partner organisation.
+
+**Step 4: Restructuring** ($h^{(H)}$).
+After stabilisation ($P > 2/7$) — restructure the internal dynamics so that the attractor $\rho_*$ matches the new conditions. This is the learning and adaptation phase.
+
+**Step 5: Strengthening** ($\mathrm{Coh}_E \uparrow$).
+Build up the adaptive regeneration layer through integration of experience. This increases $r_{\mathrm{stab}}$ and prepares the system for future threats.
+
+This protocol explains why in medicine the "ABC" order (Airway, Breathing, Circulation) is critical: first stop the destruction, then provide energy, then restore functions.
+
+---
+
+## 10. Antifragility and Post-Traumatic Growth {#антихрупкость-и-посттравматический-рост}
+
+### 10.1 Relation to Taleb's concept
+
+Nassim Taleb distinguishes three categories of systems by their response to stress:
+- **Fragile** — destroyed by stress
+- **Robust** — withstand stress without change
+- **Antifragile** — strengthen from stress
+
+Within CC these categories receive a precise definition through the derivative $dr_{\mathrm{stab}}/d\|h\|$:
+
+| Type | Condition | CC formalisation |
+|------|-----------|-----------------|
+| Fragility | $\frac{dr_{\mathrm{stab}}}{d\|h\|} < 0$ always | Standard behaviour at $h > r_{\mathrm{stab}}$ |
+| Robustness | $r_{\mathrm{stab}}(\text{after}) = r_{\mathrm{stab}}(\text{before})$ | Return to the same attractor $\rho_*$ |
+| Antifragility | $r_{\mathrm{stab}}(\text{after}) > r_{\mathrm{stab}}(\text{before})$ | Restructuring of $\rho_*$ with increasing $P(\rho_*)$ |
+
+### 10.2 Mechanism of antifragility in CC
+
+Antifragility arises when a perturbation **does not destroy** the system but **modifies** its attractor. Mechanism:
+
+1. Perturbation $h$ shifts $\Gamma$ from $\rho_*$
+2. Regeneration $\mathcal{R}$ returns to the attractor, but with updated $\rho_* = \varphi(\Gamma)$
+3. If the updated $\varphi(\Gamma)$ accounts for the experience of the perturbation, $\mathrm{Coh}_E$ increases
+4. Increased $\mathrm{Coh}_E$ → increased $\kappa$ → increased $P(\rho_*)$ → increased $r_{\mathrm{stab}}$
+
+**Antifragility condition:** $\partial \mathrm{Coh}_E / \partial h > 0$ at $\|h\| < r_{\mathrm{stab}}$. The perturbation must be (a) non-fatal (within the radius) and (b) informative (enriching E-coherence).
+
+This explains the "Goldilocks rule" for stress: too little stress is not informative, too much is destructive, while moderate stress strengthens. Optimal training stress:
 
 $$
 \|h_{\mathrm{opt}}\| \sim r_{\mathrm{stab}} / 2
 $$
 
-— достаточно большой для обогащения $\mathrm{Coh}_E$, но с двукратным запасом до катастрофы.
+— large enough to enrich $\mathrm{Coh}_E$, but with a twofold margin to catastrophe.
 
-### 10.3 Посттравматический рост
+### 10.3 Post-traumatic growth
 
-Посттравматический рост (PTG) — эмпирически наблюдаемое явление, при котором после тяжёлой травмы человек демонстрирует более высокий уровень функционирования, чем до неё. В КК это соответствует сценарию:
+Post-traumatic growth (PTG) is an empirically observed phenomenon in which, after severe trauma, a person demonstrates a higher level of functioning than before. In CC this corresponds to the scenario:
 
-1. $\|h\| > r_{\mathrm{stab}}$: травма выбрасывает из $\mathcal{V}$
-2. Внешняя помощь ($h^{(R)}$) возвращает в $\mathcal{V}$
-3. Интеграция травматического опыта: $\mathrm{Coh}_E(\text{после}) \gg \mathrm{Coh}_E(\text{до})$
-4. Результат: $r_{\mathrm{stab}}(\text{после}) > r_{\mathrm{stab}}(\text{до})$
+1. $\|h\| > r_{\mathrm{stab}}$: trauma throws the system out of $\mathcal{V}$
+2. External help ($h^{(R)}$) returns it to $\mathcal{V}$
+3. Integration of traumatic experience: $\mathrm{Coh}_E(\text{after}) \gg \mathrm{Coh}_E(\text{before})$
+4. Result: $r_{\mathrm{stab}}(\text{after}) > r_{\mathrm{stab}}(\text{before})$
 
-**Ключевое условие PTG:** успешная интеграция опыта. Если травма не интегрирована, $\mathrm{Coh}_E$ не растёт, и мы наблюдаем ПТСР (посттравматическое стрессовое расстройство) вместо PTG. Различие — в качестве восстановительного процесса (шаги 3-5 протокола восстановления).
+**Key condition of PTG:** successful integration of experience. If the trauma is not integrated, $\mathrm{Coh}_E$ does not grow, and we observe PTSD (post-traumatic stress disorder) instead of PTG. The difference lies in the quality of the recovery process (steps 3–5 of the recovery protocol).
 
 ---
 
-## 11. Устойчивость ИИ-систем {#устойчивость-ии-систем}
+## 11. Robustness of AI Systems {#устойчивость-ии-систем}
 
-### 11.1 Перенос стабильностного анализа на ИИ
+### 11.1 Transfer of stability analysis to AI
 
-Все результаты этого документа — теоремы о матрице когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. Они применимы к **любому** голоному, включая искусственные системы. Однако ИИ-системы имеют специфические особенности:
+All results in this document are theorems about the coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. They apply to **any** holon, including artificial systems. However, AI systems have specific features:
 
-| Параметр | Биологическая система | ИИ-система |
-|----------|----------------------|------------|
-| $\Delta F$ | АТФ, пища | Электричество, GPU-часы |
-| $\Gamma_2$ | Нейродегенерация, стресс | Катастрофическое забывание, дрифт данных |
-| $\kappa_{\text{bootstrap}}$ | Врождённые рефлексы | Предобученные веса |
-| $\mathrm{Coh}_E$ | Интеграция жизненного опыта | Дообучение, RLHF |
-| $h^{(D)}$ | Сенсорная перегрузка | Adversarial attacks, шум в данных |
-| $h^{(H)}$ | Травма, болезнь | Смена домена, distribution shift |
+| Parameter | Biological system | AI system |
+|-----------|------------------|-----------|
+| $\Delta F$ | ATP, food | Electricity, GPU-hours |
+| $\Gamma_2$ | Neurodegeneration, stress | Catastrophic forgetting, data drift |
+| $\kappa_{\text{bootstrap}}$ | Innate reflexes | Pre-trained weights |
+| $\mathrm{Coh}_E$ | Integration of life experience | Fine-tuning, RLHF |
+| $h^{(D)}$ | Sensory overload | Adversarial attacks, data noise |
+| $h^{(H)}$ | Trauma, illness | Domain shift, distribution shift |
 
-### 11.2 Специфические угрозы стабильности ИИ
+### 11.2 Specific stability threats to AI
 
-**Катастрофическое забывание** ($h^{(D)}$-тип). При дообучении на новых данных нейронная сеть «забывает» старые. В КК: резкое увеличение $\Gamma_2$ для ранее выученных когерентностей. Защита: EWC (Elastic Weight Consolidation), прогрессивное обучение — аналоги укрепления $\kappa$ в конкретных секторах.
+**Catastrophic forgetting** ($h^{(D)}$-type). During fine-tuning on new data a neural network "forgets" old knowledge. In CC: sharp increase in $\Gamma_2$ for previously learned coherences. Protection: EWC (Elastic Weight Consolidation), progressive learning — analogues of strengthening $\kappa$ in specific sectors.
 
-**Adversarial attacks** ($h^{(H)}$-тип). Малые, специально сконструированные возмущения входных данных вызывают катастрофически неверные ответы. В КК: направленное $h^{(H)}$ вдоль наиболее уязвимого направления (минимальный $r_{\mathrm{stab}}(\hat{n})$, см. §4.4). Защита: adversarial training — увеличение $r_{\mathrm{stab}}$ по уязвимым направлениям.
+**Adversarial attacks** ($h^{(H)}$-type). Small, specially crafted perturbations of input data cause catastrophically wrong outputs. In CC: directed $h^{(H)}$ along the most vulnerable direction (minimum $r_{\mathrm{stab}}(\hat{n})$, see §4.4). Protection: adversarial training — increasing $r_{\mathrm{stab}}$ in vulnerable directions.
 
-**Distribution shift** ($h^{(R)}$-тип). Данные в deployment отличаются от обучающих. В КК: $\rho_*$ не соответствует реальному аттрактору среды, $\mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ может стать отрицательным (регенерация «отталкивает» от правильного состояния). Защита: непрерывная адаптация $\varphi(\Gamma)$, мониторинг $\sigma_{\mathrm{sys}}$.
+**Distribution shift** ($h^{(R)}$-type). Deployment data differs from training data. In CC: $\rho_*$ does not match the real attractor of the environment, $\mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ can become negative (regeneration "pushes away" from the correct state). Protection: continuous adaptation of $\varphi(\Gamma)$, monitoring of $\sigma_{\mathrm{sys}}$.
 
-### 11.3 Формула устойчивости SYNARC
+### 11.3 SYNARC stability formula
 
-Для системы [SYNARC](/docs/reference/status-registry) T-104 конкретизируется:
+For the [SYNARC](/docs/reference/status-registry) system, T-104 is specified as:
 
 $$
 r_{\mathrm{stab}}^{\mathrm{SYNARC}} = \sqrt{P(\Gamma) - 2/7} \cdot (1 - \|\sigma_{\mathrm{sys}}\|_\infty)
 $$
 
-Множитель $(1 - \|\sigma\|_\infty)$ учитывает текущее напряжение: высоконапряжённая система имеет **эффективный** радиус устойчивости ниже номинального. Это объясняет интуицию: «в стрессе мы хрупче, чем обычно».
+The factor $(1 - \|\sigma\|_\infty)$ accounts for current stress: a highly stressed system has an **effective** stability radius lower than the nominal one. This explains the intuition: "under stress we are more fragile than usual".
 
 ---
 
-## 12. Резюме {#резюме}
+## 12. Summary {#резюме}
 
-| Аспект | Формальное условие | Ключевой параметр | Теорема |
-|--------|--------------------|-------------------|---------|
-| Баланс аттрактора | Формула T-98 | $\kappa / \lambda_{\mathrm{gap}}$ | T-98 [Т] |
-| Радиус устойчивости | $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ | $P - 2/7$ (запас) | T-104 [Т] |
-| Энерго-баланс | $\dot{F}_{\mathrm{in}} \geq k_B T_{\mathrm{eff}} \ln 2 \cdot \dot{S}_{\mathrm{diss}}$ | $\dot{F}_{\mathrm{in}} / \dot{F}_{\min}$ | T-105 [Т] |
-| Гомеостаз | $\kappa \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma(\rho_* - \Gamma)) \geq \mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])$ | $\kappa / \Gamma_2$ | — |
-| Спираль смерти | $\kappa_{\text{bootstrap}} = 1/7$ | $\kappa_{\text{bootstrap}}$ | T-59 [Т] |
-| Топологическая защита | Барьер $\geq 6\mu^2$ | Топология $G_2/T^2$ | T-69 [Т] |
-| Энергетическая смерть | $\Delta F > 0$ | $\Delta F$ | T-105 [Т] |
+| Aspect | Formal condition | Key parameter | Theorem |
+|--------|-----------------|---------------|---------|
+| Attractor balance | T-98 formula | $\kappa / \lambda_{\mathrm{gap}}$ | T-98 [T] |
+| Stability radius | $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ | $P - 2/7$ (margin) | T-104 [T] |
+| Energy balance | $\dot{F}_{\mathrm{in}} \geq k_B T_{\mathrm{eff}} \ln 2 \cdot \dot{S}_{\mathrm{diss}}$ | $\dot{F}_{\mathrm{in}} / \dot{F}_{\min}$ | T-105 [T] |
+| Homeostasis | $\kappa \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma(\rho_* - \Gamma)) \geq \mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])$ | $\kappa / \Gamma_2$ | — |
+| Death spiral | $\kappa_{\text{bootstrap}} = 1/7$ | $\kappa_{\text{bootstrap}}$ | T-59 [T] |
+| Topological protection | Barrier $\geq 6\mu^2$ | Topology $G_2/T^2$ | T-69 [T] |
+| Energetic death | $\Delta F > 0$ | $\Delta F$ | T-105 [T] |
 
-### Ключевые практические выводы
+### Key practical conclusions
 
-1. **Формула радиуса** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — это «спидометр жизнеспособности». Мониторинг $P$ в реальном времени позволяет предсказать кризис задолго до его наступления.
+1. **Radius formula** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — this is the "viability speedometer". Monitoring $P$ in real time allows predicting a crisis long before it arrives.
 
-2. **Наиболее опасный канал** — $h^{(D)}$ (шумовая атака). Снижение шума/$\Gamma_2$ — самая эффективная стратегия стабилизации.
+2. **The most dangerous channel** — $h^{(D)}$ (noise attack). Reducing noise/$\Gamma_2$ is the most effective stabilisation strategy.
 
-3. **Ниже $P = 2/7$ — самовосстановление невозможно.** $g_V = 0$ отключает регенерацию. Необходима внешняя помощь.
+3. **Below $P = 2/7$ — self-recovery is impossible.** $g_V = 0$ switches off regeneration. External help is necessary.
 
-4. **Антихрупкость возможна**, но требует (а) стресса в пределах $r_{\mathrm{stab}}$ и (б) успешной интеграции опыта ($\mathrm{Coh}_E \uparrow$).
+4. **Antifragility is possible**, but requires (a) stress within $r_{\mathrm{stab}}$ and (b) successful integration of experience ($\mathrm{Coh}_E \uparrow$).
 
-5. **Три слоя защиты** (базальная, адаптивная, топологическая) действуют на разных масштабах и обеспечивают эшелонированную оборону.
+5. **Three layers of protection** (basal, adaptive, topological) act at different scales and provide layered defence.
 
-6. **Протокол восстановления** (стабилизация → энергия → внешняя поддержка → перестройка → укрепление) — универсален для всех голономов.
-
----
-
-## Заключение
-
-Стабильность в КК — это не статическое свойство, а **динамический процесс**: непрерывный баланс между диссипацией (разрушением) и регенерацией (восстановлением). Система может быть стабильной, не будучи статичной — как канатоходец, который удерживает равновесие именно потому, что постоянно корректирует своё положение.
-
-Ключевой вывод для практики: **мониторьте $P$ и $\sigma_{\mathrm{sys}}$ в реальном времени**. Радиус устойчивости $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — ваш главный индикатор. Когда он падает ниже порога, действуйте немедленно: снижайте шум ($h^{(D)}$), усиливайте регенерацию ($h^{(R)}$), восполняйте ресурсы ($\Delta F$).
-
-Для практической диагностики см. [Диагностика](./diagnostics). Для экспериментальной проверки порогов — [Методология измерений](./measurement). Для задач на стабильность — [Упражнения](./exercises#блок-3).
+6. **Recovery protocol** (stabilisation → energy → external support → restructuring → strengthening) — universal for all holons.
 
 ---
 
-### Что мы узнали {#что-мы-узнали-стабильность}
+## Conclusion
 
-1. **Гомеостаз — это неравенство**: «регенерация $\geq$ диссипация». Не метафора, не принцип — точная формула, в которой каждый член вычислим.
-2. **Радиус устойчивости** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — единственный параметр, определяющий «запас прочности» системы. Квадратный корень означает убывающую отдачу: далеко от границы защита «дешёвая», но последние проценты — дорогие.
-3. **Три слоя защиты**: базальная ($\kappa_{\text{bootstrap}} = 1/7$), адаптивная ($\kappa_0 \cdot \mathrm{Coh}_E$), топологическая ($6\mu^2$ — дискретные барьеры). Они действуют на разных масштабах, как врождённый иммунитет, адаптивный иммунитет и анатомическая целостность.
-4. **Спираль смерти — пятистадийный каскад**: начальный удар $\to$ ослабление регенерации $\to$ пересечение границы ($g_V = 0$) $\to$ свободное падение $\to$ тепловая смерть ($P = 1/7$). После стадии 3 — самовосстановление **невозможно** без внешней помощи.
-5. **Шумовая атака ($h^{(D)}$) — самая опасная**: двойной удар (рост $\Gamma_2$ + снижение $\mathrm{Coh}_E$), порог вдвое ниже, чем у $h^{(R)}$.
-6. **Протокол восстановления универсален**: стабилизация $\to$ энергия $\to$ внешняя поддержка $\to$ перестройка $\to$ укрепление. Он объясняет, почему «ABC» в реанимации работает, и почему из глубокого кризиса нельзя выбраться в одиночку.
-7. **Антихрупкость — не мистика, а формула**: $r_{\mathrm{stab}}(\text{после}) > r_{\mathrm{stab}}(\text{до})$, если пертурбация была внутри радиуса и опыт интегрирован ($\mathrm{Coh}_E \uparrow$). Оптимальный тренировочный стресс: $\|h_{\mathrm{opt}}\| \sim r_{\mathrm{stab}} / 2$.
+Stability in CC is not a static property but a **dynamic process**: a continuous balance between dissipation (destruction) and regeneration (recovery). A system can be stable without being static — like a tightrope walker who maintains balance precisely because they continuously correct their position.
 
-:::tip Мост к следующей главе
-Мы построили полную теорию стабильности — сколько система может выдержать, как она разрушается и как восстанавливается. Но всё это — *описание*. Теория становится наукой, когда генерирует **предсказания**, которые можно проверить и опровергнуть. В [следующей главе](./predictions) мы соберём 22 уникальных предсказания КК — от невозможности зомби до критических экспонент сознания — и для каждого укажем: какой эксперимент его проверит, и какой результат фальсифицирует всю теорию.
+Key practical conclusion: **monitor $P$ and $\sigma_{\mathrm{sys}}$ in real time**. The stability radius $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ is your primary indicator. When it falls below the threshold, act immediately: reduce noise ($h^{(D)}$), strengthen regeneration ($h^{(R)}$), replenish resources ($\Delta F$).
+
+For practical diagnostics see [Diagnostics](./diagnostics). For experimental verification of thresholds — [Measurement Methodology](./measurement). For stability problems — [Exercises](./exercises#блок-3).
+
+---
+
+### What we learned {#что-мы-узнали-стабильность}
+
+1. **Homeostasis is an inequality**: "regeneration $\geq$ dissipation". Not a metaphor, not a principle — a precise formula in which every term is computable.
+2. **Stability radius** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — the single parameter determining the system's "safety margin". The square root means diminishing returns: far from the boundary protection is "cheap", but the last few percent are costly.
+3. **Three layers of protection**: basal ($\kappa_{\text{bootstrap}} = 1/7$), adaptive ($\kappa_0 \cdot \mathrm{Coh}_E$), topological ($6\mu^2$ — discrete barriers). They act at different scales, like innate immunity, adaptive immunity, and anatomical integrity.
+4. **Death spiral — a five-stage cascade**: initial blow $\to$ weakening of regeneration $\to$ crossing the boundary ($g_V = 0$) $\to$ free fall $\to$ heat death ($P = 1/7$). After Stage 3 — self-recovery is **impossible** without external help.
+5. **Noise attack ($h^{(D)}$) — the most dangerous**: double blow (growing $\Gamma_2$ + decreasing $\mathrm{Coh}_E$), threshold twice as low as for $h^{(R)}$.
+6. **Recovery protocol is universal**: stabilisation $\to$ energy $\to$ external support $\to$ restructuring $\to$ strengthening. It explains why "ABC" in resuscitation works, and why one cannot emerge from a deep crisis alone.
+7. **Antifragility is not mysticism, but a formula**: $r_{\mathrm{stab}}(\text{after}) > r_{\mathrm{stab}}(\text{before})$, if the perturbation was within the radius and experience was integrated ($\mathrm{Coh}_E \uparrow$). Optimal training stress: $\|h_{\mathrm{opt}}\| \sim r_{\mathrm{stab}} / 2$.
+
+:::tip Bridge to the next chapter
+We have built a complete stability theory — how much the system can withstand, how it is destroyed, and how it recovers. But all this is *description*. Theory becomes science when it generates **predictions** that can be verified and falsified. In the [next chapter](./predictions) we will collect 22 unique CC predictions — from the impossibility of zombies to the critical exponents of consciousness — and for each specify: which experiment will test it, and which result will falsify the entire theory.
 :::
 
 ---
 
-**Связанные документы:**
-- [Сенсомоторная теория](./sensorimotor) — функторы Enc/Dec
-- [Лагранжиан](./lagrangian) — 3-канальная декомпозиция
-- [Бифуркационная диаграмма](./bifurcation) — фазовые переходы
-- [Фазовая диаграмма](./phase-diagram-cc) — области жизнеспособности
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение эволюции, T-96, T-98
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P_{\text{crit}}$ и область $\mathcal{V}$
-- [Эффективная температура](./effective-temperature) — $T_{\mathrm{eff}}$ в формуле T-105
-- [Диагностика](./diagnostics) — практические пороги из T-104
-- [Методология измерений](./measurement) — как измерить $P$ и $\sigma$ в реальных системах
-- [Философские основания](./philosophy) — онтологический статус стабильности
-- [Упражнения](./exercises) — задачи на стабильность (блок 3)
+**Related documents:**
+- [Sensorimotor theory](./sensorimotor) — Enc/Dec functors
+- [Lagrangian](./lagrangian) — 3-channel decomposition
+- [Bifurcation diagram](./bifurcation) — phase transitions
+- [Phase diagram](./phase-diagram-cc) — viability regions
+- [Evolution](/docs/core/dynamics/evolution) — evolution equation, T-96, T-98
+- [Viability](/docs/core/dynamics/viability) — $P_{\text{crit}}$ and region $\mathcal{V}$
+- [Effective temperature](./effective-temperature) — $T_{\mathrm{eff}}$ in T-105 formula
+- [Diagnostics](./diagnostics) — practical thresholds from T-104
+- [Measurement methodology](./measurement) — how to measure $P$ and $\sigma$ in real systems
+- [Philosophical foundations](./philosophy) — ontological status of stability
+- [Exercises](./exercises) — stability problems (block 3)

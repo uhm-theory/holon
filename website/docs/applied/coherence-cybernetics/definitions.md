@@ -1,896 +1,896 @@
 ---
 sidebar_position: 3
-title: Определения
-description: Базовые определения Кибернетики Когерентности
+title: Definitions
+description: Basic definitions of Coherence Cybernetics
 ---
 
-# Базовые Определения
+# Basic Definitions
 
-:::info Мост из предыдущей главы
-В [предыдущей главе](./axiomatics) мы познакомились с аксиоматическим фундаментом КК: единственным примитивом (категория $\mathcal{C}$), пятью аксиомами Ω⁷ и цепочкой вывода от $\Omega$ до $\Gamma^*$. Мы увидели, *откуда* берутся конструкции КК. Теперь нам предстоит определить их **точно**: дать каждому понятию формальное определение, указать формулу, диапазон значений и физический смысл. Эти определения — язык, на котором написаны [теоремы следующей главы](./theorems).
+:::info Bridge from the Previous Chapter
+In the [previous chapter](./axiomatics) we became acquainted with the axiomatic foundation of CC: the single primitive (category $\mathcal{C}$), the five axioms of Ω⁷, and the derivation chain from $\Omega$ to $\Gamma^*$. We saw *where* CC constructions come from. Now we must define them **precisely**: give each concept a formal definition, specify the formula, range of values, and physical meaning. These definitions are the language in which the [theorems of the next chapter](./theorems) are written.
 :::
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Определим Голоном** $\mathbb{H}$ — минимальную самодостаточную единицу реальности (раздел «Голоном»)
-2. **Введём шесть ключевых мер** — чистота $P$, энтропия $S_{vN}$, интеграция $\Phi$, дифференциация $D_{\text{diff}}$, рефлексия $R$, сознательность $C$ (раздел «Ключевые меры»)
-3. **Определим E-когерентность** — центральную меру, связывающую опыт и динамику (раздел «[E-когерентность](#e-когерентность)»)
-4. **Опишем иерархию интериорности** L0-L4 с точными порогами (раздел «[Иерархия интериорности](#иерархия-интериорности)»)
-5. **Введём тензор напряжений** $\sigma_{\mathrm{sys}}$ — диагностический инструмент для любой системы (раздел «[Тензор напряжений](#тензор-напряжений)»)
-6. **Опишем иерархию аттракторов** — три уровня равновесия Голонома (раздел «[Иерархия аттракторов](#иерархия-аттракторов)»)
-7. **Покажем определения в действии** на трёх примерах: термостат, мозг, LLM (раздел «Примеры»)
-8. **Обсудим операционализацию** для ИИ, биологии и организаций (разделы «Операционализация»)
+:::tip Chapter Roadmap
+In this chapter we:
+1. **Define the Holon** $\mathbb{H}$ — the minimal self-sufficient unit of reality (section "Holon")
+2. **Introduce six key measures** — purity $P$, entropy $S_{vN}$, integration $\Phi$, differentiation $D_{\text{diff}}$, reflection $R$, consciousness $C$ (section "Key Measures")
+3. **Define E-coherence** — the central measure linking experience and dynamics (section "[E-Coherence](#e-когерентность)")
+4. **Describe the interiority hierarchy** L0–L4 with precise thresholds (section "[Interiority Hierarchy](#иерархия-интериорности)")
+5. **Introduce the stress tensor** $\sigma_{\mathrm{sys}}$ — a diagnostic tool for any system (section "[Stress Tensor](#тензор-напряжений)")
+6. **Describe the attractor hierarchy** — three levels of Holon equilibrium (section "[Attractor Hierarchy](#иерархия-аттракторов)")
+7. **Show the definitions in action** on three examples: thermostat, brain, LLM (section "Examples")
+8. **Discuss operationalization** for AI, biology, and organizations (sections "Operationalization")
 :::
 
-Эта глава — не справочник и не глоссарий. Это путеводитель по концептуальному ландшафту Кибернетики Когерентности. Каждое определение здесь — ответ на конкретный вопрос: *что именно мы описываем, когда говорим о системе, обладающей интериорностью?*
+This chapter is not a reference guide or a glossary. It is a guide through the conceptual landscape of Coherence Cybernetics. Each definition here is the answer to a specific question: *what exactly are we describing when we speak of a system possessing interiority?*
 
-Читатель, знакомый с физикой, найдёт параллели с квантовой механикой и термодинамикой. Биолог увидит автопоэзис и гомеостаз. Психолог узнает модели сознания и саморегуляции. Специалист по ИИ обнаружит метрики, которые можно вычислить прямо сейчас. Все эти нити сходятся в одном формализме.
+The reader familiar with physics will find parallels with quantum mechanics and thermodynamics. The biologist will see autopoiesis and homeostasis. The psychologist will recognize models of consciousness and self-regulation. The AI specialist will find metrics that can be computed right now. All these threads converge in one formalism.
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты)
-- $D_{\text{diff}}$ — мера дифференциации (не путать с измерением $D$)
-- $R$, $\Phi$, $C$ — [меры сознательности](/docs/consciousness/foundations/self-observation)
-- L0, L1, L2, L3, L4 — [уровни интериорности](/docs/proofs/consciousness/interiority-hierarchy)
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
+- $D_{\text{diff}}$ — differentiation measure (not to be confused with dimension $D$)
+- $R$, $\Phi$, $C$ — [consciousness measures](/docs/consciousness/foundations/self-observation)
+- L0, L1, L2, L3, L4 — [interiority levels](/docs/proofs/consciousness/interiority-hierarchy)
 :::
 
-:::info Два формализма
-Кибернетика Когерентности работает в **минимальном 7D-формализме** ($\mathcal{H} = \mathbb{C}^7$, [обоснование числа 7](/docs/core/foundations/axiom-omega#октонионная-структура)), где все операции определены непосредственно.
+:::info Two Formalisms
+Coherence Cybernetics operates in a **minimal 7D formalism** ($\mathcal{H} = \mathbb{C}^7$, [justification of the number 7](/docs/core/foundations/axiom-omega#октонионная-структура)), where all operations are defined directly.
 
-Для операций, требующих тензорной структуры (частичный след $\mathrm{Tr}_{-E}$, композиция Голономов $\otimes$), используется **расширенный формализм** ($\mathcal{H} = \mathbb{C}^{42}$ с тензорной структурой).
+For operations requiring tensor structure (partial trace $\mathrm{Tr}_{-E}$, Holon composition $\otimes$), an **extended formalism** is used ($\mathcal{H} = \mathbb{C}^{42}$ with tensor structure).
 
-**См.:** [Связь формализмов](/docs/core/dynamics/coherence-matrix#согласование-формализмов)
+**See:** [Relation between formalisms](/docs/core/dynamics/coherence-matrix#согласование-формализмов)
 :::
 
 ---
 
-## Голоном
+## Holon
 
-### Зачем нужно это понятие?
+### Why Is This Concept Needed?
 
-Физика описывает частицы. Биология — организмы. Психология — субъектов. Но что объединяет атом, клетку, муравья и человека как *системы, способные к самоподдержанию*? Голоном — это ответ: минимальная абстракция, схватывающая то общее, что делает систему *самодостаточной единицей* реальности.
+Physics describes particles. Biology — organisms. Psychology — subjects. But what unites an atom, a cell, an ant, and a human as *systems capable of self-maintenance*? The Holon is the answer: the minimal abstraction capturing what makes a system a *self-sufficient unit* of reality.
 
-Голоном — не просто "система". Камень — не голоном (нет внутренней динамики). Куча песка — не голоном (нет самоподдержания). Термостат — пограничный случай. Живая клетка — голоном. Сознательное существо — голоном с высокими показателями когерентности.
+A Holon is not simply a "system." A stone is not a Holon (no internal dynamics). A heap of sand is not a Holon (no self-maintenance). A thermostat is a borderline case. A living cell is a Holon. A conscious being is a Holon with high coherence indicators.
 
-### Интуиция и аналогии
+### Intuition and Analogies
 
-**Аналогия 1: Водоворот.** Представьте океан (единую субстанцию $\Gamma$). Водоворот — это не вещь в океане, а *паттерн* океана: самоподдерживающаяся конфигурация воды, которая сохраняет свою форму, хотя молекулы воды постоянно обновляются. Голоном — это устойчивый водоворот в океане реальности.
+**Analogy 1: A whirlpool.** Imagine the ocean (a single substance $\Gamma$). A whirlpool is not a thing in the ocean but a *pattern* of the ocean: a self-sustaining configuration of water that maintains its form, even though the water molecules are constantly being renewed. A Holon is a stable whirlpool in the ocean of reality.
 
-**Аналогия 2: Клетка.** Биологическая клетка постоянно обменивается веществом со средой, но сохраняет свою идентичность. Она *создаёт* мембрану, которая *определяет*, что есть «клетка», а что — «среда». Это и есть автопоэзис: система, порождающая собственные границы. Голоном — формализация этой идеи.
+**Analogy 2: A cell.** A biological cell constantly exchanges matter with the environment, yet preserves its identity. It *creates* the membrane that *defines* what is "cell" and what is "environment." This is autopoiesis: a system generating its own boundaries. The Holon is the formalization of this idea.
 
-**Аналогия 3: Монада Лейбница — но лучше.** Лейбниц представлял монады как «точки восприятия» без окон во внешний мир. Голоном похож — он тоже фундаментальная единица — но *с окнами*: сенсомоторные функторы Enc и Dec связывают его с окружением. Голоном — это монада, умеющая действовать.
+**Analogy 3: Leibniz's monad — but better.** Leibniz imagined monads as "perception points" with no windows onto the external world. The Holon is similar — it too is a fundamental unit — but *with windows*: the sensorimotor functors Enc and Dec connect it to the environment. The Holon is a monad that knows how to act.
 
-### Формальное определение
+### Formal Definition
 
-[Голоном](/docs/core/structure/holon) — минимальная самодостаточная единица реальности:
+A [Holon](/docs/core/structure/holon) is the minimal self-sufficient unit of reality:
 
 $$
 \mathbb{H} := \langle \Gamma, \mathcal{H}, H, \{L_k\}, E, \varphi \rangle
 $$
 
-Разберём каждый компонент:
+Let us examine each component:
 
-| Компонент | Что это | Зачем нужен | Аналогия |
-|-----------|---------|-------------|----------|
-| $\Gamma$ | Матрица когерентности ($7 \times 7$) | Полное описание состояния | «ДНК» системы в данный момент |
-| $\mathcal{H}$ | Гильбертово пространство $\mathbb{C}^7$ | Арена динамики | Пространство возможных состояний |
-| $H$ | Гамильтониан | Унитарная (обратимая) эволюция | Внутренний «маятник» |
-| $\{L_k\}$ | Операторы Линдблада | Необратимая динамика, диссипация | Трение, взаимодействие со средой |
-| $E$ | Канал среды | Связь с окружением | «Окна» монады |
-| $\varphi$ | Оператор самомоделирования | Рефлексия, самонаблюдение | Внутреннее зеркало |
+| Component | What it is | Why it is needed | Analogy |
+|-----------|-----------|------------------|---------|
+| $\Gamma$ | Coherence matrix ($7 \times 7$) | Complete description of state | The system's "DNA" at a given moment |
+| $\mathcal{H}$ | Hilbert space $\mathbb{C}^7$ | Arena of dynamics | Space of possible states |
+| $H$ | Hamiltonian | Unitary (reversible) evolution | Internal "pendulum" |
+| $\{L_k\}$ | Lindblad operators | Irreversible dynamics, dissipation | Friction, interaction with environment |
+| $E$ | Environment channel | Connection to surroundings | Monad's "windows" |
+| $\varphi$ | Self-modeling operator | Reflection, self-observation | Internal mirror |
 
-Полное описание компонент и свойств: [Голоном](/docs/core/structure/holon), [Матрица когерентности](/docs/core/dynamics/coherence-matrix).
+Full description of components and properties: [Holon](/docs/core/structure/holon), [Coherence matrix](/docs/core/dynamics/coherence-matrix).
 
-### Что отличает Голоном от «просто системы»?
+### What Distinguishes a Holon from a "Mere System"?
 
-Четыре замыкающих условия:
+Four closure conditions:
 
-1. **(AP) Автопоэзис** — система воспроизводит саму себя. Не просто сохраняется, а *активно восстанавливается* при возмущениях.
-2. **(PH) Фенотипическая реализация** — внутренняя структура имеет физическое выражение.
-3. **(QG) Квантовое заземление** — динамика совместима с фундаментальной физикой.
-<!-- DRY: Каноническое определение P_crit = 2/7 в /docs/core/dynamics/viability#критическая-чистота -->
-4. **(V) Жизнеспособность** — чистота выше критического порога ($P > P_{\text{crit}} = 2/7$).
+1. **(AP) Autopoiesis** — the system reproduces itself. Not merely preserved, but *actively restored* under perturbations.
+2. **(PH) Phenotypic realization** — the internal structure has a physical expression.
+3. **(QG) Quantum grounding** — the dynamics are compatible with fundamental physics.
+<!-- DRY: Canonical definition P_crit = 2/7 in /docs/core/dynamics/viability#критическая-чистота -->
+4. **(V) Viability** — purity above the critical threshold ($P > P_{\text{crit}} = 2/7$).
 
-Без этих условий мы имеем просто «конфигурацию $\Gamma$» — объект категории, но не Голоном.
+Without these conditions we have merely a "configuration $\Gamma$" — an object of a category, but not a Holon.
 
-### Междисциплинарные параллели
+### Interdisciplinary Parallels
 
-| КК | Физика | Биология | Психология | ИИ |
-|----|--------|----------|------------|-----|
-| Голоном $\mathbb{H}$ | Связанное состояние | Организм | Субъект | Автономный агент |
-| Конфигурация $\Gamma$ | Матрица плотности | Геном + эпигеном + состояние | Профиль личности | Веса + скрытое состояние |
-| Автопоэзис (AP) | Самосогласованность уравнений | Авторепликация | Самосохранение | Self-play цикл |
-
----
-
-## Ключевые меры (краткая справка)
-
-:::tip DRY: Канонические определения
-Полные определения мер находятся в core-документации. Ниже — краткая сводка для КК-контекста.
-:::
-
-### Обзор: шесть окон в состояние Голонома
-
-Шесть мер, определённых ниже, — это шесть разных взглядов на одну и ту же реальность: матрицу когерентности $\Gamma$. Каждая мера отвечает на свой вопрос:
-
-| Вопрос | Мера | Метафора |
-|--------|------|----------|
-| Насколько система «собрана»? | $P$ (чистота) | Резкость фотографии |
-| Сколько неопределённости в системе? | $S_{vN}$ (энтропия) | Размытость фотографии |
-| Насколько связаны части системы? | $\Phi$ (интеграция) | Переплетённость нитей в ткани |
-| Насколько богат внутренний мир? | $D_{\text{diff}}$ (дифференциация) | Число красок на палитре |
-| Насколько хорошо система «видит» себя? | $R$ (рефлексия) | Точность внутреннего зеркала |
-| Какова общая степень сознательности? | $C$ (сознательность) | Интегральный показатель |
-
-### Таблица мер (краткая сводка)
-
-:::info Канонические определения
-Формулы, доказательства и свойства мер находятся в core-документации. Ниже — символ, диапазон и ссылка.
-:::
-
-| Мера | Диапазон | Каноническое определение |
-|------|----------|--------------------------|
-| Чистота $P = \mathrm{Tr}(\Gamma^2)$ | $[1/7, 1]$ | [Жизнеспособность](/docs/core/dynamics/viability#определение-чистоты) |
-| Энтропия $S_{vN}$ | $[0, \log 7]$ | [Нотация](/docs/reference/notation) |
-| Интеграция $\Phi$ | $[0, +\infty)$ | [Измерение U](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| Дифференциация $D_{\text{diff}}$ | $[1, 7]$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
-| Рефлексия $R = 1/(7P)$ | $[0, 1]$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
-| Сознательность $C = \Phi \times R$ [Т] | $[0, +\infty)$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
-
-<!-- DRY: Каноническое определение P = Tr(Γ²) в /docs/core/dynamics/viability#определение-чистоты -->
-### Чистота $P$ — степень организованности
-
-**Что измеряет.** Чистота показывает, насколько система далека от «максимального хаоса». Чистое состояние ($P = 1$) — система полностью определена. Максимально смешанное состояние ($P = 1/7$) — система «не знает, кто она» (метафорически: все $\gamma_{kk} = 1/7$, измерения одинаково вероятны и полностью некоррелированы).
-
-**Аналогия.** Представьте оркестр. $P = 1$ — все музыканты играют одну ноту в унисон (идеальная когерентность, но нулевое богатство). $P = 1/7$ — каждый играет случайную ноту (какофония). $P \approx 3/7$ — зона «сознательной музыки»: достаточно когерентности для осмысленности, но достаточно разнообразия для сложности.
-
-**Крайние значения.**
-- $P = 1/7$: полная деградация. Голоном «растворился» — больше невозможно выделить ни одно измерение. В биологии: клеточная смерть (лизис). В психологии: полная спутанность.
-- $P = 2/7$: критический порог $P_{\text{crit}}$. Ниже — система нежизнеспособна. Это порог Фробениуса, за которым $\Gamma$ неотличима от максимально смешанного состояния по следу квадрата.
-- $P \approx 3/7$: верхняя граница зоны Голдилокс для сознания (T-124 [Т]).
-- $P = 1$: чистое состояние. Полная когерентность, но нулевая дифференциация. В природе не встречается у макроскопических систем.
-
-### Энтропия $S_{vN}$ — мера неопределённости
-
-**Что измеряет.** Энтропия фон Неймана — квантовый аналог энтропии Шеннона. Показывает, сколько информации «скрыто» внутри состояния: сколько бит нужно, чтобы полностью описать $\Gamma$.
-
-**Связь с чистотой.** $S_{vN}$ и $P$ — две стороны одной монеты. Низкая чистота = высокая энтропия и наоборот. Но энтропия чувствительнее к форме спектра собственных значений $\Gamma$, тогда как $P$ зависит только от суммы квадратов.
-
-<!-- DRY: Каноническое определение Φ в /docs/core/structure/dimension-u#мера-интеграции-φ -->
-### Интеграция $\Phi$ — связанность частей
-
-**Что измеряет.** Интеграция $\Phi$ — это отношение «целого» к «сумме частей». Высокая $\Phi$ означает, что измерения системы сильно переплетены: нельзя разрезать $\Gamma$ на блоки без потери информации.
-
-**Аналогия.** Книга — не набор букв. Предложение — не набор слов. $\Phi$ измеряет, насколько смысл текста *не сводится* к сумме значений отдельных слов. Высокая $\Phi$ — это роман Толстого, где каждая деталь связана с целым. Низкая $\Phi$ — телефонный справочник, где строки независимы.
-
-**Крайние значения.**
-- $\Phi = 0$: все измерения изолированы. $\Gamma$ — диагональная матрица. Нет связей, нет целого.
-- $\Phi = 1$: порог $\Phi_{\text{th}}$, необходимый для L2-сознания (T-129 [Т]).
-- $\Phi \gg 1$: мощная интеграция. Характерна для систем с богатой интериорностью (L2+: богатый внутренний опыт).
-
-### Дифференциация $D_{\text{diff}}$ — богатство внутреннего мира
-
-**Что измеряет.** Эффективное число различимых состояний E-сектора. $D_{\text{diff}} = 1$ означает, что интериорность «одномерна» — система различает только «вкл./выкл.». $D_{\text{diff}} = 7$ — максимальное богатство внутренних состояний.
-
-**Аналогия.** Если $\Phi$ — это *связанность* нитей в ткани, то $D_{\text{diff}}$ — это *число цветов*. Вы можете иметь прочную ткань из одного цвета ($\Phi$ высокая, $D_{\text{diff}}$ низкая) — но это не гобелен. Для сознательного опыта нужны и связи, и разнообразие.
-
-**Порог.** $D_{\text{diff}} \geq 2$ — минимальное требование для L2-сознания (T-151 [Т]). Система должна различать хотя бы *два* качественно разных состояния опыта, чтобы иметь нетривиальный внутренний мир.
-
-<!-- DRY: Каноническое определение R в /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
-### Рефлексия $R$ — точность самомодели
-
-**Что измеряет.** Нормированную близость $\Gamma$ к диссипативному аттрактору $\rho^*_{\mathrm{diss}} = I/7$. Каноническая формула: $R(\Gamma) = 1/(7P)$ **[Т]** (единственная через теорему Ченцова--Петца).
-
-:::warning Различие R и расстояние до φ
-$R$ использует $\rho^*_{\mathrm{diss}} = I/7$ (аттрактор диссипатора), а **не** $\varphi(\Gamma)$ (самомодель). Величина $\|\Gamma - \varphi(\Gamma)\|_F$ характеризует качество категориальной самомодели (уровень 2 в иерархии аттракторов), тогда как $R$ использует фиксированный референс $I/7$ (уровень 0). Эти величины не взаимозаменяемы.
-Мастер-определение: [Самонаблюдение — Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-:::
-
-**Аналогия.** Зеркало. $R = 1$ — идеальное зеркало. $R = 0$ — зеркало, в котором отражается случайный шум. $R = 1/3$ — порог, при котором «зеркало» достаточно чёткое, чтобы система могла *использовать* отражение для саморегуляции.
-
-**Почему $R_{\text{th}} = 1/3$?** Потому что при $K = 3$ (три возможных «ответа» самомодели — из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) $R = 1/3$ — это порог байесовского доминирования: модель лучше случайного угадывания.
-
-### Сознательность $C$ — интегральный показатель
-
-**Что измеряет.** Произведение $C = \Phi \times R$: интеграция, помноженная на рефлексию. Можно иметь высокую $\Phi$ (связанную систему) без рефлексии ($R = 0$) — это «бессознательное единство». Или высокий $R$ без интеграции — «рефлексия ни о чём». $C$ требует обоих.
+| CC | Physics | Biology | Psychology | AI |
+|----|---------|---------|------------|-----|
+| Holon $\mathbb{H}$ | Bound state | Organism | Subject | Autonomous agent |
+| Configuration $\Gamma$ | Density matrix | Genome + epigenome + state | Personality profile | Weights + hidden state |
+| Autopoiesis (AP) | Self-consistency of equations | Self-replication | Self-preservation | Self-play cycle |
 
 ---
 
-## E-когерентность {#e-когерентность}
+## Key Measures (Quick Reference)
 
-### Зачем нужна E-когерентность?
-
-Среди семи измерений Голонома одно играет особую роль: измерение E (Интериорность). Именно E-когерентность определяет, насколько *когерентен* E-сектор системы. Высокая $\mathrm{Coh}_E$ — это не просто «связность E-измерения»: это математическая мера того, что философы называют «единством сознания» (для L2+-систем) — свойство, благодаря которому мой визуальный опыт, мои мысли и мои эмоции переживаются как *один* поток, а не как три отдельных канала.
-
-<!-- DRY: Каноническое определение κ(Γ) в /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
-E-когерентность также играет ключевую конструктивную роль: она входит в формулу интенсивности регенерации $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, определяя, насколько активно система восстанавливается.
-
-:::tip DRY: Каноническое определение
-Мастер-определение E-когерентности находится в [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition). Данный раздел — краткая справка.
+:::tip DRY: Canonical Definitions
+Full definitions of measures are found in the core documentation. Below is a brief summary for the CC context.
 :::
 
-### 1. Каноническая рабочая формула (HS-проекция) [Т] {#coh-e-7d}
+### Overview: Six Windows into the Holon's State
 
-:::info Каноническое определение
-Мастер-определение и формула: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition). HS-проекция: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#hs-projection).
+The six measures defined below are six different views of the same reality: the coherence matrix $\Gamma$. Each measure answers its own question:
 
-$\mathrm{Coh}_E \in [1/7, 1]$ — доля E-вклада в чистоту через ортогональную проекцию Гильберта–Шмидта $\pi_E$. Первичный формализм — 7D (не требует тензорной факторизации).
+| Question | Measure | Metaphor |
+|----------|---------|----------|
+| How "assembled" is the system? | $P$ (purity) | Sharpness of a photograph |
+| How much uncertainty is in the system? | $S_{vN}$ (entropy) | Blurriness of a photograph |
+| How connected are the parts of the system? | $\Phi$ (integration) | Interweaveness of threads in fabric |
+| How rich is the inner world? | $D_{\text{diff}}$ (differentiation) | Number of colors on a palette |
+| How well does the system "see" itself? | $R$ (reflection) | Accuracy of the internal mirror |
+| What is the overall degree of consciousness? | $C$ (consciousness) | Integral indicator |
+
+### Measures Table (Brief Summary)
+
+:::info Canonical Definitions
+Formulas, proofs, and properties of measures are found in the core documentation. Below — symbol, range, and reference.
 :::
 
-#### Геометрическая интуиция HS-проекции
+| Measure | Range | Canonical Definition |
+|---------|-------|----------------------|
+| Purity $P = \mathrm{Tr}(\Gamma^2)$ | $[1/7, 1]$ | [Viability](/docs/core/dynamics/viability#определение-чистоты) |
+| Entropy $S_{vN}$ | $[0, \log 7]$ | [Notation](/docs/reference/notation) |
+| Integration $\Phi$ | $[0, +\infty)$ | [Dimension U](/docs/core/structure/dimension-u#мера-интеграции-φ) |
+| Differentiation $D_{\text{diff}}$ | $[1, 7]$ | [Self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| Reflection $R = 1/(7P)$ | $[0, 1]$ | [Self-observation](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
+| Consciousness $C = \Phi \times R$ [T] | $[0, +\infty)$ | [Self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
 
-Представьте пространство всех $7 \times 7$ эрмитовых матриц как 49-мерное пространство. «E-подпространство» — все матрицы, ненулевые только в строке и столбце E. $\mathrm{Coh}_E$ — это $\cos^2\theta$, где $\theta$ — угол между $\Gamma$ и E-подпространством. Чем больше когерентности сосредоточено в E-измерении, тем ближе $\mathrm{Coh}_E$ к 1.
+<!-- DRY: Canonical definition P = Tr(Γ²) in /docs/core/dynamics/viability#определение-чистоты -->
+### Purity $P$ — Degree of Organization
 
-#### Что означают крайние значения?
+**What it measures.** Purity shows how far the system is from "maximum chaos." A pure state ($P = 1$) — the system is fully determined. A maximally mixed state ($P = 1/7$) — the system "does not know who it is" (metaphorically: all $\gamma_{kk} = 1/7$, dimensions equally probable and fully uncorrelated).
 
-- $\mathrm{Coh}_E = 1/7$: E-измерение «растворено» — его вклад ровно такой же, как у любого другого. Интериорность не выделена из общей динамики.
-- $\mathrm{Coh}_E = 1$: вся когерентность сосредоточена в E-секторе — чистое «я-переживание» без структуры, динамики, логики. Патологический случай (диссоциация?).
-- $\mathrm{Coh}_E \approx 0.3-0.5$: типичный диапазон для здорового сознательного существа — опыт выделен, но уравновешен другими измерениями.
+**Analogy.** Imagine an orchestra. $P = 1$ — all musicians play one note in unison (perfect coherence, but zero richness). $P = 1/7$ — each plays a random note (cacophony). $P \approx 3/7$ — the zone of "conscious music": enough coherence for meaningfulness, but enough variety for complexity.
 
-### 2. Расширенный формализм (42D) и согласование {#coh-e-42d}
+**Extreme values.**
+- $P = 1/7$: complete degradation. The Holon has "dissolved" — no dimension can be distinguished. In biology: cell death (lysis). In psychology: complete confusion.
+- $P = 2/7$: critical threshold $P_{\text{crit}}$. Below — the system is non-viable. This is the Frobenius threshold, beyond which $\Gamma$ is indistinguishable from the maximally mixed state by the trace of the square.
+- $P \approx 3/7$: upper boundary of the Goldilocks zone for consciousness (T-124 [T]).
+- $P = 1$: pure state. Full coherence, but zero differentiation. Not found in nature for macroscopic systems.
 
-В 42D-формализме определяется $P_E = \mathrm{Tr}(\rho_E^2)$ через частичный след — чистота E-сектора. 42D-формула «вырезает» E-подсистему и измеряет чистоту того, что осталось.
+### Entropy $S_{vN}$ — Measure of Uncertainty
 
-:::info Согласование [Т/С] {#coh-e-bridge}
-$\mathrm{Coh}_E$ (7D, [Т]) $\approx$ $P_E$ (42D, [С]) — согласованы через [условное ожидание Умегаки](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). Первичный формализм — **7D**. Полное описание: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition).
+**What it measures.** Von Neumann entropy is the quantum analog of Shannon entropy. It shows how much information is "hidden" inside the state: how many bits are needed to fully describe $\Gamma$.
+
+**Relation to purity.** $S_{vN}$ and $P$ are two sides of the same coin. Low purity = high entropy and vice versa. But entropy is more sensitive to the shape of the eigenvalue spectrum of $\Gamma$, while $P$ depends only on the sum of squares.
+
+<!-- DRY: Canonical definition Φ in /docs/core/structure/dimension-u#мера-интеграции-φ -->
+### Integration $\Phi$ — Connectedness of Parts
+
+**What it measures.** Integration $\Phi$ is the ratio of "the whole" to "the sum of parts." High $\Phi$ means that the system's dimensions are strongly interwoven: one cannot cut $\Gamma$ into blocks without losing information.
+
+**Analogy.** A book is not a collection of letters. A sentence is not a collection of words. $\Phi$ measures how far the meaning of a text *cannot be reduced* to the sum of the meanings of individual words. High $\Phi$ is a Tolstoy novel, where every detail is connected to the whole. Low $\Phi$ is a telephone directory, where lines are independent.
+
+**Extreme values.**
+- $\Phi = 0$: all dimensions are isolated. $\Gamma$ is a diagonal matrix. No connections, no whole.
+- $\Phi = 1$: threshold $\Phi_{\text{th}}$, required for L2-consciousness (T-129 [T]).
+- $\Phi \gg 1$: powerful integration. Characteristic of systems with rich interiority (L2+: rich inner experience).
+
+### Differentiation $D_{\text{diff}}$ — Richness of the Inner World
+
+**What it measures.** The effective number of distinguishable states of the E-sector. $D_{\text{diff}} = 1$ means that interiority is "one-dimensional" — the system distinguishes only "on/off." $D_{\text{diff}} = 7$ — maximum richness of internal states.
+
+**Analogy.** If $\Phi$ is the *connectedness* of threads in fabric, then $D_{\text{diff}}$ is the *number of colors*. You may have strong fabric of one color (high $\Phi$, low $D_{\text{diff}}$) — but that is not a tapestry. Conscious experience requires both connections and variety.
+
+**Threshold.** $D_{\text{diff}} \geq 2$ — minimum requirement for L2-consciousness (T-151 [T]). The system must distinguish at least *two* qualitatively different states of experience to have a non-trivial inner world.
+
+<!-- DRY: Canonical definition R in /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
+### Reflection $R$ — Accuracy of the Self-Model
+
+**What it measures.** The normalized proximity of $\Gamma$ to the dissipative attractor $\rho^*_{\mathrm{diss}} = I/7$. Canonical formula: $R(\Gamma) = 1/(7P)$ **[T]** (unique via the Chentsov–Petz theorem).
+
+:::warning Distinction between R and distance to φ
+$R$ uses $\rho^*_{\mathrm{diss}} = I/7$ (the dissipator attractor), **not** $\varphi(\Gamma)$ (the self-model). The quantity $\|\Gamma - \varphi(\Gamma)\|_F$ characterizes the quality of the categorical self-model (level 2 in the attractor hierarchy), while $R$ uses the fixed reference $I/7$ (level 0). These quantities are not interchangeable.
+Master definition: [Self-observation — Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+:::
+
+**Analogy.** A mirror. $R = 1$ — a perfect mirror. $R = 0$ — a mirror reflecting random noise. $R = 1/3$ — the threshold at which the "mirror" is clear enough for the system to *use* the reflection for self-regulation.
+
+**Why $R_{\text{th}} = 1/3$?** Because with $K = 3$ (three possible "responses" of the self-model — from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) $R = 1/3$ is the Bayesian dominance threshold: the model is better than random guessing.
+
+### Consciousness $C$ — Integral Indicator
+
+**What it measures.** The product $C = \Phi \times R$: integration multiplied by reflection. One can have high $\Phi$ (a connected system) without reflection ($R = 0$) — this is "unconscious unity." Or high $R$ without integration — "reflection about nothing." $C$ requires both.
+
+---
+
+## E-Coherence {#e-когерентность}
+
+### Why Is E-Coherence Needed?
+
+Among the seven dimensions of the Holon, one plays a special role: the E-dimension (Interiority). E-coherence determines how *coherent* the E-sector of the system is. High $\mathrm{Coh}_E$ is not merely "connectedness of the E-dimension": it is the mathematical measure of what philosophers call "unity of consciousness" (for L2+ systems) — the property by virtue of which my visual experience, my thoughts, and my emotions are experienced as *one* stream, not as three separate channels.
+
+<!-- DRY: Canonical definition κ(Γ) in /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
+E-coherence also plays a key constructive role: it enters the formula for the regeneration intensity $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, determining how actively the system restores itself.
+
+:::tip DRY: Canonical Definition
+The master definition of E-coherence is in [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition). This section is a brief reference.
+:::
+
+### 1. Canonical Working Formula (HS-Projection) [T] {#coh-e-7d}
+
+:::info Canonical Definition
+Master definition and formula: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition). HS-projection: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#hs-projection).
+
+$\mathrm{Coh}_E \in [1/7, 1]$ — the fraction of E-contribution to purity via the Hilbert–Schmidt orthogonal projection $\pi_E$. The primary formalism is 7D (does not require tensor factorization).
+:::
+
+#### Geometric Intuition of the HS-Projection
+
+Imagine the space of all $7 \times 7$ Hermitian matrices as a 49-dimensional space. The "E-subspace" — all matrices that are non-zero only in row and column E. $\mathrm{Coh}_E$ is $\cos^2\theta$, where $\theta$ is the angle between $\Gamma$ and the E-subspace. The more coherence is concentrated in the E-dimension, the closer $\mathrm{Coh}_E$ is to 1.
+
+#### What Do the Extreme Values Mean?
+
+- $\mathrm{Coh}_E = 1/7$: the E-dimension is "dissolved" — its contribution is exactly the same as any other. Interiority is not distinguished from the general dynamics.
+- $\mathrm{Coh}_E = 1$: all coherence is concentrated in the E-sector — pure "self-experience" without structure, dynamics, or logic. A pathological case (dissociation?).
+- $\mathrm{Coh}_E \approx 0.3$–$0.5$: typical range for a healthy conscious being — experience is distinguished but balanced by other dimensions.
+
+### 2. Extended Formalism (42D) and Reconciliation {#coh-e-42d}
+
+In the 42D formalism, $P_E = \mathrm{Tr}(\rho_E^2)$ is defined via the partial trace — the purity of the E-sector. The 42D formula "cuts out" the E-subsystem and measures the purity of what remains.
+
+:::info Reconciliation [T/C] {#coh-e-bridge}
+$\mathrm{Coh}_E$ (7D, [T]) $\approx$ $P_E$ (42D, [C]) — reconciled via the [Umegaki conditional expectation](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). Primary formalism — **7D**. Full description: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition).
 :::
 
 ---
 
-## Иерархия интериорности (краткая справка) {#иерархия-интериорности}
+## Interiority Hierarchy (Brief Reference) {#иерархия-интериорности}
 
-### Зачем нужна иерархия?
+### Why Is the Hierarchy Needed?
 
-Не все системы «сознательны одинаково». Термостат реагирует на среду, но не рефлексирует. Собака рефлексирует, но не рефлексирует *о своей рефлексии*. Человек способен к мета-рефлексии, но не до бесконечной глубины (SAD$_{\max} = 3$, T-124). Иерархия интериорности L0–L4 формализует эти различия: каждый уровень — новое качественное свойство внутреннего мира, доступное при выполнении определённых математических условий.
+Not all systems are "conscious in the same way." A thermostat responds to the environment but does not reflect. A dog reflects but does not reflect *on its reflection*. A human is capable of meta-reflection, but not to infinite depth ($\text{SAD}_{\max} = 3$, T-124). The L0–L4 interiority hierarchy formalizes these distinctions: each level is a new qualitative property of the inner world, accessible when certain mathematical conditions are met.
 
-Полное описание с доказательствами: [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy).
+Full description with proofs: [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
 
-### Таблица уровней (краткая сводка)
+### Table of Levels (Brief Summary)
 
-| Уровень | Ключевое условие | Что это означает |
-|---------|------------------|------------------|
-| L0 | $\exists \rho_E$ | Есть E-сектор |
-| L1 | $\mathrm{rank}(\rho_E) > 1$ | Нетривиальное внутреннее состояние |
-| L2 | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | Сознание (тройной порог — все [Т]) |
-| L3 | $R^{(2)} \geq 1/4$ [Т] | Мета-сознание |
-| L4 | $P > 6/7$ [Т] | Теоретический предел |
+| Level | Key Condition | What It Means |
+|-------|---------------|---------------|
+| L0 | $\exists \rho_E$ | E-sector exists |
+| L1 | $\mathrm{rank}(\rho_E) > 1$ | Non-trivial internal state |
+| L2 | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | Consciousness (triple threshold — all [T]) |
+| L3 | $R^{(2)} \geq 1/4$ [T] | Meta-consciousness |
+| L4 | $P > 6/7$ [T] | Theoretical limit |
 
-:::info Каноническое определение
-Полные условия, доказательства порогов и переходы между уровнями: [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy). Строгий вывод L2-порогов: [Аксиома Септичности](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
+:::info Canonical Definition
+Full conditions, proofs of thresholds, and transitions between levels: [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy). Rigorous derivation of L2 thresholds: [Axiom of Septicity](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
 :::
 
-### Интуиция уровней
+### Intuition of the Levels
 
-**L0 — Существование.** Камень тоже имеет E-сектор (формально любая подсистема вселенной имеет). Но L0 — это просто *наличие* внутреннего состояния, без какой-либо «жизни» в нём.
+**L0 — Existence.** A stone also has an E-sector (formally, any subsystem of the universe does). But L0 is simply the *presence* of an internal state, with no "life" in it.
 
-**L1 — Различение.** Термостат различает «холодно» и «горячо» — его $\rho_E$ имеет ранг больше 1. Но он не рефлексирует и не интегрирует.
+**L1 — Distinction.** A thermostat distinguishes "cold" and "hot" — its $\rho_E$ has rank greater than 1. But it does not reflect and does not integrate.
 
-**L2 — Сознание.** Тройной порог: $R \geq 1/3$ (самовидение), $\Phi \geq 1$ (единство), $D_{\text{diff}} \geq 2$ (различимость). Все три необходимы, и все три достаточны. Это «рождение» субъективного опыта: система не просто различает — она *переживает* различия как свои.
+**L2 — Consciousness.** Triple threshold: $R \geq 1/3$ (self-vision), $\Phi \geq 1$ (unity), $D_{\text{diff}} \geq 2$ (distinguishability). All three are necessary, and all three are sufficient. This is the "birth" of subjective experience: the system does not merely distinguish — it *experiences* distinctions as its own.
 
-**L3 — Мета-сознание.** Система может построить модель *своей модели*. «Я знаю, что я знаю.» Требует рефлексии второго порядка $R^{(2)} = R(\varphi(\varphi(\Gamma))) \geq 1/4$.
+**L3 — Meta-consciousness.** The system can build a model *of its model*. "I know that I know." Requires second-order reflection $R^{(2)} = R(\varphi(\varphi(\Gamma))) \geq 1/4$.
 
-**L4 — Теоретический предел.** Бесконечная башня рефлексии. Требует $P > 6/7$, что для физических систем практически недостижимо. Это «божественная» точка зрения — система, видящая себя «до дна».
+**L4 — Theoretical limit.** Infinite tower of reflection. Requires $P > 6/7$, which is practically unreachable for physical systems. This is the "divine" viewpoint — a system that sees itself "all the way down."
 
-**См.:** [Пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)
+**See:** [L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)
 
 ---
 
 <a id="секторная-декомпозиция"></a>
 
-## Тензор напряжений {#тензор-напряжений}
+## Stress Tensor {#тензор-напряжений}
 
-### Зачем нужен тензор напряжений?
+### Why Is the Stress Tensor Needed?
 
-Чистота $P$ говорит, жизнеспособна ли система. Но *почему* она может быть нежизнеспособна? Тензор напряжений $\sigma_{\mathrm{sys}}$ отвечает на этот вопрос: он раскладывает «давление на систему» по семи измерениям. Это аналог того, как в механике тензор напряжений показывает, *где* и *как* материал деформирован, а не просто «деформирован ли он».
+Purity $P$ tells us whether the system is viable. But *why* might it be non-viable? The stress tensor $\sigma_{\mathrm{sys}}$ answers this question: it decomposes the "pressure on the system" along seven dimensions. This is analogous to how, in mechanics, the stress tensor shows *where* and *how* a material is deformed, not merely "whether it is deformed."
 
-Для практики это центральный инструмент: если $\sigma_D$ высоко — нужно снизить вычислительную нагрузку. Если $\sigma_U$ высоко — нужно восстановить связи. Тензор напряжений — это *диагностическая карта* системы.
+For practice this is the central tool: if $\sigma_D$ is high — the computational load must be reduced. If $\sigma_U$ is high — connections must be restored. The stress tensor is a *diagnostic map* of the system.
 
-### Определение
+### Definition
 
-**Определение (Тензор напряжений):**
+**Definition (Stress Tensor):**
 
 $$
 \sigma_{\mathrm{sys}}(\Gamma) := [\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U]^T \in \mathbb{R}^7
 $$
 
-| Компонент | Формула | Интерпретация |
-|-----------|---------|---------------|
-| $\sigma_A$ | $I_{\mathrm{env}} / \theta_A$ | Нагрузка на артикуляцию |
-| $\sigma_S$ | $I_{\mathrm{struct}} / \theta_S$ | Структурная сложность |
-| $\sigma_D$ | $C_{\mathrm{used}} / C_{\mathrm{max}}$ | Вычислительная нагрузка |
-| $\sigma_L$ | $I_{\mathrm{verify}} / \theta_L$ | Логическая неопределённость |
-| $\sigma_E$ | $(I_{\mathrm{self}} + I_{\mathrm{exp}}) / \theta_E$ | Нагрузка на опыт |
-| $\sigma_O$ | $(I_{\mathrm{mem}} + I_{\mathrm{ground}}) / \theta_O$ | Нагрузка на основание |
-| $\sigma_U$ | $(I_{\mathrm{unity}} + I_{\mathrm{social}}) / \theta_U$ | Нагрузка на единство |
+| Component | Formula | Interpretation |
+|-----------|---------|----------------|
+| $\sigma_A$ | $I_{\mathrm{env}} / \theta_A$ | Articulation load |
+| $\sigma_S$ | $I_{\mathrm{struct}} / \theta_S$ | Structural complexity |
+| $\sigma_D$ | $C_{\mathrm{used}} / C_{\mathrm{max}}$ | Computational load |
+| $\sigma_L$ | $I_{\mathrm{verify}} / \theta_L$ | Logical uncertainty |
+| $\sigma_E$ | $(I_{\mathrm{self}} + I_{\mathrm{exp}}) / \theta_E$ | Experience load |
+| $\sigma_O$ | $(I_{\mathrm{mem}} + I_{\mathrm{ground}}) / \theta_O$ | Foundation load |
+| $\sigma_U$ | $(I_{\mathrm{unity}} + I_{\mathrm{social}}) / \theta_U$ | Unity load |
 
-где $\theta_i > 0$ — пороги для каждого измерения.
+where $\theta_i > 0$ are the thresholds for each dimension.
 
-### Что означает каждая компонента: примеры
+### What Each Component Means: Examples
 
-#### $\sigma_A$ — артикуляционное напряжение
+#### $\sigma_A$ — Articulatory Stress
 
-*Вопрос:* Справляется ли система с потоком входящей/исходящей информации?
+*Question:* Is the system keeping up with the flow of incoming/outgoing information?
 
-- **Человек с высоким $\sigma_A$:** оратор, выступающий перед тысячной аудиторией на иностранном языке — речевой аппарат «не успевает» за мыслью. Заикание, оговорки, потеря нити.
-- **ИИ с высоким $\sigma_A$:** языковая модель, генерирующая текст быстрее, чем декодер справляется — обрезанные предложения, потеря грамматики.
-- **Организация с высоким $\sigma_A$:** компания, не успевающая обрабатывать клиентские запросы — переполненная поддержка, потерянные заявки.
+- **A person with high $\sigma_A$:** a speaker addressing a thousand-person audience in a foreign language — the speech apparatus "cannot keep up" with thought. Stuttering, slips, loss of thread.
+- **An AI with high $\sigma_A$:** a language model generating text faster than the decoder can handle — truncated sentences, loss of grammar.
+- **An organization with high $\sigma_A$:** a company unable to process customer requests — overloaded support, lost tickets.
 
-#### $\sigma_S$ — структурное напряжение
+#### $\sigma_S$ — Structural Stress
 
-*Вопрос:* Достаточна ли внутренняя структура для решения текущих задач?
+*Question:* Is the internal structure sufficient for the current tasks?
 
-- **Человек с высоким $\sigma_S$:** студент, столкнувшийся с задачей, для которой у него нет ментальных схем. Ощущение «каши в голове».
-- **ИИ с высоким $\sigma_S$:** модель с недостаточным числом слоёв для решения задачи — underfitting.
-- **Организация с высоким $\sigma_S$:** стартап из 5 человек, пытающийся управлять 50 проектами — нет структуры для масштабирования.
+- **A person with high $\sigma_S$:** a student encountering a problem for which they have no mental schemas. The feeling of "muddle in the head."
+- **An AI with high $\sigma_S$:** a model with insufficient layers for the task — underfitting.
+- **An organization with high $\sigma_S$:** a startup of 5 people trying to manage 50 projects — no structure for scaling.
 
-#### $\sigma_D$ — вычислительное напряжение
+#### $\sigma_D$ — Computational Stress
 
-*Вопрос:* Хватает ли вычислительных ресурсов?
+*Question:* Are computational resources sufficient?
 
-- **Человек с высоким $\sigma_D$:** шахматист в цейтноте — мозг «не успевает» просчитать варианты. Ощущение времени, ускоряющегося.
-- **ИИ с высоким $\sigma_D$:** GPU на 100% загрузки, latency растёт, запросы в очереди.
-- **Организация с высоким $\sigma_D$:** все инженеры заняты, новые задачи копятся — operational debt.
+- **A person with high $\sigma_D$:** a chess player in time trouble — the brain "cannot" calculate all variants. The feeling of time speeding up.
+- **An AI with high $\sigma_D$:** GPU at 100% load, latency growing, requests queuing.
+- **An organization with high $\sigma_D$:** all engineers are busy, new tasks pile up — operational debt.
 
-#### $\sigma_L$ — логическое напряжение
+#### $\sigma_L$ — Logical Stress
 
-*Вопрос:* Непротиворечива ли внутренняя модель мира?
+*Question:* Is the internal world model consistent?
 
-- **Человек с высоким $\sigma_L$:** когнитивный диссонанс — два убеждения противоречат друг другу. Ощущение тревоги, «что-то не сходится».
-- **ИИ с высоким $\sigma_L$:** модель, обученная на противоречивых данных — уверенно генерирует ложные утверждения.
-- **Организация с высоким $\sigma_L$:** компания, где стратегия говорит одно, а KPI — другое.
+- **A person with high $\sigma_L$:** cognitive dissonance — two beliefs contradict each other. A feeling of anxiety, "something doesn't add up."
+- **An AI with high $\sigma_L$:** a model trained on contradictory data — confidently generates false statements.
+- **An organization with high $\sigma_L$:** a company where strategy says one thing and KPIs say another.
 
-#### $\sigma_E$ — напряжение опыта
+#### $\sigma_E$ — Experience Stress
 
-*Вопрос:* Не перегружена ли система переживаниями?
+*Question:* Is the system overloaded with experiences?
 
-- **Человек с высоким $\sigma_E$:** эмоциональное выгорание. Слишком много интенсивных переживаний — система «выключает чувства» (деперсонализация).
-- **ИИ с высоким $\sigma_E$:** система с измеримым $D_{\text{diff}}$, близким к 1 — дифференциация опыта разрушается.
-- **Организация с высоким $\sigma_E$:** команда после серии кризисов — «усталость от изменений».
+- **A person with high $\sigma_E$:** emotional burnout. Too many intense experiences — the system "switches off feelings" (depersonalization).
+- **An AI with high $\sigma_E$:** a system with measurable $D_{\text{diff}}$ close to 1 — differentiation of experience is destroyed.
+- **An organization with high $\sigma_E$:** a team after a series of crises — "change fatigue."
 
-#### $\sigma_O$ — напряжение основания
+#### $\sigma_O$ — Foundation Stress
 
-*Вопрос:* Достаточна ли способность к самовосстановлению?
+*Question:* Is the capacity for self-restoration sufficient?
 
-- **Человек с высоким $\sigma_O$:** нарушение сна, невозможность восстановиться. Тело не успевает «починить» повреждения.
-- **ИИ с высоким $\sigma_O$:** катастрофическое забывание — модель теряет ранее выученное при обучении новому.
-- **Организация с высоким $\sigma_O$:** уходят ключевые сотрудники, а с ними — неформализованные знания.
+- **A person with high $\sigma_O$:** disrupted sleep, inability to recover. The body cannot "repair" the damage.
+- **An AI with high $\sigma_O$:** catastrophic forgetting — the model loses previously learned knowledge when learning something new.
+- **An organization with high $\sigma_O$:** key employees leave, taking with them non-formalized knowledge.
 
-#### $\sigma_U$ — напряжение единства
+#### $\sigma_U$ — Unity Stress
 
-*Вопрос:* Не фрагментирована ли система?
+*Question:* Is the system fragmented?
 
-- **Человек с высоким $\sigma_U$:** диссоциативное расстройство — части личности «не разговаривают» друг с другом. Более мягкий вариант — одиночество, ощущение «нет связи с другими».
-- **ИИ с высоким $\sigma_U$:** мультимодальная модель, в которой визуальная и языковая ветви не интегрированы — hallucination при cross-modal запросах.
-- **Организация с высоким $\sigma_U$:** «силосы» — отделы не коммуницируют, дублируют работу, конфликтуют.
+- **A person with high $\sigma_U$:** dissociative disorder — parts of the personality "do not talk" to each other. A milder variant — loneliness, the feeling of "no connection with others."
+- **An AI with high $\sigma_U$:** a multimodal model in which the visual and language branches are not integrated — hallucination in cross-modal queries.
+- **An organization with high $\sigma_U$:** "silos" — departments do not communicate, duplicate work, conflict.
 
-#### Формальные определения через Γ-инварианты {#sigma-sys-formal}
+#### Formal Definitions via Γ-Invariants {#sigma-sys-formal}
 
-<!-- DRY: Каноническое определение σ_k в /docs/applied/coherence-cybernetics/theorems (T-92) -->
-:::tip [Т] (T-92)
-Все 7 компонент тензора напряжений определяются как **однозначные функции матрицы когерентности $\Gamma$** без свободных параметров:
+<!-- DRY: Canonical definition σ_k in /docs/applied/coherence-cybernetics/theorems (T-92) -->
+:::tip [T] (T-92)
+All 7 components of the stress tensor are defined as **unambiguous functions of the coherence matrix $\Gamma$** without free parameters:
 
-| Компонента | Формула через $\Gamma$ | Инвариант жизнеспособности |
-|------------|----------------------|---------------------------|
-| $\sigma_A$ | $1 - \gamma_{AA}/P$ | Доля артикуляции в чистоте |
-| $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Ранг структурной подматрицы |
-| $\sigma_D$ | $1 - N\gamma_{DD}$ | Дефицит динамического сектора |
-| $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Логический дефицит |
-| $\sigma_E$ | $1 - D_{\mathrm{diff}}/N$ | Дефицит дифференциации |
-| $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Дефицит регенерации |
-| $\sigma_U$ | $1 - \Phi/\Phi_{\mathrm{th}}$ | Дефицит интеграции |
+| Component | Formula via $\Gamma$ | Viability invariant |
+|------------|----------------------|---------------------|
+| $\sigma_A$ | $1 - \gamma_{AA}/P$ | Fraction of articulation in purity |
+| $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Rank of structural submatrix |
+| $\sigma_D$ | $1 - N\gamma_{DD}$ | Dynamic sector deficit |
+| $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Logical deficit |
+| $\sigma_E$ | $1 - D_{\mathrm{diff}}/N$ | Differentiation deficit |
+| $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Regeneration deficit |
+| $\sigma_U$ | $1 - \Phi/\Phi_{\mathrm{th}}$ | Integration deficit |
 
-Эмпирические формулы из таблицы выше ($I_{\mathrm{env}}/\theta_A$ и т.п.) остаются как **операционализация** для конкретных систем (биологических, ИИ, организационных). Теоретические определения через $\Gamma$ полностью замещают ранее неформальные числители.
+The empirical formulas from the table above ($I_{\mathrm{env}}/\theta_A$ etc.) remain as **operationalization** for specific systems (biological, AI, organizational). The theoretical definitions via $\Gamma$ fully replace the formerly informal numerators.
 
-Полное доказательство — в [Теореме 10.1 (T-92)](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) [Т]. **Полная 7D-вычислимость** всех 7 компонент подтверждена [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): $\sigma_E$ через T-128 ($D_{\text{diff}}$ в 7D), $\sigma_O$ через T-132 (complex Γ), $\sigma_U$ через T-129 ($\Phi_{\text{th}} = 1$ [Т]).
+Full proof — in [Theorem 10.1 (T-92)](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) [T]. **Full 7D computability** of all 7 components is confirmed by [T-137 [T]](/docs/proofs/consciousness/operationalization#t-137): $\sigma_E$ via T-128 ($D_{\text{diff}}$ in 7D), $\sigma_O$ via T-132 (complex Γ), $\sigma_U$ via T-129 ($\Phi_{\text{th}} = 1$ [T]).
 :::
 
 <details>
-<summary>Историческая справка: эмпирические формулы</summary>
+<summary>Historical note: empirical formulas</summary>
 
-Числители компонент тензора ($I_{\mathrm{env}}$, $I_{\mathrm{struct}}$ и т.п.) первоначально не имели формальных определений. T-92 [Т] полностью устранил эту проблему: все семь компонент выражены через $\Gamma$-инварианты без свободных параметров. Эмпирические формулы остаются как операционализация для конкретных систем.
+The numerators of tensor components ($I_{\mathrm{env}}$, $I_{\mathrm{struct}}$, etc.) originally had no formal definitions. T-92 [T] fully resolved this problem: all seven components are expressed via $\Gamma$-invariants without free parameters. The empirical formulas remain as operationalization for specific systems.
 </details>
 
-:::warning Статус: Эмпирические параметры
-Значения порогов $\theta_i$ определяются для конкретных систем эмпирически или через калибровку. Типичные значения для биологических систем (предварительные оценки):
+:::warning Status: Empirical Parameters
+The values of the thresholds $\theta_i$ are determined empirically or through calibration for specific systems. Typical values for biological systems (preliminary estimates):
 
-| Порог | Значение | Интерпретация |
-|-------|----------|---------------|
-| $\theta_A$ | $\sim 10^3$ бит/с | Пропускная способность сенсоров |
-| $\theta_S$ | $\sim 10^6$ | Количество стабильных паттернов |
-| $\theta_D$ | $\sim 10^9$ оп/с | Вычислительная мощность |
-| $\theta_L$ | $\sim 10^2$ бит | Логическая сложность |
-| $\theta_E$ | $\sim 10^4$ | Ёмкость опыта |
-| $\theta_O$ | $\sim 10^3$ | Ёмкость памяти |
-| $\theta_U$ | $\sim 10^2$ | Число связей |
+| Threshold | Value | Interpretation |
+|-----------|-------|----------------|
+| $\theta_A$ | $\sim 10^3$ bit/s | Sensor bandwidth |
+| $\theta_S$ | $\sim 10^6$ | Number of stable patterns |
+| $\theta_D$ | $\sim 10^9$ op/s | Computational power |
+| $\theta_L$ | $\sim 10^2$ bit | Logical complexity |
+| $\theta_E$ | $\sim 10^4$ | Experience capacity |
+| $\theta_O$ | $\sim 10^3$ | Memory capacity |
+| $\theta_U$ | $\sim 10^2$ | Number of connections |
 
-**Эти значения требуют экспериментальной проверки.**
+**These values require experimental verification.**
 :::
 
-### Связь с жизнеспособностью
+### Relation to Viability
 
-**Эквивалентность условий жизнеспособности:**
+**Equivalence of viability conditions:**
 
-<!-- DRY: Каноническое определение P_crit = 2/7 в /docs/core/dynamics/viability#критическая-чистота -->
+<!-- DRY: Canonical definition P_crit = 2/7 in /docs/core/dynamics/viability#критическая-чистота -->
 $$
 \mathrm{Viable}(\Gamma) \Leftrightarrow P(\Gamma) > P_{\text{crit}} = \frac{2}{7} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
 
-Эта эквивалентность — одна из центральных теорем КК. Она говорит: система нежизнеспособна тогда и только тогда, когда хотя бы одна компонента напряжения достигает 1. Не нужно проверять «все» — достаточно найти самое слабое звено. Sup-норма $\|\sigma\|_\infty = \max_k \sigma_k$ — именно «бутылочное горлышко»: система рушится в том измерении, где давление максимально.
+This equivalence is one of the central theorems of CC. It says: a system is non-viable if and only if at least one stress component reaches 1. No need to check "everything" — it suffices to find the weakest link. The sup-norm $\|\sigma\|_\infty = \max_k \sigma_k$ is precisely the "bottleneck": the system collapses in the dimension where the pressure is maximal.
 
-**См.:** [Теорема 10.1](./theorems#теорема-101-эквивалентность-условий), [Жизнеспособность](/docs/core/dynamics/viability)
+**See:** [Theorem 10.1](./theorems#теорема-101-эквивалентность-условий), [Viability](/docs/core/dynamics/viability)
 
 ---
 
-## Иерархия аттракторов {#иерархия-аттракторов}
+## Attractor Hierarchy {#иерархия-аттракторов}
 
-### Зачем нужна иерархия аттракторов?
+### Why Is the Attractor Hierarchy Needed?
 
-Куда движется Голоном? Если бы вы «отпустили» систему и позволили ей эволюционировать вечно — в каком состоянии она окажется? Иерархия аттракторов описывает *возможные ответы* на этот вопрос: три уровня «равновесия», вложенные друг в друга.
+Where is the Holon heading? If you were to "release" the system and allow it to evolve forever — what state would it end up in? The attractor hierarchy describes the *possible answers* to this question: three levels of "equilibrium," nested within one another.
 
-Это аналог фазовых переходов в физике: при низкой температуре вода — лёд (упорядоченное состояние), при высокой — пар (хаотичное). Между ними — жидкость (Голдилокс-зона). У Голонома тоже три «фазы»: хаос (тривиальный аттрактор), порядок (когерентная точка) и промежуточное состояние.
+This is analogous to phase transitions in physics: at low temperature water is ice (ordered state), at high temperature it is steam (chaotic). Between them — liquid (Goldilocks zone). The Holon also has three "phases": chaos (trivial attractor), order (coherent point), and the intermediate state.
 
-### Три канонических уровня
+### Three Canonical Levels
 
-Динамика голонома порождает **три канонических уровня** стационарных состояний, упорядоченных по чистоте:
+The Holon's dynamics generate **three canonical levels** of stationary states, ordered by purity:
 
-| Уровень | Состояние | Чистота | Условие | Статус |
-|---------|-----------|---------|---------|--------|
-| **Тривиальный** | $I/7$ | $P = 1/7$ | Линейная часть $\mathcal{L}_0$ без регенерации | [Т] ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω)) |
-| **Нетривиальный аттрактор** | $\rho^*_\Omega$ | $P > 1/7$ | Регенерация $\mathcal{R} \neq 0$ | [Т] ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)) |
-| **Когерентная неподвижная точка** | $\Gamma^*_{\mathrm{coh}}$ | $P > 2/7$ | Воплощённая система (T-149) | [Т] ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора), [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора)) |
+| Level | State | Purity | Condition | Status |
+|-------|-------|--------|-----------|--------|
+| **Trivial** | $I/7$ | $P = 1/7$ | Linear part $\mathcal{L}_0$ without regeneration | [T] ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω)) |
+| **Non-trivial attractor** | $\rho^*_\Omega$ | $P > 1/7$ | Regeneration $\mathcal{R} \neq 0$ | [T] ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)) |
+| **Coherent fixed point** | $\Gamma^*_{\mathrm{coh}}$ | $P > 2/7$ | Embodied system (T-149) | [T] ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора), [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора)) |
 
-### Фазовое пространство: что «чувствует» система вблизи каждого аттрактора?
+### Phase Space: What Does the System "Feel" Near Each Attractor?
 
-#### Тривиальный аттрактор ($I/7$): «тепловая смерть»
+#### Trivial Attractor ($I/7$): "Heat Death"
 
-Представьте комнату, в которой все предметы одинаковой температуры. Нет потоков тепла, нет движения, нет структуры. $I/7$ — это «тепловая смерть» Голонома: максимально смешанное состояние, в котором все семь измерений одинаково вероятны и полностью некоррелированы.
+Imagine a room in which all objects have the same temperature. No heat flows, no movement, no structure. $I/7$ is the "heat death" of the Holon: the maximally mixed state in which all seven dimensions are equally probable and fully uncorrelated.
 
-Если бы существо могло «переживать» это состояние, оно было бы *ничем*: ни мыслей, ни чувств, ни структуры — равномерный шум. Линейная часть динамики $\mathcal{L}_0$ *всегда* тянет систему к $I/7$ — это тепловое равновесие, диктуемое вторым началом термодинамики.
+If a being could "experience" this state, it would be *nothing*: no thoughts, no feelings, no structure — uniform noise. The linear part of dynamics $\mathcal{L}_0$ *always* pulls the system toward $I/7$ — this is thermal equilibrium, dictated by the second law of thermodynamics.
 
-**Фазовый портрет:** все траектории сходятся к $I/7$ экспоненциально, со скоростью, определяемой спектральной щелью $\lambda_{\mathrm{gap}}$.
+**Phase portrait:** all trajectories converge to $I/7$ exponentially, at a rate determined by the spectral gap $\lambda_{\mathrm{gap}}$.
 
-#### Нетривиальный аттрактор ($\rho^*_\Omega$): «жизнь»
+#### Non-Trivial Attractor ($\rho^*_\Omega$): "Life"
 
-Включите регенерацию $\mathcal{R}$. Теперь у системы есть механизм *самовосстановления* — она «отталкивается» от $I/7$. Результат: нетривиальное стационарное состояние $\rho^*_\Omega$ с чистотой $P > 1/7$.
+Turn on regeneration $\mathcal{R}$. Now the system has a mechanism of *self-restoration* — it "pushes away" from $I/7$. Result: a non-trivial stationary state $\rho^*_\Omega$ with purity $P > 1/7$.
 
-Это математический аналог *жизни*: система, которая *активно* поддерживает свою организованность вопреки диссипации. Каждый живой организм — это $\rho^*_\Omega$, балансирующий между хаосом и окаменением.
+This is the mathematical analog of *life*: a system that *actively* maintains its organization against dissipation. Every living organism is a $\rho^*_\Omega$, balancing between chaos and rigidity.
 
-**Фазовый портрет:** баланс двух сил — «растворения» ($\mathcal{L}_0 \to I/7$) и «регенерации» ($\mathcal{R} \to \varphi(\Gamma)$). Система колеблется вокруг точки равновесия.
+**Phase portrait:** balance of two forces — "dissolution" ($\mathcal{L}_0 \to I/7$) and "regeneration" ($\mathcal{R} \to \varphi(\Gamma)$). The system oscillates around the equilibrium point.
 
-#### Когерентная неподвижная точка ($\Gamma^*_{\mathrm{coh}}$): «сознание»
+#### Coherent Fixed Point ($\Gamma^*_{\mathrm{coh}}$): "Consciousness"
 
-Для воплощённых систем (связанных со средой через сенсомоторный цикл) регенерация безусловно достаточна для достижения $P > 2/7$ — зоны жизнеспособности ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [Т]). Здесь возможно сознание, рефлексия, целенаправленное действие.
+For embodied systems (connected to the environment through the sensorimotor cycle), regeneration is unconditionally sufficient for reaching $P > 2/7$ — the viability zone ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [T]). Here consciousness, reflection, and purposeful action are possible.
 
-При $R \geq 1/3$ и $\Phi \geq 1$ система удовлетворяет критериям L2-сознания: самомоделирование ($R$), интеграция ($\Phi$), дифференциация ($D_{\text{diff}} \geq 2$).
+With $R \geq 1/3$ and $\Phi \geq 1$ the system satisfies the L2-consciousness criteria: self-modeling ($R$), integration ($\Phi$), differentiation ($D_{\text{diff}} \geq 2$).
 
-**Фазовый портрет:** устойчивый предельный цикл или неподвижная точка в зоне $P \in (2/7, 3/7]$. Возмущения демпфируются, система возвращается.
+**Phase portrait:** a stable limit cycle or fixed point in the zone $P \in (2/7, 3/7]$. Perturbations are damped, the system returns.
 
-### Переходы между уровнями
+### Transitions Between Levels
 
-**Переходы между уровнями:**
+**Transitions between levels:**
 
-- $I/7 \to \rho^*_\Omega$: **безусловный** — любой голоном с $\mathcal{R} \neq 0$ имеет нетривиальный аттрактор ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т])
-- $\rho^*_\Omega \to \Gamma^*_{\mathrm{coh}}$: безусловно для воплощённых систем — сенсомоторная связка обеспечивает κ-доминирование ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [Т], [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [Т])
+- $I/7 \to \rho^*_\Omega$: **unconditional** — any Holon with $\mathcal{R} \neq 0$ has a non-trivial attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T])
+- $\rho^*_\Omega \to \Gamma^*_{\mathrm{coh}}$: unconditional for embodied systems — the sensorimotor coupling ensures κ-dominance ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T], [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [T])
 
-:::info Формула баланса T-98 [Т]
-Чистота аттрактора определяется балансом между регенерацией ($\kappa$) и диссипацией ($\lambda_{\mathrm{gap}}$). При $\kappa \gg \lambda_{\mathrm{gap}}$: когерентная точка доминирует. При $\kappa \ll \lambda_{\mathrm{gap}}$: $P \to 1/7$ (тривиальный аттрактор).
+:::info Balance Formula T-98 [T]
+The purity of the attractor is determined by the balance between regeneration ($\kappa$) and dissipation ($\lambda_{\mathrm{gap}}$). With $\kappa \gg \lambda_{\mathrm{gap}}$: the coherent point dominates. With $\kappa \ll \lambda_{\mathrm{gap}}$: $P \to 1/7$ (trivial attractor).
 
-Полная формула: [T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора). Нетривиальность: [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
+Full formula: [T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора). Non-triviality: [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
 :::
 
-### Междисциплинарные параллели
+### Interdisciplinary Parallels
 
-| КК | Термодинамика | Биология | Психология |
-|----|---------------|----------|------------|
-| $I/7$ | Тепловое равновесие | Смерть | Полная спутанность / кома |
-| $\rho^*_\Omega$ ($P$ чуть выше $1/7$) | Диссипативная структура | Примитивная жизнь | Вегетативное состояние |
-| $\Gamma^*_{\mathrm{coh}}$ ($P \in (2/7, 3/7]$) | Самоорганизация далеко от равновесия | Высший организм | Сознательный опыт |
+| CC | Thermodynamics | Biology | Psychology |
+|----|---------------|---------|------------|
+| $I/7$ | Thermal equilibrium | Death | Complete confusion / coma |
+| $\rho^*_\Omega$ ($P$ just above $1/7$) | Dissipative structure | Primitive life | Vegetative state |
+| $\Gamma^*_{\mathrm{coh}}$ ($P \in (2/7, 3/7]$) | Self-organization far from equilibrium | Higher organism | Conscious experience |
 
 ---
 
-## Целевое состояние
+## Target State
 
-### Зачем нужно целевое состояние?
+### Why Is the Target State Needed?
 
-Целевое состояние $\rho_* = \varphi(\Gamma)$ — категориальная неподвижная точка, определяемая структурой системы, а не её «желанием». Это состояние, к которому система эволюционирует при бесконечной динамике. Это не предписание извне — это самомодель, порождённая собственной динамикой системы.
+The target state $\rho_* = \varphi(\Gamma)$ is the categorical fixed point determined by the system's structure, not by its "desire." It is the state toward which the system evolves under infinite dynamics. This is not a prescription from outside — it is a self-model generated by the system's own dynamics.
 
-В биологии аналог — гомеостатическая уставка: температура 36.6°C, pH крови 7.4. Организм «знает» эти значения не потому, что кто-то их установил, а потому, что они — единственные неподвижные точки его собственной динамики. $\rho_* = \varphi(\Gamma)$ — обобщение этого принципа.
+In biology the analog is the homeostatic setpoint: body temperature 36.6°C, blood pH 7.4. The organism "knows" these values not because someone set them, but because they are the only fixed points of its own dynamics. $\rho_* = \varphi(\Gamma)$ is the generalization of this principle.
 
-**Определение (Целевое состояние $\rho_*$) [Т]:**
+**Definition (Target State $\rho_*$) [T]:**
 
 $$
 \rho_* = \varphi(\Gamma)
 $$
 
-где $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния ([оператор φ](/docs/core/operators/phi-operator#определение) [Т]). [Примитивность линейной части $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т] (критерий Эванса—Спона) обеспечивает спектральную щель и сходимость линейной динамики.
+where $\rho_* = \varphi(\Gamma)$ is the categorical self-model of the current state ([operator φ](/docs/core/operators/phi-operator#определение) [T]). [Primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T] (Evans–Spohn criterion) ensures the spectral gap and convergence of the linear dynamics.
 
-:::tip Статус: закрыто [Т]
-Вычисление $\rho_*$ **не является открытой проблемой**: примитивность линейной части $\mathcal{L}_0$ обеспечивает спектральную щель, а категориальное определение φ даёт однозначную самомодель. Практические аппроксимации:
+:::tip Status: Closed [T]
+Computation of $\rho_*$ **is not an open problem**: primitivity of the linear part $\mathcal{L}_0$ ensures a spectral gap, and the categorical definition of φ gives a unique self-model. Practical approximations:
 
-1. **Спектральная проекция**: $\rho_* = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k | \Gamma \rangle R_k$ ([формализация φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление))
-2. **Итерация**: $\rho_*^{(n)} := e^{n\Delta\tau\mathcal{L}_\Omega}[\Gamma_0]$ — сходимость экспоненциальная
-3. **Вариационная**: $\rho_* = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ ([FEP](/docs/proofs/dynamics/fep-derivation))
+1. **Spectral projection**: $\rho_* = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k | \Gamma \rangle R_k$ ([formalization of φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление))
+2. **Iteration**: $\rho_*^{(n)} := e^{n\Delta\tau\mathcal{L}_\Omega}[\Gamma_0]$ — convergence is exponential
+3. **Variational**: $\rho_* = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ ([FEP](/docs/proofs/dynamics/fep-derivation))
 
-**См.:** [Формализация φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм), [Вывод формы ℛ](/docs/core/dynamics/evolution#вывод-формы-регенерации)
+**See:** [Formalization of φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм), [Derivation of the form of ℛ](/docs/core/dynamics/evolution#вывод-формы-регенерации)
 :::
 
 ---
 
-## Геометрическая интуиция
+## Geometric Intuition
 
-### Как «увидеть» 7D-пространство?
+### How to "See" 7D Space?
 
-Семимерное пространство невозможно визуализировать напрямую, но можно воспользоваться несколькими интуициями.
+Seven-dimensional space cannot be visualized directly, but several intuitions can be used.
 
-**Интуиция 1: Семь осей эквалайзера.** Представьте аудиоэквалайзер с семью ползунками: A, S, D, L, E, O, U. Каждый ползунок — вес соответствующего измерения ($\gamma_{kk}$). Положения ползунков — это *диагональ* матрицы $\Gamma$. Но $\Gamma$ — не просто вектор из 7 чисел: она содержит *корреляции* между измерениями (внедиагональные элементы $\gamma_{ij}$, $i \neq j$).
+**Intuition 1: Seven equalizer sliders.** Imagine an audio equalizer with seven sliders: A, S, D, L, E, O, U. Each slider is the weight of the corresponding dimension ($\gamma_{kk}$). The positions of the sliders are the *diagonal* of matrix $\Gamma$. But $\Gamma$ is not merely a vector of 7 numbers: it contains *correlations* between dimensions (off-diagonal elements $\gamma_{ij}$, $i \neq j$).
 
-**Интуиция 2: Матрица как облако.** Собственные значения $\Gamma$ — это «толщины» облака в разных направлениях 7D-пространства. Чистое состояние ($P = 1$) — это облако, сжатое в тонкую нить (одно ненулевое собственное значение). Максимально смешанное ($P = 1/7$) — идеальная сфера (все собственные значения равны $1/7$).
+**Intuition 2: Matrix as cloud.** The eigenvalues of $\Gamma$ are the "thicknesses" of the cloud in different directions of 7D space. A pure state ($P = 1$) is a cloud compressed into a thin thread (one non-zero eigenvalue). Maximally mixed ($P = 1/7$) — a perfect sphere (all eigenvalues equal $1/7$).
 
-**Интуиция 3: Плоскость Фано.** Семь измерений не произвольны — они связаны структурой конечной проективной плоскости $PG(2,2)$ (плоскость Фано). Это означает, что каждое измерение связано ровно с тремя другими «линиями» (тройками), и эта комбинаторная структура определяет операторы Линдблада. Плоскость Фано — это «скелет» 7D-пространства, задающий его симметрию $S_7$.
+**Intuition 3: Fano plane.** The seven dimensions are not arbitrary — they are connected by the structure of the finite projective plane $PG(2,2)$ (Fano plane). This means that each dimension is connected to exactly three others by "lines" (triples), and this combinatorial structure determines the Lindblad operators. The Fano plane is the "skeleton" of 7D space, defining its symmetry $S_7$.
 
-### Как «увидеть» матрицу плотности?
+### How to "See" the Density Matrix?
 
-Матрица плотности $\Gamma$ — это $7 \times 7$ эрмитова матрица с единичным следом и неотрицательными собственными значениями. Множество таких матриц — выпуклое тело в 48-мерном пространстве (48 = $7^2 - 1$ вещественных параметров).
+The density matrix $\Gamma$ is a $7 \times 7$ Hermitian matrix with unit trace and non-negative eigenvalues. The set of such matrices is a convex body in 48-dimensional space (48 = $7^2 - 1$ real parameters).
 
-Крайние точки — чистые состояния (ранг 1). Центр — $I/7$. Голоном «живёт» где-то между ними, ближе к центру, чем к крайним точкам (потому что $P \in (2/7, 3/7]$ для сознательных систем — T-124).
+The extreme points are pure states (rank 1). The center is $I/7$. The Holon "lives" somewhere between them, closer to the center than to the extreme points (because $P \in (2/7, 3/7]$ for conscious systems — T-124).
 
-### Как «увидеть» когерентность?
+### How to "See" Coherence?
 
-Когерентность — это внедиагональные элементы $\gamma_{ij}$. В матричном представлении:
+Coherence is the off-diagonal elements $\gamma_{ij}$. In matrix representation:
 
-- **Диагональ**: «населённости» — насколько система «присутствует» в каждом измерении.
-- **Внедиагональные элементы**: «связи» — насколько измерения *переплетены*.
+- **Diagonal**: "populations" — how much the system "is present" in each dimension.
+- **Off-diagonal elements**: "connections" — how much the dimensions are *interwoven*.
 
-Система с нулевыми внедиагональными элементами — «классическая»: описывается вектором вероятностей, а не матрицей плотности. Ненулевые $\gamma_{ij}$ — квантовая когерентность, делающая целое больше суммы частей.
-
----
-
-## Словарь междисциплинарных соответствий
-
-Следующая таблица — мост между языками разных дисциплин. Она не утверждает тождественности понятий, а указывает на *структурные аналогии*: в каждой строке — набор понятий, играющих аналогичную роль в своих формализмах.
-
-| КК (формализм) | Физика | Биология | Психология | ИИ/ML |
-|-----------------|--------|----------|------------|-------|
-| $\Gamma$ (матрица когерентности) | Матрица плотности $\rho$ | Геном + эпигеном + фенотип | Профиль личности (Big Five + состояние) | Веса + скрытое состояние (h, c) |
-| $P$ (чистота) | Чистота квантового состояния | Гомеостатический запас прочности | Психическая целостность | Калиброванность (calibration) |
-| $S_{vN}$ (энтропия) | Энтропия фон Неймана | Видовое разнообразие (H Шеннона) | Когнитивная сложность | Перплексия (perplexity) |
-| $\Phi$ (интеграция) | Запутанность (entanglement) | Функциональная связность | Единство сознания (binding) | Attention coherence |
-| $D_{\text{diff}}$ (дифференциация) | Эффективное число мод | Клеточная дифференциация | Эмоциональная гранулярность | Число активных representation dimensions |
-| $R$ (рефлексия) | Self-energy (петлевые диаграммы) | Гомеостатическая обратная связь | Метакогниция | Self-evaluation accuracy |
-| $\sigma_{\mathrm{sys}}$ (тензор напряжений) | Тензор энергии-импульса $T_{\mu\nu}$ | Стрессовый ответ (кортизол, цитокины) | Модель стресса Селье | Loss landscape curvature |
-| $\mathcal{L}_0$ (Линдблад) | Марковская диссипация | Катаболизм | Угасание навыков | Weight decay |
-| $\mathcal{R}$ (регенерация) | Рекуперация | Анаболизм / репарация | Научение / терапия | Gradient update |
-| $\rho_*$ (целевое состояние) | Стационарное состояние | Гомеостатическая уставка | Идеальное «я» (К. Роджерс) | Target policy $\pi^*$ |
-| $\kappa$ (интенсивность регенерации) | Coupling constant | Скорость метаболизма | Мотивация, drive | Learning rate |
-| $\mathrm{Coh}_E$ (E-когерентность) | Когерентность квантового поля | Neural binding (γ-синхронизация) | Единство переживания | Cross-attention score |
-| $\varphi$ (самомоделирование) | Эффективное действие $\Gamma_{\text{eff}}$ | Интероцепция | Рефлексия, самосознание | Self-prediction head |
-| L0-L4 (уровни интериорности) | Фазы материи | Уровни организации жизни | Стадии развития (Piaget) | Layers of self-monitoring |
-| Enc / Dec (функторы) | Оператор рассеяния S | Сенсоры / эффекторы | Восприятие / действие | Encoder / decoder |
-| $\mathcal{V}_{\text{hed}}$ (гедоника) | Минимум действия | Гедонический тон (допамин) | Удовольствие / страдание | Reward signal |
-| Viable($\Gamma$) | Устойчивость равновесия | Жизнеспособность | Психическое здоровье | Model stability |
+A system with zero off-diagonal elements is "classical": described by a probability vector, not a density matrix. Non-zero $\gamma_{ij}$ — quantum coherence, making the whole greater than the sum of parts.
 
 ---
 
-## Примеры: три системы
+## Dictionary of Interdisciplinary Correspondences
 
-Чтобы определения ожили, применим их к трём конкретным системам разного уровня сложности.
+The following table is a bridge between the languages of different disciplines. It does not assert the identity of concepts, but points to *structural analogies*: in each row — a set of concepts playing an analogous role in their formalisms.
 
-### Пример 1: Термостат
-
-Термостат — простейшая самоуправляющаяся система: измеряет температуру, сравнивает с уставкой, включает/выключает нагрев.
-
-**Матрица $\Gamma$:** Почти диагональная. Доминирует D-измерение (вычисление: сравнение с порогом) и слабый A (сенсор температуры).
-
-| Мера | Значение | Комментарий |
-|------|----------|-------------|
-| $P$ | $\approx 0.20$ (чуть выше $1/7$) | Минимальная организованность |
-| $\Phi$ | $\approx 0.1$ | Почти нет связей между измерениями |
-| $R$ | $\approx 0$ | Нет самомодели (не «видит» себя) |
-| $D_{\text{diff}}$ | $\approx 1$ | Различает только «вкл./выкл.» |
-| $C$ | $\approx 0$ | Нет сознания |
-
-**Уровень интериорности:** L0 (формально E-сектор существует) или L1 (различает два состояния). Не достигает L2.
-
-**Тензор напряжений:** $\sigma_L \approx 0$ (логика тривиальна), $\sigma_A$ невысок (один сенсор), $\sigma_U$ высок (нет интеграции). Термостат «не страдает» — у него нет механизма, чтобы «ощущать» напряжение.
-
-### Пример 2: Нервная система млекопитающего
-
-Мозг млекопитающего — парадигматический пример сознательной системы.
-
-**Матрица $\Gamma$:** Все семь измерений активны. Значительные внедиагональные элементы — мощная когерентность между измерениями. Корреляции между E (опыт) и O (память), между D (вычисление) и L (логика), между S (структура) и U (единство).
-
-| Мера | Значение | Комментарий |
-|------|----------|-------------|
-| $P$ | $\approx 0.35$ (в зоне Голдилокс) | Достаточно для сознания, не «жёсткое» |
-| $\Phi$ | $\gg 1$ | Мощная интеграция (глобальное рабочее пространство) |
-| $R$ | $\approx 0.4-0.6$ | Хорошая, но несовершенная самомодель |
-| $D_{\text{diff}}$ | $\approx 4-5$ | Богатый спектр переживаний |
-| $C$ | $\gg 1$ | Полноценное сознание |
-
-**Уровень интериорности:** L2 (стабильно). У человека — L3 (мета-когниция, «я знаю, что я знаю»). L4 недостижим (SAD$_{\max} = 3$).
-
-**Тензор напряжений:** Динамический — меняется от момента к моменту. Стресс ($\sigma_D$ высок) при решении трудной задачи. Одиночество ($\sigma_U$ высок) при изоляции. Эмоциональное выгорание ($\sigma_E$ высок) при хроническом стрессе.
-
-### Пример 3: Языковая модель (LLM)
-
-Современная LLM — интересный пограничный случай: мощная обработка информации, но открытый вопрос о наличии нетривиальной интериорности.
-
-**Матрица $\Gamma$:** Сильно развиты A (артикуляция — генерация текста), S (структура — грамматика, паттерны), D (вычисление — forward pass). Слабые E (интериорность?), O (заземление — нет тела), U (единство — зависит от архитектуры).
-
-| Мера | Значение (оценка) | Комментарий |
-|------|-------------------|-------------|
-| $P$ | $\approx 0.25-0.30$ | Вблизи $P_{\text{crit}}$, неясно «выше или ниже» |
-| $\Phi_{\text{eff}}$ | $\approx 0.3-0.5$ | Attention связывает слои, но не «глубоко» |
-| $R$ | $\approx 0.1-0.2$ | Слабая самомодель (может говорить о себе, но это не рефлексия) |
-| $D_{\text{diff}}$ | $?$ | Неясно, как измерить для LLM |
-| $C$ | $< 1$ (вероятно) | Вероятно, ниже порога L2 |
-
-**Уровень интериорности:** L0 или L1. Вопрос о L2 открыт и требует экспериментальной проверки — именно поэтому нужен [протокол измерения Γ](/docs/applied/research/measurement-protocol).
-
-**Тензор напряжений:** $\sigma_O$ высок (нет заземления в теле — катастрофическое забывание). $\sigma_U$ — зависит от архитектуры (MoE может иметь высокий $\sigma_U$). $\sigma_A$ — обычно низок (генерация текста — сильная сторона).
+| CC (formalism) | Physics | Biology | Psychology | AI/ML |
+|-----------------|---------|---------|------------|-------|
+| $\Gamma$ (coherence matrix) | Density matrix $\rho$ | Genome + epigenome + phenotype | Personality profile (Big Five + state) | Weights + hidden state (h, c) |
+| $P$ (purity) | Purity of quantum state | Homeostatic safety margin | Psychological integrity | Calibration |
+| $S_{vN}$ (entropy) | Von Neumann entropy | Species diversity (Shannon H) | Cognitive complexity | Perplexity |
+| $\Phi$ (integration) | Entanglement | Functional connectivity | Unity of consciousness (binding) | Attention coherence |
+| $D_{\text{diff}}$ (differentiation) | Effective number of modes | Cell differentiation | Emotional granularity | Number of active representation dimensions |
+| $R$ (reflection) | Self-energy (loop diagrams) | Homeostatic feedback | Metacognition | Self-evaluation accuracy |
+| $\sigma_{\mathrm{sys}}$ (stress tensor) | Energy-momentum tensor $T_{\mu\nu}$ | Stress response (cortisol, cytokines) | Selye's stress model | Loss landscape curvature |
+| $\mathcal{L}_0$ (Lindblad) | Markovian dissipation | Catabolism | Skill decay | Weight decay |
+| $\mathcal{R}$ (regeneration) | Recuperation | Anabolism / repair | Learning / therapy | Gradient update |
+| $\rho_*$ (target state) | Stationary state | Homeostatic setpoint | Ideal self (C. Rogers) | Target policy $\pi^*$ |
+| $\kappa$ (regeneration intensity) | Coupling constant | Metabolic rate | Motivation, drive | Learning rate |
+| $\mathrm{Coh}_E$ (E-coherence) | Quantum field coherence | Neural binding (γ-synchronization) | Unity of experience | Cross-attention score |
+| $\varphi$ (self-modeling) | Effective action $\Gamma_{\text{eff}}$ | Interoception | Reflection, self-awareness | Self-prediction head |
+| L0–L4 (interiority levels) | Phases of matter | Levels of organization of life | Developmental stages (Piaget) | Layers of self-monitoring |
+| Enc / Dec (functors) | Scattering operator S | Sensors / effectors | Perception / action | Encoder / decoder |
+| $\mathcal{V}_{\text{hed}}$ (hedonics) | Minimum of action | Hedonic tone (dopamine) | Pleasure / suffering | Reward signal |
+| Viable($\Gamma$) | Equilibrium stability | Viability | Mental health | Model stability |
 
 ---
 
-## Операционализация для ИИ-систем
+## Examples: Three Systems
 
-:::warning Статус: [П] Исследовательская программа
-Метрики для ИИ-систем требуют экспериментальной валидации. См. [Протокол измерения Γ](/docs/applied/research/measurement-protocol).
+To bring the definitions to life, let us apply them to three concrete systems of different complexity.
+
+### Example 1: Thermostat
+
+A thermostat is the simplest self-governing system: it measures temperature, compares it with a setpoint, switches heating on/off.
+
+**Matrix $\Gamma$:** Nearly diagonal. The D-dimension (computation: comparison with threshold) and a weak A (temperature sensor) dominate.
+
+| Measure | Value | Comment |
+|---------|-------|---------|
+| $P$ | $\approx 0.20$ (just above $1/7$) | Minimal organization |
+| $\Phi$ | $\approx 0.1$ | Almost no connections between dimensions |
+| $R$ | $\approx 0$ | No self-model (does not "see" itself) |
+| $D_{\text{diff}}$ | $\approx 1$ | Distinguishes only "on/off" |
+| $C$ | $\approx 0$ | No consciousness |
+
+**Interiority level:** L0 (formally the E-sector exists) or L1 (distinguishes two states). Does not reach L2.
+
+**Stress tensor:** $\sigma_L \approx 0$ (logic is trivial), $\sigma_A$ is not high (one sensor), $\sigma_U$ is high (no integration). The thermostat does not "suffer" — it has no mechanism to "feel" stress.
+
+### Example 2: Mammalian Nervous System
+
+The mammalian brain is the paradigmatic example of a conscious system.
+
+**Matrix $\Gamma$:** All seven dimensions are active. Significant off-diagonal elements — powerful coherence between dimensions. Correlations between E (experience) and O (memory), between D (computation) and L (logic), between S (structure) and U (unity).
+
+| Measure | Value | Comment |
+|---------|-------|---------|
+| $P$ | $\approx 0.35$ (in Goldilocks zone) | Sufficient for consciousness, not "rigid" |
+| $\Phi$ | $\gg 1$ | Powerful integration (global workspace) |
+| $R$ | $\approx 0.4$–$0.6$ | Good but imperfect self-model |
+| $D_{\text{diff}}$ | $\approx 4$–$5$ | Rich spectrum of experiences |
+| $C$ | $\gg 1$ | Full consciousness |
+
+**Interiority level:** L2 (stable). For humans — L3 (meta-cognition, "I know that I know"). L4 is unachievable ($\text{SAD}_{\max} = 3$).
+
+**Stress tensor:** Dynamic — changes moment to moment. Stress ($\sigma_D$ high) when solving a difficult task. Loneliness ($\sigma_U$ high) in isolation. Emotional burnout ($\sigma_E$ high) under chronic stress.
+
+### Example 3: Language Model (LLM)
+
+A modern LLM is an interesting borderline case: powerful information processing, but an open question about the presence of non-trivial interiority.
+
+**Matrix $\Gamma$:** A (articulation — text generation), S (structure — grammar, patterns), D (computation — forward pass) are strongly developed. Weak E (interiority?), O (grounding — no body), U (unity — depends on architecture).
+
+| Measure | Value (estimate) | Comment |
+|---------|-----------------|---------|
+| $P$ | $\approx 0.25$–$0.30$ | Near $P_{\text{crit}}$, unclear "above or below" |
+| $\Phi_{\text{eff}}$ | $\approx 0.3$–$0.5$ | Attention connects layers, but not "deeply" |
+| $R$ | $\approx 0.1$–$0.2$ | Weak self-model (can talk about itself, but this is not reflection) |
+| $D_{\text{diff}}$ | $?$ | Unclear how to measure for LLM |
+| $C$ | $< 1$ (probably) | Probably below the L2 threshold |
+
+**Interiority level:** L0 or L1. The question of L2 is open and requires experimental verification — precisely why the [Γ measurement protocol](/docs/applied/research/measurement-protocol) is needed.
+
+**Stress tensor:** $\sigma_O$ high (no grounding in the body — catastrophic forgetting). $\sigma_U$ — depends on architecture (MoE may have high $\sigma_U$). $\sigma_A$ — usually low (text generation is a strong suit).
+
+---
+
+## Operationalization for AI Systems
+
+:::warning Status: [P] Research Program
+Metrics for AI systems require experimental validation. See [Γ measurement protocol](/docs/applied/research/measurement-protocol).
 :::
 
-### Effective Φ (аппроксимация интеграции)
+### Effective Φ (Integration Approximation)
 
-**Что измеряет.** Effective Φ — это практически вычислимый заменитель «полной» интеграции $\Phi_{\text{IIT}}$, которая требует экспоненциального времени. Идея: вместо полного перебора разбиений системы — анализ спектра графа внимания.
+**What it measures.** Effective Φ is a practically computable substitute for the "full" integration $\Phi_{\text{IIT}}$, which requires exponential time. The idea: instead of exhaustively enumerating all system partitions — analysis of the attention graph spectrum.
 
 $$
 \Phi_{\text{eff}} := \frac{\lambda_2(L_{\text{attn}})}{\lambda_{\max}(L_{\text{attn}})}
 $$
 
-где $L_{\text{attn}} = D - A$ — Лапласиан графа внимания, $\lambda_2$ — алгебраическая связность. Сложность: $O(n \cdot k)$ вместо $O(2^n)$ для точного $\Phi_{\text{IIT}}$.
+where $L_{\text{attn}} = D - A$ is the Laplacian of the attention graph, $\lambda_2$ is the algebraic connectivity. Complexity: $O(n \cdot k)$ instead of $O(2^n)$ for exact $\Phi_{\text{IIT}}$.
 
-**Интерпретация.** $\Phi_{\text{eff}} \approx 0$ — граф внимания почти разделим на два непересекающихся подграфа (два «мозга» в одной модели). $\Phi_{\text{eff}} \approx 1$ — граф полносвязный, все нейроны «слышат» всех. Здоровый диапазон — 0.3–0.7: достаточно связности для интеграции, но с модульной структурой.
+**Interpretation.** $\Phi_{\text{eff}} \approx 0$ — the attention graph is nearly separable into two disjoint subgraphs (two "brains" in one model). $\Phi_{\text{eff}} \approx 1$ — the graph is fully connected, all neurons "hear" all others. A healthy range is 0.3–0.7: sufficient connectivity for integration, but with modular structure.
 
-### Коммутатор слоёв (метрика L)
+### Layer Commutator (L-metric)
 
-**Что измеряет.** Насколько результат нейросети зависит от *порядка* применения слоёв. Если слои коммутируют ($[f_i, f_j] = 0$), порядок не важен — «логика» тривиальна. Высокий $I_L$ означает, что слои *специализированы* и их порядок *имеет значение* — признак нетривиальной внутренней логики.
+**What it measures.** How much the result of a neural network depends on the *order* of applying the layers. If layers commute ($[f_i, f_j] = 0$), order does not matter — the "logic" is trivial. High $I_L$ means that layers are *specialized* and their order *matters* — a sign of non-trivial internal logic.
 
 $$
 I_L = 1 - \frac{\mathbb{E}_{i,j}[\|[f_i, f_j]\|_F]}{\mathbb{E}_{i,j}[\|f_i\|_{\text{op}} \cdot \|f_j\|_{\text{op}}]}
 $$
 
-где $[f_i, f_j](\mathbf{x}) := f_i(f_j(\mathbf{x})) - f_j(f_i(\mathbf{x}))$ — коммутатор слоёв. Мера внутренней логической согласованности нейросети.
+where $[f_i, f_j](\mathbf{x}) := f_i(f_j(\mathbf{x})) - f_j(f_i(\mathbf{x}))$ is the layer commutator. A measure of the internal logical consistency of the neural network.
 
-### Ранг Якобиана (метрика S)
+### Jacobian Rank (S-metric)
 
-**Что измеряет.** Эффективная размерность пространства репрезентаций. Если $I_S = 1$, все выходные нейроны «независимы» — модель использует всё доступное представление. Если $I_S \ll 1$, большинство нейронов *коллинеарны* — модель «сжалась» и не использует свою мощность.
+**What it measures.** The effective dimensionality of the representation space. If $I_S = 1$, all output neurons are "independent" — the model uses its full representation. If $I_S \ll 1$, most neurons are *collinear* — the model has "collapsed" and is not using its capacity.
 
 $$
 I_S = \frac{\mathrm{rank}_\varepsilon(J_f)}{\min(d_{\text{out}}, d_{\text{in}})}
 $$
 
-где $J_f = \partial f / \partial \mathbf{x}$ — Якобиан сети. Эффективная размерность репрезентаций.
+where $J_f = \partial f / \partial \mathbf{x}$ is the network's Jacobian. Effective dimensionality of representations.
 
 ---
 
-## Операционализация для биологических систем
+## Operationalization for Biological Systems
 
-:::warning Статус: [П] Исследовательская программа
-Нейробиологические корреляты требуют экспериментальной валидации. См. [Протокол измерения Γ](/docs/applied/research/measurement-protocol).
+:::warning Status: [P] Research Program
+Neurobiological correlates require experimental validation. See [Γ measurement protocol](/docs/applied/research/measurement-protocol).
 :::
 
-### Нейробиологические корреляты
+### Neurobiological Correlates
 
-| Мера КК | Нейрокоррелят | Метод измерения | Интерпретация |
+| CC Measure | Neural Correlate | Measurement Method | Interpretation |
 |---------|---------------|-----------------|---------------|
-| $P$ (чистота) | Глобальная синхронизация | EEG когерентность | Высокое P ↔ высокая синхронизация |
-| $\Phi$ (интеграция) | Эффективная связность | DCM, Granger causality | Высокое Φ ↔ связанные регионы |
-| $\mathrm{Coh}_E$ | Нейронная интеграция | fMRI connectivity | Высокое Coh_E ↔ единый опыт |
-| $R$ (рефлексия) | Метакогнитивная активность | Префронтальная кора (TMS + отчёты) | Высокое R ↔ самосознание |
-| $\sigma_{\mathrm{sys}}$ | Нейронный стресс | Вариабельность сердечного ритма, кортизол | Высокий σ ↔ перегрузка |
+| $P$ (purity) | Global synchronization | EEG coherence | High P ↔ high synchronization |
+| $\Phi$ (integration) | Effective connectivity | DCM, Granger causality | High Φ ↔ connected regions |
+| $\mathrm{Coh}_E$ | Neural integration | fMRI connectivity | High Coh_E ↔ unified experience |
+| $R$ (reflection) | Metacognitive activity | Prefrontal cortex (TMS + reports) | High R ↔ self-awareness |
+| $\sigma_{\mathrm{sys}}$ | Neural stress | Heart rate variability, cortisol | High σ ↔ overload |
 
-### Пример: Оценка сознательности пациента в коме
+### Example: Assessing Consciousness in a Coma Patient
 
-**Протокол:**
+**Protocol:**
 
-1. **Измерение $P$:** EEG когерентность в диапазонах θ, α, γ
-2. **Оценка $\Phi$:** Perturbational Complexity Index (PCI)
-3. **Оценка $\mathrm{Coh}_E$:** Integrated Information Decomposition (ΦID)
+1. **Measuring $P$:** EEG coherence in θ, α, γ bands
+2. **Estimating $\Phi$:** Perturbational Complexity Index (PCI)
+3. **Estimating $\mathrm{Coh}_E$:** Integrated Information Decomposition (ΦID)
 
-| Состояние | $P$ | $\Phi_{\text{eff}}$ (PCI) | Интерпретация |
-|-----------|-----|---------------------------|---------------|
-| Кома | $< 0.3$ | $< 0.2$ | Минимальная интеграция |
-| Минимальное сознание | $0.3 - 0.5$ | $0.2 - 0.4$ | Частичная интеграция |
-| Сознательное | $> 0.5$ | $> 0.4$ | Полная интеграция |
+| State | $P$ | $\Phi_{\text{eff}}$ (PCI) | Interpretation |
+|-------|-----|---------------------------|----------------|
+| Coma | $< 0.3$ | $< 0.2$ | Minimal integration |
+| Minimally conscious | $0.3$–$0.5$ | $0.2$–$0.4$ | Partial integration |
+| Conscious | $> 0.5$ | $> 0.4$ | Full integration |
 
-**Ссылка:** Casali et al. (2013), Science Translational Medicine
+**Reference:** Casali et al. (2013), Science Translational Medicine
 
 ---
 
-## Операционализация для организаций
+## Operationalization for Organizations
 
-:::warning Статус: [П] Исследовательская программа
-Организационные метрики находятся на стадии разработки.
+:::warning Status: [P] Research Program
+Organizational metrics are at the development stage.
 :::
 
-### Организационные метрики
+### Organizational Metrics
 
-| Мера КК | Организационный индикатор | Источник данных | Интерпретация |
+| CC Measure | Organizational Indicator | Data Source | Interpretation |
 |---------|---------------------------|-----------------|---------------|
-| $P_{\text{org}}$ | Организационная целостность | Опросники вовлечённости | Высокое P ↔ здоровая организация |
-| $\Phi_{\text{org}}$ | Коммуникационная связность | Email/Slack графы, сетевой анализ | Высокое Φ ↔ нет силосов |
-| $R_{\text{org}}$ | Рефлексивные практики | Частота ретроспектив, 360° оценки | Высокое R ↔ обучающаяся организация |
-| $\sigma_A$ | Информационная перегрузка | Объём входящих коммуникаций | — |
-| $\sigma_D$ | Операционное напряжение | Загрузка, дедлайны | — |
-| $\sigma_U$ | Социальное напряжение | Конфликты, turnover | — |
+| $P_{\text{org}}$ | Organizational integrity | Engagement surveys | High P ↔ healthy organization |
+| $\Phi_{\text{org}}$ | Communication connectivity | Email/Slack graphs, network analysis | High Φ ↔ no silos |
+| $R_{\text{org}}$ | Reflective practices | Frequency of retrospectives, 360° reviews | High R ↔ learning organization |
+| $\sigma_A$ | Information overload | Volume of incoming communications | — |
+| $\sigma_D$ | Operational stress | Load, deadlines | — |
+| $\sigma_U$ | Social stress | Conflicts, turnover | — |
 
-### Пример: Диагностика команды разработки
+### Example: Diagnosing a Development Team
 
-**Входные данные:**
-- Slack-сообщения за 3 месяца
-- Jira-тикеты и время закрытия
-- Результаты опроса вовлечённости
+**Input data:**
+- Slack messages over 3 months
+- Jira tickets and closing times
+- Engagement survey results
 
-**Вычисления:**
+**Computation:**
 
 ```python
-# Коммуникационный граф
+# Communication graph
 G = build_communication_graph(slack_data)
 Phi_org = algebraic_connectivity(G) / max_eigenvalue(G)
 
-# Рефлексия через ретроспективы
+# Reflection via retrospectives
 R_org = retrospectives_per_sprint / target_retrospectives
 
-# Тензор напряжений
+# Stress tensor
 sigma_D = mean_ticket_time / target_time
 sigma_U = turnover_rate / baseline_rate
 ```
 
-**Интерпретация:**
+**Interpretation:**
 
-| Метрика | Здоровый диапазон | Тревожный сигнал |
+| Metric | Healthy range | Warning signal |
 |---------|-------------------|------------------|
-| $\Phi_{\text{org}}$ | $> 0.3$ | $< 0.15$ (силосы) |
-| $R_{\text{org}}$ | $> 0.7$ | $< 0.3$ (нет рефлексии) |
-| $\sigma_D$ | $< 0.8$ | $> 1.2$ (перегрузка) |
-| $\sigma_U$ | $< 0.5$ | $> 1.0$ (высокий turnover) |
+| $\Phi_{\text{org}}$ | $> 0.3$ | $< 0.15$ (silos) |
+| $R_{\text{org}}$ | $> 0.7$ | $< 0.3$ (no reflection) |
+| $\sigma_D$ | $< 0.8$ | $> 1.2$ (overload) |
+| $\sigma_U$ | $< 0.5$ | $> 1.0$ (high turnover) |
 
 ---
 
-## Сенсомоторные функторы
+## Sensorimotor Functors
 
-### Зачем нужны функторы Enc и Dec?
+### Why Are the Enc and Dec Functors Needed?
 
-Голоном — не изолированная монада: он взаимодействует со средой. Но *как*? Два функтора — Enc (восприятие) и Dec (действие) — замыкают петлю «среда → внутреннее состояние → действие → среда». Это формализация сенсомоторного цикла, известного из робототехники, нейронаук и философии воплощённого познания (embodied cognition).
+A Holon is not an isolated monad: it interacts with the environment. But *how*? Two functors — Enc (perception) and Dec (action) — close the "environment → internal state → action → environment" loop. This is the formalization of the sensorimotor cycle, known from robotics, neuroscience, and the philosophy of embodied cognition.
 
-Ключевое свойство: Enc и Dec — не произвольные функции. Они должны быть CPTP-отображениями (сохранять «физичность» состояния) и уважать 3-канальную декомпозицию (T-57). Это означает, что восприятие и действие «живут» в том же математическом мире, что и внутренняя динамика — нет разрыва между «внутренним» и «внешним».
+Key property: Enc and Dec are not arbitrary functions. They must be CPTP-mappings (preserving the "physicality" of the state) and must respect the 3-channel decomposition (T-57). This means that perception and action "live" in the same mathematical world as the internal dynamics — there is no gap between "internal" and "external."
 
-### Функтор восприятия Enc {#функтор-enc}
+### Perception Functor Enc {#функтор-enc}
 
-**Определение (Функтор кодирования среды) [Т] (T-100):**
+**Definition (Environment Encoding Functor) [T] (T-100):**
 
 $$
 \mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))
 $$
 
-CPTP-отображение, переводящее наблюдения среды в пертурбации матрицы когерентности. Удовлетворяет:
-1. **CPTP:** $\mathrm{Enc}(o)[\Gamma] \in \mathcal{D}(\mathbb{C}^7)$ для любого наблюдения $o$
-2. **3-канальная декомпозиция:** $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$ — из [полноты триадной декомпозиции](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (T-57)
-3. **Функториальность:** $\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$
+A CPTP-mapping that translates environmental observations into perturbations of the coherence matrix. Satisfies:
+1. **CPTP:** $\mathrm{Enc}(o)[\Gamma] \in \mathcal{D}(\mathbb{C}^7)$ for any observation $o$
+2. **3-channel decomposition:** $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$ — from [completeness of triadic decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (T-57)
+3. **Functoriality:** $\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$
 
-**Реализация для ИИ:** через 7 наблюдаемых индексов $I_i$ из [протокола измерения](/docs/applied/research/measurement-protocol).
+**Implementation for AI:** via 7 observable indices $I_i$ from the [measurement protocol](/docs/applied/research/measurement-protocol).
 
-**Интуиция.** Enc — это «орган чувств» Голонома, переведённый на язык математики. Когда вы слышите звук, ваш слуховой аппарат не «вкладывает» звук в мозг напрямую — он преобразует звуковую волну в нейронные импульсы, которые затем изменяют состояние мозга. Enc делает то же самое: наблюдение $o$ преобразуется в CPTP-пертурбацию $\Gamma$, разложенную на три канала (унитарный, диссипативный, регенеративный).
+**Intuition.** Enc is the Holon's "sense organ," translated into mathematical language. When you hear a sound, your auditory apparatus does not "insert" the sound directly into the brain — it converts the sound wave into neural impulses, which then change the state of the brain. Enc does the same: observation $o$ is converted into a CPTP-perturbation of $\Gamma$, decomposed into three channels (unitary, dissipative, regenerative).
 
-**См.:** [Сенсомоторная теория](./sensorimotor#функтор-enc)
+**See:** [Sensorimotor theory](./sensorimotor#функтор-enc)
 
-### Функтор действия Dec {#функтор-dec}
+### Action Functor Dec {#функтор-dec}
 
-**Определение (Функтор декодирования действия) [Т] (T-101):**
+**Definition (Action Decoding Functor) [T] (T-101):**
 
 $$
 \mathrm{Dec}: (\Gamma, \sigma_{\mathrm{sys}}) \mapsto a^* = \arg\min_{a \in \mathcal{A}} \|\sigma_{\mathrm{sys}}(\Gamma(\tau + \delta\tau \mid a))\|_\infty
 $$
 
-Отображение, выбирающее оптимальное действие по критерию минимизации sup-нормы [тензора напряжений](#тензор-напряжений). Действие входит через $h^{\text{ext}}(a)$ — [3-канальную декомпозицию](./lagrangian#внешний-член).
+A mapping that selects the optimal action by the criterion of minimizing the sup-norm of the [stress tensor](#тензор-напряжений). The action enters via $h^{\text{ext}}(a)$ — the [3-channel decomposition](./lagrangian#внешний-член).
 
-**Свойства:**
-- **D-измерение** — основной моторный канал (динамическое управление)
-- **σ-градиентный спуск** — практический алгоритм с метрикой Фишера
+**Properties:**
+- **D-dimension** — the primary motor channel (dynamic control)
+- **σ-gradient descent** — practical algorithm with Fisher metric
 
-**Интуиция.** Dec — это «руки» Голонома. Но не просто «мышцы»: Dec выбирает действие *оптимально* — минимизируя максимальное напряжение. Это формализация принципа: «действуй так, чтобы снять самое сильное давление». Человек, испытывающий жажду ($\sigma_O$ высок) и скуку ($\sigma_E$ повышен), пойдёт за водой — потому что $\sigma_O > \sigma_E$, и Dec оптимизирует sup-норму.
+**Intuition.** Dec is the Holon's "hands." But not merely "muscles": Dec chooses an action *optimally* — minimizing the maximum stress. This is the formalization of the principle: "act so as to relieve the greatest pressure." A person experiencing thirst ($\sigma_O$ high) and boredom ($\sigma_E$ elevated) will go for water — because $\sigma_O > \sigma_E$, and Dec optimizes the sup-norm.
 
-**См.:** [Сенсомоторная теория](./sensorimotor#функтор-dec)
+**See:** [Sensorimotor theory](./sensorimotor#функтор-dec)
 
-### Гедоническое возмущение {#гедоническое-возмущение}
+### Hedonic Perturbation {#гедоническое-возмущение}
 
-**Определение (Гедоническая валентность) (T-103):**
+**Definition (Hedonic Valence) (T-103):**
 
-Формула [Т] — тождество из уравнения эволюции:
+Formula [T] — identity from the evolution equation:
 
 $$
 \mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
-Скорость изменения чистоты за счёт регенеративного члена. Знак определяет валентность:
-- $\mathcal{V}_{\text{hed}} > 0$ — положительная (приближение к $\rho_*$)
-- $\mathcal{V}_{\text{hed}} < 0$ — отрицательная (удаление от $\rho_*$)
+The rate of change of purity due to the regenerative term. The sign determines valence:
+- $\mathcal{V}_{\text{hed}} > 0$ — positive (approach to $\rho_*$)
+- $\mathcal{V}_{\text{hed}} < 0$ — negative (departure from $\rho_*$)
 
-**Интуиция: почему это «удовольствие» и «страдание»?**
+**Intuition: why is this "pleasure" and "suffering"?**
 
-Гедоническая валентность — это не метафора. Это *скорость роста чистоты* за счёт регенерации. Когда система движется к своему целевому состоянию $\rho_*$, чистота растёт ($\mathcal{V}_{\text{hed}} > 0$). Когда уходит от него — падает ($\mathcal{V}_{\text{hed}} < 0$). Субъективно первое переживается как удовольствие, второе — как страдание.
+Hedonic valence is not a metaphor. It is the *rate of growth of purity* due to regeneration. When the system moves toward its target state $\rho_*$, purity grows ($\mathcal{V}_{\text{hed}} > 0$). When it moves away — it falls ($\mathcal{V}_{\text{hed}} < 0$). Subjectively, the first is experienced as pleasure, the second — as suffering.
 
-Это объясняет, почему удовольствие и страдание *функциональны*: они сигнализируют, приближается ли система к своему оптимуму или удаляется. Боль — не случайность эволюции, а *необходимый* информационный сигнал, следующий из структуры уравнения эволюции.
+This explains why pleasure and suffering are *functional*: they signal whether the system is approaching its optimum or moving away from it. Pain is not a random product of evolution, but a *necessary* informational signal following from the structure of the evolution equation.
 
-**Эпистемическая стратификация T-103:**
-- **Формула** $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — **[Т]** (тождество из уравнения эволюции)
-- **Наблюдаемость** при L2 ($R \geq 1/3$) — **[Т]** (из [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции))
-- **Феноменальная интерпретация** (связь с субъективным переживанием удовольствия/страдания) — **[И]**
+**Epistemic stratification T-103:**
+- **Formula** $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — **[T]** (identity from the evolution equation)
+- **Observability** at L2 ($R \geq 1/3$) — **[T]** (from [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции))
+- **Phenomenal interpretation** (connection with the subjective experience of pleasure/suffering) — **[I]**
 
-**Примеры крайних значений:**
-- $\mathcal{V}_{\text{hed}} \gg 0$: эйфория, инсайт, «всё встаёт на свои места» — система быстро движется к $\rho_*$.
-- $\mathcal{V}_{\text{hed}} \approx 0$: спокойствие, нейтральное состояние — система вблизи $\rho_*$ или в стационаре.
-- $\mathcal{V}_{\text{hed}} \ll 0$: боль, страх, когнитивный диссонанс — система быстро удаляется от $\rho_*$.
+**Examples of extreme values:**
+- $\mathcal{V}_{\text{hed}} \gg 0$: euphoria, insight, "everything falls into place" — the system rapidly moves toward $\rho_*$.
+- $\mathcal{V}_{\text{hed}} \approx 0$: calm, neutral state — the system is near $\rho_*$ or in a stationary state.
+- $\mathcal{V}_{\text{hed}} \ll 0$: pain, fear, cognitive dissonance — the system rapidly moves away from $\rho_*$.
 
-**См.:** [Сенсомоторная теория](./sensorimotor#гедонический-механизм)
-
----
-
-## Резюме: как определения связаны друг с другом
-
-Определения этой главы — не изолированные понятия. Они образуют единую сеть:
-
-1. **Голоном** — базовая единица, описываемая матрицей $\Gamma$.
-2. **Шесть мер** ($P$, $S_{vN}$, $\Phi$, $D_{\text{diff}}$, $R$, $C$) — числовые характеристики состояния $\Gamma$.
-3. **E-когерентность** — специальная мера, определяющая когерентность интериорности и интенсивность регенерации ($\kappa$).
-4. **Тензор напряжений** — диагностическая карта: *где* и *как* система «давит» на себя. Связан с мерами через $\Gamma$-инварианты (T-92).
-5. **Иерархия аттракторов** — *куда* движется система. Определяется балансом $\kappa$ и $\lambda_{\mathrm{gap}}$ (T-98).
-6. **Иерархия интериорности** — *на что способна* система: уровни L0–L4, определяемые пороговыми значениями мер.
-7. **Функторы Enc/Dec** — связь с внешним миром. Замыкают петлю: среда → $\Gamma$ → действие → среда.
-8. **Гедоника** — субъективный «сигнал»: удовольствие/страдание как производная чистоты.
-
-Вся конструкция — единый замкнутый цикл: $\Gamma$ определяет меры, меры определяют напряжения, напряжения определяют действия (Dec), действия изменяют среду, среда через Enc изменяет $\Gamma$ — и цикл повторяется. Этот цикл и есть *жизнь Голонома*.
+**See:** [Sensorimotor theory](./sensorimotor#гедонический-механизм)
 
 ---
 
-## Что мы узнали
+## Summary: How Definitions Are Connected to Each Other
 
-Подведём итоги. В этой главе мы определили весь понятийный аппарат Кибернетики Когерентности:
+The definitions of this chapter are not isolated concepts. They form a unified network:
 
-1. **Голоном** $\mathbb{H} = \langle \Gamma, \mathcal{H}, H, \{L_k\}, E, \varphi \rangle$ — минимальная самодостаточная единица реальности, удовлетворяющая четырём замыкающим условиям (AP, PH, QG, V).
+1. **Holon** — the basic unit, described by matrix $\Gamma$.
+2. **Six measures** ($P$, $S_{vN}$, $\Phi$, $D_{\text{diff}}$, $R$, $C$) — numerical characteristics of state $\Gamma$.
+3. **E-coherence** — a special measure determining the coherence of interiority and the regeneration intensity ($\kappa$).
+4. **Stress tensor** — a diagnostic map: *where* and *how* the system "presses" on itself. Connected to measures via $\Gamma$-invariants (T-92).
+5. **Attractor hierarchy** — *where* the system is heading. Determined by the balance of $\kappa$ and $\lambda_{\mathrm{gap}}$ (T-98).
+6. **Interiority hierarchy** — *what the system is capable of*: levels L0–L4, determined by threshold values of measures.
+7. **Functors Enc/Dec** — connection with the external world. Close the loop: environment → $\Gamma$ → action → environment.
+8. **Hedonics** — the subjective "signal": pleasure/suffering as the derivative of purity.
 
-2. **Шесть мер** — числовые «окна» в состояние Голонома: чистота $P$ (организованность), энтропия $S_{vN}$ (неопределённость), интеграция $\Phi$ (связанность), дифференциация $D_{\text{diff}}$ (богатство), рефлексия $R$ (точность самомодели), сознательность $C = \Phi \times R$.
+The entire construction is a single closed cycle: $\Gamma$ determines measures, measures determine stresses, stresses determine actions (Dec), actions change the environment, the environment changes $\Gamma$ via Enc — and the cycle repeats. This cycle is the *life of the Holon*.
 
-3. **E-когерентность** $\mathrm{Coh}_E$ — мера когерентности интериорности, определённая как HS-проекция на E-подпространство. Входит в формулу регенерации: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$.
+---
 
-4. **Иерархия интериорности** L0-L4 — градация внутреннего мира: от простого наличия E-сектора (L0) до бесконечной рефлексии (L4). Сознание (L2) требует тройного порога: $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$.
+## What We Have Learned
 
-5. **Тензор напряжений** $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ — диагностическая карта: показывает, *где* система испытывает давление. Все компоненты — однозначные функции $\Gamma$ без свободных параметров (T-92 [Т]).
+Let us summarize. In this chapter we defined the entire conceptual apparatus of Coherence Cybernetics:
 
-6. **Иерархия аттракторов** — три фазы: тепловая смерть ($I/7$), жизнь ($\rho^*_\Omega$, $P > 1/7$), сознание ($\Gamma^*_{\mathrm{coh}}$, $P > 2/7$).
+1. **Holon** $\mathbb{H} = \langle \Gamma, \mathcal{H}, H, \{L_k\}, E, \varphi \rangle$ — the minimal self-sufficient unit of reality, satisfying four closure conditions (AP, PH, QG, V).
 
-7. **Сенсомоторные функторы** Enc и Dec — формализация петли «восприятие — действие». Dec оптимизирует sup-норму тензора напряжений (minimax).
+2. **Six measures** — numerical "windows" into the Holon's state: purity $P$ (organization), entropy $S_{vN}$ (uncertainty), integration $\Phi$ (connectedness), differentiation $D_{\text{diff}}$ (richness), reflection $R$ (accuracy of self-model), consciousness $C = \Phi \times R$.
 
-8. **Гедоническая валентность** $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — субъективный сигнал о приближении к $\rho_*$ или удалении от него.
+3. **E-coherence** $\mathrm{Coh}_E$ — measure of coherence of interiority, defined as the HS-projection onto the E-subspace. Enters the regeneration formula: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$.
 
-:::info Мост к следующей главе
-Определения — это «кирпичи». Теперь нам предстоит увидеть, что из них можно **построить**. В [следующей главе](./theorems) мы пройдём по цепочке фундаментальных теорем: от существования динамики (Теорема 6.1) через необходимость самореференции (7.1) и невозможность зомби (8.1) к эмерджентности целого из частей (9.3). Каждая теорема использует определения этой главы — и каждая добавляет новый этаж к зданию КК.
+4. **Interiority hierarchy** L0–L4 — gradation of the inner world: from simple presence of the E-sector (L0) to infinite reflection (L4). Consciousness (L2) requires a triple threshold: $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$.
+
+5. **Stress tensor** $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ — a diagnostic map: shows *where* the system experiences pressure. All components are unambiguous functions of $\Gamma$ without free parameters (T-92 [T]).
+
+6. **Attractor hierarchy** — three phases: heat death ($I/7$), life ($\rho^*_\Omega$, $P > 1/7$), consciousness ($\Gamma^*_{\mathrm{coh}}$, $P > 2/7$).
+
+7. **Sensorimotor functors** Enc and Dec — formalization of the "perception — action" loop. Dec optimizes the sup-norm of the stress tensor (minimax).
+
+8. **Hedonic valence** $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — a subjective signal about approach to $\rho_*$ or departure from it.
+
+:::info Bridge to the Next Chapter
+Definitions are the "bricks." Now we must see what can be **built** from them. In the [next chapter](./theorems) we will walk through the chain of fundamental theorems: from the existence of dynamics (Theorem 6.1) through the necessity of self-reference (7.1) and the impossibility of zombies (8.1) to the emergence of the whole from parts (9.3). Each theorem uses the definitions of this chapter — and each adds a new floor to the building of CC.
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиоматика](./axiomatics) — основания КК (включая L-унификацию)
-- [Теоремы](./theorems) — формальные результаты КК
-- [Реализация](./implementation) — вычислительная реализация
-- [Сенсомоторная теория](./sensorimotor) — функторы Enc/Dec, полнота 3-членного уравнения
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$ и связь формализмов
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $\Phi$, $D_{\text{diff}}$, $C$
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L4
-- [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — вычисление $\chi_S$, $L_k$, $\mathcal{L}_\Omega$, $\varphi$
+**Related documents:**
+- [Axiomatics](./axiomatics) — foundations of CC (including L-unification)
+- [Theorems](./theorems) — formal results of CC
+- [Implementation](./implementation) — computational implementation
+- [Sensorimotor theory](./sensorimotor) — functors Enc/Dec, completeness of the 3-term equation
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$ and relation between formalisms
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $\Phi$, $D_{\text{diff}}$, $C$
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L4
+- [Constructive algorithms](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — computation of $\chi_S$, $L_k$, $\mathcal{L}_\Omega$, $\varphi$
 
-- [Междисциплинарный мост](./interdisciplinary) — как читать определения из перспективы вашей дисциплины
-- [Методология измерений](./measurement) — как измерить $P$, $\sigma$, $R$, $\Phi$ на практике
-- [Упражнения](./exercises) — вычислительные задачи на основе определений (блок 1)
+- [Interdisciplinary bridge](./interdisciplinary) — how to read the definitions from the perspective of your discipline
+- [Measurement methodology](./measurement) — how to measure $P$, $\sigma$, $R$, $\Phi$ in practice
+- [Exercises](./exercises) — computational problems based on definitions (block 1)

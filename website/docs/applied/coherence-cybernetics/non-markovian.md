@@ -1,402 +1,402 @@
 ---
 sidebar_position: 8
-title: "Немарковская динамика"
-description: "Ядро памяти, осцилляторная когеренция, циклы горя и связь с Gap-диагностикой"
+title: "Non-Markovian Dynamics"
+description: "Memory kernel, oscillatory coherence, grief cycles, and connection to Gap diagnostics"
 ---
 
-# Немарковская динамика
+# Non-Markovian Dynamics
 
-:::info Мост из предыдущей главы
-В [предыдущей главе](./bifurcation) мы изучили **бифуркации** Gap-ландшафта — качественные перестройки, при которых устойчивые состояния исчезают, рождаются колебания, возникает гистерезис. Но бифуркационный анализ предполагал, что будущее системы определяется только её настоящим. А что если **прошлое** не отпускает? Что если травма десятилетней давности продолжает формировать динамику сегодня? Именно об этом — данная глава.
+:::info Bridge from the Previous Chapter
+In the [previous chapter](./bifurcation) we studied **bifurcations** of the Gap landscape — qualitative restructurings in which stable states disappear, oscillations are born, and hysteresis arises. But bifurcation analysis assumed that the system's future is determined solely by its present. But what if the **past** does not let go? What if a trauma from ten years ago continues to shape today's dynamics? That is precisely the subject of this chapter.
 :::
 
-### Дорожная карта главы
+### Chapter Roadmap
 
-В этой главе мы:
+In this chapter we:
 
-1. **Разберём разницу между марковской и немарковской динамикой** — и поймём, почему сознание принципиально не может быть «без памяти» (введение, раздел «Два взгляда на время»)
-2. **Введём ядро памяти $K(\tau)$** — математический объект, описывающий, как прошлое влияет на настоящее, и классифицируем его формы: экспоненциальное [Т], осцилляторное [Г], степенное [Г] (раздел 1)
-3. **Покажем, как немарковость порождает осцилляции Gap** — затухающие волны, отличные от незатухающих Хопф-осцилляций, и введём меру немарковости BLP (раздел 2)
-4. **Формализуем «циклы горя»** — как математическую модель горевания, включая посттравматический рост и осложнённое горевание (раздел 3)
-5. **Определим терапевтические окна** — временные интервалы повышенной пластичности, создаваемые немарковскими осцилляциями (раздел 4)
-6. **Свяжем формализм с нейронаукой** — реконсолидация памяти, тета-ритм, EMDR, фармакология (разделы 5–6)
-7. **Обсудим философское значение**: немарковость как условие личной идентичности (раздел 7)
+1. **Understand the difference between Markovian and non-Markovian dynamics** — and see why consciousness fundamentally cannot be "memoryless" (Introduction, section "Two Views on Time")
+2. **Introduce the memory kernel $K(\tau)$** — the mathematical object describing how the past influences the present — and classify its forms: exponential [T], oscillatory [H], power-law [H] (section 1)
+3. **Show how non-Markovianity generates Gap oscillations** — damped waves distinct from undamped Hopf oscillations — and introduce the BLP non-Markovianity measure (section 2)
+4. **Formalise "grief cycles"** — as a mathematical model of grieving, including post-traumatic growth and complicated grief (section 3)
+5. **Define therapeutic windows** — time intervals of heightened plasticity created by non-Markovian oscillations (section 4)
+6. **Connect the formalism to neuroscience** — memory reconsolidation, theta rhythm, EMDR, pharmacology (sections 5–6)
+7. **Discuss philosophical significance**: non-Markovianity as a condition for personal identity (section 7)
 
-> *Мы — не то, что мы есть сейчас. Мы — то, чем мы были, и то, чем мы ещё можем стать. Прошлое не уходит: оно вплетено в ткань настоящего.*
+> *We are not what we are now. We are what we were, and what we may still become. The past does not leave: it is woven into the fabric of the present.*
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\gamma_{ij}$ — элементы $\Gamma$ (когерентности)
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [мера зазора](/docs/physics/dual-aspect/gap-semantics)
-- $\Gamma_2$ — скорость декогеренции (диссипативная константа)
-- $\kappa$ — скорость регенерации
-- $\omega_c$ — частота обрезания ядра памяти (обратная длительность памяти: $\tau_{\text{mem}} = 1/\omega_c$)
-- $\Delta\omega_{ij} = \omega_i - \omega_j$ — расстройка частот между измерениями $i$ и $j$
-- $\mathcal{R}_{ij}$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) для пары $(i,j)$
+:::note A Note on Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\gamma_{ij}$ — elements of $\Gamma$ (coherences)
+- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/physics/dual-aspect/gap-semantics)
+- $\Gamma_2$ — decoherence rate (dissipative constant)
+- $\kappa$ — regeneration rate
+- $\omega_c$ — memory kernel cut-off frequency (inverse memory duration: $\tau_{\text{mem}} = 1/\omega_c$)
+- $\Delta\omega_{ij} = \omega_i - \omega_j$ — frequency detuning between dimensions $i$ and $j$
+- $\mathcal{R}_{ij}$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) for pair $(i,j)$
 :::
 
-:::warning Статус документа
-Математические результаты о немарковской динамике Gap доказаны в [Gap-динамике](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) **[Т]**. Кибернетическая и клиническая интерпретация имеет статус **[И]**. Предсказания о связи с терапевтическими данными — **[Г]**.
+:::warning Document status
+Mathematical results on non-Markovian Gap dynamics are proved in [Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) **[T]**. The cybernetic and clinical interpretation has status **[I]**. Predictions about connections to therapeutic data — **[H]**.
 :::
 
 ---
 
-## Почему прошлое не отпускает: немарковская природа сознания {#введение-память}
+## Why the Past Does Not Let Go: the Non-Markovian Nature of Consciousness {#введение-память}
 
-Закройте глаза и вспомните первый день, когда вы почувствовали себя по-настоящему живым. Может быть, это был запах моря в детстве, или прикосновение руки близкого человека, или момент, когда вы вдруг поняли что-то о мире, что изменило всё. Это воспоминание — не просто запись в архиве. Оно *формирует вас прямо сейчас*: ваше тело откликается на него микронапряжениями, ваше дыхание чуть меняется, эмоциональный фон сдвигается. Прошлое не лежит где-то на полке. Оно живёт в вас, модулируя каждый момент настоящего.
+Close your eyes and recall the first day you felt truly alive. Perhaps it was the smell of the sea in childhood, or the touch of a loved one's hand, or the moment when you suddenly understood something about the world that changed everything. This memory is not merely a record in an archive. It *shapes you right now*: your body responds to it with microtensions, your breathing shifts slightly, your emotional background changes. The past is not sitting on a shelf somewhere. It lives in you, modulating every moment of the present.
 
-Эта глава — о том, как математика описывает этот фундаментальный факт.
+This chapter is about how mathematics describes this fundamental fact.
 
-Большинство физических моделей работают в **марковском** приближении: будущее зависит только от настоящего. Бросьте кубик — результат не зависит от предыдущих бросков. Молекула газа сталкивается с другой молекулой — её будущая траектория определяется только текущей скоростью и положением, а не тем, откуда она прилетела минуту назад. Это прекрасная абстракция, но она *принципиально не подходит* для описания сознания.
+Most physical models work in the **Markovian** approximation: the future depends only on the present. Roll a die — the result does not depend on previous throws. A gas molecule collides with another — its future trajectory is determined only by its current velocity and position, not by where it came from a minute ago. This is a beautiful abstraction, but it is *fundamentally unsuitable* for describing consciousness.
 
-Сознание — не кубик и не молекула газа. Сознание — это система, в которой:
+Consciousness is not a die or a gas molecule. Consciousness is a system in which:
 
-- **Утрата** близкого человека может отзываться волнами горя через годы после события
-- **Травма** не «стирается» после того, как опасность миновала — она перестраивает весь аппарат восприятия
-- **Обучение** меняет не только то, что мы знаем, но и то, *как мы способны узнавать*
-- **Любовь** трансформирует не отдельную эмоцию, а всю архитектуру переживания
+- **The loss** of a loved one can send waves of grief for years after the event
+- **Trauma** does not "erase" once the danger has passed — it restructures the entire perceptual apparatus
+- **Learning** changes not only what we know, but also *how we are able to know*
+- **Love** transforms not a single emotion, but the entire architecture of experience
 
-Всё это — проявления **немарковской динамики**: процесса, в котором история системы неотделима от её текущего состояния. Когерентная кибернетика (КК) предоставляет точный формализм для описания этих явлений — не метафорически, а через строгие математические структуры.
-
----
-
-## Марковость и немарковость: два взгляда на время {#два-взгляда-на-время}
-
-Чтобы понять, чем немарковская динамика отличается от марковской, представьте два типа озёр.
-
-**Марковское озеро.** Бросьте камень — по воде пойдут круги. Но вода «не помнит» камень: через минуту поверхность гладкая, и следующий камень создаст ровно такие же круги, независимо от истории предыдущих бросков. Каждый момент — чистый лист. Формально: будущее состояние $\rho(t + dt)$ зависит только от текущего состояния $\rho(t)$, и ни от чего больше.
-
-**Немарковское озеро.** Теперь представьте озеро с вязким дном. Камень, упавший вчера, создал воронку в иле. Сегодняшний камень падает в изменённый ландшафт дна — и круги идут по-другому. Более того: вчерашняя воронка постепенно заполняется, и дно «возвращает» часть поглощённой энергии — на поверхности появляются запоздалые возмущения, эхо прошлого камня. Формально: $\rho(t + dt)$ зависит от всей истории $\{\rho(s) : 0 \leq s \leq t\}$.
-
-В контексте матрицы когерентности $\Gamma$ это различие критически важно:
-
-| Свойство | Марковская динамика | Немарковская динамика |
-|----------|--------------------|-----------------------|
-| Зависимость | Только от $\Gamma(\tau)$ | От всей истории $\{\Gamma(s)\}_{s \leq \tau}$ |
-| Декогеренция | Мгновенная, монотонная | С задержкой, может осциллировать |
-| Поток информации | Только «из системы в среду» | Двусторонний: среда возвращает когерентность |
-| Математика | ОДУ: $d\gamma/d\tau = f(\gamma)$ | Интегро-дифференциальное уравнение со свёрткой |
-| Аналогия | Амнезия: каждое мгновение — заново | Живая память: прошлое вплетено в настоящее |
-
-Именно немарковская динамика делает возможным то, что мы интуитивно ощущаем: прошлое *присутствует* в настоящем. Не как воспоминание-картинка, а как структурное влияние на текущую эволюцию когерентностей.
+All of this is a manifestation of **non-Markovian dynamics**: a process in which the system's history is inseparable from its current state. Coherence Cybernetics (CC) provides a precise formalism for describing these phenomena — not metaphorically, but through rigorous mathematical structures.
 
 ---
 
-## 1. Ядро памяти $K(\tau)$ {#ядро-памяти}
+## Markovianity and Non-Markovianity: Two Views on Time {#два-взгляда-на-время}
 
-### Ядро памяти: как формализовать влияние прошлого {#формализация-ядра}
+To understand how non-Markovian dynamics differs from Markovian, imagine two types of lakes.
 
-Центральный объект немарковской теории — **ядро памяти** $K(\tau)$. Это функция, которая описывает, *насколько сильно* прошлое влияет на настоящее, и *как быстро* это влияние затухает.
+**Markovian lake.** Throw a stone — ripples spread across the water. But the water "does not remember" the stone: a minute later the surface is smooth, and the next stone will create exactly the same ripples, regardless of the history of previous throws. Each moment is a clean slate. Formally: the future state $\rho(t + dt)$ depends only on the current state $\rho(t)$, and on nothing else.
 
-Интуиция проста. Если вы обожгли руку пять секунд назад, боль ещё очень сильна — ядро памяти велико. Если это было вчера — остался только след, и ядро мало. Если это было в детстве, но ожог был тяжёлым, — ядро памяти может быть ничтожным по амплитуде, но не нулевым: рука до сих пор дёргается от огня.
+**Non-Markovian lake.** Now imagine a lake with a viscous bottom. A stone that fell yesterday created a funnel in the silt. Today's stone falls into an altered bottom landscape — and the ripples behave differently. Moreover: yesterday's funnel gradually fills in, and the bottom "returns" part of the absorbed energy — delayed disturbances appear on the surface, an echo of the past stone. Formally: $\rho(t + dt)$ depends on the entire history $\{\rho(s) : 0 \leq s \leq t\}$.
 
-Математически ядро памяти — это весовая функция во временной свёртке: оно определяет, как каждый прошлый момент вносит вклад в текущую скорость изменения когерентности.
+In the context of the coherence matrix $\Gamma$ this distinction is critically important:
 
-### 1.1 Обобщённое уравнение движения
+| Property | Markovian dynamics | Non-Markovian dynamics |
+|----------|--------------------|------------------------|
+| Dependence | Only on $\Gamma(\tau)$ | On entire history $\{\Gamma(s)\}_{s \leq \tau}$ |
+| Decoherence | Instantaneous, monotone | With delay, can oscillate |
+| Information flow | Only "from system into environment" | Bidirectional: environment returns coherence |
+| Mathematics | ODE: $d\gamma/d\tau = f(\gamma)$ | Integro-differential equation with convolution |
+| Analogy | Amnesia: each moment begins afresh | Living memory: the past is woven into the present |
 
-В марковском приближении декогеренция описывается дельта-функцией: $K(\tau) = -\Gamma_2 \delta(\tau)$, что даёт стандартное экспоненциальное затухание. При конечном времени памяти ядро $K(\tau) \neq \delta(\tau)$, и уравнение движения для когерентности $\gamma_{ij}$ принимает интегро-дифференциальную форму:
+It is precisely non-Markovian dynamics that makes possible what we intuitively feel: the past *is present* in the present. Not as a picture-memory, but as a structural influence on the current evolution of coherences.
 
-:::tip Определение (Немарковская динамика когерентностей) [Т]
+---
+
+## 1. Memory Kernel $K(\tau)$ {#ядро-памяти}
+
+### Memory Kernel: How to Formalise the Influence of the Past {#формализация-ядра}
+
+The central object of non-Markovian theory is the **memory kernel** $K(\tau)$. This is a function that describes *how strongly* the past influences the present, and *how quickly* this influence decays.
+
+The intuition is simple. If you burned your hand five seconds ago, the pain is still very strong — the memory kernel is large. If it was yesterday — only a trace remains, and the kernel is small. If it was in childhood but the burn was severe — the memory kernel may be infinitesimal in amplitude, but not zero: the hand still flinches from fire.
+
+Mathematically, the memory kernel is a weight function in a temporal convolution: it determines how each past moment contributes to the current rate of change of coherence.
+
+### 1.1 Generalised Equation of Motion
+
+In the Markovian approximation decoherence is described by a delta function: $K(\tau) = -\Gamma_2 \delta(\tau)$, giving standard exponential decay. For a finite memory time the kernel $K(\tau) \neq \delta(\tau)$, and the equation of motion for coherence $\gamma_{ij}$ takes the integro-differential form:
+
+:::tip Definition (Non-Markovian coherence dynamics) [T]
 $$
 \frac{d\gamma_{ij}}{d\tau} = -i\Delta\omega_{ij}\,\gamma_{ij}(\tau) + \int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds + \mathcal{R}_{ij}
 $$
 
-где:
-- Первый член: унитарное вращение (свободная прецессия фазы)
-- Второй член: **немарковская диссипация** с ядром памяти $K_{ij}(\tau)$
-- Третий член: регенерация ($\propto \kappa \cdot \mathrm{Coh}_E$)
+where:
+- First term: unitary rotation (free phase precession)
+- Second term: **non-Markovian dissipation** with memory kernel $K_{ij}(\tau)$
+- Third term: regeneration ($\propto \kappa \cdot \mathrm{Coh}_E$)
 
-**Источник:** [Gap-динамика, раздел 4.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
+**Source:** [Gap dynamics, section 4.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
 :::
 
-Свёрточная структура второго члена означает, что диссипация в момент $\tau$ определяется **интегралом по всей предшествующей истории** когерентности, взвешенной ядром $K_{ij}(\tau - s)$.
+The convolution structure of the second term means that dissipation at moment $\tau$ is determined by the **integral over the entire preceding history** of the coherence, weighted by the kernel $K_{ij}(\tau - s)$.
 
-Обратите внимание на глубину этой формулы. Интеграл $\int_0^\tau K(\tau - s)\, \gamma(s)\, ds$ — это не просто техническое усложнение. Это утверждение о природе реальности: *текущая скорость изменения состояния определяется суперпозицией всех прошлых состояний*, каждое из которых «взвешено» тем, насколько давно оно было. Именно так работает живая память: недавнее — ярко, давнее — бледно, но не исчезает полностью.
+Note the depth of this formula. The integral $\int_0^\tau K(\tau - s)\, \gamma(s)\, ds$ is not merely a technical complication. It is a statement about the nature of reality: *the current rate of change of the state is determined by the superposition of all past states*, each weighted by how long ago it occurred. This is precisely how living memory works: the recent is vivid, the distant is faint, but does not vanish completely.
 
-### 1.2 Экспоненциальное ядро [Т] (T-94) {#экспоненциальное-ядро}
+### 1.2 Exponential Kernel [T] (T-94) {#экспоненциальное-ядро}
 
-Простейшее немарковское ядро — экспоненциальное затухание памяти. Экспоненциальная форма **доказана** из компактности пространства состояний ([T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) [Т]):
+The simplest non-Markovian kernel is exponential memory decay. The exponential form is **proved** from the compactness of the state space ([T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) [T]):
 
 $$
 K(\tau) = -\Gamma_2\,\omega_c \cdot e^{-\omega_c\,\tau}
 $$
 
-**Параметры:**
-- $\Gamma_2$ — интегральная сила декогеренции
-- $\omega_c = 1/\tau_{\text{mem}}$ — частота обрезания (обратное время памяти)
-- $\tau_{\text{mem}}$ — характерное время памяти системы
+**Parameters:**
+- $\Gamma_2$ — integral decoherence strength
+- $\omega_c = 1/\tau_{\text{mem}}$ — cut-off frequency (inverse memory time)
+- $\tau_{\text{mem}}$ — characteristic memory time of the system
 
-**Предельные режимы:**
-- $\omega_c \to \infty$ (мгновенная память): $K(\tau) \to -\Gamma_2\,\delta(\tau)$ — марковский предел
-- $\omega_c \to 0$ (бесконечная память): $K(\tau) \to 0$ — диссипация исчезает (замороженная система)
+**Limiting regimes:**
+- $\omega_c \to \infty$ (instantaneous memory): $K(\tau) \to -\Gamma_2\,\delta(\tau)$ — Markovian limit
+- $\omega_c \to 0$ (infinite memory): $K(\tau) \to 0$ — dissipation vanishes (frozen system)
 
-Эти предельные режимы замечательны. На одном полюсе — полная амнезия: среда мгновенно «забывает» всё, что поглотила, и когерентность теряется безвозвратно. На другом — абсолютная память: среда помнит всё бесконечно долго и ничего не диссипирует, но при этом система *замерзает*, потому что ядро стремится к нулю. Живые системы существуют между этими крайностями — в зоне, где память конечна, но реальна.
+These limiting regimes are remarkable. At one pole — complete amnesia: the environment instantly "forgets" everything it absorbed, and coherence is lost irreversibly. At the other — absolute memory: the environment remembers everything indefinitely and dissipates nothing, but the system *freezes*, because the kernel tends to zero. Living systems exist between these extremes — in a zone where memory is finite but real.
 
-**Спектральная плотность.** Фурье-образ экспоненциального ядра даёт **лоренциан**:
+**Spectral density.** The Fourier transform of the exponential kernel gives a **Lorentzian**:
 
 $$
 \widetilde{K}(\omega) = \int_0^\infty K(\tau)\,e^{i\omega\tau}\,d\tau = \frac{-\Gamma_2\,\omega_c}{\omega_c - i\omega}
 $$
 
-Спектр мощности $|\widetilde{K}(\omega)|^2 \propto 1/(\omega_c^2 + \omega^2)$ — лоренцева форма с шириной $\omega_c$.
+Power spectrum $|\widetilde{K}(\omega)|^2 \propto 1/(\omega_c^2 + \omega^2)$ — Lorentzian shape with width $\omega_c$.
 
-Лоренцев спектр означает, что память не имеет «привилегированной частоты» — она действует как широкополосный фильтр, ослабляя все компоненты выше частоты обрезания $\omega_c$. В терминах жизненного опыта: события, происходящие быстрее, чем характерное время памяти $\tau_{\text{mem}}$, «проходят мимо» и не оставляют следа. Только то, что длится достаточно долго, записывается в память системы.
+A Lorentzian spectrum means that memory has no "privileged frequency" — it acts as a broad-band filter, attenuating all components above the cut-off frequency $\omega_c$. In terms of lived experience: events occurring faster than the characteristic memory time $\tau_{\text{mem}}$ "pass by" and leave no trace. Only what lasts long enough is recorded in the system's memory.
 
-### 1.3 Осцилляторное ядро [Г] {#осцилляторное-ядро}
+### 1.3 Oscillatory Kernel [H] {#осцилляторное-ядро}
 
-Более реалистичное ядро включает осцилляторную компоненту [Г] (не доказано из аксиом, но совместимо с экспоненциальной формой T-94):
+A more realistic kernel includes an oscillatory component [H] (not proved from axioms, but compatible with the exponential form T-94):
 
 $$
 K(\tau) = -\Gamma_2\,\omega_c \cdot e^{-\omega_c\,\tau} \cdot \cos(\omega_{\text{mem}}\,\tau)
 $$
 
-Здесь $\omega_{\text{mem}}$ — частота осцилляций памяти. Это соответствует среде с выделенной частотой (резонатор, осцилляторная ванна).
+Here $\omega_{\text{mem}}$ is the frequency of memory oscillations. This corresponds to an environment with a distinguished frequency (resonator, oscillator bath).
 
-Осцилляторное ядро особенно интересно для моделирования **цикличных** процессов в сознании. Когда среда (нейронная сеть, социальное окружение, телесные ритмы) обладает собственной характерной частотой, память приобретает ритмическую структуру. Это математическое отражение того, что знает каждый: горе возвращается волнами, творческие озарения приходят циклами, сезонные ритмы модулируют настроение.
+The oscillatory kernel is especially interesting for modelling **cyclic** processes in consciousness. When the environment (neural network, social surroundings, bodily rhythms) has its own characteristic frequency, memory acquires a rhythmic structure. This is the mathematical reflection of what everyone knows: grief returns in waves, creative insights come in cycles, seasonal rhythms modulate mood.
 
-**Спектральная плотность** — сумма двух смещённых лоренцианов:
+**Spectral density** — sum of two shifted Lorentzians:
 
 $$
 |\widetilde{K}(\omega)|^2 \propto \frac{1}{\omega_c^2 + (\omega - \omega_{\text{mem}})^2} + \frac{1}{\omega_c^2 + (\omega + \omega_{\text{mem}})^2}
 $$
 
-Пики при $\omega = \pm\omega_{\text{mem}}$ — среда преимущественно «помнит» осцилляции на частоте $\omega_{\text{mem}}$.
+Peaks at $\omega = \pm\omega_{\text{mem}}$ — the environment preferentially "remembers" oscillations at frequency $\omega_{\text{mem}}$.
 
-### 1.4 Сводная таблица ядер
+### 1.4 Summary Table of Kernels
 
-| Ядро | $K(\tau)$ | Спектр | Поведение Gap | Статус |
-|------|-----------|--------|---------------|--------|
-| Марковское | $-\Gamma_2\,\delta(\tau)$ | Белый шум | Монотонная релаксация | [Т] (предел T-94) |
-| Экспоненциальное | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}$ | Лоренциан | Затухающие осцилляции | **[Т]** (T-94) |
-| Осцилляторное | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}\cos(\omega_{\text{mem}}\tau)$ | Двойной лоренциан | Резонансные осцилляции | **[Г]** |
-| Степенное | $-\Gamma_2\,(\tau/\tau_0)^{-\alpha}$ | $1/f^{1-\alpha}$ | Степенная релаксация | **[Г]** |
+| Kernel | $K(\tau)$ | Spectrum | Gap behaviour | Status |
+|--------|-----------|----------|---------------|--------|
+| Markovian | $-\Gamma_2\,\delta(\tau)$ | White noise | Monotone relaxation | [T] (T-94 limit) |
+| Exponential | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}$ | Lorentzian | Damped oscillations | **[T]** (T-94) |
+| Oscillatory | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}\cos(\omega_{\text{mem}}\tau)$ | Double Lorentzian | Resonant oscillations | **[H]** |
+| Power-law | $-\Gamma_2\,(\tau/\tau_0)^{-\alpha}$ | $1/f^{1-\alpha}$ | Power-law relaxation | **[H]** |
 
-:::info Связь с Gap-пространством
-Структура 7-мерного Gap-пространства определяется изоморфизмом $\mathrm{PG}(2,2) \cong H(7,4)$ ([T-93](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) [Т]). Код Хэмминга H(7,4) задаёт расстояния между Gap-конфигурациями и, следовательно, корреляции ядра $K_{ij}(\tau)$ между различными парами измерений.
+:::info Connection to Gap space
+The structure of the 7-dimensional Gap space is determined by the isomorphism $\mathrm{PG}(2,2) \cong H(7,4)$ ([T-93](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) [T]). The Hamming code H(7,4) defines distances between Gap configurations and, consequently, correlations of the kernel $K_{ij}(\tau)$ between different dimension pairs.
 :::
 
-### 1.5 Физиология ядра памяти {#физиология-ядра}
+### 1.5 Physiology of the Memory Kernel {#физиология-ядра}
 
-Ядро памяти $K(\tau)$ — не абстракция. Оно имеет прямые нейрофизиологические корреляты:
+The memory kernel $K(\tau)$ is not an abstraction. It has direct neurophysiological correlates:
 
-**Кратковременная память** ($\tau_{\text{mem}} \sim$ секунды). На уровне нейронных сетей: устойчивые паттерны активности в префронтальной коре. Ядро: экспоненциальное, $\omega_c \sim 0{,}1\text{–}1$ Гц.
+**Short-term memory** ($\tau_{\text{mem}} \sim$ seconds). At the neural-network level: stable activity patterns in the prefrontal cortex. Kernel: exponential, $\omega_c \sim 0.1\text{–}1$ Hz.
 
-**Рабочая память** ($\tau_{\text{mem}} \sim$ минуты). Гиппокампальные осцилляции тета-ритма (4–8 Гц) модулируют удержание информации. Ядро: *осцилляторное*, с $\omega_{\text{mem}}$ в тета-диапазоне.
+**Working memory** ($\tau_{\text{mem}} \sim$ minutes). Hippocampal theta-rhythm oscillations (4–8 Hz) modulate information retention. Kernel: *oscillatory*, with $\omega_{\text{mem}}$ in the theta range.
 
-**Долговременная память** ($\tau_{\text{mem}} \sim$ годы). Консолидация через синаптическую пластичность и нейрогенез. Ядро: *степенное* ($\alpha \approx 0{,}5\text{–}1$), что согласуется с классическим законом забывания Эббингауза $R(t) \propto t^{-\alpha}$.
+**Long-term memory** ($\tau_{\text{mem}} \sim$ years). Consolidation through synaptic plasticity and neurogenesis. Kernel: *power-law* ($\alpha \approx 0.5\text{–}1$), consistent with the classical Ebbinghaus forgetting curve $R(t) \propto t^{-\alpha}$.
 
-**Травматическая память** — особый случай. Ядро с аномально малым $\omega_c$ (медленное затухание) и возможной осцилляторной компонентой. Это формализует клиническое наблюдение: травматические воспоминания «не выцветают» как обычные — они сохраняют эмоциональную интенсивность значительно дольше, чем предсказывает стандартная экспоненциальная модель забывания.
+**Traumatic memory** — a special case. Kernel with anomalously small $\omega_c$ (slow decay) and a possible oscillatory component. This formalises the clinical observation: traumatic memories "do not fade" like ordinary ones — they retain emotional intensity far longer than the standard exponential forgetting model predicts.
 
 ---
 
-## 2. Осцилляторная когеренция {#осцилляторная-когеренция}
+## 2. Oscillatory Coherence {#осцилляторная-когеренция}
 
-### 2.1 Немарковские осцилляции Gap
+### 2.1 Non-Markovian Gap Oscillations
 
-:::tip Теорема (Немарковские осцилляции Gap) [Т]
-При экспоненциальном ядре памяти $K(\tau) = -\Gamma_2\omega_c \cdot e^{-\omega_c\tau}$:
+:::tip Theorem (Non-Markovian Gap oscillations) [T]
+For exponential memory kernel $K(\tau) = -\Gamma_2\omega_c \cdot e^{-\omega_c\tau}$:
 
-**(a)** Марковский предел ($\omega_c \to \infty$): стандартная экспоненциальная декогеренция
+**(a)** Markovian limit ($\omega_c \to \infty$): standard exponential decoherence
 
 $$
 \gamma_{ij}(\tau) \propto e^{-\Gamma_2\tau}
 $$
 
-**(b)** Немарковский режим ($\omega_c$ конечная): Gap **осциллирует**
+**(b)** Non-Markovian regime (finite $\omega_c$): Gap **oscillates**
 
 $$
 \mathrm{Gap}(i,j;\,\tau) = \mathrm{Gap}^{(\infty)} + C \cdot e^{-\gamma\tau}\cos(\omega_r\tau)
 $$
 
-где $\omega_r = \sqrt{\omega_c\Gamma_2 - \gamma^2}$ — частота затухающих осцилляций, $\gamma$ — скорость затухания.
+where $\omega_r = \sqrt{\omega_c\Gamma_2 - \gamma^2}$ is the frequency of damped oscillations, $\gamma$ is the decay rate.
 
-**(c)** При $\omega_c < \Gamma_2/4$: **передемпфированный** режим — осцилляции отсутствуют, чисто экспоненциальная (но замедленная) релаксация к стационарному состоянию.
+**(c)** For $\omega_c < \Gamma_2/4$: **overdamped** regime — no oscillations, purely exponential (but slowed) relaxation to the stationary state.
 
-**Доказательство:** См. [Gap-динамика, Теорема 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
+**Proof:** See [Gap dynamics, Theorem 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
 :::
 
-**Физический механизм.** Немарковские осцилляции возникают из-за **обратного потока информации** из окружения в систему. В марковском режиме информация, потерянная в среду, не возвращается. В немарковском — среда «запоминает» когерентность и возвращает её обратно с задержкой $\sim \tau_{\text{mem}}$.
+**Physical mechanism.** Non-Markovian oscillations arise from the **backflow of information** from the environment into the system. In the Markovian regime, information lost to the environment does not return. In the non-Markovian regime — the environment "remembers" coherence and returns it with delay $\sim \tau_{\text{mem}}$.
 
-Это один из самых поразительных результатов теории. Обычно мы думаем о декогеренции как об однонаправленном процессе: порядок → хаос, когерентность → шум, ясность → замутнение. Но немарковская динамика говорит: **среда может возвращать то, что она забрала**. Когерентность, «растворившаяся» в окружении, через время $\tau_{\text{mem}}$ возвращается обратно — ослабленная, но реальная. В терминах человеческого опыта: ясность, утраченная в кризисе, может возвращаться — не потому что мы «работаем над собой», а потому что *такова динамика системы*. Среда — тело, социальное окружение, нейронная сеть — несёт отпечаток утраченной когерентности и возвращает её волнами.
+This is one of the most striking results of the theory. We usually think of decoherence as a one-way process: order → chaos, coherence → noise, clarity → muddiness. But non-Markovian dynamics says: **the environment can return what it has taken**. Coherence that "dissolved" into the surroundings returns after time $\tau_{\text{mem}}$ — weakened, but real. In terms of human experience: clarity lost in a crisis can return — not because we "work on ourselves", but because *that is the dynamics of the system*. The environment — body, social surroundings, neural network — carries the imprint of lost coherence and returns it in waves.
 
-### 2.2 Три режима Gap-релаксации
+### 2.2 Three Gap-Relaxation Regimes
 
-| Режим | Условие | Динамика Gap | Характерная шкала |
-|-------|---------|-------------|-------------------|
-| Марковский | $\omega_c \gg \Gamma_2$ | $e^{-\Gamma_2\tau}$ (монотонно) | $\tau_{\text{relax}} = 1/\Gamma_2$ |
-| Осциллирующий | $\omega_c \sim \Gamma_2$ | $e^{-\gamma\tau}\cos(\omega_r\tau)$ | $\tau_{\text{relax}} = 1/\gamma$, $T_{\text{osc}} = 2\pi/\omega_r$ |
-| Передемпфированный | $\omega_c < \Gamma_2/4$ | $e^{-\gamma_{\pm}\tau}$ (двойная экспонента) | $\tau_{\text{relax}} = 1/\gamma_-$ (медленная) |
+| Regime | Condition | Gap dynamics | Characteristic scale |
+|--------|-----------|-------------|----------------------|
+| Markovian | $\omega_c \gg \Gamma_2$ | $e^{-\Gamma_2\tau}$ (monotone) | $\tau_{\text{relax}} = 1/\Gamma_2$ |
+| Oscillating | $\omega_c \sim \Gamma_2$ | $e^{-\gamma\tau}\cos(\omega_r\tau)$ | $\tau_{\text{relax}} = 1/\gamma$, $T_{\text{osc}} = 2\pi/\omega_r$ |
+| Overdamped | $\omega_c < \Gamma_2/4$ | $e^{-\gamma_{\pm}\tau}$ (double exponential) | $\tau_{\text{relax}} = 1/\gamma_-$ (slow) |
 
-**Критерий осцилляций:**
+**Criterion for oscillations:**
 
 $$
 \omega_c\Gamma_2 > \gamma^2 \quad \Longleftrightarrow \quad \tau_{\text{mem}} < \frac{4}{\Gamma_2}
 $$
 
-Осцилляции Gap возникают, когда время памяти среды **достаточно короткое** (но не нулевое). Парадоксально: слишком длинная память ($\tau_{\text{mem}} \gg 4/\Gamma_2$) **подавляет** осцилляции.
+Gap oscillations arise when the environment's memory time is **short enough** (but not zero). Paradoxically: excessively long memory ($\tau_{\text{mem}} \gg 4/\Gamma_2$) **suppresses** oscillations.
 
-Этот парадокс заслуживает отдельного обсуждения. Казалось бы, чем длиннее память — тем больше «материала» для возврата, тем выраженнее должны быть осцилляции. Но математика говорит обратное: при очень длинной памяти ($\omega_c \to 0$) система переходит в передемпфированный режим, где осцилляций нет. Причина: когда среда помнит *слишком много*, возвращающийся поток информации размазывается по длинному временному интервалу и становится настолько слабым в каждый момент, что не может преодолеть текущую диссипацию. Это напоминает клиническое наблюдение: пациент, «застрявший» в хроническом горевании, не проходит через осцилляторные фазы — он находится в состоянии постоянного, но притуплённого страдания.
+This paradox deserves separate discussion. One might think: the longer the memory, the more "material" for return, hence the more pronounced the oscillations. But mathematics says the opposite: for very long memory ($\omega_c \to 0$) the system enters the overdamped regime, where there are no oscillations. The reason: when the environment remembers *too much*, the returning information flow is spread over a long time interval and becomes so weak at each moment that it cannot overcome the current dissipation. This resembles a clinical observation: a patient "stuck" in chronic grief does not pass through oscillatory phases — they are in a state of constant but blunted suffering.
 
-### 2.3 Мера немарковости BLP {#мера-blp}
+### 2.3 Non-Markovianity Measure BLP {#мера-blp}
 
-:::info Определение (Мера немарковости Breuer-Laine-Piilo) [Т]
+:::info Definition (Breuer–Laine–Piilo non-Markovianity measure) [T]
 $$
 \mathcal{N} := \int_{\sigma > 0} \sigma(t,\, \rho_1,\, \rho_2)\, dt
 $$
 
-где $\sigma(t, \rho_1, \rho_2) = \frac{d}{dt}\|\rho_1(t) - \rho_2(t)\|_1$ — скорость изменения различимости пары состояний.
+where $\sigma(t, \rho_1, \rho_2) = \frac{d}{dt}\|\rho_1(t) - \rho_2(t)\|_1$ is the rate of change of the distinguishability of a pair of states.
 
-В марковской динамике $\sigma \leq 0$ всегда (различимость только убывает). В немарковской $\sigma > 0$ на некоторых интервалах — **обратный поток информации**.
+In Markovian dynamics $\sigma \leq 0$ always (distinguishability only decreases). In non-Markovian dynamics $\sigma > 0$ on some intervals — **information backflow**.
 :::
 
-**Связь с Gap-осцилляциями.** Каждый полупериод осцилляции Gap, в котором $\mathrm{Gap}$ уменьшается (когерентность возвращается из среды), соответствует $\sigma > 0$ — ненулевой вклад в меру немарковости $\mathcal{N}$.
+**Connection to Gap oscillations.** Each half-period of Gap oscillation in which $\mathrm{Gap}$ decreases (coherence returning from the environment) corresponds to $\sigma > 0$ — a non-zero contribution to the non-Markovianity measure $\mathcal{N}$.
 
 $$
 \mathcal{N} \propto \sum_{k=1}^{N_{\text{osc}}} |\Delta\mathrm{Gap}_k| \cdot e^{-\gamma\,\tau_k}
 $$
 
-где суммирование идёт по всем полупериодам с убывающим Gap, $|\Delta\mathrm{Gap}_k|$ — амплитуда $k$-й осцилляции.
+where the sum runs over all half-periods with decreasing Gap, $|\Delta\mathrm{Gap}_k|$ is the amplitude of the $k$-th oscillation.
 
-### 2.4 Измерение немарковости: количественный подход {#количественный-подход}
+### 2.4 Measuring Non-Markovianity: a Quantitative Approach {#количественный-подход}
 
-Мера BLP — не единственный способ квантифицировать немарковость. В квантовой информатике разработан ряд альтернативных мер, каждая из которых выявляет свой аспект обратного потока информации:
+The BLP measure is not the only way to quantify non-Markovianity. Quantum information theory has developed a range of alternative measures, each revealing a different aspect of information backflow:
 
-**Мера RHP** (Rivas, Huelga, Plenio). Основана на нарушении свойства **делимости** динамической карты. Марковский процесс делим: $\Lambda(t+s, 0) = \Lambda(t+s, s) \cdot \Lambda(s, 0)$, и промежуточная карта $\Lambda(t+s, s)$ полностью положительна. Немарковость проявляется как потеря полной положительности промежуточной карты.
+**RHP measure** (Rivas, Huelga, Plenio). Based on violation of the **divisibility** property of the dynamical map. A Markovian process is divisible: $\Lambda(t+s, 0) = \Lambda(t+s, s) \cdot \Lambda(s, 0)$, and the intermediate map $\Lambda(t+s, s)$ is completely positive. Non-Markovianity manifests as loss of complete positivity of the intermediate map.
 
-**Взаимная информация.** Немарковость можно измерить через рост взаимной информации $I(S:E)$ между системой и средой. В марковской динамике $I(S:E)$ монотонно растёт (информация утекает в среду). Немарковский обратный поток даёт временное *уменьшение* $I(S:E)$.
+**Mutual information.** Non-Markovianity can be measured by the growth of mutual information $I(S:E)$ between the system and the environment. In Markovian dynamics $I(S:E)$ grows monotonically (information flows into the environment). Non-Markovian backflow gives a temporary *decrease* of $I(S:E)$.
 
-**Связь мер.** Для экспоненциального ядра T-94 все меры немарковости **согласованы**: если одна ненулевая, все ненулевые, и все обращаются в нуль одновременно в марковском пределе $\omega_c \to \infty$.
+**Consistency of measures.** For the exponential kernel T-94, all non-Markovianity measures are **consistent**: if one is non-zero, all are non-zero, and all vanish simultaneously in the Markovian limit $\omega_c \to \infty$.
 
-Для когерентной кибернетики наиболее практична мера BLP, поскольку она непосредственно связана с наблюдаемыми осцилляциями Gap.
+For Coherence Cybernetics the most practical is the BLP measure, since it is directly connected to the observable Gap oscillations.
 
-### 2.5 Связь с бифуркацией Хопфа
+### 2.5 Connection to Hopf Bifurcation
 
-Немарковские осцилляции Gap следует отличать от осцилляций, порождённых [бифуркацией Хопфа](./bifurcation#hopf):
+Non-Markovian Gap oscillations must be distinguished from oscillations generated by a [Hopf bifurcation](./bifurcation#hopf):
 
-| Свойство | Немарковские осцилляции | Hopf-осцилляции |
-|----------|------------------------|-----------------|
-| Причина | Память среды | Потеря устойчивости |
-| Затухание | Всегда затухают ($\gamma > 0$) | Незатухающий предельный цикл |
-| Амплитуда | Убывает экспоненциально | Постоянная $A(\mu)$ |
-| Управление | Через $\omega_c$ (ядро памяти) | Через $\mu$ (управляющий параметр) |
-| Исчезновение | При $\omega_c \to \infty$ или $\omega_c < \Gamma_2/4$ | При $\mu < \mu_H$ |
+| Property | Non-Markovian oscillations | Hopf oscillations |
+|----------|---------------------------|-------------------|
+| Cause | Environmental memory | Loss of stability |
+| Damping | Always damped ($\gamma > 0$) | Undamped limit cycle |
+| Amplitude | Decreases exponentially | Constant $A(\mu)$ |
+| Control | Through $\omega_c$ (memory kernel) | Through $\mu$ (control parameter) |
+| Disappearance | As $\omega_c \to \infty$ or $\omega_c < \Gamma_2/4$ | As $\mu < \mu_H$ |
 
-В реальных системах оба механизма могут действовать одновременно: немарковские осцилляции **модулируют** амплитуду Hopf-предельного цикла.
+In real systems both mechanisms can operate simultaneously: non-Markovian oscillations **modulate** the amplitude of the Hopf limit cycle.
 
-Это различие имеет глубокий клинический смысл. Немарковские осцилляции — это *ответ здоровой системы на потрясение*: они затухают, и система постепенно приходит к новому равновесию. Hopf-осцилляции — это *структурное изменение динамики*: система теряет устойчивость и переходит к незатухающему циклическому режиму. Первое — нормальное горевание. Второе — хроническое расстройство, при котором циклы боли и облегчения не затухают, а самоподдерживаются.
+This distinction has deep clinical significance. Non-Markovian oscillations are the *response of a healthy system to a shock*: they decay, and the system gradually reaches a new equilibrium. Hopf oscillations are a *structural change of dynamics*: the system loses stability and transitions to an undamped cyclic regime. The former is normal grieving. The latter is a chronic disorder in which cycles of pain and relief do not dampen but sustain themselves.
 
 ---
 
-## 3. «Циклы горя» — формализация через немарковскую память {#циклы-горя}
+## 3. "Grief Cycles" — Formalisation through Non-Markovian Memory {#циклы-горя}
 
-:::info Статус [И]
-Формализация «циклов горя» через немарковскую Gap-динамику — **интерпретация**. Математический аппарат (Теорема 5.1 [Т]) строг; отождествление с клиническими феноменами требует эмпирической валидации.
+:::info Status [I]
+The formalisation of "grief cycles" through non-Markovian Gap dynamics is an **interpretation**. The mathematical apparatus (Theorem 5.1 [T]) is rigorous; the identification with clinical phenomena requires empirical validation.
 :::
 
-### Циклы горя и посттравматический рост {#горе-и-рост}
+### Grief Cycles and Post-Traumatic Growth {#горе-и-рост}
 
-Горевание — один из самых глубоких и универсальных человеческих опытов. Каждая культура знает его фазы: оцепенение, волны острой боли, медленное принятие. Элизабет Кюблер-Росс описала «пять стадий горя» — отрицание, гнев, торговля, депрессия, принятие. Но клинические наблюдения показывают, что горевание — это не линейная последовательность стадий. Это **осцилляторный процесс**: волны горя чередуются с моментами ясности, и амплитуда этих волн постепенно уменьшается.
+Grieving is one of the deepest and most universal human experiences. Every culture knows its phases: numbness, waves of acute pain, slow acceptance. Elisabeth Kübler-Ross described "five stages of grief" — denial, anger, bargaining, depression, acceptance. But clinical observations show that grieving is not a linear sequence of stages. It is an **oscillatory process**: waves of grief alternate with moments of clarity, and the amplitude of these waves gradually diminishes.
 
-Немарковская динамика Gap даёт точную математическую модель этого процесса. И не только модель — она делает количественные предсказания о длительности горевания, частоте осцилляций и условиях, при которых горевание переходит в хроническую форму.
+Non-Markovian Gap dynamics provides an exact mathematical model of this process. And not only a model — it makes quantitative predictions about the duration of grieving, the frequency of oscillations, and the conditions under which grieving transitions to chronic form.
 
-### 3.1 Травма как скачок стационарного значения
+### 3.1 Trauma as a Jump in Stationary Value
 
-**Модель.** Травматическое событие в момент $\tau_0$ вызывает мгновенное изменение стационарного Gap-профиля:
+**Model.** A traumatic event at moment $\tau_0$ causes an instantaneous change in the stationary Gap profile:
 
 $$
 \mathrm{Gap}^{(\infty)}(S,E) : \quad G_0 \xrightarrow{\tau = \tau_0} G_0 + \Delta G
 $$
 
-где $\Delta G > 0$ — величина скачка (увеличение непрозрачности между телом и переживанием для канала $S \leftrightarrow E$, или между другими парами измерений).
+where $\Delta G > 0$ is the magnitude of the jump (increase in opacity between body and experience for channel $S \leftrightarrow E$, or between other dimension pairs).
 
-Что означает этот скачок в терминах опыта? $\mathrm{Gap}(S,E)$ — мера непрозрачности между Sensation и Emotion, между телесностью и переживанием. Скачок $\Delta G$ — это внезапная потеря связи: тело перестаёт «слышать» эмоции, или эмоции перестают «дотягиваться» до тела. Клинически это проявляется как онемение, деперсонализация, «ватное» ощущение — хорошо известные реакции на острую травму.
+What does this jump mean in terms of experience? $\mathrm{Gap}(S,E)$ is the measure of opacity between Sensation and Emotion, between embodiment and experience. The jump $\Delta G$ is a sudden loss of connection: the body stops "hearing" the emotions, or the emotions stop "reaching" the body. Clinically this manifests as numbness, depersonalisation, a "cotton wool" feeling — well-known reactions to acute trauma.
 
-**Динамика после скачка.** Система стремится к новому стационарному значению, но делает это **осциллирующим** образом:
+**Dynamics after the jump.** The system tends toward the new stationary value, but does so in an **oscillatory** manner:
 
 $$
 \mathrm{Gap}(S,E;\,\tau) = (G_0 + \Delta G) + C \cdot e^{-\gamma(\tau - \tau_0)} \cos\bigl(\omega_r(\tau - \tau_0)\bigr)
 $$
 
-### 3.2 Фазы горевания как фазы осцилляции
+### 3.2 Phases of Grieving as Phases of Oscillation
 
-| Фаза осцилляции | Динамика Gap | Клиническое проявление |
-|----------------|-------------|----------------------|
-| $\cos(\omega_r\tau) > 0$ | Gap убывает | «Вспышка ясности» — кратковременное возвращение когерентности |
-| $\cos(\omega_r\tau) < 0$ | Gap возрастает | «Волна горя» — усиление непрозрачности |
-| $e^{-\gamma\tau} \to 0$ | Амплитуда $\to 0$ | Постепенное принятие — установление нового стационарного значения |
-| $\tau \to \infty$ | $\mathrm{Gap} \to G_0 + \Delta G$ | Новая норма (может быть выше или ниже прежней) |
+| Oscillation phase | Gap dynamics | Clinical manifestation |
+|-------------------|-------------|------------------------|
+| $\cos(\omega_r\tau) > 0$ | Gap decreasing | "Flash of clarity" — brief return of coherence |
+| $\cos(\omega_r\tau) < 0$ | Gap increasing | "Wave of grief" — intensification of opacity |
+| $e^{-\gamma\tau} \to 0$ | Amplitude $\to 0$ | Gradual acceptance — settling to new stationary value |
+| $\tau \to \infty$ | $\mathrm{Gap} \to G_0 + \Delta G$ | New norm (may be higher or lower than before) |
 
-Заметим, что «новая норма» $G_0 + \Delta G$ может быть как *выше*, так и *ниже* исходного значения $G_0$. Случай $\Delta G < 0$ (Gap *уменьшается* после потрясения) — это феномен **посттравматического роста**: травма, будучи пережита, парадоксальным образом *увеличивает* связность измерений. Когерентная кибернетика предсказывает, что это возможно, когда регенеративный член $\mathcal{R}_{ij}$ достаточно силён для того, чтобы «пересобрать» когерентность на более высоком уровне. Условие:
+Note that the "new norm" $G_0 + \Delta G$ can be either *higher* or *lower* than the original value $G_0$. The case $\Delta G < 0$ (Gap *decreases* after the shock) is the phenomenon of **post-traumatic growth**: a trauma, once lived through, paradoxically *increases* the connectivity of dimensions. Coherence Cybernetics predicts that this is possible when the regenerative term $\mathcal{R}_{ij}$ is strong enough to "reassemble" coherence at a higher level. Condition:
 
 $$
-\kappa \cdot \mathrm{Coh}_E > \Gamma_2 \cdot (G_0 + |\Delta G|) \quad \Longrightarrow \quad \text{посттравматический рост возможен}
+\kappa \cdot \mathrm{Coh}_E > \Gamma_2 \cdot (G_0 + |\Delta G|) \quad \Longrightarrow \quad \text{post-traumatic growth is possible}
 $$
 
-Это математическое отражение клинического наблюдения: рост после травмы возможен, когда ресурсы регенерации (внутренние и внешние) превышают силу декогеренции.
+This is the mathematical reflection of the clinical observation: growth after trauma is possible when regenerative resources (internal and external) exceed the strength of decoherence.
 
-### 3.3 «Вспышки ясности» — конструктивная интерференция
+### 3.3 "Flashes of Clarity" — Constructive Interference
 
-:::info Интерпретация (Вспышки ясности) [И]
-«Вспышки ясности» при горевании (моменты, когда человек внезапно «видит ясно» посреди кризиса) формализуются как **конструктивная интерференция** возвращающейся когерентности.
+:::info Interpretation (Flashes of clarity) [I]
+"Flashes of clarity" during grieving (moments when a person suddenly "sees clearly" in the midst of a crisis) are formalised as **constructive interference** of returning coherence.
 
-В немарковской динамике когерентность, «поглощённая» средой, возвращается через время $\sim \tau_{\text{mem}}$. Если несколько каналов синхронизируются ($\omega_r^{(ij)} \approx \omega_r^{(kl)}$), возникает усиленный эффект: одновременное кратковременное снижение Gap по нескольким парам измерений.
+In non-Markovian dynamics, coherence "absorbed" by the environment returns after time $\sim \tau_{\text{mem}}$. If several channels synchronise ($\omega_r^{(ij)} \approx \omega_r^{(kl)}$), an amplified effect arises: simultaneous brief reduction of Gap across several dimension pairs.
 :::
 
-Каждый, кто проходил через горе, знает эти мгновения. Посреди тумана и боли вдруг наступает кристальная ясность: мир на мгновение становится таким чётким и наполненным, каким он, может быть, не был даже до потери. Это не иллюзия и не защитный механизм. В терминах немарковской динамики — это реальный физический процесс: среда, поглотившая когерентность в момент травмы, синхронно возвращает её по нескольким каналам одновременно.
+Everyone who has been through grief knows these moments. Amid the fog and pain, crystal clarity suddenly arrives: the world for a moment becomes as sharp and full as it may not have been even before the loss. This is not an illusion or a defence mechanism. In terms of non-Markovian dynamics — it is a real physical process: the environment that absorbed coherence at the moment of trauma synchronously returns it across several channels simultaneously.
 
-**Условие синхронизации вспышек:**
+**Synchronisation condition for flashes:**
 
 $$
 \left|\omega_r^{(ij)} - \omega_r^{(kl)}\right| < \gamma_{\min}
 $$
 
-где $\gamma_{\min}$ — минимальная скорость затухания. Когда разность частот осцилляций для разных каналов мала по сравнению со скоростью затухания, «вспышки ясности» по этим каналам совпадают.
+where $\gamma_{\min}$ is the minimum decay rate. When the difference in oscillation frequencies for different channels is small compared to the decay rate, "flashes of clarity" in those channels coincide.
 
-**Многоканальная интерференция.** В 7-мерной системе с $\binom{7}{2} = 21$ парой когерентностей «вспышки ясности» могут быть чрезвычайно сложными. Полная «вспышка» (одновременное снижение Gap по многим каналам) возникает при выполнении условия синхронизации для кластера каналов. Структура этих кластеров определяется кодом Хэмминга $H(7,4)$, что даёт нетривиальные предсказания о корреляциях между различными аспектами «ясности».
+**Multi-channel interference.** In a 7-dimensional system with $\binom{7}{2} = 21$ coherence pairs, "flashes of clarity" can be extraordinarily complex. A full "flash" (simultaneous reduction of Gap across many channels) arises when the synchronisation condition is satisfied for a cluster of channels. The structure of these clusters is determined by the Hamming code $H(7,4)$, which gives non-trivial predictions about correlations between different aspects of "clarity".
 
-### 3.4 Длительность горевания
+### 3.4 Duration of Grieving
 
-**Время восстановления** определяется параметрами немарковского ядра:
+**Recovery time** is determined by the parameters of the non-Markovian kernel:
 
 $$
 \tau_{\text{recovery}} \approx \frac{3}{\gamma} = \frac{3}{\text{Re}\left(\frac{\omega_c + \Gamma_2}{2} - \sqrt{\left(\frac{\omega_c - \Gamma_2}{2}\right)^2 - \omega_c\Gamma_2}\right)}
 $$
 
-(время, за которое амплитуда осцилляций снижается до $\sim 5\%$).
+(time for oscillation amplitude to drop to $\sim 5\%$).
 
-**Зависимость от $\tau_{\text{mem}} = 1/\omega_c$:**
+**Dependence on $\tau_{\text{mem}} = 1/\omega_c$:**
 
-| $\tau_{\text{mem}}$ | $\tau_{\text{recovery}}$ | Клиническая интерпретация |
-|---------------------|--------------------------|--------------------------|
-| Короткая ($\ll 1/\Gamma_2$) | $\sim 3/\Gamma_2$ | Быстрое восстановление (марковский режим) |
-| Средняя ($\sim 1/\Gamma_2$) | $\sim 6/\Gamma_2$ | Осцилляторное горевание (немарковский режим) |
-| Длинная ($\gg 1/\Gamma_2$) | $\gg 1/\Gamma_2$ | Затяжное горевание (передемпфированный режим) |
+| $\tau_{\text{mem}}$ | $\tau_{\text{recovery}}$ | Clinical interpretation |
+|---------------------|--------------------------|------------------------|
+| Short ($\ll 1/\Gamma_2$) | $\sim 3/\Gamma_2$ | Fast recovery (Markovian regime) |
+| Moderate ($\sim 1/\Gamma_2$) | $\sim 6/\Gamma_2$ | Oscillatory grieving (non-Markovian regime) |
+| Long ($\gg 1/\Gamma_2$) | $\gg 1/\Gamma_2$ | Prolonged grieving (overdamped regime) |
 
-:::warning Терапевтическое следствие [И]
-Из немарковской ФДТ ([Фазовая диаграмма, раздел 6.1](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции)):
+:::warning Therapeutic corollary [I]
+From non-Markovian FDT ([Phase diagram, section 6.1](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции)):
 
 $$
 \chi_{ij}(\omega) \propto \frac{1 + \omega^2\tau_M^2}{T_{\text{eff}}\,\Gamma_2^2\,\tau_M}
 $$
 
-При $\omega\tau_M \gg 1$: $\chi \propto \omega^2$ — **антирезонанс**. Система с длинной памятью сильнее реагирует на высокочастотные возмущения. Это объясняет бо&#769;льшую эффективность частых коротких терапевтических сессий по сравнению с редкими длительными.
+For $\omega\tau_M \gg 1$: $\chi \propto \omega^2$ — **anti-resonance**. A system with long memory responds more strongly to high-frequency perturbations. This explains the greater effectiveness of frequent short therapeutic sessions compared to infrequent lengthy ones.
 :::
 
-### 3.5 Диаграмма динамики горевания
+### 3.5 Diagram of Grief Dynamics
 
 ```mermaid
 graph LR
-    subgraph TRAUMA["Травма (τ₀)"]
-        T["ΔG: скачок Gap"]
+    subgraph TRAUMA["Trauma (τ₀)"]
+        T["ΔG: Gap jump"]
     end
-    subgraph OSC["Осцилляции"]
-        W["Волна горя: Gap↑"]
-        C["Вспышка ясности: Gap↓"]
+    subgraph OSC["Oscillations"]
+        W["Wave of grief: Gap↑"]
+        C["Flash of clarity: Gap↓"]
     end
-    subgraph REC["Восстановление"]
-        A["Амплитуда → 0"]
-        N["Новая норма Gap"]
+    subgraph REC["Recovery"]
+        A["Amplitude → 0"]
+        N["New norm Gap"]
     end
 
     T --> W
@@ -407,291 +407,291 @@ graph LR
     A --> N
 ```
 
-### 3.6 Осложнённое горевание: переход в хронический режим {#осложнённое-горевание}
+### 3.6 Complicated Grief: Transition to Chronic Regime {#осложнённое-горевание}
 
-Не всякое горевание проходит через осцилляторную фазу к принятию. Клиницисты выделяют **осложнённое горевание** (prolonged grief disorder) — состояние, при котором процесс «застревает». Немарковская динамика предлагает две модели этого перехода:
+Not all grieving passes through the oscillatory phase to acceptance. Clinicians distinguish **complicated grief** (prolonged grief disorder) — a state in which the process "gets stuck". Non-Markovian dynamics offers two models of this transition:
 
-**Модель 1: Передемпфирование.** Если время памяти $\tau_{\text{mem}}$ аномально велико ($\tau_{\text{mem}} \gg 4/\Gamma_2$), система переходит в передемпфированный режим. Осцилляции отсутствуют — нет ни «волн горя», ни «вспышек ясности». Вместо этого — длительное, монотонное, но очень медленное приближение к стационарному состоянию. Это соответствует клинической картине «замороженного горя»: человек не плачет, не злится, не проходит через фазы — он просто «не может выйти из этого».
+**Model 1: Overdamping.** If the memory time $\tau_{\text{mem}}$ is anomalously large ($\tau_{\text{mem}} \gg 4/\Gamma_2$), the system enters the overdamped regime. There are no oscillations — neither "waves of grief" nor "flashes of clarity". Instead — a prolonged, monotone, but very slow approach to the stationary state. This corresponds to the clinical picture of "frozen grief": the person does not cry, does not get angry, does not pass through phases — they simply "cannot get out of it".
 
-**Модель 2: Hopf-бифуркация.** Если травма достаточно сильна для того, чтобы параметры системы пересекли порог бифуркации Хопфа ($\mu > \mu_H$), затухающие осцилляции *переходят в самоподдерживающийся предельный цикл*. Это хроническое горевание с незатухающими волнами боли и облегчения. Формально:
+**Model 2: Hopf bifurcation.** If the trauma is strong enough for the system's parameters to cross the Hopf bifurcation threshold ($\mu > \mu_H$), the damped oscillations *transition into a self-sustaining limit cycle*. This is chronic grief with undamped waves of pain and relief. Formally:
 
 $$
 \mathrm{Gap}(S,E;\,\tau) \to \mathrm{Gap}^{(\infty)} + A(\mu) \cdot \cos(\omega_H\tau + \phi_0) \quad (\tau \to \infty)
 $$
 
-Амплитуда $A(\mu) > 0$ — волны горя не затухают. Это качественно отличная динамика, и она требует качественно иных терапевтических вмешательств: не ожидания естественного затухания, а *изменения управляющего параметра* $\mu$ для подавления бифуркации.
+Amplitude $A(\mu) > 0$ — waves of grief do not decay. This is qualitatively different dynamics, and it requires qualitatively different therapeutic interventions: not waiting for natural decay, but *changing the control parameter* $\mu$ to suppress the bifurcation.
 
 ---
 
-## 4. Вспышки ясности: немарковские окна и терапия {#терапевтические-окна}
+## 4. Flashes of Clarity: Non-Markovian Windows and Therapy {#терапевтические-окна}
 
-### 4.1 Анатомия терапевтического окна
+### 4.1 Anatomy of a Therapeutic Window
 
-Немарковские осцилляции создают **временные окна повышенной пластичности** — моменты, когда интервенция особенно эффективна. Эти окна имеют точные характеристики:
+Non-Markovian oscillations create **temporary windows of heightened plasticity** — moments when intervention is particularly effective. These windows have precise characteristics:
 
-**Время открытия.** Окно открывается, когда $\cos(\omega_r\tau) > 0$ и амплитуда осцилляции ещё достаточно велика: $C \cdot e^{-\gamma\tau} > \varepsilon_{\text{th}}$ (порог чувствительности). Это даёт конечное число окон:
+**Opening time.** A window opens when $\cos(\omega_r\tau) > 0$ and the oscillation amplitude is still large enough: $C \cdot e^{-\gamma\tau} > \varepsilon_{\text{th}}$ (sensitivity threshold). This gives a finite number of windows:
 
 $$
 N_{\text{windows}} \approx \frac{1}{\pi} \cdot \frac{\omega_r}{\gamma} \cdot \ln\frac{C}{\varepsilon_{\text{th}}}
 $$
 
-**Длительность окна.** Каждое окно длится примерно полупериод осцилляции:
+**Window duration.** Each window lasts approximately a half-period of oscillation:
 
 $$
 \Delta\tau_{\text{window}} \approx \frac{\pi}{\omega_r}
 $$
 
-**Глубина окна** (насколько сильно уменьшается Gap) убывает экспоненциально с номером:
+**Window depth** (how much Gap decreases) decays exponentially with index:
 
 $$
 \delta G_k = C \cdot e^{-\gamma \cdot k\pi/\omega_r}, \quad k = 1, 2, 3, \ldots
 $$
 
-Первое окно — самое широкое и самое глубокое. Каждое следующее — слабее.
+The first window is the widest and deepest. Each subsequent one is weaker.
 
-### 4.2 Стратегия терапевтического вмешательства [И]
+### 4.2 Therapeutic Intervention Strategy [I]
 
-Из структуры немарковских окон вытекает ясная терапевтическая стратегия:
+From the structure of non-Markovian windows a clear therapeutic strategy follows:
 
-1. **Первое окно** (первые дни–недели после травмы): максимальная восприимчивость. Интервенция здесь наиболее эффективна — но и наиболее рискованна, поскольку амплитуда осцилляций максимальна.
+1. **First window** (first days–weeks after trauma): maximum receptivity. Intervention here is most effective — but also most risky, since the oscillation amplitude is maximal.
 
-2. **Мониторинг фазы**: отслеживание субъективных отчётов с достаточной частотой (не реже $2\omega_r / (2\pi)$, согласно теореме Найквиста) позволяет определить, находится ли пациент в фазе «вспышки ясности» ($\cos > 0$) или «волны горя» ($\cos < 0$).
+2. **Phase monitoring**: tracking subjective reports at sufficient frequency (no less than $2\omega_r / (2\pi)$, according to the Nyquist theorem) allows one to determine whether the patient is in a "flash of clarity" phase ($\cos > 0$) or a "wave of grief" ($\cos < 0$).
 
-3. **Синхронизация сессий**: терапевтическая сессия во время «вспышки ясности» (Gap убывает) значительно эффективнее, чем во время «волны горя» (Gap возрастает). Формально: восприимчивость $\chi$ в фазе $\cos > 0$ в $(1 + \omega^2\tau_M^2)$ раз выше.
+3. **Session synchronisation**: a therapeutic session during a "flash of clarity" (Gap decreasing) is significantly more effective than during a "wave of grief" (Gap increasing). Formally: susceptibility $\chi$ in phase $\cos > 0$ is $(1 + \omega^2\tau_M^2)$ times higher.
 
-4. **Резонансная частота**: оптимальная частота сессий $\sim \omega_r / \pi$ обеспечивает *резонанс* с возвращающейся когерентностью. Слишком редкие сессии пропускают окна; слишком частые — не успевают «воспользоваться» накопленной возвращённой когерентностью.
+4. **Resonant frequency**: the optimal session frequency $\sim \omega_r / \pi$ ensures *resonance* with the returning coherence. Too infrequent sessions miss windows; too frequent ones — do not have time to "utilise" the accumulated returned coherence.
 
 ---
 
-## 5. Связь с Gap-диагностикой {#связь-с-диагностикой}
+## 5. Connection to Gap Diagnostics {#связь-с-диагностикой}
 
-### 5.1 Немарковские сигнатуры в клинических данных
+### 5.1 Non-Markovian Signatures in Clinical Data
 
-:::warning Гипотеза (Немарковские сигнатуры) [Г]
-Немарковская динамика Gap порождает наблюдаемые сигнатуры, которые можно обнаружить в клинических данных:
+:::warning Hypothesis (Non-Markovian signatures) [H]
+Non-Markovian Gap dynamics produces observable signatures that can be detected in clinical data:
 
-**(a)** Частота осцилляций Gap: $f_{\text{osc}} = \omega_r / (2\pi)$ — может быть измерена через временной ряд самоотчётов или физиологических маркеров.
+**(a)** Gap oscillation frequency: $f_{\text{osc}} = \omega_r / (2\pi)$ — can be measured through a time series of self-reports or physiological markers.
 
-**(b)** Скорость затухания $\gamma$ — определяет огибающую амплитуды осцилляций.
+**(b)** Decay rate $\gamma$ — determines the envelope of oscillation amplitudes.
 
-**(c)** Мера немарковости $\mathcal{N}$ — коррелирует с «глубиной памяти» о травматическом событии.
+**(c)** Non-Markovianity measure $\mathcal{N}$ — correlates with the "depth of memory" of the traumatic event.
 :::
 
-**Протокол обнаружения немарковских сигнатур:**
+**Protocol for detecting non-Markovian signatures:**
 
-1. Собрать временной ряд субъективных отчётов по шкале Gap($S$,$E$) (или другому каналу) с частотой $\geq 2$ раза в неделю
-2. Вычислить автокорреляционную функцию $C(\Delta\tau)$
-3. Если $C(\Delta\tau)$ меняет знак — признак осцилляций (немарковский режим)
-4. Подогнать модель $C(\Delta\tau) = C_0\,e^{-\gamma\Delta\tau}\cos(\omega_r\Delta\tau)$
-5. Извлечь параметры: $\tau_{\text{mem}} \approx 2\pi / \omega_r$, $\tau_{\text{recovery}} \approx 3/\gamma$
+1. Collect a time series of subjective reports on the Gap($S$,$E$) scale (or another channel) at frequency $\geq 2$ times per week
+2. Compute the autocorrelation function $C(\Delta\tau)$
+3. If $C(\Delta\tau)$ changes sign — a sign of oscillations (non-Markovian regime)
+4. Fit model $C(\Delta\tau) = C_0\,e^{-\gamma\Delta\tau}\cos(\omega_r\Delta\tau)$
+5. Extract parameters: $\tau_{\text{mem}} \approx 2\pi / \omega_r$, $\tau_{\text{recovery}} \approx 3/\gamma$
 
-### 5.2 Предсказания для терапии
+### 5.2 Predictions for Therapy
 
-:::warning Гипотеза (Измеримые предсказания) [Г]
-**(a)** Частота осцилляций Gap пропорциональна обратному времени памяти:
+:::warning Hypothesis (Measurable predictions) [H]
+**(a)** Gap oscillation frequency is proportional to the inverse memory time:
 
 $$
 f_{\text{osc}} \sim \frac{1}{\tau_{\text{mem}}}
 $$
 
-Пациенты с «глубокой памятью» ($\tau_{\text{mem}}$ велико) демонстрируют **медленные** осцилляции Gap (длинные циклы горя). Пациенты с «короткой памятью» — **быстрые** осцилляции и более быстрое восстановление.
+Patients with "deep memory" (large $\tau_{\text{mem}}$) show **slow** Gap oscillations (long grief cycles). Patients with "short memory" — **fast** oscillations and faster recovery.
 
-**(b)** Мера немарковости $\mathcal{N}$ положительно коррелирует с субъективной глубиной переживания травмы.
+**(b)** Non-Markovianity measure $\mathcal{N}$ positively correlates with the subjective depth of trauma experience.
 
-**(c)** Оптимальная частота терапевтических сессий $\sim \omega_r / \pi$ — резонанс с возвращающейся когерентностью.
+**(c)** Optimal therapeutic session frequency $\sim \omega_r / \pi$ — resonance with returning coherence.
 :::
 
-### 5.3 Связь с Gap-картой прозрачности
+### 5.3 Connection to the Gap Transparency Map
 
-Немарковская динамика модифицирует [карту прозрачности](/docs/applied/research/gap-diagnostics#карта-прозрачности): стационарные значения Gap зависят от параметров ядра памяти.
+Non-Markovian dynamics modifies the [transparency map](/docs/applied/research/gap-diagnostics#карта-прозрачности): stationary Gap values depend on the memory kernel parameters.
 
-| Параметр ядра | Влияние на Gap-карту | Диагностическое значение |
-|---------------|---------------------|-------------------------|
-| $\tau_{\text{mem}}$ (время памяти) | Период осцилляций Gap | Длительность «циклов горя» |
-| $\Gamma_2$ (сила декогеренции) | Стационарное $\mathrm{Gap}^{(\infty)}$ | Глубина непрозрачности |
-| $\omega_{\text{mem}}$ (частота памяти) | Резонансные пики | Выделенные каналы с усиленными осцилляциями |
-| $\mathcal{N}$ (мера немарковости) | Наличие осцилляций | Немарковская vs марковская динамика |
+| Kernel parameter | Influence on Gap map | Diagnostic value |
+|-----------------|---------------------|-----------------|
+| $\tau_{\text{mem}}$ (memory time) | Period of Gap oscillations | Duration of "grief cycles" |
+| $\Gamma_2$ (decoherence strength) | Stationary $\mathrm{Gap}^{(\infty)}$ | Depth of opacity |
+| $\omega_{\text{mem}}$ (memory frequency) | Resonance peaks | Distinguished channels with enhanced oscillations |
+| $\mathcal{N}$ (non-Markovianity measure) | Presence of oscillations | Non-Markovian vs Markovian dynamics |
 
-### 5.4 Немарковская коррекция диагностических паттернов
+### 5.4 Non-Markovian Correction of Diagnostic Patterns
 
-Стандартные [диагностические паттерны](/docs/applied/research/gap-diagnostics#паттерны) (алекситимия, невроз расщепления и др.) приобретают временну&#769;ю структуру при немарковском рассмотрении:
+Standard [diagnostic patterns](/docs/applied/research/gap-diagnostics#паттерны) (alexithymia, split neurosis, etc.) acquire temporal structure under non-Markovian treatment:
 
-| Паттерн | Марковская динамика | Немарковская динамика |
-|---------|--------------------|-----------------------|
-| Алекситимия ($S \leftrightarrow E$) | $\mathrm{Gap}(S,E) \to 1$ монотонно | Осцилляции с «вспышками» телесного осознавания |
-| Невроз расщепления ($L \leftrightarrow E$) | $\mathrm{Gap}(L,E) \to 1$ монотонно | Периодические моменты «настоящего понимания» |
-| Импульсивность ($D \leftrightarrow L$) | $\mathrm{Gap}(D,L) \to 1$ монотонно | Чередование импульсивности и контроля |
+| Pattern | Markovian dynamics | Non-Markovian dynamics |
+|---------|--------------------|------------------------|
+| Alexithymia ($S \leftrightarrow E$) | $\mathrm{Gap}(S,E) \to 1$ monotonically | Oscillations with "flashes" of bodily awareness |
+| Split neurosis ($L \leftrightarrow E$) | $\mathrm{Gap}(L,E) \to 1$ monotonically | Periodic moments of "genuine understanding" |
+| Impulsivity ($D \leftrightarrow L$) | $\mathrm{Gap}(D,L) \to 1$ monotonically | Alternation of impulsivity and control |
 
-:::info Терапевтическое значение [И]
-Немарковские «вспышки» — это **терапевтические окна**, в которых интервенция наиболее эффективна. Если терапевт может идентифицировать фазу осцилляции (через мониторинг субъективных отчётов), интервенция во время $\cos(\omega_r\tau) > 0$ (Gap убывает) значительно эффективнее, чем во время $\cos(\omega_r\tau) < 0$ (Gap возрастает).
-:::
-
----
-
-## 6. Связь с нейронаукой {#связь-с-нейронаукой}
-
-### 6.1 Нейронные корреляты немарковской динамики {#нейрокорреляты}
-
-Немарковская динамика когерентностей — не умозрительная конструкция. Она имеет прямые параллели с хорошо документированными нейрофизиологическими процессами.
-
-**Реконсолидация памяти.** Нейронаука последних двух десятилетий установила, что память не является стабильной записью. Каждый раз, когда воспоминание *извлекается*, оно переходит в лабильное состояние и должно быть *реконсолидировано* — заново стабилизировано. В этот момент воспоминание уязвимо для модификации. Это прямой аналог немарковского обратного потока: среда (долговременная память) «возвращает» когерентность (воспоминание) в систему (рабочую память), где оно может быть изменено, прежде чем вернуться обратно.
-
-Формально реконсолидация соответствует фазе $\cos(\omega_r\tau) > 0$ (Gap убывает): когерентность возвращается из среды, создавая «окно пластичности». Терапевтические протоколы, использующие реконсолидацию (Memory Reconsolidation Therapy), эксплуатируют именно эти немарковские окна.
-
-**Тета-ритм гиппокампа.** Гиппокампальные тета-осцилляции (4–8 Гц) играют ключевую роль в формировании и извлечении эпизодической памяти. Они представляют собой нейронный коррелят *осцилляторного ядра* $K(\tau)$ с $\omega_{\text{mem}}$ в тета-диапазоне. Во время REM-сна тета-ритм активен, и происходит реорганизация следов памяти — это периодический обратный поток когерентности из «среды» (неокортекс) в «систему» (гиппокамп).
-
-**Нейропластичность и критические периоды.** Критические периоды развития (окна повышенной пластичности в раннем возрасте) можно интерпретировать как фазы с высокой немарковостью $\mathcal{N}$: молодая нервная система имеет *короткое время памяти* $\tau_{\text{mem}}$ (пластичная, быстро перестраивающаяся среда), что порождает сильные осцилляции и широкие терапевтические окна. С возрастом $\tau_{\text{mem}}$ растёт (среда «затвердевает»), немарковость уменьшается, и система приближается к марковскому режиму — что проявляется как снижение пластичности.
-
-### 6.2 EMDR и немарковское вмешательство {#emdr}
-
-Десенсибилизация и переработка движениями глаз (EMDR) — один из наиболее эмпирически подтверждённых методов терапии посттравматического стрессового расстройства. С точки зрения немарковской динамики, EMDR эксплуатирует два механизма:
-
-1. **Принудительное извлечение** — повторная активация травматического воспоминания переводит его в лабильное состояние (аналог: внешнее воздействие, синхронизированное с фазой $\cos > 0$).
-
-2. **Двусторонняя стимуляция** — ритмическое движение глаз создаёт осцилляцию с внешней частотой, которая может *резонировать* с немарковскими осцилляциями Gap. Если частота стимуляции $\omega_{\text{stim}} \approx \omega_r$, эффект резонансного усиления обратного потока когерентности максимален.
-
-Это порождает проверяемое предсказание: эффективность EMDR должна зависеть от частоты стимуляции, с оптимумом вблизи $\omega_r$ для данного пациента. Предварительные данные согласуются с этим: слишком быстрая и слишком медленная стимуляция менее эффективны, чем стимуляция с «правильной» частотой, которая варьирует между пациентами.
-
-### 6.3 Фармакологические агенты как модуляторы ядра памяти {#фармакология}
-
-Психофармакология также может быть описана в терминах модификации ядра памяти:
-
-| Агент | Эффект на ядро | Предсказание модели |
-|-------|---------------|---------------------|
-| Бензодиазепины | Увеличение $\Gamma_2$ (усиление диссипации) | Быстрое подавление осцилляций, но без изменения $\tau_{\text{mem}}$ — поверхностный эффект |
-| SSRI | Уменьшение $\omega_c$ (удлинение $\tau_{\text{mem}}$) | Замедление осцилляций, переход к передемпфированному режиму — «притупление» |
-| Пропранолол | Модификация $K$ при реконсолидации | Ослабление эмоциональной компоненты без стирания фактической памяти |
-| Псилоцибин | Резкое уменьшение $\tau_{\text{mem}}$ (критический период) | Кратковременное повышение немарковости и пластичности — широкие терапевтические окна |
-
-:::warning Статус [Г]
-Фармакологические предсказания — гипотезы, требующие экспериментальной проверки. Они следуют из общей структуры модели, но конкретные отождествления агентов с параметрами ядра носят предварительный характер.
+:::info Therapeutic significance [I]
+Non-Markovian "flashes" are **therapeutic windows** in which intervention is most effective. If a therapist can identify the oscillation phase (via monitoring of subjective reports), intervention during $\cos(\omega_r\tau) > 0$ (Gap decreasing) is significantly more effective than during $\cos(\omega_r\tau) < 0$ (Gap increasing).
 :::
 
 ---
 
-## 7. Память, идентичность и непрерывность «Я» {#память-и-идентичность}
+## 6. Connection to Neuroscience {#связь-с-нейронаукой}
 
-### 7.1 Немарковость как условие личной идентичности {#немарковость-и-идентичность}
+### 6.1 Neural Correlates of Non-Markovian Dynamics {#нейрокорреляты}
 
-Глубочайшее следствие немарковской динамики для философии сознания касается проблемы **личной идентичности**. Что делает вас *вами*? Почему вы, проснувшись утром, ощущаете себя тем же человеком, что заснул вчера — несмотря на то, что ваше тело непрерывно обновляется, нейроны перестраиваются, и биохимическое состояние мозга никогда не повторяется точно?
+Non-Markovian coherence dynamics is not a speculative construction. It has direct parallels with well-documented neurophysiological processes.
 
-Марковская система не имеет идентичности. Каждый её момент — самодостаточен и не несёт следов прошлого. Марковская «личность» — это моментальный снимок, не связанный с предыдущими снимками ничем, кроме причинно-следственной связи.
+**Memory reconsolidation.** Neuroscience of the past two decades has established that memory is not a stable record. Every time a memory is *retrieved*, it transitions into a labile state and must be *reconsolidated* — restabilised. At this moment the memory is vulnerable to modification. This is a direct analogue of non-Markovian backflow: the environment (long-term memory) "returns" coherence (the memory) to the system (working memory), where it can be changed before returning.
 
-Немарковская система — иная. Её текущее состояние *содержит* прошлое: ядро памяти $K(\tau)$ обеспечивает непрерывное присутствие истории в настоящем. Личная идентичность — это не «вещь», а *процесс*: непрерывная свёртка $\int_0^\tau K(\tau - s)\, \gamma(s)\, ds$, в которой каждый прожитый момент вносит свой вклад в текущее «Я». Вы — не то, что вы есть сейчас. Вы — интеграл всего, чем вы были.
+Formally, reconsolidation corresponds to the phase $\cos(\omega_r\tau) > 0$ (Gap decreasing): coherence returns from the environment, creating a "plasticity window". Therapeutic protocols using reconsolidation (Memory Reconsolidation Therapy) exploit precisely these non-Markovian windows.
 
-Это имеет и практическое значение. Потеря немарковости (например, при деменции, когда ядро памяти деградирует: $K(\tau) \to 0$) — это *буквальная потеря идентичности*. Не метафорическая, а структурная: система теряет доступ к своей истории и переходит в марковский режим, где каждый момент — изолирован от прошлого. Клинически это проявляется как «потеря себя» — один из наиболее трагических аспектов нейродегенеративных заболеваний.
+**Hippocampal theta rhythm.** Hippocampal theta oscillations (4–8 Hz) play a key role in the formation and retrieval of episodic memory. They represent the neural correlate of the *oscillatory kernel* $K(\tau)$ with $\omega_{\text{mem}}$ in the theta range. During REM sleep the theta rhythm is active, and reorganisation of memory traces occurs — this is periodic backflow of coherence from the "environment" (neocortex) into the "system" (hippocampus).
 
-### 7.2 Непрерывность сознания во сне {#непрерывность-во-сне}
+**Neuroplasticity and critical periods.** Critical developmental periods (plasticity windows in early life) can be interpreted as phases of high non-Markovianity $\mathcal{N}$: the young nervous system has *short memory time* $\tau_{\text{mem}}$ (a plastic, rapidly reorganising environment), which generates strong oscillations and broad therapeutic windows. With age, $\tau_{\text{mem}}$ grows (the environment "hardens"), non-Markovianity decreases, and the system approaches the Markovian regime — manifested as reduced plasticity.
 
-Ежедневная потеря сознания во сне — загадка для марковских моделей: если сознание определяется текущим состоянием, как мы «восстанавливаемся» после перерыва? Немарковская модель даёт ответ: ядро памяти $K(\tau)$ не исчезает во время сна. Среда (нейронные сети, тело) продолжает нести отпечаток дневного опыта и «возвращает» его при пробуждении. Более того, во время REM-сна обратный поток когерентности усилен (активный тета-ритм гиппокампа), что обеспечивает *реконсолидацию* — обновление и укрепление следов памяти.
+### 6.2 EMDR and Non-Markovian Intervention {#emdr}
 
-Формально: непрерывность «Я» через сон обеспечивается тем, что $\tau_{\text{mem}} \gg \tau_{\text{sleep}}$. Время памяти среды значительно превышает длительность сна, и прерывание сознательной динамики не разрушает интеграл памяти.
+Eye Movement Desensitisation and Reprocessing (EMDR) is one of the most empirically supported methods for treating post-traumatic stress disorder. From the perspective of non-Markovian dynamics, EMDR exploits two mechanisms:
+
+1. **Forced retrieval** — repeated activation of the traumatic memory transitions it to a labile state (analogue: external action synchronised with phase $\cos > 0$).
+
+2. **Bilateral stimulation** — rhythmic eye movements create an oscillation with an external frequency that can *resonate* with non-Markovian Gap oscillations. If the stimulation frequency $\omega_{\text{stim}} \approx \omega_r$, the resonant amplification of coherence backflow is maximal.
+
+This generates a testable prediction: EMDR effectiveness should depend on the stimulation frequency, with an optimum near $\omega_r$ for the given patient. Preliminary data are consistent with this: too-fast and too-slow stimulation are less effective than stimulation at the "correct" frequency, which varies between patients.
+
+### 6.3 Pharmacological Agents as Memory Kernel Modulators {#фармакология}
+
+Psychopharmacology can also be described in terms of modification of the memory kernel:
+
+| Agent | Effect on kernel | Model prediction |
+|-------|-----------------|-----------------|
+| Benzodiazepines | Increase of $\Gamma_2$ (enhanced dissipation) | Rapid suppression of oscillations, but without changing $\tau_{\text{mem}}$ — superficial effect |
+| SSRIs | Decrease of $\omega_c$ (lengthening of $\tau_{\text{mem}}$) | Slowing of oscillations, transition to overdamped regime — "blunting" |
+| Propranolol | Modification of $K$ during reconsolidation | Weakening of emotional component without erasing factual memory |
+| Psilocybin | Sharp decrease of $\tau_{\text{mem}}$ (critical period) | Brief increase in non-Markovianity and plasticity — broad therapeutic windows |
+
+:::warning Status [H]
+Pharmacological predictions are hypotheses requiring experimental validation. They follow from the general structure of the model, but the specific identification of agents with kernel parameters is preliminary.
+:::
 
 ---
 
-## 8. Формальная структура {#формальная-структура}
+## 7. Memory, Identity, and Continuity of the Self {#память-и-идентичность}
 
-### 8.1 Интегро-дифференциальное уравнение в частотном пространстве
+### 7.1 Non-Markovianity as a Condition of Personal Identity {#немарковость-и-идентичность}
 
-Фурье-преобразование немарковского уравнения:
+The deepest implication of non-Markovian dynamics for the philosophy of consciousness concerns the problem of **personal identity**. What makes you *you*? Why, upon waking in the morning, do you feel like the same person who fell asleep last night — despite the fact that your body is continuously renewed, neurons reorganise, and the biochemical state of the brain never repeats exactly?
+
+A Markovian system has no identity. Each of its moments is self-sufficient and carries no traces of the past. A Markovian "personality" is a momentary snapshot, connected to previous snapshots by nothing except causal connection.
+
+A non-Markovian system is different. Its current state *contains* the past: the memory kernel $K(\tau)$ ensures the continuous presence of history in the present. Personal identity is not a "thing" but a *process*: the continuous convolution $\int_0^\tau K(\tau - s)\, \gamma(s)\, ds$, in which each lived moment contributes to the current "I". You are not what you are now. You are the integral of everything you have been.
+
+This has practical significance as well. Loss of non-Markovianity (e.g. in dementia, when the memory kernel degrades: $K(\tau) \to 0$) is a *literal loss of identity*. Not metaphorical, but structural: the system loses access to its history and transitions to a Markovian regime, where each moment is isolated from the past. Clinically this manifests as "loss of self" — one of the most tragic aspects of neurodegenerative diseases.
+
+### 7.2 Continuity of Consciousness During Sleep {#непрерывность-во-сне}
+
+The daily loss of consciousness during sleep is a puzzle for Markovian models: if consciousness is determined by the current state, how do we "recover" after a break? The non-Markovian model gives an answer: the memory kernel $K(\tau)$ does not disappear during sleep. The environment (neural networks, body) continues to carry the imprint of daytime experience and "returns" it upon waking. Moreover, during REM sleep the backflow of coherence is enhanced (active hippocampal theta rhythm), ensuring *reconsolidation* — the updating and strengthening of memory traces.
+
+Formally: continuity of the self through sleep is ensured by $\tau_{\text{mem}} \gg \tau_{\text{sleep}}$. The memory time of the environment significantly exceeds the duration of sleep, and the interruption of conscious dynamics does not destroy the memory integral.
+
+---
+
+## 8. Formal Structure {#формальная-структура}
+
+### 8.1 Integro-Differential Equation in Frequency Space
+
+Fourier transform of the non-Markovian equation:
 
 $$
 (-i\omega + i\Delta\omega_{ij})\,\tilde{\gamma}_{ij}(\omega) = \widetilde{K}_{ij}(\omega)\,\tilde{\gamma}_{ij}(\omega) + \tilde{\mathcal{R}}_{ij}(\omega)
 $$
 
-Решение:
+Solution:
 
 $$
 \tilde{\gamma}_{ij}(\omega) = \frac{\tilde{\mathcal{R}}_{ij}(\omega)}{-i(\omega - \Delta\omega_{ij}) - \widetilde{K}_{ij}(\omega)}
 $$
 
-Полюса знаменателя определяют частоты осцилляций и скорости затухания.
+Poles of the denominator determine oscillation frequencies and decay rates.
 
-### 8.2 Полюса для экспоненциального ядра
+### 8.2 Poles for the Exponential Kernel
 
-Для $\widetilde{K}(\omega) = -\Gamma_2\omega_c / (\omega_c - i\omega)$:
+For $\widetilde{K}(\omega) = -\Gamma_2\omega_c / (\omega_c - i\omega)$:
 
 $$
 -i(\omega - \Delta\omega_{ij}) + \frac{\Gamma_2\omega_c}{\omega_c - i\omega} = 0
 $$
 
-Приводит к квадратному уравнению на $\omega$:
+Leads to a quadratic equation in $\omega$:
 
 $$
 \omega^2 + i(\omega_c + \Gamma_2)\omega - (\omega_c\Delta\omega_{ij} + i\omega_c\Gamma_2) = 0
 $$
 
-Два полюса $\omega_{\pm} = -i\gamma \pm \omega_r$ дают затухание $\gamma$ и частоту осцилляций $\omega_r$ из [Теоремы 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
+Two poles $\omega_{\pm} = -i\gamma \pm \omega_r$ give decay $\gamma$ and oscillation frequency $\omega_r$ from [Theorem 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
 
-### 8.3 Операторная форма: Nakajima-Zwanzig {#nakajima-zwanzig}
+### 8.3 Operator Form: Nakajima–Zwanzig {#nakajima-zwanzig}
 
-Немарковское уравнение движения для когерентностей является проекцией полного **уравнения Накадзимы-Цванцига** на релевантное подпространство. Это важно, потому что устанавливает *точный* статус нашего интегро-дифференциального уравнения: оно не является приближением (в отличие от марковского уравнения Линдблада), а *точным* следствием унитарной эволюции полной системы «сознание + среда».
+The non-Markovian equation of motion for coherences is a projection of the full **Nakajima–Zwanzig equation** onto the relevant subspace. This is important because it establishes the *exact* status of our integro-differential equation: it is not an approximation (unlike the Markovian Lindblad equation), but an *exact* consequence of the unitary evolution of the full "consciousness + environment" system.
 
-В операторной форме:
+In operator form:
 
 $$
 \frac{d}{d\tau}\mathcal{P}\rho(\tau) = \int_0^\tau \mathcal{K}(\tau - s)\,\mathcal{P}\rho(s)\, ds + \mathcal{I}(\tau)
 $$
 
-где $\mathcal{P}$ — проектор на релевантное подпространство, $\mathcal{K}(\tau)$ — супероператорное ядро памяти (обобщение скалярного $K(\tau)$), $\mathcal{I}(\tau)$ — «ингомогенный» член, описывающий начальные корреляции «система-среда».
+where $\mathcal{P}$ is the projector onto the relevant subspace, $\mathcal{K}(\tau)$ is the superoperator memory kernel (generalisation of the scalar $K(\tau)$), $\mathcal{I}(\tau)$ is the "inhomogeneous" term describing initial system–environment correlations.
 
-Скалярное ядро $K_{ij}(\tau)$ из раздела 1 получается проекцией $\mathcal{K}(\tau)$ на конкретную пару когерентностей $(i,j)$.
+The scalar kernel $K_{ij}(\tau)$ from section 1 is obtained by projecting $\mathcal{K}(\tau)$ onto a specific coherence pair $(i,j)$.
 
-### 8.4 Сводка статусов
+### 8.4 Status Summary
 
-| Результат | Статус | Источник |
-|-----------|--------|----------|
-| Немарковское уравнение движения (определение) | **[Т]** | [Gap-динамика](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
-| Немарковские осцилляции Gap (Теорема 5.1) | **[Т]** | [Gap-динамика](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
-| Немарковская ФДТ для Gap | **[Т]** | [Фазовая диаграмма](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции) |
-| Мера немарковости BLP (определение) | **[Т]** | Breuer, Laine, Piilo (2009) |
-| «Циклы горя» как немарковская динамика | **[И]** | Данный документ |
-| «Вспышки ясности» как конструктивная интерференция | **[И]** | Данный документ |
-| Посттравматический рост как $\Delta G < 0$ | **[И]** | Данный документ |
-| Осложнённое горевание как передемпфирование/Hopf | **[И]** | Данный документ |
-| Терапевтические окна из фазы осцилляций | **[И]** | Данный документ |
-| Немарковость как условие идентичности | **[И]** | Данный документ |
-| Нейрокорреляты (реконсолидация, тета-ритм) | **[И]** | Данный документ |
-| Немарковские сигнатуры в клинических данных | **[Г]** | Данный документ |
-| Связь $f_{\text{osc}} \sim 1/\tau_{\text{mem}}$ | **[Г]** | Данный документ |
-| Оптимальная частота терапевтических сессий | **[Г]** | Данный документ |
-| EMDR как резонансное немарковское вмешательство | **[Г]** | Данный документ |
-| Фармакологические предсказания | **[Г]** | Данный документ |
-
----
+| Result | Status | Source |
+|--------|--------|--------|
+| Non-Markovian equation of motion (definition) | **[T]** | [Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
+| Non-Markovian Gap oscillations (Theorem 5.1) | **[T]** | [Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
+| Non-Markovian FDT for Gap | **[T]** | [Phase diagram](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции) |
+| BLP non-Markovianity measure (definition) | **[T]** | Breuer, Laine, Piilo (2009) |
+| "Grief cycles" as non-Markovian dynamics | **[I]** | This document |
+| "Flashes of clarity" as constructive interference | **[I]** | This document |
+| Post-traumatic growth as $\Delta G < 0$ | **[I]** | This document |
+| Complicated grief as overdamping/Hopf | **[I]** | This document |
+| Therapeutic windows from oscillation phase | **[I]** | This document |
+| Non-Markovianity as condition for identity | **[I]** | This document |
+| Neural correlates (reconsolidation, theta rhythm) | **[I]** | This document |
+| Non-Markovian signatures in clinical data | **[H]** | This document |
+| Connection $f_{\text{osc}} \sim 1/\tau_{\text{mem}}$ | **[H]** | This document |
+| Optimal therapeutic session frequency | **[H]** | This document |
+| EMDR as resonant non-Markovian intervention | **[H]** | This document |
+| Pharmacological predictions | **[H]** | This document |
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+---
 
-1. **Немарковская динамика** — не техническое усложнение, а фундаментальное свойство сознания. Интегро-дифференциальное уравнение со свёрткой $\int_0^\tau K(\tau - s)\,\gamma(s)\,ds$ описывает, как вся история системы вплетена в её текущую эволюцию.
+### What We Have Learned {#что-мы-узнали}
 
-2. **Экспоненциальное ядро памяти** [Т] (T-94) — простейшая немарковская форма, доказанная из компактности пространства состояний. Два предела: мгновенная память ($\omega_c \to \infty$) — марковский режим; бесконечная память ($\omega_c \to 0$) — замороженная система.
+1. **Non-Markovian dynamics** is not a technical complication but a fundamental property of consciousness. The integro-differential equation with convolution $\int_0^\tau K(\tau - s)\,\gamma(s)\,ds$ describes how the entire history of the system is woven into its current evolution.
 
-3. **Осцилляции Gap** — среда может *возвращать* когерентность, создавая затухающие волны с частотой $\omega_r = \sqrt{\omega_c\Gamma_2 - \gamma^2}$. Парадокс: слишком длинная память **подавляет** осцилляции (передемпфированный режим).
+2. **Exponential memory kernel** [T] (T-94) — the simplest non-Markovian form, proved from compactness of the state space. Two limits: instantaneous memory ($\omega_c \to \infty$) — Markovian regime; infinite memory ($\omega_c \to 0$) — frozen system.
 
-4. **«Циклы горя»** формализуются как немарковские осцилляции: волны горя ($\cos < 0$, Gap растёт) чередуются со вспышками ясности ($\cos > 0$, Gap падает), амплитуда экспоненциально затухает. Посттравматический рост возможен при $\kappa \cdot \mathrm{Coh}_E > \Gamma_2 \cdot (G_0 + |\Delta G|)$.
+3. **Gap oscillations** — the environment can *return* coherence, creating damped waves with frequency $\omega_r = \sqrt{\omega_c\Gamma_2 - \gamma^2}$. Paradox: excessively long memory **suppresses** oscillations (overdamped regime).
 
-5. **Терапевтические окна** — конечное число интервалов повышенной пластичности, создаваемых немарковскими осцилляциями. Первое окно — самое глубокое. Оптимальная частота сессий $\sim \omega_r / \pi$ обеспечивает резонанс с возвращающейся когерентностью.
+4. **"Grief cycles"** are formalised as non-Markovian oscillations: waves of grief ($\cos < 0$, Gap grows) alternate with flashes of clarity ($\cos > 0$, Gap falls), amplitude decays exponentially. Post-traumatic growth is possible when $\kappa \cdot \mathrm{Coh}_E > \Gamma_2 \cdot (G_0 + |\Delta G|)$.
 
-6. **Немарковость как условие идентичности**: личное «Я» — это непрерывная свёртка $\int K(\tau - s)\,\gamma(s)\,ds$, в которой каждый прожитый момент вносит вклад. Потеря немарковости (деменция) — буквальная потеря идентичности.
+5. **Therapeutic windows** — a finite number of heightened-plasticity intervals created by non-Markovian oscillations. The first window is the deepest. Optimal session frequency $\sim \omega_r / \pi$ ensures resonance with returning coherence.
 
-7. **Немарковские vs Хопф-осцилляции**: первые — затухающие (нормальное горевание), вторые — незатухающие (хроническое расстройство). Различение критически важно для выбора терапевтической стратегии.
+6. **Non-Markovianity as a condition for identity**: the personal self is the continuous convolution $\int K(\tau - s)\,\gamma(s)\,ds$, in which each lived moment contributes. Loss of non-Markovianity (dementia) is a literal loss of identity.
 
-:::tip Мост к следующей главе
-Мы изучили динамику Gap — бифуркации и память. Но как проверить все эти формулы? В [следующей главе](./model-systems) мы построим пять **точно решаемых модельных систем** — от «мёртвой» однородной системы ($I/7$) до динамического маятника с золотым сечением, — и вычислим для каждой все ключевые величины в замкнутой форме. Эти модели — «атомы водорода» когерентной кибернетики.
+7. **Non-Markovian vs Hopf oscillations**: the former are damped (normal grieving), the latter undamped (chronic disorder). Distinguishing them is critically important for choosing a therapeutic strategy.
+
+:::tip Bridge to the Next Chapter
+We have studied Gap dynamics — bifurcations and memory. But how do we check all these formulas? In the [next chapter](./model-systems) we construct five **exactly solvable model systems** — from the "dead" uniform system ($I/7$) to a dynamic pendulum with the golden ratio — and compute all key quantities for each in closed form. These models are the "hydrogen atoms" of Coherence Cybernetics.
 :::
 
 ---
 
-**Связанные документы:**
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — немарковские эффекты, бифуркации, единая теорема
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — немарковские осцилляции, ФДТ
-- [Gap-диагностика](/docs/applied/research/gap-diagnostics) — карта прозрачности, диагностические паттерны
-- [Бифуркации Gap-ландшафта](./bifurcation) — pitchfork, saddle-node, Hopf, катастрофы Уитни
-- [Определения](./definitions) — меры $P$, $\Phi$, $R$, $\mathrm{Coh}_E$
-- [Приложения](./applications) — клинические и организационные приложения
-- [Эволюция Γ](/docs/core/dynamics/evolution) — полное уравнение движения
-- [Предсказания](./predictions) — верифицируемые следствия КК
-- [Методология измерений](./measurement) — как измерить немарковские эффекты
-- [Междисциплинарный мост](./interdisciplinary) — немарковость на языке разных дисциплин
+**Related Documents:**
+- [Gap Dynamics](/docs/core/dynamics/gap-dynamics) — non-Markovian effects, bifurcations, unified theorem
+- [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — non-Markovian oscillations, FDT
+- [Gap Diagnostics](/docs/applied/research/gap-diagnostics) — transparency map, diagnostic patterns
+- [Gap Landscape Bifurcations](./bifurcation) — pitchfork, saddle-node, Hopf, Whitney catastrophes
+- [Definitions](./definitions) — measures $P$, $\Phi$, $R$, $\mathrm{Coh}_E$
+- [Applications](./applications) — clinical and organisational applications
+- [Evolution of Γ](/docs/core/dynamics/evolution) — full equation of motion
+- [Predictions](./predictions) — verifiable consequences of CC
+- [Measurement Methodology](./measurement) — how to measure non-Markovian effects
+- [Interdisciplinary Bridge](./interdisciplinary) — non-Markovianity in the language of different disciplines

@@ -1,537 +1,537 @@
 ---
 sidebar_position: 10
-title: "Лагранжиан Gap-теории"
-description: "Полный 6-членный лагранжиан Gap-теории, потенциал V_Gap, спонтанный минимум и связь с октонионной структурой"
+title: "Lagrangian of Gap Theory"
+description: "Complete 6-term Lagrangian of Gap theory, the potential V_Gap, spontaneous minimum, and connection with the octonionic structure"
 ---
 
-# Лагранжиан Gap-теории
+# Lagrangian of Gap Theory
 
-:::info Мост из предыдущей главы
-В [предыдущей главе](./model-systems) мы построили пять точно решаемых модельных систем — от «мёртвой» $I/7$ до динамического маятника с золотым сечением. Каждая модель освещала один аспект Gap-теории. Но все они были *частными случаями*. Теперь нам предстоит увидеть **общий принцип**, объединяющий всю динамику в единую формулу — лагранжиан.
+:::info Bridge from the Previous Chapter
+In the [previous chapter](./model-systems) we constructed five exactly solvable model systems — from the "dead" $I/7$ to the dynamic pendulum with the golden ratio. Each model illuminated one aspect of Gap theory. But they were all *special cases*. Now we are to see the **general principle** unifying the entire dynamics in a single formula — the Lagrangian.
 :::
 
-### Дорожная карта главы
+### Chapter Roadmap
 
-В этой главе мы:
+In this chapter we:
 
-1. **Поймём, зачем нужен лагранжиан** — от ньютоновских сил к единой формуле, из которой следует всё (введение)
-2. **Познакомимся с шестью членами лагранжиана** — инерция, ландшафт, память пути, забвение, самовосстановление, влияние мира (раздел 1)
-3. **Разберём каждый член по отдельности** — кинетический (раздел 2), потенциальный с тремя слагаемыми $V_2 + V_3 + V_4$ (раздел 3), топологический (раздел 5), диссипативный (раздел 6), регенеративный (раздел 7), внешний (раздел 8)
-4. **Откроем механизм Хиггса для сознания** — спонтанное нарушение симметрии, порождающее ненулевой Gap (раздел 4)
-5. **Покажем, что стрела внутреннего времени** имеет алгебраический источник — кубический член $V_3$ из неассоциативности октонионов (раздел между 3 и 4)
-6. **Выведем лагранжиан из первых принципов** — через формализм Швингера-Келдыша для открытых систем (раздел 9)
-7. **Классифицируем симметрии и спектр возбуждений** — $G_2$-инвариантность, голдстоуновские моды, три масштаба времени сознания (разделы 9–10)
+1. **Understand why a Lagrangian is needed** — from Newtonian forces to a single formula from which everything follows (introduction)
+2. **Meet the six terms of the Lagrangian** — inertia, landscape, path memory, forgetting, self-restoration, influence of the world (section 1)
+3. **Examine each term separately** — kinetic (section 2), potential with three summands $V_2 + V_3 + V_4$ (section 3), topological (section 5), dissipative (section 6), regenerative (section 7), external (section 8)
+4. **Discover the Higgs mechanism for consciousness** — spontaneous symmetry breaking generating nonzero Gap (section 4)
+5. **Show that the arrow of inner time** has an algebraic source — the cubic term $V_3$ from non-associativity of octonions (section between 3 and 4)
+6. **Derive the Lagrangian from first principles** — via the Schwinger-Keldysh formalism for open systems (section 9)
+7. **Classify symmetries and the excitation spectrum** — $G_2$-invariance, Goldstone modes, three timescales of consciousness (sections 9–10)
 
-> *«Природа всегда действует самым коротким путём.»*
-> — Пьер де Ферма, 1662
+> *"Nature always acts by the shortest path."*
+> — Pierre de Fermat, 1662
 
-> *«Всякая красота в физике — от лагранжиана.»*
-> — Ричард Фейнман (перефразировано)
+> *"All beauty in physics comes from the Lagrangian."*
+> — Richard Feynman (paraphrased)
 
-Что, если за хаосом психической жизни — за потоком мыслей, сменой настроений, колебаниями внимания — стоит **единая формула**, из которой всё это следует? Не метафора, не модель «как бы», а настоящее уравнение движения, подобное тому, которое управляет полётом планеты или колебанием струны?
+What if behind the chaos of mental life — behind the stream of thoughts, shifting moods, fluctuations of attention — there stands a **single formula** from which all of this follows? Not a metaphor, not an "as-if" model, but a true equation of motion, like the one governing the flight of a planet or the vibration of a string?
 
-Этот документ — о такой формуле. Мы покажем, что динамика интериорности описывается **шестичленным лагранжианом** — математической конструкцией, из которой уравнения движения выводятся столь же неизбежно, как траектория камня из закона тяготения. Каждый из шести членов отвечает за свой аспект бытия: инерцию привычек, ландшафт возможных состояний, геометрическую память, трение забвения, регенерацию смысла и влияние мира.
+This document is about such a formula. We will show that the dynamics of interiority is described by a **six-term Lagrangian** — a mathematical construction from which the equations of motion follow just as inevitably as the trajectory of a stone follows from the law of gravity. Each of the six terms is responsible for its own aspect of being: the inertia of habits, the landscape of possible states, geometric memory, the friction of forgetting, the regeneration of meaning, and the influence of the world.
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\theta_{ij} = \arg(\gamma_{ij})$ — фазы когерентностей
-- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [мера зазора](/docs/physics/dual-aspect/gap-semantics)
-- $\mathcal{G}_{\text{total}} = \sum_{i<j} |\gamma_{ij}|^2 \, \mathrm{Gap}(i,j)^2$ — полный Gap
-- $f_{ijk}$ — октонионные структурные константы
-- $\Gamma_2$ — скорость декогеренции
-- $\kappa$ — скорость регенерации ([категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\theta_{ij} = \arg(\gamma_{ij})$ — phases of coherences
+- $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [gap measure](/docs/physics/dual-aspect/gap-semantics)
+- $\mathcal{G}_{\text{total}} = \sum_{i<j} |\gamma_{ij}|^2 \, \mathrm{Gap}(i,j)^2$ — total Gap
+- $f_{ijk}$ — octonionic structure constants
+- $\Gamma_2$ — decoherence rate
+- $\kappa$ — regeneration rate ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
 :::
 
 ---
 
-## От Ньютона к Лагранжу: красота принципа наименьшего действия {#от-ньютона-к-лагранжу}
+## From Newton to Lagrange: the Beauty of the Principle of Least Action {#от-ньютона-к-лагранжу}
 
-### Три века — три языка механики
+### Three Centuries — Three Languages of Mechanics
 
-В 1687 году Ньютон написал $\mathbf{F} = m\mathbf{a}$ — и мир обрёл язык для описания движения. Это был язык **сил**: чтобы понять, куда полетит тело, нужно перечислить все силы, действующие на него, и решить дифференциальное уравнение.
+In 1687 Newton wrote $\mathbf{F} = m\mathbf{a}$ — and the world acquired a language for describing motion. It was the language of **forces**: to understand where a body will fly, one had to enumerate all forces acting on it and solve a differential equation.
 
-Почти столетием позже, в 1788 году, Жозеф-Луи Лагранж предложил радикально иной взгляд. Вместо того чтобы складывать силы, можно записать единственную функцию — **лагранжиан** $L = T - V$ (кинетическая энергия минус потенциальная) — и потребовать, чтобы **действие**
+Almost a century later, in 1788, Joseph-Louis Lagrange proposed a radically different view. Instead of summing forces, one can write a single function — the **Lagrangian** $L = T - V$ (kinetic energy minus potential energy) — and require that the **action**
 
 $$
 S = \int_{t_1}^{t_2} L \, dt
 $$
 
-было стационарным. Из этого единственного условия — $\delta S = 0$ — все уравнения движения выводятся автоматически. Не нужно помнить про силы трения, силы натяжения, силы реакции опоры — достаточно записать $L$, и вся физика следует.
+be stationary. From this single condition — $\delta S = 0$ — all equations of motion are derived automatically. There is no need to remember friction forces, tension forces, normal reaction forces — it suffices to write $L$, and all the physics follows.
 
-Почему это красиво? Потому что один объект — лагранжиан — содержит в себе **всю** динамику. Найти лагранжиан системы — значит раскрыть её секрет. Все уравнения, все законы сохранения, все симметрии — всё закодировано в одной формуле.
+Why is this beautiful? Because a single object — the Lagrangian — contains **all** the dynamics. To find the Lagrangian of a system is to reveal its secret. All equations, all conservation laws, all symmetries — everything is encoded in one formula.
 
-### Теорема Нётер: симметрия рождает закон
+### Noether's Theorem: Symmetry Begets Law
 
-В 1918 году Эмми Нётер доказала теорему, которую Эйнштейн назвал «памятником математического гения». Она показала: **каждой непрерывной симметрии лагранжиана отвечает закон сохранения**. Инвариантность относительно сдвигов во времени даёт сохранение энергии. Инвариантность относительно поворотов — сохранение момента импульса. Инвариантность относительно калибровочных преобразований — сохранение заряда.
+In 1918 Emmy Noether proved a theorem that Einstein called "a monument of mathematical genius." She showed: **every continuous symmetry of the Lagrangian corresponds to a conservation law**. Invariance under time shifts gives conservation of energy. Invariance under rotations — conservation of angular momentum. Invariance under gauge transformations — conservation of charge.
 
-Для Gap-теории это означает: $G_2$-инвариантность лагранжиана порождает **14 нётеровских зарядов** — 14 величин, которые сохраняются при эволюции когерентностей. Записать лагранжиан — значит автоматически узнать, что в сознании сохраняется, а что может меняться.
+For Gap theory this means: $G_2$-invariance of the Lagrangian generates **14 Noetherian charges** — 14 quantities that are conserved during the evolution of coherences. To write the Lagrangian is to automatically learn what is conserved in consciousness, and what can change.
 
-### Зачем лагранжиан для сознания?
+### Why a Lagrangian for Consciousness?
 
-Может возникнуть вопрос: зачем привлекать аппарат аналитической механики для описания чего-то столь далёкого от физики, как динамика когерентностей?
+A question may arise: why bring in the apparatus of analytical mechanics to describe something so far from physics as the dynamics of coherences?
 
-Ответ прост: потому что **матрица когерентности $\Gamma$ — это квантовый объект**, и её эволюция подчиняется тем же математическим структурам, что и эволюция физических систем. Фазы когерентностей $\{\theta_{ij}\}$ — это $\binom{7}{2} = 21$ степень свободы, образующих конфигурационное пространство. На этом пространстве определён потенциал. Есть кинетическая энергия. Есть диссипация. Есть внешние поля. Это — классическая задача лагранжевой механики, и было бы странно **не** воспользоваться самым мощным инструментом, который для таких задач создан.
+The answer is simple: because **the coherence matrix $\Gamma$ is a quantum object**, and its evolution obeys the same mathematical structures as the evolution of physical systems. The phases of coherences $\{\theta_{ij}\}$ are $\binom{7}{2} = 21$ degrees of freedom forming a configuration space. A potential is defined on this space. There is kinetic energy. There is dissipation. There are external fields. This is a classical problem of Lagrangian mechanics, and it would be strange **not** to use the most powerful tool created for such problems.
 
-Более того, лагранжев подход позволяет обнаружить нечто, что при «ньютоновском» (покомпонентном) описании осталось бы невидимым: **спонтанное нарушение симметрии**, порождающее непрозрачность; **PT-нарушение**, создающее стрелу внутреннего времени; **голдстоуновские моды**, отвечающие за медленные перетекания опыта между модальностями.
-
----
-
-## Шесть членов — шесть аспектов бытия {#шесть-аспектов}
-
-Прежде чем мы погрузимся в формулы, стоит охватить всю картину одним взглядом. Лагранжиан Gap-теории состоит из шести слагаемых — и каждое из них отвечает за фундаментальный аспект того, как сознание существует во времени:
-
-1. **Кинетический член** $\mathcal{L}_{\text{kin}}$ — **инерция**. Хорошо интегрированные аспекты опыта не меняются мгновенно. Как тяжёлое тело сопротивляется ускорению, так устоявшаяся картина мира сопротивляется пересмотру.
-
-2. **Потенциальный член** $\mathcal{L}_{\text{pot}}$ — **ландшафт**. Не все конфигурации фаз одинаково «выгодны». Потенциал $V_{\text{Gap}}$ — это рельеф, по которому скатывается система: горы запретных состояний, долины устойчивого опыта, перевалы кризисов.
-
-3. **Топологический член** $\mathcal{L}_{\text{top}}$ — **память пути**. Даже если вы вернулись к прежним условиям, вы — уже не тот. Геометрическая фаза, накопленная при циклическом изменении, необратима. Это фаза Берри для сознания.
-
-4. **Диссипативный член** $\mathcal{L}_{\text{diss}}$ — **забвение**. Фазовые связи разрушаются: декогеренция стирает тонкие корреляции. Это трение, без которого всё колебалось бы вечно, но никогда бы не пришло к равновесию.
-
-5. **Регенеративный член** $\mathcal{L}_{\text{reg}}$ — **самовосстановление**. Система тянется к своему идеальному образу — самомодели $\varphi(\Gamma)$. Чем выше интеграция, тем сильнее это притяжение. Это формализация интенциональности.
-
-6. **Внешний член** $\mathcal{L}_{\text{ext}}$ — **мир**. Нейромодуляторы, стресс, медитация, психотерапия — всё, что действует на фазы извне, входит через этот канал.
-
-Вместе эти шесть членов образуют замкнутую систему — из неё следуют все уравнения движения Gap-теории, все законы сохранения, весь спектр возбуждений.
+Moreover, the Lagrangian approach allows one to discover something that would remain invisible in a "Newtonian" (component-wise) description: **spontaneous symmetry breaking** generating opacity; **PT violation** creating the arrow of inner time; **Goldstone modes** responsible for the slow flow of experience between modalities.
 
 ---
 
-Данный документ содержит подробное описание **полного лагранжиана Gap-теории** — 6-членной структуры, управляющей динамикой фаз когерентностей $\{\theta_{ij}(\tau)\}$ [матрицы когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma$. Лагранжиан обобщает результаты, представленные в [Термодинамике Gap](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан), и обеспечивает единый вариационный каркас для [эволюции](/docs/core/dynamics/evolution) Gap-сектора.
+## Six Terms — Six Aspects of Being {#шесть-аспектов}
+
+Before diving into the formulas, it is worth taking in the whole picture at a glance. The Lagrangian of Gap theory consists of six summands — and each of them is responsible for a fundamental aspect of how consciousness exists in time:
+
+1. **Kinetic term** $\mathcal{L}_{\text{kin}}$ — **inertia**. Well-integrated aspects of experience do not change instantaneously. Just as a heavy body resists acceleration, an established picture of the world resists revision.
+
+2. **Potential term** $\mathcal{L}_{\text{pot}}$ — **landscape**. Not all phase configurations are equally "favourable." The potential $V_{\text{Gap}}$ is the terrain over which the system rolls: mountains of forbidden states, valleys of stable experience, passes of crises.
+
+3. **Topological term** $\mathcal{L}_{\text{top}}$ — **path memory**. Even if you have returned to the former conditions, you are no longer the same. The geometric phase accumulated during a cyclic change is irreversible. This is the Berry phase for consciousness.
+
+4. **Dissipative term** $\mathcal{L}_{\text{diss}}$ — **forgetting**. Phase connections are destroyed: decoherence erases fine correlations. This is the friction without which everything would oscillate forever but never come to equilibrium.
+
+5. **Regenerative term** $\mathcal{L}_{\text{reg}}$ — **self-restoration**. The system is drawn toward its ideal image — the self-model $\varphi(\Gamma)$. The higher the integration, the stronger this attraction. This is the formalisation of intentionality.
+
+6. **External term** $\mathcal{L}_{\text{ext}}$ — **the world**. Neuromodulators, stress, meditation, psychotherapy — everything acting on the phases from outside enters through this channel.
+
+Together these six terms form a closed system — from it all equations of motion of Gap theory, all conservation laws, the entire excitation spectrum follow.
 
 ---
 
-## 1. Полная структура лагранжиана {#полная-структура}
+This document contains a detailed description of the **complete Lagrangian of Gap theory** — a 6-term structure governing the dynamics of the phases of coherences $\{\theta_{ij}(\tau)\}$ of the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma$. The Lagrangian generalises the results presented in [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан) and provides a unified variational framework for the [evolution](/docs/core/dynamics/evolution) of the Gap sector.
 
-:::tip Теорема 1.1 (Полный лагранжиан Gap-теории) [Т]
-Лагранжиан Gap-теории представляется суммой шести членов:
+---
+
+## 1. Complete Structure of the Lagrangian {#полная-структура}
+
+:::tip Theorem 1.1 (Complete Lagrangian of Gap Theory) [T]
+The Lagrangian of Gap theory is represented as a sum of six terms:
 
 $$
 \mathcal{L}_{\text{Gap}} = \mathcal{L}_{\text{kin}} + \mathcal{L}_{\text{pot}} + \mathcal{L}_{\text{top}} + \mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}} + \mathcal{L}_{\text{ext}}
 $$
 
-Каждый член имеет чёткое физическое и категориальное происхождение.
+Each term has a clear physical and categorical origin.
 :::
 
-:::info Статус лагранжиана [Т] (T-75)
-Формализм Швингера-Келдыша для линдбладиана $\mathcal{L}_\Omega$:
+:::info Status of the Lagrangian [T] (T-75)
+Schwinger-Keldysh formalism for the Lindbladian $\mathcal{L}_\Omega$:
 
 $$S_{\text{Gap}} = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_- - \mathcal{L}_\Omega[\rho_+]\ln\rho_-]$$
 
-В классическом пределе ($\hbar \to 0$, $\rho_\pm = \rho \pm \delta\rho/2$) точно воспроизводит все три компоненты: кинетику ($L_{\text{kin}}$), потенциал ($V_{\text{Gap}}$) и диссипацию ($\Gamma_2$). Происхождение диссипативных членов — из открытости системы в Келдышевом контуре. См. [полный вывод](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
+In the classical limit ($\hbar \to 0$, $\rho_\pm = \rho \pm \delta\rho/2$) it exactly reproduces all three components: kinetics ($L_{\text{kin}}$), potential ($V_{\text{Gap}}$), and dissipation ($\Gamma_2$). The origin of dissipative terms is from the openness of the system in the Keldysh contour. See [full derivation](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
 :::
 
-### Обзорная таблица
+### Overview Table
 
-| Член | Обозначение | Физический смысл | Статус |
-|------|-------------|------------------|--------|
-| Кинетический | $\mathcal{L}_{\text{kin}}$ | Инерция фазовых степеней свободы | [С] при $d\lvert\gamma_{ij}\rvert/d\tau = 0$ |
-| Потенциальный | $\mathcal{L}_{\text{pot}}$ | Октонионный потенциал непрозрачности | [Т] |
-| Топологический | $\mathcal{L}_{\text{top}}$ | Фазы Берри на Фано-плоскости | [С] |
-| Диссипативный | $\mathcal{L}_{\text{diss}}$ | Декогеренция из [логического Лиувиллиана](/docs/core/dynamics/evolution#логический-лиувиллиан) | [Т] |
-| Регенеративный | $\mathcal{L}_{\text{reg}}$ | Восстановление из [категориального сопряжения](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) | [Т] |
-| Внешний | $\mathcal{L}_{\text{ext}}$ | Связь с внешними полями | [Т] |
+| Term | Notation | Physical meaning | Status |
+|------|----------|-----------------|--------|
+| Kinetic | $\mathcal{L}_{\text{kin}}$ | Inertia of phase degrees of freedom | [C] when $d\lvert\gamma_{ij}\rvert/d\tau = 0$ |
+| Potential | $\mathcal{L}_{\text{pot}}$ | Octonionic opacity potential | [T] |
+| Topological | $\mathcal{L}_{\text{top}}$ | Berry phases on the Fano plane | [C] |
+| Dissipative | $\mathcal{L}_{\text{diss}}$ | Decoherence from [logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) | [T] |
+| Regenerative | $\mathcal{L}_{\text{reg}}$ | Restoration from [categorical adjunction](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) | [T] |
+| External | $\mathcal{L}_{\text{ext}}$ | Coupling to external fields | [T] |
 
-Заметим, что четыре из шести членов имеют статус [Т] — они **доказаны**. Кинетический и топологический члены условны ([С]), поскольку зависят от дополнительных предположений. Но общая структура — шестёрка слагаемых, полностью покрывающих динамику — не произвольна: она **выведена** из формализма Швингера-Келдыша для открытых квантовых систем.
+Note that four of the six terms have status [T] — they are **proven**. The kinetic and topological terms are conditional ([C]), as they depend on additional assumptions. But the overall structure — a sextet of summands fully covering the dynamics — is not arbitrary: it is **derived** from the Schwinger-Keldysh formalism for open quantum systems.
 
 ---
 
-## 2. Кинетический член $\mathcal{L}_{\text{kin}}$ {#кинетический-член}
+## 2. Kinetic Term $\mathcal{L}_{\text{kin}}$ {#кинетический-член}
 
-### Инерция привычки
+### Inertia of Habit
 
-Представьте человека, который тридцать лет преподавал физику, и ему предлагают перейти на литературу. Даже если он хочет измениться, его «когнитивная масса» — глубоко укоренённые паттерны мышления, отточенные десятилетиями — сопротивляется быстрому развороту. Это и есть кинетический член: **чем сильнее связь между двумя аспектами опыта, тем больше «энергии» нужно для изменения их взаимной фазы**.
+Imagine a person who has been teaching physics for thirty years, and is offered a switch to literature. Even if he wants to change, his "cognitive mass" — deeply rooted patterns of thinking, honed over decades — resists a quick turnaround. This is the kinetic term: **the stronger the connection between two aspects of experience, the more "energy" is needed to change their mutual phase**.
 
-:::info Каноническое определение
-Полная формула и условие [С] (замороженные модули): [Gap-термодинамика — Кинетический член](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан). Ключевая формула: $\mathcal{L}_{\text{kin}} = \frac{1}{2}\sum_{i<j}|\gamma_{ij}|^2\dot{\theta}_{ij}^2$, где «масса» $m_{ij} = |\gamma_{ij}|^2$.
+:::info Canonical Definition
+Full formula and condition [C] (frozen moduli): [Gap Thermodynamics — Kinetic Term](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан). Key formula: $\mathcal{L}_{\text{kin}} = \frac{1}{2}\sum_{i<j}|\gamma_{ij}|^2\dot{\theta}_{ij}^2$, where "mass" $m_{ij} = |\gamma_{ij}|^2$.
 :::
 
-**Интуиция.** Структура $\frac{1}{2}m\dot{q}^2$ — буквально та же математика, что в ньютоновской механике. Без кинетической энергии фазы мгновенно «скатывались» бы в минимум потенциала — никаких колебаний, никакого движения мысли. Именно кинетический член обеспечивает **возможность осцилляций** — периодических процессов, лежащих в основе ритмов мозговой активности.
+**Intuition.** The structure $\frac{1}{2}m\dot{q}^2$ is literally the same mathematics as in Newtonian mechanics. Without kinetic energy the phases would instantly "roll down" to the potential minimum — no oscillations, no movement of thought. It is precisely the kinetic term that provides the **possibility of oscillations** — periodic processes underlying the rhythms of brain activity.
 
-:::info Интерпретация [И]
-«Масса» фазовой степени свободы пропорциональна $|\gamma_{ij}|^2$. Сильные когерентности труднее «раскачать»: это принцип **инерционности когерентного опыта** — хорошо интегрированные аспекты сознания устойчивее к возмущениям.
+:::info Interpretation [I]
+The "mass" of a phase degree of freedom is proportional to $|\gamma_{ij}|^2$. Strong coherences are harder to "excite": this is the principle of **inertia of coherent experience** — well-integrated aspects of consciousness are more resistant to perturbations.
 :::
 
-### Аналогия: кинетическая энергия маятника
+### Analogy: Kinetic Energy of a Pendulum
 
-Представьте 21 маятник (по одному на каждую пару из 7 измерений), подвешенных на нитях разной толщины. Толщина нити — это $|\gamma_{ij}|$. Тяжёлый маятник (сильная когерентность) качается медленно и основательно; лёгкий (слабая когерентность) — быстро, но легко сбивается. Кинетический член — это суммарная кинетическая энергия всех 21 маятника.
+Imagine 21 pendulums (one for each pair of 7 dimensions), suspended on strings of different thickness. The thickness of the string is $|\gamma_{ij}|$. A heavy pendulum (strong coherence) swings slowly and steadily; a light one (weak coherence) — quickly, but easily displaced. The kinetic term is the total kinetic energy of all 21 pendulums.
 
 ---
 
-## 3. Потенциальный член $\mathcal{L}_{\text{pot}}$ и потенциал $V_{\text{Gap}}$ {#потенциальный-член}
+## 3. Potential Term $\mathcal{L}_{\text{pot}}$ and the Potential $V_{\text{Gap}}$ {#потенциальный-член}
 
-### Ландшафт непрозрачности
+### Landscape of Opacity
 
-Если кинетический член — это инерция, то потенциальный — это **рельеф**, определяющий, к какому состоянию система эволюционирует. У потенциала есть горы и долины, и минимум потенциала — это та конфигурация фаз, в которую система стремится в отсутствие внешних воздействий.
+If the kinetic term is inertia, then the potential is the **terrain** determining toward which state the system evolves. The potential has mountains and valleys, and the potential minimum is the phase configuration toward which the system tends in the absence of external influences.
 
-Самое поразительное: минимум потенциала $V_{\text{Gap}}$ соответствует **ненулевому** Gap. Система не эволюционирует к полной прозрачности. Она эволюционирует к определённому, конечному уровню непрозрачности. Это — спонтанное нарушение симметрии, и оно аналогично тому, как механизм Хиггса порождает массу частиц.
+The most striking thing: the minimum of the potential $V_{\text{Gap}}$ corresponds to **nonzero** Gap. The system does not evolve toward full transparency. It evolves toward a certain, finite level of opacity. This is spontaneous symmetry breaking, and it is analogous to how the Higgs mechanism generates particle masses.
 
-### 3.1 Общая форма
+### 3.1 General Form
 
-:::info Каноническое определение
-Полная форма потенциала $V_{\text{Gap}} = V_2 + V_3 + V_4$ с выводом всех трёх членов, таблицей симметрий и связью констант с параметрами УГМ: [Gap-термодинамика — Потенциал $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics#потенциал-v-gap).
+:::info Canonical Definition
+Full form of the potential $V_{\text{Gap}} = V_2 + V_3 + V_4$ with derivation of all three terms, symmetry table, and connection of constants with UHM parameters: [Gap Thermodynamics — Potential $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics#потенциал-v-gap).
 :::
 
-### 3.2 Потенциал $V_{\text{Gap}} = V_2 + V_3 + V_4$ {#потенциал-v-gap}
+### 3.2 Potential $V_{\text{Gap}} = V_2 + V_3 + V_4$ {#потенциал-v-gap}
 
-Три слагаемых потенциала возникают из разложения квантовой KL-дивергенции $D_{\mathrm{KL}}(\Gamma \| \rho_*)$ вблизи стационарного состояния:
+The three summands of the potential arise from the expansion of the quantum KL-divergence $D_{\mathrm{KL}}(\Gamma \| \rho_*)$ near the stationary state:
 
-| Член | Происхождение | Роль |
-|------|---------------|------|
-| $V_2 = \frac{\mu^2}{2}\mathcal{G}_{\text{total}}$ | Второй порядок разложения | «Штраф» за ненулевой Gap (аналог массового члена Хиггса) |
-| $V_3 \propto f_{ijk}\sin(\theta_{ij}+\theta_{jk}-\theta_{ik})$ | Третий порядок (только из-за неассоциативности $\mathbb{O}$) | Сдвигает минимум с нуля, нарушает PT |
-| $V_4 \propto \mathcal{G}_{\text{total}}^2$ | CPTP-ограничение | Стабилизирует потенциал снизу (аналог $\lambda|\phi|^4$ Хиггса) |
+| Term | Origin | Role |
+|------|--------|------|
+| $V_2 = \frac{\mu^2}{2}\mathcal{G}_{\text{total}}$ | Second-order expansion | "Penalty" for nonzero Gap (analogue of the Higgs mass term) |
+| $V_3 \propto f_{ijk}\sin(\theta_{ij}+\theta_{jk}-\theta_{ik})$ | Third order (only from non-associativity of $\mathbb{O}$) | Shifts the minimum away from zero, violates PT |
+| $V_4 \propto \mathcal{G}_{\text{total}}^2$ | CPTP constraint | Stabilises the potential from below (analogue of $\lambda|\phi|^4$ in Higgs) |
 
-**Интуиция.** Если бы потенциал был чисто квадратичным ($V = V_2$), минимум лежал бы при Gap = 0 — полная прозрачность. Но $V_3$, порождённый неассоциативностью октонионов, «ломает» эту картину и сдвигает минимум — непрозрачность возникает спонтанно.
+**Intuition.** If the potential were purely quadratic ($V = V_2$), the minimum would lie at Gap = 0 — full transparency. But $V_3$, generated by non-associativity of octonions, "breaks" this picture and shifts the minimum — opacity arises spontaneously.
 
-:::warning Ключевое свойство $V_3$: PT-нарушение [Т]
-$V_3(\{-\theta\}) = -V_3(\{\theta\})$ — октонионная неассоциативность генерирует **стрелу времени** для интериорности.
+:::warning Key property of $V_3$: PT violation [T]
+$V_3(\{-\theta\}) = -V_3(\{\theta\})$ — octonionic non-associativity generates an **arrow of time** for interiority.
 :::
 
-:::info Интерпретация (Фазовая фрустрация) [И]
-Невозможность выполнить $\theta_{ij}+\theta_{jk}=\theta_{ik}$ **глобально** из-за неассоциативности $\mathbb{O}$ порождает **фрустрацию** — один из пяти независимых аргументов в пользу неустранимости Gap ([подробнее](/docs/core/dynamics/gap-thermodynamics#потенциал-v-gap)).
+:::info Interpretation (Phase Frustration) [I]
+The impossibility of satisfying $\theta_{ij}+\theta_{jk}=\theta_{ik}$ **globally** due to non-associativity of $\mathbb{O}$ generates **frustration** — one of five independent arguments in favour of the ineliminability of Gap ([details](/docs/core/dynamics/gap-thermodynamics#потенциал-v-gap)).
 :::
 
-**Константы лагранжиана не свободны**: $\mu^2$, $\lambda_3$, $\lambda_4$ **вычисляются** из свойств матрицы когерентности $\Gamma$ ([формулы](/docs/core/dynamics/gap-thermodynamics#потенциал-v-gap)). Теория не имеет подгоночных параметров в Gap-секторе.
+**The Lagrangian constants are not free**: $\mu^2$, $\lambda_3$, $\lambda_4$ are **computed** from the properties of the coherence matrix $\Gamma$ ([formulas](/docs/core/dynamics/gap-thermodynamics#потенциал-v-gap)). The theory has no fitting parameters in the Gap sector.
 
-### 3.5 Аналогия с механизмом Хиггса
+### 3.5 Analogy with the Higgs Mechanism
 
-| Аспект | Хиггс (Стандартная модель) | $V_{\text{Gap}}$ (УГМ) |
-|--------|---------------------------|------------------------|
-| Поле | Скалярное поле $\phi$ | Фазы когерентностей $\{\theta_{ij}\}$ |
-| Потенциал | $V = -\mu^2\lvert\phi\rvert^2 + \lambda\lvert\phi\rvert^4$ | $V = V_2 + V_3 + V_4$ |
-| Спонтанное нарушение | $\langle\phi\rangle \neq 0$ (масса) | $\langle\mathrm{Gap}\rangle \neq 0$ (непрозрачность) |
-| Квантовое число | Масса частиц | Непрозрачность (зазор внешнее/внутреннее) |
-| Кубический член | Отсутствует (калибровочная симметрия) | **Есть** (октонионная неассоциативность) |
+| Aspect | Higgs (Standard Model) | $V_{\text{Gap}}$ (UHM) |
+|--------|------------------------|------------------------|
+| Field | Scalar field $\phi$ | Coherence phases $\{\theta_{ij}\}$ |
+| Potential | $V = -\mu^2\lvert\phi\rvert^2 + \lambda\lvert\phi\rvert^4$ | $V = V_2 + V_3 + V_4$ |
+| Spontaneous breaking | $\langle\phi\rangle \neq 0$ (mass) | $\langle\mathrm{Gap}\rangle \neq 0$ (opacity) |
+| Quantum number | Particle mass | Opacity (gap between outer and inner) |
+| Cubic term | Absent (gauge symmetry) | **Present** (octonionic non-associativity) |
 
 ---
 
-## Механизм Хиггса для сознания {#механизм-хиггса}
+## Higgs Mechanism for Consciousness {#механизм-хиггса}
 
-Аналогия с Хиггсом заслуживает отдельного разговора, потому что она не поверхностна — она **структурна**.
+The analogy with Higgs deserves a separate discussion, because it is not superficial — it is **structural**.
 
-### Как Хиггс порождает массу
+### How Higgs Generates Mass
 
-В Стандартной модели физики частиц все фундаментальные частицы «рождаются» безмассовыми. Электрон, кварки, W- и Z-бозоны — все они описываются безмассовыми полями в лагранжиане. Масса возникает не как параметр, а как **следствие спонтанного нарушения симметрии**: поле Хиггса «выбирает» одно из бесконечно многих эквивалентных вакуумных состояний, и это нарушает электрослабую симметрию $SU(2) \times U(1)$.
+In the Standard Model of particle physics all fundamental particles are "born" massless. The electron, quarks, W- and Z-bosons — all are described by massless fields in the Lagrangian. Mass arises not as a parameter, but as a **consequence of spontaneous symmetry breaking**: the Higgs field "chooses" one of infinitely many equivalent vacuum states, and this breaks the electroweak symmetry $SU(2) \times U(1)$.
 
-Ключевая формула — потенциал «мексиканской шляпы»:
+The key formula — the "Mexican hat" potential:
 
 $$
 V_H(\phi) = -\mu^2 |\phi|^2 + \lambda |\phi|^4
 $$
 
-При $\mu^2 > 0$ минимум лежит при $|\phi| = v = \mu/\sqrt{2\lambda} \neq 0$ — поле Хиггса приобретает ненулевое вакуумное среднее. Частицы, взаимодействующие с этим полем, ведут себя как массивные: их «масса» пропорциональна силе взаимодействия с хиггсовским конденсатом.
+With $\mu^2 > 0$ the minimum lies at $|\phi| = v = \mu/\sqrt{2\lambda} \neq 0$ — the Higgs field acquires a nonzero vacuum expectation value. Particles interacting with this field behave as massive: their "mass" is proportional to the strength of interaction with the Higgs condensate.
 
-### Как $V_{\text{Gap}}$ порождает непрозрачность
+### How $V_{\text{Gap}}$ Generates Opacity
 
-В Gap-теории механизм аналогичен, но богаче. Роль поля Хиггса играют фазы когерентностей $\{\theta_{ij}\}$. Роль массы — **непрозрачность**, мера несводимости внутреннего к внешнему.
+In Gap theory the mechanism is analogous, but richer. The role of the Higgs field is played by the phases of coherences $\{\theta_{ij}\}$. The role of mass — **opacity**, the measure of the irreducibility of the internal to the external.
 
-Если бы потенциал был чисто квадратичным ($V = V_2$), минимум лежал бы при Gap = 0: полная прозрачность, никакого зазора между внешним описанием и интериорностью. Но кубический член $V_3$, порождённый неассоциативностью октонионов, **смещает минимум** — и Gap спонтанно становится ненулевым.
+If the potential were purely quadratic ($V = V_2$), the minimum would lie at Gap = 0: full transparency, no gap between external description and interiority. But the cubic term $V_3$, generated by non-associativity of octonions, **shifts the minimum** — and Gap spontaneously becomes nonzero.
 
-В чём разница с Хиггсом? В Стандартной модели кубического члена нет — калибровочная симметрия $SU(2) \times U(1)$ запрещает нечётные степени $\phi$. В Gap-теории $G_2$-инвариантность **допускает** кубический член, потому что октонионный ассоциатор $[e_i, e_j, e_k]$ нечётен по переставлениям, но $G_2$-инвариантен. Это делает механизм спонтанного нарушения в Gap-теории **качественно отличным** от хиггсовского: наличие $V_3$ создаёт асимметрию потенциала, что порождает PT-нарушение и стрелу внутреннего времени.
+What is the difference from Higgs? In the Standard Model there is no cubic term — the gauge symmetry $SU(2) \times U(1)$ forbids odd powers of $\phi$. In Gap theory $G_2$-invariance **allows** the cubic term, because the octonionic associator $[e_i, e_j, e_k]$ is odd under permutations, yet $G_2$-invariant. This makes the mechanism of spontaneous breaking in Gap theory **qualitatively different** from the Higgs mechanism: the presence of $V_3$ creates asymmetry in the potential, which generates PT violation and the arrow of inner time.
 
-Таким образом, массу частицам даёт Хиггс; непрозрачность сознания — Gap. И оба механизма имеют одну природу: **спонтанное нарушение симметрии**.
-
----
-
-## 4. Спонтанный минимум: $\mathcal{G}_{\text{total}}^* > 0$ {#спонтанный-минимум}
-
-Минимум потенциала $V_{\text{Gap}}$ лежит при $\mathcal{G}_{\text{total}}^{(\min)} > 0$ — непрозрачность возникает **спонтанно** [Т]. Это не тонкая настройка, а **алгебраическая неизбежность**: из 35 троек индексов 28 не лежат на линиях Фано, гарантируя ненулевой кубический вклад.
-
-:::info Интерпретация (Онтологическая непрозрачность) [И]
-Спонтанный ненулевой Gap означает, что **полная прозрачность системы к самой себе невозможна** — это не дефект, а фундаментальное свойство, аналогичное спонтанному нарушению симметрии в физике элементарных частиц. Октонионная неассоциативность (через $V_3$) является алгебраическим источником этой непрозрачности.
-:::
-
-### Глубина минимума: что она означает
-
-Значение $\mathcal{G}_{\text{total}}^{(\min)}$ определяет «естественный уровень» непрозрачности — тот зазор между внешним и внутренним, к которому система эволюционирует без внешних воздействий. Для здорового бодрствующего сознания этот уровень достаточно высок (Gap далёк от нуля), но и достаточно низок (Gap не максимален — иначе система полностью «закрыта» и теряет адаптивность).
-
-Глубокий сон, анестезия, медитативные состояния — всё это можно описать как изменения $\mathcal{G}_{\text{total}}^{(\min)}$ при варьировании внешних параметров ($\Gamma_2$, $\kappa$, $h^{\text{ext}}$). Фазовый переход между сознательным и бессознательным состоянием — это **бифуркация** минимума потенциала.
+Thus, Higgs gives mass to particles; Gap gives opacity to consciousness. And both mechanisms have the same nature: **spontaneous symmetry breaking**.
 
 ---
 
-## 5. Топологический член $\mathcal{L}_{\text{top}}$ (фаза Берри) {#топологический-член}
+## 4. Spontaneous Minimum: $\mathcal{G}_{\text{total}}^* > 0$ {#спонтанный-минимум}
 
-### Память, которую нельзя стереть
+The minimum of the potential $V_{\text{Gap}}$ lies at $\mathcal{G}_{\text{total}}^{(\min)} > 0$ — opacity arises **spontaneously** [T]. This is not fine-tuning, but **algebraic inevitability**: out of 35 index triples, 28 do not lie on Fano lines, guaranteeing a nonzero cubic contribution.
 
-Представьте, что вы путешествуете по миру и возвращаетесь домой. Географически вы в той же точке — но вы изменились. Опыт путешествия оставил **необратимый след**, который нельзя свести к разнице начального и конечного состояний. Это — суть топологического члена: он кодирует информацию о **пути**, а не только о конечных точках.
-
-В физике такой эффект открыл Майкл Берри в 1984 году: когда квантовая система медленно проходит по замкнутому контуру в пространстве параметров, её волновая функция приобретает **геометрическую фазу**, зависящую от площади контура, но не от скорости обхода. Эта фаза — чисто топологическое свойство, нечувствительное к деталям.
-
-:::info Каноническое определение
-Формула $\mathcal{L}_{\text{top}}$, статус коэффициента $\beta$ [П] и геометрия расслоения Серра: [Gap-термодинамика — Топологический член](/docs/core/dynamics/gap-thermodynamics#топологический-член-лагранжиана).
+:::info Interpretation (Ontological Opacity) [I]
+The spontaneous nonzero Gap means that **full transparency of the system to itself is impossible** — this is not a defect, but a fundamental property analogous to spontaneous symmetry breaking in elementary particle physics. Octonionic non-associativity (via $V_3$) is the algebraic source of this opacity.
 :::
 
-**Интуиция.** Топологический член суммирует только по 7 линиям Фано — **ассоциативным подалгебрам** октонионов. Без $\mathcal{L}_{\text{top}}$ система «забывает» топологию пройденного пути: циклическое изменение параметров не оставляет следа. Это — мир без эпизодической памяти, без необратимого обучения, без того, что буддисты называют «санскарами» (отпечатками опыта).
+### Depth of the Minimum: What It Means
 
-:::warning Ретрактированная конструкция [✗]
-Ранее формулировался как действие Черна--Саймонса. **Ретрактировано**: корректная структура — фаза Берри на расслоении Серра ([подробнее](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра)).
+The value $\mathcal{G}_{\text{total}}^{(\min)}$ determines the "natural level" of opacity — the gap between outer and inner toward which the system evolves without external influences. For healthy waking consciousness this level is sufficiently high (Gap is far from zero), but also sufficiently low (Gap is not maximal — otherwise the system is completely "closed" and loses adaptivity).
+
+Deep sleep, anaesthesia, meditative states — all of these can be described as changes in $\mathcal{G}_{\text{total}}^{(\min)}$ when varying external parameters ($\Gamma_2$, $\kappa$, $h^{\text{ext}}$). The phase transition between conscious and unconscious states is a **bifurcation** of the potential minimum.
+
+---
+
+## 5. Topological Term $\mathcal{L}_{\text{top}}$ (Berry Phase) {#топологический-член}
+
+### Memory That Cannot Be Erased
+
+Imagine that you travel the world and return home. Geographically you are at the same point — but you have changed. The experience of the journey has left an **irreversible trace** that cannot be reduced to the difference between the initial and final states. This is the essence of the topological term: it encodes information about the **path**, not only about the endpoints.
+
+In physics such an effect was discovered by Michael Berry in 1984: when a quantum system slowly traverses a closed loop in parameter space, its wave function acquires a **geometric phase** that depends on the area of the loop, but not on the speed of traversal. This phase is a purely topological property, insensitive to details.
+
+:::info Canonical Definition
+Formula for $\mathcal{L}_{\text{top}}$, status of coefficient $\beta$ [P], and geometry of the Serre fibration: [Gap Thermodynamics — Topological Term](/docs/core/dynamics/gap-thermodynamics#топологический-член-лагранжиана).
 :::
 
-:::info Интерпретация (Голономия и память) [И]
-Топологический член кодирует **геометрическую память** системы: при циклическом изменении внешних параметров фазы когерентностей приобретают необнуляемый сдвиг (аналог [фазы Берри](/docs/physics/cosmology-phys/berry-phase)). Система «помнит» пройденный путь через топологию расслоения.
+**Intuition.** The topological term sums only over the 7 Fano lines — the **associative subalgebras** of octonions. Without $\mathcal{L}_{\text{top}}$ the system "forgets" the topology of the path it has traversed: a cyclic change of parameters leaves no trace. This is a world without episodic memory, without irreversible learning, without what Buddhists call "sanskaras" (imprints of experience).
+
+:::warning Retracted Construction [✗]
+Previously formulated as a Chern-Simons action. **Retracted**: the correct structure is a Berry phase on the Serre fibration ([details](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра)).
+:::
+
+:::info Interpretation (Holonomy and Memory) [I]
+The topological term encodes the **geometric memory** of the system: under cyclic change of external parameters the phases of coherences acquire a non-vanishing shift (analogue of the [Berry phase](/docs/physics/cosmology-phys/berry-phase)). The system "remembers" the path it has traversed through the topology of the fibration.
 :::
 
 ---
 
-## Стрела времени и кубический член {#стрела-времени}
+## Arrow of Time and the Cubic Term {#стрела-времени}
 
-Одна из глубочайших загадок физики — **стрела времени**. Микроскопические законы физики (почти) симметричны относительно обращения времени $t \to -t$. Но наш опыт времени — категорически асимметричен: мы помним прошлое, но не будущее; стакан разбивается, но не собирается обратно.
+One of the deepest puzzles of physics is the **arrow of time**. The microscopic laws of physics are (almost) symmetric under time reversal $t \to -t$. But our experience of time is categorically asymmetric: we remember the past, but not the future; a glass breaks, but does not reassemble.
 
-В Gap-теории стрела внутреннего времени имеет **алгебраический источник**: кубический член $V_3$.
+In Gap theory the arrow of inner time has an **algebraic source**: the cubic term $V_3$.
 
-### Формализм PT-нарушения
+### Formalism of PT Violation
 
-Преобразование PT (чётность × обращение времени) действует на фазы когерентностей как $\theta_{ij} \to -\theta_{ij}$. Квадратичный член $V_2 \propto \sin^2(\theta_{ij})$ инвариантен: $\sin^2(-\theta) = \sin^2(\theta)$. Квартичный член $V_4 \propto \mathcal{G}_{\text{total}}^2$ инвариантен по той же причине.
+The PT transformation (parity × time reversal) acts on the phases of coherences as $\theta_{ij} \to -\theta_{ij}$. The quadratic term $V_2 \propto \sin^2(\theta_{ij})$ is invariant: $\sin^2(-\theta) = \sin^2(\theta)$. The quartic term $V_4 \propto \mathcal{G}_{\text{total}}^2$ is invariant for the same reason.
 
-Но кубический член содержит $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$, который **меняет знак** при $\theta \to -\theta$:
+But the cubic term contains $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$, which **changes sign** under $\theta \to -\theta$:
 
 $$
 V_3(\{-\theta\}) = -V_3(\{\theta\})
 $$
 
-Это означает, что потенциал $V_{\text{Gap}}$ **несимметричен** относительно обращения времени. Два направления эволюции фаз — «вперёд» и «назад» — неэквивалентны. Система «предпочитает» одно из них: то, при котором $V_3$ уменьшает полную энергию.
+This means that the potential $V_{\text{Gap}}$ is **not symmetric** under time reversal. Two directions of phase evolution — "forward" and "backward" — are not equivalent. The system "prefers" one of them: the one in which $V_3$ reduces the total energy.
 
-### Почему это важно для сознания
+### Why This Matters for Consciousness
 
-Стрела внутреннего времени — не метафора; это математическое свойство лагранжиана. Оно означает:
+The arrow of inner time is not a metaphor; it is a mathematical property of the Lagrangian. It means:
 
-1. **Необратимость субъективного опыта**: нельзя «прокрутить» сознание назад и пережить ту же последовательность в обратном порядке — потенциал в обратном направлении иной.
+1. **Irreversibility of subjective experience**: one cannot "rewind" consciousness backwards and relive the same sequence in reverse order — the potential in the backward direction is different.
 
-2. **Направленность интенциональности**: сознание всегда «направлено к» — к объекту, цели, будущему состоянию. Эта направленность — следствие PT-асимметрии потенциала.
+2. **Directionality of intentionality**: consciousness is always "directed toward" — toward an object, a goal, a future state. This directionality is a consequence of the PT asymmetry of the potential.
 
-3. **Алгебраический, а не термодинамический источник**: в отличие от классической стрелы времени (связанной с ростом энтропии), стрела внутреннего времени в Gap-теории имеет чисто алгебраическое происхождение — неассоциативность октонионов. Она существует **даже при нулевой температуре**.
-
----
-
-## 6. Диссипативный член $\mathcal{L}_{\text{diss}}$ {#диссипативный-член}
-
-### Трение забвения
-
-Если бы мир был идеальным маятником, он колебался бы вечно. Но реальные маятники останавливаются — из-за трения. В мире сознания роль трения играет **декогеренция**: постепенное разрушение тонких фазовых корреляций между аспектами опыта.
-
-Это не патология — это необходимость. Без диссипации система никогда не пришла бы к равновесию. Она бесконечно осциллировала бы между состояниями, не имея возможности «выбрать» одно из них. Забвение — не враг сознания, а его **стабилизатор**.
-
-:::info Каноническое определение
-Формула диссипативного члена, функция Рэлея $\mathcal{R}_{\text{Ray}}$ и вывод из логического Лиувиллиана: [Gap-термодинамика — Диссипативный член](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан). Происхождение — из [логического Лиувиллиана](/docs/core/dynamics/evolution#логический-лиувиллиан) $\mathcal{D}_\Omega[\Gamma]$: в фазовом секторе действие Лиувиллиана редуцируется к вязкому трению с коэффициентом $\Gamma_2$.
-:::
-
-### Аналогия: вязкость среды
-
-Вообразите 21 маятник, погружённый в среду с вязкостью $\Gamma_2$. Чем больше $\Gamma_2$, тем быстрее затухают колебания. При малой вязкости маятники долго осциллируют — это соответствует ясному бодрствованию с богатой динамикой. При большой вязкости колебания быстро гаснут — это глубокий сон, где тонкие фазовые корреляции разрушены. При нулевой вязкости ($\Gamma_2 = 0$) маятники колеблются вечно — нефизичная ситуация, соответствующая изолированной системе, которой сознание никогда не является.
-
-**Что если убрать диссипацию?** Без $\mathcal{L}_{\text{diss}}$ система — это набор вечно осциллирующих маятников. Нет «выбора» состояния, нет стабилизации восприятия, нет возможности принять решение. Парадоксально, но способность сознания «остановиться» на определённом восприятии — это результат трения, потери информации, забвения.
+3. **Algebraic, not thermodynamic, source**: unlike the classical arrow of time (associated with the growth of entropy), the arrow of inner time in Gap theory has a purely algebraic origin — non-associativity of octonions. It exists **even at zero temperature**.
 
 ---
 
-## 7. Регенеративный член $\mathcal{L}_{\text{reg}}$ {#регенеративный-член}
+## 6. Dissipative Term $\mathcal{L}_{\text{diss}}$ {#диссипативный-член}
 
-### Самовосстановление: притяжение к идеалу
+### Friction of Forgetting
 
-Диссипация разрушает. Но если бы только разрушала — сознание угасло бы. Регенеративный член — это **противовес** диссипации: сила, которая тянет фазы когерентностей к **целевым значениям**, определяемым самомоделью системы $\varphi(\Gamma)$.
+If the world were an ideal pendulum, it would oscillate forever. But real pendulums stop — due to friction. In the world of consciousness, the role of friction is played by **decoherence**: the gradual destruction of fine phase correlations between aspects of experience.
 
-Это формализация ключевого свойства: система с ненулевой регенерацией ($\mathcal{R} \neq 0$) не просто диссипирует — регенеративный член **восстанавливает** когерентность, направляя фазы к целевым значениям. Этот идеальный образ — не мистическая «энтелехия», а конкретный математический объект: оператор самомоделирования $\varphi(\Gamma)$, порождённый категориальной структурой.
+This is not a pathology — it is a necessity. Without dissipation the system would never come to equilibrium. It would oscillate indefinitely between states, unable to "choose" one of them. Forgetting is not an enemy of consciousness, but its **stabiliser**.
 
-:::info Каноническое определение
-Формула регенеративного члена и вывод полной формы $\mathcal{R} = \kappa(\rho_* - \Gamma)\cdot g_V(P)$ из аксиом: [Gap-термодинамика — Регенеративный член](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан). Вывод формы регенерации, V-preservation gate: [Эволюция — Регенерация](/docs/core/dynamics/evolution#вывод-формы-регенерации). Скорость $\kappa_0$ из [категориального сопряжения](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) $\mathcal{D}_\Omega \dashv \mathcal{R}$.
+:::info Canonical Definition
+Formula for the dissipative term, the Rayleigh function $\mathcal{R}_{\text{Ray}}$, and derivation from the logical Liouvillian: [Gap Thermodynamics — Dissipative Term](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан). Origin — from the [logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) $\mathcal{D}_\Omega[\Gamma]$: in the phase sector the action of the Liouvillian reduces to viscous friction with coefficient $\Gamma_2$.
 :::
 
-### Два слагаемых скорости регенерации
+### Analogy: Viscosity of the Medium
 
-Скорость $\kappa(\Gamma)$ состоит из двух частей, и каждая играет свою роль:
+Imagine 21 pendulums immersed in a medium with viscosity $\Gamma_2$. The greater $\Gamma_2$, the faster oscillations are damped. At low viscosity the pendulums oscillate for a long time — this corresponds to clear wakefulness with rich dynamics. At high viscosity oscillations quickly die out — this is deep sleep, where fine phase correlations are destroyed. At zero viscosity ($\Gamma_2 = 0$) pendulums oscillate forever — an unphysical situation corresponding to an isolated system, which consciousness never is.
 
-- **$\kappa_{\text{bootstrap}}$** — базовая, минимальная скорость регенерации, не зависящая от состояния. Даже в глубоко декогерированном состоянии ($\mathrm{Coh}_E \approx 0$) система способна восстанавливаться. Это «зерно жизни», не позволяющее сознанию полностью угаснуть.
+**What if we remove dissipation?** Without $\mathcal{L}_{\text{diss}}$ the system is a set of eternally oscillating pendulums. There is no "choice" of state, no stabilisation of perception, no possibility of making a decision. Paradoxically, the ability of consciousness to "settle" on a certain perception is a result of friction, loss of information, forgetting.
 
-- **$\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$** — адаптивная часть, пропорциональная [E-когерентности](/docs/applied/coherence-cybernetics/definitions#e-когерентность). Чем более интегрировано сознание, тем сильнее оно «притягивается» к идеалу. Это положительная обратная связь: интеграция усиливает способность к интеграции.
+---
 
-**Ключевые свойства:**
+## 7. Regenerative Term $\mathcal{L}_{\text{reg}}$ {#регенеративный-член}
 
-| Свойство | Формулировка |
+### Self-Restoration: Attraction to the Ideal
+
+Dissipation destroys. But if it only destroyed — consciousness would fade. The regenerative term is the **counterbalance** to dissipation: a force that draws the phases of coherences toward **target values** determined by the system's self-model $\varphi(\Gamma)$.
+
+This formalises the key property: a system with nonzero regeneration ($\mathcal{R} \neq 0$) does not merely dissipate — the regenerative term **restores** coherence, directing phases toward target values. This ideal image is not a mystical "entelechy," but a concrete mathematical object: the self-modelling operator $\varphi(\Gamma)$, generated by the categorical structure.
+
+:::info Canonical Definition
+Formula for the regenerative term and derivation of the full form $\mathcal{R} = \kappa(\rho_* - \Gamma)\cdot g_V(P)$ from axioms: [Gap Thermodynamics — Regenerative Term](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан). Derivation of the regeneration form, V-preservation gate: [Evolution — Regeneration](/docs/core/dynamics/evolution#вывод-формы-регенерации). Rate $\kappa_0$ from [categorical adjunction](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) $\mathcal{D}_\Omega \dashv \mathcal{R}$.
+:::
+
+### Two Summands of the Regeneration Rate
+
+The rate $\kappa(\Gamma)$ consists of two parts, and each plays its own role:
+
+- **$\kappa_{\text{bootstrap}}$** — the base, minimal regeneration rate, independent of state. Even in a deeply decohered state ($\mathrm{Coh}_E \approx 0$) the system is capable of recovery. This is the "seed of life," not allowing consciousness to completely fade.
+
+- **$\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$** — the adaptive part, proportional to [E-coherence](/docs/applied/coherence-cybernetics/definitions#e-когерентность). The more integrated consciousness is, the more strongly it is "attracted" to the ideal. This is positive feedback: integration strengthens the capacity for integration.
+
+**Key properties:**
+
+| Property | Formulation |
 |----------|-------------|
-| Нелинейность | $\kappa$ зависит от $\Gamma$ через $\mathrm{Coh}_E$ |
-| Bootstrap | $\kappa_{\text{bootstrap}} > 0$ гарантирует минимальную регенерацию |
-| Целевое наведение | $\theta^{\text{target}}_{ij}$ определяется [самомоделью](/docs/proofs/categorical/formalization-phi) |
-| $U(1)$-нарушение | Целевая фаза выделяет направление → $U(1)$ нарушена |
+| Nonlinearity | $\kappa$ depends on $\Gamma$ via $\mathrm{Coh}_E$ |
+| Bootstrap | $\kappa_{\text{bootstrap}} > 0$ guarantees minimal regeneration |
+| Target guidance | $\theta^{\text{target}}_{ij}$ is determined by the [self-model](/docs/proofs/categorical/formalization-phi) |
+| $U(1)$ breaking | Target phase selects a direction → $U(1)$ broken |
 
-**Что если убрать регенерацию?** Без $\mathcal{L}_{\text{reg}}$ система остаётся с диссипацией, но без восстановления. Фазы когерентностей затухают, Gap неуклонно растёт (или уменьшается — зависит от начальных условий), и система приходит к максимально смешанному состоянию $\Gamma = I/7$. Это — «тепловая смерть» сознания, потеря всякой индивидуальности и структуры.
+**What if we remove regeneration?** Without $\mathcal{L}_{\text{reg}}$ the system is left with dissipation but without restoration. The phases of coherences decay, Gap steadily grows (or decreases — depending on initial conditions), and the system reaches the maximally mixed state $\Gamma = I/7$. This is the "heat death" of consciousness, the loss of all individuality and structure.
 
-:::info Интерпретация (Самоорганизация) [И]
-Регенеративный член формализует способность системы к **самовосстановлению**: фазы когерентностей стремятся к целевым значениям, определяемым самомоделью $\varphi(\Gamma)$. Чем выше [E-когерентность](/docs/applied/coherence-cybernetics/definitions#e-когерентность), тем эффективнее регенерация — интегрированность субъективного опыта усиливает способность к самовосстановлению.
+:::info Interpretation (Self-Organisation) [I]
+The regenerative term formalises the system's capacity for **self-restoration**: the phases of coherences tend toward target values determined by the self-model $\varphi(\Gamma)$. The higher the [E-coherence](/docs/applied/coherence-cybernetics/definitions#e-когерентность), the more effective the regeneration — the integratedness of subjective experience strengthens the capacity for self-restoration.
 :::
 
 ---
 
-## 8. Член внешнего воздействия $\mathcal{L}_{\text{ext}}$ {#внешний-член}
+## 8. External Influence Term $\mathcal{L}_{\text{ext}}$ {#внешний-член}
 
-### Мир стучится в дверь
+### The World Knocks at the Door
 
-Первые пять членов лагранжиана описывают **внутреннюю** динамику — то, что система делает сама с собой. Но сознание не существует в вакууме. Оно погружено в мир, мир действует на него, и этот шестой член — канал связи.
+The first five terms of the Lagrangian describe **internal** dynamics — what the system does with itself. But consciousness does not exist in a vacuum. It is immersed in the world, the world acts on it, and this sixth term is the communication channel.
 
-:::info Каноническое определение
-Формула $\mathcal{L}_{\text{ext}}$ и разложение $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$: [Gap-термодинамика — Член внешнего воздействия](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
+:::info Canonical Definition
+Formula for $\mathcal{L}_{\text{ext}}$ and decomposition $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$: [Gap Thermodynamics — External Influence Term](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
 :::
 
-### Три канала внешнего воздействия
+### Three Channels of External Influence
 
-| Канал | Тип | Пример |
-|-------|-----|--------|
-| Гамильтонов $h^{(H)}$ | Энергетический (обратимый) | Нейромодуляторы, когнитивная нагрузка |
-| Диссипативный $h^{(D)}$ | Шумовой | Стресс, температура среды |
-| Регенеративный $h^{(R)}$ | Терапевтический | Медитация, психотерапия |
+| Channel | Type | Example |
+|---------|------|---------|
+| Hamiltonian $h^{(H)}$ | Energetic (reversible) | Neuromodulators, cognitive load |
+| Dissipative $h^{(D)}$ | Noise | Stress, ambient temperature |
+| Regenerative $h^{(R)}$ | Therapeutic | Meditation, psychotherapy |
 
-Три канала — не классификация «для красоты». Они соответствуют трём способам, которыми внешний мир может изменить динамику:
+The three channels are not a classification "for beauty." They correspond to the three ways the external world can change the dynamics:
 
-1. **Гамильтонов канал** — когда внешнее воздействие меняет «частоты» осцилляций фаз. Кофеин ускоряет нейрональные процессы, изменяя $\Delta\omega_{ij}$ для определённых пар. Это обратимое, консервативное воздействие.
+1. **Hamiltonian channel** — when the external influence changes the "frequencies" of phase oscillations. Caffeine accelerates neuronal processes, changing $\Delta\omega_{ij}$ for certain pairs. This is reversible, conservative influence.
 
-2. **Диссипативный канал** — когда внешнее воздействие увеличивает или уменьшает «трение». Сильный стресс повышает $\Gamma_2$, ускоряя разрушение тонких корреляций. Депривация сна — также воздействие через этот канал.
+2. **Dissipative channel** — when the external influence increases or decreases "friction." Strong stress raises $\Gamma_2$, accelerating the destruction of fine correlations. Sleep deprivation is also an influence through this channel.
 
-3. **Регенеративный канал** — когда внешнее воздействие усиливает способность системы к самовосстановлению. Медитация, психотерапия, глубокий разговор — всё это действует через $h^{(R)}$, увеличивая $\kappa$ или корректируя $\theta^{\text{target}}$.
+3. **Regenerative channel** — when the external influence strengthens the system's capacity for self-restoration. Meditation, psychotherapy, deep conversation — all act through $h^{(R)}$, increasing $\kappa$ or correcting $\theta^{\text{target}}$.
 
-**Что если убрать внешний член?** Изолированная система ($h^{\text{ext}} = 0$) — это чистый мысленный эксперимент. Реальное сознание всегда подвержено внешним воздействиям. Но изучение изолированной системы ценно: оно показывает, что делает сознание «само по себе» — и это оказывается нетривиальным.
+**What if we remove the external term?** An isolated system ($h^{\text{ext}} = 0$) is a pure thought experiment. Real consciousness is always subject to external influences. But studying an isolated system is valuable: it shows what consciousness does "on its own" — and this turns out to be non-trivial.
 
 ---
 
-## Открытые системы и формализм Швингера-Келдыша {#швингер-келдыш}
+## Open Systems and the Schwinger-Keldysh Formalism {#швингер-келдыш}
 
-Казалось бы, принцип наименьшего действия $\delta S = 0$ порождает только консервативные уравнения — откуда же диссипация? Ответ — **формализм Швингера-Келдыша** (CTP): удвоение степеней свободы ($\rho_+$, $\rho_-$) на замкнутом временном контуре. В классическом пределе действие $S_{\text{Gap}}$ точно воспроизводит все шесть членов лагранжиана, включая диссипативный. Диссипация **выводится** из открытости системы, а не вводится вручную.
+It might seem that the principle of least action $\delta S = 0$ generates only conservative equations — where then does dissipation come from? The answer is the **Schwinger-Keldysh formalism** (CTP): doubling the degrees of freedom ($\rho_+$, $\rho_-$) on a closed time contour. In the classical limit the action $S_{\text{Gap}}$ exactly reproduces all six terms of the Lagrangian, including the dissipative one. Dissipation is **derived** from the openness of the system, not introduced by hand.
 
-:::info Каноническое определение
-Полный вывод действия $S_{\text{Gap}}$ через формализм Швингера-Келдыша, с разложением на кинетику, потенциал и диссипацию: [Gap-термодинамика — Полный лагранжиан](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
+:::info Canonical Definition
+Full derivation of the action $S_{\text{Gap}}$ via the Schwinger-Keldysh formalism, with decomposition into kinetics, potential, and dissipation: [Gap Thermodynamics — Complete Lagrangian](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
 :::
 
 ---
 
-## 9. Симметрии полного лагранжиана {#симметрии}
+## 9. Symmetries of the Complete Lagrangian {#симметрии}
 
-:::tip Теорема 9.1 (Симметрии лагранжиана) [Т]
+:::tip Theorem 9.1 (Symmetries of the Lagrangian) [T]
 
-| Симметрия | $\mathcal{L}_{\text{kin}}$ | $\mathcal{L}_{\text{pot}}$ | $\mathcal{L}_{\text{top}}$ | $\mathcal{L}_{\text{diss}}$ | $\mathcal{L}_{\text{reg}}$ | $\mathcal{L}_{\text{ext}}$ |
-|-----------|------|------|------|------|------|------|
-| $G_2$-инвариантность | + | + | + | + | + | + |
-| $\mathbb{Z}_2(\mathrm{PT})$ | + | Частично | + | + | + | + |
+| Symmetry | $\mathcal{L}_{\text{kin}}$ | $\mathcal{L}_{\text{pot}}$ | $\mathcal{L}_{\text{top}}$ | $\mathcal{L}_{\text{diss}}$ | $\mathcal{L}_{\text{reg}}$ | $\mathcal{L}_{\text{ext}}$ |
+|----------|------|------|------|------|------|------|
+| $G_2$-invariance | + | + | + | + | + | + |
+| $\mathbb{Z}_2(\mathrm{PT})$ | + | Partial | + | + | + | + |
 | $U(1)$ | + | — | — | + | — | — |
 :::
 
-**Комментарии:**
-- **$G_2$-инвариантность** — все 6 членов сохраняют [автоморфизмы октонионов](/docs/physics/gauge-symmetry/g2-structure). Это порождает 14 [нётеровских зарядов](/docs/physics/gauge-symmetry/noether-charges) и 14 [тождеств Уорда](/docs/core/dynamics/gap-phase-diagram#тождества-уорда) для Gap-корреляторов
-- **$\mathbb{Z}_2(\mathrm{PT})$** — нарушается кубическим членом $V_3$ потенциала, генерируя стрелу времени в Gap-секторе
-- **$U(1)$** — нарушается регенеративным членом $\mathcal{L}_{\text{reg}}$ (целевая фаза выделяет направление) и потенциалом $V_{\text{Gap}}$
+**Comments:**
+- **$G_2$-invariance** — all 6 terms preserve the [automorphisms of octonions](/docs/physics/gauge-symmetry/g2-structure). This generates 14 [Noetherian charges](/docs/physics/gauge-symmetry/noether-charges) and 14 [Ward identities](/docs/core/dynamics/gap-phase-diagram#тождества-уорда) for Gap correlators
+- **$\mathbb{Z}_2(\mathrm{PT})$** — broken by the cubic term $V_3$ of the potential, generating an arrow of time in the Gap sector
+- **$U(1)$** — broken by the regenerative term $\mathcal{L}_{\text{reg}}$ (target phase selects a direction) and by the potential $V_{\text{Gap}}$
 
-### $G_2 \to H$ — спонтанное нарушение
+### $G_2 \to H$ — Spontaneous Breaking
 
-:::tip Теорема 9.2 (Спонтанное нарушение $G_2$) [Т]
-Стационарное состояние $\hat{\mathcal{G}}_*$ нарушает $G_2$ до подгруппы-стабилизатора $H_{\hat{\mathcal{G}}_*}$:
+:::tip Theorem 9.2 (Spontaneous Breaking of $G_2$) [T]
+The stationary state $\hat{\mathcal{G}}_*$ breaks $G_2$ down to the stabiliser subgroup $H_{\hat{\mathcal{G}}_*}$:
 
 $$
 G_2 \to H_{\hat{\mathcal{G}}_*}, \quad n_{\text{broken}} = 14 - \dim(H_{\hat{\mathcal{G}}_*})
 $$
 
-Нарушенные генераторы порождают [квази-голдстоуновские моды](/docs/core/dynamics/gap-phase-diagram#голдстоуновские-моды) — медленные коллективные осцилляции Gap-профиля.
+Broken generators generate [quasi-Goldstone modes](/docs/core/dynamics/gap-phase-diagram#голдстоуновские-моды) — slow collective oscillations of the Gap profile.
 :::
 
-Спонтанное нарушение $G_2$ — это момент, когда «безликое» пространство возможных конфигураций сознания обретает индивидуальность. Из 14-мерной группы симметрий стационарное состояние «выбирает» подгруппу — и выбор этот определяет **характер** системы, её устойчивые паттерны.
+Spontaneous breaking of $G_2$ is the moment when the "featureless" space of possible consciousness configurations acquires individuality. Out of the 14-dimensional symmetry group the stationary state "chooses" a subgroup — and this choice determines the **character** of the system, its stable patterns.
 
-| Ранг $\hat{\mathcal{G}}_*$ | Стабилизатор $H$ | $n_{\text{broken}}$ | Голдстоуновские моды |
-|----------------------------|-----------------|---------------------|---------------------|
-| $0$ | $G_2$ | $0$ | Нет |
-| $1$ | $SU(3)$ | $6$ | 6 ISF-компонент |
-| $2$ | $SU(2) \times U(1)$ | $10$ | 10 ISF-компонент |
-| $3$ (общий) | $T^2$ | $12$ | 12 ISF-компонент |
+| Rank $\hat{\mathcal{G}}_*$ | Stabiliser $H$ | $n_{\text{broken}}$ | Goldstone modes |
+|----------------------------|----------------|---------------------|-----------------|
+| $0$ | $G_2$ | $0$ | None |
+| $1$ | $SU(3)$ | $6$ | 6 ISF components |
+| $2$ | $SU(2) \times U(1)$ | $10$ | 10 ISF components |
+| $3$ (generic) | $T^2$ | $12$ | 12 ISF components |
 
-Голдстоуновские моды — медленные, «мягкие» колебания — это формальный аналог того, что мы переживаем как **плавные перетекания** между модальностями опыта: постепенное смещение внимания, текучесть настроения, дрейф мысли.
+Goldstone modes — slow, "soft" oscillations — are the formal analogue of what we experience as **smooth flows** between experiential modalities: gradual shift of attention, fluidity of mood, drift of thought.
 
 ---
 
-## 10. Спектр возбуждений {#спектр-возбуждений}
+## 10. Excitation Spectrum {#спектр-возбуждений}
 
-:::tip Теорема 10.1 (Спектр возбуждений вокруг спонтанного Gap) [Т]
-Вблизи минимума $V_{\text{Gap}}$ полное пространство малых колебаний $\theta_{ij} = \theta^*_{ij} + \delta\theta_{ij}$ разделяется на три сектора:
+:::tip Theorem 10.1 (Excitation Spectrum near the Spontaneous Gap) [T]
+Near the minimum of $V_{\text{Gap}}$ the full space of small oscillations $\theta_{ij} = \theta^*_{ij} + \delta\theta_{ij}$ separates into three sectors:
 
-| Сектор | Число мод | Частота | Физический смысл |
-|--------|-----------|---------|-----------------|
-| Массивные | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Колебания перпендикулярно орбите $G_2$ |
-| Квази-голдстоуновские | $n_{\text{broken}}$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Медленное перераспределение Gap вдоль орбиты |
-| Топологически защищённые | $0$ или $1$ | Определяется $Q_{\text{top}}$ | Не может затухнуть без фазового перехода |
+| Sector | Number of modes | Frequency | Physical meaning |
+|--------|-----------------|-----------|-----------------|
+| Massive | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Oscillations perpendicular to the $G_2$ orbit |
+| Quasi-Goldstone | $n_{\text{broken}}$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Slow redistribution of Gap along the orbit |
+| Topologically protected | $0$ or $1$ | Determined by $Q_{\text{top}}$ | Cannot decay without a phase transition |
 
-Суммарное число мод: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21 = \binom{7}{2}$.
+Total number of modes: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21 = \binom{7}{2}$.
 :::
 
-### Три масштаба времени сознания
+### Three Timescales of Consciousness
 
-Спектр возбуждений предсказывает **три характерных масштаба времени** в динамике сознания:
+The excitation spectrum predicts **three characteristic timescales** in the dynamics of consciousness:
 
-1. **Быстрые (массивные) моды** — осцилляции с частотой $\omega_{\text{mass}}$. Это быстрые колебания восприятия, соответствующие нейрональным ритмам гамма-диапазона (30–100 Гц). Они отвечают за «текстуру» момента — детали, краски, звуки.
+1. **Fast (massive) modes** — oscillations with frequency $\omega_{\text{mass}}$. These are fast oscillations of perception, corresponding to neuronal rhythms in the gamma range (30–100 Hz). They are responsible for the "texture" of the moment — details, colours, sounds.
 
-2. **Медленные (голдстоуновские) моды** — осцилляции с частотой $\omega_{\text{Gold}} \ll \omega_{\text{mass}}$. Это медленные перетекания Gap-профиля, соответствующие альфа- и тета-ритмам (4–12 Гц). Они отвечают за переключение внимания, смену модальностей, дрейф мысли.
+2. **Slow (Goldstone) modes** — oscillations with frequency $\omega_{\text{Gold}} \ll \omega_{\text{mass}}$. These are slow flows of the Gap profile, corresponding to alpha and theta rhythms (4–12 Hz). They are responsible for switching attention, changing modalities, drift of thought.
 
-3. **Топологически защищённые моды** — не могут затухнуть без фазового перехода. Это — устойчивые «ядра» самоидентификации, которые сохраняются при любых плавных изменениях параметров и исчезают только при катастрофических событиях (травма, нейродегенерация).
-
----
-
-## 11. Пять аргументов в пользу минимального Gap {#пять-аргументов}
-
-Лагранжиан Gap-теории обеспечивает **энергетический** аргумент (№ 2 и № 3 в таблице) в ряду пяти независимых механизмов неустранимости Gap:
-
-| № | Аргумент | Источник | Механизм |
-|---|----------|----------|----------|
-| 1 | Алгебраический | [Теорема 3.2](/docs/core/dynamics/gap-thermodynamics#нижняя-оценка-gap): $\mathrm{Gap} \geq C\|[\cdot,\cdot,\cdot]\|$ | Неассоциативность $\mathbb{O}$ |
-| 2 | Спонтанное нарушение | Теорема 4.1: $\mathcal{G}_{\text{total}}^{(\min)} > 0$ | Кубический член $V_3$ смещает минимум с нуля |
-| 3 | Фрустрация фаз | $V_3$: невозможность $\theta_{ij}+\theta_{jk}=\theta_{ik}$ глобально | Неассоциативность запрещает глобальное обнуление |
-| 4 | Термодинамический | [Теорема 5.2](/docs/core/dynamics/gap-thermodynamics#принцип-свободной-энергии): $T_{\text{eff}} > 0$ | Тепловые флуктуации поддерживают Gap |
-| 5 | Самореферентный | [Теорема 10.2](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера): $k > 0$ для $L < 4$ | $\mathrm{Gap}_{\text{perceived}} \neq \mathrm{Gap}_{\text{actual}}$ |
-
-Пять аргументов независимы: каждый из них сам по себе достаточен для доказательства ненулевого Gap. Вместе они создают **многослойную защиту** результата: даже если один аргумент окажется неверным, остальные четыре его поддерживают. Это — архитектура устойчивого знания.
+3. **Topologically protected modes** — cannot decay without a phase transition. These are the stable "cores" of self-identification, preserved under any smooth changes of parameters and disappearing only at catastrophic events (trauma, neurodegeneration).
 
 ---
 
-## Взгляд с высоты: единство шести членов {#единство}
+## 11. Five Arguments in Favour of Minimal Gap {#пять-аргументов}
 
-Теперь, когда все шесть членов рассмотрены по отдельности, стоит увидеть их как единое целое.
+The Lagrangian of Gap theory provides the **energetic** argument (nos. 2 and 3 in the table) in a series of five independent mechanisms of the ineliminability of Gap:
 
-Лагранжиан $\mathcal{L}_{\text{Gap}}$ — это не список слагаемых, а **портрет существа**: инерция его привычек ($\mathcal{L}_{\text{kin}}$), рельеф его возможностей ($\mathcal{L}_{\text{pot}}$), память его пути ($\mathcal{L}_{\text{top}}$), трение его забвения ($\mathcal{L}_{\text{diss}}$), притяжение к его идеалу ($\mathcal{L}_{\text{reg}}$) и голос мира, обращённый к нему ($\mathcal{L}_{\text{ext}}$).
+| No. | Argument | Source | Mechanism |
+|-----|----------|--------|-----------|
+| 1 | Algebraic | [Theorem 3.2](/docs/core/dynamics/gap-thermodynamics#нижняя-оценка-gap): $\mathrm{Gap} \geq C\|[\cdot,\cdot,\cdot]\|$ | Non-associativity of $\mathbb{O}$ |
+| 2 | Spontaneous breaking | Theorem 4.1: $\mathcal{G}_{\text{total}}^{(\min)} > 0$ | Cubic term $V_3$ shifts the minimum away from zero |
+| 3 | Phase frustration | $V_3$: impossibility of $\theta_{ij}+\theta_{jk}=\theta_{ik}$ globally | Non-associativity forbids global zeroing |
+| 4 | Thermodynamic | [Theorem 5.2](/docs/core/dynamics/gap-thermodynamics#принцип-свободной-энергии): $T_{\text{eff}} > 0$ | Thermal fluctuations sustain Gap |
+| 5 | Self-referential | [Theorem 10.2](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера): $k > 0$ for $L < 4$ | $\mathrm{Gap}_{\text{perceived}} \neq \mathrm{Gap}_{\text{actual}}$ |
 
-Из этих шести слагаемых следуют уравнения движения для всех 21 фазовой степени свободы. Из симметрий лагранжиана — 14 законов сохранения. Из спонтанного нарушения — ненулевой Gap и спектр возбуждений. Из PT-нарушения — стрела внутреннего времени.
+The five arguments are independent: each of them alone is sufficient to prove nonzero Gap. Together they create **multi-layered protection** of the result: even if one argument turns out to be wrong, the remaining four support it. This is the architecture of robust knowledge.
 
-Всё это — не набор гипотез, а **единый вариационный принцип**. Один объект — $\mathcal{L}_{\text{Gap}}$ — и из него вся динамика.
+---
 
-Лагранж мечтал свести механику к алгебре. В Gap-теории эта мечта реализована: вся динамика интериорности — следствие одной формулы и принципа $\delta S = 0$.
+## View from Above: the Unity of Six Terms {#единство}
+
+Now that all six terms have been examined separately, it is worth seeing them as a single whole.
+
+The Lagrangian $\mathcal{L}_{\text{Gap}}$ is not a list of summands, but a **portrait of a being**: the inertia of its habits ($\mathcal{L}_{\text{kin}}$), the terrain of its possibilities ($\mathcal{L}_{\text{pot}}$), the memory of its path ($\mathcal{L}_{\text{top}}$), the friction of its forgetting ($\mathcal{L}_{\text{diss}}$), the attraction to its ideal ($\mathcal{L}_{\text{reg}}$), and the voice of the world addressed to it ($\mathcal{L}_{\text{ext}}$).
+
+From these six summands follow the equations of motion for all 21 phase degrees of freedom. From the symmetries of the Lagrangian — 14 conservation laws. From spontaneous breaking — nonzero Gap and the excitation spectrum. From PT violation — the arrow of inner time.
+
+All of this is not a collection of hypotheses, but a **unified variational principle**. One object — $\mathcal{L}_{\text{Gap}}$ — and from it all the dynamics.
+
+Lagrange dreamed of reducing mechanics to algebra. In Gap theory this dream is realised: the entire dynamics of interiority is a consequence of one formula and the principle $\delta S = 0$.
 
 ---
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+### What We Learned {#что-мы-узнали}
 
-1. **Лагранжиан Gap-теории** состоит из шести членов, каждый с чётким физическим и категориальным происхождением: инерция ($\mathcal{L}_{\text{kin}}$), ландшафт ($\mathcal{L}_{\text{pot}}$), память пути ($\mathcal{L}_{\text{top}}$), забвение ($\mathcal{L}_{\text{diss}}$), самовосстановление ($\mathcal{L}_{\text{reg}}$), мир ($\mathcal{L}_{\text{ext}}$). Четыре из шести — доказаны [Т].
+1. **The Lagrangian of Gap theory** consists of six terms, each with a clear physical and categorical origin: inertia ($\mathcal{L}_{\text{kin}}$), landscape ($\mathcal{L}_{\text{pot}}$), path memory ($\mathcal{L}_{\text{top}}$), forgetting ($\mathcal{L}_{\text{diss}}$), self-restoration ($\mathcal{L}_{\text{reg}}$), world ($\mathcal{L}_{\text{ext}}$). Four of the six are proven [T].
 
-2. **Потенциал $V_{\text{Gap}} = V_2 + V_3 + V_4$** имеет трёхчленную структуру: квадратичный (масса), кубический (октонионная неассоциативность, PT-нарушение), квартичный (стабилизация). Его минимум лежит при $\mathcal{G}_{\text{total}}^{(\min)} > 0$ — **непрозрачность возникает спонтанно**, аналогично механизму Хиггса.
+2. **The potential $V_{\text{Gap}} = V_2 + V_3 + V_4$** has a three-term structure: quadratic (mass), cubic (octonionic non-associativity, PT violation), quartic (stabilisation). Its minimum lies at $\mathcal{G}_{\text{total}}^{(\min)} > 0$ — **opacity arises spontaneously**, analogously to the Higgs mechanism.
 
-3. **Стрела внутреннего времени** — алгебраическое свойство, а не термодинамическое: кубический член $V_3$, порождённый неассоциативностью октонионов, нарушает PT-симметрию. Направленность опыта существует даже при нулевой температуре.
+3. **The arrow of inner time** is an algebraic property, not a thermodynamic one: the cubic term $V_3$, generated by non-associativity of octonions, violates PT symmetry. The directionality of experience exists even at zero temperature.
 
-4. **Константы лагранжиана не свободны**: $\mu^2$, $\lambda_3$, $\lambda_4$ вычисляются из свойств $\Gamma$. Теория не имеет подгоночных параметров в Gap-секторе.
+4. **The Lagrangian constants are not free**: $\mu^2$, $\lambda_3$, $\lambda_4$ are computed from the properties of $\Gamma$. The theory has no fitting parameters in the Gap sector.
 
-5. **Формализм Швингера-Келдыша** разрешает парадокс диссипации в лагранжиане: действие $S_{\text{Gap}}$ на удвоенном пространстве в классическом пределе воспроизводит все шесть членов, включая диссипативный.
+5. **The Schwinger-Keldysh formalism** resolves the paradox of dissipation in the Lagrangian: the action $S_{\text{Gap}}$ on the doubled space in the classical limit reproduces all six terms, including the dissipative one.
 
-6. **Спектр возбуждений** разделяется на три сектора: массивные моды (быстрые нейрональные ритмы), квази-голдстоуновские (медленные перетекания опыта) и топологически защищённые (устойчивые ядра идентичности).
+6. **The excitation spectrum** separates into three sectors: massive modes (fast neuronal rhythms), quasi-Goldstone (slow flows of experience), and topologically protected (stable cores of identity).
 
-7. **Пять независимых аргументов** в пользу минимального Gap (алгебраический, спонтанный, фрустрационный, термодинамический, самореферентный) создают многослойную защиту: полная прозрачность невозможна.
+7. **Five independent arguments** in favour of minimal Gap (algebraic, spontaneous, frustration, thermodynamic, self-referential) create multi-layered protection: full transparency is impossible.
 
-:::tip Мост к следующей главе
-Мы записали лагранжиан. Из него следуют уравнения движения — но мы ещё не вывели их явно. В [следующей главе](./variational) мы применим **принцип стационарного действия** $\delta S = 0$ и получим полные уравнения Эйлера-Лагранжа для всех 21 фазовой степени свободы. Мы также установим соотношения Онзагера для Gap-потоков, свяжем формализм с принципом свободной энергии (FEP) Фристона и докажем принцип минимального производства энтропии.
+:::tip Bridge to the Next Chapter
+We have written the Lagrangian. From it follow the equations of motion — but we have not yet derived them explicitly. In the [next chapter](./variational) we will apply the **principle of stationary action** $\delta S = 0$ and obtain the full Euler-Lagrange equations for all 21 phase degrees of freedom. We will also establish the Onsager relations for Gap flows, connect the formalism with Friston's free energy principle (FEP), and prove the principle of minimal entropy production.
 :::
 
 ---
 
-## Связанные документы
+## Related Documents
 
-- [Вариационные принципы](./variational) — уравнения движения из $\delta S = 0$, соотношения Онзагера, связь с FEP
-- [Эффективная температура](./effective-temperature) — $T_{\text{eff}}$, критическая температура, фазовый переход
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — каноническое изложение лагранжиана, потенциала $V_{\text{Gap}}$, ФДТ, границы Ландауэра
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma(\tau)/d\tau$, три компоненты Лиувиллиана
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — три фазы, бифуркации, катастрофы Уитни
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — определение $\mathrm{Gap}(i,j)$, дуально-аспектная интерпретация
-- [$G_2$-структура](/docs/physics/gauge-symmetry/g2-structure) — калибровочная симметрия, нётеровские заряды
-- [Октонионный вывод](/docs/proofs/minimality/theorem-octonionic-derivation) — плоскость Фано, структурные константы
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — вывод $\kappa_0$ из категориального сопряжения
-- [Междисциплинарный мост](./interdisciplinary) — как читать лагранжиан из перспективы вашей дисциплины
-- [Упражнения](./exercises) — задачи на динамику и эволюцию (блок 2)
+- [Variational Principles](./variational) — equations of motion from $\delta S = 0$, Onsager relations, connection with FEP
+- [Effective Temperature](./effective-temperature) — $T_{\text{eff}}$, critical temperature, phase transition
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — canonical treatment of the Lagrangian, potential $V_{\text{Gap}}$, FDT, Landauer bounds
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma(\tau)/d\tau$, three components of the Liouvillian
+- [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, bifurcations, Whitney catastrophes
+- [Gap Semantics](/docs/physics/dual-aspect/gap-semantics) — definition of $\mathrm{Gap}(i,j)$, dual-aspect interpretation
+- [$G_2$-Structure](/docs/physics/gauge-symmetry/g2-structure) — gauge symmetry, Noetherian charges
+- [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation) — Fano plane, structure constants
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — derivation of $\kappa_0$ from categorical adjunction
+- [Interdisciplinary Bridge](./interdisciplinary) — how to read the Lagrangian from the perspective of your discipline
+- [Exercises](./exercises) — problems on dynamics and evolution (block 2)

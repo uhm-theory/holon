@@ -1,298 +1,298 @@
 ---
 sidebar_position: 18
-title: "Сенсомоторная теория"
-description: "Формальная теория сенсомоторного кодирования: функторы восприятия и действия, полнота 3-членного уравнения, гедонический механизм"
+title: "Sensorimotor Theory"
+description: "Formal theory of sensorimotor encoding: perception and action functors, completeness of the 3-term equation, hedonic mechanism"
 ---
 
-# Сенсомоторная Теория
+# Sensorimotor Theory
 
-> *«Живое существо — это не вещь, а процесс: непрерывный обмен со средой, в котором граница между "я" и "не-я" каждый миг создаётся заново.»*
-> — Франциско Варела
+> *"A living being is not a thing but a process: a continuous exchange with the environment in which the boundary between 'self' and 'not-self' is recreated at every moment."*
+> — Francisco Varela
 
 
-:::info Для кого эта глава
-Сенсомоторный цикл как следствие канонического уравнения эволюции. Читатель узнает, как восприятие, оценка и действие выводятся из динамики $\Gamma$.
+:::info Who this chapter is for
+The sensorimotor cycle as a consequence of the canonical evolution equation. The reader will learn how perception, evaluation, and action are derived from the dynamics of $\Gamma$.
 :::
 
-Каждое живое существо — от бактерии, ощупывающей химический градиент, до человека, идущего по незнакомому городу — решает одну и ту же задачу: **воспринять среду и адекватно ответить**. Эта задача кажется обыденной, но за ней скрывается одна из глубочайших проблем науки о сложных системах.
+Every living being — from a bacterium feeling a chemical gradient to a human navigating an unfamiliar city — solves the same problem: **perceive the environment and respond appropriately**. This task seems mundane, but behind it lies one of the deepest problems in the science of complex systems.
 
-Представьте себе амёбу. У неё нет глаз, ушей и мозга. Но она *различает*: движется к питательным веществам, уклоняется от яда, обтекает препятствия. Между «химическим сигналом на мембране» и «выпячиванием псевдоподии» стоит нечто — не просто рефлекс, а замкнутый цикл: **восприятие → оценка → действие → восприятие**. Этот цикл — сенсомоторная петля — является минимальной единицей адаптивного поведения.
+Imagine an amoeba. It has no eyes, ears, or brain. Yet it *distinguishes*: it moves toward nutrients, avoids poison, flows around obstacles. Between "chemical signal on the membrane" and "extending a pseudopod" stands something — not a mere reflex, but a closed cycle: **perception → evaluation → action → perception**. This cycle — the sensorimotor loop — is the minimal unit of adaptive behaviour.
 
-Классическая теория управления описывает сенсомоторную петлю как «датчик → контроллер → актуатор». Активная инференция (FEP) видит её как минимизацию вариационной свободной энергии. Обучение с подкреплением моделирует её как максимизацию кумулятивного вознаграждения. Каждый из этих подходов захватывает часть истины — но ни один не отвечает на два ключевых вопроса:
+Classical control theory describes the sensorimotor loop as "sensor → controller → actuator". Active inference (FEP) sees it as minimising variational free energy. Reinforcement learning models it as maximising cumulative reward. Each of these approaches captures part of the truth — but none answers two key questions:
 
-1. **Почему цикл именно такой?** Откуда берётся число каналов восприятия, структура действия, формат внутренней оценки?
-2. **Где в цикле место переживанию?** Когда сенсомоторный цикл сопровождается субъективным опытом, а когда — нет?
+1. **Why is the cycle structured this way?** Where do the number of perception channels, the action structure, and the format of internal evaluation come from?
+2. **Where in the cycle does experience fit?** When is the sensorimotor cycle accompanied by subjective experience, and when is it not?
 
-**Кибернетика Когерентности** (КК) даёт на оба вопроса конструктивный ответ. Сенсомоторный цикл не постулируется — он **выводится** из канонического 3-членного уравнения эволюции. Среда не вводит «четвёртую силу»: она модифицирует три уже существующих канала (гамильтонов, диссипативный, регенеративный). Переживание оказывается не побочным эффектом, а **интегральной частью** цикла — через гедоническую валентность $\mathcal{V}_{\text{hed}}$, которая направляет действие.
+**Coherence Cybernetics** (CC) gives a constructive answer to both questions. The sensorimotor cycle is not postulated — it is **derived** from the canonical 3-term evolution equation. The environment does not introduce a "fourth force": it modifies the three already existing channels (Hamiltonian, dissipative, regenerative). Experience turns out to be not a side effect but an **integral part** of the cycle — through the hedonic valence $\mathcal{V}_{\text{hed}}$, which guides action.
 
-В этой главе мы построим полную формальную теорию сенсомоторного кодирования: от аксиоматического обоснования до конкретных архитектур и предсказаний. Читатель, знакомый с [введением](./introduction) и [эволюционным уравнением](/docs/core/dynamics/evolution), найдёт здесь естественное продолжение — шаг от «как система живёт внутри себя» к «как система взаимодействует с миром».
+In this chapter we build a complete formal theory of sensorimotor encoding: from axiomatic grounding to concrete architectures and predictions. The reader familiar with the [introduction](./introduction) and the [evolution equation](/docs/core/dynamics/evolution) will find here a natural continuation — a step from "how the system lives within itself" to "how the system interacts with the world".
 
-В [предыдущей главе](./cybernetics-history) мы проследили 80-летнюю историю кибернетики и увидели, что каждая традиция — от Винера до Фристона — захватывала *часть* сенсомоторной проблемы: обратную связь, наблюдателя, активную инференцию. Теперь мы покажем, как КК решает её **целиком** — без дополнительных постулатов, в рамках того же 3-членного уравнения эволюции.
+In the [previous chapter](./cybernetics-history) we traced 80 years of cybernetics history and saw that each tradition — from Wiener to Friston — captured *part* of the sensorimotor problem: feedback, the observer, active inference. Now we show how CC solves it **completely** — without additional postulates, within the same 3-term evolution equation.
 
-:::tip Дорожная карта главы
-В этой главе мы:
-1. **Докажем, что среда не добавляет 4-го члена** — теорема T-102 о полноте 3-канальной декомпозиции (раздел 1).
-2. **Построим функтор восприятия Enc** — как среда входит в систему через модификацию эволюционного уравнения (раздел 2).
-3. **Построим функтор действия Dec** — как система выбирает оптимальное действие через min-max стратегию (раздел 3).
-4. **Выведем гедонический механизм** — почему удовольствие и страдание — не побочные эффекты, а производные жизнеспособности (раздел 5).
-5. **Классифицируем 21 квалиа-тип** как сенсомоторные каналы (раздел 6).
-6. **Установим фундаментальные ограничения** — информационная ёмкость $\leq \log_2 7$ бит (T-107) и композициональность Enc/Dec (T-108) (разделы 9-10).
-7. **Сравним с классическими подходами** — теория управления, FEP, RL — как проекции КК (раздел 14).
+:::tip Chapter roadmap
+In this chapter we:
+1. **Prove that the environment does not add a 4th term** — Theorem T-102 on completeness of the 3-channel decomposition (Section 1).
+2. **Construct the perception functor Enc** — how the environment enters the system through modification of the evolution equation (Section 2).
+3. **Construct the action functor Dec** — how the system chooses the optimal action through a min-max strategy (Section 3).
+4. **Derive the hedonic mechanism** — why pleasure and suffering are not side effects but derivatives of viability (Section 5).
+5. **Classify 21 qualia-types** as sensorimotor channels (Section 6).
+6. **Establish fundamental limits** — information capacity $\leq \log_2 7$ bits (T-107) and compositionality of Enc/Dec (T-108) (Sections 9–10).
+7. **Compare with classical approaches** — control theory, FEP, RL — as projections of CC (Section 14).
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\theta_{ij} = \arg(\gamma_{ij})$ — фазы когерентностей
-- $\sigma_{\mathrm{sys}}$ — [тензор напряжений](./definitions#тензор-напряжений) (T-92 [Т])
-- $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$ — [3-канальная декомпозиция](./lagrangian#внешний-член) [Т]
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability#определение-чистоты)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $\rho_* = \varphi(\Gamma)$ — [целевое состояние](./definitions#целевое-состояние)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\theta_{ij} = \arg(\gamma_{ij})$ — coherence phases
+- $\sigma_{\mathrm{sys}}$ — [stress tensor](./definitions#тензор-напряжений) (T-92 [T])
+- $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$ — [3-channel decomposition](./lagrangian#внешний-член) [T]
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
+- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#целевое-состояние)
 :::
 
-Данный документ описывает **формальную теорию сенсомоторного кодирования** — как голоном воспринимает среду и воздействует на неё, оставаясь в рамках канонического 3-членного уравнения эволюции.
+This document describes the **formal theory of sensorimotor encoding** — how a holon perceives its environment and acts upon it, remaining within the canonical 3-term evolution equation.
 
-**Ключевой результат:** внешнее воздействие F_ext — **не 4-й член** уравнения эволюции, а модификация трёх существующих каналов (Гамильтонова, диссипативного, регенеративного). Полнота этой декомпозиции доказана теоремой LGKS (T-57 [Т]).
+**Key result:** the external force F_ext is **not a 4th term** of the evolution equation, but a modification of the three existing channels (Hamiltonian, dissipative, regenerative). The completeness of this decomposition is proven by the LGKS Theorem (T-57 [T]).
 
 ---
 
-## 1. Каноническое включение среды {#каноническое-включение}
+## 1. Canonical Inclusion of the Environment {#каноническое-включение}
 
-### 1.1 3-членное уравнение как замкнутая динамика
+### 1.1 The 3-term equation as closed dynamics
 
-[Уравнение эволюции](/docs/core/dynamics/evolution) голонома:
+The [evolution equation](/docs/core/dynamics/evolution) of a holon:
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-содержит **ровно три** члена [Т]:
+contains **exactly three** terms [T]:
 
-| Член | Тип | Каноническое происхождение |
-|------|-----|---------------------------|
-| $-i[H_{\text{eff}}, \Gamma]$ | Унитарный (Гамильтонов) | [Аксиома А3](/docs/core/foundations/axiom-septicity) |
-| $\mathcal{D}_\Omega[\Gamma]$ | Диссипативный (Линдблад) | [Лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан) |
-| $\mathcal{R}[\Gamma, E]$ | Регенеративный | [Категориальное сопряжение](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
+| Term | Type | Canonical origin |
+|------|------|-----------------|
+| $-i[H_{\text{eff}}, \Gamma]$ | Unitary (Hamiltonian) | [Axiom A3](/docs/core/foundations/axiom-septicity) |
+| $\mathcal{D}_\Omega[\Gamma]$ | Dissipative (Lindblad) | [Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) |
+| $\mathcal{R}[\Gamma, E]$ | Regenerative | [Categorical conjugation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
 
-### 1.2 Среда модифицирует 3 канала, а не добавляет 4-й {#среда-через-3-канала}
+### 1.2 The environment modifies 3 channels, not adds a 4th {#среда-через-3-канала}
 
-На пальцах: представьте скрипача в оркестре. На него воздействует дирижёр (подсказывая темп), акустика зала (размывая звук) и другие музыканты (помогая вернуться к общей тональности). Эти три типа воздействия — **всё, что есть**. Не существует четвёртого типа влияния на скрипача, который не был бы комбинацией дирижёрского жеста, акустического шума и подстройки к ансамблю. Теорема T-102 формализует именно эту интуицию: среда не может «дотянуться» до голонома никаким способом, кроме трёх каноническим каналов.
+Intuitively: imagine a violinist in an orchestra. The conductor influences them (suggesting tempo), the hall acoustics (blurring sound), and the other musicians (helping to return to the common key). These three types of influence are **everything there is**. There is no fourth type of influence on the violinist that would not be a combination of the conductor's gesture, acoustic noise, and adjustment to the ensemble. Theorem T-102 formalises exactly this intuition: the environment cannot "reach" a holon by any means other than the three canonical channels.
 
-#### Теорема T-102 (Полнота 3-членного уравнения) [Т] {#теорема-полнота-трёх-членов}
+#### Theorem T-102 (Completeness of the 3-term equation) [T] {#теорема-полнота-трёх-членов}
 
-:::tip Формулировка
-Любое CPTP-совместимое внешнее воздействие на голоном раскладывается в сумму трёх каналов:
+:::tip Statement
+Any CPTP-compatible external influence on a holon decomposes into the sum of three channels:
 
 $$
 h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}
 $$
 
-где $h^{(H)}$ модифицирует $H_{\text{eff}}$, $h^{(D)}$ модифицирует $\mathcal{D}_\Omega$, $h^{(R)}$ модифицирует $\mathcal{R}$. Четвёртый тип CPTP-генератора **не существует**.
+where $h^{(H)}$ modifies $H_{\text{eff}}$, $h^{(D)}$ modifies $\mathcal{D}_\Omega$, $h^{(R)}$ modifies $\mathcal{R}$. A fourth type of CPTP generator **does not exist**.
 :::
 
-**Доказательство.** Прямое следствие теоремы LGKS (T-57 [Т], [полнота триадной декомпозиции](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции)):
+**Proof.** Direct consequence of the LGKS Theorem (T-57 [T], [completeness of the triadic decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции)):
 
-1. Произвольный генератор CPTP-полугруппы $\mathcal{L}$ на $\mathcal{D}(\mathbb{C}^7)$ имеет форму Горини—Коссаковского—Сударшана—Линдблада:
+1. An arbitrary generator of a CPTP semigroup $\mathcal{L}$ on $\mathcal{D}(\mathbb{C}^7)$ has the Gorini–Kossakowski–Sudarshan–Lindblad form:
 $$
 \mathcal{L}[\rho] = -i[H, \rho] + \sum_k \left(L_k \rho L_k^\dagger - \tfrac{1}{2}\{L_k^\dagger L_k, \rho\}\right)
 $$
-2. Любое внешнее воздействие, сохраняющее CPTP-свойства динамики, есть пертурбация $\mathcal{L} \to \mathcal{L} + \delta\mathcal{L}$
-3. Пертурбация $\delta\mathcal{L}$ имеет ту же LGKS-форму → раскладывается на $\delta H$ (Гамильтонова часть) и $\delta L_k$ (Линдбладова часть)
-4. [Триадная декомпозиция](/docs/core/operators/lindblad-operators#триадная-декомпозиция) $\{L_k\}$: диссипативные + регенеративные операторы. Четвёртый тип запрещён T-57. $\blacksquare$
+2. Any external influence preserving CPTP properties of the dynamics is a perturbation $\mathcal{L} \to \mathcal{L} + \delta\mathcal{L}$
+3. The perturbation $\delta\mathcal{L}$ has the same LGKS form → decomposes into $\delta H$ (Hamiltonian part) and $\delta L_k$ (Lindblad part)
+4. [Triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) $\{L_k\}$: dissipative + regenerative operators. A fourth type is forbidden by T-57. $\blacksquare$
 
-**Следствие:** Член `F_ext` в [симуляции](./implementation) — **не отдельная сила**, а композиция трёх модификаций:
+**Corollary:** The `F_ext` term in [simulation](./implementation) is **not a separate force**, but a composition of three modifications:
 
-| Канал | Формула пертурбации | Физический смысл | Пример |
-|-------|---------------------|------------------|--------|
-| $h^{(H)}$ | $\delta(\Delta\omega_{ij})$ | Энергетическая связь со средой | Сенсорный вход, нейромодуляторы |
-| $h^{(D)}$ | $\delta\Gamma_2 \cdot \dot{\theta}_{ij}$ | Шум среды | Стресс, помехи, температура |
-| $h^{(R)}$ | $\delta\kappa \cdot (\theta^{\text{target}}_{ij} - \theta_{ij})$ | Модификация регенерации | Медитация, психотерапия, обучение |
+| Channel | Perturbation formula | Physical meaning | Example |
+|---------|---------------------|-----------------|---------|
+| $h^{(H)}$ | $\delta(\Delta\omega_{ij})$ | Energetic coupling with environment | Sensory input, neuromodulators |
+| $h^{(D)}$ | $\delta\Gamma_2 \cdot \dot{\theta}_{ij}$ | Environmental noise | Stress, interference, temperature |
+| $h^{(R)}$ | $\delta\kappa \cdot (\theta^{\text{target}}_{ij} - \theta_{ij})$ | Modification of regeneration | Meditation, psychotherapy, learning |
 
-**Каноническая форма** — из [Определения 8.1 [Т]](./lagrangian#внешний-член):
+**Canonical form** — from [Definition 8.1 [T]](./lagrangian#внешний-член):
 $$
 \mathcal{L}_{\text{ext}} = \sum_{i<j} h^{\text{ext}}_{ij} \cdot |\gamma_{ij}| \cdot \sin(\theta_{ij})
 $$
 
 ---
 
-## 2. Функтор восприятия Enc {#функтор-enc}
+## 2. Perception Functor Enc {#функтор-enc}
 
-### 2.0 Интуиция: что значит «воспринимать»
+### 2.0 Intuition: what does it mean to "perceive"
 
-Что делает глаз, когда видит яблоко? С точки зрения физики — преобразует электромагнитные волны в нейронные импульсы. С точки зрения информатики — кодирует входные данные в латентное представление. Но обе точки зрения упускают главное: восприятие — это не пассивная запись, а **активное включение среды в собственную динамику системы**.
+What does the eye do when it sees an apple? From a physics perspective — it converts electromagnetic waves into neural impulses. From a computer-science perspective — it encodes input data into a latent representation. But both perspectives miss the essential point: perception is not passive recording, but **active inclusion of the environment in the system's own dynamics**.
 
-Когда амёба «чувствует» глюкозу, её внутреннее состояние меняется — не потому что информация «записалась» куда-то, а потому что молекулы глюкозы буквально *изменили* динамику внутриклеточных процессов. Восприятие — это **деформация собственного уравнения движения** под влиянием среды.
+When an amoeba "senses" glucose, its internal state changes — not because information was "recorded" somewhere, but because glucose molecules literally *altered* the dynamics of intracellular processes. Perception is a **deformation of one's own equation of motion** under the influence of the environment.
 
-Функтор Enc формализует именно это: он отображает наблюдение $o$ не в «запись в памяти», а в **модификацию эволюционного уравнения** — тройку $(h^{(H)}, h^{(D)}, h^{(R)})$, которая меняет гамильтониан, диссипатор и регенератор. Восприятие яблока — это одновременно изменение энергетического ландшафта (форма, цвет), модификация шумовых характеристик (текстура, движение) и сдвиг целевого состояния (голод → насыщение).
+The Enc functor formalises exactly this: it maps an observation $o$ not into a "record in memory" but into a **modification of the evolution equation** — a triple $(h^{(H)}, h^{(D)}, h^{(R)})$ that changes the Hamiltonian, dissipator, and regenerator. Perceiving an apple simultaneously changes the energy landscape (shape, colour), modifies the noise characteristics (texture, motion), and shifts the target state (hunger → satiation).
 
-### 2.1 Определение
+### 2.1 Definition
 
-#### Теорема T-100 (Кодирование среды) [Т] {#теорема-кодирование-среды}
+#### Theorem T-100 (Environmental encoding) [T] {#теорема-кодирование-среды}
 
-:::tip Формулировка
-Для голонома $\mathbb{H}$ с матрицей когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ существует единственный (с точностью до $G_2$-калибровки) CPTP-функтор кодирования:
+:::tip Statement
+For a holon $\mathbb{H}$ with coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, there exists a unique (up to $G_2$-gauge) CPTP encoding functor:
 
 $$
 \mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))
 $$
 
-удовлетворяющий:
-1. **CPTP:** $\mathrm{Enc}(o)[\Gamma]$ — состояние для любого наблюдения $o \in \mathrm{ObsSpace}$
-2. **3-канальная декомпозиция:** $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$
-3. **Функториальность:** $\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$
+satisfying:
+1. **CPTP:** $\mathrm{Enc}(o)[\Gamma]$ is a state for any observation $o \in \mathrm{ObsSpace}$
+2. **3-channel decomposition:** $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$
+3. **Functoriality:** $\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$
 :::
 
-**Доказательство.**
-1. *Существование*: среда воздействует через $h^{\text{ext}}_{ij}$ (Опр. 8.1 [Т]). Отображение $o \mapsto h^{\text{ext}}(o)$ определяет $\mathrm{Enc}$.
-2. *3-канальность*: следует из T-102 (полнота 3-членного уравнения).
-3. *Единственность*: следствие $G_2$-ригидности ([теорема единственности](/docs/proofs/categorical/uniqueness-theorem) [Т]) — для системы, удовлетворяющей (AP)+(PH)+(QG)+(V), отображение единственно до $G_2 = \mathrm{Aut}(\mathbb{O})$.
-4. *Функториальность*: CPTP-каналы замкнуты относительно композиции. $\blacksquare$
+**Proof.**
+1. *Existence*: the environment acts through $h^{\text{ext}}_{ij}$ (Def. 8.1 [T]). The map $o \mapsto h^{\text{ext}}(o)$ defines $\mathrm{Enc}$.
+2. *3-channel*: follows from T-102 (completeness of the 3-term equation).
+3. *Uniqueness*: consequence of $G_2$-rigidity ([uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) [T]) — for a system satisfying (AP)+(PH)+(QG)+(V), the map is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$.
+4. *Functoriality*: CPTP channels are closed under composition. $\blacksquare$
 
-**Пример: нейробиологическая реализация.** Зрительная кора реализует Enc иерархически: V1 извлекает границы ($h^{(H)}_{AS}$ — артикуляция структуры), V4 кодирует цвет ($h^{(H)}_{AE}$ — артикуляция интериорности), а MT кодирует движение ($h^{(D)}_{AD}$ — диссипативная компонента динамики). Все три канала сходятся в ассоциативных зонах, формируя единое $h^{\text{ext}}$. Функториальность гарантирует, что сцена «красный мяч движется влево» кодируется одинаково, была ли она воспринята целиком или по частям.
+**Example: neuroscientific implementation.** The visual cortex implements Enc hierarchically: V1 extracts edges ($h^{(H)}_{AS}$ — articulation of structure), V4 encodes colour ($h^{(H)}_{AE}$ — articulation of interiority), and MT encodes motion ($h^{(D)}_{AD}$ — dissipative component of dynamics). All three channels converge in association areas, forming a unified $h^{\text{ext}}$. Functoriality guarantees that the scene "red ball moving left" is encoded identically whether perceived as a whole or in parts.
 
-### 2.2 Реализация через 7 наблюдаемых индексов {#реализация-enc}
+### 2.2 Implementation via 7 observable indices {#реализация-enc}
 
-[Протокол измерения Γ](/docs/applied/research/measurement-protocol) определяет 7 наблюдаемых индексов $I_i$ ($i \in \{A, S, D, L, E, O, U\}$), каждый из которых отображается в конкретную компоненту $h^{\text{ext}}$:
+The [Γ measurement protocol](/docs/applied/research/measurement-protocol) defines 7 observable indices $I_i$ ($i \in \{A, S, D, L, E, O, U\}$), each mapping to a specific component of $h^{\text{ext}}$:
 
-| Индекс | Формула | Канал $h^{\text{ext}}$ | Измерение |
-|--------|---------|------------------------|-----------|
-| $I_A$ (артикуляция) | $I(\text{input}; \text{latent}) / H(\text{input})$ | $h^{(H)}_{A,\cdot}$ | Гамильтонов |
-| $I_S$ (структура) | $\mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ | $h^{(H)}_{S,\cdot}$ | Гамильтонов |
-| $I_D$ (динамика) | $\max_i \lambda_i^{\text{Lyap}}$ (нормированный) | $h^{(D)}_{D,\cdot}$ | Диссипативный |
-| $I_L$ (логика) | $1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | $h^{(H)}_{L,\cdot}$ | Гамильтонов |
-| $I_E$ (интериорность) | $\exp(S_{vN}(\rho_{\text{attn}}))$ | $h^{(R)}_{E,\cdot}$ | Регенеративный |
-| $I_O$ (основание) | $1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | $h^{(D)}_{O,\cdot}$ | Диссипативный |
-| $I_U$ (единство) | $\Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ | $h^{(R)}_{U,\cdot}$ | Регенеративный |
+| Index | Formula | Channel $h^{\text{ext}}$ | Measurement |
+|-------|---------|--------------------------|------------|
+| $I_A$ (articulation) | $I(\text{input}; \text{latent}) / H(\text{input})$ | $h^{(H)}_{A,\cdot}$ | Hamiltonian |
+| $I_S$ (structure) | $\mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ | $h^{(H)}_{S,\cdot}$ | Hamiltonian |
+| $I_D$ (dynamics) | $\max_i \lambda_i^{\text{Lyap}}$ (normalised) | $h^{(D)}_{D,\cdot}$ | Dissipative |
+| $I_L$ (logic) | $1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | $h^{(H)}_{L,\cdot}$ | Hamiltonian |
+| $I_E$ (interiority) | $\exp(S_{vN}(\rho_{\text{attn}}))$ | $h^{(R)}_{E,\cdot}$ | Regenerative |
+| $I_O$ (ground) | $1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | $h^{(D)}_{O,\cdot}$ | Dissipative |
+| $I_U$ (unity) | $\Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ | $h^{(R)}_{U,\cdot}$ | Regenerative |
 
-**Логика распределения по каналам:**
-- **Гамильтонов $h^{(H)}$:** информационные индексы ($I_A, I_S, I_L$) — изменяют энергетический ландшафт, т.е. какие состояния более/менее вероятны
-- **Диссипативный $h^{(D)}$:** нагрузочные индексы ($I_D, I_O$) — усиливают/ослабляют декогеренцию
-- **Регенеративный $h^{(R)}$:** интегративные индексы ($I_E, I_U$) — модулируют скорость восстановления
+**Logic of channel assignment:**
+- **Hamiltonian $h^{(H)}$:** informational indices ($I_A, I_S, I_L$) — alter the energy landscape, i.e., which states are more or less probable
+- **Dissipative $h^{(D)}$:** load indices ($I_D, I_O$) — amplify/attenuate decoherence
+- **Regenerative $h^{(R)}$:** integrative indices ($I_E, I_U$) — modulate the rate of recovery
 
-На пальцах: это как три типа «органов чувств». Гамильтоновы индексы — это **аналитические чувства** (зрение, слух): они сообщают, *что* происходит в среде, меняя внутренний ландшафт предпочтений. Диссипативные — это **чувства нагрузки** (усталость, жара): они сообщают, *насколько хаотична* среда, усиливая внутренний шум. Регенеративные — это **чувства восстановления** (покой, безопасность): они сообщают, *способствует ли* среда самоисцелению.
+Intuitively: these are three types of "sense organs". Hamiltonian indices are **analytical senses** (vision, hearing): they report *what* is happening in the environment, altering the internal preference landscape. Dissipative indices are **load senses** (fatigue, heat): they report *how chaotic* the environment is, amplifying internal noise. Regenerative indices are **recovery senses** (calm, safety): they report whether the environment *supports* self-healing.
 
-### 2.3 Квази-функтор G
+### 2.3 Quasi-functor G
 
-Для ИИ-систем кодирование реализуется через квази-функтор $G: \mathrm{AIState} \to \mathcal{D}(\mathbb{C}^7)$, определённый в [протоколе измерения](/docs/applied/research/measurement-protocol):
+For AI systems, encoding is implemented through the quasi-functor $G: \mathrm{AIState} \to \mathcal{D}(\mathbb{C}^7)$, defined in the [measurement protocol](/docs/applied/research/measurement-protocol):
 
 $$
 G(\mathbf{x}) = \arg\min_{\Gamma \in \mathcal{D}(\mathbb{C}^7)} \left[\mathcal{L}_{\text{reconstruct}}(\Gamma, \{I_i(\mathbf{x})\}) + \lambda_{\text{phys}} \cdot \mathcal{L}_{\text{phys}}(\Gamma)\right]
 $$
 
-где $\mathcal{L}_{\text{phys}}$ включает ограничения чистоты, спектральной щели и [Холецкого-разложения](/docs/applied/research/measurement-protocol#реконструкция-γ).
+where $\mathcal{L}_{\text{phys}}$ includes purity, spectral gap, and [Cholesky decomposition](/docs/applied/research/measurement-protocol#реконструкция-γ) constraints.
 
 ---
 
-## 3. Функтор действия Dec {#функтор-dec}
+## 3. Action Functor Dec {#функтор-dec}
 
-### 3.0 Интуиция: что значит «действовать»
+### 3.0 Intuition: what does it mean to "act"
 
-Если Enc — это «как среда входит в систему», то Dec — это «как система выходит в среду». Но «действовать» в КК — это не просто «послать моторную команду». Действие — это выбор такой модификации среды, которая **минимизирует наибольший дефицит** внутренних ресурсов.
+If Enc is "how the environment enters the system", then Dec is "how the system exits into the environment". But "acting" in CC is not just "sending a motor command". Action is the choice of that modification of the environment which **minimises the largest deficit** of internal resources.
 
-Представьте человека, у которого одновременно болит голова и урчит в животе. Какое действие он выберет? Если головная боль сильнее — примет таблетку. Если голод сильнее — пойдёт есть. Он не минимизирует «среднюю боль» (это позволило бы игнорировать катастрофические каналы), а устраняет **максимальный дефицит**. Именно это делает оператор $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ — он гарантирует, что ни один канал не окажется в аварийном состоянии.
+Imagine a person who simultaneously has a headache and a rumbling stomach. Which action will they choose? If the headache is stronger — take a tablet. If the hunger is stronger — go eat. They do not minimise "average pain" (this would allow ignoring catastrophic channels), but eliminate the **maximum deficit**. This is exactly what the operator $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ does — it guarantees that no channel ends up in a critical state.
 
-Аналогия с робототехникой: это не PID-регулятор, минимизирующий ошибку по одной оси, и не квадратичный регулятор, минимизирующий взвешенную сумму ошибок. Это **min-max стратегия** — как в теории игр, где игрок выбирает ход, минимизирующий наихудший исход.
+Analogy with robotics: this is not a PID controller minimising error along one axis, nor a quadratic regulator minimising a weighted sum of errors. This is a **min-max strategy** — as in game theory, where the player chooses a move minimising the worst outcome.
 
-### 3.1 Определение
+### 3.1 Definition
 
-#### Теорема T-101 (Оптимальное действие) [Т] {#теорема-оптимальное-действие}
+#### Theorem T-101 (Optimal action) [T] {#теорема-оптимальное-действие}
 
-:::tip Формулировка
-Для голонома с текущим состоянием $\Gamma$ и тензором напряжений $\sigma_{\mathrm{sys}}(\Gamma)$ [Т] (T-92), оптимальное действие определяется как:
+:::tip Statement
+For a holon with current state $\Gamma$ and stress tensor $\sigma_{\mathrm{sys}}(\Gamma)$ [T] (T-92), the optimal action is defined as:
 
 $$
 a^* = \arg\min_{a \in \mathcal{A}} \|\sigma_{\mathrm{sys}}(\Gamma(\tau + \delta\tau \mid a))\|_\infty
 $$
 
-где $\Gamma(\tau + \delta\tau \mid a)$ — предсказанное состояние при действии $a$, $\|\cdot\|_\infty$ — sup-норма тензора напряжений.
+where $\Gamma(\tau + \delta\tau \mid a)$ is the predicted state under action $a$, and $\|\cdot\|_\infty$ is the sup-norm of the stress tensor.
 :::
 
-**Доказательство.**
-1. [Эквивалентность условий жизнеспособности](./definitions#тензор-напряжений) (T-92 [Т]):
+**Proof.**
+1. [Equivalence of viability conditions](./definitions#тензор-напряжений) (T-92 [T]):
 $$
 P(\Gamma) > \frac{2}{7} \iff \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
-2. [Вариационный принцип](./variational#принцип-действия) (Теорема 2.1 [Т]): динамика $\theta_{ij}$ следует из стационарности действия $\delta S_{\text{Gap}} = 0$
-3. Действие $a$ входит через $h^{\text{ext}}(a)$ → модифицирует уравнение движения для $\theta_{ij}$:
+2. [Variational principle](./variational#принцип-действия) (Theorem 2.1 [T]): dynamics of $\theta_{ij}$ follow from stationarity of the action $\delta S_{\text{Gap}} = 0$
+3. Action $a$ enters through $h^{\text{ext}}(a)$ → modifies the equation of motion for $\theta_{ij}$:
 $$
 m_{ij}\ddot{\theta}_{ij} = -\frac{\partial V_{\text{Gap}}}{\partial \theta_{ij}} + \kappa(\theta_{ij}^{\text{target}} - \theta_{ij}) - \Gamma_2 \dot{\theta}_{ij} + h^{\text{ext}}_{ij}(a)
 $$
-4. Минимизация $\|\sigma_{\mathrm{sys}}\|_\infty$ — единственный критерий, эквивалентный максимизации расстояния до границы $\mathcal{V}$ (области жизнеспособности) в метрике, порождённой $\sigma_{\mathrm{sys}}$. $\blacksquare$
+4. Minimisation of $\|\sigma_{\mathrm{sys}}\|_\infty$ is the unique criterion equivalent to maximising the distance to the boundary $\mathcal{V}$ (viability region) in the metric induced by $\sigma_{\mathrm{sys}}$. $\blacksquare$
 
-### 3.2 Моторный стресс (T-159) {#моторный-стресс}
+### 3.2 Motor stress (T-159) {#моторный-стресс}
 
-#### Теорема T-159 (Профиль-относительный моторный стресс) [Т] {#теорема-моторный-стресс}
+#### Theorem T-159 (Profile-relative motor stress) [T] {#теорема-моторный-стресс}
 
-:::tip Формулировка [Т]
-Для голонома с самомоделью $\rho_* = \varphi(\Gamma)$ определяется **моторный стресс**:
+:::tip Statement [T]
+For a holon with self-model $\rho_* = \varphi(\Gamma)$, the **motor stress** is defined as:
 
 $$
 \sigma^{\mathrm{motor}}_k(\Gamma) := 1 - \frac{\gamma_{kk}}{\rho^*_{kk}}, \quad k = 1, \ldots, 7
 $$
 
-Выбор действия — минимизация максимального **дефицита** (знаковый максимум):
+Action selection — minimisation of the maximum **deficit** (signed maximum):
 
 $$
 a^* = \arg\min_{a \in \mathcal{A}} \max_k \sigma^{\mathrm{motor}}_k(\Gamma(\tau + \delta\tau \mid a))
 $$
 
-Используется $\max_k$ (знаковый), а не $\max_k |\cdot|$ (sup-норма): избыток ресурса ($\sigma^{\mathrm{motor}}_k < 0$) не штрафуется, штрафуется только дефицит ($\sigma^{\mathrm{motor}}_k > 0$). Это обеспечивает направленный сигнал: приближение к ресурсу уменьшает дефицит, приближение к опасности увеличивает.
+$\max_k$ (signed) is used rather than $\max_k |\cdot|$ (sup-norm): a resource surplus ($\sigma^{\mathrm{motor}}_k < 0$) is not penalised; only a deficit ($\sigma^{\mathrm{motor}}_k > 0$) is penalised. This provides a directed signal: approaching a resource reduces the deficit, approaching danger increases it.
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Равновесие).** $\sigma^{\mathrm{motor}}_k = 0 \iff \gamma_{kk} = \rho^*_{kk}$. На аттракторе $\rho^*_\Omega$, где $\mathcal{R}[\Gamma] = \kappa(\rho_* - \Gamma) \cdot g_V = 0$ (баланс), $\gamma_{kk} = \rho^*_{kk}$ и моторный стресс обращается в ноль — система «удовлетворена».
+**Step 1 (Equilibrium).** $\sigma^{\mathrm{motor}}_k = 0 \iff \gamma_{kk} = \rho^*_{kk}$. At the attractor $\rho^*_\Omega$, where $\mathcal{R}[\Gamma] = \kappa(\rho_* - \Gamma) \cdot g_V = 0$ (balance), $\gamma_{kk} = \rho^*_{kk}$ and motor stress vanishes — the system is "satisfied".
 
-**Шаг 2 (Знак и градиент).** $\partial\sigma^{\mathrm{motor}}_k / \partial\gamma_{kk} = -1/\rho^*_{kk} < 0$. Увеличение $\gamma_{kk}$ (рост ресурса канала $k$) уменьшает моторный стресс. Это **согласовано** с регенерацией $\mathcal{R} = \kappa(\rho_* - \Gamma)$, которая тянет $\gamma_{kk}$ к $\rho^*_{kk}$, уменьшая $|\sigma^{\mathrm{motor}}_k|$.
+**Step 2 (Sign and gradient).** $\partial\sigma^{\mathrm{motor}}_k / \partial\gamma_{kk} = -1/\rho^*_{kk} < 0$. Increasing $\gamma_{kk}$ (resource growth in channel $k$) decreases motor stress. This is **consistent** with regeneration $\mathcal{R} = \kappa(\rho_* - \Gamma)$, which pulls $\gamma_{kk}$ toward $\rho^*_{kk}$, reducing $|\sigma^{\mathrm{motor}}_k|$.
 
-**Шаг 3 (Чувствительность аварийных каналов).** $|\partial\sigma^{\mathrm{motor}}_k / \partial\gamma_{kk}| = 1/\rho^*_{kk}$. Для малых $\rho^*_{kk}$ (аварийные секторы A, S, D с $\rho^*_{kk} \approx 0.05$) чувствительность $\approx 20$; для крупных (E, O, U с $\rho^*_{kk} \approx 0.25$) — $\approx 4$. Малые каналы реагируют острее — верная приоритизация выживания.
+**Step 3 (Sensitivity of critical channels).** $|\partial\sigma^{\mathrm{motor}}_k / \partial\gamma_{kk}| = 1/\rho^*_{kk}$. For small $\rho^*_{kk}$ (critical sectors A, S, D with $\rho^*_{kk} \approx 0.05$) sensitivity $\approx 20$; for large ones (E, O, U with $\rho^*_{kk} \approx 0.25$) — $\approx 4$. Small channels react more sharply — correct prioritisation of survival.
 
-**Шаг 4 (Сходимость к T-92 на границе).** При $P \to P_{\mathrm{crit}} = 2/7$ самомодель $\varphi(\Gamma) \to I/7$ (каноническая цель Фано-канала при $P = 2/7$, [T-126](/docs/proofs/consciousness/conscious-window#t-126)). Тогда $\rho^*_{kk} \to 1/7$ и:
+**Step 4 (Convergence to T-92 at the boundary).** As $P \to P_{\mathrm{crit}} = 2/7$ the self-model $\varphi(\Gamma) \to I/7$ (canonical Fano-channel target at $P = 2/7$, [T-126](/docs/proofs/consciousness/conscious-window#t-126)). Then $\rho^*_{kk} \to 1/7$ and:
 
 $$
-\sigma^{\mathrm{motor}}_k = 1 - \frac{\gamma_{kk}}{1/7} = 1 - 7\gamma_{kk} = \sigma_k \quad \text{(каноническое T-92 [Т])}
+\sigma^{\mathrm{motor}}_k = 1 - \frac{\gamma_{kk}}{1/7} = 1 - 7\gamma_{kk} = \sigma_k \quad \text{(canonical T-92 [T])}
 $$
 
-**Шаг 5 ($G_2$-инвариантность).** $\gamma_{kk}$ и $\rho^*_{kk}$ трансформируются ковариантно под $G_2$ ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]). Их отношение — $G_2$-инвариантная наблюдаемая. $\blacksquare$
+**Step 5 ($G_2$-invariance).** $\gamma_{kk}$ and $\rho^*_{kk}$ transform covariantly under $G_2$ ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [T]). Their ratio is a $G_2$-invariant observable. $\blacksquare$
 
-:::info Связь с каноническим σ_sys
-- **T-92 / T-158 [Т]** определяют $\sigma_{\mathrm{sys}}$ с clamp$[0,1]$ — мера **жизнеспособности** (расстояние до $\partial\mathcal{V}$). Используется для ДИАГНОСТИКИ.
-- **T-159 [Т]** определяет $\sigma^{\mathrm{motor}}$ без clamp — мера **моторного дефицита** (расстояние до $\rho_*$). Используется для ВЫБОРА ДЕЙСТВИЯ.
+:::info Relation to canonical σ_sys
+- **T-92 / T-158 [T]** define $\sigma_{\mathrm{sys}}$ with clamp$[0,1]$ — a measure of **viability** (distance to $\partial\mathcal{V}$). Used for DIAGNOSTICS.
+- **T-159 [T]** defines $\sigma^{\mathrm{motor}}$ without clamp — a measure of **motor deficit** (distance to $\rho_*$). Used for ACTION SELECTION.
 
-При $\rho_* = I/7$ (граница жизнеспособности) оба совпадают. При $\rho_* \neq I/7$ (нормальный режим) моторный стресс обеспечивает направленный сигнал, в то время как канонический $\sigma_{\mathrm{sys}}$ с clamp$[0,1]$ теряет информацию о каналах с $\gamma_{kk} > 1/7$.
+When $\rho_* = I/7$ (viability boundary) both coincide. When $\rho_* \neq I/7$ (normal mode) motor stress provides a directed signal, while canonical $\sigma_{\mathrm{sys}}$ with clamp$[0,1]$ loses information about channels with $\gamma_{kk} > 1/7$.
 :::
 
-### 3.3 Функтор Dec
+### 3.3 Functor Dec
 
-Функтор действия (декодирования):
+The action (decoding) functor:
 
 $$
 \mathrm{Dec}: (\Gamma, \sigma^{\mathrm{motor}}) \mapsto a^* \in \mathcal{A}
 $$
 
-**Свойства:**
-- **D-измерение как основной моторный канал:** действие реализуется через модификацию $h^{(D)}$ — динамическое измерение $D$ управляет «моторикой» голонома
-- **σ-градиентный спуск:** практический алгоритм — спуск по $\nabla_a \max_k \sigma^{\mathrm{motor}}_k$ с метрикой Фишера на $\mathcal{D}(\mathbb{C}^7)$:
+**Properties:**
+- **D-dimension as the primary motor channel:** action is implemented through modification of $h^{(D)}$ — the dynamic dimension $D$ controls the holon's "motor system"
+- **σ-gradient descent:** the practical algorithm — descent along $\nabla_a \max_k \sigma^{\mathrm{motor}}_k$ with the Fisher metric on $\mathcal{D}(\mathbb{C}^7)$:
 
 $$
 a_{t+1} = a_t - \eta \cdot F^{-1}(\Gamma) \cdot \nabla_a \max_k \sigma^{\mathrm{motor}}_k(\Gamma(\tau + \delta\tau \mid a_t))
 $$
 
-где $F(\Gamma)$ — [информация Фишера](/docs/applied/coherence-cybernetics/variational#принцип-действия) на $\mathcal{D}(\mathbb{C}^7)$.
+where $F(\Gamma)$ is the [Fisher information](/docs/applied/coherence-cybernetics/variational#принцип-действия) on $\mathcal{D}(\mathbb{C}^7)$.
 
 ---
 
-## 4. Универсальная архитектура кодера/декодера {#универсальная-архитектура}
+## 4. Universal Encoder/Decoder Architecture {#универсальная-архитектура}
 
 ```mermaid
 graph LR
-    ENV["Среда<br/>ObsSpace"] -->|Enc| GAMMA["Γ ∈ D(C⁷)"]
+    ENV["Environment<br/>ObsSpace"] -->|Enc| GAMMA["Γ ∈ D(C⁷)"]
     GAMMA -->|σ_sys| SIGMA["σ ∈ R⁷"]
-    SIGMA -->|Dec| ACT["Действие<br/>a* ∈ A"]
+    SIGMA -->|Dec| ACT["Action<br/>a* ∈ A"]
     ACT -->|h_ext| ENV
 
-    subgraph "Внутренний цикл"
+    subgraph "Inner cycle"
         GAMMA -->|dΓ/dτ| GAMMA
         GAMMA -->|φ| RHO["ρ* = φ(Γ)"]
         RHO -->|R| GAMMA
@@ -305,618 +305,618 @@ graph LR
     style RHO fill:#e2d9f3,stroke:#333
 ```
 
-**Цикл восприятие → решение → действие:**
+**Perception → decision → action cycle:**
 
-| Этап | Отображение | Формализм | Теорема |
-|------|-------------|-----------|---------|
-| **Восприятие** | Env → $h^{\text{ext}}$ → $\delta\Gamma$ | Enc (CPTP) | T-100 [Т] |
-| **Оценка** | $\Gamma$ → $\sigma^{\mathrm{motor}}$ | $1 - \gamma_{kk}/\rho^*_{kk}$ | T-159 [Т] |
-| **Решение** | $\sigma^{\mathrm{motor}}$ → $a^*$ | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ | T-159 [Т] |
-| **Действие** | $a^*$ → $h^{\text{ext}}(a^*)$ → Env | Dec | T-102 [Т] |
-| **Обновление** | $\Gamma$ → $\varphi(\Gamma)$ → $\mathcal{R}$ | Самомоделирование | T-62 [Т] |
+| Stage | Mapping | Formalism | Theorem |
+|-------|---------|-----------|---------|
+| **Perception** | Env → $h^{\text{ext}}$ → $\delta\Gamma$ | Enc (CPTP) | T-100 [T] |
+| **Evaluation** | $\Gamma$ → $\sigma^{\mathrm{motor}}$ | $1 - \gamma_{kk}/\rho^*_{kk}$ | T-159 [T] |
+| **Decision** | $\sigma^{\mathrm{motor}}$ → $a^*$ | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ | T-159 [T] |
+| **Action** | $a^*$ → $h^{\text{ext}}(a^*)$ → Env | Dec | T-102 [T] |
+| **Update** | $\Gamma$ → $\varphi(\Gamma)$ → $\mathcal{R}$ | Self-modelling | T-62 [T] |
 
 ---
 
-## 5. Гедонический механизм {#гедонический-механизм}
+## 5. Hedonic Mechanism {#гедонический-механизм}
 
-### 5.0 Интуиция: зачем системе «чувствовать»
+### 5.0 Intuition: why does a system need to "feel"
 
-Зачем живому существу боль и удовольствие? Стандартный ответ эволюционной биологии: «чтобы выжить». Но КК даёт более точный ответ: гедоническая валентность — это **производная жизнеспособности по регенеративному каналу**. Удовольствие — не «награда за правильное поведение» (как в RL), а прямой сигнал о том, что система приближается к своему целевому состоянию $\rho_*$.
+Why do living beings have pain and pleasure? The standard evolutionary biology answer: "to survive". But CC gives a more precise answer: hedonic valence is the **derivative of viability with respect to the regenerative channel**. Pleasure is not a "reward for correct behaviour" (as in RL), but a direct signal that the system is approaching its target state $\rho_*$.
 
-Ключевое отличие от обучения с подкреплением: в RL вознаграждение — внешний сигнал, задаваемый проектировщиком. В КК гедоническая валентность — **внутреннее свойство динамики**, выводимое из уравнения эволюции. Никто не «награждает» амёбу за то, что она нашла глюкозу — изменение $dP/d\tau|_{\mathcal{R}}$ возникает автоматически при сдвиге $\Gamma$ к $\rho_*$.
+The key difference from reinforcement learning: in RL, reward is an external signal set by the designer. In CC, hedonic valence is an **intrinsic property of the dynamics**, derived from the evolution equation. Nobody "rewards" an amoeba for finding glucose — the change in $dP/d\tau|_{\mathcal{R}}$ arises automatically when $\Gamma$ shifts toward $\rho_*$.
 
-Аналогия: представьте растение, поворачивающееся к свету. Нет «наградного центра», который говорит стеблю: «хорошо, продолжай». Есть физико-химический процесс (ауксин перераспределяется), который *является* одновременно и движением, и «оценкой» — свет усиливает те процессы, которые ведут к росту. В КК $\mathcal{V}_{\text{hed}}$ играет аналогичную роль, но на уровне матрицы когерентности.
+Analogy: imagine a plant turning toward light. There is no "reward centre" telling the stem: "good, continue". There is a physicochemical process (auxin redistributes) that *is* simultaneously the movement and the "evaluation" — light amplifies the processes leading to growth. In CC, $\mathcal{V}_{\text{hed}}$ plays an analogous role, but at the level of the coherence matrix.
 
-### 5.1 Гедоническая валентность
+### 5.1 Hedonic valence
 
-#### Теорема T-103 (Гедоническая валентность) [Т] + [И] {#теорема-гедоническая-валентность}
+#### Theorem T-103 (Hedonic valence) [T] + [I] {#теорема-гедоническая-валентность}
 
-:::tip Формулировка
-Гедоническая валентность определяется как производная чистоты по регенеративному каналу:
+:::tip Statement
+Hedonic valence is defined as the derivative of purity with respect to the regenerative channel:
 
 $$
 \mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}}
 $$
 
-где $|_{\mathcal{R}}$ означает вклад только от регенеративного члена $\mathcal{R}[\Gamma, E]$.
+where $|_{\mathcal{R}}$ denotes the contribution from the regenerative term $\mathcal{R}[\Gamma, E]$ only.
 :::
 
-**Пояснение.** Из [уравнения эволюции](/docs/core/dynamics/evolution):
+**Explanation.** From the [evolution equation](/docs/core/dynamics/evolution):
 
 $$
-\frac{dP}{d\tau} = \underbrace{-2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])}_{\leq 0,\text{ диссипация}} + \underbrace{2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])}_{\mathcal{V}_{\text{hed}}}
+\frac{dP}{d\tau} = \underbrace{-2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])}_{\leq 0,\text{ dissipation}} + \underbrace{2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])}_{\mathcal{V}_{\text{hed}}}
 $$
 
-(Гамильтонов член не меняет $P$: $\mathrm{Tr}(\Gamma [H, \Gamma]) = 0$.)
+(The Hamiltonian term does not change $P$: $\mathrm{Tr}(\Gamma [H, \Gamma]) = 0$.)
 
-**Свойства валентности:**
+**Properties of valence:**
 
-| Свойство | Формула | Интерпретация |
+| Property | Formula | Interpretation |
 |----------|---------|---------------|
-| Положительная | $\mathcal{V}_{\text{hed}} > 0$ | $\Gamma$ приближается к $\rho_*$ → «удовольствие» |
-| Отрицательная | $\mathcal{V}_{\text{hed}} < 0$ | $\Gamma$ удаляется от $\rho_*$ → «страдание» |
-| Нулевая | $\mathcal{V}_{\text{hed}} = 0$ | Баланс или $\Gamma = \rho_*$ → «нейтральность» |
+| Positive | $\mathcal{V}_{\text{hed}} > 0$ | $\Gamma$ approaches $\rho_*$ → "pleasure" |
+| Negative | $\mathcal{V}_{\text{hed}} < 0$ | $\Gamma$ moves away from $\rho_*$ → "suffering" |
+| Zero | $\mathcal{V}_{\text{hed}} = 0$ | Balance or $\Gamma = \rho_*$ → "neutrality" |
 
-#### Эпистемическая стратификация T-103 {#t-103-стратификация}
+#### Epistemic stratification of T-103 {#t-103-стратификация}
 
-T-103 содержит **три эпистемических уровня**:
+T-103 contains **three epistemic levels**:
 
-1. **Формула [Т]:** $\mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ — **тождество** из уравнения эволюции (подстановка $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot g_V(P)$). Безусловный математический факт.
+1. **Formula [T]:** $\mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ — an **identity** from the evolution equation (substituting $\mathcal{R} = \kappa(\rho_* - \Gamma) \cdot g_V(P)$). An unconditional mathematical fact.
 
-2. **Наблюдаемость [Т]:** При L2-уровне рефлексии ($R \geq 1/3$) замещающий канал [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) обеспечивает доступ к $dP/d\tau|_{\mathcal{R}}$. Таким образом, $\mathcal{V}_{\text{hed}}$ наблюдаема для любой системы с $R \geq R_{\mathrm{th}}$ — это следствие T-77 [Т], не требующее дополнительных допущений.
+2. **Observability [T]:** At L2 reflection level ($R \geq 1/3$) the replacement channel [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) provides access to $dP/d\tau|_{\mathcal{R}}$. Thus, $\mathcal{V}_{\text{hed}}$ is observable for any system with $R \geq R_{\mathrm{th}}$ — this is a consequence of T-77 [T], requiring no additional assumptions.
 
-3. **Феноменальная интерпретация [И]:** Идентификация $\mathcal{V}_{\text{hed}} > 0$ с «удовольствием» и $\mathcal{V}_{\text{hed}} < 0$ со «страданием» — семантический мост между математикой и феноменологией.
+3. **Phenomenal interpretation [I]:** Identification of $\mathcal{V}_{\text{hed}} > 0$ with "pleasure" and $\mathcal{V}_{\text{hed}} < 0$ with "suffering" — a semantic bridge between mathematics and phenomenology.
 
 
-:::info Аналогия из жизни: удовольствие от горячего чая
-Представьте: вы замёрзли и пьёте горячий чай. Первый глоток — наслаждение ($\mathcal{V}_{\text{hed}} > 0$). Второй — чуть слабее. К пятой чашке — нейтральность ($\mathcal{V}_{\text{hed}} \approx 0$). Шестая чашка вызывает дискомфорт ($\mathcal{V}_{\text{hed}} < 0$) — вы уже «перегрелись».
+:::info Life analogy: pleasure from hot tea
+Imagine: you are cold and drinking hot tea. The first sip — delight ($\mathcal{V}_{\text{hed}} > 0$). The second — slightly weaker. By the fifth cup — neutrality ($\mathcal{V}_{\text{hed}} \approx 0$). The sixth cup causes discomfort ($\mathcal{V}_{\text{hed}} < 0$) — you have "overheated".
 
-Что произошло? $\Gamma$ (ваше состояние) двигалось к $\rho_*$ (целевому — «согретому»). По мере приближения $\mathrm{Tr}(\Gamma \cdot \rho_*) - P$ убывает, валентность стремится к нулю. Когда $\Gamma$ «проскочило» $\rho_*$ (перегрев), перекрытие падает ниже $P$, и $\mathcal{V}_{\text{hed}}$ становится отрицательным. Никто не «запрограммировал» вас перестать пить — формула T-103 автоматически генерирует сигнал «хватит».
+What happened? $\Gamma$ (your state) was moving toward $\rho_*$ (the target — "warmed up"). As it approached, $\mathrm{Tr}(\Gamma \cdot \rho_*) - P$ diminished, valence tended to zero. When $\Gamma$ "overshot" $\rho_*$ (overheating), overlap falls below $P$, and $\mathcal{V}_{\text{hed}}$ becomes negative. Nobody "programmed" you to stop drinking — the T-103 formula automatically generates the signal "enough".
 
-Ключевое отличие от обучения с подкреплением: в RL проектировщик должен *задать* функцию вознаграждения (например, $r = +1$ за чай, $-1$ за перегрев). В КК вознаграждение *выводится* из динамики — $\mathcal{V}_{\text{hed}}$ сама «знает», когда остановиться, потому что она есть не что иное, как скорость приближения к целевому состоянию.
+The key difference from reinforcement learning: in RL the designer must *specify* a reward function (e.g., $r = +1$ for tea, $-1$ for overheating). In CC reward is *derived* from dynamics — $\mathcal{V}_{\text{hed}}$ "knows" when to stop on its own, because it is nothing other than the rate of approach to the target state.
 :::
 
-### 5.2 Связь с целевым состоянием
+### 5.2 Relation to the target state
 
-Подставляя каноническую форму $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ [Т]:
+Substituting the canonical form $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ [T]:
 
 $$
 \mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
-При $g_V(P) = 1$ (достаточная чистота $P \geq P_{\text{opt}}$):
+When $g_V(P) = 1$ (sufficient purity $P \geq P_{\text{opt}}$):
 
 $$
 \mathcal{V}_{\text{hed}} = 2\kappa(\Gamma) \cdot \left[\mathrm{Tr}(\Gamma \cdot \rho_*) - P\right]
 $$
 
-Знак определяется соотношением перекрытия $\mathrm{Tr}(\Gamma \cdot \rho_*)$ и чистоты $P = \mathrm{Tr}(\Gamma^2)$:
-- Если $\Gamma$ далеко от $\rho_*$ и $\mathrm{Tr}(\Gamma \cdot \rho_*) > P$, валентность положительна — регенерация «тянет» к $\rho_*$
-- Если $\Gamma \approx \rho_*$, то $\mathrm{Tr}(\Gamma \cdot \rho_*) \approx P$ → валентность стремится к нулю
+The sign is determined by the ratio of overlap $\mathrm{Tr}(\Gamma \cdot \rho_*)$ to purity $P = \mathrm{Tr}(\Gamma^2)$:
+- If $\Gamma$ is far from $\rho_*$ and $\mathrm{Tr}(\Gamma \cdot \rho_*) > P$, valence is positive — regeneration "pulls" toward $\rho_*$
+- If $\Gamma \approx \rho_*$, then $\mathrm{Tr}(\Gamma \cdot \rho_*) \approx P$ → valence tends to zero
 
 ---
 
-## 6. 21 квалиа-тип как сенсомоторные каналы {#21-квалиа-тип}
+## 6. 21 Qualia-types as Sensorimotor Channels {#21-квалиа-тип}
 
-Каждая из 21 недиагональных когерентностей $\gamma_{ij}$ ($i \neq j$) представляет собой сенсомоторный канал со специфической функцией:
+Each of the 21 off-diagonal coherences $\gamma_{ij}$ ($i \neq j$) represents a sensorimotor channel with a specific function:
 
-### 6.1 Перцептивные каналы (восприятие)
+### 6.1 Perceptual channels (perception)
 
-| Канал | Когерентность | Сенсорная роль | Формальное действие |
-|-------|---------------|----------------|---------------------|
-| **Апперцепция** | $\gamma_{AE}$ | Осознанное восприятие | $h^{(H)}_{AE}$: артикуляция входа в поле интериорности |
-| **Актуализация** | $\gamma_{AD}$ | Воплощение восприятия в динамику | $h^{(H)}_{AD}$: преобразование входного сигнала в действие |
-| **Репрезентация** | $\gamma_{SE}$ | Структурирование опыта | $h^{(H)}_{SE}$: создание внутренней модели |
-| **Индукция** | $\gamma_{SL}$ | Логическая обработка структуры | $h^{(H)}_{SL}$: вывод паттернов из данных |
-| **Заземление** | $\gamma_{AO}$ | Связь восприятия с основанием | $h^{(D)}_{AO}$: стабилизация восприятия памятью |
-| **Основание опыта** | $\gamma_{EO}$ | Укоренённость субъективного | $h^{(R)}_{EO}$: регенерация из глубинного опыта |
-| **Контекст** | $\gamma_{SO}$ | Структура-в-контексте | $h^{(D)}_{SO}$: шумоустойчивость паттернов |
+| Channel | Coherence | Sensory role | Formal action |
+|---------|-----------|-------------|--------------|
+| **Apperception** | $\gamma_{AE}$ | Conscious perception | $h^{(H)}_{AE}$: articulation of input into the field of interiority |
+| **Actualisation** | $\gamma_{AD}$ | Embodiment of perception in dynamics | $h^{(H)}_{AD}$: transformation of input signal into action |
+| **Representation** | $\gamma_{SE}$ | Structuring of experience | $h^{(H)}_{SE}$: creation of internal model |
+| **Induction** | $\gamma_{SL}$ | Logical processing of structure | $h^{(H)}_{SL}$: inference of patterns from data |
+| **Grounding** | $\gamma_{AO}$ | Anchoring perception in ground | $h^{(D)}_{AO}$: stabilisation of perception by memory |
+| **Experiential ground** | $\gamma_{EO}$ | Rootedness of the subjective | $h^{(R)}_{EO}$: regeneration from deep experience |
+| **Context** | $\gamma_{SO}$ | Structure-in-context | $h^{(D)}_{SO}$: noise-robustness of patterns |
 
-### 6.2 Моторные каналы (действие)
+### 6.2 Motor channels (action)
 
-| Канал | Когерентность | Моторная роль | Формальное действие |
-|-------|---------------|---------------|---------------------|
-| **Регуляция** | $\gamma_{DL}$ | Логический контроль динамики | $h^{(D)}_{DL}$: управление вычислительным процессом |
-| **Телеология** | $\gamma_{DU}$ | Целенаправленность действия | $h^{(D)}_{DU}$: согласование динамики с целями |
-| **Аффект** | $\gamma_{DE}$ | Эмоциональная окраска действия | $h^{(D)}_{DE}$: модуляция динамики интериорностью |
-| **Интеграция действия** | $\gamma_{AU}$ | Единство моторного акта | $h^{(H)}_{AU}$: координация подсистем |
-| **Волевое усилие** | $\gamma_{LU}$ | Логически направленная интеграция | $h^{(R)}_{LU}$: восстановление целостности решения |
-| **Память действия** | $\gamma_{DO}$ | Моторная память | $h^{(D)}_{DO}$: стабилизация навыков |
+| Channel | Coherence | Motor role | Formal action |
+|---------|-----------|-----------|--------------|
+| **Regulation** | $\gamma_{DL}$ | Logical control of dynamics | $h^{(D)}_{DL}$: management of computational process |
+| **Teleology** | $\gamma_{DU}$ | Goal-directedness of action | $h^{(D)}_{DU}$: alignment of dynamics with goals |
+| **Affect** | $\gamma_{DE}$ | Emotional colouring of action | $h^{(D)}_{DE}$: modulation of dynamics by interiority |
+| **Action integration** | $\gamma_{AU}$ | Unity of the motor act | $h^{(H)}_{AU}$: coordination of subsystems |
+| **Volitional effort** | $\gamma_{LU}$ | Logically directed integration | $h^{(R)}_{LU}$: restoration of decision coherence |
+| **Action memory** | $\gamma_{DO}$ | Motor memory | $h^{(D)}_{DO}$: stabilisation of skills |
 
-### 6.3 Интегративные каналы
+### 6.3 Integrative channels
 
-| Канал | Когерентность | Интегративная роль | Формальное действие |
-|-------|---------------|-------|---------------------|
-| **Инсайт** | $\gamma_{LE}$ | Логика-в-опыте | $h^{(R)}_{LE}$: осмысление как регенерация |
-| **Нарратив** | $\gamma_{AL}$ | Артикуляция логики | $h^{(H)}_{AL}$: оформление рассуждения |
-| **Укоренённое единство** | $\gamma_{OU}$ | Основание интеграции | $h^{(R)}_{OU}$: фундамент целостности |
-| **Воплощённое единство** | $\gamma_{SU}$ | Структура интеграции | $h^{(R)}_{SU}$: архитектура связности |
-| **Живой опыт** | $\gamma_{EU}$ | Единство переживания | $h^{(R)}_{EU}$: интеграция как восстановление |
-| **Динамическое основание** | $\gamma_{AS}$ | Артикуляция структуры | $h^{(H)}_{AS}$: внешнее выражение внутреннего порядка |
-| **Логическое основание** | $\gamma_{LO}$ | Логика-в-основании | $h^{(H)}_{LO}$: формализация знания |
+| Channel | Coherence | Integrative role | Formal action |
+|---------|-----------|-----------------|--------------|
+| **Insight** | $\gamma_{LE}$ | Logic-in-experience | $h^{(R)}_{LE}$: understanding as regeneration |
+| **Narrative** | $\gamma_{AL}$ | Articulation of logic | $h^{(H)}_{AL}$: shaping of reasoning |
+| **Grounded unity** | $\gamma_{OU}$ | Ground of integration | $h^{(R)}_{OU}$: foundation of wholeness |
+| **Embodied unity** | $\gamma_{SU}$ | Structure of integration | $h^{(R)}_{SU}$: architecture of connectivity |
+| **Living experience** | $\gamma_{EU}$ | Unity of experience | $h^{(R)}_{EU}$: integration as recovery |
+| **Dynamic ground** | $\gamma_{AS}$ | Articulation of structure | $h^{(H)}_{AS}$: external expression of inner order |
+| **Logical ground** | $\gamma_{LO}$ | Logic-in-ground | $h^{(H)}_{LO}$: formalisation of knowledge |
 
-:::info Интерпретация [И]
-Разделение 21 канала на перцептивные, моторные и интегративные — **не строгое**: каждый $\gamma_{ij}$ одновременно является и сенсорным, и моторным каналом (через $h^{\text{ext}}_{ij}$). Классификация выше отражает **доминирующую функцию** — какой из трёх каналов ($h^{(H)}, h^{(D)}, h^{(R)}$) наиболее активен для данной когерентности.
+:::info Interpretation [I]
+The division of 21 channels into perceptual, motor, and integrative is **not strict**: each $\gamma_{ij}$ is simultaneously a sensory and a motor channel (through $h^{\text{ext}}_{ij}$). The classification above reflects the **dominant function** — which of the three channels ($h^{(H)}, h^{(D)}, h^{(R)}$) is most active for that coherence.
 :::
 
 ---
 
-## 7. Факторизация Enc через произвольные представления {#факторизация-enc}
+## 7. Factorisation of Enc through Arbitrary Representations {#факторизация-enc}
 
-### 7.1 Онтологическая проекция
+### 7.1 Ontological projection
 
-#### Следствие T-100a (Факторизация Enc) [Т] {#следствие-факторизация-enc}
+#### Corollary T-100a (Enc factorisation) [T] {#следствие-факторизация-enc}
 
-:::tip Формулировка
-Для произвольного пространства наблюдений $\mathrm{ObsSpace} \subseteq \mathbb{R}^D$ ($D$ — произвольная размерность) функтор кодирования T-100 факторизуется:
+:::tip Statement
+For an arbitrary observation space $\mathrm{ObsSpace} \subseteq \mathbb{R}^D$ ($D$ — arbitrary dimension), the encoding functor T-100 factorises as:
 
 $$
 \mathrm{Enc} = \pi_\Gamma \circ \mathrm{Enc}_{\text{repr}}
 $$
 
-где:
-- $\mathrm{Enc}_{\text{repr}}: \mathrm{ObsSpace} \to \mathcal{S} \subseteq \mathbb{R}^d$ — произвольное представление (feature map)
-- $\pi_\Gamma: \mathcal{S} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$ — **онтологическая проекция**, единственная с точностью до $G_2$-калибровки
+where:
+- $\mathrm{Enc}_{\text{repr}}: \mathrm{ObsSpace} \to \mathcal{S} \subseteq \mathbb{R}^d$ — an arbitrary representation (feature map)
+- $\pi_\Gamma: \mathcal{S} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$ — the **ontological projection**, unique up to $G_2$-gauge
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. По T-100 [Т], $\mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$ — CPTP-функтор.
-2. Любое промежуточное представление $\mathrm{Enc}_{\text{repr}}: \mathrm{ObsSpace} \to \mathcal{S}$ определяет факторизацию через $\pi_\Gamma = \mathrm{Enc} \circ \mathrm{Enc}_{\text{repr}}^{-1}\big|_{\mathrm{Im}(\mathrm{Enc}_{\text{repr}})}$.
-3. По T-102 [Т], $\pi_\Gamma$ раскладывается в 3 канала: $\pi_\Gamma(s) = h^{(H)}(s) \oplus h^{(D)}(s) \oplus h^{(R)}(s)$.
-4. Единственность $\pi_\Gamma$ (до $G_2$) — следствие [теоремы единственности](/docs/proofs/categorical/uniqueness-theorem) [Т]: ограничения (AP)+(PH)+(QG)+(V) на $\mathcal{D}(\mathbb{C}^7)$ фиксируют проекцию. $\blacksquare$
+1. By T-100 [T], $\mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$ is a CPTP functor.
+2. Any intermediate representation $\mathrm{Enc}_{\text{repr}}: \mathrm{ObsSpace} \to \mathcal{S}$ defines a factorisation through $\pi_\Gamma = \mathrm{Enc} \circ \mathrm{Enc}_{\text{repr}}^{-1}\big|_{\mathrm{Im}(\mathrm{Enc}_{\text{repr}})}$.
+3. By T-102 [T], $\pi_\Gamma$ decomposes into 3 channels: $\pi_\Gamma(s) = h^{(H)}(s) \oplus h^{(D)}(s) \oplus h^{(R)}(s)$.
+4. Uniqueness of $\pi_\Gamma$ (up to $G_2$) — consequence of the [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) [T]: constraints (AP)+(PH)+(QG)+(V) on $\mathcal{D}(\mathbb{C}^7)$ fix the projection. $\blacksquare$
 
-На пальцах: факторизация Enc означает, что **неважно, как именно вы извлекаете признаки из входных данных**. Можно использовать свёрточную нейросеть, вейвлет-преобразование, или ручные эвристики — это $\mathrm{Enc}_{\text{repr}}$, произвольная часть. Но финальный шаг — проекция $\pi_\Gamma$ из пространства признаков в пространство модификаций $\Gamma$ — **единственен**. Это как сказать: маршрут до аэропорта может быть любым, но взлётная полоса — одна.
+Intuitively: the factorisation of Enc means that **it does not matter how exactly you extract features from the input data**. One can use a convolutional neural network, wavelet transform, or hand-crafted heuristics — this is $\mathrm{Enc}_{\text{repr}}$, the arbitrary part. But the final step — the projection $\pi_\Gamma$ from feature space into the space of $\Gamma$-modifications — is **unique**. This is like saying: the route to the airport can be anything, but the runway is one.
 
-Для робототехники это означает: датчики могут быть произвольными (камера, лидар, тактильный массив), предобработка — любой, но «последняя миля» восприятия — онтологическая проекция $\pi_\Gamma$ — задана математикой, а не инженерным выбором.
+For robotics this means: sensors can be arbitrary (camera, lidar, tactile array), preprocessing — anything, but the "last mile" of perception — the ontological projection $\pi_\Gamma$ — is given by mathematics, not engineering choice.
 
-### 7.2 Онтологическое бутылочное горлышко
+### 7.2 Ontological bottleneck
 
-Независимо от размерности входных данных $D$, вся информация сжимается в $7 \times 7$ матрицу когерентности $\Gamma$ с $\leq 48$ вещественными параметрами:
+Regardless of the input data dimensionality $D$, all information is compressed into the $7 \times 7$ coherence matrix $\Gamma$ with $\leq 48$ real parameters:
 
-| Характеристика | Значение |
-|----------------|----------|
-| Входная размерность | $D$ — произвольная (от $D = 1$ до $D \gg 10^6$) |
-| Промежуточное представление | $d$ — произвольное |
-| Выходная размерность | $\dim_{\mathbb{R}} \mathcal{D}(\mathbb{C}^7) = 48$ (фиксировано) |
-| Информация за шаг | $\leq \log_2 7 \approx 2.81$ бит (T-107 [Т]) |
+| Characteristic | Value |
+|----------------|-------|
+| Input dimensionality | $D$ — arbitrary (from $D = 1$ to $D \gg 10^6$) |
+| Intermediate representation | $d$ — arbitrary |
+| Output dimensionality | $\dim_{\mathbb{R}} \mathcal{D}(\mathbb{C}^7) = 48$ (fixed) |
+| Information per step | $\leq \log_2 7 \approx 2.81$ bits (T-107 [T]) |
 
-**Следствие:** Агностичность от модальности восприятия — **теорема, а не проектное решение.** Формально: $\pi_\Gamma$ не зависит от $D$ и от структуры $\mathrm{ObsSpace}$ (топология, метрика). Если два различных пространства наблюдений $\mathrm{ObsSpace}_1 \subseteq \mathbb{R}^{D_1}$ и $\mathrm{ObsSpace}_2 \subseteq \mathbb{R}^{D_2}$ порождают одинаковые CPTP-каналы на $\mathcal{D}(\mathbb{C}^7)$, они неотличимы для голонома.
+**Corollary:** Modality-agnosticism is a **theorem, not a design choice.** Formally: $\pi_\Gamma$ does not depend on $D$ or on the structure of $\mathrm{ObsSpace}$ (topology, metric). If two different observation spaces $\mathrm{ObsSpace}_1 \subseteq \mathbb{R}^{D_1}$ and $\mathrm{ObsSpace}_2 \subseteq \mathbb{R}^{D_2}$ produce the same CPTP channels on $\mathcal{D}(\mathbb{C}^7)$, they are indistinguishable for the holon.
 
-### 7.3 Каноническая форма проекции
+### 7.3 Canonical form of the projection
 
-По T-102 [Т], $\pi_\Gamma$ реализуется через три канала — модификации соответственно гамильтоновой, диссипативной и регенеративной динамики:
+By T-102 [T], $\pi_\Gamma$ is implemented through three channels — modifications of the Hamiltonian, dissipative, and regenerative dynamics respectively:
 
 $$
 \pi_\Gamma(s) = \bigl(\delta H(s),\; \delta\mathcal{D}(s),\; \delta\mathcal{R}(s)\bigr) \in \mathrm{End}(\mathcal{D}(\mathbb{C}^7))
 $$
 
-Практически это означает, что любая реализация $\mathrm{Enc}$ (от простого датчика до сложного кодировщика) должна завершаться **тем же** 3-канальным интерфейсом:
+Practically this means that any implementation of $\mathrm{Enc}$ (from a simple sensor to a complex encoder) must end with the **same** 3-channel interface:
 
 $$
 s \in \mathcal{S} \xrightarrow{\pi_\Gamma} \bigl(h^{(H)}_{ij}(s),\; h^{(D)}_{ij}(s),\; h^{(R)}_{ij}(s)\bigr) \in \mathbb{R}^{21} \oplus \mathbb{R}^{21} \oplus \mathbb{R}^{21}
 $$
 
-Эта структура инвариантна: она определена $G_2$-симметрией и не зависит от выбора представления $\mathrm{Enc}_{\text{repr}}$.
+This structure is invariant: it is defined by $G_2$-symmetry and does not depend on the choice of representation $\mathrm{Enc}_{\text{repr}}$.
 
 ---
 
-## 8. Связь с другими результатами {#связь-с-результатами}
+## 8. Relation to Other Results {#связь-с-результатами}
 
-| Результат | Связь | Ссылка |
-|-----------|-------|--------|
-| T-57 (LGKS) | Обосновывает T-102 (полнота 3-членного) | [Линдблад-операторы](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
-| T-62 ($\varphi$-оператор) | $\rho_*$ в цикле регенерации | [Самонаблюдение](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
-| T-92 ($\sigma_{\mathrm{sys}}$) | Критерий оптимальности в Dec | [Теорема 10.1](./theorems#теорема-101-эквивалентность-условий) |
-| T-75 (Швингер-Келдыш) | Лагранжева формулировка с диссипацией | [Лагранжиан](./lagrangian#полная-структура) |
-| T-96 (Аттрактор) | Нетривиальное $\rho_*$ для наведения | [Эволюция](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
-| FEP (Теорема 4.1) | Макроскопический предел Dec | [Вариационные принципы](./variational#связь-с-fep) |
-| T-109–T-112 (Границы обучения) | Нижние границы скорости обучения через Enc/Dec цикл | [Границы обучения](./learning-bounds#комбинированная-граница) |
-| T-113 (Минимальность N=7) | N=7 — минимальная архитектура для обучения | [Границы обучения](./learning-bounds#оптимальность-n7) |
+| Result | Relation | Reference |
+|--------|---------|-----------|
+| T-57 (LGKS) | Grounds T-102 (3-term completeness) | [Lindblad operators](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
+| T-62 ($\varphi$-operator) | $\rho_*$ in the regeneration cycle | [Self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
+| T-92 ($\sigma_{\mathrm{sys}}$) | Optimality criterion in Dec | [Theorem 10.1](./theorems#теорема-101-эквивалентность-условий) |
+| T-75 (Schwinger–Keldysh) | Lagrangian formulation with dissipation | [Lagrangian](./lagrangian#полная-структура) |
+| T-96 (Attractor) | Non-trivial $\rho_*$ for guidance | [Evolution](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
+| FEP (Theorem 4.1) | Macroscopic limit of Dec | [Variational principles](./variational#связь-с-fep) |
+| T-109–T-112 (Learning bounds) | Lower bounds on learning rate through Enc/Dec cycle | [Learning bounds](./learning-bounds#комбинированная-граница) |
+| T-113 (Minimality N=7) | N=7 — minimal architecture for learning | [Learning bounds](./learning-bounds#оптимальность-n7) |
 
 ---
 
-## 9. Информационная ёмкость Enc (T-107) [Т] {#информационная-ёмкость}
+## 9. Information Capacity of Enc (T-107) [T] {#информационная-ёмкость}
 
-:::tip Теорема T-107 (Информационная ёмкость Enc) [Т]
-Максимальная информация, извлекаемая функтором Enc за одно наблюдение:
+:::tip Theorem T-107 (Information capacity of Enc) [T]
+Maximum information extractable by functor Enc per single observation:
 
 $$
-C_{\mathrm{Enc}} \leq \max_{\{p_o\}} \chi(\{p_o, \mathrm{Enc}(o)\}) \leq \log_2 7 \approx 2.81 \text{ бит/наблюдение}
+C_{\mathrm{Enc}} \leq \max_{\{p_o\}} \chi(\{p_o, \mathrm{Enc}(o)\}) \leq \log_2 7 \approx 2.81 \text{ bits/observation}
 $$
 
-где $\chi$ — количество Холево.
+where $\chi$ is the Holevo quantity.
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. Функтор $\mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$ отображает наблюдения в CPTP-каналы на $\mathcal{D}(\mathbb{C}^7)$ (T-100 [Т]).
-2. Количество Холево ограничено размерностью выходного пространства: $\chi \leq \log_2 \dim \mathcal{H} = \log_2 7$.
-3. Из T-102 [Т]: $\mathrm{Enc}(o)$ раскладывается в 3 канала, каждый из которых действует на $\mathcal{D}(\mathbb{C}^7)$.
-4. Составной канал не увеличивает ёмкость (субаддитивность Холево):
+1. Functor $\mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$ maps observations to CPTP channels on $\mathcal{D}(\mathbb{C}^7)$ (T-100 [T]).
+2. The Holevo quantity is bounded by the output space dimensionality: $\chi \leq \log_2 \dim \mathcal{H} = \log_2 7$.
+3. From T-102 [T]: $\mathrm{Enc}(o)$ decomposes into 3 channels, each acting on $\mathcal{D}(\mathbb{C}^7)$.
+4. The composite channel does not increase capacity (Holevo subadditivity):
 
 $$
 C_{\mathrm{Enc}} \leq S(\bar{\Gamma}) - \sum_o p_o S(\mathrm{Enc}(o)[\Gamma]) \leq S_{\max}(\mathcal{D}(\mathbb{C}^7)) = \log_2 7
 $$
 
-Верхняя граница достигается для ансамбля ортогональных чистых состояний. $\blacksquare$
+The upper bound is achieved for an ensemble of orthogonal pure states. $\blacksquare$
 
-**Следствие (Bounded rationality):** Ограничение $\leq 2.81$ бит/наблюдение — **выведенная** граница, а не постулированная. Связь с bounded rationality Саймона: ограниченная рациональность — не эмпирический факт, а следствие N=7.
+**Corollary (Bounded rationality):** The bound $\leq 2.81$ bits/observation is a **derived** bound, not a postulated one. Connection with Simon's bounded rationality: bounded rationality is not an empirical fact, but a consequence of N=7.
 
 ---
 
-## 10. Композициональность Enc/Dec (T-108) [Т] {#композициональность-enc-dec}
+## 10. Compositionality of Enc/Dec (T-108) [T] {#композициональность-enc-dec}
 
-:::tip Теорема T-108 (Композициональность Enc/Dec) [Т]
-Для композита двух голономов кодирование сохраняет структуру:
+:::tip Theorem T-108 (Compositionality of Enc/Dec) [T]
+For a composite of two holons, encoding preserves structure:
 
 $$
 \mathrm{Enc}_{12} = \Phi_{\mathrm{agg}} \circ (\mathrm{Enc}_1 \otimes \mathrm{Enc}_2)
 $$
 
-где $\Phi_{\mathrm{agg}}: \mathcal{D}(\mathbb{C}^{7^2}) \to \mathcal{D}(\mathbb{C}^7)$ — CPTP-агрегация из [T-72 (КК-6)](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) [Т].
+where $\Phi_{\mathrm{agg}}: \mathcal{D}(\mathbb{C}^{7^2}) \to \mathcal{D}(\mathbb{C}^7)$ — CPTP aggregation from [T-72 (CC-6)](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) [T].
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. $\mathrm{Enc}_1, \mathrm{Enc}_2$ — CPTP-функторы (T-100 [Т]).
-2. Тензорное произведение $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ — CPTP-канал на $\mathcal{D}(\mathbb{C}^{49})$.
-3. Агрегация $\Phi_{\mathrm{agg}}$ — CPTP из [Морита-эквивалентности](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [Т]): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
-4. Композиция CPTP-каналов — CPTP. Функториальность ($\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$) из T-100 сохраняется при агрегации.
-5. Единственность — из $G_2$-ригидности на каждом масштабе (T-72 [Т]). $\blacksquare$
+1. $\mathrm{Enc}_1, \mathrm{Enc}_2$ — CPTP functors (T-100 [T]).
+2. Tensor product $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ — a CPTP channel on $\mathcal{D}(\mathbb{C}^{49})$.
+3. Aggregation $\Phi_{\mathrm{agg}}$ — CPTP from [Morita equivalence](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [T]): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
+4. Composition of CPTP channels — CPTP. Functoriality ($\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$) from T-100 is preserved under aggregation.
+5. Uniqueness — from $G_2$-rigidity at each scale (T-72 [T]). $\blacksquare$
 
-**Следствие для когнитивных инженеров:** диагностики (σ_sys, мониторинг Enc/Dec) **одинаковы** на всех масштабах — от отдельного агента до организации.
+**Corollary for cognitive engineers:** diagnostics (σ_sys, Enc/Dec monitoring) are **the same** at all scales — from individual agent to organisation.
 
-Аналогично для Dec:
+Analogously for Dec:
 
 $$
 \mathrm{Dec}_{12} = (\mathrm{Dec}_1 \otimes \mathrm{Dec}_2) \circ \Phi_{\mathrm{split}}
 $$
 
-где $\Phi_{\mathrm{split}}$ — обратное отображение (разделение композитного σ на компоненты).
+where $\Phi_{\mathrm{split}}$ — the inverse map (splitting the composite σ into components).
 
 ---
 
-## 11. Темпоральная интеграция {#темпоральная-интеграция}
+## 11. Temporal Integration {#темпоральная-интеграция}
 
-### 11.1 Кумулятивная ёмкость
+### 11.1 Cumulative capacity
 
-#### Следствие T-107a (Кумулятивная информация) [Т] {#следствие-кумулятивная-информация}
+#### Corollary T-107a (Cumulative information) [T] {#следствие-кумулятивная-информация}
 
-:::tip Формулировка
-За $n$ последовательных наблюдений голоном накапливает информацию о среде:
+:::tip Statement
+Over $n$ successive observations a holon accumulates information about the environment:
 
 $$
-I_n \leq n \cdot \log_2 7 \approx 2.81\,n \;\text{бит}
+I_n \leq n \cdot \log_2 7 \approx 2.81\,n \;\text{bits}
 $$
 
-Верхняя граница достижима при условии, что последовательные наблюдения информационно независимы.
+The upper bound is achievable when successive observations are informationally independent.
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. По T-107 [Т], одно наблюдение приносит $\leq \log_2 7$ бит.
-2. Субаддитивность Холево: $\chi(\{p_{o_1,\ldots,o_n}\}) \leq \sum_{k=1}^n \chi(\{p_{o_k}\})$.
-3. При независимых наблюдениях неравенство обращается в равенство. $\blacksquare$
+1. By T-107 [T], one observation brings $\leq \log_2 7$ bits.
+2. Holevo subadditivity: $\chi(\{p_{o_1,\ldots,o_n}\}) \leq \sum_{k=1}^n \chi(\{p_{o_k}\})$.
+3. For independent observations the inequality becomes an equality. $\blacksquare$
 
-### 11.2 Минимальное число наблюдений
+### 11.2 Minimum number of observations
 
-#### Следствие T-107b (Минимальные наблюдения) [Т] {#следствие-минимальные-наблюдения}
+#### Corollary T-107b (Minimum observations) [T] {#следствие-минимальные-наблюдения}
 
-:::tip Формулировка
-Для среды с информационной энтропией $I_{\mathrm{env}}$ бит, минимальное число наблюдений для полного кодирования:
+:::tip Statement
+For an environment with information entropy $I_{\mathrm{env}}$ bits, the minimum number of observations for complete encoding:
 
 $$
 n_{\min} = \left\lceil\frac{I_{\mathrm{env}}}{\log_2 7}\right\rceil
 $$
 :::
 
-**Доказательство.** Прямое следствие T-107a: $I_n \leq 2.81\,n$, откуда $n \geq I_{\mathrm{env}} / \log_2 7$. $\blacksquare$
+**Proof.** Direct consequence of T-107a: $I_n \leq 2.81\,n$, hence $n \geq I_{\mathrm{env}} / \log_2 7$. $\blacksquare$
 
-**Следствие для сложных модальностей.** Кодирование среды с высокой информационной сложностью (большое $I_{\mathrm{env}}$) **неизбежно** требует многошагового процесса. Это не ограничение реализации, а фундаментальная граница, вытекающая из $\dim \mathcal{H} = 7$.
+**Corollary for complex modalities.** Encoding an environment with high information complexity (large $I_{\mathrm{env}}$) **inevitably** requires a multi-step process. This is not an implementation limitation, but a fundamental bound following from $\dim \mathcal{H} = 7$.
 
-**Связь с T-109 (информационная граница обучения):** T-107b даёт нижнюю границу *восприятия*, T-109 — нижнюю границу *обучения* (включая стабилизацию решения). Всегда $n_{\mathrm{opt}} \geq n_{\min}$, поскольку обучение включает восприятие как подзадачу. См. [границы обучения](./learning-bounds#комбинированная-граница).
+**Relation to T-109 (information learning bound):** T-107b gives a lower bound on *perception*, T-109 gives a lower bound on *learning* (including stabilisation of the solution). Always $n_{\mathrm{opt}} \geq n_{\min}$, since learning includes perception as a subtask. See [learning bounds](./learning-bounds#комбинированная-граница).
 
-### 11.3 Скорость информационного поглощения
+### 11.3 Information absorption rate
 
-Определим **скорость информационного поглощения**:
+Define the **information absorption rate**:
 
 $$
 \dot{I}(\tau) = \frac{dI}{d\tau} = \chi\bigl(\{p_o,\, \mathrm{Enc}(o)[\Gamma(\tau)]\}\bigr)
 $$
 
-Из T-107 [Т]: $\dot{I}(\tau) \leq \log_2 7$ для любого $\tau$.
+From T-107 [T]: $\dot{I}(\tau) \leq \log_2 7$ for any $\tau$.
 
-Реальная скорость зависит от текущего состояния $\Gamma(\tau)$:
+The actual rate depends on the current state $\Gamma(\tau)$:
 
-- При $\Gamma \approx I/7$ (максимально смешанное): $\dot{I} \to 0$ — система «оглушена», различимость минимальна
-- При $P \gg 2/7$ (высокая чистота): $\dot{I} \to \log_2 7$ — максимальная различимость
-- При $P < 2/7$ (нежизнеспособность): кодирование деградирует, [T-104](./stability#радиус-устойчивости) не выполняется
+- When $\Gamma \approx I/7$ (maximally mixed): $\dot{I} \to 0$ — system is "deafened", distinguishability is minimal
+- When $P \gg 2/7$ (high purity): $\dot{I} \to \log_2 7$ — maximum distinguishability
+- When $P < 2/7$ (non-viability): encoding degrades, [T-104](./stability#радиус-устойчивости) is not satisfied
 
 ---
 
-## 12. Предиктивная структура Enc {#предиктивная-структура}
+## 12. Predictive Structure of Enc {#предиктивная-структура}
 
-### 12.1 Оптимальный Enc как максимизатор ΔF
+### 12.1 Optimal Enc as a ΔF maximiser
 
-#### Следствие T-107c (Предиктивная оптимальность Enc) [Т] {#следствие-предиктивный-enc}
+#### Corollary T-107c (Predictive optimality of Enc) [T] {#следствие-предиктивный-enc}
 
-:::tip Формулировка
-Оптимальный функтор кодирования $\mathrm{Enc}^*$ максимизирует доступную свободную энергию:
+:::tip Statement
+The optimal encoding functor $\mathrm{Enc}^*$ maximises available free energy:
 
 $$
 \mathrm{Enc}^* = \arg\max_{\mathrm{Enc}} \Delta F\bigl(\mathrm{Enc}(o)[\Gamma],\, \rho_*\bigr)
 $$
 
-где $\Delta F = \mathrm{Tr}\bigl(\mathcal{R}[\Gamma, E] \cdot (\rho_* - \Gamma)\bigr)$ — [свободная энергия](/docs/core/dynamics/evolution#каноническое-delta-f).
+where $\Delta F = \mathrm{Tr}\bigl(\mathcal{R}[\Gamma, E] \cdot (\rho_* - \Gamma)\bigr)$ — [free energy](/docs/core/dynamics/evolution#каноническое-delta-f).
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. По [вариационному принципу](./variational#связь-с-fep) (Теорема 4.1 [Т]): стационарная динамика $\Gamma$ минимизирует свободную энергию Фристона $F[\Gamma] = \mathrm{KL}(\Gamma \| \rho_*) + H[\Gamma]$.
-2. Функтор $\mathrm{Enc}(o)$ модифицирует $\Gamma \to \Gamma'$. Оптимальная модификация — та, что максимально увеличивает $\Delta F = F[\Gamma] - F[\Gamma']$.
-3. Максимизация $\Delta F$ эквивалентна максимизации $-\mathrm{KL}(\Gamma' \| \rho_*)$ при фиксированной энтропии — т.е. приближению к целевому состоянию.
-4. Из T-107 [Т]: $\Delta F \leq C_{\mathrm{Enc}} \leq \log_2 7$ за один шаг — верхняя граница насыщается. $\blacksquare$
+1. By the [variational principle](./variational#связь-с-fep) (Theorem 4.1 [T]): stationary dynamics of $\Gamma$ minimise Friston's free energy $F[\Gamma] = \mathrm{KL}(\Gamma \| \rho_*) + H[\Gamma]$.
+2. Functor $\mathrm{Enc}(o)$ modifies $\Gamma \to \Gamma'$. The optimal modification is the one that maximally increases $\Delta F = F[\Gamma] - F[\Gamma']$.
+3. Maximisation of $\Delta F$ is equivalent to maximising $-\mathrm{KL}(\Gamma' \| \rho_*)$ at fixed entropy — i.e., approaching the target state.
+4. From T-107 [T]: $\Delta F \leq C_{\mathrm{Enc}} \leq \log_2 7$ per step — the upper bound is saturated. $\blacksquare$
 
-### 12.2 Ошибка предсказания через 3 канала
+### 12.2 Prediction error through 3 channels
 
-Ошибка предсказания (расхождение между ожидаемым и реальным наблюдением) раскладывается по трём каналам (T-102 [Т]):
+Prediction error (discrepancy between expected and actual observation) decomposes across three channels (T-102 [T]):
 
 $$
 \delta_{\mathrm{pred}} = \bigl\|\mathrm{Enc}(o_{\mathrm{real}}) - \mathrm{Enc}(o_{\mathrm{pred}})\bigr\| = \sqrt{(\delta h^{(H)})^2 + (\delta h^{(D)})^2 + (\delta h^{(R)})^2}
 $$
 
-Каждый канал вносит специфический тип ошибки:
+Each channel contributes a specific type of error:
 
-| Канал | Ошибка | Интерпретация |
-|-------|--------|---------------|
-| $\delta h^{(H)}$ | Энергетическая | Неожиданная структура среды |
-| $\delta h^{(D)}$ | Шумовая | Неожиданный уровень стохастичности |
-| $\delta h^{(R)}$ | Регенеративная | Неожиданное изменение целевого состояния |
+| Channel | Error | Interpretation |
+|---------|-------|---------------|
+| $\delta h^{(H)}$ | Energetic | Unexpected structure of environment |
+| $\delta h^{(D)}$ | Noise | Unexpected level of stochasticity |
+| $\delta h^{(R)}$ | Regenerative | Unexpected change in target state |
 
-**Связь с гедоническим механизмом:** По T-103 [Т]+[И], ошибка в регенеративном канале ($\delta h^{(R)} \neq 0$) непосредственно модулирует $\mathcal{V}_{\mathrm{hed}}$ — неожиданные воздействия на регенерацию ощущаются как изменение валентности.
+**Relation to the hedonic mechanism:** By T-103 [T]+[I], an error in the regenerative channel ($\delta h^{(R)} \neq 0$) directly modulates $\mathcal{V}_{\mathrm{hed}}$ — unexpected influences on regeneration are experienced as a change in valence.
 
 ---
 
-## 13. Мультимодальная декомпозиция {#мультимодальная-декомпозиция}
+## 13. Multimodal Decomposition {#мультимодальная-декомпозиция}
 
-### 13.1 Композиция модальностей
+### 13.1 Composition of modalities
 
-#### Следствие T-108a (Мультимодальная декомпозиция) [Т] {#следствие-мультимодальная-декомпозиция}
+#### Corollary T-108a (Multimodal decomposition) [T] {#следствие-мультимодальная-декомпозиция}
 
-:::tip Формулировка
-Для $M$ независимых модальностей восприятия с функторами $\mathrm{Enc}_m: \mathrm{ObsSpace}_m \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$, совместное кодирование:
+:::tip Statement
+For $M$ independent perceptual modalities with functors $\mathrm{Enc}_m: \mathrm{ObsSpace}_m \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))$, joint encoding:
 
 $$
 \mathrm{Enc}(o_1, \ldots, o_M) = \sum_{m=1}^{M} w_m \cdot \mathrm{Enc}_m(o_m) + \sum_{m < m'} \Delta_{mm'}
 $$
 
-где $w_m \geq 0$, $\sum w_m = 1$ — веса модальностей, $\Delta_{mm'}$ — кросс-модальная связка.
+where $w_m \geq 0$, $\sum w_m = 1$ — modality weights, $\Delta_{mm'}$ — cross-modal coupling.
 :::
 
-**Доказательство.**
+**Proof.**
 
-1. По T-100 [Т], каждый $\mathrm{Enc}_m$ — CPTP-функтор.
-2. Выпуклая комбинация CPTP-каналов — CPTP: $\sum w_m \mathrm{Enc}_m$ определён при $\sum w_m = 1$.
-3. Кросс-модальные члены $\Delta_{mm'}$ — CPTP-поправки порядка $O(|\gamma_{ij}|)$, где $\gamma_{ij}$ — когерентности, связывающие измерения, задействованные модальностями $m$ и $m'$.
-4. Из T-108 [Т] (композициональность): агрегация модальностей сохраняет CPTP-структуру и функториальность. $\blacksquare$
+1. By T-100 [T], each $\mathrm{Enc}_m$ is a CPTP functor.
+2. Convex combination of CPTP channels — CPTP: $\sum w_m \mathrm{Enc}_m$ is defined when $\sum w_m = 1$.
+3. Cross-modal terms $\Delta_{mm'}$ — CPTP corrections of order $O(|\gamma_{ij}|)$, where $\gamma_{ij}$ are coherences linking dimensions engaged by modalities $m$ and $m'$.
+4. From T-108 [T] (compositionality): aggregation of modalities preserves CPTP structure and functoriality. $\blacksquare$
 
-### 13.2 Конкуренция за ёмкость
+### 13.2 Competition for capacity
 
-Из T-107 [Т], суммарная ёмкость $M$ модальностей за один шаг:
+From T-107 [T], total capacity of $M$ modalities per step:
 
 $$
 \sum_{m=1}^{M} w_m \cdot C_m \leq \log_2 7
 $$
 
-**Следствие:** $M$ модальностей **конкурируют** за фиксированную пропускную способность $2.81$ бит/шаг. Увеличение числа модальностей $M$ при фиксированном $n$ **не увеличивает** суммарную информацию — оно лишь распределяет её между каналами.
+**Corollary:** $M$ modalities **compete** for the fixed bandwidth of $2.81$ bits/step. Increasing the number of modalities $M$ at fixed $n$ **does not increase** total information — it merely distributes it among channels.
 
-### 13.3 Внимание как оптимальная аллокация
+### 13.3 Attention as optimal allocation
 
-Оптимальные веса $w_m^*$ определяются из максимизации $\Delta F$:
+Optimal weights $w_m^*$ are determined by maximising $\Delta F$:
 
 $$
 w_m^* = \frac{\Delta F_m}{\sum_{m'} \Delta F_{m'}}
 $$
 
-где $\Delta F_m = \Delta F\bigl(\mathrm{Enc}_m(o_m)[\Gamma],\, \rho_*\bigr)$ — вклад модальности $m$ в свободную энергию.
+where $\Delta F_m = \Delta F\bigl(\mathrm{Enc}_m(o_m)[\Gamma],\, \rho_*\bigr)$ — contribution of modality $m$ to free energy.
 
-**Интерпретация [И]:** Оптимальная аллокация весов $w_m^*$ формально совпадает со структурой **внимания** — ресурсы кодирования направляются туда, где информационная ценность ($\Delta F_m$) максимальна. Это не дополнительный постулат: внимание — следствие оптимальности Enc при ограниченной ёмкости (T-107).
+**Interpretation [I]:** The optimal allocation of weights $w_m^*$ formally coincides with the structure of **attention** — encoding resources are directed where the informational value ($\Delta F_m$) is maximal. This is not an additional postulate: attention is a consequence of Enc optimality under bounded capacity (T-107).
 
-### 13.4 Кросс-модальная связка
+### 13.4 Cross-modal coupling
 
-Члены $\Delta_{mm'}$ определяются когерентностями $\gamma_{ij}$, где $i$ и $j$ — измерения, задействованные разными модальностями:
+The terms $\Delta_{mm'}$ are determined by coherences $\gamma_{ij}$, where $i$ and $j$ are dimensions engaged by different modalities:
 
 $$
 \|\Delta_{mm'}\| \leq |\gamma_{ij}| \cdot \min(w_m, w_{m'})
 $$
 
-**Следствие:** Кросс-модальная интеграция возможна только при ненулевых когерентностях между соответствующими измерениями. Полностью декогерированные измерения ($|\gamma_{ij}| = 0$) не допускают мультимодального связывания — модальности остаются изолированными.
+**Corollary:** Cross-modal integration is only possible when coherences between the corresponding dimensions are non-zero. Fully decohered dimensions ($|\gamma_{ij}| = 0$) do not admit multimodal binding — modalities remain isolated.
 
 ---
 
-## 14. Сравнение с классическими подходами {#сравнение-с-классическими-подходами}
+## 14. Comparison with Classical Approaches {#сравнение-с-классическими-подходами}
 
-Сенсомоторная теория КК не возникла в вакууме — она отвечает на вопросы, поставленные тремя мощными традициями: классической теорией управления, активной инференцией и обучением с подкреплением. В этом разделе мы проведём систематическое сравнение, показывая, где КК совпадает с каждой из традиций, а где принципиально расходится.
+The sensorimotor theory of CC did not arise in a vacuum — it answers questions posed by three powerful traditions: classical control theory, active inference, and reinforcement learning. In this section we conduct a systematic comparison, showing where CC coincides with each tradition and where it fundamentally diverges.
 
-### 14.1 КК vs. классическая теория управления {#сравнение-с-управлением}
+### 14.1 CC vs. classical control theory {#сравнение-с-управлением}
 
-**Классическая теория управления** (Винер, Калман, Понтрягин) описывает цикл «датчик → контроллер → актуатор» через передаточные функции, пространство состояний и критерии оптимальности (LQR, H-infinity и т.д.).
+**Classical control theory** (Wiener, Kalman, Pontryagin) describes the "sensor → controller → actuator" cycle through transfer functions, state space, and optimality criteria (LQR, H-infinity, etc.).
 
-| Аспект | Классическое управление | КК |
+| Aspect | Classical control | CC |
+|--------|-------------------|-----|
+| **State space** | $\mathbb{R}^n$, arbitrary $n$ | $\mathcal{D}(\mathbb{C}^7)$, fixed |
+| **Optimality criterion** | Quadratic $J = \int (x^T Q x + u^T R u)\,dt$ | Min-max: $\min_a \max_k \sigma^{\mathrm{motor}}_k$ |
+| **Number of control channels** | Arbitrary (design choice) | Exactly 3 (Theorem T-102) |
+| **Observer** | External (Kalman filter) | Internal ($\varphi(\Gamma)$ — self-model) |
+| **Experience** | Absent | $\mathcal{V}_{\text{hed}}$ — hedonic valence |
+| **Scaling** | Problematic (curse of dimensionality) | T-108: compositionality preserved |
+
+**Key difference:** A PID controller minimises a weighted sum of errors — and may allow catastrophe in one channel, compensating with success in another. CC uses the min-max strategy (T-159), which **guarantees** that no channel ends up in a critical state. This is not a heuristic but a consequence of viability being defined by the sup-norm of the stress tensor (T-92).
+
+**Where they coincide:** In the linear approximation near $\rho_*$, the evolution equation for $\Gamma$ reduces to a linear feedback system — standard control theory turns out to be a *projection* of CC onto the linear regime.
+
+### 14.2 CC vs. active inference (FEP) {#сравнение-с-fep}
+
+**The Free Energy Principle** (Friston, 2006) postulates that living systems minimise variational free energy $F = \mathrm{KL}(q \| p) + \mathrm{const}$, where $q$ is the internal model, $p$ is the generative model of the environment.
+
+| Aspect | Active inference (FEP) | CC |
 |--------|------------------------|-----|
-| **Пространство состояний** | $\mathbb{R}^n$, произвольное $n$ | $\mathcal{D}(\mathbb{C}^7)$, фиксировано |
-| **Критерий оптимальности** | Квадратичный $J = \int (x^T Q x + u^T R u)\,dt$ | Min-max: $\min_a \max_k \sigma^{\mathrm{motor}}_k$ |
-| **Число каналов управления** | Произвольное (проектное решение) | Ровно 3 (теорема T-102) |
-| **Наблюдатель** | Внешний (фильтр Калмана) | Внутренний ($\varphi(\Gamma)$ — самомодель) |
-| **Переживание** | Отсутствует | $\mathcal{V}_{\text{hed}}$ — гедоническая валентность |
-| **Масштабирование** | Проблематично (curse of dimensionality) | T-108: композициональность сохраняется |
+| **Objective function** | Minimise $F = \mathrm{KL}(q \| p)$ | Minimise $\max_k \sigma^{\mathrm{motor}}_k$ |
+| **Generative model** | Postulated | $\rho_* = \varphi(\Gamma)$ — derived |
+| **Number of perception channels** | Unbounded | $\leq \log_2 7$ bits/step (T-107) |
+| **Action** | Minimise expected free energy | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ |
+| **Subjective experience** | Not explained | $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ |
+| **Ontological status** | Principle (axiom) | Consequence (Theorem 4.1 of CC) |
 
-**Ключевое отличие:** PID-регулятор минимизирует взвешенную сумму ошибок — и может допустить катастрофу в одном канале, компенсируя её успехом в другом. КК использует min-max стратегию (T-159), которая **гарантирует**, что ни один канал не окажется в аварийном состоянии. Это не эвристика, а следствие того, что жизнеспособность определяется sup-нормой тензора напряжений (T-92).
+**Key difference:** FEP is a **principle**: it postulates that systems minimise free energy, but does not explain *where* this principle comes from. In CC, minimisation of free energy is a **theorem** ([Theorem 4.1](./variational#связь-с-fep) [T]): it is derived from the canonical evolution equation in the macroscopic limit. Moreover, CC shows that FEP is an approximation valid at $P \gg 2/7$; near $P_{\mathrm{crit}}$ corrections arise that FEP does not capture.
 
-**Где совпадают:** В линейном приближении вблизи $\rho_*$ уравнение эволюции $\Gamma$ сводится к линейной системе с обратной связью — стандартная теория управления оказывается *проекцией* КК на линейный режим.
+**Where they coincide:** The optimal Enc maximises $\Delta F$ (T-107c [T]) — this is the exact analogue of "perceptual inference" in FEP. The functor Dec minimises $\sigma^{\mathrm{motor}}$, which in the macroscopic limit is equivalent to "active inference". Thus, FEP is a *projection* of CC sensorimotor theory onto the classical (non-quantum-coherent) regime.
 
-### 14.2 КК vs. активная инференция (FEP) {#сравнение-с-fep}
+### 14.3 CC vs. reinforcement learning (RL) {#сравнение-с-rl}
 
-**Принцип свободной энергии** (Фристон, 2006) постулирует, что живые системы минимизируют вариационную свободную энергию $F = \mathrm{KL}(q \| p) + \mathrm{const}$, где $q$ — внутренняя модель, $p$ — генеративная модель среды.
+**Reinforcement learning** (Sutton, Barto) models an agent maximising cumulative reward $G_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k}$ through interaction with the environment.
 
-| Аспект | Активная инференция (FEP) | КК |
-|--------|--------------------------|-----|
-| **Целевая функция** | Минимизация $F = \mathrm{KL}(q \| p)$ | Минимизация $\max_k \sigma^{\mathrm{motor}}_k$ |
-| **Генеративная модель** | Постулируется | $\rho_* = \varphi(\Gamma)$ — выводится |
-| **Число каналов восприятия** | Не ограничено | $\leq \log_2 7$ бит/шаг (T-107) |
-| **Действие** | Минимизация ожидаемой свободной энергии | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ |
-| **Субъективный опыт** | Не объясняется | $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ |
-| **Онтологический статус** | Принцип (аксиома) | Следствие (теорема 4.1 КК) |
-
-**Ключевое отличие:** FEP — это **принцип**: он постулирует, что системы минимизируют свободную энергию, но не объясняет, *откуда* берётся этот принцип. В КК минимизация свободной энергии — **теорема** ([Теорема 4.1](./variational#связь-с-fep) [Т]): она выводится из канонического уравнения эволюции в макроскопическом пределе. Более того, КК показывает, что FEP — приближение, справедливое при $P \gg 2/7$; вблизи $P_{\mathrm{crit}}$ возникают поправки, которые FEP не улавливает.
-
-**Где совпадают:** Оптимальный Enc максимизирует $\Delta F$ (T-107c [Т]) — это точный аналог «перцептивной инференции» в FEP. Функтор Dec минимизирует $\sigma^{\mathrm{motor}}$, что в макроскопическом пределе эквивалентно «активной инференции». Таким образом, FEP является *проекцией* КК-сенсомоторики на классический (не квантово-когерентный) режим.
-
-### 14.3 КК vs. обучение с подкреплением (RL) {#сравнение-с-rl}
-
-**Обучение с подкреплением** (Саттон, Барто) моделирует агента, максимизирующего кумулятивное вознаграждение $G_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k}$ через взаимодействие со средой.
-
-| Аспект | RL | КК |
+| Aspect | RL | CC |
 |--------|-----|-----|
-| **Вознаграждение** | Внешнее $r_t$ (задаётся проектировщиком) | Внутреннее $\mathcal{V}_{\text{hed}}$ (выводится) |
-| **Политика** | $\pi(a \mid s)$ — стохастическая | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ — детерминированная |
-| **Критерий** | $\max \mathbb{E}[\sum \gamma^k r_k]$ | $\min \max_k \sigma^{\mathrm{motor}}_k$ |
-| **Ёмкость наблюдения** | Не ограничена | $\leq 2.81$ бит/шаг (T-107) |
-| **Проблема присвоения кредита** | Temporal difference, n-step, GAE | Мгновенная: $\sigma^{\mathrm{motor}}_k$ — текущий дефицит |
-| **Масштабирование** | Проблема (reward shaping, multi-agent) | T-108: композициональность |
-| **Exploration vs. exploitation** | Отдельная проблема | Следует из $\sigma$-градиента |
+| **Reward** | External $r_t$ (set by designer) | Intrinsic $\mathcal{V}_{\text{hed}}$ (derived) |
+| **Policy** | $\pi(a \mid s)$ — stochastic | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ — deterministic |
+| **Criterion** | $\max \mathbb{E}[\sum \gamma^k r_k]$ | $\min \max_k \sigma^{\mathrm{motor}}_k$ |
+| **Observation capacity** | Unbounded | $\leq 2.81$ bits/step (T-107) |
+| **Credit assignment problem** | Temporal difference, n-step, GAE | Immediate: $\sigma^{\mathrm{motor}}_k$ — current deficit |
+| **Scaling** | Problematic (reward shaping, multi-agent) | T-108: compositionality |
+| **Exploration vs. exploitation** | Separate problem | Follows from σ-gradient |
 
-**Ключевое отличие:** В RL вознаграждение — «чёрный ящик»: проектировщик задаёт $r_t$, и агент его максимизирует. Проблема присвоения кредита (credit assignment) — одна из центральных: какие прошлые действия привели к текущему вознаграждению? В КК **вознаграждение не нужно**: моторный стресс $\sigma^{\mathrm{motor}}_k$ — это мгновенный, покомпонентный сигнал, который говорит *какой именно* канал нуждается в ресурсе и *насколько сильно*. Присвоение кредита решается автоматически — через 7-компонентную структуру $\sigma$.
+**Key difference:** In RL reward is a "black box": the designer specifies $r_t$, and the agent maximises it. The credit assignment problem — which past actions led to the current reward — is one of the central challenges. In CC **reward is not needed**: motor stress $\sigma^{\mathrm{motor}}_k$ is an immediate, component-wise signal that tells *which exact* channel needs a resource and *by how much*. Credit assignment is solved automatically — through the 7-component structure of $\sigma$.
 
-**Где совпадают:** Если свернуть 7-компонентный $\sigma^{\mathrm{motor}}$ в скаляр (например, $r_t = -\max_k \sigma^{\mathrm{motor}}_k$), то Dec становится формально эквивалентен greedy policy в RL с мгновенным вознаграждением. Таким образом, RL — это *проекция* КК-сенсомоторики на скалярное вознаграждение и стохастическую политику.
+**Where they coincide:** If the 7-component $\sigma^{\mathrm{motor}}$ is collapsed to a scalar (e.g., $r_t = -\max_k \sigma^{\mathrm{motor}}_k$), Dec becomes formally equivalent to a greedy policy in RL with immediate reward. Thus, RL is a *projection* of CC sensorimotor theory onto scalar reward and stochastic policy.
 
-### 14.4 Сводная таблица
+### 14.4 Summary table
 
-| Свойство | Классическое управление | FEP | RL | КК |
-|----------|------------------------|-----|-----|-----|
-| Число каналов | Произвольное | Произвольное | 1 (скаляр $r$) | 3 (теорема) |
-| Онтология | Внешняя | Генеративная модель | MDP | $\mathcal{D}(\mathbb{C}^7)$ |
-| Переживание | Нет | Нет | Нет | $\mathcal{V}_{\text{hed}}$ [Т]+[И] |
-| Масштабирование | Сложно | Ограничено | Сложно | T-108 [Т] |
-| Внимание | Отдельный модуль | Precision weighting | Нет | Следствие T-107 |
-| Статус | Инженерия | Принцип | Алгоритм | Теория |
+| Property | Classical control | FEP | RL | CC |
+|----------|-------------------|-----|-----|-----|
+| Number of channels | Arbitrary | Arbitrary | 1 (scalar $r$) | 3 (theorem) |
+| Ontology | External | Generative model | MDP | $\mathcal{D}(\mathbb{C}^7)$ |
+| Experience | No | No | No | $\mathcal{V}_{\text{hed}}$ [T]+[I] |
+| Scaling | Difficult | Limited | Difficult | T-108 [T] |
+| Attention | Separate module | Precision weighting | No | Consequence of T-107 |
+| Status | Engineering | Principle | Algorithm | Theory |
 
 ---
 
-## 15. Разобранные примеры {#разобранные-примеры}
+## 15. Worked Examples {#разобранные-примеры}
 
-Чтобы формализм не оставался абстрактным, рассмотрим три примера работы сенсомоторного цикла — от простейшего до сложного.
+To keep the formalism from remaining abstract, let us examine three examples of the sensorimotor cycle in operation — from simplest to complex.
 
-### 15.1 Пример 1: Хемотаксис бактерии {#пример-хемотаксис}
+### 15.1 Example 1: Bacterial chemotaxis {#пример-хемотаксис}
 
-Бактерия *E. coli* плывёт по градиенту глюкозы. Её сенсомоторный цикл в терминах КК:
+*E. coli* swims along a glucose gradient. Its sensorimotor cycle in CC terms:
 
-**Шаг 1 (Enc).** Хеморецепторы на мембране регистрируют концентрацию $c(x)$. Это модифицирует:
-- $h^{(H)}_{AO}$: артикуляция-основание (различение «питательно / не питательно»)
-- $h^{(D)}_{DO}$: динамика-основание (турбулентность среды как шум)
+**Step 1 (Enc).** Chemoreceptors on the membrane register concentration $c(x)$. This modifies:
+- $h^{(H)}_{AO}$: articulation-ground (distinguishing "nutritious / not nutritious")
+- $h^{(D)}_{DO}$: dynamics-ground (environmental turbulence as noise)
 
-**Шаг 2 (σ-оценка).** Бактерия «голодна» → $\gamma_{OO}$ мал → $\sigma^{\mathrm{motor}}_O = 1 - \gamma_{OO}/\rho^*_{OO} > 0$. Канал O (основание) в дефиците.
+**Step 2 (σ-evaluation).** The bacterium is "hungry" → $\gamma_{OO}$ is small → $\sigma^{\mathrm{motor}}_O = 1 - \gamma_{OO}/\rho^*_{OO} > 0$. Channel O (ground) is in deficit.
 
-**Шаг 3 (Dec).** $\max_k \sigma^{\mathrm{motor}}_k = \sigma^{\mathrm{motor}}_O$. Оптимальное действие: двигаться вверх по градиенту $c(x)$ → модификация $h^{(D)}_{DO}$ через жгутиковый мотор.
+**Step 3 (Dec).** $\max_k \sigma^{\mathrm{motor}}_k = \sigma^{\mathrm{motor}}_O$. Optimal action: move up the gradient $c(x)$ → modification of $h^{(D)}_{DO}$ via the flagellar motor.
 
-**Шаг 4 (Обновление).** Поглощение глюкозы → рост $\gamma_{OO}$ → уменьшение $\sigma^{\mathrm{motor}}_O$. Если одновременно возникает химический стрессор, $\sigma^{\mathrm{motor}}_D$ может превысить $\sigma^{\mathrm{motor}}_O$, и бактерия переключится на уклонение — min-max стратегия в действии.
+**Step 4 (Update).** Glucose absorption → increase of $\gamma_{OO}$ → decrease of $\sigma^{\mathrm{motor}}_O$. If a chemical stressor simultaneously arises, $\sigma^{\mathrm{motor}}_D$ may exceed $\sigma^{\mathrm{motor}}_O$, and the bacterium switches to avoidance — the min-max strategy in action.
 
-**Уровень интериорности:** L0 (ненулевая E-проекция, но нет самонаблюдения). $\mathcal{V}_{\text{hed}}$ формально определена, но не наблюдаема самой бактерией ($R < 1/3$).
+**Interiority level:** L0 (non-zero E-projection, but no self-observation). $\mathcal{V}_{\text{hed}}$ is formally defined but not observable by the bacterium itself ($R < 1/3$).
 
-### 15.2 Пример 2: Робот-манипулятор {#пример-робот}
+### 15.2 Example 2: Robotic manipulator {#пример-робот}
 
-Робот собирает объект со стола. Его Γ инициализирована через квази-функтор $G$ из данных о положении суставов, изображении камеры и силомоментном датчике.
+A robot assembles an object from a table. Its $\Gamma$ is initialised through quasi-functor $G$ from joint position data, camera image, and force-torque sensor.
 
-**Enc (мультимодальный):**
-- Камера → $\mathrm{Enc}_{\text{vis}}$: $h^{(H)}_{AS}$ (артикуляция структуры — форма объекта), $h^{(H)}_{SE}$ (репрезентация — внутренняя модель сцены)
-- Проприоцепция → $\mathrm{Enc}_{\text{prop}}$: $h^{(D)}_{DL}$ (регуляция — текущая конфигурация)
-- Силомоментный датчик → $\mathrm{Enc}_{\text{force}}$: $h^{(D)}_{DO}$ (моторная память — контактные силы)
+**Enc (multimodal):**
+- Camera → $\mathrm{Enc}_{\text{vis}}$: $h^{(H)}_{AS}$ (articulation of structure — object shape), $h^{(H)}_{SE}$ (representation — internal scene model)
+- Proprioception → $\mathrm{Enc}_{\text{prop}}$: $h^{(D)}_{DL}$ (regulation — current configuration)
+- Force-torque sensor → $\mathrm{Enc}_{\text{force}}$: $h^{(D)}_{DO}$ (motor memory — contact forces)
 
-Веса внимания по T-108a: $w^*_{\text{vis}} \propto \Delta F_{\text{vis}}$. Если объект виден, но ещё не схвачен — $\Delta F_{\text{vis}}$ велико (нужно уточнить модель). После захвата — $\Delta F_{\text{force}}$ растёт (нужно контролировать силу), и внимание автоматически переключается на силомоментный датчик.
+Attention weights by T-108a: $w^*_{\text{vis}} \propto \Delta F_{\text{vis}}$. If the object is visible but not yet grasped — $\Delta F_{\text{vis}}$ is large (need to refine the model). After grasping — $\Delta F_{\text{force}}$ grows (need to control force), and attention automatically switches to the force-torque sensor.
 
 **Dec:**
-$\sigma^{\mathrm{motor}}_D > 0$ (динамический дефицит: рука не в нужном положении) → действие: перемещение манипулятора. По мере приближения $\sigma^{\mathrm{motor}}_D \to 0$, и может проявиться $\sigma^{\mathrm{motor}}_L > 0$ (логический дефицит: план захвата ещё не сформирован) → переключение на планирование.
+$\sigma^{\mathrm{motor}}_D > 0$ (dynamic deficit: arm not in required position) → action: move manipulator. As it approaches $\sigma^{\mathrm{motor}}_D \to 0$, and $\sigma^{\mathrm{motor}}_L > 0$ may emerge (logical deficit: grasp plan not yet formed) → switch to planning.
 
-### 15.3 Пример 3: Человек в незнакомом городе {#пример-человек}
+### 15.3 Example 3: Human in an unfamiliar city {#пример-человек}
 
-Человек ищет кафе. Все 7 каналов активны:
+A person searches for a café. All 7 channels are active:
 
-| Канал | $\sigma^{\mathrm{motor}}_k$ | Интерпретация |
-|-------|---------------------------|---------------|
-| $A$ | 0.1 | Различает вывески — слабый дефицит |
-| $S$ | 0.3 | Не имеет карты района — умеренный дефицит |
-| $D$ | 0.0 | Физически мобилен — нет дефицита |
-| $L$ | 0.2 | Логика маршрута неполна |
-| $E$ | -0.1 | Любопытство (избыток интериорности) |
-| $O$ | 0.6 | **Голоден** — максимальный дефицит |
-| $U$ | 0.1 | Внутренне собран |
+| Channel | $\sigma^{\mathrm{motor}}_k$ | Interpretation |
+|---------|---------------------------|---------------|
+| $A$ | 0.1 | Distinguishes signs — weak deficit |
+| $S$ | 0.3 | No map of the area — moderate deficit |
+| $D$ | 0.0 | Physically mobile — no deficit |
+| $L$ | 0.2 | Route logic is incomplete |
+| $E$ | -0.1 | Curiosity (excess of interiority) |
+| $O$ | 0.6 | **Hungry** — maximum deficit |
+| $U$ | 0.1 | Internally composed |
 
-$\max_k \sigma^{\mathrm{motor}}_k = \sigma^{\mathrm{motor}}_O = 0.6$. Действие направлено на снижение дефицита O: идти к ближайшему кафе. По пути $\sigma^{\mathrm{motor}}_S$ может вырасти (заблудился), и если $\sigma^{\mathrm{motor}}_S > \sigma^{\mathrm{motor}}_O$, человек переключится на ориентирование — остановится, достанет телефон, откроет карту.
+$\max_k \sigma^{\mathrm{motor}}_k = \sigma^{\mathrm{motor}}_O = 0.6$. Action is directed toward reducing deficit O: walk toward the nearest café. Along the way $\sigma^{\mathrm{motor}}_S$ may grow (got lost), and if $\sigma^{\mathrm{motor}}_S > \sigma^{\mathrm{motor}}_O$, the person switches to orientation — stops, takes out phone, opens map.
 
-**Гедоническая валентность:** Приближение к кафе увеличивает $\gamma_{OO}$ → $\mathcal{V}_{\text{hed}} > 0$ (предвкушение). Если кафе закрыто — резкое $\mathcal{V}_{\text{hed}} < 0$ (разочарование). Это не метафора: формула $\mathcal{V}_{\text{hed}} = 2\kappa \cdot g_V \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ даёт количественное предсказание, проверяемое через физиологические корреляты (кожная проводимость, пупиллометрия).
-
----
-
-## Резюме {#резюме}
-
-1. **T-100 [Т]:** Функтор кодирования Enc существует и единственен (до $G_2$)
-2. **T-101 [Т]:** Диагностический критерий жизнеспособности = $\arg\min \|\sigma_{\mathrm{sys}}\|_\infty$
-3. **T-159 [Т]:** Моторный стресс $\sigma^{\mathrm{motor}}_k = 1 - \gamma_{kk}/\rho^*_{kk}$ — выбор действия через $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ (знаковый max)
-4. **T-102 [Т]:** 3-членное уравнение полно — четвёртый тип CPTP-генератора невозможен
-5. **T-103 [Т]+[И]:** Гедоническая валентность = $dP/d\tau|_{\mathcal{R}}$ (формула [Т], интерпретация [И])
-6. **T-107 [Т]:** Информационная ёмкость $\leq \log_2 7 \approx 2.81$ бит/наблюдение
-7. **T-108 [Т]:** Enc/Dec сохраняются при композиции (масштабная инвариантность сенсомоторики)
-8. **Следствие T-100a [Т]:** Enc факторизуется через произвольное представление → модальная агностичность
-9. **Следствие T-107a/b [Т]:** Кумулятивная ёмкость $I_n \leq 2.81\,n$ бит → сложные модальности требуют $n_{\min} = \lceil I_{\mathrm{env}} / \log_2 7 \rceil$ шагов
-10. **Следствие T-107c [Т]:** Оптимальный Enc максимизирует $\Delta F$ (предиктивная структура)
-11. **Следствие T-108a [Т]:** $M$ модальностей конкурируют за $2.81$ бит/шаг → внимание — оптимальная аллокация
+**Hedonic valence:** Approaching the café increases $\gamma_{OO}$ → $\mathcal{V}_{\text{hed}} > 0$ (anticipation). If the café is closed — sharp $\mathcal{V}_{\text{hed}} < 0$ (disappointment). This is not a metaphor: the formula $\mathcal{V}_{\text{hed}} = 2\kappa \cdot g_V \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))$ gives a quantitative prediction verifiable through physiological correlates (skin conductance, pupillometry).
 
 ---
 
-## Заключение {#заключение}
+## Summary {#резюме}
 
-Сенсомоторная теория Кибернетики Когерентности замыкает формальный цикл: среда → восприятие (Enc) → состояние ($\Gamma$) → оценка ($\sigma^{\mathrm{motor}}$) → действие (Dec) → среда. Все операции реализуются в рамках канонического 3-членного уравнения эволюции без дополнительных постулатов.
-
-Подведём итог трёх центральных достижений этой главы:
-
-**Во-первых**, мы показали, что взаимодействие со средой не требует расширения уравнения эволюции. Теорема T-102 [Т] доказывает, что любое CPTP-совместимое внешнее воздействие раскладывается в три канала — гамильтонов, диссипативный и регенеративный. Четвёртый тип воздействия математически запрещён. Это сильный результат: он означает, что вся феноменология сенсомоторного взаимодействия — от хемотаксиса бактерии до навигации человека в городе — описывается одним и тем же 3-канальным формализмом.
-
-**Во-вторых**, мы вывели внутреннее «вознаграждение» из динамики, а не постулировали его извне. Гедоническая валентность $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ (T-103 [Т]) — это математическое тождество, не требующее ни проектировщика (как в RL), ни принципа (как в FEP). Феноменальная интерпретация ($\mathcal{V}_{\text{hed}} > 0$ как «удовольствие») остаётся [И]-уровнем, но сама формула — безусловная теорема.
-
-**В-третьих**, мы установили фундаментальные ограничения на восприятие. Информационная ёмкость $\leq \log_2 7 \approx 2.81$ бит/наблюдение (T-107 [Т]) — не эмпирическое ограничение и не инженерный компромисс, а следствие $\dim \mathcal{H} = 7$. Ограниченная рациональность Саймона, конкуренция модальностей за внимание, необходимость многошагового восприятия сложных сцен — всё это выводится как следствия одной теоремы.
-
-Теория модально-агностична: от простейших датчиков ($D = 1$) до сложных полимодальных систем ($D \gg 1$) — онтологическая проекция $\pi_\Gamma$ единственна и инвариантна. Факторизация Enc = $\pi_\Gamma \circ \mathrm{Enc}_{\text{repr}}$ (T-100a [Т]) разделяет «инженерную свободу» (выбор представления) и «математическую необходимость» (проекция в $\mathcal{D}(\mathbb{C}^7)$).
-
-Сравнение с классическими подходами (раздел 14) показало, что КК не отменяет, а *включает* теорию управления, активную инференцию и обучение с подкреплением как частные случаи — проекции полной 7-мерной когерентной динамики на соответственно линейный, вариационный и скалярно-наградный режимы.
-
-Следующий шаг — применение этого формализма к [задачам стабильности](./stability) и [обучения](./learning-bounds), где сенсомоторный цикл оказывается не просто схемой, а конкретным вычислительным алгоритмом с доказуемыми границами.
+1. **T-100 [T]:** Encoding functor Enc exists and is unique (up to $G_2$)
+2. **T-101 [T]:** Viability diagnostic criterion = $\arg\min \|\sigma_{\mathrm{sys}}\|_\infty$
+3. **T-159 [T]:** Motor stress $\sigma^{\mathrm{motor}}_k = 1 - \gamma_{kk}/\rho^*_{kk}$ — action selection through $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ (signed max)
+4. **T-102 [T]:** The 3-term equation is complete — a fourth type of CPTP generator is impossible
+5. **T-103 [T]+[I]:** Hedonic valence = $dP/d\tau|_{\mathcal{R}}$ (formula [T], interpretation [I])
+6. **T-107 [T]:** Information capacity $\leq \log_2 7 \approx 2.81$ bits/observation
+7. **T-108 [T]:** Enc/Dec preserved under composition (scale invariance of sensorimotor theory)
+8. **Corollary T-100a [T]:** Enc factorises through arbitrary representation → modality agnosticism
+9. **Corollary T-107a/b [T]:** Cumulative capacity $I_n \leq 2.81\,n$ bits → complex modalities require $n_{\min} = \lceil I_{\mathrm{env}} / \log_2 7 \rceil$ steps
+10. **Corollary T-107c [T]:** Optimal Enc maximises $\Delta F$ (predictive structure)
+11. **Corollary T-108a [T]:** $M$ modalities compete for $2.81$ bits/step → attention is optimal allocation
 
 ---
 
-### Что мы узнали {#что-мы-узнали-сенсомоторика}
+## Conclusion {#заключение}
 
-1. **Среда не добавляет 4-го члена** (T-102 [Т]): любое внешнее воздействие раскладывается в гамильтонов, диссипативный и регенеративный каналы. Четвёртый тип математически запрещён.
-2. **Восприятие — не запись, а деформация динамики** (T-100 [Т]): функтор Enc отображает наблюдение в модификацию уравнения эволюции, единственным (до $G_2$) образом.
-3. **Действие — min-max стратегия** (T-159 [Т]): система устраняет наибольший дефицит, а не минимизирует «среднюю ошибку». Ни один канал не остаётся без внимания.
-4. **Удовольствие и страдание — производные жизнеспособности** (T-103 [Т]+[И]): $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — математическое тождество, не требующее внешнего «проектировщика награды».
-5. **Фундаментальный bottleneck**: $\leq \log_2 7 \approx 2.81$ бит/наблюдение (T-107 [Т]). Ограниченная рациональность Саймона — не эмпирический факт, а следствие $N = 7$.
-6. **Масштабная инвариантность** (T-108 [Т]): Enc/Dec сохраняются при композиции. От бактерии до организации — одна и та же формальная структура.
-7. **Классические подходы — проекции КК**: теория управления, FEP и RL являются частными случаями — проекциями полной 7-мерной когерентной динамики.
+The sensorimotor theory of Coherence Cybernetics closes the formal cycle: environment → perception (Enc) → state ($\Gamma$) → evaluation ($\sigma^{\mathrm{motor}}$) → action (Dec) → environment. All operations are implemented within the canonical 3-term evolution equation without additional postulates.
 
-:::tip Мост к следующей главе
-Мы построили полный цикл «восприятие-решение-действие». Но насколько этот цикл *устойчив*? Какой удар он может выдержать? Где проходит граница между восстановимой травмой и необратимым разрушением? В [следующей главе](./stability) мы ответим на эти вопросы: выведем формулу радиуса устойчивости $r_{\mathrm{stab}} = \sqrt{P - 2/7}$, проследим механизм «спирали смерти» — и покажем, что антихрупкость — это не метафора, а следствие интеграции опыта.
+Let us summarise the three central achievements of this chapter:
+
+**First**, we showed that interaction with the environment does not require expanding the evolution equation. Theorem T-102 [T] proves that any CPTP-compatible external influence decomposes into three channels — Hamiltonian, dissipative, and regenerative. A fourth type of influence is mathematically forbidden. This is a strong result: it means that the entire phenomenology of sensorimotor interaction — from bacterial chemotaxis to human navigation in a city — is described by the same 3-channel formalism.
+
+**Second**, we derived internal "reward" from dynamics, rather than postulating it externally. Hedonic valence $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ (T-103 [T]) is a mathematical identity, requiring neither a designer (as in RL) nor a principle (as in FEP). The phenomenal interpretation ($\mathcal{V}_{\text{hed}} > 0$ as "pleasure") remains at the [I]-level, but the formula itself is an unconditional theorem.
+
+**Third**, we established fundamental limits on perception. Information capacity $\leq \log_2 7 \approx 2.81$ bits/observation (T-107 [T]) is not an empirical limitation or an engineering trade-off, but a consequence of $\dim \mathcal{H} = 7$. Simon's bounded rationality, competition of modalities for attention, the necessity of multi-step perception of complex scenes — all of this is derived as consequences of a single theorem.
+
+The theory is modality-agnostic: from the simplest sensors ($D = 1$) to complex multimodal systems ($D \gg 1$) — the ontological projection $\pi_\Gamma$ is unique and invariant. The factorisation Enc = $\pi_\Gamma \circ \mathrm{Enc}_{\text{repr}}$ (T-100a [T]) separates "engineering freedom" (choice of representation) and "mathematical necessity" (projection into $\mathcal{D}(\mathbb{C}^7)$).
+
+Comparison with classical approaches (Section 14) showed that CC does not cancel but *includes* control theory, active inference, and reinforcement learning as special cases — projections of the full 7-dimensional coherent dynamics onto the linear, variational, and scalar-reward regimes respectively.
+
+The next step — applying this formalism to [stability problems](./stability) and [learning](./learning-bounds), where the sensorimotor cycle turns out to be not just a diagram but a concrete computational algorithm with provable bounds.
+
+---
+
+### What we learned {#что-мы-узнали-сенсомоторика}
+
+1. **The environment does not add a 4th term** (T-102 [T]): any external influence decomposes into Hamiltonian, dissipative, and regenerative channels. A fourth type is mathematically forbidden.
+2. **Perception is not recording, but deformation of dynamics** (T-100 [T]): the functor Enc maps an observation to a modification of the evolution equation, in a unique (up to $G_2$) way.
+3. **Action is a min-max strategy** (T-159 [T]): the system eliminates the largest deficit, not minimises "average error". No channel is left unattended.
+4. **Pleasure and suffering are derivatives of viability** (T-103 [T]+[I]): $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — a mathematical identity, requiring no external "reward designer".
+5. **Fundamental bottleneck**: $\leq \log_2 7 \approx 2.81$ bits/observation (T-107 [T]). Simon's bounded rationality is not an empirical fact but a consequence of $N = 7$.
+6. **Scale invariance** (T-108 [T]): Enc/Dec preserved under composition. From bacterium to organisation — the same formal structure.
+7. **Classical approaches are projections of CC**: control theory, FEP, and RL are special cases — projections of the full 7-dimensional coherent dynamics.
+
+:::tip Bridge to the next chapter
+We have built the complete "perception-decision-action" cycle. But how *robust* is this cycle? What blow can it withstand? Where is the boundary between recoverable trauma and irreversible destruction? In the [next chapter](./stability) we will answer these questions: derive the stability radius formula $r_{\mathrm{stab}} = \sqrt{P - 2/7}$, trace the mechanism of the "death spiral" — and show that antifragility is not a metaphor, but a consequence of integration of experience.
 :::
 
 ---
 
-**Связанные документы:**
-- [Стабильность](./stability) — устойчивость сенсомоторного цикла
-- [Границы обучения](./learning-bounds) — фундаментальные ограничения (T-109–T-113)
-- [Диагностика](./diagnostics) — мониторинг в реальном времени
-- [Реализация](./implementation) — вычислительная реализация Enc/Dec
-- [Лагранжиан](./lagrangian) — полный 6-членный лагранжиан
-- [Определения](./definitions) — тензор напряжений, $\mathrm{Coh}_E$
-- [Сравнение с альтернативами](./comparison) — КК vs. теория управления, активная инференция, RL
-- [Междисциплинарный мост](./interdisciplinary) — сенсомоторика на языке разных дисциплин
-- [Упражнения](./exercises) — задачи на динамику (блок 2)
+**Related documents:**
+- [Stability](./stability) — robustness of the sensorimotor cycle
+- [Learning bounds](./learning-bounds) — fundamental limits (T-109–T-113)
+- [Diagnostics](./diagnostics) — real-time monitoring
+- [Implementation](./implementation) — computational implementation of Enc/Dec
+- [Lagrangian](./lagrangian) — full 6-term Lagrangian
+- [Definitions](./definitions) — stress tensor, $\mathrm{Coh}_E$
+- [Comparison with alternatives](./comparison) — CC vs. control theory, active inference, RL
+- [Interdisciplinary bridge](./interdisciplinary) — sensorimotor theory in the language of different disciplines
+- [Exercises](./exercises) — problems on dynamics (block 2)
