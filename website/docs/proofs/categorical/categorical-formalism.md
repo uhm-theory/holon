@@ -2358,6 +2358,8 @@ The Boolean subalgebra $\mathrm{Dec}(\Omega)$ is the **common fragment** of both
 
 This is **not postulating a privileged basis**, but its **derivation** from $G_2$-rigidity + einselection. The "classicality" of the dissipative core is **decoherence** (standard physics, Zurek 2003), formalized through Dec(Ω).
 
+**Connection to Isham–Butterfield topos quantum mechanics.** The topological approach to quantum mechanics (Isham–Butterfield 1998–2004, Döring–Isham 2008) constructs the topos of **presheaves** over the poset $\mathcal{V}(\mathcal{N})$ of commutative subalgebras of a von Neumann algebra $\mathcal{N}$. In this framework, quantum propositions are represented by **clopen subobjects** of the spectral presheaf — exactly the **decidable elements** of the classifier. The UHM construction Dec(Ω) ≅ 2⁷ is the **finite-dimensional analogue**: the maximal commutative subalgebra is the pointer basis {|k⟩⟨k|}, and the decidable fragment Dec(Ω) corresponds to Isham–Butterfield's clopen subobjects restricted to this basis. The key difference: Isham–Butterfield work with **all** commutative subalgebras simultaneously (the presheaf topos), while UHM selects one via $G_2$-rigidity and einselection. This selection is **not ad hoc** but categorically forced (T-42a [T], T-164 [T]).
+
 **Resolution of the circularity L_k ↔ Dec(Ω).** The derivation order is **not** circular:
 
 1. $G_2 = \mathrm{Aut}(\mathbb{O})$ — defined **algebraically** (Cartan's theorem), outside dynamics [T]

@@ -347,8 +347,16 @@ Octonions can be thought of as "numbers" that generalise the familiar numbers in
 Hurwitz's theorem (1898) proves: no other such algebras exist. The dimensions 1, 2, 4, 8 are the only possibilities. The imaginary parts have 0, 1, 3, 7 dimensions respectively. A fully self-sustaining system requires all 7 imaginary dimensions of the octonions.
 :::
 
-:::info $G_2$-caveat [Т]
-The specific identification $e_i$ ↔ dimension is a **theorem** [Т] (T15): the bridge is fully closed (theorems T1–T15). $G_2$ acts on Im(𝕆); whether this symmetry is physically realised in the space {A,S,D,L,E,O,U} remains an [open problem](../../proofs/minimality/theorem-octonionic-derivation#открытые-проблемы).
+:::info $G_2$-caveat and spontaneous symmetry breaking [Т]
+The specific identification $e_i$ ↔ dimension is a **theorem** [Т] (T15): the bridge is fully closed (theorems T1–T15).
+
+**Spontaneous breaking $G_2 \to SU(3)$ on $S^6$.** The quotient $G_2/SU(3) \cong S^6$ is the six-sphere. Choosing a specific singlet $O$ (fixing a point on $S^6$) is mathematically equivalent to spontaneous symmetry breaking. In UHM this breaking is **not** introduced "by hand" but arises **dynamically** through three mechanisms:
+
+1. **Attractor $\rho^*_\Omega \neq I/7$ (T-96 [T]):** the nontrivial fixed point of $\mathcal{L}_\Omega$ breaks $G_2$-symmetry (since $I/7$ is the only $G_2$-invariant state). The direction of breaking ($O$-axis) is determined by the structure of $\rho^*$.
+2. **Page–Wootters mechanism (T-87 [T]):** the clock dimension $O$ is singled out as the **unique** one correlating with temporal evolution. This is the analogue of a "Higgs field" fixing the breaking direction.
+3. **Einselection (T-164 [T]):** decoherence $\mathcal{D}_\Omega$ fixes the pointer basis, uniquely determining the decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$.
+
+The theory is $G_2$-covariant (T-42a [T]): different choices of point on $S^6$ yield physically equivalent descriptions (related by $G_2$-gauge transformation). The specific choice is a **gauge fixing**, standard for gauge theories.
 :::
 
 The octonionic interpretation not only justifies the number 7 but also explains the **non-associativity** of interactions among three or more dimensions. In an associative algebra the order of operations does not matter: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$. In the octonions — it does. This has deep consequences for Holon dynamics: triple interactions (for example, simultaneous change in A, S, and D) do not reduce to a sequence of pairwise ones. Every triplet of dimensions not lying on a Fano line generates a **non-zero associator** $[e_i, e_j, e_k] = (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k) \neq 0$, which manifests as a phase shift — a source of the [Gap](/docs/core/dynamics/gap-operator) between the internal and external descriptions.

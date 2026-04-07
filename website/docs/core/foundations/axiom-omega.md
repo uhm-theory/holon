@@ -463,21 +463,25 @@ where $|\mathcal{N}(\mathcal{C})|$ is the geometric realisation of the nerve of 
 
 **Step c.1 (Contractibility of the base).** The space $\mathcal{D}(\mathbb{C}^7)$ is a convex subset of $M_7(\mathbb{C})$, hence contractible: $\pi_k(\mathcal{D}(\mathbb{C}^7)) = 0$ for all $k \geq 0$. In an **ordinary** (1-categorical) topos $\mathbf{Sh}_1(\mathcal{D})$, all cohomology trivially vanishes (every sheaf on a contractible space is acyclic). The theorem is vacuous.
 
-**Step c.2 (Source of nontriviality in the ∞-topos).** In $\mathbf{Sh}_\infty(\mathcal{C})$ nontrivial cohomology **can** arise from two sources:
+**Step c.2 (∞-categorical content — contractibility of Map(Γ, T)).** The vanishing $H^n = 0$ on the contractible $\mathcal{D}(\mathbb{C}^7)$ with constant coefficients is a trivial geometric fact (Poincaré lemma for a convex set). The ∞-categorical content is **not** in the vanishing itself but in the **proof of nerve contractibility** $|\mathcal{N}(\mathcal{C})| \simeq *$, which requires verifying a nontrivial condition: contractibility of morphism spaces $\mathrm{Map}(\Gamma, T)$.
 
-**(i) Local systems from $\pi_1(\mathrm{CPTP})$.** The space of CPTP channels $\mathrm{CPTP}(\mathbb{C}^7)$ contains the unitary group $U(7)$ as a subspace. The fundamental group $\pi_1(U(7)) = \mathbb{Z}$ (integers — winding number). A sheaf $\mathcal{F}$ with nontrivial monodromy $\rho: \pi_1(U(7)) \to \mathrm{Aut}(\mathcal{F}_x)$ forms a **local system**. Cohomology with coefficients in a local system can be nonzero even over a contractible base space.
+**Lemma (Contractibility of Map(Γ, I/7)) [T].** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, the space of CPTP channels $\mathrm{Map}(\Gamma, I/7) := \{\Phi \in \mathrm{CPTP}(\mathbb{C}^7) : \Phi(\Gamma) = I/7\}$ is contractible.
 
-**(ii) Stratification by spectral degeneracy.** The set $\Sigma := \{\Gamma : \exists i \neq j,\; \lambda_i = \lambda_j\}$ (degenerate spectra) is a stratum of codimension 2 in $\mathcal{D}(\mathbb{C}^7)$. Loops around $\Sigma$ in $\mathcal{D} \setminus \Sigma$ can carry a Berry phase (holonomy) generating a nontrivial local system.
+*Proof.* The set of CPTP channels $\Phi$ with $\Phi(\Gamma) = I/7$ is **convex**: if $\Phi_1(\Gamma) = \Phi_2(\Gamma) = I/7$ and $\lambda \in [0,1]$, then $(\lambda\Phi_1 + (1-\lambda)\Phi_2)(\Gamma) = \lambda I/7 + (1-\lambda)I/7 = I/7$, and a convex combination of CPTP channels is a CPTP channel. A convex set is contractible (linear homotopy $h_t(\Phi) = t\Phi_0 + (1-t)\Phi$ to a fixed $\Phi_0$). $\square$
 
-**Step c.3 (Vanishing).** The theorem asserts that despite (i) and (ii), global cohomology vanishes. Proof:
+**Step c.3 (Nontriviality).** The contractibility $\mathrm{Map}(\Gamma, T) \simeq *$ is **not** a tautology from base contractibility of $\mathcal{D}(\mathbb{C}^7)$. It is an independent statement about the space of **morphisms** (CPTP channels), which **a priori** could have nontrivial topology:
+- The space of **all** CPTP channels $\mathrm{CPTP}(\mathbb{C}^7)$ is convex ⇒ contractible ⇒ $\pi_1 = 0$
+- But the space $\mathrm{Map}(\Gamma_1, \Gamma_2)$ for arbitrary $\Gamma_1, \Gamma_2$ **need not** be convex (the condition $\Phi(\Gamma_1) = \Gamma_2$ is nonlinear in $\Phi$)
+- For $\Gamma_2 = I/7$ convexity is restored (linearity: $\Phi(\cdot) = I/7$ regardless of the form of $\Phi$)
+- This is a nontrivial property of precisely the **terminal** object $T = I/7$
 
-1. **Nerve contractibility.** The terminal object $T = I/7$ in $\mathcal{C}$ yields a unique (up to a contractible path space) morphism $\Gamma \to T$ for each $\Gamma$. By the terminal-object property (Lurie, HTT, Prop. 1.2.12.9): $|\mathcal{N}(\mathcal{C})| \simeq *$ (contracts to $T$).
+**Physical content.** Cohomological monism $H^n = 0$ is the categorical formalisation of the **second law of thermodynamics**: the arrow of time (direction toward $T = I/7$) is unique up to homotopy type. Infinitely many concrete trajectories from $\Gamma$ to $T$ exist, but all are **homotopically equivalent**. In a 1-category $\mathrm{Hom}(\Gamma, T)$ is a set (no topology); in the ∞-category $\mathrm{Map}(\Gamma, T) \simeq *$ is a **space** with proven contractibility, which is substantive.
 
-2. **Acyclicity.** For a contractible space $X \simeq *$ with **any** coefficients: $H^n(X, \mathcal{F}) = H^n(*, \mathcal{F}_x) = 0$ for $n > 0$ (cohomology of a point vanishes).
+:::warning Clarification: Berry phases and local systems
+On the contractible space $\mathcal{D}(\mathbb{C}^7)$ **all** local systems trivialise (including those induced by $\pi_1(U(7)) = \mathbb{Z}$). Berry phases are physically observable, but they are defined on **subspaces** $\mathcal{D}^* = \mathcal{D} \setminus \Sigma$ (non-degenerate spectra), not on all of $\mathcal{D}$. The cohomology of $\mathcal{D}^*$ with local coefficients **is nonzero** — this is **not** a contradiction but a **local–global dichotomy**: globally $H^n = 0$ (monism), locally $H^n_{\mathrm{loc}} \neq 0$ (rich structure). Both sides are necessary for the completeness of the theory.
+:::
 
-3. **Substance.** The result is nontrivial precisely in the ∞-context: contractibility $|\mathcal{N}(\mathcal{C})| \simeq *$ is **not obvious** from contractibility of $\mathcal{D}(\mathbb{C}^7)$ — it follows from the existence of the terminal object $T$ and the contractivity of Bures-CPTP, which ensures contractibility of morphism spaces $\mathrm{Map}(\Gamma, T) \simeq *$. This is the ∞-categorical content of cohomological monism: **all paths to $T$ are equivalent**, yet there are infinitely many.
-
-**Physical interpretation.** $H^n = 0$ means: reality is **topologically whole** — there are no "ontological holes" through which information could "leak". Monodromy exists (Berry phases are physically observable), but it creates no **global** obstructions — everything integrates into a single wholeness. $\square_c$
+$\square_c$
 
 **(d) Day convolution — detailed construction and proof.**
 
