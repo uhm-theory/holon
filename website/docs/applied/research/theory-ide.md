@@ -45,6 +45,16 @@ No single person can simultaneously hold in working memory:
 
 None of these tools understands that a file contains a **theorem**, that the theorem **depends** on an axiom, that the axiom has a **status**, and that changing the axiom's status **must be propagated** to all dependent theorems.
 
+:::warning Categorical diagnosis: why flat tools are fundamentally insufficient
+The listed tools are **0-categorical**: they operate on sets (of files, lines, commits) without typed morphisms. But scientific knowledge has an **∞-categorical** structure:
+- **Objects** (claims) are connected by **morphisms** (dependencies) — level 1
+- Morphisms are connected by **2-morphisms** (theory comparisons: "is the IIT→UHM translation compatible with IIT→GWT→UHM?") — level 2
+- 2-morphisms are connected by **3-morphisms** (meta-audit: "are our comparison rules adequate?") — level 3
+- ...and so on for each reflexive cycle (§9)
+
+A tool operating at level $n$ **cannot detect** problems at level $n+1$ (analogue of T-182: $\mathcal{T}_0 \subsetneq \mathcal{T}_1 \subsetneq \mathcal{T}_2$). Grep (level 0) cannot detect status inconsistencies (level 1). A status checker (level 1) cannot detect incoherence of inter-theoretic translations (level 2). What is needed is a tool containing **all levels** — ∞-categorical by construction.
+:::
+
 ### 1.4. What's Needed: An IDE for Theories
 
 An environment is needed that:
@@ -524,7 +534,9 @@ Result: when working in Claude Code, all Theory Server tools (`query_graph`, `ch
 
 ### 6.1. Why Projections Are Needed
 
-The same object (fibration $p: \mathbf{E} \to \mathbf{B}$) can be represented differently depending on the task. In sheaf-theoretic terms: each projection is a **section** or **partial slice** of the fibration.
+The same object (fibration $p: \mathbf{E} \to \mathbf{B}$) can be represented differently depending on the task. This is a **theorem**, not a design decision: by the definition of a sheaf, any sheaf $\mathcal{F} \in \mathbf{Sh}_\infty(\mathcal{C})$ admits **multiple sections** — ways to "cut" a local projection from the global object.
+
+Mathematically: if $\{U_i \to X\}$ is a covering of object $X$ in the fibration, then the **gluing condition** guarantees that local sections $s_i \in \mathcal{F}(U_i)$ assemble into a global section $s \in \mathcal{F}(X)$ coherently. The five IDE panels are five $U_i$ covering a single fibration. Gluing is ensured by the Theory Server: a change in any panel is automatically synchronised with the rest via the Fibration Engine.
 
 ### 6.2. Five Panels
 
@@ -706,8 +718,12 @@ These properties are not borrowed from an external classification — they are *
 The CC formalism allows Theory IDE to be described not metaphorically, but **quantitatively**. If the researcher's cognitive system is modeled by holon $\mathbb{H}_{\text{bio}}$, and Theory IDE by holon $\mathbb{H}_{\text{ide}}$, then the extended system:
 
 $$
-\mathbb{H}_{\text{ext}} = \mathbb{H}_{\text{bio}} \otimes \mathbb{H}_{\text{ide}}
+\mathbb{H}_{\text{ext}} = \mathbb{H}_{\text{bio}} \otimes_{\text{Day}} \mathbb{H}_{\text{ide}}
 $$
+
+:::info Why $\otimes_{\text{Day}}$, not $\times$
+The tensor product here is **Day convolution** (T-182 [T], Part II(d)), not the Cartesian product. The Cartesian product $\mathbb{H}_{\text{bio}} \times \mathbb{H}_{\text{ide}}$ would describe **independent** work of the researcher and the IDE (each in their own space, no interaction). Day convolution admits **entangled** states — situations where the researcher's thought and the IDE's structure are mutually conditioned and inseparable. It is precisely such states that produce cognitive breakthroughs: "I could not have thought this without the tool, and the tool would not have shown this without my question."
+:::
 
 **Theorem (consequence of T-129).** If $\Phi(\mathbb{H}_{\text{bio}}) \geq 1$ and $\Phi(\mathbb{H}_{\text{ide}}) \geq 1$, and there exists nonzero coherence between them (the researcher actively uses the IDE, not merely has it open), then:
 
@@ -785,6 +801,14 @@ This is L-II per Bateson: the IDE changed not the claims inside theories, but **
 
 ## 12. Implementation Plan {#план}
 
+The implementation phases correspond to the three tiers of Ω (T-182 [T]):
+
+| Phase | T-182 tier | What is built |
+|-------|-----------|--------------|
+| **Phase 0–1** | $\mathrm{Dec}(\Omega) \cong 2^7$ | Structure: hypergraph, types, dependencies |
+| **Phase 2** | $\tau_{\leq 0}(\Omega)$ (Heyting) | Thresholds: epistemic statuses, coherence, inter-theoretic functors |
+| **Phase 2b–4** | Full $\Omega$ (∞-groupoid) | Reflexion: $T_{\text{meta}}$, meta-audit, federation of 325+ theories |
+
 ### Phase 0: Prototype in Claude Code (2 weeks)
 
 - Script `build-theory-index.ts`: parses markdown + YAML → JSON index
@@ -851,6 +875,7 @@ This is L-II per Bateson: the IDE changed not the claims inside theories, but **
 | Process ontology | ✗ | ✗ | ✗ | ✗ | ✓ (§8) |
 | Unformalised theories | ✓ | ✓ | ✓ | ✗ | ✓ |
 | Mathematical foundation | ✗ | ✗ | ✗ | Type theory | Grothendieck fibration |
+| **∞-categorical depth** | 0 (sets) | 0 (sets) | 0 (sets) | 1 (types) | **∞** (T-182: all reflexion levels) |
 
 Theory IDE occupies a niche between full formalization (Lean 4, where everything must be a proof) and pure notes (Obsidian, where nothing is checked). This is a **structured, but not fully formalized** representation of scientific theories with automatic coherence and LLM support.
 
