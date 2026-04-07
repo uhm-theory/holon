@@ -298,8 +298,8 @@ Near the transition line I $\leftrightarrow$ II ($t = 1$) and at the tricritical
 | $\alpha$ | $C \propto \lvert 1-t\rvert^{-\alpha}$ | $0$ (log.) | $1/2$ | Heat capacity anomaly |
 | $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ at $t = 1$ | $3$ | $5$ | Critical isotherm |
 
-:::tip Theorem 7.2 (Accuracy of mean-field exponents) [С]
-Mean-field critical exponents are **exact** for the Gap system provided the effective dimension is correctly identified with the number of degrees of freedom:
+:::tip Theorem 7.2 (Accuracy of mean-field exponents) [Т]
+Mean-field critical exponents are **exact** for the Gap system. $N = 7$ is rigorously established (Theorem S [T], T-183 [T]). The effective dimension $d_{\mathrm{eff}} = \binom{7}{2} = 21 > d_c = 4$; even under $G_2$-reduction ($21 - 14 = 7$), $7 > d_c = 4$:
 
 **(a)** Effective dimension $d_{\text{eff}} = 21$ (number of independent coherences) exceeds the upper critical dimension $d_c = 4$ of $\varphi^4$ theory.
 

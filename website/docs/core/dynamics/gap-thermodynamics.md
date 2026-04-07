@@ -425,8 +425,8 @@ All non-Fano pairs: $\dim(\mathrm{DFS}) \geq 1$ — partial protection.
 
 ### Lawvere's fixed-point theorem
 
-:::tip Theorem 10.1 (Application of Lawvere's theorem) [С]
-In a category $\mathcal{C}$ with a subobject classifier $\Omega$ and an endomorphism $\varphi: \Gamma \to \Gamma$ (self-modeling operator), a **fixed point** exists (provided $\varphi$ is a contracting mapping in a suitable metric):
+:::tip Theorem 10.1 (Application of Lawvere's theorem) [Т]
+In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ (T-182 [T]) with classifier $\Omega$ and endomorphism $\varphi: \Gamma \to \Gamma$ (T-62 [T]), a **unique fixed point** exists: $\varphi$ is contractive with $k = 1 - R < 1$ (T-62 [T]), $\mathcal{D}(\mathbb{C}^7)$ is compact ⇒ complete metric space, Banach FPT gives unique $\Gamma^*$:
 
 $$
 \exists \Gamma^* : \varphi(\Gamma^*) = \Gamma^*

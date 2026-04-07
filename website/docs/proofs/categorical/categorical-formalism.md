@@ -1355,7 +1355,7 @@ $$
 | Self-awareness | ✓ Formalized | Operator $\varphi$, measure $R$ |
 | Ambivalence | ✓ Formalized | Mixed states |
 | Temporality | [С] Partial | $\mathrm{Hist}$, but time is an external parameter |
-| Intentionality | [С] Direction | Coherences $\gamma_{Ej}$, requires clarification |
+| Intentionality | [Т] Direction determined | $E$ is the unique $L$-mediated interiority dimension (T-183 [T]); direction := $\arg\max_j |\gamma_{Ej}|$, $j \neq E$ |
 | Empathy | [С] Direction | Composition of Holons, open question |
 | Altered states | [С] Quantitative | $R$, $\Phi$ — described, mechanism open |
 

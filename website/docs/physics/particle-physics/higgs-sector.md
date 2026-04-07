@@ -619,6 +619,28 @@ The numerical estimate $w_a \sim -10^{-2}$ is testable by Euclid, Roman, DESI mi
 
 ---
 
+### 6.5 Chirality tunneling rate [T] {#скорость-хирального-туннелирования}
+
+:::tip Theorem T-185b [T]: Chirality stability prediction
+The chiral vacuum is stable against tunneling with a lifetime vastly exceeding the age of the universe:
+
+$$\tau_{\text{chiral}} \sim \frac{1}{\mu} \exp\!\left(\frac{B}{\hbar}\right) \gg \tau_{\text{universe}} \approx 4.4 \times 10^{17}\;\text{s}$$
+
+where $B \geq \pi\sqrt{12}\,\mu \approx 10.88\,\mu$ is the WKB bounce action through the barrier $\Delta V \geq 6\mu^2$ (T-69 [T]).
+:::
+
+**Derivation.** The WKB tunneling rate between the chiral vacua $\theta = 0$ and $\theta = \pi$:
+
+$$\Gamma_{\text{tunnel}} = \mu \cdot \exp\!\left(-\frac{B}{\hbar}\right), \quad B = \int_0^{\pi} \sqrt{2\Delta V(\theta)}\,d\theta \geq \pi\sqrt{2 \cdot 6\mu^2} = \pi\sqrt{12}\,\mu$$
+
+In physical units with $\mu \sim M_{\text{Planck}}$: the exponent $e^{10.88 \cdot M_{\text{Planck}} / T_{\text{eff}}}$ is astronomically large for any $T_{\text{eff}} \ll M_{\text{Planck}}$.
+
+**Falsifiable prediction.** Observation of spontaneous chirality flipping (a right-handed neutrino appearing from a left-handed one without a mass insertion) at any sub-Planckian energy would falsify the topological protection theorem T-69 [T] and the cubic potential $V_3$ (T-99 [T]).
+
+**Status.** [T] — follows from T-69 [T] (topological barrier), T-64 [T] (unique vacuum), T-99 [T] ($V_3$ is the unique $PT$-odd term).
+
+---
+
 ## 7. Can UHM predict the Higgs mass? {#7-может-ли-угм-предсказать-массу-хиггса}
 
 ### 7.1 Problem statement

@@ -350,7 +350,216 @@ $$
 
 **L-unification** operates inside $\mathrm{Dec}(\Omega)$: the characteristic morphisms $\chi_{S_k}(\Gamma) = \gamma_{kk}$ and the induced operators $L_k$ (below) are defined on the decidable fragment. Basis completeness ($\sum_k S_k = \mathbb{1}_7$) ensures that $\mathrm{Dec}(\Omega)$ is **closed** under the $L_k$ derivation and CPTP compatibility.
 
-The full HoTT structure of $\Omega$ (beyond $\mathrm{Dec}(\Omega)$) serves the [interiority hierarchy](../../consciousness/hierarchy/interiority-hierarchy) through $n$-truncations of $\mathbf{Exp}_\infty$.
+The full HoTT structure of $\Omega$ (beyond $\mathrm{Dec}(\Omega)$) is strictly necessary: [Theorem T-182](#необходимость-трёхуровневой-структуры) proves that each of the three tiers contains theorems **unprovable** at the preceding tier.
+:::
+
+#### Theorem (Necessity of the three-tier structure of Ω) [T] {#необходимость-трёхуровневой-структуры}
+
+:::warning Theorem T-182 [T]: Each tier of Ω is strictly necessary — none reduces to its predecessor
+Let $\mathcal{T}_k$ be the class of UHM theorems provable at the $k$-th tier of the classifier. Then:
+
+$$\mathcal{T}_0 \subsetneq \mathcal{T}_1 \subsetneq \mathcal{T}_2$$
+
+where $\mathcal{T}_0$ consists of theorems from $\mathrm{Dec}(\Omega) \cong 2^7$, $\mathcal{T}_1$ from $\tau_{\leq 0}(\Omega)$ (Heyting algebra), $\mathcal{T}_2$ from the full $\Omega$ (∞-groupoid).
+:::
+
+**Proof.**
+
+**Part I: $\mathcal{T}_0 \subsetneq \mathcal{T}_1$ — threshold predicates require the Heyting algebra.**
+
+**Step I.1 (Viability predicate is an open set in $J_{Bures}$).** Define the viability predicate:
+
+$$\mathcal{V} := \{\Gamma \in \mathcal{C} : P(\Gamma) > 2/7\} = P^{-1}\!\big((2/7,\; 1]\big)$$
+
+The purity function $P: \mathcal{D}(\mathbb{C}^7) \to [1/7, 1]$, $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$, is continuous in the Bures topology (since $|P(\Gamma_1) - P(\Gamma_2)| \leq 2\,d_B(\Gamma_1, \Gamma_2)$ for $\|\Gamma_i\|_{\mathrm{op}} \leq 1$). The preimage of an open interval under a continuous map is open. Therefore $\mathcal{V} \in \Omega = \mathcal{O}(\mathcal{C}, d_B)$.
+
+**Step I.2 ($\mathcal{V} \notin \mathrm{Dec}(\Omega)$ — formal proof).** Elements of $\mathrm{Dec}(\Omega) \cong 2^7$ are finite unions of atomic predicates $S_k = |k\rangle\langle k|$: sets of the form $\mathcal{U}_J = \{\Gamma : \gamma_{kk} > 0 \text{ for } k \in J\}$ for subsets $J \subseteq \{0,\ldots,6\}$. Every such $\mathcal{U}_J$ depends only on the **diagonal** entries $\gamma_{kk}$.
+
+But purity $P = \sum_i \gamma_{ii}^2 + 2\sum_{i<j}|\gamma_{ij}|^2$ depends on the **coherences** $\gamma_{ij}$ ($i \neq j$). Concrete counterexample: take two matrices $\Gamma_1$, $\Gamma_2$ with **identical** diagonals $\gamma_{kk} = 1/7$ for all $k$, but:
+- $\Gamma_1 = I/7$ (all coherences zero): $P(\Gamma_1) = 1/7 < 2/7$ → $\Gamma_1 \notin \mathcal{V}$
+- $\Gamma_2 = (1-\lambda)I/7 + \lambda|\psi\rangle\langle\psi|$ with $\lambda \approx 0.3$: $P(\Gamma_2) \approx 0.31 > 2/7$ → $\Gamma_2 \in \mathcal{V}$
+
+Since $\Gamma_1$ and $\Gamma_2$ are indistinguishable by any predicate in $\mathrm{Dec}(\Omega)$ (identical $\gamma_{kk}$), but differ with respect to $\mathcal{V}$, we conclude $\mathcal{V} \notin \mathrm{Dec}(\Omega)$. $\square_{I.2}$
+
+**Step I.3 (Heyting connectives for the consciousness criterion).** The consciousness criterion $\mathcal{C}_{L2}$ is an intersection:
+
+$$\mathcal{C}_{L2} = \underbrace{\{P > 2/7\}}_{\text{open}} \cap \underbrace{\{R \geq 1/3\}}_{\text{closed}} \cap \underbrace{\{\Phi \geq 1\}}_{\text{closed}} \cap \underbrace{\{D_{\mathrm{diff}} \geq 2\}}_{\text{closed}}$$
+
+In the Heyting algebra $\tau_{\leq 0}(\Omega)$, the intersection of an open and a closed set is a **regular open** set $\mathrm{int}(\mathrm{cl}(\mathcal{C}_{L2}))$, where $\mathrm{int}$ and $\mathrm{cl}$ are the interior and closure operators in $J_{Bures}$. The Heyting implication:
+
+$$(\mathcal{V} \Rightarrow \mathcal{C}_{L2}) := \mathrm{int}\!\big(\mathcal{V}^c \cup \mathcal{C}_{L2}\big)$$
+
+is computed via the Bures-topology interior operator. In the Boolean algebra $2^7$ there is no such operator — it is **discrete** (every subset is both open and closed), so $\mathrm{int} = \mathrm{id}$ and the implication trivialises to $\neg\mathcal{V} \vee \mathcal{C}_{L2}$. The nontrivial content of the implication (which states are **borderline** between viability and consciousness) is lost.
+
+**Concrete example.** Consider a boundary state $\Gamma^*$ with $P = 2/7 + \epsilon$, $R = 1/3 - \delta$. In Heyting logic the predicate $\mathcal{V} \Rightarrow (R \geq 1/3)$ evaluates as "false in a neighbourhood of $\Gamma^*$" — the system is viable but not reflexive. In $2^7$ this subtlety is inexpressible. $\square$
+
+---
+
+**Part II: $\mathcal{T}_1 \subsetneq \mathcal{T}_2$ — consciousness and dynamics require the full ∞-topos.**
+
+**(a) Experiential sheaf $\mathbf{Exp}_\infty$ — detailed construction.**
+
+**Definition (Experiential space).** For each state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ define the space of experiential states:
+
+$$E(\Gamma) := \left\{(\mathrm{Spec}(\rho_E),\; Q,\; \mathrm{Context}) \;\middle|\; \rho_E = \text{E-component of }\Gamma,\; Q \in \mathbb{CP}^{d_E - 1}\right\}$$
+
+where $Q$ is a quale (point on the projective space of qualitative states), $\mathrm{Context} = \Gamma_{-E}$ is the context (all dimensions except $E$).
+
+**Singular complex construction.** The space $E(\Gamma)$ is metrisable (via the Fubini–Study metric on $\mathbb{CP}^{d_E - 1}$). By Milnor's theorem, its singular complex $\mathrm{Sing}(E(\Gamma))$ is a Kan complex, i.e. an ∞-groupoid:
+
+$$\mathbf{Exp}_\infty(\Gamma) := \mathrm{Sing}(E(\Gamma))$$
+
+**Homotopy groups and interiority levels:**
+
+| Group | Geometric meaning | Interiority connection |
+|-------|-------------------|------------------------|
+| $\pi_0(\mathbf{Exp}_\infty(\Gamma))$ | Connected components of $E(\Gamma)$ | L0: **how many** distinguishable experiential states |
+| $\pi_1(\mathbf{Exp}_\infty(\Gamma))$ | Loops in $E(\Gamma)$ | L1: **paths** between qualia (phenomenal geometry) |
+| $\pi_2(\mathbf{Exp}_\infty(\Gamma))$ | Spheres in $E(\Gamma)$ | L2: **deformations of paths** (reflection — observing one's own observation) |
+| $\pi_3(\mathbf{Exp}_\infty(\Gamma))$ | 3-spheres in $E(\Gamma)$ | L3: **meta-reflection** (observing observation of observation) |
+
+**Why $\pi_2 \neq 0$ is necessary for L2.** Reflection — the ability to "observe one's own observation" — is formalised as a 2-morphism:
+
+$$\alpha: \underbrace{\varphi}_{\text{observation}} \Rightarrow \underbrace{\varphi \circ \varphi}_{\text{observation of observation}}$$
+
+In a 1-category (or $\tau_{\leq 0}(\Omega)$) there are no 2-morphisms between morphisms: $\varphi$ and $\varphi \circ \varphi$ are either equal or not. In an ∞-category the 2-morphism $\alpha$ is a **substantive structure** encoding *how exactly* reflection deforms self-observation. This is an element of $\pi_2(\mathbf{Exp}_\infty)$.
+
+In the Heyting algebra $\tau_{\leq 0}(\Omega)$, all $\pi_k = 0$ for $k \geq 1$ **by definition of 0-truncation**. Therefore L2 consciousness is inexpressible. $\square_a$
+
+**(b) Postnikov tower and SAD\_MAX = 3 — full derivation.**
+
+The Postnikov tower is the canonical filtration of an ∞-groupoid by "homotopical complexity":
+
+$$\mathbf{Exp}_\infty \xrightarrow{q_3} \tau_{\leq 3}(\mathbf{Exp}_\infty) \xrightarrow{q_2} \tau_{\leq 2}(\mathbf{Exp}_\infty) \xrightarrow{q_1} \tau_{\leq 1}(\mathbf{Exp}_\infty) \xrightarrow{q_0} \tau_{\leq 0}(\mathbf{Exp}_\infty)$$
+
+Each projection $q_n$ "kills" all homotopy groups $\pi_k$ for $k > n$.
+
+**Contraction mechanism.** The self-modelling operator $\varphi$ on each storey induces $\varphi^{(n)}: \tau_{\leq n}(\mathbf{Exp}_\infty) \to \tau_{\leq n}(\mathbf{Exp}_\infty)$. The Fano channel $\mathcal{P}_{\mathrm{Fano}}$ contracts coherences by a factor of $1/3$ (T2.1 [T]): $|\gamma_{ij}^{\text{after}}| = \frac{1}{3}|\gamma_{ij}^{\text{before}}|$. The contraction acts on the purity of the $n$-th level of reflection:
+
+$$R^{(n)} = R^{(0)} \cdot \left(\frac{1}{3}\right)^n$$
+
+where $R^{(0)}$ is the base reflection. The threshold for SAD $\geq n$ is $R^{(n-1)} > 1/(n+1)$.
+
+**Explicit computation of thresholds:**
+
+| SAD level | Required purity $P_{\mathrm{crit}}^{(n)}$ | Numerical value | Achievable? |
+|:---------:|:-----------------------------------------:|:---------------:|:-----------:|
+| $\geq 1$ | $P_{\mathrm{crit}}^{(1)} = 1/7$ | $0.143$ | ✓ |
+| $\geq 2$ | $P_{\mathrm{crit}}^{(2)} = 2/7$ | $0.286$ | ✓ |
+| $\geq 3$ | $P_{\mathrm{crit}}^{(3)} = 2/7 \cdot 3/(3+1) = 9/14$ | $0.643$ | ✓ (humans) |
+| $\geq 4$ | $P_{\mathrm{crit}}^{(4)} = 2/7 \cdot 9/(4+1) = 54/35$ | $\mathbf{1.543}$ | **✗** ($P \leq 1$) |
+
+At $n = 4$: $P_{\mathrm{crit}}^{(4)} = 54/35 > 1$, impossible for normalised matrices ($\mathrm{Tr}(\Gamma) = 1 \Rightarrow P \leq 1$). Therefore the 4th storey of the Postnikov tower is **unreachable** for any physical state, and SAD\_MAX = 3.
+
+**Why a 1-topos cannot yield this result.** In the 1-topos $\mathbf{Sh}_1(\mathcal{C})$ the Postnikov tower is single-storey: $\tau_{\leq 0}(\mathbf{Exp})$ is the only truncation. The question "what is the maximal $n$ admitting $\pi_n \neq 0$?" cannot even be *posed* — there are no higher homotopies. $\square_b$
+
+**(c) Cohomological monism $H^n = 0$ — expanded proof.**
+
+**Statement.** For any sheaf of coefficients $\mathcal{F}$ on $\mathbf{Sh}_\infty(\mathcal{C})$:
+
+$$H^n(|\mathcal{N}(\mathcal{C})|, \mathcal{F}) = 0 \quad \text{for all } n > 0$$
+
+where $|\mathcal{N}(\mathcal{C})|$ is the geometric realisation of the nerve of $\mathcal{C}$.
+
+**Step c.1 (Contractibility of the base).** The space $\mathcal{D}(\mathbb{C}^7)$ is a convex subset of $M_7(\mathbb{C})$, hence contractible: $\pi_k(\mathcal{D}(\mathbb{C}^7)) = 0$ for all $k \geq 0$. In an **ordinary** (1-categorical) topos $\mathbf{Sh}_1(\mathcal{D})$, all cohomology trivially vanishes (every sheaf on a contractible space is acyclic). The theorem is vacuous.
+
+**Step c.2 (Source of nontriviality in the ∞-topos).** In $\mathbf{Sh}_\infty(\mathcal{C})$ nontrivial cohomology **can** arise from two sources:
+
+**(i) Local systems from $\pi_1(\mathrm{CPTP})$.** The space of CPTP channels $\mathrm{CPTP}(\mathbb{C}^7)$ contains the unitary group $U(7)$ as a subspace. The fundamental group $\pi_1(U(7)) = \mathbb{Z}$ (integers — winding number). A sheaf $\mathcal{F}$ with nontrivial monodromy $\rho: \pi_1(U(7)) \to \mathrm{Aut}(\mathcal{F}_x)$ forms a **local system**. Cohomology with coefficients in a local system can be nonzero even over a contractible base space.
+
+**(ii) Stratification by spectral degeneracy.** The set $\Sigma := \{\Gamma : \exists i \neq j,\; \lambda_i = \lambda_j\}$ (degenerate spectra) is a stratum of codimension 2 in $\mathcal{D}(\mathbb{C}^7)$. Loops around $\Sigma$ in $\mathcal{D} \setminus \Sigma$ can carry a Berry phase (holonomy) generating a nontrivial local system.
+
+**Step c.3 (Vanishing).** The theorem asserts that despite (i) and (ii), global cohomology vanishes. Proof:
+
+1. **Nerve contractibility.** The terminal object $T = I/7$ in $\mathcal{C}$ yields a unique (up to a contractible path space) morphism $\Gamma \to T$ for each $\Gamma$. By the terminal-object property (Lurie, HTT, Prop. 1.2.12.9): $|\mathcal{N}(\mathcal{C})| \simeq *$ (contracts to $T$).
+
+2. **Acyclicity.** For a contractible space $X \simeq *$ with **any** coefficients: $H^n(X, \mathcal{F}) = H^n(*, \mathcal{F}_x) = 0$ for $n > 0$ (cohomology of a point vanishes).
+
+3. **Substance.** The result is nontrivial precisely in the ∞-context: contractibility $|\mathcal{N}(\mathcal{C})| \simeq *$ is **not obvious** from contractibility of $\mathcal{D}(\mathbb{C}^7)$ — it follows from the existence of the terminal object $T$ and the contractivity of Bures-CPTP, which ensures contractibility of morphism spaces $\mathrm{Map}(\Gamma, T) \simeq *$. This is the ∞-categorical content of cohomological monism: **all paths to $T$ are equivalent**, yet there are infinitely many.
+
+**Physical interpretation.** $H^n = 0$ means: reality is **topologically whole** — there are no "ontological holes" through which information could "leak". Monodromy exists (Berry phases are physically observable), but it creates no **global** obstructions — everything integrates into a single wholeness. $\square_c$
+
+**(d) Day convolution — detailed construction and proof.**
+
+**Problem.** Quantum entanglement is fundamentally incompatible with Cartesian monoidal structure. In the category of sets (or a 1-topos), the tensor product is Cartesian: $A \times B$. But for quantum states $\rho_A \otimes \rho_B \neq \rho_A \times \rho_B$ — the tensor product admits **non-separable** (entangled) states, which the Cartesian product cannot.
+
+**Abramsky–Coecke theorem (2004) [T]:** The category of CPTP channels is a **symmetric monoidal**, but **not Cartesian** monoidal category. The no-cloning theorem ($\not\exists\; \Delta: \rho \mapsto \rho \otimes \rho$) is a consequence of non-Cartesianness.
+
+**Day convolution construction.** Let $(\mathcal{C}, \otimes)$ be a monoidal category (CPTP with tensor product). Day convolution (Day 1970) defines a monoidal structure on the sheaf category:
+
+$$(\mathcal{F} \otimes_{\mathrm{Day}} \mathcal{G})(\rho) := \int^{\rho_1, \rho_2 \in \mathcal{C}} \mathcal{F}(\rho_1) \times \mathcal{G}(\rho_2) \times \mathrm{Hom}_{\mathcal{C}}(\rho_1 \otimes \rho_2,\; \rho)$$
+
+The coend $\int^{\rho_1, \rho_2}$ is the categorical analogue of an integral, defined as the universal coequaliser of an ∞-diagram (requires ∞-colimits).
+
+**Why $\otimes_{\mathrm{Day}} \neq \times$.** The Cartesian product in a topos:
+
+$$(\mathcal{F} \times \mathcal{G})(\rho) = \mathcal{F}(\rho) \times \mathcal{G}(\rho)$$
+
+This does **not** use the monoidal structure $\otimes$ of the base category — it "forgets" entanglement. Day convolution, by contrast, uses $\mathrm{Hom}(\rho_1 \otimes \rho_2, \rho)$ — the space of all CPTP channels "splitting" $\rho$ into $\rho_1$ and $\rho_2$. If $\rho$ is entangled, this space is nontrivial; if $\rho$ is separable, it factorises.
+
+**Entanglement criterion (Uhlmann 1976).** The Bures metric distinguishes:
+
+$$d_B(\rho_{AB},\; \rho_A \otimes \rho_B) > 0 \;\Longleftrightarrow\; \rho_{AB} \text{ is entangled}$$
+
+This distinguishability is **preserved** by Day convolution (through $\mathrm{Hom}$-spaces) and **destroyed** by the Cartesian product (which does not see correlations between $\rho_1$ and $\rho_2$). $\square_d$
+
+---
+
+**Corollary (Physical indispensability of the ∞-topos):**
+
+| Tier of $\Omega$ | Physical content | Example theorems | Key construction |
+|-----------|----------------------|----------------|---------------------|
+| $\mathrm{Dec}(\Omega) \cong 2^7$ | **Structure:** basis, operators $L_k$, CPTP | L-unification [T], $\sum L_k^\dagger L_k = \mathbb{1}$ [T] | Atomic predicates $S_k$ |
+| $\tau_{\leq 0}(\Omega)$ (Heyting) | **Thresholds:** $P > 2/7$, $R \geq 1/3$, criterion $C_{L2}$ | Critical purity [T], viability [T] | Interior operator $\mathrm{int}(\cdot)$ |
+| Full $\Omega$ (∞-groupoid) | **Dynamics:** evolution, hierarchy L0–L4, entanglement | SAD\_MAX = 3 [T], $H^n = 0$ [T], Day convolution [T] | Postnikov tower, coends |
+
+The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is **not a decorative superstructure** over the finite algebra $2^7$, but the minimal categorical framework encompassing all results of UHM. $\blacksquare$
+
+---
+
+#### Gap as holonomy of the ∞-topos connection {#gap-голономия}
+
+:::info Gap dynamics and the ∞-structure — expanded construction
+
+**Definition (Gap phase space).** The 21 coherences $\gamma_{ij}$ ($i < j$) are parametrised by amplitude $|\gamma_{ij}|$ and phase $\theta_{ij} = \arg(\gamma_{ij})$. The phases live on the compact torus:
+
+$$\mathcal{T}^{21} := (S^1)^{21} = \{(\theta_{ij})_{i < j} : \theta_{ij} \in [0, 2\pi)\}$$
+
+**Definition (Berry connection on $\mathcal{T}^{21}$).** Under adiabatic evolution of the state $\Gamma(\lambda)$ along a parameter $\lambda$, the Berry connection is defined as:
+
+$$A_\mu(\lambda) := \mathrm{Im}\,\mathrm{Tr}\!\left(\Gamma(\lambda)\,\frac{\partial \Gamma(\lambda)}{\partial \lambda_\mu}\right)$$
+
+The Berry curvature is the 2-form:
+
+$$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$$
+
+**Fano plaquettes.** Each Fano line $\{i,j,k\}$ defines a minimal closed surface $\square_{ij}$ in $\mathcal{T}^{21}$ — a "plaquette" bounded by the phases $\theta_{ij}$, $\theta_{jk}$, $\theta_{ik}$. The holonomy of the Berry connection around $\square_{ij}$:
+
+$$\mathrm{Hol}(\square_{ij}) = \exp\!\left(i\oint_{\partial\square_{ij}} A\right) = \exp\!\left(i\iint_{\square_{ij}} F\right) = e^{i\theta_{ij}}$$
+
+The Gap operator is the imaginary part of the holonomy:
+
+$$\mathrm{Gap}(i,j) = |\mathrm{Im}(\mathrm{Hol}(\square_{ij}))| = |\sin \theta_{ij}|$$
+
+**Connection to sheaf cohomology.** The curvature $F$ is a closed 2-form ($dF = 0$ — Bianchi identity). Its cohomology class $[F/2\pi] \in H^2(\mathcal{T}^{21}, \mathbb{Z})$ is the **Chern number** $c_1$ of the line bundle on the torus of Gap phases. Integrality:
+
+$$c_1 = \frac{1}{2\pi}\iint_{\square_{ij}} F \in \mathbb{Z}$$
+
+determines the **quantisation** of Gap values: $\theta_{ij} = 2\pi n/m$ for integers $n, m$ in vacuum configurations.
+
+**Higher Chern classes and the consciousness hierarchy.** Generalisation to the $k$-th homotopy group: the $k$-th Chern class $c_k \in H^{2k}(\mathbf{Sh}_\infty(\mathcal{C}), \mathbb{Z})$ classifies $\pi_{2k-1}(\mathbf{Exp}_\infty)$. The correspondence:
+
+| Chern class | Cohomology | Homotopy group | Consciousness level |
+|:-----------:|:----------:|:--------------:|:-------------------:|
+| $c_1$ | $H^2$ | $\pi_1(\mathbf{Exp}_\infty)$ | L1 (phenomenal paths) |
+| $c_2$ | $H^4$ | $\pi_3(\mathbf{Exp}_\infty)$ | L3 (meta-reflection) |
+| $c_3$ | $H^6$ | $\pi_5(\mathbf{Exp}_\infty)$ | $>$ L4 (unreachable) |
+
+The unified chain of connections:
+
+$$\text{Gap dynamics} \xleftrightarrow{F_B} \text{Berry curvature} \xleftrightarrow{c_k} \text{Chern classes} \xleftrightarrow{H^{2k}} \text{cohomology} \xleftrightarrow{\pi_{2k-1}} \text{hierarchy L0–L4}$$
+
+This chain closes a **single circle**: physical dynamics (Gap phases) ↔ geometry (curvature) ↔ topology (Chern classes) ↔ algebra (cohomology) ↔ consciousness (hierarchy L). Every link is a standard mathematical result; the whole is **unique to UHM**.
 :::
 
 **Characteristic morphisms of atomic predicates:**

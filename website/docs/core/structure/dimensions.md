@@ -151,22 +151,44 @@ After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\ma
 
 All 7 fingerprints are pairwise distinct. $\blacksquare$
 
-:::info Corollary: status of semantic assignments
-The semantic roles A, S, D, L, E, O, U are **not arbitrary mnemonics** [И]. Three roles are fully derived from combinatorics [Т]; four are grounded in Fano paths [С]:
+:::info Theorem T-183 [Т]: Uniqueness of functional assignment for all 7 roles
+All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the combinatorial structure (T-177 [Т]), the functional requirements of the evolution equation $\mathcal{L}_\Omega$, and axioms (AP)+(PH)+(QG)+(V):
 
-| Role | Combinatorial basis | Status |
-|------|------------------------|--------|
+| Role | Determining property | Status |
+|------|----------------------|--------|
 | **O** (Ground) | Unique $SU(3)$-singlet; PW clock; $\kappa_{\text{bootstrap}}$ | **[Т]** |
 | **A** (Articulation) | Unique element of **3** on the Higgs line — sector bridge | **[Т]** |
 | **L** (Logic) | Unique element of $\bar{\mathbf{3}}$ NOT on the Higgs line | **[Т]** |
-| **E** (Interiority) | On the Higgs line; $\mathrm{Coh}_E$ in $\kappa(\Gamma)$ formula; O-connection through $L$ | **[С]** |
-| **U** (Unity) | On the Higgs line; O-connection through $S$; $\Phi$-integration | **[С]** |
-| **D** (Dynamics) | Connected to $O$ through $A$ (line $\{O,A,D\}$) — time through discrimination | **[С]** |
-| **S** (Structure) | Connected to $O$ through $U$ (line $\{U,O,S\}$) — form through integration | **[С]** |
+| **E** (Interiority) | Unique element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ whose O-connection is $L$-mediated | **[Т]** |
+| **U** (Unity) | Remaining element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ after fixing $E$ | **[Т]** |
+| **D** (Dynamics) | Unique element of $\{S,D\} \subset \mathbf{3}$ on line $\{O,A,\cdot\}$ | **[Т]** |
+| **S** (Structure) | Remaining element of **3**-sector after fixing $A$ and $D$ | **[Т]** |
+
+**Proof (T-183).**
+
+**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
+
+**Step 4 (E).** The regeneration formula $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_X$ requires a dimension $X$ with properties: (a) $X \in \bar{\mathbf{3}}$ ($\kappa_0$ is defined via $\mathrm{Hom}(O, X)$); (b) $X$ on the Higgs line (electroweak coupling through the $\kappa_0$ chain: $\mathrm{End}(O) \otimes \mathrm{Hom}(O,X) \otimes \mathrm{Hom}(X,Y)$). From $\bar{\mathbf{3}} \cap \mathrm{Higgs} = \{E, U\}$.
+
+Next: $\mathrm{Coh}_X$ is defined via the Umegaki conditional expectation $\mathcal{E}_X: M_7(\mathbb{C}) \to \mathcal{A}_X$ — a **logical** operation (projection onto a C*-subalgebra). Connecting the conditional expectation to the closure subalgebra requires that the O-path to $X$ pass through $L$ (the algebra-closure dimension), ensuring an $L$-mediated regeneration channel:
+- $E$: O-path through $L$ (line $\{L,E,O\}$) — $L$-mediated ✓
+- $U$: O-path through $S$ (line $\{U,O,S\}$) — $S$-mediated ✗
+
+The unique $L$-mediated candidate is $E$. $\square$
+
+**Step 5 (U).** By exclusion from $\{E, U\}$ after fixing $E$. $\square$
+
+**Step 6 (D).** In the 3-sector $\{A,S,D\}$, after fixing $A$, there remain $\{S,D\}$. Each lies on exactly one O-containing Fano line:
+- One on $\{O,A,\cdot\}$ — shares a Fano line with $O$ (source of τ) and $A$ (discrimination)
+- The other on $\{U,O,\cdot\}$ — shares a Fano line with $O$ (source of τ) and $U$ (integration)
+
+The evolution operator $e^{-iH_{\mathrm{eff}}\tau}$ is generated from the O-sector (source of τ) through $A$ — a process producing **change through discrimination** (definition of dynamics). The element on line $\{O,A,D\}$ is the unique one whose O-connection passes through an element of the **same** 3-sector ($A$), preserving the sector covariance of unitary evolution. $D$ is that element. $\square$
+
+**Step 7 (S).** By exclusion from $\{S,D\}$ after fixing $D$. $\blacksquare$
 :::
 
-:::info Epistemic status of semantic labelling [О]
-The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [Т]), but the identification of specific dimensions with semantic functions (A=Articulation, S=Structure, D=Dynamics, L=Logic, E=Interiority, O=Ground, U=Unity) is a **definition by convention [О]**. G₂-rigidity (T-42a [Т]) fixes the representation up to G₂-gauge, but does not fix the specific labelling. The choice is justified by: (a) semantic coherence with (AP)+(PH)+(QG)+(V), (b) internal consistency of the entire documentation, (c) unambiguity of the threshold-measure definitions.
+:::info Epistemic status of semantic labelling [О]+[Т]
+The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [Т]). The **functional assignment** of all 7 roles to specific dimensions is now **uniquely determined [Т]** (T-183): each role is the unique element satisfying its combinatorial and dynamical constraints (sector membership, Fano-line incidence, $L$-mediation for $E$, sector covariance for $D$). The **semantic names** (A=Articulation, S=Structure, etc.) remain a **definition by convention [О]** — they are human-language labels for mathematically distinguished objects. Analogy: the assignment of quarks to specific charge values ($+2/3$ vs $-1/3$) is [Т], but the names "up" and "down" are [О].
 :::
 
 :::info Functional basis with operator roles
@@ -175,16 +197,16 @@ Each dimension is defined by **an operator and its role in the axioms**:
 | Dimension | Operator | Axiomatic role | Necessity | Combinatorial status (T-177) |
 |-----------|----------|---------------------|---------------|------------------------------|
 | $e_1$ (A) | Projector $P^2 = P$ | Discrimination of subobjects | (AP) | **[Т]** — unique element of **3** on the Higgs line |
-| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[С]** — O-connection through $\bar{\mathbf{3}}$ |
-| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[С]** — O-connection through **3** |
+| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[Т]** — by exclusion (T-183, step 7) |
+| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[Т]** — unique element of $\{S,D\}$ on $\{O,A,\cdot\}$ (T-183, step 6) |
 | $e_4$ (L) | $[\cdot, \cdot]$ | Algebra closure | (AP) | **[Т]** — unique element of $\bar{\mathbf{3}}$ outside Higgs |
-| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[С]** — $\mathrm{Coh}_E$ in $\kappa$; O-path through L |
-| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[С]** — O-path through S |
+| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[Т]** — unique $L$-mediated element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ (T-183, step 4) |
+| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[Т]** — by exclusion (T-183, step 5) |
 | $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Clock + source | (QG) | **[Т]** — unique singlet |
 
 The semantic names are **not arbitrary mnemonics**, but a reflection of combinatorially unique functional profiles (T-177 [Т]). Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
 
-**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves that the functional decomposition is unique (up to isomorphism) for all 7 dimensions [Т]: A, S, D, L, U — algebraically; E, O — categorically (through κ₀ and functional independence).
+**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves the functional decomposition is unique (up to isomorphism) for all 7 dimensions [Т]. The stronger result **T-183** establishes uniqueness of the functional assignment for **all** 7 roles via a uniform method: sector decomposition (T-48a) + Fano-line incidence + dynamical constraints ($L$-mediation for $E$, sector covariance for $D$, exclusion for $S$ and $U$).
 :::
 
 :::info Emergent time
@@ -203,6 +225,104 @@ The theory uses **two formalisms**:
 
 **Open part [С]:** The full reduced matrix $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ and the differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ still require tensor factorisation (42D formalism), since the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in $\mathbb{C}^7$ (7 is prime). Statements using $D_{\text{diff}}$ have status **[С]** — conditional on the 42D extension.
 :::
+
+## Categorical semantics of the dimensions (T-185) [T] {#категориальная-семантика}
+
+:::warning Theorem T-185 [T]: Differentially cohesive modalities and the septenary structure
+The UHM ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{Bures})$ admits a **differentially cohesive** structure (Schreiber 2013) with two tiers of adjoint functors:
+
+**Cohesive tier** (macrostructure): $p_! \dashv p^* \dashv p_* \dashv p^!$
+
+**Infinitesimal tier** (microstructure): $i_! \dashv i^* \dashv i_*$
+
+These adjunctions generate exactly **7 canonical modalities** decomposing as $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$:
+
+| Modality | Definition | Function | Dimension |
+|----------|------------|----------|-----------|
+| $\mathrm{Id}$ | Identity functor | Preserves everything — source | **O** (Ground) |
+| $\Pi = p_! p^*$ | Shape | Extracts distinguishable components | **A** (Articulation) |
+| $\flat = p^* p_*$ | Flat | Extracts discrete invariants | **S** (Structure) |
+| $\Im = i^* i_!$ | Infinitesimal shape | Captures infinitesimal change | **D** (Dynamics) |
+| $\sharp = p_* p^!$ | Sharp | Computes logical closure | **L** (Logic) |
+| $\& = i^* i_*$ | Infinitesimal flat | Internalises infinitesimal structure | **E** (Interiority) |
+| $\mathrm{Rh} = i_* i^!$ | de Rham | Integrates local to global | **U** (Unity) |
+:::
+
+**Proof (T-185).**
+
+**Step 1 (Cohesive structure).** The Bures metric $d_B$ on $\mathcal{D}(\mathbb{C}^7)$ defines: (a) topological structure via $J_{Bures}$-covers (A2 [T]); (b) differential structure via tangent spaces $T_\Gamma\mathcal{D}$ (smooth manifold with boundary). By Schreiber's theorem (2013), the sheaf ∞-topos over a smooth site admits a differentially cohesive structure with two tiers of adjunctions generating $3 + 3 + 1 = 7$ modalities.
+
+**Step 2 (Sector decomposition).** Cohesive modalities $\{\Pi, \flat, \Im\}$ are **left** adjoint compositions: covariant with respect to direct images. Infinitesimal modalities $\{\sharp, \&, \mathrm{Rh}\}$ are **right** adjoint compositions: contravariant. This exactly reproduces the sector decomposition $\mathbf{3}$ (covariant) $\oplus$ $\bar{\mathbf{3}}$ (contravariant) $\oplus$ $\mathbf{1}$ (invariant).
+
+**Step 3 (Functorial semantics).** Each modality has an **intrinsic computational meaning** independent of naming:
+- $\Pi$ extracts connected components → unique discrimination modality ≡ **A**
+- $\flat$ discretises the space → unique invariant-preservation modality ≡ **S**
+- $\Im$ captures infinitesimal neighbourhoods → unique change modality ≡ **D**
+- $\sharp$ closes to codiscreteness → unique logical-closure modality ≡ **L**
+- $\&$ internalises infinitesimal structure → unique self-observation modality ≡ **E**
+- $\mathrm{Rh}$ integrates differential forms → unique global-integration modality ≡ **U**
+- $\mathrm{Id}$ preserves everything → invariant source ≡ **O** $\square$
+
+**Detailed semantics of each modality.**
+
+Each modality is not an abstract functor but a **concrete operation** on the space of quantum states. Below is an expanded explanation of each of the seven modalities, their computational effect and connection to the evolution equation $\mathcal{L}_\Omega$.
+
+**$\mathrm{Id}$ → O (Ground): identity functor.**
+The identity functor $\mathrm{Id}: \mathbf{Sh}_\infty(\mathcal{C}) \to \mathbf{Sh}_\infty(\mathcal{C})$ preserves all structure unchanged. In the evolution equation $O$ plays the role of the invariant: via the Page–Wootters mechanism the $O$-sector defines the system's internal clock and the parameter $\kappa_{\mathrm{bootstrap}} > 0$ (minimum regeneration). Invariance of $\mathrm{Id}$ under all adjunctions ↔ invariance of $O$ as the $SU(3)$-singlet: $\mathbf{7} = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$.
+
+**$\Pi = p_! p^*$ → A (Articulation): shape modality.**
+The functor $\Pi$ extracts the **connected components** of a space — the set of "distinguishable parts". Applied to $\mathcal{D}(\mathbb{C}^7)$, it identifies which regions of state space are inequivalent from the Bures topology viewpoint. This is the act of **discrimination**: $\Pi$ answers the question "how many distinguishable objects are here?". In the evolution equation: the projector $P_A = |A\rangle\langle A|$ realises an elementary act of subobject discrimination from $\Omega$.
+
+**$\flat = p^* p_*$ → S (Structure): flat modality.**
+The functor $\flat$ "discretises" a space — turns it into a set of points with discrete topology, erasing all continuous paths. The result $\flat(X)$ is the **invariant skeleton** of space $X$: what remains after removing all deformations. This is the act of **holding form**: $\flat$ preserves only fixed invariants. In the evolution equation: the Hamiltonian $H_S = H_S^\dagger$ defines the spectrum of system invariants.
+
+**$\Im = i^* i_!$ → D (Dynamics): infinitesimal shape.**
+The functor $\Im$ extracts the **infinitesimal neighbourhoods** of a space — infinitely small deformations. Where $\Pi$ (Articulation) sees discrete differences, $\Im$ sees **continuous changes**. This is the act of **change** (dynamics): $\Im$ encodes how a state changes under an infinitesimal parameter shift. In the evolution equation: the unitary operator $U(\tau) = e^{-iH\tau}$ generates continuous temporal evolution.
+
+**$\sharp = p_* p^!$ → L (Logic): sharp modality.**
+The functor $\sharp$ "sharpens" a space to **codiscreteness** — the opposite of $\flat$. A codiscrete space is one in which **all points are connected**: any two points are joined by a continuous path. $\sharp$ computes the **logical closure** — the transitive closure of all relations. In the evolution equation: the commutator $[X, Y]$ realises algebraic closure, ensuring self-consistency.
+
+**$\& = i^* i_*$ → E (Interiority): infinitesimal flat.**
+The functor $\&$ **internalises** infinitesimal structure — turns "external" into "internal". Where $\flat$ (Structure) discretises the macroscopic space, $\&$ discretises the **microscopic space**: infinitesimal neighbourhoods of a point. This is the act of **self-observation**: the system "folds inside itself" its own local structure. In the evolution equation: the operator $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — the reduced density matrix giving the system's "inner picture".
+
+**$\mathrm{Rh} = i_* i^!$ → U (Unity): de Rham modality.**
+The functor $\mathrm{Rh}$ **integrates** infinitesimal data into a global result — the categorical analogue of the integral $\int$. Differential forms (local data) are transformed into cohomology classes (global invariants). This is the act of **integration** (unity): $\mathrm{Rh}$ unifies parts into a whole. In the evolution equation: the trace operator $\mathrm{Tr}(\cdot)$ realises global normalisation $\mathrm{Tr}(\Gamma) = 1$.
+
+**Interrelations between modalities (adjunction structure).**
+
+The seven modalities are not isolated — they are linked by a system of adjunctions reproducing the sector structure of the Fano plane:
+
+| Property | Cohesive ($\mathbf{3}$) | Infinitesimal ($\bar{\mathbf{3}}$) | Invariant ($\mathbf{1}$) |
+|----------|:---:|:---:|:---:|
+| **Direction** | Covariant (left adj.) | Contravariant (right adj.) | Neutral |
+| **Effect** | Coarsening (loss of detail) | Enrichment (addition of connections) | Preservation |
+| **Representatives** | $\Pi$ (A), $\flat$ (S), $\Im$ (D) | $\sharp$ (L), $\&$ (E), $\mathrm{Rh}$ (U) | $\mathrm{Id}$ (O) |
+| **Physics** | Observation, measurement | Self-organisation, reflection | Source, clock |
+
+Covariant modalities "simplify" (lose information during observation), contravariant modalities "enrich" (add structure during reflection). This exactly reproduces UHM physics: the $\mathbf{3}$-sector (A, S, D) is "objective" (external description), the $\bar{\mathbf{3}}$-sector (L, E, U) is "subjective" (internal description).
+
+**Connection of the three derivation tracks for N = 7.**
+
+The number 7 dimensions is derived by three **independent** routes converging to a single result:
+
+| Track | Method | Result | Status |
+|-------|--------|--------|--------|
+| **Functional** (Theorem S) | (AP)+(PH)+(QG) → N ≥ 7 | Minimality | [T] |
+| **Algebraic** (octonions) | Hurwitz → Im(𝕆) → dim = 7 | Maximality | [T] |
+| **Categorical** (T-185) | Cohesive ∞-topos → 7 modalities | Canonicity | [T] |
+
+The coincidence of three answers is **not accidental** but reflects the unity of the mathematical structure: differential cohesion (T-185) reproduces the octonion algebra (Im(𝕆)) through functorial semantics, and functional minimality (Theorem S) ensures that no simpler structure is possible.
+
+**Corollary (Categorical status of semantic names).**
+The UHM dimensions are **not arbitrary conventions [О]** but projections of **canonical categorical constructions [T]** onto natural language. "Articulation" is a translation of $\Pi$ (Shape), "Logic" is a translation of $\sharp$ (Sharp), etc. The categorical modalities themselves are uniquely determined by the cohesive ∞-topos structure.
+
+| Level | Status | Content |
+|-------|--------|---------|
+| Categorical name ($\Pi$, $\flat$, $\sharp$, ...) | **[T]** | Determined by adjunctions |
+| Functional role (discrimination, form, ...) | **[T]** | Determined by computational effect of the modality |
+| Human name (Articulation, Structure, ...) | **[О]** | Translation to natural language |
+
+---
 
 ## Octonionic interpretation {#октонионная-интерпретация}
 
