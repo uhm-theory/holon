@@ -106,23 +106,7 @@ A tool operating at level $n$ **cannot detect** problems at level $n+1$ (analogo
 §1 described the **problem** (cognitive limit). §2 will propose the **solution** (∞-topos of theories). This intermediate section answers a meta-level question: **why exactly this solution** — and why alternatives are fundamentally insufficient.
 :::
 
-### 1½.1. Metastemology: beyond protocols of rationality
-
-Egor Churilov (["Metastemology. Instead of a Manifesto"](https://anticomplexity.org/posts/metastemologiya-vmesto-manifesta/), 2025) puts forward a radical thesis: the problem of modern knowledge is **not** a lack of data and **not** reasoning errors, but the **architecture of the cognitive protocols themselves**. The protocol itself is an object subject to reconfiguration.
-
-Key concepts of Churilov that resonate with Mathesis:
-
-| Churilov | Mathesis | Mathematical analogue |
-|----------|----------|----------------------|
-| **Stema** — a terminological bridge between theories | **Kan extension** $\mathrm{Lan}_f$ — universal translation of statements | Morphism in the base $\mathbf{Th}$ |
-| **Impulse network** — a dynamic network with normalizing mechanics | **∞-sheaf** $\mathcal{F} \in \mathfrak{M}$ with descent condition | Fiber of fibration $p^{-1}(T)$ |
-| **Metatextual processor** — a new class of devices for working with knowledge | **Mathesis** as a whole: $\mathfrak{M}$ + computational core + LLM agent | $\infty$-topos $\mathfrak{M}$ |
-| **Reconfiguration of rationality** — changing protocols, not working within them | **L-III** (§3.3): modification of topology $J_{\text{ep}}$ | Postnikov tower: $\tau_{\leq n+1} \to \tau_{\leq n}$ |
-| **Executable knowledge on an actant network bus** | **MCP integration**: Mathesis Core as an executable theory model | Sheaf $\mathcal{F} \in \mathfrak{M}$ |
-
-Churilov does not use categorical mathematics explicitly, but his architecture is **isomorphic** to the categorical one. Mathesis is a **realization** of the metastemological program on a categorical foundation.
-
-### 1½.2. Three levels of Ω as three levels of Mathesis
+### 1½.1. Three levels of Ω as three levels of Mathesis
 
 Theorem T-182 [T] establishes that three levels of the subobject classifier are strictly necessary: $\mathcal{T}_0 \subsetneq \mathcal{T}_1 \subsetneq \mathcal{T}_2$. This structure **projects** onto the architecture of Mathesis:
 
@@ -132,7 +116,7 @@ Theorem T-182 [T] establishes that three levels of the subobject classifier are 
 | $\tau_{\leq 0}(\Omega)$ (Heyting) | **Epistemic Engine**: threshold predicates, status propagation, coherence audit | Thresholds and logic: "which statements are reliable and where are the boundaries" |
 | Full $\Omega$ (∞-groupoid) | **Reflexive cycles**: $T_{\text{meta}}$, double loop, meta-audit | Dynamics: "how the system observes and restructures itself" |
 
-### 1½.3. Cohesive modalities as Mathesis operations
+### 1½.2. Cohesive modalities as Mathesis operations
 
 Theorem T-185 [T] establishes 7 canonical modalities of the differentially cohesive ∞-topos. Six of them map to fundamental operations:
 
@@ -140,14 +124,14 @@ Theorem T-185 [T] establishes 7 canonical modalities of the differentially cohes
 |----------|------------|-------------------|
 | $\Pi$ (Shape) | Extracts distinguishable components | `theory/audit` — detection of differences and inconsistencies |
 | $\flat$ (Flat) | Extracts discrete invariants | `claim/dependencies` — skeleton of dependencies (without dynamics) |
-| $\Im$ (Infinitesimal shape) | Captures infinitesimal change | `claim/setStatus` + propagation — reaction to local change |
+| $\Im$ (Infinitesimal shape) | Captures infinitesimal change | `claim/set_status` + propagation — reaction to local change |
 | $\sharp$ (Sharp) | Computes logical closure | `fibration/coherence` — transitive check of the entire fibration |
 | $\&$ (Infinitesimal flat) | Internalizes infinitesimal structure | `meta/audit` — observation of own structure |
 | $\mathrm{Rh}$ (de Rham) | Integrates local into global | `claim/translate` — Cartesian lifting, inter-theoretic synthesis |
 
 This is **not a post hoc fit**, but a consequence of the structure of the cohesive ∞-topos: if Mathesis operates on sheaves on the site of theories, then its fundamental operations **necessarily** decompose into cohesive and infinitesimal modalities (Schreiber 2013).
 
-### 1½.4. Fundamental justification: why ∞-categories are the only adequate apparatus
+### 1½.3. Fundamental justification: why ∞-categories are the only adequate apparatus
 
 Working with knowledge about knowledge is an operation on the **category of categories** $\mathbf{Cat}$. Working with knowledge about knowledge about knowledge is on the **∞-category of ∞-categories** $\mathbf{Cat}_\infty$. This is not a metaphor, but a precise statement:
 
@@ -242,7 +226,7 @@ $$
 
 To each theory $T$ is assigned a **representable sheaf** $y(T)$: a functor that assigns to theory $S$ the space of all interpretations of $S$ into $T$.
 
-**Yoneda lemma (∞-version, HTT 5.1.3).** The embedding $y$ is fully faithful:
+**Yoneda lemma (∞-version, HTT 5.1.3).** The embedding $y$ is fully faithful (вполне верно):
 
 $$
 \mathrm{Map}_{\mathfrak{M}}(y(T_1), y(T_2)) \simeq \mathrm{Map}_{\mathbf{Th}}(T_1, T_2)
@@ -272,10 +256,10 @@ $$
 **Measure of untranslatability.** Obstruction:
 
 $$
-\mathrm{Obs}(f) := \mathrm{Ran}_f \circ f^* - \mathrm{Id}
+\mathrm{Obs}(f) := \left(\mathrm{Ran}_f \circ f^* \xRightarrow{\;\eta\;} \mathrm{Id}\right)
 $$
 
-where $f^*$ is the pullback functor. $\mathrm{Obs}(f) = 0$ — the translation is perfect. $\mathrm{Obs}(f) \neq 0$ — there exist statements with no exact analogue. This is a **universal construction**, replacing the ad hoc `what_is_lost` column of the previous version.
+where $f^*$ is the pullback functor and $\eta$ is the counit of the adjunction. The obstruction $\mathrm{Obs}(f)$ is a natural transformation; if $\eta$ is an isomorphism, the translation is perfect. If $\eta$ is not an isomorphism on object $a$, then $a$ has no exact analogue — the deviation of $\eta_a$ from isomorphism quantitatively characterizes "untranslatability." This is a **universal construction**, replacing the ad hoc `what_is_lost` column of the previous version.
 
 **Example.** Translation $f: T_{\text{UHM}} \to T_{\text{IIT}}$:
 - $\mathrm{Lan}_f(P_{\text{crit}} = 2/7) = [\Phi > 0]$ — optimistic: "the thresholds correspond"
@@ -303,6 +287,8 @@ In any ∞-topos there exists a **subobject classifier** $\Omega_{\mathfrak{M}}$
 - "consistent in all loaded theories but not proven in any" — **invariant hypothesis**
 
 This is not an ad hoc extension — it is an **automatic consequence** of $\mathfrak{M}$ being an ∞-topos.
+
+**Connection between $\varepsilon$ and $\Omega_{\mathfrak{M}}$.** The epistemic functor $\varepsilon_T$ (§2.2) maps claims to the linear poset **Status**. This poset *embeds* into $\Omega_{\mathfrak{M}}$ as a sublattice: each global status [T], [C], ... is a section of the subobject classifier. But $\Omega_{\mathfrak{M}}$ also contains *non-sectoral* elements — contextual truths not expressible through a single global status. Phases 0–4 work with the projection of $\varepsilon$ onto the linear poset; Phase 6 transitions to the full $\Omega_{\mathfrak{M}}$.
 
 **Why a linear poset is insufficient.** In the linear poset [T] > [C] > [H] > ... a claim has exactly one status, regardless of theory. But in scientific practice, the claim "consciousness ≡ integrated information" has status [T] in IIT, [H] in UHM, and [✗] in behaviorism — **simultaneously**. A linear poset forces choosing a single "global" status, losing context. The Heyting algebra $\Omega_{\mathfrak{M}}$ contains all contextual truths as its elements — without loss.
 
@@ -367,7 +353,9 @@ Homotopy structure:
 
 **Problem.** In complex interdisciplinary theories, truth is **contextual** and **noncommutative**: a statement can be [T] in $T_1$ but [H] in $T_2$; proving one statement can change the status of another; two statements can be **complementary** (in Bohr's sense).
 
-**Generalization.** Replace the linear poset $\mathbf{Status}$ with an **orthomodular lattice** $\mathcal{L}$ (Birkhoff–von Neumann 1936). The epistemic state of statement $a$:
+**Generalization.** Replace the linear poset $\mathbf{Status}$ with an **orthomodular lattice** $\mathcal{L}$ (Birkhoff–von Neumann 1936). This does not contradict the Heyting algebra from §2.7: $\Omega_{\mathfrak{M}}$ is the internal logic of the *∞-topos* (Heyting), while $\mathcal{L}$ is the structure of the *epistemic space of an individual claim*. They live at different levels: Heyting is for "is it true in a given theory," the orthomodular lattice is for "what is the state of knowledge about a claim." Connection: $\mathcal{L}$ embeds into $\Omega_{\mathfrak{M}}$ via projectors onto subspaces of the epistemic Hilbert space.
+
+The epistemic state of statement $a$:
 
 $$
 \rho_a \in \mathcal{D}(\mathcal{H}_{\text{ep}})
@@ -426,7 +414,7 @@ The architecture realizes the mathematical foundation of §2 and generalizations
 | Principle | Section | Architectural realization |
 |-----------|---------|--------------------------|
 | ∞-Topos $\mathfrak{M}$ | §2.3 | Fibration Engine (hypergraph as 1-categorical approximation) |
-| Kan extensions | §2.5 | Epistemic Engine (propagation, audit) + LLM agent (semantic translations) |
+| Kan extensions | §2.5 | Fibration Engine (Cartesian liftings) + LLM agent (semantic correspondence search) |
 | Autopoiesis | §3.3 | $T_{\text{meta}}$ as fibration layer + `meta/*` commands |
 | Process ontology | §9 | Morphisms are primary in the data model; stigmergy through diagnostics |
 | Reflexive cycles | §10 | Agent Mode 5 (meta-audit) + double loop |
@@ -447,7 +435,7 @@ graph TD
 
     subgraph SERVER["Mathesis Core"]
         direction LR
-        FE["Fibration Engine<br/>━━━━━━━━━━━━<br/>• Hypergraph<br/>• Layers (theories)<br/>• Functors<br/>• Kan extensions"]
+        FE["Fibration Engine<br/>━━━━━━━━━━━━<br/>• Hypergraph<br/>• Layers (theories)<br/>• Functors<br/>• Cartesian liftings"]
         EE["Epistemic Engine<br/>━━━━━━━━━━━━<br/>• Functor ε<br/>• Propagation rules<br/>• Coherence audit<br/>• A/B/C classification"]
         CA["Claude Agent Layer<br/>━━━━━━━━━━━━<br/>• Contradiction search<br/>• Functor generation<br/>• Inter-theoretic<br/>&nbsp;&nbsp;translation"]
     end
@@ -473,9 +461,9 @@ graph TD
 
 ### 4.2. Mathesis Protocol (MP) {#mathesis-protocol}
 
-MP is the protocol for client (UI, CLI, LLM agent) interaction with the Mathesis Core. An analogue of **LSP** (Language Server Protocol), but for theories. Format: JSON-RPC via stdio or TCP. Full command list — 25 endpoints in 5 groups:
+MP is the protocol for client (UI, CLI, LLM agent) interaction with the Mathesis Core. An analogue of **LSP** (Language Server Protocol), but for theories. Format: JSON-RPC via stdio or TCP. Full command list — 26 endpoints in 5 groups:
 
-**Navigation** (7): `theory/list`, `theory/claims`, `claim/get`, `claim/dependencies`, `claim/dependents`, `claim/translations`, `query_graph`
+**Navigation** (8): `theory/list`, `theory/claims`, `theory/functors`, `claim/get`, `claim/dependencies`, `claim/dependents`, `claim/translations`, `query_graph`
 
 **Mutations** (7): `claim/create`, `claim/set_status`, `claim/add_dependency`, `claim/remove`, `theory/create`, `theory/import`, `theory/add_functor`
 
@@ -583,6 +571,7 @@ Claude Opus connects to the Mathesis Core via MCP (Model Context Protocol):
 |------|---------|
 | `theory/list` | List all theories in the workspace |
 | `theory/claims` | All claims of a theory with status/type filters |
+| `theory/functors` | Functor graph: all inter-theoretic bridges with metadata (for Federation panel, §7) |
 | `claim/get` | Full content of a claim by ID |
 | `claim/dependencies` | Dependency graph (N levels deep, direction: up/down) |
 | `claim/dependents` | What depends on the given claim |
@@ -644,7 +633,18 @@ Claude Opus connects to the Mathesis Core via MCP (Model Context Protocol):
 3. Tracks systematic losses during translation
 4. Results are recorded in $T_{\text{meta}}$ (§8) with status [H]
 
-### 6.4. MCP integration
+### 6.4. Formalizing the agent: Giry monad
+
+The LLM agent is formalized not merely functionally (executing MCP operations) but **categorically** — as a **stochastic oracle** via the Giry monad (Giry 1982).
+
+Instead of a deterministic functor $F: T_1 \to T_2$, the agent generates a **distribution** over the space of functors: $\mathcal{G}(\mathrm{Map}_{\mathbf{Th}}(T_1, T_2))$, where $\mathcal{G}$ is the Giry monad (probability measures on measurable spaces). The act of user confirmation of a mapping is the collapse of this distribution (analogous to epistemic measurement §3.2).
+
+Consequences:
+- **LLM "hallucinations"** are not a bug but fluctuations in the path space of the ∞-groupoid. The agent does not search for a single "correct" answer — it probes topologically connected paths between theories.
+- **Verification is mandatory**: the agent's proposal passes SMT verification (`@verify(proof)`) before acceptance. The oracle is not trusted.
+- **Confidence as measure**: `functor/propose` returns not only a candidate but also a density estimate $p(F | \text{context})$ — the probability of the given correspondence in the given context.
+
+### 6.5. MCP integration
 
 The Mathesis Core is implemented as an **MCP server** (Model Context Protocol):
 
@@ -699,7 +699,20 @@ $T_{\text{meta}}$ obeys **the same rules**: its statements have statuses, depend
 
 Parallel with UHM: the operator $\varphi(\Gamma)$ is a self-model converging to $\rho^*$. Approximate (Lawvere) but stable (contractivity of CPTP). $T_{\text{meta}}$ is an analogue of $\varphi(\Gamma)$: an approximate but stable self-model of the system.
 
-### 8.4. Second-order observation
+### 8.4. Workflow for updating $T_{\text{meta}}$
+
+Claims of $T_{\text{meta}}$ are created and updated through the same set of endpoints (§6.2) as claims of any other theory:
+
+1. **Agent (Mode 5)** detects a pattern via `meta/patterns` — for example, "the edge type `translates_to` systematically loses the dynamic aspect"
+2. Agent calls `meta/suggest_extension` → formulates a claim: "An edge type `translates_dynamics_to` is needed" with status [H]
+3. The claim is added to $T_{\text{meta}}$ via `claim/create { theory: "meta", ... }`
+4. `meta/boundaries` automatically checks: if the claim asserts completeness/consistency of $\mathfrak{M}$ — status is bounded ≤ [H] (Lawvere, §8.3)
+5. The researcher confirms → `claim/set_status { ..., status: "P" }` (promotion to postulate)
+6. The Mathesis Core applies the change: new edge type/status/structure is added to the Fibration Engine
+
+The cycle is closed: $T_{\text{meta}}$ observes the system, the system is updated, the updated system checks $T_{\text{meta}}$.
+
+### 8.5. Second-order observation
 
 Luhmann (1995): second-order observation is observing how others observe. Each layer $p^{-1}(T)$ is a "scheme of observation" of theory $T$. Functors are acts of second-order observation. $T_{\text{meta}}$ adds a **third order**: observation of how Mathesis observes how theories observe the world.
 
@@ -785,7 +798,7 @@ $$
 $$
 
 :::info Why $\otimes_{\text{Day}}$ and not $\times$
-Day convolution (T-182 [T]) allows **entangled** states — situations where the researcher's thought and the structure in Mathesis are mutually conditioned and inseparable. It is precisely such states that produce cognitive breakthroughs: "I could not have thought this without the tool, and the tool would not have shown this without my question."
+Day convolution is defined on the category of presheaves of a monoidal category (Day 1970). The monoidal structure on $\mathbf{Th}$: **direct product of theories** $T_1 \times T_2$ (a theory whose claims are pairs from $T_1$ and $T_2$). Day convolution (T-182 [T]) allows **entangled** states — situations where the researcher's thought and the structure in Mathesis are mutually conditioned and inseparable. It is precisely such states that produce cognitive breakthroughs: "I could not have thought this without the tool, and the tool would not have shown this without my question."
 :::
 
 **Theorem (corollary of T-129).** If $\Phi(\mathbb{H}_{\text{bio}}) \geq 1$ and $\Phi(\mathbb{H}_{\mathfrak{M}}) \geq 1$, and there exists nonzero coherence:
@@ -804,7 +817,7 @@ Mathesis is the first precedent of **theoretically grounded** cognitive extensio
 
 **Without Mathesis:** The researcher notices the ρ* paradox. Manually searches for dependencies (grep), updates statuses in ~25 files. Time: 2–4 hours.
 
-**With Mathesis:** `claim/setStatus T-96 C "ρ* paradox"` → Fibration Engine propagates in <1 sec → agent analyzes each affected statement → "Statuses" panel shows diff. Time: 5 minutes.
+**With Mathesis:** `claim/set_status T-96 C "ρ* paradox"` → Fibration Engine propagates in <1 sec → agent analyzes each affected statement → "Statuses" panel shows diff. Time: 5 minutes.
 
 ### 12.2. Loading a new theory
 
@@ -816,7 +829,15 @@ Mathesis is the first precedent of **theoretically grounded** cognitive extensio
 
 The agent in Mode 5 discovers: "In 4 out of 5 theories, statements about the *dynamics* of consciousness have no analogues. All functors systematically lose the temporal aspect." → Proposes a new edge type `translates_dynamics_to` → recorded in $T_{\text{meta}}$ as [H] → the researcher confirms → **the structure of Mathesis has changed**.
 
-### 12.4. Responding to criticism
+### 12.4. Topological answer to "are the translations equivalent?" (§3.1)
+
+The researcher builds two translations IIT→UHM: $f$ (via $\Phi \leftrightarrow$ integration measure) and $g$ (via Q-shape $\leftrightarrow$ sector profile). Query: `functor/compute_kan { source: "iit", target: "uhm" }` → the system computes the path space $\mathrm{Path}(f, g)$. Result: $\pi_0 = \{f, g\}$ (two distinct classes — the translations are *not* equivalent), $\pi_1(f) \cong \mathbb{Z}_3$ (gauge symmetry: permutation of [E,O,U] preserves the structure of translation $f$). This is not a Boolean "yes/no" answer, but a **topological map** of the translation space.
+
+### 12.5. Epistemic superposition collapse (§3.2)
+
+The claim "consciousness requires a global workspace" (GWT) is loaded into Mathesis. It is in superposition: [T] in GWT, [H] in UHM (where integration is a necessary but not sufficient condition). The researcher decides to check experimentally (ConTraSt Database). Query: `claim/set_status { ..., status: "T", reason: "adversarial collaboration result" }` → epistemic measurement: the superposition $\alpha|\text{T}\rangle + \beta|\text{H}\rangle$ collapses to [T]. Side effect: the competing claim "consciousness does not require global accessibility" (IIT partial) is weakened — the projectors do not commute.
+
+### 12.6. Responding to criticism
 
 `claim/dependencies uhm:T-120 --full` → full dependency tree, all [T] → "T-120 is fully justified." Time: 30 seconds.
 
@@ -831,13 +852,14 @@ Phases correspond to the three levels of Ω (T-182):
 | **Phase 0–1** | $\mathrm{Dec}(\Omega) \cong 2^7$ | Structure: hypergraph, types, dependencies |
 | **Phase 2** | $\tau_{\leq 0}(\Omega)$ (Heyting) | Thresholds: statuses, coherence, functors |
 | **Phase 2b–4** | Full $\Omega$ (∞-groupoid) | Reflection: $T_{\text{meta}}$, meta-audit, federation of 325+ theories |
-| **Phase 5** | $\mathfrak{M}$ | Transition from 1-categorical approximation to HoTT core |
+| **Phase 5** | Verum foundation | Cubical primitives, HKT, 7 core/math/ modules, tactic DSL |
+| **Phase 6** | $\mathfrak{M}$ | Transition from 1-categorical approximation to HoTT core |
 
 ### Phase 0: Prototype in Claude Code (2 weeks)
 
-- Script `build-theory-index.ts`: parses markdown + YAML → JSON index
-- Script `check-coherence.ts`: checks coherence against the index
-- Script `propagate-status.ts`: propagation on status change
+- Verum script `build-theory-index.vr`: parses markdown + YAML → JSON index
+- Verum script `check-coherence.vr`: checks coherence against the index
+- Verum script `propagate-status.vr`: propagation on status change
 - Hook in Claude Code: after each edit → auto-check
 - **Self-application**: used for working with UHM
 
@@ -846,7 +868,7 @@ Phases correspond to the three levels of Ω (T-182):
 - Verum cog `mathesis-core`: hypergraph, fibration, coherence, propagation
 - Verum cog `mathesis-index`: scanning markdown → hypergraph
 - MCP wrapper: Mathesis Core available from Claude Code as a set of MCP tools
-- Claude Opus receives tools: `query_graph`, `check_coherence`, `propose_functor`
+- Full set of 26 MCP endpoints (§6.2): navigation, mutations, verification, translation, self-reference
 
 ### Phase 2: Loading competing theories (2–4 weeks)
 
@@ -876,7 +898,16 @@ Phases correspond to the three levels of Ω (T-182):
 - "Map of theories" — interactive visualization of $\mathbf{Th}$ (325+ theories from [Consciousness Atlas](https://www.consciousnessatlas.com/))
 - Integration with [ConTraSt Database](https://www.nature.com/articles/s41562-021-01284-5) (412 experiments)
 
-### Phase 5: HoTT core (research)
+### Phase 5: Activating Verum Foundation (parallel with Phases 2–4)
+
+Extensions of Verum necessary for native realization of $\mathfrak{M}$ (details: `internal/verum-ext.md`):
+
+- **5a**: Cubical primitives — Path type, `transport`, `hcomp` (computational model for paths)
+- **5b**: HKT — `F: Type → Type` in generic parameters (abstraction over Functor, Monad)
+- **5c**: 7 new core/math/ modules — hott.vr, simplicial.vr, infinity_category.vr, fibration.vr, infinity_topos.vr, kan_ext.vr, quantum_logic.vr
+- **5d**: Extended tactic DSL — combinators, meta-tactics, LLM oracle (Giry monad)
+
+### Phase 6: HoTT core (research)
 
 - Migration of the data model from hypergraph to cubical type theory
 - Equalities = paths in ∞-groupoid (§3.1)
