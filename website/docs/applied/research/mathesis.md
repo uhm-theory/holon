@@ -108,7 +108,7 @@ A tool operating at level $n$ **cannot detect** problems at level $n+1$ (analogo
 
 ### 1½.1. Metastemology: beyond protocols of rationality
 
-Andrei Churilov (["Metastemology. Instead of a Manifesto"](https://anticomplexity.org/posts/metastemologiya-vmesto-manifesta/), 2025) puts forward a radical thesis: the problem of modern knowledge is **not** a lack of data and **not** reasoning errors, but the **architecture of the cognitive protocols themselves**. The protocol itself is an object subject to reconfiguration.
+Egor Churilov (["Metastemology. Instead of a Manifesto"](https://anticomplexity.org/posts/metastemologiya-vmesto-manifesta/), 2025) puts forward a radical thesis: the problem of modern knowledge is **not** a lack of data and **not** reasoning errors, but the **architecture of the cognitive protocols themselves**. The protocol itself is an object subject to reconfiguration.
 
 Key concepts of Churilov that resonate with Mathesis:
 
