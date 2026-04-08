@@ -584,7 +584,7 @@ tags: [purity, threshold, viability]
 
 ### 6.2. Инструменты
 
-Claude Opus подключается к Ядру Матезиса через Anthropic tool_use API:
+Claude Opus подключается к Ядру Матезиса через MCP (Model Context Protocol):
 
 | Инструмент | Назначение |
 |------------|-----------|

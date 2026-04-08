@@ -584,7 +584,7 @@ In the "Obsidian + RAG + LLM" combination, the model operates on **text**. In Ma
 
 ### 6.2. Tools
 
-Claude Opus connects to the Mathesis Core through the Anthropic tool_use API:
+Claude Opus connects to the Mathesis Core via MCP (Model Context Protocol):
 
 | Tool | Purpose |
 |------|---------|
