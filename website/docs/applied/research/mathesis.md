@@ -38,6 +38,21 @@ Leibniz could not realize his project: he lacked (1) category theory (Eilenberg�
 
 The software code (Verum) is a finite approximation of the infinite object $\mathfrak{M}$, just as a numerical solution of a differential equation approximates continuous dynamics. The approximation can improve; $\mathfrak{M}$ remains unchanged.
 
+### Document structure
+
+The document follows a single logical chain:
+
+1. **Problem** (§1): cognitive limit — no human can hold 325+ theories simultaneously
+2. **Justification** (§1½): why ∞-categories are the only adequate apparatus (T-182, cohesive modalities)
+3. **Foundation** (§2): construction of the ∞-topos $\mathfrak{M}$ — site of theories, Yoneda embedding, Kan extensions, descent condition, subobject classifier
+4. **Generalizations** (§3): three directions beyond the 1-categorical approximation — HoTT, quantum logic, autopoiesis
+5. **Realization** (§4–§6): architecture, engines, agent — how $\mathfrak{M}$ is computationally approximated
+6. **Deep principles** (§7–§10): self-reference, process ontology, reflexive cycles — what makes Mathesis alive rather than static
+7. **Consequences** (§11–§12): cognitive extension and usage examples
+8. **Path to realization** (§13–§15): roadmap, comparison, Verum as the language of ultimate power
+
+Each level builds on the previous and is irreducible to it — in exact correspondence with theorem T-182 ($\mathcal{T}_0 \subsetneq \mathcal{T}_1 \subsetneq \mathcal{T}_2$).
+
 ---
 
 ## 1. The problem: cognitive limit {#problem}
@@ -189,6 +204,8 @@ Examples: $T_{\text{UHM}}$ (~185 theorems, 7 statuses, 5 axioms), $T_{\text{IIT}
 
 **Intuition.** A covering is a set of "perspectives" that collectively exhaust the content of a theory. For example, $T_{\text{IIT}}$ and $T_{\text{GWT}}$ can jointly cover the part of $T_{\text{UHM}}$ concerning integration.
 
+**Analogy.** Imagine a multi-story building. Floors are theories (UHM, IIT, GWT, FEP). Rooms on a floor are claims within a theory. Doors between rooms are logical dependencies. Staircases between floors are translation functors. The epistemic topology $J_{\text{ep}}$ says: "if via staircases one can reach all rooms on the top floor, starting from different lower floors — the top floor is *covered*." Unlike the 1-categorical fibration (prior architecture), the ∞-version adds: corridors between staircases (2-morphisms), transitions between corridors (3-morphisms), and so on — all navigation levels simultaneously.
+
 ### 2.3. ∞-Topos of Mathesis {#infinity-topos}
 
 **Definition.** The ∞-topos of Mathesis is the ∞-category of ∞-sheaves on the site of theories:
@@ -208,6 +225,8 @@ $$
 This is a **cosimplicial limit** — full coherence at all levels simultaneously.
 
 **Universal property (Lurie, HTT 6.2.2.7).** $\mathfrak{M}$ is the free cocompletion of the site $\mathbf{Th}$ as an ∞-category: any coherent system of theory comparisons **uniquely factors** through $\mathfrak{M}$.
+
+**What this means in practice.** If a researcher loads 30 theories and builds translations between them, they may use any storage system (graph database, relational database, text files). But if they want the translations to be **coherent at all levels** (translation from A to C via B gives the same result as direct translation from A to C, up to a coherent isomorphism) — their data **automatically** forms an object in $\mathfrak{M}$. The universal property asserts: there is no other way to ensure coherence that does not factor through $\mathfrak{M}$.
 
 :::warning Uniqueness corollary
 Mathesis is not "one of possible designs." It is the **unique** (up to equivalence) way to organize a collection of theories with coherent translations at all levels. There is no alternative that would be simultaneously complete and coherent and would not factor through $\mathfrak{M}$.
@@ -248,6 +267,8 @@ $$
 
 **Intuition.** $\mathrm{Lan}_f$ — "best possible correspondence" (colimit formula). $\mathrm{Ran}_f$ — "most cautious correspondence" (limit formula).
 
+**Why Kan extensions and not ad hoc functors?** A Kan extension possesses a **universal property**: it is the *best* (in the categorical sense) way to extend a partial translation. Any other translation consistent with the original **uniquely factors** through the Kan extension. This means: Mathesis does not *guess* translations and does not rely on heuristics — it computes the *optimal* translation from the structure of the theories themselves. The LLM agent proposes candidates; the Kan extension guarantees optimality.
+
 **Measure of untranslatability.** Obstruction:
 
 $$
@@ -283,6 +304,8 @@ In any ∞-topos there exists a **subobject classifier** $\Omega_{\mathfrak{M}}$
 
 This is not an ad hoc extension — it is an **automatic consequence** of $\mathfrak{M}$ being an ∞-topos.
 
+**Why a linear poset is insufficient.** In the linear poset [T] > [C] > [H] > ... a claim has exactly one status, regardless of theory. But in scientific practice, the claim "consciousness ≡ integrated information" has status [T] in IIT, [H] in UHM, and [✗] in behaviorism — **simultaneously**. A linear poset forces choosing a single "global" status, losing context. The Heyting algebra $\Omega_{\mathfrak{M}}$ contains all contextual truths as its elements — without loss.
+
 ### 2.8. Connection with the UHM ∞-topos {#connection-with-uhm}
 
 UHM is built on an ∞-topos:
@@ -309,6 +332,8 @@ $$
 Each level is irreducible to the previous one (T-182). Mathesis operates at level 2, with reflexive access to level 3 through $T_{\text{meta}}$ (§8).
 
 The Grothendieck construction (straightening/unstraightening, HTT 3.2) establishes an equivalence between fibrations and functors $\mathcal{C}^{\mathrm{op}} \to \mathbf{Cat}_\infty$. Thus, the fibration $p: \mathbf{E} \to \mathbf{B}$ from the preceding architecture is a **special case** (1-categorical projection) of the ∞-topos $\mathfrak{M}$ construction.
+
+**Deep unity.** The fact that the same construction (∞-topos of sheaves) organizes both quantum states ($\mathfrak{T}$) and scientific theories ($\mathfrak{M}$) is not a coincidence. It is a consequence of both domains — physics and epistemology — operating on **context-dependent knowledge**: the result of a measurement depends on context (in physics — on the basis; in epistemology — on the theory). The ∞-topos is the universal mathematical structure for context-dependent data with coherent transitions between contexts (Isham–Butterfield 1998, Döring–Isham 2008).
 
 ---
 
@@ -356,7 +381,9 @@ $$
 | Refutation | $P_{[\text{✗}]} \rho_b P_{[\text{✗}]}$ may $\neq \rho_b$ | If $[P_a, P_b] \neq 0$, refuting $a$ nontrivially affects $b$ |
 | Superposition | $\rho_a = \alpha |\text{T}\rangle\langle\text{T}| + \beta |\text{H}\rangle\langle\text{H}|$ | Before verification, the statement is in a superposition of statuses |
 
-**Connection with UHM.** This is not an analogy — it is a direct transfer. $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ describes a conscious state; $\rho_{\text{ep}} \in \mathcal{D}(\mathbb{C}^k)$ describes an **epistemic state**. The formulas are identical because the mathematical structure is the same: an ∞-topos for physics ($\mathfrak{T}$) and for epistemology ($\mathfrak{M}$).
+**Why quantum logic, not classical?** In classical logic, checking a hypothesis is idempotent: check twice — get the same result. In scientific practice this is false. Proving theorem A can invalidate hypothesis B (if A and B are incompatible), and refuting B can *strengthen* C (if B and C were competitors). Epistemic measurements **do not commute**: the order of checking affects the outcome. This is precisely the structure of quantum mechanics — not by analogy, but because both domains operate on **context-dependent propositions** on an orthomodular lattice.
+
+**Connection with UHM.** $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ describes a conscious state; $\rho_{\text{ep}} \in \mathcal{D}(\mathbb{C}^k)$ describes an **epistemic state**. The formulas are identical because the mathematical structure is the same: an ∞-topos for physics ($\mathfrak{T}$) and for epistemology ($\mathfrak{M}$). This is not an analogy — it is a direct transfer.
 
 ### 3.3. Autopoietic: self-modifying formal apparatus {#autopoietic}
 
@@ -372,6 +399,23 @@ The topology $J_{\text{ep}}$ determines which families of translations count as 
 **Autopoiesis.** In the terms of Maturana–Varela (1980), the system **produces the components** of which it itself consists. The layer $T_{\text{meta}}$ (§8) modifies Mathesis, Mathesis updates $T_{\text{meta}}$.
 
 **Boundary.** Lawvere's theorem (1969): an autopoietic system cannot prove its own consistency. Statements of $T_{\text{meta}}$ about the completeness of $\mathfrak{M}$ have status no higher than [H]. A structural inevitability, not a bug.
+
+---
+
+## 3½. From mathematics to realization {#bridge}
+
+Sections §2–§3 describe the **ideal** mathematical object $\mathfrak{M}$. Sections §4–§6 describe its **computational approximation**. The connection between them:
+
+| Mathematical object | Computational approximation | Accuracy level |
+|---|---|---|
+| ∞-Topos $\mathfrak{M}$ | Typed hypergraph (SQLite) | 1-categorical projection |
+| Yoneda embedding $y(T)$ | YAML import + representable presheaf construction | Finite subsite $\mathbf{Th}_0$ |
+| Kan extension $\mathrm{Lan}_f$ | LLM agent + SMT verification | Heuristic + formal check |
+| Descent condition | BFS coherence audit | 5 violation types |
+| $\Omega_{\mathfrak{M}}$ (Heyting) | Linear poset [T]>[C]>...[✗] → orthomodular lattice (Phase 5) | Projection onto 7 values |
+| Autopoiesis ($J_{\text{ep}} \to J'_{\text{ep}}$) | Agent Mode 5 (meta-audit) + manual confirmation | Human-in-the-loop |
+
+The approximation improves with each implementation phase (§13). Phase 5 (HoTT core) brings the approximation to a fundamentally new level — from emulating ∞-structures on a hypergraph to native computation in cubical type theory.
 
 ---
 
@@ -767,8 +811,8 @@ Phases correspond to the three levels of Ω (T-182):
 
 ### Phase 1: Mathesis Core as MCP server (4 weeks)
 
-- Verum crate `mathesis-core`: hypergraph, fibration, coherence, propagation
-- Verum crate `mathesis-index`: scanning markdown → hypergraph
+- Verum cog `mathesis-core`: hypergraph, fibration, coherence, propagation
+- Verum cog `mathesis-index`: scanning markdown → hypergraph
 - MCP wrapper: Mathesis Core available from Claude Code as a set of MCP tools
 - Claude Opus receives tools: `query_graph`, `check_coherence`, `propose_functor`
 
@@ -833,7 +877,7 @@ Mathesis occupies the niche between full formalization (Lean 4) and pure notes (
 
 ## 15. Implementation language: Verum {#verum}
 
-Mathesis is realized entirely in **Verum** — a programming language designed as a language of ultimate mathematical completeness and performance. Verum is the only language combining dependent types, SMT verification, systems programming, GPU compute, and ∞-categorical mathematics in a single stack.
+Mathesis is realized entirely in **Verum** — a programming language designed from the ground up as the language of the future: ultimate mathematical completeness and ultimate performance simultaneously. Verum is the only language combining dependent types, SMT verification, systems programming, GPU compute, and ∞-categorical mathematics in a single stack. This is not a coincidence — Verum was created precisely for tasks of this magnitude, and Mathesis is the first practical task demanding its full power.
 
 ### 15.1. Why Verum, not Rust/Lean/Agda
 
@@ -853,7 +897,7 @@ Lean 4 is the closest, but lacks systems performance and GPU. Agda has cubical, 
 
 ### 15.2. What already exists in Verum for Mathesis
 
-**Dependent types** (crates/verum_types, marked v2.0+):
+**Dependent types** (verum_types cog, marked v2.0+):
 - Π-types (dependent functions), Σ-types (dependent pairs), Eq-types (propositional equality)
 - Universe hierarchy `Type₀ : Type₁ : Type₂ : ...` with cumulativity
 - Inductive families with dependent indices
@@ -911,6 +955,20 @@ mathesis/
 ```
 
 Each component is verified via `@verify(proof)` with an SMT backend. Categorical laws (associativity of functor composition, naturality, descent condition) are checked **at compile time**. Proof certificates are exported to Lean/Coq for independent verification.
+
+---
+
+## 16. Conclusion {#conclusion}
+
+In 1666 Leibniz dreamed of a universal language of knowledge and a mechanical calculator operating within it. For three and a half centuries this dream remained a utopia — the mathematical apparatus was lacking.
+
+Today the apparatus exists. The ∞-topos of sheaves $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ is not one of possible designs but the **unique** (by universal property) coherent organization of a collection of theories at all levels of reflection. The Yoneda embedding loads theories without information loss. Kan extensions compute optimal translations. The descent condition ensures coherence by definition, not by checking. The subobject classifier yields intuitionistic logic that natively contains contextual truth.
+
+UHM and Mathesis are two applications of the same construction: the ∞-topos for physics ($\mathfrak{T}$) and the ∞-topos for epistemology ($\mathfrak{M}$). The unity is not accidental: both domains operate on context-dependent knowledge with coherent transitions between contexts.
+
+Verum is the language designed to realize objects of this level: dependent types, HoTT, SMT verification, systems performance, GPU — in a single stack. Mathesis is the first task demanding its full power.
+
+The ultimate goal is not "a tool for scientists." The ultimate goal is the **computational infrastructure of the noosphere**: a global cohesive ∞-topos where every discovery in one discipline automatically and mathematically rigorously generates hypotheses in all others, immediately computing epistemic gradients for the entire network of human knowledge.
 
 ---
 
