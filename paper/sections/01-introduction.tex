@@ -1,0 +1,219 @@
+% ============================================================================
+% Section 1: Introduction
+% ============================================================================
+
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{The hard problem of consciousness}
+
+A scientific theory of consciousness must account for experience --- which is subjective ---
+in objective terms. Being conscious, or having an experience, is understood to mean that
+``there is something it is like to be'' in that state~\cite{nagel1974}: something it is like
+to see a blue sky, hear the ocean roar, dream of a friend's face, or reflect on the experience
+one is having.
+
+In 1995, David Chalmers articulated the distinction between the ``easy problems'' of
+consciousness (how the brain processes information, integrates sensory data, controls behavior)
+and the ``hard problem'': why do these physical processes give rise to subjective experience
+at all~\cite{chalmers1995}? The easy problems are engineering challenges --- technically
+demanding but methodologically clear. The hard problem is of a different kind entirely:
+even a complete functional description of the brain would leave unexplained \emph{why} there
+is something it is like to undergo those functional processes.
+
+Over 325 theories of consciousness exist~\cite{consciousness-atlas}, yet none has provided a
+mathematical framework that simultaneously (a) addresses the explanatory gap between physics
+and experience, (b) derives specific numerical thresholds for the onset of consciousness,
+(c) connects consciousness to the laws of physics (quantum mechanics, general relativity),
+and (d) makes falsifiable predictions with concrete experimental protocols.
+
+\subsection{Why existing theories are insufficient}
+
+The major existing theories each capture an important aspect of consciousness but fail to
+provide a complete account:
+
+\paragraph{Integrated Information Theory (IIT 4.0)~\cite{iit4}.}
+IIT identifies five axioms of phenomenal existence (intrinsicality, information,
+integration, exclusion, composition) and translates them into physical postulates.
+Its central measure, $\Phi$ (integrated information), quantifies the irreducibility
+of a system's cause--effect structure. However, IIT faces three critical
+limitations: (1)~computing $\Phi$ requires searching over all partitions of the
+system, whose count grows super-exponentially; practical full-$\Phi$ calculations
+are limited to systems of roughly ten to fifteen elements, with approximation
+schemes required beyond that; (2)~IIT provides no numerical threshold for
+\emph{when} $\Phi$ becomes consciousness --- simple systems such as grids of
+logic gates can have $\Phi > 0$ without clear consciousness; (3)~IIT does not
+explain \emph{why} integrated information should feel like anything.
+
+\paragraph{Global Neuronal Workspace Theory (GWT/GNWT)~\cite{dehaene2011}.}
+GWT proposes that consciousness arises when information is broadcast to a ``global workspace''
+of interconnected cortical neurons, enabling it to be accessed by multiple cognitive processes.
+The theory successfully predicts the ``ignition'' pattern observed in EEG/fMRI studies.
+However, GWT does not explain why broadcasting information to a workspace should produce
+subjective experience (a loudspeaker broadcasts information without feeling anything), and
+it makes no numerical predictions about the threshold of conscious access.
+
+\paragraph{Free Energy Principle (FEP)~\cite{friston2019}.}
+FEP provides a mathematical framework for understanding how self-organizing systems maintain
+themselves by minimizing variational free energy. It elegantly unifies perception, action,
+and learning under a single principle. However, FEP does not connect free energy minimization
+to subjective experience --- a thermostat minimizes free energy without being conscious ---
+and does not provide a threshold below which consciousness ceases.
+
+\paragraph{Higher-Order Theories (HOT)~\cite{lau2011}.}
+HOT proposes that a mental state becomes conscious when it is the object of a higher-order
+representation --- roughly, when the system represents itself as being in that state.
+This captures an important aspect of consciousness (self-awareness), but reduces consciousness
+to meta-representation without explaining why meta-representation feels like anything, and
+provides no quantitative predictions.
+
+\paragraph{Predictive Processing (PP)~\cite{clark2013}.}
+PP proposes that the brain operates as a hierarchical prediction machine, minimising
+prediction error through generative models. Like FEP (with which it shares
+mathematical foundations), PP does not explain why prediction should generate
+subjective experience --- a prediction-error-minimising machine could operate
+entirely unconsciously --- and provides no threshold for consciousness onset.
+
+\paragraph{Conscious Realism / Conscious Agent Theory (CAT)~\cite{hoffman2014}.}
+Hoffman and Prakash's Conscious Agent Theory is among the most formally
+developed consciousness-first ontologies. Its Definition~1 specifies a
+conscious agent as the 6-tuple
+\[
+  C \;=\; \bigl((X, \mathcal{X}),\; (G, \mathcal{G}),\; P,\; D,\; A,\; N\bigr),
+\]
+where $(X, \mathcal{X})$ is a measurable space of experiences,
+$(G, \mathcal{G})$ a measurable space of actions, and $P$, $D$, $A$ are
+Markovian kernels (perception, decision, action) linking these spaces to a
+world $W$; $N$ is an integer counter tracking message passes. The paper proves
+an \emph{Undirected Join Theorem} (Theorem~1) and a \emph{Directed Join
+Theorem} (Theorem~2), establishing that conscious agents combine into larger
+conscious agents. In Hoffman's broader programme, natural selection is argued
+to favour fitness over veridical perception (the ``Fitness Beats Truth''
+result~\cite{prakash2021fbt}), supporting the claim that spacetime is a
+species-specific interface rather than fundamental reality.
+
+CAT has three structural gaps relative to a complete theory:
+(1)~\emph{no threshold for consciousness} --- every conscious agent is
+conscious by definition, so CAT cannot distinguish a thermostat from a mammal
+or say when a physical system \emph{becomes} a conscious agent;
+(2)~\emph{no derivation of physics} --- spacetime is treated as illusory rather
+than derived, leaving an unexplained gap to the empirical success of GR and QM;
+(3)~\emph{no numerical predictions} --- the 2014 paper's content is structural
+(join theorems, kernel composition), not quantitative, so it cannot be
+falsified by any single measurement. UHM shares CAT's monistic starting point
+but derives computable thresholds, emergent spacetime, and 22 numerical
+predictions from the same primitive (see also \S\ref{sec:comparison}).
+
+\paragraph{Projective Wave Theory (PWT)~\cite{worden2026}.}
+Worden's Projective Wave Theory (2026) proposes that the brain's internal
+model of local 3D space is held not in neurons but in a \emph{wave
+excitation} carrying a projective transformation of Euclidean space, and that
+this wave --- not its neural substrate --- is the source of spatial
+conscious experience. Indirect evidence is adduced for such a wave in the
+mammalian thalamus and in the central body of the insect brain. PWT is the
+most recent serious competitor in the dynamical-structure family and agrees
+with UHM that the substrate of experience is wave-like rather than
+purely neural-computational. However, PWT targets a specific sub-problem
+(the undistorted spatial form of consciousness) and a specific biological
+substrate; it makes no numerical predictions, derives no physics,
+formalises no threshold for when consciousness begins, and does not address
+the hard problem directly. A systematic comparison is given in
+\S\ref{sec:comparison}.
+
+\medskip
+In summary, each existing theory captures an important aspect of consciousness but none
+provides a mathematical framework that simultaneously addresses the explanatory gap,
+derives specific numerical thresholds, connects consciousness to the laws of physics,
+and makes falsifiable numerical predictions with experimental protocols.
+
+\subsection{Motivation: why a unified framework may be necessary}
+
+The difficulty of resolving the hard problem within existing physics may
+stem from a fundamental circularity inherent in the approach:
+
+\begin{enumerate}[leftmargin=2em]
+  \item To explain why neurons feel, one must explain what neurons \emph{are}.
+  \item To explain what neurons are, one must explain matter.
+  \item To explain matter, one needs quantum mechanics.
+  \item To explain quantum mechanics, one must address measurement --- and in several
+        interpretations (Copenhagen, von Neumann--Wigner), measurement is the point where
+        an \emph{observer} enters the picture.
+  \item In these interpretations, the observer is consciousness.
+\end{enumerate}
+
+The circle closes. Consciousness refers to physics, which refers to measurement, which
+refers to consciousness. Every theory that explains consciousness within existing physics
+inherits this circularity: ``information'' presupposes a subject who is informed;
+``workspace'' presupposes someone working in it; ``free energy'' is defined relative to a
+model, and a model requires a modeler.
+
+This observation motivated a different approach: rather than explaining
+consciousness \emph{within} physics, the present work asks whether
+consciousness and physics might both be \emph{projections} of something more
+fundamental. The resulting theory --- Unitary Holonomic Monism (UHM) ---
+derives quantum mechanics, general relativity, and the structure of conscious
+experience from a single mathematical primitive. The scope of the derivation
+was not planned; it emerged from following the formalism to its logical
+conclusions.
+
+\subsection{Overview of UHM}
+
+UHM proposes that reality is fundamentally described by a single object: the
+\textbf{coherence matrix} $\Gam \in \Dens(\mathbb{C}^7)$ --- a $7 \times 7$ positive
+semidefinite Hermitian matrix with unit trace. This object has two inseparable aspects:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{External aspect (physics):} The eigenvalues, dynamics, and symmetries of
+        $\Gam$ encode physical structure --- from quantum states to spacetime geometry.
+  \item \textbf{Internal aspect (experience):} The spectral decomposition of $\Gam$ on
+        the E-dimension (interiority) encodes subjective content --- qualia, feelings,
+        the sense of being.
+\end{itemize}
+
+These are not two different objects connected by a mysterious bridge. They
+are one object seen from two angles --- like a coin's obverse and reverse.
+This position, \textbf{two-aspect monism}, reframes the hard problem: there
+is no explanatory gap because there was never a separation.
+
+The theory is built on four axioms ($\Omega^{7}$, with a fifth derived from
+the first four) grounded in the algebraic structure of octonions $\Oct$ and
+the combinatorial structure of the Fano plane $\Fano$. Crucially, all four
+axioms are either structurally forced or derived as theorems:
+A1 (reality is an $\infty$-topos) is the minimal structure admitting internal
+logic and differential cohesion~\cite{lurie2009}; A2 (Bures metric) is the
+unique coarsest CPTP-compatible Grothendieck topology (T-187~\status{T});
+A3 ($N = 7$) follows from the Hurwitz--Adams classification of normed
+division algebras together with Fano incidence; and A4 ($\omega_{0}$) is a
+derived spectral property of the effective Hamiltonian $H_{\mathrm{eff}}$
+(T-87~\status{T}). From these axioms, over 180 theorems follow, including:
+
+\begin{itemize}[leftmargin=2em]
+  \item A critical purity threshold $\Pcrit = 2/7 \approx 0.286$ below which the system
+        irreversibly decays (Section~\ref{sec:theorems});
+  \item A proof that philosophical zombies are dynamically impossible
+        (No-Zombie Theorem, Section~\ref{subsec:no-zombie});
+  \item Critical exponents of the consciousness phase transition:
+        $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$
+        (Section~\ref{subsec:critical-exponents});
+  \item Derivation of the Einstein field equations from $\Gam$
+        (Appendix~\ref{app:einstein});
+  \item 22 falsifiable numerical predictions with experimental protocols
+        (Section~\ref{sec:predictions}).
+\end{itemize}
+
+The structure of the paper follows the logical chain of the theory:
+Section~\ref{sec:axioms} presents the axioms and their motivation.
+Section~\ref{sec:formalism} develops the mathematical formalism.
+Section~\ref{sec:theorems} states and proves the key theorems.
+Section~\ref{sec:cc} introduces Coherence Cybernetics --- the applied layer translating
+formalism into measurable quantities (stress, hedonic valence, sensorimotor coupling).
+Section~\ref{sec:predictions} collects all 22 predictions.
+Section~\ref{sec:ai} derives implications for artificial consciousness and AGI.
+Section~\ref{sec:ethics} examines the ethical consequences of the theorems.
+Section~\ref{sec:comparison} compares UHM with existing theories.
+Section~\ref{sec:experimental} outlines the experimental protocol.
+Section~\ref{sec:discussion} synthesises the results and discusses limitations.
+Appendices provide detailed proofs.
+
+The complete formalization (over 180 theorems with proofs and interactive documentation)
+is available at \url{https://holon.sh}.

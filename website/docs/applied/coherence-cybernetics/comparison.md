@@ -21,7 +21,7 @@ If you are a scientist working in one of these traditions, this section will sho
 :::info Chapter Roadmap
 In this chapter we:
 1. Sketch the **theoretical landscape** — a master table of 9 theories (section 1)
-2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 35 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
+2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 36 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
 3. Consolidate everything into a **predictions table** (section 3) and honestly assess the **limitations of CC** (section 4)
 :::
 
@@ -72,7 +72,7 @@ These theories can be divided into three families:
 ## 2. Detailed Comparison with Each Theory {#детальное-сравнение}
 
 :::info Detailed Analysis
-Full analysis of 35 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 35 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
+Full analysis of 36 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 36 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
 :::
 
 ### 2.1 IIT (Tononi) {#iit}

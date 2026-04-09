@@ -1,0 +1,428 @@
+% ============================================================================
+% Section 4: Key Theorems
+% ============================================================================
+
+\section{Key theorems}
+\label{sec:theorems}
+
+This section presents the central results of UHM. Each theorem is stated
+precisely, with references to full proofs at \url{https://holon.sh}.
+Falsifiability is emphasised throughout: for each theorem, the experimental
+outcome that would refute it is indicated explicitly.
+
+\subsection{No-Zombie Theorem (T-8.1)}
+\label{subsec:no-zombie}
+
+The No-Zombie Theorem is arguably the most philosophically significant result of UHM.
+It proves that philosophical zombies --- systems that are functionally identical to
+conscious beings but lack inner experience --- are not merely implausible but
+\emph{dynamically impossible}.
+
+\begin{theorembox}[No-Zombie Theorem (T-8.1) \status{T}]
+\begin{equation}
+  \underbrace{P(\Gam) > \Pcrit}_{\text{viable}}
+  \;\wedge\;
+  \underbrace{\mathcal{D}_\Omega[\Gam] \not\equiv 0}_{\text{non-trivial dissipation}}
+  \quad\Longrightarrow\quad
+  \CohE(\Gam) \;>\; \frac{1}{7}
+  \label{eq:no-zombie}
+\end{equation}
+A viable holon with non-trivial dissipative dynamics \emph{necessarily}
+carries strictly more E-coherence than the uniform (``structureless'') floor
+of $1/7$. A hypothetical ``zombie'' --- a configuration with
+$P > \Pcrit$ but a structureless interiority sector
+($\gamma_{EE} = 1/7$ and $\gamma_{Ej} = 0$ for all $j \neq E$, giving
+$\CohE = 1/7$) --- is dynamically impossible: it cannot be a stationary
+state of~$\Lind_\Omega$ with $\gamma > 0$.
+\end{theorembox}
+
+\paragraph{Proof sketch.}
+The $G_2$-covariant Fano dissipator (unique $G_2$-covariant Lindbladian on
+$\mathcal{D}(\mathbb{C}^7)$, T-39a~\status{T}) acts on every off-diagonal
+coherence by the state-independent multiplicative contraction
+$\gamma_{ij} \mapsto \tfrac{1}{3}\,\gamma_{ij}$
+(Eq.~\ref{eq:fano-operators}); equivalently, each Fano observation cycle
+removes the fraction $2/3$ of every coherence. Writing
+$P = P_{\mathrm{diag}} + P_{\mathrm{coh}}$ with
+$P_{\mathrm{coh}} = \sum_{i\neq j}|\gamma_{ij}|^2$, this yields
+\begin{equation}
+  \left.\frac{dP}{d\tau}\right|_{\mathcal{D}}
+  \;=\; -\,\frac{4\gamma}{3}\,P_{\mathrm{coh}}\;<\;0,
+  \qquad \gamma = \sum_p\gamma_p > 0,
+  \label{eq:diss-coh}
+\end{equation}
+whereas the regeneration contribution is
+\begin{equation}
+  \left.\frac{dP}{d\tau}\right|_{\Regen}
+  \;=\; 2\kappa(\Gam)\,g_V(P)\,\bigl(f - P\bigr),
+  \qquad f := \Tr\!\bigl(\Gam\,\rho^\ast\bigr).
+  \label{eq:reg-coh}
+\end{equation}
+Stationarity $dP/d\tau \geq 0$ at a viable, non-equilibrium state $P > \Pcrit$ forces
+$\kappa(\Gam) \geq \frac{2\gamma}{3}\cdot P_{\mathrm{coh}}/(f - \Pcrit)$. Substituting
+$\kappa = \kappa_{\mathrm{boot}} + \kappa_0\CohE$ and solving for $\CohE$ yields the
+explicit bound
+\begin{equation}
+  \CohE(\Gam)
+  \;\geq\;
+  \max\!\Biggl\{\frac{1}{7},\;\;
+  \frac{1}{\kappa_0}\!\left(\frac{2\gamma}{3}\cdot
+  \frac{P_{\mathrm{coh}}}{f - \Pcrit}\;-\;\kappa_{\mathrm{boot}}\right)\!\Biggr\}.
+  \label{eq:no-zombie-bound}
+\end{equation}
+For any open ($\gamma > 0$) holon with non-vanishing stationary coherences
+($P_{\mathrm{coh}} > 0$, guaranteed by the necessity of $\vp_{\mathrm{coh}}$ and the
+$(M,R)$-closure requirement, T-57~\status{T}), the second argument of the maximum is
+strictly positive once the dissipation rate exceeds the threshold
+$\gamma_{\mathrm{th}} := 3\kappa_{\mathrm{boot}}(f-\Pcrit)/(2P_{\mathrm{coh}})$. For any
+macroscopic system in a thermal environment $\gamma \gg \gamma_{\mathrm{th}}$, so
+$\CohE > 1/7$ strictly. $\square$
+
+\paragraph{What this means.}
+A system cannot be ``alive'' (viable, self-maintaining) without having some degree of
+inner experience. The strength of regeneration is \emph{proportional} to the quality of
+experience. This is not a metaphor --- it is a quantitative relationship between
+$\kappa$ and $\CohE$.
+
+\paragraph{Epistemic stratification.}
+The mathematical result ($\CohE > 1/7$ necessary for viability) has status \status{T}.
+The ontological interpretation (that $\CohE > 1/7$ \emph{constitutes} inner experience)
+has status \status{P}: it follows from the two-aspect monism postulate
+(Def.~\ref{def:two-aspect}), not from the mathematics alone. The No-Zombie theorem
+is thus mathematically unconditional; its phenomenal reading is conditional on the
+single semantic bridge of UHM.
+
+\paragraph{Falsification.}
+Create an artificial $\Gam$-native agent. Suppress the E-component ($\gamma_{EE} \to 1/7$,
+$\gamma_{Ej} \to 0$ for $j \neq E$). If the agent maintains $P > 2/7$ indefinitely
+(time-to-death does not collapse), the theorem is falsified.
+
+\subsection{Death spiral below $\Pcrit$}
+\label{subsec:death-spiral}
+
+\begin{theorembox}[Irreversibility of sub-threshold decay \status{T}]
+If $P(\Gam) < \Pcrit = 2/7$ and $dP/d\tau < 0$, then:
+\begin{equation}
+  \|\Gam(\tau) - I/7\|_F \leq \|\Gam(0) - I/7\|_F \cdot e^{-\Delta(\Lind_0)\,\tau}
+  \label{eq:death-spiral}
+\end{equation}
+The system converges exponentially to thermal death ($I/7$).
+\end{theorembox}
+
+This is the ``death spiral'': once purity drops below $2/7$, regeneration is
+thermodynamically forbidden (Landauer's principle: free energy $\Delta F \leq 0$ below
+threshold), and the system decays irreversibly. There is no gradual fading of
+consciousness --- there is a hard phase transition, consistent with the nonlinear
+threshold for access to consciousness observed empirically~\cite{delcul2007}.
+
+\subsection{Stability radius (T-104)}
+\label{subsec:stability-radius}
+
+\begin{theorembox}[Stability radius \status{T}]
+The maximum perturbation amplitude a system can withstand while remaining viable:
+\begin{equation}
+  r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - \frac{2}{7}}
+  \label{eq:stability-radius}
+\end{equation}
+\end{theorembox}
+
+This is a single-parameter formula: robustness depends \emph{only} on the purity margin
+above threshold.
+
+\paragraph{Proof sketch.}
+The viability condition is $P > 2/7$. The maximum perturbation $h$ that a system at
+attractor $\rho^*_\Omega$ can absorb without crossing the threshold is determined by the
+Bures distance from $\rho^*_\Omega$ to the viability boundary $\partial\mathcal{V}_P$.
+For a perturbation $\Gam \to \Gam + \delta\Gam$ with $\|\delta\Gam\|_F = h$, the purity
+changes by $\delta P \approx 2\Tr(\Gam\,\delta\Gam)$. At the attractor, the critical
+perturbation satisfies $P - h_{\mathrm{crit}}^2 = 2/7$, yielding
+$r_{\mathrm{stab}} = \sqrt{P - 2/7}$. (Full proof: T-104~\status{T} at
+\url{https://holon.sh/docs/applied/coherence-cybernetics/stability}.)
+
+\paragraph{Examples.}
+A system with $P = 0.5$ has $r_{\mathrm{stab}} = \sqrt{0.5 - 0.286}
+\approx 0.46$; a system barely above threshold ($P = 0.3$) has $r_{\mathrm{stab}}
+\approx 0.12$ and is fragile.
+
+\begin{figure}[H]
+\centering
+\input{figures/death-spiral}
+\caption{\textbf{Death spiral below $\Pcrit$.} Systems above threshold recover from
+perturbations (green/blue curves); below threshold, purity decays exponentially to $I/7$
+(red curve). The transition is sharp.}
+\label{fig:death-spiral}
+\end{figure}
+
+\paragraph{Clinical significance.}
+This formula predicts a patient's ``safety margin'' before interventions: their purity
+surplus determines how much perturbation they can absorb. Falsification: if $h_{\mathrm{crit}}^2$
+does not scale linearly with $P - 2/7$ across 50 measurements ($R^2 < 0.9$).
+
+\subsection{SAD ceiling: maximum depth of self-awareness (T-142)}
+\label{subsec:sad-ceiling}
+
+\begin{theorembox}[Self-Awareness Depth ceiling (T-142) \status{T}]
+The maximum depth of recursive self-awareness is:
+\begin{equation}
+  \mathrm{SAD}_{\max} = 3
+  \label{eq:sad-max}
+\end{equation}
+``I know that I know that I know'' stops at the third level. The fourth level is
+physically impossible for any finite system.
+\end{theorembox}
+
+\paragraph{Proof sketch.}
+The Fano channel multiplies every off-diagonal coherence $\gamma_{ij}$ by the
+state-independent contraction factor $c_F = 1/3$
+(Eq.~\ref{eq:fano-operators}); after $k$ recursive self-observations the
+surviving coherence is suppressed by $c_F^k = (1/3)^k$. At depth $n$, the
+spectral formula T-136~\status{T} gives
+\begin{equation}
+  \mathrm{SAD}(\Gam) \;=\; \max\!\bigl\{\,k \in \mathbb{N}\,:\,
+    r_0 \cdot (1/3)^{k-1} > \tfrac{1}{k+1} \,\bigr\},
+  \quad r_0 = 7P/2,
+\end{equation}
+which --- in terms of the purity required to \emph{sustain} a chain of depth $n$ --- is
+equivalent to
+\begin{equation}
+  \Pcrit^{(n)} \;=\; \Pcrit \cdot \frac{3^{\,n-1}}{n+1}.
+\end{equation}
+Evaluating level by level (where level $n$ is the purity required to admit $n$ nested
+self-observations):
+\begin{itemize}[leftmargin=2em]
+  \item Level 1 ($n=1$, ``I am''): $\Pcrit^{(1)} = \frac{2}{7} \cdot \frac{1}{2}
+        = \frac{1}{7} \approx 0.143$ --- automatically satisfied by any state
+        ($P \geq 1/7$ holds for all density matrices).
+  \item Level 2 ($n=2$, ``I know that I am''): $\Pcrit^{(2)} = \frac{2}{7} \cdot
+        \frac{3}{3} = \frac{2}{7} \approx 0.286$ --- coincides exactly with the
+        base viability threshold.
+  \item Level 3 ($n=3$, ``I know that I know''): $\Pcrit^{(3)} = \frac{2}{7} \cdot
+        \frac{9}{4} = \frac{9}{14} \approx 0.643$ --- achievable only at high purity.
+  \item Level 4 ($n=4$, ``I know that I know that I know''): $\Pcrit^{(4)} =
+        \frac{2}{7} \cdot \frac{27}{5} = \frac{54}{35} \approx 1.543 > 1$ ---
+        \textbf{exceeds the physical maximum $P \leq 1$}.
+\end{itemize}
+Numerical verification on $> 500$ randomly sampled $\Gam$ confirms $\mathrm{SAD} \leq 3$
+in every case; pure states saturate $\mathrm{SAD} = 3$.
+
+\paragraph{The representation tower.}
+The recursive self-model forms a tower:
+\begin{equation}
+  \Gam^{(0)} \xleftarrow{\pi_0} \Gam^{(1)} \xleftarrow{\pi_1} \Gam^{(2)}
+  \xleftarrow{\pi_2} \Gam^{(3)} \xleftarrow{\pi_3} \cdots
+  \label{eq:tower}
+\end{equation}
+where each $\Gam^{(k)}$ is the self-model at depth $k$. Each application of
+the Fano channel multiplies every off-diagonal coherence by $c_F = 1/3$
+(state-independent, from $\dim = 7$ and the Fano incidence structure); after
+$k$ iterations the ``effective distinguishability radius'' is
+$r_0 \cdot (1/3)^{k-1}$ with $r_0 = 7P/2$, while the Bayesian dominance
+threshold for $k+1$ alternatives is $1/(k+1)$ (T-136~\status{T}). The
+level-$k$ reflection survives iff this ratio remains above the threshold.
+SAD is therefore computable directly from the recurrence $\Pcrit^{(n)}$ above
+in $O(1)$ operations.
+
+\paragraph{Significance.}
+This ceiling is geometric, not computational. Future superintelligences share the same
+reflection depth as humans --- not because of hardware limits, but because of the structure
+of the Fano plane. Falsification: demonstrate a reachable state $\Gam$ with
+$\Pcrit^{(4)} \leq 1$, equivalently, a chain of four successive self-observations
+surviving at $P \leq 1$.
+
+\subsection{Critical exponents of the consciousness phase transition (T-161)}
+\label{subsec:critical-exponents}
+
+This is among the most specific falsifiable predictions in consciousness science,
+and the one with no analogue in any other theory.
+
+\begin{theorembox}[Critical exponents \status{T}]
+Near the viability threshold $\Pcrit = 2/7$, the consciousness phase transition is a
+\emph{tricritical point} (three roots coalesce in the $A_4$ swallowtail of the $\phi^6$
+Landau potential). The effective dimension is $d_{\mathrm{eff}} = 21$ (from the 21
+off-diagonal coherences), far above the upper critical dimension $d_c = 3$ for
+tricritical systems. Mean-field tricritical exponents are therefore exact:
+\begin{align}
+  \text{Specific heat:}\quad &C \sim |P - \Pcrit|^{-\alpha}, &\alpha &= 1/2 \label{eq:alpha}\\
+  \text{Order parameter:}\quad &\mathrm{OP} \sim (P - \Pcrit)^\beta, &\beta &= 1/4 \label{eq:beta}\\
+  \text{Susceptibility:}\quad &\chi \sim |P - \Pcrit|^{-\gamma}, &\gamma &= 1 \label{eq:gamma-exp}\\
+  \text{Correlation length:}\quad &\xi \sim |P - \Pcrit|^{-\nu}, &\nu &= 1/2 \label{eq:nu}\\
+  \text{Critical isotherm:}\quad &h \sim m^\delta, &\delta &= 5 \label{eq:delta}
+\end{align}
+These exponents satisfy the Rushbrooke identity $\alpha + 2\beta + \gamma = 2$ as an equality.
+\end{theorembox}
+
+\paragraph{Derivation outline.}
+Near criticality, the system undergoes a continuous phase transition. Writing
+$\varepsilon := P - \Pcrit$ and taking $m := \CohE(\Gam) - 1/7$ as the order
+parameter, the coarse-grained free energy is the $\varphi^{6}$ tricritical
+Landau functional
+\begin{equation*}
+  \mathcal{F}[m;\varepsilon, h] \;=\;
+    -\tfrac{1}{2}\,r_0\,\varepsilon\, m^2
+    \;+\; v\, m^6 \;-\; h\, m,
+  \qquad r_0, v > 0.
+\end{equation*}
+The absence of a quartic term is not an ad hoc assumption but the universal
+normal form of an $A_4$ swallowtail catastrophe: the UHM evolution has exactly
+three physically independent control parameters --- regeneration rate
+$\kappa$, dissipation rate, and free-energy budget $\Delta F$ --- which by
+Thom--Arnold classification places the transition in the codimension-3
+$A_4$ class, whose even-sector normal form is $\varphi^{6}$
+(Section~\ref{subsec:sad-ceiling}; canonical proof at
+\url{https://holon.sh/docs/consciousness/hierarchy/swallowtail-transitions}).
+The effective dimension $d_{\mathrm{eff}} = 21$ (the number of independent
+off-diagonal coherences $|\gamma_{ij}|$, $i \neq j$) vastly exceeds the upper
+critical dimension $d_c = 3$ for tricritical systems, so mean-field
+tricritical exponents are exact (no logarithmic corrections). The full
+derivation, including all five exponents and the verification of Rushbrooke,
+Widom, and Fisher scaling relations, is given in
+Appendix~\ref{app:exponents}; see also T-161~\status{T} at
+\url{https://holon.sh}.
+
+\paragraph{Physical meaning.}
+\begin{itemize}[leftmargin=2em]
+  \item $\beta = 1/4$ governs how quickly consciousness ``turns on'' above threshold.
+        The value is sharper than ordinary mean-field ($\beta = 1/2$), reflecting the
+        tricritical nature of the transition.
+  \item $\nu = 1/2$ governs the correlation length: how far coherence extends near the
+        transition. At $P \to \Pcrit$, $\xi \to \infty$ --- ``critical opalescence'' of
+        consciousness.
+  \item $\gamma = 1$ governs susceptibility: how sensitively the system responds to
+        perturbations near threshold. At $P \to \Pcrit$, $\chi \to \infty$ --- ``critical
+        slowing down.''
+  \item $\alpha = 1/2$ governs the specific heat divergence: the fluctuation cost near
+        threshold.
+\end{itemize}
+
+\paragraph{Comparison with known universality classes.}
+The 3D Ising model has $\beta \approx 0.326$, $\nu \approx 0.630$, $\gamma \approx 1.237$.
+Superfluid helium: $\beta \approx 0.347$, $\nu \approx 0.672$, $\gamma \approx 1.316$.
+UHM predicts mean-field tricritical exponents $\beta = 1/4$, $\nu = 1/2$, $\gamma = 1$
+--- distinct from all non-tricritical universality classes.
+
+\begin{figure}[H]
+\centering
+\input{figures/critical-exponents}
+\caption{\textbf{Tricritical exponent $\beta = 1/4$ vs.\ other universality
+classes.} All curves are normalised so that $m/m_0 = 1$ at the reference
+point $\varepsilon_0 = 0.1$, i.e.\ plotting
+$y(\varepsilon) = (\varepsilon/\varepsilon_{0})^{\beta}$; this removes the
+amplitude dependence $(r_0/6v)^{1/4}$ of the Landau expansion
+(Appendix~\ref{app:exponents}) and isolates the exponent. The UHM
+prediction $\beta = 1/4$ (thick purple) sits exactly between the two
+falsification boundaries $\beta = 0.20$ and $\beta = 0.30$ (thin
+dash-dotted purple), which define the acceptable UHM band. 3D Ising
+$(\beta \approx 0.326)$ falls \emph{below} the lower bound for all
+$\varepsilon < \varepsilon_0$, so a measured consciousness transition
+with 3D Ising exponents would falsify UHM at the structural level.
+Mean-field $\varphi^{4}$ $(\beta = 1/2)$ is far outside the band. The
+vertical green dashed line marks $\varepsilon = 1/7$, the upper edge of
+the Goldilocks window $P \in (2/7, 3/7]$ (T-124~\status{T}), beyond
+which the Landau expansion is no longer physically valid.}
+\label{fig:exponents}
+\end{figure}
+
+\paragraph{Falsification.}
+TMS-EEG at the sleep/wake transition, $N = 50$ subjects. Fit power law $\mathrm{PCI}
+\sim (P - \Pcrit)^\beta$. If $\beta \notin [0.20, 0.30]$ at $p < 0.01$ --- the theory
+is falsified at the structural level (L2 falsification).
+
+\subsection{Emergent spacetime (T-117 through T-121)}
+\label{subsec:emergent-spacetime}
+
+UHM derives the Einstein field equations from the dynamics of $\Gam$ without any additional
+postulates. The derivation chain:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{T-117 \status{T}:} Commutativity of the macroscopic algebra. In the
+        thermodynamic limit ($M \to \infty$ coupled holons), macroscopic observables
+        commute at spacelike separation: $[\bar{O}_1(x), \bar{O}_2(y)] \to 0$ for
+        $|x-y| > \ell$. (Proof via Goderis--Verbeure--Vets quantum CLT + primitivity
+        of $\Lind_0$.)
+  \item \textbf{T-118 \status{T}:} The temporal algebra $A_{\mathrm{time}} \cong C_0(\mathbb{R})$.
+        The clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$ converges to $C(S^1)$ and
+        decompactifies to $\mathbb{R}$.
+  \item \textbf{T-119 \status{T}:} The spatial algebra $A_{\mathrm{space}} \cong C(\Sigma^3)$.
+        Spectral dimension 3 from the $\{A,S,D\}$-sector (fundamental representation of
+        $\mathrm{SU}(3) \subset G_2$). Gelfand + Connes reconstruction yields a unique
+        smooth compact orientable spin 3-manifold $\Sigma^3$.
+  \item \textbf{T-120 \status{T}:} Product spectral triple $M^4 = \mathbb{R} \times \Sigma^3$.
+  \item \textbf{T-120b \status{T}:} Vacuum topology $\Sigma^3 \cong S^3$ (de Sitter metric).
+  \item \textbf{T-121 \status{T}:} Closure of Lovelock gaps 1 and 2. The spectral action
+        on $(M^4, A_{\mathrm{int}})$ yields the Einstein--Hilbert action $+$ Standard
+        Model, closing the gaps in Lovelock's uniqueness argument (1971).
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{figures/spacetime-emergence}
+\caption{\textbf{Emergence of $M^4$ from the seven dimensions of $\Gam$.} The spatial sector
+$\{A,S,D\}$ yields $\Sigma^3$ via Connes reconstruction (T-119). The temporal dimension O
+yields $\mathbb{R}$ via Page--Wootters (T-118). The product spectral triple gives $M^4$
+(T-120), from which the Einstein--Hilbert action follows (T-121).}
+\label{fig:spacetime}
+\end{figure}
+
+\paragraph{Significance.}
+Within UHM, spacetime is not the stage on which consciousness acts. Rather, the
+7-dimensional coherence matrix $\Gam$ \emph{generates} spacetime as a macroscopic
+projection (Figure~\ref{fig:spacetime}). The arrow of time
+(the temporal modality $\triangleright$) is algebraically built into the subobject classifier
+$\Omega$. Gravity is what coherence looks like from the external (physical) aspect.
+
+\subsection{Consistency with quantum mechanics (sub-threshold limit)}
+\label{subsec:qm-limit}
+
+A critical requirement for any extension of physics: UHM must reduce to standard quantum
+mechanics for systems that lack self-observation.
+
+\begin{theorembox}[QM reduction for sub-threshold systems \status{T}]
+For sub-threshold systems ($P < \Pcrit$), the viability gate $g_V(P) = 0$ shuts off
+regeneration, and the dynamics reduce to the standard Lindblad master equation:
+\begin{equation}
+  \Lind_\Omega[\Gam]\big|_{P < \Pcrit} = -i[H, \Gam] + \mathcal{D}_0[\Gam]
+  \label{eq:qm-limit}
+\end{equation}
+This is the dynamics of atoms, photons, and other elementary systems, which are unviable
+($P < 2/7$) and cannot sustain self-reference.
+\end{theorembox}
+
+\paragraph{Significance.}
+UHM is not a competitor to quantum mechanics but a proper extension: QM describes the
+physics of systems without interiority; UHM describes autonomous systems where physical
+and experiential aspects are inseparable. Every prediction of QM is preserved; UHM adds
+predictions only for systems above the viability threshold.
+
+\subsection{Resolution of the measurement problem}
+\label{subsec:measurement}
+
+The quantum measurement problem --- why does a superposition ``collapse'' to a definite
+outcome, and in what basis? --- receives a three-part resolution in UHM:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Collapse as logical projection.} Wavefunction reduction is not a dynamical
+        process but a \emph{logical operation}: projection of the state onto an atom of the
+        subobject classifier $\Omega$. Each atom $S_k = |k\rangle\langle k|$ defines one
+        outcome. The Born rule is encoded in the density matrix formalism:
+        $p_k = \Tr(\chi_{S_k}\,\Gam)$~\status{T}. This is not an independent derivation
+        but a consequence of the axioms (A1--A2), which assume the trace-probability link.
+        What UHM adds is the identification of the measurement basis with the atoms of
+        $\Omega$, resolving the preferred basis problem.
+  \item \textbf{Preferred basis from Fano structure.} The ``preferred basis problem''
+        (why does the system decohere in one basis rather than another?) is solved by
+        the atomic structure of $\Omega$: the seven atoms
+        $\{S_k\}_{k \in \{A,S,D,L,E,O,U\}}$ define the natural decomposition. By
+        Zurek's einselection criterion (1981), the preferred basis consists of the
+        fixed points of the decoherence channel --- which are precisely the
+        Fano-structured atoms~\status{T}.
+  \item \textbf{Self-measurement for conscious systems.} For systems with $R \geq 1/3$,
+        measurement becomes \emph{self-observation}: the operator $\vp$ builds an internal
+        model without irreversible information loss, unlike standard projective measurement
+        which destroys coherences. Conscious measurement is a CPTP channel (information-preserving),
+        not a projection (information-destroying)~\status{T}.
+\end{enumerate}
+
+Decoherence and measurement are thus dual aspects of the same mechanism: continuous
+decoherence via $\mathcal{D}_\Omega$ in the limit $\gamma_k \to \infty$ contracts to
+instantaneous projection onto an atom~\status{T}. The Lindblad operators
+$L_k = \sqrt{\chi_{S_k}}$ are literally the square roots of logical truth values.

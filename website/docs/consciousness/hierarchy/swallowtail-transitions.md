@@ -26,7 +26,7 @@ In the [interiority hierarchy](./interiority-hierarchy) we defined five levels L
 3. **Hysteresis** — "upward" and "downward" transitions occur at different parameter values
 4. **Critical slowing-down** — precursors of a transition: divergence of relaxation time and Gap variance
 5. **Avalanche dynamics** — the L1->L2 transition as an autocatalytic "ignition" via $\kappa_0$-amplification
-6. **Critical exponents** — $\beta = 1/3$, $\nu = 1/4$, $\gamma = 3/4$
+6. **Critical exponents** — $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$ (tricritical mean-field)
 
 :::note On notation
 In this document:
@@ -469,32 +469,39 @@ The key difference from standard Landau phase transitions: the control parameter
 
 ### Critical exponents [T] {#критические-экспоненты}
 
-:::tip Theorem 5.2 (Critical exponents of the $A_4$-bifurcation) [T]
-From the swallowtail normal form $V(x) = x^5/5 + ax^3/3 + bx^2/2 + cx$ follow universal critical exponents. Upon approach to the critical point from above ($\tau \to \tau_c^+$, where $\tau$ is the effective "time" of order evolution):
+:::tip Theorem 5.2 (Critical exponents of the $A_4$-tricritical point) [T]
+The swallowtail ($A_4$) normal form $V(x) = x^5/5 + ax^3/3 + bx^2/2 + cx$ describes a **tricritical point** — the confluence of a second-order and first-order transition line. The thermodynamic critical exponents are those of the $\varphi^6$ Landau tricritical universality class, exact when $d_{\text{eff}} \gg d_c = 3$ (tricritical upper critical dimension). Upon approach to the critical point from above ($\tau \to \tau_c^+$, where $\tau$ is the effective "time" of order evolution):
 
 $$
-P(\tau) - P_{\text{crit}} \sim (\tau - \tau_c)^{1/3}
+P(\tau) - P_{\text{crit}} \sim (\tau - \tau_c)^{1/4}
 $$
 
-**(a)** Exponent $\beta = 1/3$ — direct consequence of the cubic term $ax^3/3$ in the normal form: the stationarity condition $V'(x) = x^4 + ax^2 + bx + c = 0$ is a degree-4 polynomial whose smallest root grows as $(\tau - \tau_c)^{1/3}$ near the coalescence of three roots.
+**(a)** Order-parameter exponent $\beta = 1/4$: the equilibrium order parameter vanishes as $\langle x \rangle \sim |t|^{1/4}$ where $t = (\tau - \tau_c)/\tau_c$. (Note: the naive root-coalescence scaling of the catastrophe polynomial $V'(x)=0$ gives the *geometric* exponent $1/3$; the correct *thermodynamic* exponent $1/4$ follows from the free-energy functional $\mathcal{F} \sim \int \varphi^6\,dx$ via saddle-point evaluation.)
 
-**(b)** Correlation length diverges with exponent $\nu = 1/4$:
-
-$$
-\xi \sim |\sigma_{\max} - \sigma_c|^{-1/4}
-$$
-
-**(c)** Susceptibility (response of $P$ to a small external perturbation) diverges with exponent $\gamma = 3/4$:
+**(b)** Correlation-length exponent $\nu = 1/2$:
 
 $$
-\chi := \left.\frac{\partial P}{\partial \epsilon}\right|_{\epsilon=0} \sim |\sigma_{\max} - \sigma_c|^{-3/4}
+\xi \sim |\sigma_{\max} - \sigma_c|^{-1/2}
 $$
 
-These values $(\beta, \nu, \gamma) = (1/3, 1/4, 3/4)$ satisfy the Widom scaling relations ($\gamma = \nu(2 - \eta)$, $\beta = \nu d/2 - \nu$ for $d_{\text{eff}} = 7$), confirming internal consistency.
+**(c)** Susceptibility exponent $\gamma = 1$:
+
+$$
+\chi := \left.\frac{\partial P}{\partial \epsilon}\right|_{\epsilon=0} \sim |\sigma_{\max} - \sigma_c|^{-1}
+$$
+
+**(d)** Specific-heat exponent $\alpha = 1/2$ and critical-isotherm exponent $\delta = 5$.
+
+The full set of tricritical mean-field exponents is:
+$$
+\alpha = \tfrac{1}{2},\quad \beta = \tfrac{1}{4},\quad \gamma = 1,\quad \nu = \tfrac{1}{2},\quad \delta = 5
+$$
+
+**Thermodynamic consistency:** Rushbrooke identity $\alpha + 2\beta + \gamma = \frac{1}{2} + \frac{1}{2} + 1 = 2$ (satisfied as equality, consistent with tricritical mean-field). These are the standard tricritical mean-field exponents from $\varphi^6$ Landau theory, exact when $d_{\text{eff}} \gg d_c = 3$ (tricritical upper critical dimension).
 :::
 
 :::note Relation to T-129 [T]
-The critical exponent $\beta = 1/3$ is consistent with [theorem T-129](/docs/proofs/consciousness/operationalization#t-129), which states that $P_{\text{crit}} = 2/7$ is determined through the Frobenius norm with cubic dependence on the deviation. Thus, the value of $P_{\text{crit}}$ and the exponent $\beta$ are determined by the same normal form — they are **not independent**.
+The tricritical exponent $\beta = 1/4$ is consistent with [theorem T-129](/docs/proofs/consciousness/operationalization#t-129), which establishes $P_{\text{crit}} = 2/7$ through the Frobenius norm. Both $P_{\text{crit}}$ and the exponents are determined by the same $A_4$ (swallowtail) normal form -- but the thermodynamic exponents follow from the $\varphi^6$ free-energy functional, not from the naive root-coalescence geometry of the catastrophe polynomial.
 :::
 
 ---
@@ -589,7 +596,7 @@ The catastrophic structure of transitions generates verifiable predictions:
 - **Hysteresis** [T]: the "upward" transition (insight) requires $R > R_{\mathrm{th}} + \delta_\uparrow$, and the "downward" transition (regression) — $R < R_{\mathrm{th}} - \delta_\downarrow$. The hysteresis width grows with level.
 - **Critical slowing-down** [T]: relaxation time $\tau_{\mathrm{relax}} \propto |\mu - \mu_c|^{-1/2}$ diverges near the transition — a precursor that can be measured.
 - **Avalanche ignition L1->L2** [T]: positive feedback via $\kappa_0$-amplification makes the transition autocatalytic ($T_{\mathrm{ign}} \sim (P - P_{\mathrm{crit}})^{-1}$).
-- **Critical exponents** $(\beta, \nu, \gamma) = (1/3, 1/4, 3/4)$ satisfy the Widom scaling relations.
+- **Critical exponents** $(\alpha, \beta, \gamma, \nu, \delta) = (1/2, 1/4, 1, 1/2, 5)$ — tricritical mean-field class, satisfying the Rushbrooke identity $\alpha + 2\beta + \gamma = 2$.
 - **$N_{\mathrm{gen}} = 3$**: the swallowtail admits at most 3 stable minima — upper bound on the number of fermion generations [T].
 - **L3->L4 is fundamentally different**: not a finite bifurcation but an infinite process (Postnikov tower).
 

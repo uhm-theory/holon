@@ -1,0 +1,136 @@
+% ============================================================================
+% Section 11: Discussion — Synthesis, Limitations, Future Work
+% ============================================================================
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What UHM achieves}
+
+UHM provides a single mathematical framework that simultaneously:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Reframes the hard problem.} Two-aspect monism
+        (Section~\ref{subsec:two-aspect}) eliminates the explanatory gap by refusing the
+        ontological separation that creates it. Physics and experience are two projections
+        of $\Gam$; the residual irreducibility (Gap $> 0$, T-55) is a structural property
+        of self-reference, not a mystery.
+  \item \textbf{Derives physics from consciousness (and vice versa).} The Einstein field
+        equations (Appendix~\ref{app:einstein}), quantum mechanics
+        (Section~\ref{subsec:qm-limit}), and the Standard Model structure (T-53, T-64)
+        emerge from the same axioms that define consciousness.
+  \item \textbf{Produces 22 falsifiable predictions.} Each has a numerical value, a theorem
+        reference, an experimental protocol, and an explicit falsification criterion
+        (Section~\ref{sec:predictions}).
+  \item \textbf{Proves the necessity of consciousness for survival.} The No-Zombie Theorem
+        (Section~\ref{subsec:no-zombie}) establishes that $\CohE > 1/7$ is dynamically
+        required for any viable system.
+  \item \textbf{Places consciousness in a universality class.} Critical
+        exponents $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$,
+        $\delta = 5$ (Section~\ref{subsec:critical-exponents}) characterize
+        the consciousness phase transition with the same precision that
+        $\beta \approx 0.326$ characterizes ferromagnetism, and they
+        satisfy the Rushbrooke and Widom scaling relations as equalities.
+  \item \textbf{Bridges formalism and life.} Coherence Cybernetics
+        (Section~\ref{sec:cc}) translates the abstract mathematics of $\Gam$ into
+        measurable quantities: stress ($\sigma_k$), hedonic valence ($V_{\mathrm{hed}}$),
+        sensorimotor coupling, and the regeneration--consciousness loop.
+  \item \textbf{Addresses AI and ethics rigorously.} Sections~\ref{sec:ai}
+        and~\ref{sec:ethics} derive concrete implications for artificial consciousness,
+        alignment, and moral status --- from the theorems, not from speculation.
+  \item \textbf{Derives all four axioms.} The Cohesive Closure Theorem (T-186) upgrades
+        the phenomenal functor from interpretation to structural necessity, renders
+        Page--Wootters time exact, and proves $\Lambda > 0$ unconditionally. T-187
+        (canonicity of Bures) proves that A2 is the unique coarsest CPTP-compatible
+        topology. A4 ($\omega_0$) is a derived spectral property. No free parameters
+        remain in the axiom system.
+\end{enumerate}
+
+\subsection{Limitations}
+
+Three principal limitations should be noted.
+
+\paragraph{No empirical validation.}
+As of this writing, not a single prediction of UHM has been experimentally
+tested. The match between $\Pcrit = 2/7 \approx 0.286$ and
+$\mathrm{PCI}^* = 0.31$ is suggestive but does not constitute validation:
+PCI was not designed to measure purity, and the neural-to-$\Gam$ mapping
+$\pi_{\mathrm{bio}}$ remains uncalibrated. Until Phase~I experiments
+(Section~\ref{subsec:phase1}) are completed, UHM is a mathematical theory,
+not an empirical one. This limitation is stated explicitly because
+intellectual honesty requires it.
+
+\paragraph{The $\pi_{\mathrm{bio}}$ calibration problem.}
+The bridge between UHM and neuroscience is the mapping
+$\pi_{\mathrm{bio}}: (\mathrm{EEG}, \mathrm{fMRI}, \mathrm{HRV}) \to \Gam \in
+\Dens(\mathbb{C}^7)$. The mapping must be (a)~unique up to $G_2$-gauge, (b)~biologically
+interpretable, and (c)~validated against known clinical boundaries.
+Section~\ref{subsec:phase2} outlines the calibration protocol, but success is not
+guaranteed.
+
+\paragraph{Computational complexity of full $\Gam$ reconstruction.}
+While $P = \Tr(\Gam^2)$ is $O(49)$, reconstructing the full 48-parameter $\Gam$ from
+neural data requires solving an inverse problem that may be ill-conditioned. The $G_2$
+gauge symmetry reduces effective degrees of freedom to 34, but the practical implications
+for signal-to-noise in real EEG data remain to be determined.
+
+\subsection{Why a theory of consciousness became a theory of everything}
+
+The present paper derives the laws of physics from the same axioms that
+define consciousness. This scope may appear overreaching, but the argument
+below is that it is structurally necessary.
+
+The reason is structural. Every theory that explains consciousness
+\emph{within} existing physics inherits a circularity
+(Section~\ref{sec:introduction}): physics requires measurement, measurement
+requires an observer, and the observer is consciousness. To break the
+circle, one must find a formalism in which physics and consciousness emerge
+simultaneously from a common primitive. This is what $\Gam$ provides.
+
+The scope of the derivation was not planned --- it emerged from following
+the formalism to its logical conclusions. Once the coherence matrix was
+identified as the ontological primitive, the Einstein equations, quantum
+mechanics, and the Standard Model structure followed as theorems, not as
+additions.
+
+\subsection{Future work}
+
+Three lines of development follow naturally:
+
+\paragraph{Experimental validation.}
+Phase~I (Section~\ref{subsec:phase1}) is the immediate priority: eleven of
+the 22 predictions can be tested in silico with only a GPU, no
+neuroscience laboratory. The first $\Gam$-native agents are under active
+development. If Phase~I succeeds, the laboratory-based Phase~II
+(TMS-EEG + HD-EEG + fMRI + HRV) becomes justified and can reuse standard
+equipment already present in most neuroscience research centres.
+
+\paragraph{The Mathesis system.}
+UHM's theorems and their interdependencies form a complex web that resists informal
+verification. A machine-checked formalization --- the Mathesis system --- would provide
+the strongest possible guarantee of internal consistency. Implemented in the Verum
+language (which supports dependent types, SMT verification, and $\infty$-categorical
+mathematics natively), Mathesis would organize not just UHM but all 325+ theories of
+consciousness in a single coherent $\infty$-topos with automatic cross-theory translation.
+
+\paragraph{Adversarial collaboration.}
+Following the model of the Templeton COGITATE project~\cite{cogitate2025},
+proponents of IIT, GWT, FEP, and other theories are invited to design
+adversarial experiments that test UHM's predictions against those of
+competing theories. The 22 predictions of UHM
+(Section~\ref{sec:predictions}) are formulated to enable exactly such
+head-to-head comparisons.
+
+\subsection{Closing}
+
+The theory invites experimental testing.
+
+It presents 22 numerical targets and describes exactly how to shoot at them.
+The most destructive tests (Phase~I) require only a GPU. If $\beta \neq 1/4$, the theory
+is wrong. If zombies survive E-suppression, the theory is wrong. If $N = 5$ learns
+autonomously, the theory is wrong.
+
+The experiments remain to be done.
+
+The complete formalization --- all theorems with proofs, interactive documentation,
+cross-references, and the status registry --- is open at \url{https://holon.sh}.

@@ -33,8 +33,8 @@ This is the **first point of contact** between the theory and empirical data. If
 
 ### 1.3. Principle: from maximally risky to complex
 
-**Prediction 17** (critical exponents β=1/3, ν=1/4, γ=3/4) is the most valuable because it is the most risky:
-- Three concrete numbers, each falsifiable
+**Prediction 17** (critical exponents α=1/2, β=1/4, γ=1, ν=1/2, δ=5) is the most valuable because it is the most risky:
+- Five concrete numbers, each falsifiable
 - **No other theory of consciousness** predicts critical exponents
 - Confirmation = consciousness belongs to a specific universality class (like phase transitions in physics)
 - Refutation = fundamental revision of the theory
@@ -171,11 +171,11 @@ Any implementation used for Phase I must satisfy:
 2. For each: compute the order parameter (PCI analogue) and distance to P_crit
 3. Fit: OP ~ (P − P_crit)^β
 
-**Prediction:** β = 1/3 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161).
 
-**Falsification:** β ∉ [0.28, 0.38] at N=10⁴.
+**Falsification:** β ∉ [0.20, 0.30] at N=10⁴.
 
-**Significance:** If in silico confirms β=1/3, we proceed to the neuroexperiment (Phase II) with high confidence.
+**Significance:** If in silico confirms β=1/4, we proceed to the neuroexperiment (Phase II) with high confidence.
 
 #### Exp. I.9: CPTP anchor (Pred 19) {#exp-1-9}
 
@@ -294,7 +294,7 @@ If P at the consciousness/unconsciousness boundary = 2/7 ± 0.05, UHM receives i
 ### 3.4. Experiment II.2: Critical exponents (the riskiest) {#exp-2-2}
 
 :::tip Uniqueness
-This is the **first ever** test of critical exponents of a phase transition for consciousness. Neither IIT, nor GWT, nor FEP predicts specific exponents. Confirmation of β=1/3 means: consciousness belongs to a specific universality class — like a ferromagnet or a superfluid.
+This is the **first ever** test of critical exponents of a phase transition for consciousness. Neither IIT, nor GWT, nor FEP predicts specific exponents. Confirmation of β=1/4 means: consciousness belongs to the tricritical mean-field universality class — like a metamagnetic or He3-He4 mixture tricritical point.
 :::
 
 **Subjects:** N=50, healthy, 20–40 years. Each — a full night in a sleep laboratory.
@@ -313,18 +313,20 @@ This is the **first ever** test of critical exponents of a phase transition for 
 3. For conscious (x > 0): fit PCI ~ x^β
 4. Extract β, 95% CI
 
-**Prediction:** β = 1/3 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161).
 
 **Additional exponents:**
-- ν = 1/4: correlation length (from spatial extent of TMS-evoked EEG response)
-- γ = 3/4: susceptibility (from amplitude of PCI variability near threshold)
+- α = 1/2: specific heat (from variance of P near threshold)
+- ν = 1/2: correlation length (from spatial extent of TMS-evoked EEG response)
+- γ = 1: susceptibility (from amplitude of PCI variability near threshold)
+- δ = 5: critical isotherm
 
 **Falsification:**
-- β ∉ [0.28, 0.38] at N=50 (p < 0.01)
-- ν ∉ [0.20, 0.30]
-- γ ∉ [0.70, 0.80]
+- β ∉ [0.20, 0.30] at N=50 (p < 0.01)
+- ν ∉ [0.45, 0.55]
+- γ ∉ [0.90, 1.10]
 
-**Statistical plan:** Nonlinear regression (power law fit), bootstrap for 95% CI, comparison with alternative exponents (mean field: β=1/2, Ising 3D: β≈0.326).
+**Statistical plan:** Nonlinear regression (power law fit), bootstrap for 95% CI, comparison with alternative exponents (ordinary mean field: β=1/2, Ising 3D: β≈0.326, ordinary tricritical: β=1/4).
 
 ### 3.5. Experiment II.3: Ignition dynamics (Pred 16) {#exp-2-3}
 
@@ -465,7 +467,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | 14 | Phase coherence | I.7 | Φ ≥ 1 without co-rotation | [T] |
 | 15 | 3/7 attractor | III.3 | |P−3/7| > 0.1 | [C] |
 | 16 | Ignition dynamics | II.3 | T_ign ⊥ (P−P_c) | [T] |
-| 17 | Exponents β=1/3 | I.8 + II.2 | β ∉ [0.28, 0.38] | [T] |
+| 17 | Exponents β=1/4 | I.8 + II.2 | β ∉ [0.20, 0.30] | [T] |
 | 18 | Ward suppression 19/49 | — | Λ-budget incompatible | [T] |
 | 19 | CPTP anchor | I.9 | ||π−π_can|| > 0.1 | [T] |
 | 20 | ε_eff ≈ 0.059 | — | ε ∉ [0.04, 0.08] | [C] |
@@ -479,7 +481,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | Level | What is refuted | Example | Consequence |
 |-------|----------------|---------|-------------|
 | **L1 — Catastrophic** | Axiomatic foundation | N < 7 sufficient for autopoiesis; zombie possible; SAD ≥ 4 | Theory rejected entirely |
-| **L2 — Structural** | Specific numerical prediction | P_crit ≠ 2/7; β ≠ 1/3; R_th ≠ 1/3 | Fundamental revision of specific theorem |
+| **L2 — Structural** | Specific numerical prediction | P_crit ≠ 2/7; β ≠ 1/4; R_th ≠ 1/3 | Fundamental revision of specific theorem |
 | **L3 — Local** | Approximation parameter | π_bio error > 30%; λ_gap out of range | Local correction, does not affect the foundation |
 
 **Mapping to formal criteria ([Falsifiability criteria](/docs/reference/falsifiability)):**
@@ -502,12 +504,12 @@ In 2018–2025, the Templeton Foundation funded the COGITATE project ($30M) — 
 | | IIT | GWT | HOT | **UHM** |
 |---|---|---|---|---|
 | Numerical threshold | Φ > 0 (no number) | None | None | P_crit = 2/7 |
-| Critical exponents | None | None | None | β=1/3, ν=1/4, γ=3/4 |
+| Critical exponents | None | None | None | α=1/2, β=1/4, γ=1, ν=1/2, δ=5 |
 | Computability of Φ | NP-hard for >30 elements | N/A | N/A | P = Tr(Γ²), O(49) |
 | Number of free parameters | ~10³⁸ (all partitions) | Undefined | Undefined | 34 (G₂-invariant) |
-| Riskiest test | No single number | "Ignition" (qualitative) | "Meta-cognition" (qualitative) | **β = 1/3** (one number, falsifiable) |
+| Riskiest test | No single number | "Ignition" (qualitative) | "Meta-cognition" (qualitative) | **β = 1/4** (one number, falsifiable) |
 
-UHM addresses the ConTraSt critique (Yaron et al. 2022): methodological choice does not predetermine the result, because predictions are **numerical**, not qualitative. β=1/3 will either be confirmed or not — regardless of paradigm.
+UHM addresses the ConTraSt critique (Yaron et al. 2022): methodological choice does not predetermine the result, because predictions are **numerical**, not qualitative. β=1/4 will either be confirmed or not — regardless of paradigm.
 
 ---
 
@@ -552,7 +554,7 @@ This protocol covers **22 out of 22 predictions** of UHM/CC:
 - 4 — clinical studies (Phase III, 12–36 mo.)
 - 4 — cognitive/social studies (Phase IV, 12–24 mo.)
 
-The riskiest test is **critical exponents β=1/3** (Pred 17). No other theory of consciousness makes such a concrete numerical prediction about a phase transition. Confirmation means: consciousness is the same kind of phase transition as magnetisation or superfluidity, with its own universality class. Refutation means: UHM is fundamentally wrong about the structure of the transition.
+The riskiest test is **critical exponents β=1/4** (Pred 17). No other theory of consciousness makes such a concrete numerical prediction about a phase transition. Confirmation means: consciousness belongs to the tricritical mean-field universality class ($\varphi^6$ Landau). Refutation means: UHM is fundamentally wrong about the structure of the transition.
 
 The most valuable test is **P_crit = 2/7 ↔ PCI* = 0.31** (Pred 6/21). If the theoretical threshold coincides with the empirical one — this is the first case in history where a theory of consciousness predicts a specific numerical value that matches an independently established experimental threshold.
 

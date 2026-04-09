@@ -623,23 +623,23 @@ The "ignition time" at the L1→L2 transition is inversely proportional to the p
 
 ### Prediction 17: Critical exponents of consciousness {#предсказание-17}
 
-**Intuition.** Phase transitions in physics are characterised by universal critical exponents — numbers independent of system details and depending only on the system's "universality class". CC predicts that the transition at $P_{\text{crit}} = 2/7$ belongs to a specific class, with specific exponents. This is the *most risky* CC prediction: three numbers, each measurable.
+**Intuition.** Phase transitions in physics are characterised by universal critical exponents — numbers independent of system details and depending only on the system's "universality class". CC predicts that the transition at $P_{\text{crit}} = 2/7$ is a **tricritical point** belonging to the $\varphi^6$ Landau universality class, with specific exponents. This is the *most risky* CC prediction: five numbers, each measurable.
 
 :::info Prediction [T] — falsifiable
 $$
-\beta = \tfrac{1}{3}, \quad \nu = \tfrac{1}{4}, \quad \gamma = \tfrac{3}{4}
+\alpha = \tfrac{1}{2}, \quad \beta = \tfrac{1}{4}, \quad \gamma = 1, \quad \nu = \tfrac{1}{2}, \quad \delta = 5
 $$
-Critical exponents of the order parameter $(\beta)$, correlation length $(\nu)$, and susceptibility $(\gamma)$ for the transition at $P_{\mathrm{crit}} = 2/7$.
+Tricritical mean-field exponents: specific heat $(\alpha)$, order parameter $(\beta)$, susceptibility $(\gamma)$, correlation length $(\nu)$, and critical isotherm $(\delta)$ for the transition at $P_{\mathrm{crit}} = 2/7$. Rushbrooke identity: $\alpha + 2\beta + \gamma = 1/2 + 1/2 + 1 = 2$ (satisfied as equality).
 :::
 
-**Uniqueness of the prediction.** No theory of consciousness predicts critical exponents. IIT does not describe phase transitions. FEP describes them qualitatively but gives no numerical exponents. CC is the only theory with a *numerical prediction of universality class*.
+**Uniqueness of the prediction.** No theory of consciousness predicts critical exponents. IIT does not describe phase transitions. FEP describes them qualitatively but gives no numerical exponents. CC is the only theory with a *numerical prediction of universality class* — the tricritical mean-field class from $\varphi^6$ Landau theory, exact when $d_{\text{eff}} \gg d_c = 3$.
 
 **Experimental verification:**
 1. Collect TMS-EEG data at the sleep/waking transition (n=50+ subjects).
 2. Extract the order parameter (PCI or analogue) as a function of "distance to threshold".
 3. Fit a power law: $\text{PCI} \sim (x - x_c)^\beta$.
-4. **Prediction:** $\beta = 1/3 \pm 0.05$.
-5. *Falsification:* systematic deviation from $1/3$ — exponents are incorrect.
+4. **Prediction:** $\beta = 1/4 \pm 0.05$.
+5. *Falsification:* systematic deviation from $1/4$ — exponents are incorrect.
 
 **Verifiability:** Deviation of exponents from predicted values in neuroimaging data (EEG/fMRI near the consciousness threshold) falsifies the theorem on critical exponents.
 
@@ -736,7 +736,7 @@ There exists a map $\pi_{\mathrm{bio}}$, unique up to $G_2$-gauge, such that:
 1. Simultaneous TMS-EEG + HRV measurement in N=30 subjects (waking, sleep, anaesthesia).
 2. Apply $\pi_{\mathrm{bio}}$ and verify:
    - Threshold $P = 2/7$ coincides with PCI $\approx 0.31$
-   - Critical exponents $\beta = 1/3$ at the sleep-waking transition
+   - Critical exponents $\beta = 1/4$ at the sleep-waking transition
 
 **Numerical falsification criterion:** $\|\Gamma_{\mathrm{recon}} - \Gamma_{\mathrm{true}}\|_F / \|\Gamma_{\mathrm{true}}\|_F > 0.3$ at $n > 50$ subjects → systematic inconsistency of $\pi_{\mathrm{bio}}$. If thresholds do not coincide — calibration of $\pi_{\mathrm{bio}}$ is incorrect. If they coincide but exponents differ — T-161 is falsified.
 
@@ -793,7 +793,7 @@ Primitivity of $\mathcal{L}_0$ [T-39a] guarantees $\lambda_{\text{gap}} > 0$. If
 | 14 | [Phase coherence](#предсказание-14) | $\rho^*_{ij}(t) \propto e^{-i(E_i-E_j)t}$ for $\Phi \geq 1$ | **[T]** | Absent |
 | 15 | [Attractor $P \to 3/7$](#предсказание-15) | $P(\rho^*_{\mathrm{coupled}}) \to 3/7$ | **[C]** | Absent |
 | 16 | [Avalanche dynamics L1→L2](#предсказание-16) | $T_{\mathrm{ign}} \sim (P - P_{\mathrm{crit}})^{-1} \cdot \kappa_0^{-1}$ | **[T]** | Absent |
-| 17 | [Critical exponents](#предсказание-17) | $\beta = 1/3,\; \nu = 1/4,\; \gamma = 3/4$ | **[T]** | Absent |
+| 17 | [Critical exponents](#предсказание-17) | $\alpha = 1/2,\; \beta = 1/4,\; \gamma = 1,\; \nu = 1/2,\; \delta = 5$ | **[T]** | Absent |
 | 18 | [Ward suppression 19/49](#предсказание-18) | Gap fluctuations $\times\, 19/49$ | **[T]** | Absent |
 | 19 | [CPTP-anchor validation](#предсказание-19) | $\|\pi - \pi_{\mathrm{can}}\|_\diamond$ in $O(49D)$ | **[T]** | Absent |
 | 20 | [Analytical $\varepsilon_{\mathrm{eff}}$](#предсказание-20) | $\varepsilon_{\mathrm{eff}} = 4N_{33}/(9|\bar{\gamma}|(1+r_4\Sigma_0/2))$ | **[C given T-64]** | Absent |
@@ -817,7 +817,7 @@ The following table shows which predictions each of the leading theories of cons
 | Ceiling of self-awareness | **+** ($\mathrm{SAD}_\text{max} = 3$) | - | - | - |
 | Genesis time | **+** (formula $n_{\text{genesis}}$) | - | ~ (self-organisation) | - |
 | Learning rate bounds | **+** ($n_{\text{opt}}$, three bounds) | - | ~ (expected free energy) | - |
-| Critical exponents | **+** ($\beta = 1/3$, $\nu = 1/4$, $\gamma = 3/4$) | - | - | - |
+| Critical exponents | **+** ($\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$) | - | - | - |
 | Stability radius | **+** ($r_{\text{stab}} = \sqrt{P - 2/7}$) | - | ~ (resilience) | - |
 | Phase coherence → integration | **+** (co-rotation) | - | - | - |
 | Neural oscillations from spectral gap | **+** [H] | - | - | - |
@@ -850,7 +850,7 @@ CC has a *hierarchical* falsification structure. Different predictions have diff
 - Learning through self-observation at $N < 7$ → T-113 collapses.
 
 **Level 2 — serious falsification (requires revision of a theorem block):**
-- Critical exponents $\neq (1/3, 1/4, 3/4)$ → revision of T-161 and phase transition theory.
+- Critical exponents $\neq (1/2, 1/4, 1, 1/2, 5)$ → revision of T-161 and phase transition theory.
 - $\mathrm{SAD}_\text{max} > 3$ → revision of T-142 and Fano contraction.
 - $\varepsilon_{\text{eff}} \notin [0.04, 0.08]$ → revision of the Gap potential.
 
@@ -913,7 +913,7 @@ The next step is experiment. None of the 22 predictions has yet been experimenta
 
 1. **22 unique predictions** — none of them is generated by IIT, FEP, or GWT. This is not a quantitative but a *qualitative* superiority: 22 risky stakes against 0.
 2. **16 of 22 — unconditional theorems [T]**: they follow from the axioms without additional assumptions. Refutation of any one of them means collapse of the entire edifice.
-3. **Every number is not a fit**: $P_{\text{crit}} = 2/7$ follows from $N = 7$ and the Frobenius norm. $\mathrm{SAD}_\text{max} = 3$ — from $\alpha = 2/3$ and $P \leq 1$. $\log_2 7 \approx 2.81$ bits — from the Hilbert space dimensionality. $\beta = 1/3$, $\nu = 1/4$, $\gamma = 3/4$ — from the universality class of the phase transition.
+3. **Every number is not a fit**: $P_{\text{crit}} = 2/7$ follows from $N = 7$ and the Frobenius norm. $\mathrm{SAD}_\text{max} = 3$ — from $\alpha_{\text{Fano}} = 2/3$ and $P \leq 1$. $\log_2 7 \approx 2.81$ bits — from the Hilbert space dimensionality. $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$ — from the tricritical mean-field universality class of the phase transition.
 4. **Hierarchy of falsification**: catastrophic (zombie, $N \neq 7$) → serious (wrong exponents, $\mathrm{SAD} > 3$) → local ($r_{\mathrm{stab}} \neq \sqrt{P - 2/7}$, $P^* \neq 3/7$). Not all predictions are equal — some destroy the foundation, others require only correction.
 5. **Predictions span 6 areas**: ontology, architecture, dynamics, learning, physics, neuroscience. Such interdisciplinary scope is unique among theories of consciousness.
 6. **None of the 22 predictions has yet been verified**: CC awaits its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates.

@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
 title: Theories of Consciousness
-description: CC's relation to 35 theories of consciousness — IIT, FEP, autopoiesis, Dennett, Panksepp, Damasio, Seth, Anokhin, and others.
+description: CC's relation to 36 theories of consciousness — IIT, FEP, autopoiesis, Dennett, Panksepp, Damasio, Seth, Anokhin, Worden (PWT), and others.
 slug: /consciousness/comparative/consciousness-theories
 ---
 
 # Theories of Consciousness: A Meta-Comparative Analysis
 
 :::info Bridge from the previous section
-In the [States](/docs/consciousness/states/pathological) sections we examined how the $\Gamma$-profile determines normal and pathological states. Now — context: how does the UHM formalism relate to 35 alternative theories of consciousness? Each of them is a projection of $\Gamma$ onto a specific aspect: integration (IIT), access (GWT), reflection (HOT), prediction error (FEP).
+In the [States](/docs/consciousness/states/pathological) sections we examined how the $\Gamma$-profile determines normal and pathological states. Now — context: how does the UHM formalism relate to 36 alternative theories of consciousness? Each of them is a projection of $\Gamma$ onto a specific aspect: integration (IIT), access (GWT), reflection (HOT), prediction error (FEP), projective spatial geometry (PWT).
 :::
 
 :::note On notation
@@ -23,16 +23,16 @@ In this document:
 - [T] — theorem, [C] — conditional theorem, [I] — interpretation. Details: [status registry](/docs/reference/status-registry)
 :::
 
-## Introduction: 35 theories and one problem {#введение}
+## Introduction: 36 theories and one problem {#введение}
 
-Consciousness science is a young field. Although philosophers have discussed the nature of consciousness since Descartes (1641), systematic **scientific** theories appeared only in the 1980–2000s. By the mid-2020s there are more than thirty — from neurobiological (NCC, RPT, DIT) to mathematical (IIT, FEP) and philosophical (panpsychism, Russellian monism).
+Consciousness science is a young field. Although philosophers have discussed the nature of consciousness since Descartes (1641), systematic **scientific** theories appeared only in the 1980–2000s. By the mid-2020s there are more than thirty — from neurobiological (NCC, RPT, DIT) to mathematical (IIT, FEP), philosophical (panpsychism, Russellian monism), and wave-based (Pribram holonomic, CEMI, PWT).
 
-All these theories try to answer one question: **what is consciousness and why does it exist?** But each approaches the question from its own side, focusing on one aspect: information integration (IIT), recurrent processing (RPT), predictive coding (PP), self-modelling (AST), or metarepresentation (HOT).
+All these theories try to answer one question: **what is consciousness and why does it exist?** But each approaches the question from its own side, focusing on one aspect: information integration (IIT), recurrent processing (RPT), predictive coding (PP), self-modelling (AST), metarepresentation (HOT), or the undistorted geometry of phenomenal space (PWT).
 
-CC claims that each of these theories is a **projection** of a unified formalism onto a specific aspect. IIT projects $\Gamma$ onto integration ($\Phi$), GWT onto the access threshold ($P > 2/7$), HOT onto reflection ($R \geq 1/3$), PP onto prediction error ($\sigma_k$). None covers everything; CC claims to **unify** them.
+CC claims that each of these theories is a **projection** of a unified formalism onto a specific aspect. IIT projects $\Gamma$ onto integration ($\Phi$), GWT onto the access threshold ($P > 2/7$), HOT onto reflection ($R \geq 1/3$), PP onto prediction error ($\sigma_k$), PWT onto the projective spatial sector $\{A,S,D\} \to \Sigma^3$. None covers everything; CC claims to **unify** them.
 
 This is a serious claim, and it demands careful analysis. In this document we:
-1. Examine each of the 35 theories: its history, central idea, and formal core
+1. Examine each of the 36 theories: its history, central idea, and formal core
 2. Show the precise mapping into the CC formalism (functor)
 3. Honestly indicate what each theory does **better** than CC
 4. Close with a master table and assessment of completeness
@@ -52,6 +52,7 @@ Theories are grouped by type:
 | **Russian school** | Anokhin (P.K.), Shvyrkov, Ivanitsky, Allakhverdov | §32-35 |
 | **Philosophical** | Russellian monism, Dennett | §24-25 |
 | **Affective** | Panksepp, Solms, Merker | §26, 29-30 |
+| **Wave / field** | Holonomic Brain (Pribram), CEMI, PWT (Worden) | §31, 17, 36 |
 
 ---
 
@@ -1911,6 +1912,77 @@ Unconscious hypothesis $h_i$ $\mapsto$ state $\Gamma$ at $P < P_{\text{crit}}$; 
 
 ---
 
+## 36. Worden — Projective Wave Theory (PWT) {#pwt}
+
+> *«The brain's internal model of local 3-D space is held not in neurons, but in a wave excitation holding a projective transform of Euclidean space; if the wave is the source of spatial consciousness.»* — Robert Worden
+
+### Creators and history
+
+**Robert Worden** (PhD, University of Cambridge) — researcher associated with the Active Inference Institute. The **Projective Wave Theory** (PWT) was first published as a preprint (arXiv:2405.12071, 2024) and in final form in *Frontiers in Psychology* on 25 February 2026 ("The projective wave theory of consciousness", doi: 10.3389/fpsyg.2026.1674983). It belongs to the dynamical / wave-based family of consciousness theories, alongside Pribram's holonomic brain theory and McFadden's CEMI, but with a distinctive mathematical ingredient: a *projective* (rather than Euclidean) representation of space.
+
+### Key idea
+
+PWT attacks a specific sub-problem — how the brain supports our largely **undistorted conscious experience of local 3-D space** — by isolating three difficulties that neural theories face:
+
+1. **Selection problem**: which subset of neurons is causally responsible for consciousness?
+2. **Precision problem**: how can a neural representation achieve the precise 3-D geometry that our conscious experience exhibits?
+3. **Decoding problem**: how is the (generally distorted) neural code transformed into an undistorted conscious picture?
+
+Worden's answer is that the brain holds the internal model of local 3-D space **not in neurons, but in a wave excitation** that carries a *projective transformation* of Euclidean space. The wave itself — not its neural substrate — is the seat of spatial conscious experience. Indirect evidence for such a wave is adduced in the **mammalian thalamus** and in the **central body of the insect brain**; direct detection remains outstanding and is offered as the principal falsification criterion.
+
+### Formal structure
+
+PWT's mathematical ingredient is the action of the projective group $PGL(4,\mathbb{R})$ (equivalently $PGL(3,\mathbb{R})$ for 3-D projective space) on a wave-field $\psi(x)$ representing the local spatial model. A projective transformation composed with a coarse-grained neural read-out is proposed to explain why the conscious picture is undistorted while the neural representation is not. No equation of motion for $\psi$ is committed to, no numerical predictions are derived, no consciousness threshold is formalised, and the wave's microscopic substrate is left open (the theory is "implementation-agnostic within wave media").
+
+### Comparison with CC (UHM)
+
+| Aspect | PWT (Worden) | CC / UHM |
+|--------|--------------|----------|
+| Ontological primitive | Wave excitation $\psi$ in 3-D space | Coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [T]) |
+| Target | **Spatial** consciousness (sub-problem) | Full hierarchy L0–L4, all content |
+| Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
+| Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
+| Numerical predictions | None | 22 predictions with falsification criteria |
+| Derivation of physics | None | GR + QM + Standard Model from $\Gamma$ (T-117–T-121, T-186 [T]) |
+| Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
+| Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
+| Scope relative to UHM | Candidate neural *implementation* of the coarse-grained geometric sector $\{A,S,D\}$ of $\Gamma$ | Foundational theory of which PWT may be a brain-level projection |
+
+### What CC borrows
+- **Wave-like ontology of the substrate of experience**: both theories reject a purely neural-computational account. In CC, the off-diagonal coherences $\gamma_{ij}$ play the role analogous to the PWT wave field — they carry phase information that is lost in any classical computational description.
+- **Projective geometry of the spatial sector**: the $\{A,S,D\}$ sector of $\Gamma$ reconstructs (via Gel'fand + Connes, T-119 [T]) a smooth compact orientable spin 3-manifold $\Sigma^3$. Worden's emphasis that the spatial representation is projective rather than Euclidean is compatible with the $PGL(4,\mathbb{R})$ action on projective spatial sections of $\Sigma^3$.
+- **Explicit mechanism for undistorted spatial experience**: PWT's selection / precision / decoding triad sharpens the requirement that any theory of consciousness must eventually explain how phenomenal 3-D space is achieved. In UHM this is answered by the spectral-triple reconstruction of $\Sigma^3$ and the Page–Wootters emergence of time.
+
+### What CC does better
+- **Scope**: CC addresses consciousness as a whole (experience, self-modelling, integration, affect, ethics) rather than only the spatial sub-problem.
+- **Hard problem**: CC dissolves it via two-aspect monism [T via T-186]; PWT offers no account of *why* a wave should feel like anything.
+- **Formal rigour**: CC has equations of motion ($\mathcal{L}_\Omega$), a spectral gap, exact thresholds, and a status registry of theorems; PWT is programmatic.
+- **Falsifiability**: CC has 22 numerical predictions with explicit criteria; PWT has one binary check ("is there a wave?").
+- **Physics**: CC derives GR + QM + Standard Model; PWT assumes standard physics.
+
+### Honest assessment: what the theory does better than CC
+- **Concreteness of the neural prediction**: PWT points to a specific biological structure (thalamus / central body) and a specific physical observable (a wave excitation), which is directly falsifiable by neurophysiological experiment. CC currently lacks a validated $\pi_{\mathrm{bio}}$ mapping from neural data to $\Gamma$.
+- **Minimality of the hypothesis**: PWT postulates *one* extra structure (the wave) and leaves the rest of neuroscience untouched; CC's categorical machinery is heavier.
+- **Engagement with the precision/decoding problem**: the requirement that the *undistorted* geometry of conscious space be explained is a constraint CC addresses only indirectly (via the emergent $\Sigma^3$).
+
+### Mapping functor [I]
+
+$$F_{\mathrm{PWT}}: \mathbf{PWT} \to \mathbf{Hol}$$
+
+Wave excitation $\psi \mapsto$ off-diagonal coherences in the $\{A,S,D\}$-sector of $\Gamma$;
+projective group action $PGL(4,\mathbb{R}) \mapsto$ $G_2$-restricted transformations on $\Sigma^3$ (T-119 [T]);
+thalamic / central-body substrate $\mapsto$ one possible physical realisation of $\pi_{\mathrm{bio}}^{-1}$;
+undistorted conscious space $\mapsto$ spectral-triple reconstruction $A_{\mathrm{space}} \cong C(\Sigma^3)$.
+
+The functor is **not complete**: PWT lacks dynamics, thresholds, self-modelling ($\varphi$), integration ($\Phi$), and a theory of non-spatial content (affect, reflection, meta-awareness). In the CC meta-category, PWT is a **projection** onto the spatial-geometric sector, compatible with UHM as a candidate neuroscientific implementation rather than a competitor at the foundational level.
+
+### Compatibility with UHM
+
+Crucially, PWT and UHM are **not mutually exclusive**. If Worden's wave is eventually detected in the thalamus, it would serve as a concrete biological realisation of the coarse-grained $\{A,S,D\}$-sector of $\Gamma$ in the mammalian brain, answering part of the $\pi_{\mathrm{bio}}$ calibration problem (Phase II of the UHM experimental protocol). Conversely, if UHM's $\Pcrit = 2/7$ threshold and tricritical exponents are confirmed, they provide PWT with the missing thermodynamic framework. The two frameworks operate at different levels of explanation: UHM at the foundational (ontological-mathematical) level, PWT at the biological-implementation level.
+
+---
+
 ## Final Comparative Assessment {#итоговая-оценка}
 
 Before moving to the master table, it is useful to assess the key theories across several criteria. For each criterion: 0 = absent, 1 = partial, 2 = complete.
@@ -1963,7 +2035,7 @@ Each arrow is a projection: the theory takes **part** of the CC formalism and ig
 
 ---
 
-## Master Table: 35 Theories of Consciousness {#мастер-таблица}
+## Master Table: 36 Theories of Consciousness {#мастер-таблица}
 
 | # | Theory | Authors | Year | Central object | Consciousness measure | Connection to CC | Functor status |
 |---|--------|---------|-----|----------------|----------------------|-----------------|----------------|
@@ -2002,6 +2074,7 @@ Each arrow is a projection: the theory takes **part** of the CC formalism and ig
 | 33 | System-Evolutionary Theory | Shvyrkov | 2006 | Neuron = element of experience | No | $\Gamma$, $\mathcal{L}_\Omega$ | Strongly incomplete |
 | 34 | Information Synthesis | Ivanitsky | 1996 | Circular cortical cycle | EEG coherence | $\gamma_{ij}$, $R$, $\Phi$ | Projection |
 | 35 | Psycho-logic | Allakhverdov | 2000 | Hypothesis verification | No | $\varphi$, $\Gamma^*$, L0/L2 | Projection |
+| 36 | Projective Wave Theory (PWT) | Worden | 2024/2026 | Wave $\psi$ with projective $PGL(4,\mathbb{R})$ action | None (binary: wave present/absent) | Coherences $\gamma_{ij}$ in $\{A,S,D\}$, $\Sigma^3$ (T-119) | Projection / candidate neural implementation |
 
 :::info Notes on the master table
 - **Embedding** — the theory is a strict subcase of CC (proven)

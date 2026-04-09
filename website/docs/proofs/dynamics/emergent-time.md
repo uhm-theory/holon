@@ -553,6 +553,10 @@ where $H_{eff}$ is the effective Hamiltonian arising from $H_{int}$.
 
 **Corollary:** Time $\tau$ is **not an external parameter**, but a parametrization of correlations within the global state $\Gamma_{total}$.
 
+:::tip Status upgrade (T-186)
+The [Cohesive Closure Theorem](/docs/proofs/categorical/cohesive-closure) eliminates the $O(H_{\text{int}})$ correction: Page-Wootters conditional states are exact sections of the flat projection $\flat(\Gamma_{\text{total}})$, and the evolution is the counit $\varepsilon: \Pi \circ \flat \Rightarrow \mathrm{Id}$ — an exact natural transformation, not an approximation.
+:::
+
 ### 3.5 Clock basis for 7D
 
 For $\dim(\mathcal{H}_O) = 7$:

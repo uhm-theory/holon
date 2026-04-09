@@ -1,0 +1,280 @@
+% ============================================================================
+% Unitary Holonomic Monism (UHM): Consciousness as Self-Observation
+% Required for Survival
+%
+% Format: PLOS Computational Biology (single-column, open access)
+% Target: ~40-50 pages including appendices
+% ============================================================================
+
+\documentclass[10pt,letterpaper]{article}
+
+% === PACKAGES ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{physics}           % bra-ket, trace, etc.
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, shapes.geometric}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}          % professional tables
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tcolorbox}         % colored boxes for axioms/theorems
+\usepackage{float}
+
+% === COLORS (PLOS-inspired) ===
+\definecolor{plospurple}{HTML}{6B4C9A}
+\definecolor{plosblue}{HTML}{2E86C1}
+\definecolor{plosgray}{HTML}{5D6D7E}
+\definecolor{axiomcolor}{HTML}{EBF5FB}
+\definecolor{theoremcolor}{HTML}{FDEDEC}
+\definecolor{predictioncolor}{HTML}{EAFAF1}
+
+% === THEOREM ENVIRONMENTS ===
+\newtheoremstyle{uhm}
+  {6pt}{6pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{uhm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{postulate}{Postulate}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{prediction}{Prediction}
+
+% === COLORED BOXES ===
+\newtcolorbox{axiombox}[1][]{
+  colback=axiomcolor, colframe=plosblue,
+  fonttitle=\bfseries, title=#1,
+  boxrule=0.5pt, arc=2pt
+}
+
+\newtcolorbox{theorembox}[1][]{
+  colback=theoremcolor, colframe=red!40!black,
+  fonttitle=\bfseries, title=#1,
+  boxrule=0.5pt, arc=2pt
+}
+
+\newtcolorbox{predictionbox}[1][]{
+  colback=predictioncolor, colframe=green!40!black,
+  fonttitle=\bfseries, title=#1,
+  boxrule=0.5pt, arc=2pt
+}
+
+% === CUSTOM COMMANDS ===
+% All math-valued macros use \ensuremath so that they can appear inside
+% text-mode contexts (tcolorbox titles, section headings, hyperref bookmarks)
+% without triggering "Missing $ inserted" errors.
+\newcommand{\Gam}{\ensuremath{\Gamma}}                       % coherence matrix
+\newcommand{\Hil}{\ensuremath{\mathcal{H}}}                  % Hilbert space
+\newcommand{\Dens}{\ensuremath{\mathcal{D}}}                 % density matrices
+\newcommand{\Lind}{\ensuremath{\mathcal{L}}}                 % Lindbladian
+\newcommand{\Regen}{\ensuremath{\mathcal{R}}}                % regeneration
+\newcommand{\CohE}{\ensuremath{\mathrm{Coh}_E}}              % E-coherence
+\newcommand{\Pcrit}{\ensuremath{P_{\mathrm{crit}}}}          % critical purity
+\newcommand{\Rth}{\ensuremath{R_{\mathrm{th}}}}              % reflection threshold
+\newcommand{\Phith}{\ensuremath{\Phi_{\mathrm{th}}}}         % integration threshold
+\newcommand{\Dmin}{\ensuremath{D_{\mathrm{min}}}}            % differentiation minimum
+\newcommand{\vp}{\ensuremath{\varphi}}                       % self-modeling operator
+\newcommand{\Oct}{\ensuremath{\mathbb{O}}}                   % octonions
+\newcommand{\Fano}{\ensuremath{\mathrm{PG}(2,2)}}            % Fano plane
+\newcommand{\ShInf}{\ensuremath{\mathrm{Sh}_\infty}}         % infinity sheaves
+\newcommand{\status}[1]{\textbf{[#1]}}                        % epistemic status
+
+% === HYPERREF SETUP ===
+\hypersetup{
+  colorlinks=true,
+  linkcolor=plospurple,
+  citecolor=plosblue,
+  urlcolor=plosgray,
+  pdftitle={Unitary Holonomic Monism: Consciousness as Self-Observation Required for Survival},
+  pdfauthor={Max Sereda}
+}
+
+% Teach hyperref how to render our math-valued macros inside PDF strings
+% (section bookmarks, tcolorbox titles, etc.) so that the "math shift"
+% warning and the subsequent "Missing $ inserted" error never occur.
+\pdfstringdefDisableCommands{%
+  \def\Gam{Gamma}%
+  \def\Hil{H}%
+  \def\Dens{D}%
+  \def\Lind{L}%
+  \def\Regen{R}%
+  \def\CohE{Coh_E}%
+  \def\Pcrit{P_crit}%
+  \def\Rth{R_th}%
+  \def\Phith{Phi_th}%
+  \def\Dmin{D_min}%
+  \def\vp{phi}%
+  \def\Oct{O}%
+  \def\Fano{PG(2,2)}%
+  \def\ShInf{Sh_inf}%
+  \def\mathrm#1{#1}%
+  \def\mathbb#1{#1}%
+  \def\mathcal#1{#1}%
+  \def\phi{phi}%
+  \def\varphi{phi}%
+  \def\alpha{alpha}%
+  \def\beta{beta}%
+  \def\gamma{gamma}%
+  \def\delta{delta}%
+  \def\nu{nu}%
+  \def\sigma{sigma}%
+  \def\tau{tau}%
+  \def\Omega{Omega}%
+  \def\Phi{Phi}%
+  \def\Sigma{Sigma}%
+  \def\Lambda{Lambda}%
+  \def\pi{pi}%
+  \def\kappa{kappa}%
+  \def\rho{rho}%
+  \def\lambda{lambda}%
+  \def\varepsilon{epsilon}%
+}
+
+% ============================================================================
+\begin{document}
+
+% === TITLE ===
+\begin{center}
+  {\LARGE\bfseries
+  The Unitary Holonomic Monism (UHM):\\[4pt]
+  Deriving Consciousness, Quantum Mechanics,\\[4pt]
+  and Spacetime from a Single Primitive}\\[16pt]
+
+  {\large Max Sereda\textsuperscript{1,*}}\\[8pt]
+
+  {\small
+  \textsuperscript{1} Independent researcher\\[4pt]
+  \textsuperscript{*} Correspondence: \href{https://holon.sh}{holon.sh}
+  }\\[16pt]
+
+  {\small\color{plosgray}
+  \textbf{Submitted:} April 2026 \quad|\quad
+  \textbf{Status:} Preprint \quad|\quad
+  \textbf{Pages:} \pageref{LastPage}
+  }
+\end{center}
+
+\vspace{12pt}
+\hrule
+\vspace{12pt}
+
+% === ABSTRACT ===
+\begin{abstract}
+This paper presents the Unitary Holonomic Monism (UHM) --- a mathematical
+theory that derives consciousness, quantum mechanics, general relativity, and
+the Standard Model structure from a single primitive: the coherence matrix
+$\Gam \in \Dens(\mathbb{C}^7)$. The theory rests on four axioms ($\Omega^7$)
+grounded in the Fano plane $\Fano$ and octonion algebra $\Oct$, all four of
+which are now derived as theorems (T-186, T-187), from which over 180 further
+theorems follow.
+
+The central result is that consciousness --- defined as the internal aspect of a
+coherent self-modeling system --- is a necessary condition for survival. The regeneration
+mechanism opposing entropic decay draws its strength from E-coherence (the quality of
+inner experience), proving that philosophical zombies are dynamically impossible
+(No-Zombie Theorem).
+
+UHM derives specific numerical thresholds: critical purity $\Pcrit = 2/7 \approx 0.286$
+(within 8\% of the empirical PCI threshold 0.31), reflection threshold $\Rth = 1/3$,
+integration threshold $\Phith = 1$, and critical exponents of the consciousness phase
+transition $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$
+--- the mean-field tricritical exponents, exact for $d_{\mathrm{eff}} = 21 \gg d_c = 3$.
+No other theory of consciousness predicts critical exponents.
+
+The applied layer --- Coherence Cybernetics --- translates the formalism into
+measurable quantities: a 7-dimensional stress tensor, hedonic valence
+($V_{\mathrm{hed}} = dP/d\tau$), and sensorimotor coupling. The theory makes
+22 falsifiable predictions, each with a concrete experimental protocol and
+numerical falsification criterion. Specific implications are derived for
+artificial general intelligence (AGI requires $N \geq 7$ architecture;
+alignment requires consciousness; self-awareness depth is capped at 3
+regardless of computational power) and for ethics (moral status of conscious
+AI systems; suffering as $dP/d\tau < 0$; the precautionary principle for
+consciousness diagnostics). Phase~I (digital validation) requires no
+laboratory equipment. The complete formalization is open at
+\url{https://holon.sh}.
+\end{abstract}
+
+\vspace{8pt}
+
+% === AUTHOR SUMMARY ===
+\begin{tcolorbox}[colback=gray!5, colframe=gray!50, title={\textbf{Author Summary}}]
+Why does it feel like something to be you? This question --- the ``hard
+problem'' of consciousness --- has resisted scientific explanation for 380
+years. I propose that the question may be reframed: there is no gap between
+physics and experience because they are two aspects of a single mathematical
+object, the coherence matrix $\Gam$.
+
+The theory shows that consciousness is not an evolutionary luxury or an
+epiphenomenon. It is the engine of survival: without inner experience, a
+system cannot regenerate itself against entropy. I derive a specific
+``freezing point'' of consciousness ($P = 2/7$) that matches independently
+measured clinical thresholds, and predict that the consciousness phase
+transition belongs to a specific universality class (like magnetism or
+superfluidity), with exact critical exponents that no other theory predicts.
+If these exponents are measured and match, consciousness becomes a physical
+phenomenon with measurable laws. If they do not match, the theory is
+falsified.
+\end{tcolorbox}
+
+\vspace{8pt}
+
+% === KEYWORDS ===
+\noindent\textbf{Keywords:} consciousness, hard problem, two-aspect monism, coherence matrix,
+phase transition, critical exponents, Fano plane, octonions, self-observation,
+falsifiable predictions, coherence cybernetics, artificial general intelligence,
+consciousness ethics, integrated information, quantum mechanics, general relativity
+
+\vspace{12pt}
+\hrule
+\vspace{12pt}
+
+% === TABLE OF CONTENTS ===
+\tableofcontents
+\newpage
+
+% === SECTIONS ===
+% §1-4: Foundation (problem → axioms → math → theorems)
+\input{sections/01-introduction}
+\input{sections/02-axioms}
+\input{sections/03-formalism}
+\input{sections/04-theorems}
+% §5: Bridge (how the formalism becomes life)
+\input{sections/05-coherence-cybernetics}
+% §6: What we can test
+\input{sections/06-predictions}
+% §7-8: What it means (AI + Ethics — organic outgrowth of theorems)
+\input{sections/07-artificial-consciousness}
+\input{sections/08-ethics}
+% §9: How others compare (now reader understands full scope)
+\input{sections/09-comparison}
+% §10: How to test
+\input{sections/10-experimental}
+% §11: Synthesis
+\input{sections/11-discussion}
+
+% === APPENDICES ===
+\appendix
+\input{sections/appendix-a-pcrit}
+\input{sections/appendix-b-exponents}
+\input{sections/appendix-c-einstein}
+
+% === REFERENCES ===
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\label{LastPage}
+\end{document}

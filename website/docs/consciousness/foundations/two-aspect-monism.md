@@ -155,6 +155,8 @@ The intuition of 'two sides of one coin' is beautiful, but insufficient for scie
 Two-aspect monism receives a **categorical formulation** in terms of the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$. The formalisation rests on PIR **[D]** (T16) — the identity of being and experience is built into A1+A2 (distinguishability via $J_{\text{Bures}}$-coverings is identical to ontological distinguishability).
 
 **Separation of statuses:** Formal results (splitting of the map, Yoneda's lemma, uniqueness of FV, self-referential closure) — **[T]**. Their interpretation as two-aspect monism (identification of $\mathrm{Map}_{\mathrm{ext}}$ with 'physics' and $\mathrm{Map}_{\mathrm{int}}$ with 'experience') — **[I]**.
+
+**Status upgrade (T-186):** The [Cohesive Closure Theorem](/docs/proofs/categorical/cohesive-closure) proves that the phenomenal functor $F$ is naturally isomorphic to the infinitesimal flat modality $\&$: $F \cong \&|_{\mathcal{D}}$. The Postnikov filtration of $\&(\Gamma)$ forces the L0–L4 hierarchy. This upgrades the phenomenal identification from **[I]** to **[T]** — it is structurally necessitated by the cohesive adjunction $\iota^* \dashv \mathrm{Inf}$, not by interpretive choice.
 :::
 
 ### What Morphisms Are and Why We Need Them

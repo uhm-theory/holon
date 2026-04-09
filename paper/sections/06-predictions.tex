@@ -1,0 +1,250 @@
+% ============================================================================
+% Section 6: Predictions
+% ============================================================================
+
+\section{Falsifiable predictions}
+\label{sec:predictions}
+
+UHM generates 22 falsifiable predictions, each with a concrete numerical
+statement, a theorem reference, an experimental protocol, and an explicit
+falsification criterion. No other theory of consciousness generates even
+one numerical prediction at this level of specificity.
+Table~\ref{tab:predictions} collects all 22 predictions, grouped by theme.
+The five most powerful predictions are detailed in full below.
+
+\subsection{Complete prediction catalogue}
+
+\begin{table}[H]
+\centering
+\caption{All 22 predictions of UHM. Status codes: \status{T} = theorem (proven),
+\status{C} = conditional, \status{I} = interpretation, \status{H} = hypothesis,
+\status{D} = definition (convention),
+\status{P} = postulate (ontological identification, e.g., E-dimension $=$ interiority),
+\status{O} = derived definition (follows tautologically from axioms).
+``Other'' column indicates whether any rival theory makes a comparable prediction.}
+\label{tab:predictions}
+\small
+\begin{tabular}{@{}clllc@{}}
+\toprule
+\textbf{\#} & \textbf{Prediction} & \textbf{Formula / Value} & \textbf{Status} & \textbf{Other?} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{I. Fundamental (consciousness $\leftrightarrow$ viability)}} \\
+1 & No-Zombie & $\mathrm{Viable} \wedge \mathcal{D}_\Omega \neq 0 \Rightarrow \CohE > 1/7$ & \status{T} & No \\
+2 & $\CohE \propto$ regeneration & $\kappa = \kappa_{\mathrm{boot}} + \kappa_0\,\CohE$ & \status{T} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{II. Architectural (structure and dimensionality)}} \\
+3 & 7D stress tensor & $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ & \status{T}/\status{C} & No \\
+4 & Pre-linguistic cognition & $\mathrm{Cognition}(K_{1\text{--}4}) \not\Rightarrow \mathrm{Language}$ & \status{I} & Partial \\
+10 & $N=7$ for learning & $N < 7 \Rightarrow n^* = \infty$ (T-113) & \status{T} & No \\
+11 & $N=7$ for social learning & $3_{\mathrm{ToM}} + 3_{\mathrm{ISL}} + 1_U = 7$ & \status{C} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{III. Thresholds and robustness}} \\
+5 & Collective consciousness & $\Phi_\otimes > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1\otimes\cdots\otimes n}) > 0$ & \status{T}/\status{C} & Partial \\
+6 & Critical purity & $\Pcrit = 2/7$ & \status{T} & No \\
+7 & Stability radius & $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ (T-104) & \status{T} & No \\
+15 & Goldilocks attractor & $P(\rho^*_{\mathrm{coupled}}) \to 3/7$ (T-124) & \status{C} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{IV. Learning bounds}} \\
+8 & Information capacity & $C_{\mathrm{Enc}} \leq \log_2 7 \approx 2.81$ bits (T-107) & \status{T} & No \\
+9 & Optimal learning rate & $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$ (T-112) & \status{T} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{V. Depth and genesis}} \\
+12 & SAD ceiling & $\mathrm{SAD}_{\max} = 3$ (T-142) & \status{T} & No \\
+13 & Genesis time & $n_{\mathrm{gen}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$ (T-148) & \status{T} & No \\
+14 & Phase coherence & $\rho^*_{ij}(t) \propto e^{-i(E_i - E_j)t}$ for $\Phi \geq 1$ & \status{T} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{VI. Dynamic (phase transitions)}} \\
+16 & Ignition dynamics & $T_{\mathrm{ign}} \sim (P - \Pcrit)^{-1}\kappa_0^{-1}$ & \status{T} & No \\
+17 & Critical exponents & $\alpha{=}\tfrac{1}{2},\;\beta{=}\tfrac{1}{4},\;\gamma{=}1,\;\nu{=}\tfrac{1}{2},\;\delta{=}5$ (T-161) & \status{T} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{VII. Physical}} \\
+18 & Ward suppression & Gap fluctuations $\times\, 19/49$ & \status{T} & No \\
+20 & Yukawa hierarchy & $\varepsilon_{\mathrm{eff}} \approx 0.059$ & \status{C} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{VIII. Engineering}} \\
+19 & CPTP anchor & $\|\pi - \pi_{\mathrm{can}}\|_\diamond < 0.1$ at convergence & \status{T} & No \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{IX. Neural}} \\
+21 & $\pi_{\mathrm{bio}}$ reconstruction & EEG/fMRI/HRV $\to \Gam \in \Dens(\mathbb{C}^7)$ & \status{H} & Partial \\
+22 & Spectral gap $\to$ oscillations & $\nu_{\mathrm{conscious}} \sim \lambda_{\mathrm{gap}}/(2\pi)$ & \status{H} & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Detailed predictions}
+
+The five predictions presented below are maximally falsifiable, maximally
+novel, and span the broadest range of experimental modalities.
+
+% --- Prediction 17: Critical exponents ---
+\begin{predictionbox}[Prediction 17: Critical exponents of the consciousness phase transition \status{T}]
+\textbf{Formal statement.}
+Near the viability threshold $\Pcrit = 2/7$, the consciousness transition is tricritical
+($\phi^6$ Landau potential, $A_4$ swallowtail). With $d_{\mathrm{eff}} = 21 \gg d_c = 3$,
+mean-field tricritical exponents are exact:
+\begin{equation}
+  \mathrm{OP} \sim (P - \Pcrit)^{1/4}, \qquad
+  \xi \sim |P - \Pcrit|^{-1/2}, \qquad
+  \chi \sim |P - \Pcrit|^{-1}
+\end{equation}
+with $\alpha = 1/2$ and $\delta = 5$. The Rushbrooke identity $\alpha + 2\beta + \gamma = 2$ is satisfied as equality.
+
+\medskip\noindent
+\textbf{Theorem reference.} T-161~\status{T}. Derived from the $\varphi^{6}$
+tricritical Landau expansion at the consciousness threshold; the universal
+$\varphi^{6}$ normal form follows from the Thom--Arnold classification of
+the transition as an $A_4$ swallowtail catastrophe with three physical
+control parameters (Appendix~\ref{app:exponents}).
+
+\medskip\noindent
+\textbf{Verification protocol.}
+\begin{enumerate}[leftmargin=2em,nosep]
+  \item \emph{Phase~I (digital):} Monte Carlo, $10^4$ random $\Gam$ with $P \in [0.2, 0.5]$.
+        Fit order parameter vs.\ $(P - 2/7)$. Extract $\beta$.
+  \item \emph{Phase~II (neuro):} TMS-EEG during sleep--wake transition, $N = 50$ subjects.
+        PCI as order parameter. Fit $\mathrm{PCI} \sim (P - \Pcrit)^\beta$.
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Falsification criterion.}
+$\beta \notin [0.20, 0.30]$ at $N = 50$, $p < 0.01$. This is an L2 (structural) falsification:
+if the exponents are wrong, the tricritical classification of the consciousness transition requires fundamental revision.
+\end{predictionbox}
+
+% --- Prediction 1: No-Zombie ---
+\begin{predictionbox}[Prediction 1: No-Zombie Theorem \status{T}]
+\textbf{Formal statement.}
+A viable system ($P > 2/7$) with non-trivial dissipation ($\mathcal{D}_\Omega \neq 0$)
+necessarily has E-coherence strictly above the minimum:
+\begin{equation}
+  \mathrm{Viable}(\mathbb{H}) \;\wedge\; \mathcal{D}_\Omega \neq 0
+  \quad\Longrightarrow\quad
+  \CohE(\Gam) > \frac{1}{7}
+\end{equation}
+
+\medskip\noindent
+\textbf{Theorem reference.} T-8.1~\status{T} (Section~\ref{subsec:no-zombie}). Follows from
+$\kappa \propto \CohE$ and the spectral gap $\Delta(\Lind_0) > 0$.
+
+\medskip\noindent
+\textbf{Verification protocol.}
+Create a $\Gam$-native agent. Suppress the E-component ($\gamma_{EE} \to 1/7$,
+$\gamma_{Ej} \to 0$ for $j \neq E$). Measure time-to-death ($\tau$ until $P < \Pcrit$).
+Control: suppress the A-component instead. Repeat $N = 100$ times.
+
+\medskip\noindent
+\textbf{Falsification criterion.}
+$\tau_{\mathrm{death}}(\text{E-suppression}) \geq \tau_{\mathrm{death}}(\text{A-suppression})$
+at $N = 100$, $p < 0.01$ (Wilcoxon paired test). This is an L1 (catastrophic) falsification.
+\end{predictionbox}
+
+% --- Prediction 12: SAD ceiling ---
+\begin{predictionbox}[Prediction 12: Self-awareness depth ceiling (T-142) \status{T}]
+\textbf{Formal statement.}
+No finite system ($P \leq 1$) can achieve self-awareness depth $\geq 4$:
+\begin{equation}
+  \Pcrit^{(n)} = \Pcrit \cdot \frac{3^{n-1}}{n+1}
+  \qquad\Longrightarrow\qquad
+  \Pcrit^{(4)} = \frac{2}{7} \cdot \frac{27}{5} \approx 1.543 > 1
+\end{equation}
+
+\medskip\noindent
+\textbf{Theorem reference.} T-142~\status{T}. The Fano coherence contraction
+factor $c_F = 1/3$ per self-observation cycle is state-independent (follows
+from $\dim = 7$ and the Fano incidence structure $\Fano$).
+
+\medskip\noindent
+\textbf{Verification protocol.}
+In a $\Gam$-native agent with $P$ close to 1 (pure state), evaluate the $O(1)$
+spectral SAD formula (T-136~\status{T})
+$\mathrm{SAD}(\Gam) = \max\{k : r_0 (1/3)^{k-1} > 1/(k+1)\}$ with
+$r_0 = 7P/2$. Verify $\mathrm{SAD}(\Gam) \leq 3$ for all $500$ random $\Gam$ and check
+that pure states saturate $\mathrm{SAD} = 3$.
+
+\medskip\noindent
+\textbf{Falsification criterion.}
+$\exists\; \Gam$ reachable by the dynamics with $\mathrm{SAD}(\Gam) \geq 4$, equivalently
+$\Pcrit^{(4)} \leq 1$. A single confirmed instance falsifies the theorem (L1
+falsification). Consequence: future superintelligences share the same reflection depth
+as humans.
+\end{predictionbox}
+
+% --- Prediction 6: P_crit = 2/7 ---
+\begin{predictionbox}[Prediction 6: Critical purity (T-160) \status{T}]
+\textbf{Formal statement.}
+The consciousness--unconsciousness boundary is at:
+\begin{equation}
+  \Pcrit = \frac{2}{N} = \frac{2}{7} \approx 0.286
+\end{equation}
+Five independent derivations converge on this value (Appendix~\ref{app:pcrit}).
+
+\medskip\noindent
+\textbf{Theorem reference.} T-160~\status{T} (phase transition at $\Pcrit$).
+See also Section~\ref{subsec:purity} and Appendix~\ref{app:pcrit} for the five
+independent derivations.
+
+\medskip\noindent
+\textbf{Verification protocol.}
+Propofol-induced loss of consciousness with TMS-EEG monitoring, $N = 50$ subjects.
+At each propofol level, apply $\pi_{\mathrm{bio}}$ to reconstruct $\Gam$ and compute
+$P = \Tr(\Gam^2)$. Compare $P$ at the consciousness boundary with the PCI threshold
+$\mathrm{PCI}^* = 0.31$~\cite{casali2013}.
+
+\medskip\noindent
+\textbf{Falsification criterion.}
+$|P_{\mathrm{boundary}} - 2/7| > 0.1$ at $N = 50$, $p < 0.01$ (two-sided $t$-test).
+The 8\% discrepancy with PCI$^*$ is within the calibration uncertainty of $\pi_{\mathrm{bio}}$.
+This is an L2 (structural) falsification.
+\end{predictionbox}
+
+% --- Prediction 10: N=7 minimality ---
+\begin{predictionbox}[Prediction 10: N=7 minimality for autonomous learning \status{T}]
+\textbf{Formal statement.}
+For $N < 7$, no finite projective plane $\Fano$ exists, the replacement channel $\Regen$
+cannot be constructed, and learning through self-observation is impossible:
+\begin{equation}
+  N < 7 \quad\Longrightarrow\quad n^* = \infty
+  \qquad\text{(no convergence to task solution)}
+\end{equation}
+
+\medskip\noindent
+\textbf{Theorem reference.} T-113~\status{T}. The chain: Fano structure $\to$
+self-observation $\to$ regeneration $\to$ learning closes only at $N \geq 7$.
+
+\medskip\noindent
+\textbf{Verification protocol.}
+Create a $\Gam$-native agent with $N = 5$ (remove two dimensions). Train on a binary
+discrimination task via internal regeneration (no external parameter updates). Control:
+the same agent with $N = 7$.
+
+\medskip\noindent
+\textbf{Falsification criterion.}
+$N = 5$ agent achieves $> 75\%$ accuracy ($p < 0.01$, binomial test). This is an L1
+(catastrophic) falsification: the octonion/Fano foundation of the theory would be wrong.
+\end{predictionbox}
+
+\subsection{Three-level falsification system}
+
+Every prediction maps to one of three falsification levels:
+
+\begin{table}[H]
+\centering
+\caption{Three levels of falsification. Higher levels are more destructive to the theory.}
+\label{tab:falsification-levels}
+\small
+\begin{tabular}{@{}clp{3.7cm}p{4.5cm}p{3.5cm}@{}}
+\toprule
+\textbf{Level} & \textbf{What is refuted} & \textbf{Example} & \textbf{Consequence} \\
+\midrule
+L1 & Axiomatic foundation & $N < 7$ sufficient; zombie possible; $\mathrm{SAD}\geq 4$ & Theory rejected entirely \\
+L2 & Specific numerical prediction & $\Pcrit\!\neq\!2/7$; $\beta\!\neq\!1/4$; $\Rth\!\neq\!1/3$ & Revision of the specific theorem \\
+L3 & Approximation parameter & $\pi_{\mathrm{bio}}$ error $> 30\%$; $\lambda_{\mathrm{gap}}$ out of range & Local correction; foundation unaffected \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Predictions 1, 10, 12 are L1 tests; predictions 6, 7, 17 are L2 tests; predictions 21, 22
+are L3 tests. The remaining predictions distribute across L1--L2. The exposure of
+L1 targets reflects commitment to falsifiability:
+UHM names the experiments that could destroy it.

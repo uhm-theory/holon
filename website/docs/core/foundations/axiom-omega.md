@@ -40,9 +40,9 @@ This ensures mathematical honesty and avoids hidden assumptions.
 | Axiom | Statement | Rationale |
 |---------|--------------|-------------|
 | **Axiom 1 (Structure)** | Reality is the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ over the category of density matrices $\mathcal{D}(\mathbb{C}^N)$ | ∞-topoi are the most general “spaces” with internal logic |
-| **Axiom 2 (Metric)** | The Grothendieck topology $J$ is induced by the Bures metric $d_B$ | **Chentsov–Petz theorem:** Bures is the unique monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$ |
+| **Axiom 2 (Metric)** | The Grothendieck topology $J$ is induced by the Bures metric $d_B$ | **Petz classification:** Bures is the *minimal* monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$ (unique in the classical case by Chentsov; minimal among infinitely many in the quantum case) |
 | **Axiom 3 (Dimension)** | $N = 7$ is the dimension of the base Hilbert space | Characterizes the class of systems under study (holons) |
-| **Axiom 4 (Scale)** | $\omega_0 > 0$ is a characteristic frequency of the system | Relates internal time $\tau$ to physical time $t$. A **system parameter**, not a universal constant (analogous to mass in physics) |
+| **Axiom 4 (Scale)** | $\omega_0 = \lambda_{\min}(H_{\text{eff}}) > 0$ — the minimal nonzero eigenvalue of the effective Hamiltonian | Derived spectral property: $\omega_0 > 0$ for any viable system ($\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow P < P_{\text{crit}}$). Different holons have different $\omega_0$, like different atoms have different masses. See [T-186, Cohesive Closure §5.4](/docs/proofs/categorical/cohesive-closure) |
 
 :::warning Count of independent axioms: four
 Theorem T-87 [T] shows that **A5 (Page–Wootters) is derivable from A1–A4** via the spectral triple construction. Thus UHM has **four independent axioms** (A1–A4). The Page–Wootters constraint (historically “A5”) remains in the documentation for pedagogy but has the status of a **theorem**, not an axiom.
@@ -219,7 +219,7 @@ If $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ is a $J_{Bures}$-cover of $\Gamma
 6. Hence $\Sigma' \to \Sigma \xrightarrow{f} \Gamma$ factors through $\Phi_j$, i.e. lies in the sieve $f^*(S)$
 7. For all $\Sigma'$ in $B_B(\Sigma, \delta)$ $\Longrightarrow$ $f^*(S)$ covers $\Sigma$ $\quad\blacksquare$
 
-**Key point:** **Bures contractivity under CPTP** (uniqueness of the monotone metric by Chentsov–Petz) forces stability of covers.
+**Key point:** **Bures contractivity under CPTP** (minimality of the Bures metric among monotone metrics, Petz classification) forces stability of covers.
 
 **Corollary (meaning of “loc”):**
 

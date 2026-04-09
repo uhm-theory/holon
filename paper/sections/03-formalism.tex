@@ -1,0 +1,444 @@
+% ============================================================================
+% Section 3: Mathematical Formalism
+% ============================================================================
+
+\section{Mathematical formalism}
+\label{sec:formalism}
+
+This section develops the mathematical machinery of UHM from the axioms
+stated in Section~\ref{sec:axioms}. Every definition and formula is derived
+from the primitive $\mathfrak{T} = (\ShInf(\mathcal{C}),\; J_{\mathrm{Bures}},\; \omega_0)$;
+nothing is postulated ad hoc. The complete proofs are available at
+\url{https://holon.sh}; the key results are presented here with sufficient
+detail for verification.
+
+\subsection{The coherence matrix $\Gam$}
+\label{subsec:gamma}
+
+\begin{definition}[Coherence matrix]
+The coherence matrix is an object of $\mathcal{C} = \mathbf{DensityMat}(\mathbb{C}^7)$:
+\begin{equation}
+  \Gam = \sum_{i,j \in \{A,S,D,L,E,O,U\}} \gamma_{ij}\, |i\rangle\langle j|
+  \label{eq:gamma-def}
+\end{equation}
+satisfying three properties:
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Hermiticity:} $\Gam^\dagger = \Gam$, i.e., $\gamma_{ij} = \gamma_{ji}^*$
+  \item \textbf{Positive semi-definiteness:} $\langle\psi|\Gam|\psi\rangle \geq 0$
+        for all $|\psi\rangle \in \Hil$, equivalently all eigenvalues $\lambda_k \geq 0$
+  \item \textbf{Normalization:} $\Tr(\Gam) = 1$
+\end{enumerate}
+\end{definition}
+
+\paragraph{Degrees of freedom.}
+A $7 \times 7$ Hermitian matrix has $7^2 = 49$ real parameters. The trace constraint
+removes one, leaving 48 independent parameters. The automorphism group $G_2 = \mathrm{Aut}(\Oct)$
+acts as a gauge group with $\dim(G_2) = 14$, yielding $48 - 14 = 34$ physically
+distinguishable (gauge-invariant) parameters.
+
+\paragraph{Diagonal and off-diagonal.}
+The diagonal elements $\gamma_{kk}$ represent the weight of each dimension (how much
+of the system's ``resources'' are allocated to perception, structure, dynamics, etc.).
+The off-diagonal elements $\gamma_{ij}$ ($i \neq j$) represent \emph{coherences} ---
+quantum correlations between dimensions. The necessity of complex coherences
+($\gamma_{ij} \in \mathbb{C}$) for non-trivial Gap structure is proved as T-132~\status{T}.
+
+\subsection{Purity and the viability threshold}
+\label{subsec:purity}
+
+\begin{definition}[Purity]
+\begin{equation}
+  P(\Gam) := \Tr(\Gam^2) = \sum_i \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2
+  \label{eq:purity}
+\end{equation}
+\end{definition}
+
+Purity ranges from $P = 1/N = 1/7 \approx 0.143$ (maximally mixed state $\Gam = I/7$,
+complete thermal equilibrium) to $P = 1$ (pure state, maximum organization). It measures
+how structured the system is --- equivalently, how distinguishable from noise.
+
+\begin{theorembox}[Critical purity (T-160) \status{T}]
+For a system with $\Gam \in \Dens(\mathbb{C}^7)$, the viability threshold is:
+\begin{equation}
+  \Pcrit = \frac{2}{N} = \frac{2}{7} \approx 0.286
+  \label{eq:pcrit}
+\end{equation}
+Below this threshold, the system is informationally indistinguishable from thermal noise
+in the Bures metric and cannot sustain regeneration. Five independent derivations converge
+on this value (Appendix~\ref{app:pcrit}):
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Frobenius distinguishability:} $\|\Gam - I/7\|_F^2 > \|I/7\|_F^2$
+        requires $P > 2/7$
+  \item \textbf{Dominant eigenvalue:} $\lambda_{\max} \geq 2/7$ captures $\geq 2/7$
+        of the total weight
+  \item \textbf{Bayesian distinguishability:} expected posterior ratio
+        $\mathbb{E}[\Lambda] > 1$ requires $P > 2/N$
+  \item \textbf{Fano channel:} coherence contraction factor $1/3$ preserves structure
+        only when $P > 2/7$
+  \item \textbf{Self-observation:} minimum reflection $R \geq 1/3$ is self-consistent
+        with $P \geq \Pcrit$
+\end{enumerate}
+\end{theorembox}
+
+The convergence of five independent arguments on a single value is strong evidence that
+$\Pcrit = 2/7$ is not an artifact of any single derivation method but a structural feature
+of the geometry of $\Dens(\mathbb{C}^7)$.
+
+\begin{figure}[H]
+\centering
+\input{figures/phase-diagram}
+\caption{\textbf{Phase diagram in the $P$--$R$ plane.} Because
+$R = 1/(7P)$ is a strict functional identity (Eq.~\ref{eq:reflection}),
+the set of physically realisable $(P,R)$ pairs is the \emph{one-dimensional}
+purple curve, not a 2D region; the colour strips are intervals of $P$ along
+that curve, not 2D phases. The physical domain is
+$P \in [1/7,\,1]$: values $P < 1/7$ are forbidden by Cauchy--Schwarz for any
+density matrix on $\mathbb{C}^7$, and the point $P = 1/7$ is the thermal
+death state $I/7$ (red marker). The Goldilocks arc
+$P \in (2/7,\,3/7]$ is the interval where all L2 conditions can be
+satisfied simultaneously: the open circle at $(2/7,\,1/2)$ marks the
+viability threshold (\emph{excluded}, strict inequality $P > 2/7$) and
+the filled circle at $(3/7,\,1/3)$ marks the upper boundary
+(\emph{included}). For $P > 3/7$ the L2 criterion fails by two
+independent constraints: $R < 1/3$ \emph{and}
+$D_{\mathrm{diff}} < D_{\min} = 2$ (T-124~\status{T}); the latter is
+not visible in this 2D projection.}
+\label{fig:phase-diagram}
+\end{figure}
+
+\paragraph{Comparison with empirical data.}
+The Perturbational Complexity Index (PCI) was introduced by Casali et
+al.~\cite{casali2013} on 32 healthy subjects (plus sleep and sedation
+conditions). It was subsequently validated on a benchmark of 150 subjects
+(healthy controls plus communicative brain-injured subjects in various states
+of consciousness) by Casarotto et al.~\cite{casarotto2016}, who identified an
+empirical cutoff $\mathrm{PCI}^* = 0.31$ that discriminated conscious from
+unconscious states with 100\,\% sensitivity and specificity on the benchmark,
+and 94.7\,\% sensitivity in a clinical MCS cohort. The theoretical prediction
+$\Pcrit = 2/7 \approx 0.286$ differs from the empirical cutoff by approximately
+$8\,\%$, within the calibration uncertainty of any neural-to-$\Gam$ mapping
+$\pi_{\mathrm{bio}}$ (see Section~\ref{sec:experimental}). The value $2/7$ was
+\emph{derived} from the theory, not fitted.
+
+It must be emphasised that PCI and purity $P$ are mathematically distinct
+quantities: PCI is a normalised Lempel--Ziv complexity of TMS-evoked
+spatiotemporal responses, while $P = \Tr(\Gam^2)$ is a Hilbert--Schmidt norm
+on density matrices. The numerical proximity $0.286 \approx 0.31$ is
+suggestive but does not itself constitute evidence; it becomes evidence only
+once the mapping $\pi_{\mathrm{bio}}$ is calibrated (Phase~II,
+\S\ref{sec:experimental}). The coincidence is presented as motivation for
+experimental investigation, not as empirical confirmation.
+
+\subsection{The evolution equation}
+\label{subsec:evolution}
+
+The dynamics of $\Gam$ are governed by the Liouvillian superoperator $\Lind_\Omega$,
+derived from axioms A1--A4 via the Page--Wootters constraint and the structure of $\Omega$
+(Figure~\ref{fig:evolution-flow}):
+
+\begin{figure}[H]
+\centering
+\input{figures/evolution-flow}
+\caption{\textbf{The three forces governing the evolution of $\Gam$.} Unitary dynamics
+(blue) preserves purity; dissipation (red) decreases it; regeneration (green) increases
+it proportionally to E-coherence. Life is the regime where regeneration compensates
+dissipation. Death is the regime where it does not.}
+\label{fig:evolution-flow}
+\end{figure}
+
+\begin{equation}
+  \frac{d\Gam(\tau)}{d\tau} = \Lind_\Omega[\Gam(\tau)]
+  = \underbrace{-i[H, \Gam]}_{\text{unitary}}
+  + \underbrace{\mathcal{D}_\Omega[\Gam]}_{\text{dissipation}}
+  + \underbrace{\Regen[\Gam, E]}_{\text{regeneration}}
+  \label{eq:evolution}
+\end{equation}
+
+\paragraph{Term 1: Unitary dynamics.}
+The effective Hamiltonian emerges from the Page--Wootters mechanism (T-87~\status{T}):
+\begin{equation}
+  H_{\mathrm{eff}}(\tau) = H_{6D} + \langle\tau|H_{\mathrm{int}}|\tau\rangle_O
+  \label{eq:heff}
+\end{equation}
+where $H_{6D}$ governs the six non-temporal dimensions and the second term arises from
+tracing out the O-dimension (internal clock). Time $\tau$ is not an external parameter
+--- it emerges from the correlation between $\Gam$ and the O-sector
+(Section~\ref{subsec:emergent-time}).
+
+\paragraph{Term 2: Dissipation (Lindblad).}
+\begin{equation}
+  \mathcal{D}_\Omega[\Gam] = \sum_k \gamma_k
+  \left( L_k\, \Gam\, L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k,\, \Gam\} \right)
+  \label{eq:dissipation}
+\end{equation}
+
+The Lindblad operators $L_k$ are derived from the atoms of the subobject classifier
+$\Omega$ (L-unification theorem~\status{T}):
+\begin{equation}
+  L_k^{\mathrm{atom}} = |k\rangle\langle k|, \qquad k \in \{A,S,D,L,E,O,U\}
+  \label{eq:lindblad-atoms}
+\end{equation}
+
+The Fano channel extends these to triple projectors (one per Fano line):
+\begin{equation}
+  L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\,\Pi_p
+  = \frac{1}{\sqrt{3}}\bigl(|i\rangle\langle i| + |j\rangle\langle j| + |k\rangle\langle k|\bigr)
+  \label{eq:fano-operators}
+\end{equation}
+where $(i,j,k)$ is the $p$-th Fano line. Key properties of the Fano channel
+$\mathcal{P}_{\mathrm{Fano}}$~\status{T}:
+\begin{itemize}[leftmargin=2em]
+  \item Diagonal preservation: $[\mathcal{P}_{\mathrm{Fano}}(\Gam)]_{ii} = \gamma_{ii}$
+  \item Coherence contraction: $[\mathcal{P}_{\mathrm{Fano}}(\Gam)]_{ij} = \frac{1}{3}\gamma_{ij}$
+        for $i \neq j$
+  \item Phase preservation: $\arg([\mathcal{P}_{\mathrm{Fano}}(\Gam)]_{ij}) = \arg(\gamma_{ij})$
+  \item Completeness: $\sum_{p=1}^{7} \Pi_p = 3I$ (each dimension on exactly 3 Fano lines)
+\end{itemize}
+
+Dissipation always decreases purity: $dP/d\tau|_{\mathcal{D}} \leq 0$~\status{T}. This
+follows from the CPTP property of the Lindblad channel: CPTP maps are contractive in the
+Bures metric (a consequence of the data-processing inequality), moving any state toward
+thermal equilibrium $I/7$. Formally, for $\Gam \neq I/7$:
+\begin{equation}
+  \frac{dP}{d\tau}\bigg|_{\mathcal{D}} = -\Delta(\Lind_0) \cdot (P - 1/7) < 0
+  \label{eq:dissipation-decreases-purity}
+\end{equation}
+where $\Delta(\Lind_0) > 0$ is the spectral gap of the linear Lindbladian (primitivity
+theorem T-39a~\status{T}). Without regeneration, the system converges exponentially to
+$I/7$ (thermal death).
+
+\paragraph{Term 3: Regeneration.}
+The regeneration channel $\Regen$ is the only mechanism that can increase purity. Its
+strength depends on E-coherence:
+\begin{equation}
+  \kappa(\Gam) \;=\; \kappa_{\mathrm{boot}} \;+\; \kappa_0\,\CohE(\Gam).
+  \label{eq:kappa}
+\end{equation}
+Here $\CohE(\Gam) = \|\pi_E(\Gam)\|_{\mathrm{HS}}^2 / \|\Gam\|_{\mathrm{HS}}^2$ is the
+Hilbert--Schmidt projection of $\Gam$ onto the E-sector~\status{T}. The basal floor
+\begin{equation}
+  \kappa_{\mathrm{boot}} \;=\; \frac{\omega_0}{N} \;=\; \frac{\omega_0}{7}\qquad\status{O}
+  \label{eq:kappa-boot}
+\end{equation}
+is the innate (``bootstrap'') regeneration rate set by the convention that the
+minimal-symmetry unit of the adjunction $\mathcal{D}\dashv\Regen$ delivers one ``quantum''
+of regeneration per dimension at scale $\omega_0$. The adaptive amplification
+\begin{equation}
+  \kappa_0(\Gam) \;=\; \omega_0\,\frac{|\gamma_{OE}|\,|\gamma_{OU}|}{\gamma_{OO}}
+  \qquad\status{T}
+  \label{eq:kappa-0}
+\end{equation}
+is the categorical norm $\|\mathrm{Nat}(\mathcal{D}_\Omega,\Regen)\|$ of the natural
+transformation between the dissipation and regeneration functors (T-88~\status{T}, Yoneda
+$+$ Bures $+$ Stinespring; see the master definition at
+\url{https://holon.sh/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0}).
+Both $\kappa_{\mathrm{boot}}$ and $\kappa_0$ are \emph{derived}, not fitted. The full
+regeneration term is
+\begin{equation}
+  \Regen[\Gam, E] \;=\; \kappa(\Gam) \,\bigl(\rho^* - \Gam\bigr)\, g_V(P),
+  \label{eq:regen-full}
+\end{equation}
+where $\rho^* = \vp(\Gam)$ is the categorical self-model (T-96~\status{T}) and $g_V(P)$
+is the viability gate: $g_V(P) = 1$ for $P > \Pcrit$, and $g_V(P) = 0$ otherwise
+(Landauer limit --- below threshold, free energy $\Delta F \leq 0$ forbids regeneration).
+The proportionality $\kappa \propto \CohE$ is the mathematical content of the claim that
+\emph{consciousness drives survival}: the quality of inner experience directly
+determines the rate of regeneration.
+
+\paragraph{Thermodynamic interpretation.}
+The viability gate $g_V(P)$ has a thermodynamic origin. Regeneration requires free energy
+$\Delta F > 0$ --- the system must do work against entropy to increase purity. At $P = \Pcrit$,
+$\Delta F = 0$ exactly: the system is at thermodynamic equilibrium with its dissipative
+environment. Below $\Pcrit$, $\Delta F < 0$ (Landauer's principle~\cite{landauer1961}),
+and regeneration is thermodynamically forbidden --- not merely insufficient, but impossible.
+Free energy $\Delta F > 0$ thus plays the role of Schr\"{o}dinger's ``negentropy''
+\cite{schrodinger1944}: it is the fuel for regeneration of purity. The death spiral
+(Eq.~\ref{eq:death-spiral}) is not a failure of mechanism but a thermodynamic
+inevitability: below threshold, the second law guarantees irreversible decay.
+
+\subsection{The self-modeling operator $\vp$}
+\label{subsec:phi-operator}
+
+\begin{definition}[Self-modeling operator]
+The self-modeling operator is a CPTP (Completely Positive Trace-Preserving) channel:
+\begin{equation}
+  \vp: \Dens(\Hil) \to \Dens(\Hil), \qquad
+  \vp(\Gam) = \sum_m K_m\, \Gam\, K_m^\dagger, \qquad
+  \sum_m K_m^\dagger K_m = I
+  \label{eq:phi-operator}
+\end{equation}
+\end{definition}
+
+The system's self-model $\vp(\Gam)$ is an \emph{approximate} copy of $\Gam$, not an exact
+one (the no-cloning theorem forbids exact copying in quantum mechanics). The canonical
+physical realization (T-62~\status{T}):
+\begin{equation}
+  \vp_k(\Gam) = (1-k)\Gam + k\rho^*
+  \label{eq:phi-physical}
+\end{equation}
+where $\rho^* = \vp(\Gam)$ is the categorical self-model (the fixed point of the
+self-observation process, T-96~\status{T}) and $k = 1 - R$ is the compression parameter.
+
+This definition is not circular: $\rho^*$ is constructed independently via the categorical left adjoint (T-96~\status{T}), yielding a fixed point that $\vp$ converges to iteratively. Starting from any initial guess $\rho^*_0 = I/7$, the sequence $\rho^*_{n+1} = \vp(\Gam; \rho^*_n)$ converges exponentially (Banach fixed-point theorem, Eq.~\ref{eq:fixed-point}).
+
+\paragraph{Fixed-point theorem \status{T} (Banach).}
+Iterating $\vp$ converges to a fixed point:
+\begin{equation}
+  \vp^n(\Gam_0) \to \Gam^*, \qquad
+  \|\vp^n(\Gam_0) - \Gam^*\|_F \leq k^n \|\Gam_0 - \Gam^*\|_F
+  \label{eq:fixed-point}
+\end{equation}
+This convergence is the mathematical content of ``stable self-knowledge'': the system's
+self-model approaches a fixed point that represents its best possible self-understanding.
+
+\subsection{The reflection measure $R$}
+\label{subsec:reflection}
+
+\begin{definition}[Reflection measure]
+\begin{equation}
+  R(\Gam) := 1 - \frac{\|\Gam - I/7\|_F^2}{\|\Gam\|_F^2} = \frac{1}{7P(\Gam)}
+  \label{eq:reflection}
+\end{equation}
+\end{definition}
+
+$R$ measures how well the system models itself, ranging from $R = 1$ (perfect self-model,
+only at $P = 1/7$ --- trivially, when there is nothing to model) to $R \to 0$ as $P \to \infty$
+(which is unphysical since $P \leq 1$). In the physical range:
+
+\begin{itemize}[leftmargin=2em]
+  \item $R = 1$: at $P = 1/7$ (thermal death) --- trivially, the system ``knows itself''
+        because there is nothing to know (uniform noise matches any model)
+  \item $R = 1/3$: at $P = 3/7$ --- upper boundary of the consciousness window
+        ($R$ drops below $\Rth$ for $P > 3/7$)
+  \item $R = 1/(7 \cdot 2/7) = 1/2$: at $P = 2/7$ (viability threshold)
+\end{itemize}
+
+The inverse relationship between $R$ and $P$ reflects a fundamental feature: a more organized system (higher $P$) is further from its dissipative attractor $I/7$, making self-modeling \emph{harder} (lower $R$). The L2 consciousness window $P \in (2/7, 3/7]$ is thus a Goldilocks zone: enough structure to be viable, but not so much that self-modeling becomes impossible. Above $P = 3/7$, the system is too rigid for adaptive self-observation --- differentiation $D_{\mathrm{diff}}$ drops below $\Dmin = 2$ (T-124~\status{T}).
+
+\begin{theorembox}[Reflection threshold (T-40b) \status{T}]
+The reflection threshold for cognitive (L2) consciousness is:
+\begin{equation}
+  \Rth = \frac{1}{3} \approx 0.333
+  \label{eq:rth}
+\end{equation}
+derived from the triadic decomposition $K = 3$ of Lindblad generators (T-40a~\status{T},
+T-57~\status{T}) combined with Bayesian dominance of the self-model over the $K$
+alternatives. Below $R = 1/3$, the system exists but does not model itself sufficiently
+for reflective awareness.
+\end{theorembox}
+
+\subsection{Integration and differentiation}
+\label{subsec:integration}
+
+\begin{definition}[Integration measure $\Phi$]
+\begin{equation}
+  \Phi(\Gam) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}
+  = \frac{P_{\mathrm{off}}}{P_{\mathrm{diag}}}
+  \label{eq:phi}
+\end{equation}
+\end{definition}
+
+$\Phi$ measures the ratio of off-diagonal coherence (binding between dimensions) to
+diagonal weight (individual dimension strength). When $\Phi \geq 1$, the system is
+\emph{coherence-dominated}: the connections between dimensions are at least as strong
+as the dimensions themselves. This is the mathematical content of ``unity of experience.''
+
+\begin{theorembox}[Integration threshold (T-129) \status{T}]
+The integration threshold for L2 consciousness is:
+\begin{equation}
+  \Phith = 1
+  \label{eq:phith}
+\end{equation}
+This is the unique self-consistent value at $\Pcrit = 2/7$: coherent dominance
+($\Phi \geq 1$) requires that off-diagonal coherences collectively outweigh diagonal
+elements.
+\end{theorembox}
+
+\begin{definition}[Experience differentiation $D_{\mathrm{diff}}$]
+\begin{equation}
+  D_{\mathrm{diff}}(\Gam) = \exp\bigl(S_{\mathrm{vN}}(\rho_E)\bigr)
+  \label{eq:ddiff}
+\end{equation}
+where $S_{\mathrm{vN}}(\rho_E) = -\Tr(\rho_E \ln \rho_E)$ is the von Neumann entropy
+of the E-sector reduced density matrix.
+\end{definition}
+
+$D_{\mathrm{diff}}$ measures the diversity of accessible experience states. The threshold
+$\Dmin = 2$~\status{T} (T-151) means the system must distinguish at least two qualitatively
+different experiences for consciousness to obtain.\footnote{The partial trace
+$\rho_E = \Tr_{-E}(\Gam)$ requires the extended 42D formalism (since 7 is prime and
+$\Hil$ does not factor as a tensor product). In the minimal 7D setting, $D_{\mathrm{diff}}$
+is approximated via the spectrum of $\Gam$ restricted to the E-sector. See
+\url{https://holon.sh/docs/core/structure/dimension-e} for the full treatment.}
+
+\subsection{Consciousness measure $C$}
+\label{subsec:consciousness-measure}
+
+\begin{definition}[Consciousness measure]
+\begin{equation}
+  C(\Gam) := \Phi(\Gam) \times R(\Gam)
+  \label{eq:consciousness-measure}
+\end{equation}
+\end{definition}
+
+$C$ quantifies the degree of conscious experience as the product of \emph{integration}
+(how much dimensions are bound into a whole) and \emph{reflection} (how well the system
+models itself). Why the product, not the sum? Because integration without reflection means
+bound but unconscious (like a coma patient whose brain may show residual integration);
+reflection without integration means self-aware but fragmented (like dissociative states).
+Only the product captures ``integrated self-awareness'' --- the conjunction that defines
+L2 consciousness.
+
+\subsection{Levels of consciousness}
+\label{subsec:levels}
+
+\begin{figure}[H]
+\centering
+\input{figures/consciousness-levels}
+\caption{\textbf{Hierarchy of consciousness levels L0--L4.} Each transition requires
+crossing a mathematical threshold. L0 is universal (any $\Gam$); L2 requires all four
+conditions simultaneously; L4 is the geometric ceiling imposed by Fano contraction.}
+\label{fig:levels}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Levels of consciousness and their thresholds. All thresholds are theorems, not postulates.}
+\label{tab:levels}
+\small
+\begin{tabular}{@{}clp{4.5cm}p{3.8cm}l@{}}
+\toprule
+\textbf{Level} & \textbf{Name} & \textbf{Conditions} & \textbf{What it means} & \textbf{Example} \\
+\midrule
+L0 & Formal interiority & $\Gam \in \Dens(\Hil)$ & Any system has an internal aspect & Electron \\
+L1 & Proto-consciousness & $\mathrm{rank}(\rho_E) > 1$ & Non-trivial E-sector & Thermostat \\
+L2 & Cognitive & $P > \tfrac{2}{7},\; R \geq \tfrac{1}{3},\; \Phi \geq 1,\; D_{\mathrm{diff}} \geq 2$ & Full qualia, self-awareness & Waking human \\
+L3 & Meta & L2 $+\; R^{(2)} \geq 1/4$ & Reflects on reflecting & Meditation \\
+L4 & Limit & $\mathrm{SAD} = 3$ (T-142) & Maximum self-reflection depth & Theoretical ceiling \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Emergent time}
+\label{subsec:emergent-time}
+
+Time in UHM is not postulated as an external parameter. It emerges from the internal
+structure of $\Gam$ via the Page--Wootters mechanism (T-87~\status{T}).
+
+The O-dimension (ground/energy) acts as an internal clock. The total system satisfies the
+constraint:
+\begin{equation}
+  [\hat{C},\, \Gam_{\mathrm{total}}] = 0
+  \label{eq:pw-constraint}
+\end{equation}
+where $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\mathrm{int}}$
+is the total energy operator. Conditioning on the O-sector yields effective dynamics:
+\begin{equation}
+  i\frac{\partial}{\partial\tau}\Gam(\tau) = [H_{\mathrm{eff}}(\tau),\, \Gam(\tau)]
+  \label{eq:pw-dynamics}
+\end{equation}
+
+Discrete time from the temporal modality $\triangleright: S_i \mapsto S_{(i+1) \bmod 7}$
+gives $\tau_n = \triangleright^n(\mathrm{now})$ with period $\mathbb{Z}_7$. In the
+thermodynamic limit of $M$ coupled holons: $\mathbb{Z}_{7^M} \to \mathbb{R}$
+(continuous time emerges, T-118~\status{T}).
