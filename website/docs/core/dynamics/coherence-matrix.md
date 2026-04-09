@@ -33,7 +33,7 @@ The equalizer analogy captures the essence well, but $\Gamma$ is richer: coheren
 **The Coherence Matrix** $\Gamma$ is a linear operator on a Hilbert space $\mathcal{H}$, which is the mathematical representation of the state of a [Holonom](../structure/holon).
 
 :::info Ontological Status
-According to [Axiom Ω⁷](../foundations/axiom-omega), the only primitive is the **∞-topos Sh_∞(𝒞)**. The coherence matrix $\Gamma$ is an **object** of this category: $\Gamma \in \text{Ob}(\mathcal{C})$.
+According to [Axiom Ω⁷](../foundations/axiom-omega), the only primitive is the **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$**. The coherence matrix $\Gamma$ is an **object** of this category: $\Gamma \in \text{Ob}(\mathcal{C})$.
 
 $\Gamma$ is not a model of reality, but reality itself. From the structure of the ∞-topos, the base space $X = |N(\mathcal{C})|$, time, metric, and all physical aspects are derived.
 :::
@@ -725,7 +725,7 @@ The [Fano plane](../../proofs/minimality/theorem-octonionic-derivation#плос�
 :::
 
 **Related documents:**
-- [Axiom Ω⁷](../foundations/axiom-omega) — ∞-topos Sh_∞(𝒞) as primitive
+- [Axiom Ω⁷](../foundations/axiom-omega) — ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as primitive
 - [Evolution](./evolution) — dynamics of Γ(τ) with internal time
 - [Emergent time](../../proofs/dynamics/emergent-time) — τ from the structure of Γ
 - [Viability](./viability) — measure P and conditions of existence

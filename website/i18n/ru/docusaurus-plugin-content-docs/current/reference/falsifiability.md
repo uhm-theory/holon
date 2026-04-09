@@ -463,12 +463,12 @@ $$
 **Связанные документы:**
 - [Глоссарий](./glossary) — определения терминов
 - [Реестр статусов](/docs/reference/status-registry) — полный реестр результатов с классификацией [Т]/[Г]/[П]/[И]/[О]
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос Sh_∞(𝒞) как примитив
+- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос $\mathrm{Sh}_\infty(\mathcal{C})$ как примитив
 - [Математический аппарат](/docs/reference/specification) — формальные определения $\Gamma$, $d_{\mathrm{FS}}$
 - [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4, пороги $R_{\text{th}}$, $\Phi_{\text{th}}$, $R^{(n)}_{\text{th}}$
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, категории $\mathbf{DensityMat}$ и $\mathbf{Exp}$
 - [Теорема минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — доказательство $N = 7$
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
 - [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
 - [Теоремы](/docs/applied/coherence-cybernetics/theorems) — формальные результаты
 - [Предсказания КК](/docs/applied/coherence-cybernetics/predictions) — КК-специфичные критерии фальсификации

@@ -109,7 +109,7 @@ The partial trace $\mathrm{Tr}_{-E}$ formally requires a tensor structure $\math
 - $\gamma_{EE}$ — diagonal element (population of E) — **[Т]**
 - $\gamma_{Ei}$ — coherences with other dimensions — **[Т]**
 - $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-coherence (HS-projection)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[Т]**, exact measure
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — full reduced matrix — **[Т]** (computable via PW-reconstruction from Γ ∈ 𝒟(ℂ⁷))
+- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — full reduced matrix — **[Т]** (computable via PW-reconstruction from Γ ∈ $\mathcal{D}(\mathbb{C}^7)$)
 - $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation — **[Т]** (via PW-reconstruction)
 - $C = \Phi \times R$ — [canonical measure of consciousness](/docs/proofs/consciousness/operational-closure#t-140) **[Т]** (T-140; $D_{\text{diff}} \geq 2$ is a separate viability condition)
 :::

@@ -2,13 +2,13 @@
 slug: /proofs/dynamics/emergent-time
 sidebar_position: 2
 title: Theorem on emergent time
-description: Mathematical proof of the emergence of time from the structure of category 𝒞
+description: Mathematical proof of the emergence of time from the structure of category C
 ---
 
 # Theorem on Emergent Time
 
 :::info Status: [Т] Formalized
-Time is **derived** from the structure of category 𝒞, not postulated as an external parameter. The arrow of time is the **stratum collapse** towards the terminal object T.
+Time is **derived** from the structure of category $\mathcal{C}$, not postulated as an external parameter. The arrow of time is the **stratum collapse** towards the terminal object T.
 
 **Spatial analogue:** The spatial manifold $\Sigma^3$ is also derived from categorical structure — [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold) (T-119 [Т]).
 :::
@@ -52,7 +52,7 @@ From [Axiom Ω⁷](/docs/core/foundations/axiom-omega) it follows:
 
 > "The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is the unique primitive."
 
-**Logical consequence:** Time must be a **function of the structure of category 𝒞**:
+**Logical consequence:** Time must be a **function of the structure of category $\mathcal{C}$**:
 
 $$
 \tau = \tau(\text{Mor}(\mathcal{C})) \quad \text{or} \quad \tau = \tau(\text{strata } X)
@@ -72,7 +72,7 @@ $$
 ## 2. Time from temporal modality on Ω {#время-из-модальности}
 
 :::warning Key theorem
-Time is **derived** from the structure of the subobject classifier Ω ∈ Sh_∞(𝒞) via the temporal modality ▷. This unifies:
+Time is **derived** from the structure of the subobject classifier Ω ∈ $\mathrm{Sh}_\infty(\mathcal{C})$ via the temporal modality ▷. This unifies:
 - [L-dimension](/docs/core/structure/dimension-l) (logic)
 - Lindblad operators L_k (dissipation)
 - Discrete time τ (evolution)
@@ -88,7 +88,7 @@ The temporal modality ▷ is defined **algebraically** via a ℤ_N-action on ato
 
 **Step 1: Atoms of the classifier**
 
-For base category 𝒞 = 𝒟(ℂ^N) the classifier Ω decomposes into atoms:
+For base category $\mathcal{C} = \mathcal{D}(\mathbb{C}^N)$ the classifier Ω decomposes into atoms:
 
 $$
 \mathcal{T}_\Omega = \{S_0, S_1, \ldots, S_{N-1}\}
@@ -101,7 +101,7 @@ S_i = |i\rangle\langle i|, \quad i \in \{0, 1, \ldots, N-1\}
 $$
 
 :::warning Constructive definition [О]
-The identification of atoms of the classifier Ω with projectors |i⟩⟨i| is a **constructive definition**, consistent with the axiomatics, not a derivation from abstract ∞-topos theory. Justification: (1) in D(ℂ⁷) the minimal non-trivial subobjects are rank-1 projectors; (2) the Bures topology (A2) singles them out as atoms of J_{Bures}-covers; (3) the result is consistent with L-unification ([Т]) and Fano structure ([Т]). Formal derivation from Lurie's axioms for Sh_∞(𝒞) is [П] (open program).
+The identification of atoms of the classifier Ω with projectors |i⟩⟨i| is a **constructive definition**, consistent with the axiomatics, not a derivation from abstract ∞-topos theory. Justification: (1) in D(ℂ⁷) the minimal non-trivial subobjects are rank-1 projectors; (2) the Bures topology (A2) singles them out as atoms of J_{Bures}-covers; (3) the result is consistent with L-unification ([Т]) and Fano structure ([Т]). Formal derivation from Lurie's axioms for $\mathrm{Sh}_\infty(\mathcal{C})$ is [П] (open program).
 :::
 
 **Step 2: ℤ_N-action on atoms**
@@ -328,7 +328,7 @@ $$
 
 ### 2.5 Temporal modal operators
 
-In the ∞-topos Sh_∞(𝒞), standard temporal operators are defined:
+In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$, standard temporal operators are defined:
 
 **Definition (Temporal logic):**
 
@@ -460,7 +460,7 @@ The tensor decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}
 
 **Axiom 5 (Page–Wootters):**
 
-Let ▷: Sh_∞(𝒞) → Sh_∞(𝒞) be the temporal modality. It is postulated:
+Let ▷: $\mathrm{Sh}_\infty(\mathcal{C})$ → $\mathrm{Sh}_\infty(\mathcal{C})$ be the temporal modality. It is postulated:
 
 1. **Clock space:** $\mathcal{H}_O := \text{span}\{|\tau_k\rangle : \triangleright^k(|0\rangle) = \zeta^k |\tau_k\rangle\}$
 
@@ -1196,7 +1196,7 @@ The circularity problem is fully resolved in the ∞-categorical formulation of 
 
 #### Reformulation in ∞-category
 
-In the ∞-category 𝒞_∞ the terminal object T is defined by the condition:
+In the ∞-category $\mathcal{C}_\infty$ the terminal object T is defined by the condition:
 
 $$
 \text{Map}_{\mathcal{C}_\infty}(\Gamma, T) \simeq *
@@ -1511,7 +1511,7 @@ $$
 X := |N(\mathcal{C})|
 $$
 
-where N(𝒞) is the nerve of the category of Holons.
+where $N(\mathcal{C})$ is the nerve of the category of Holons.
 
 ### 10.2 Stratification of X
 

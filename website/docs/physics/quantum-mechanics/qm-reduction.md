@@ -244,7 +244,7 @@ The full category hierarchy connecting UHM to physics:
 
 ```mermaid
 graph TD
-    Sh["Sh∞(𝒞)"] -->|"Ω (classifier)"| Hol["Hol"]
+    Sh["Sh∞(C)"] -->|"Ω (classifier)"| Hol["Hol"]
     Hol -->|"π_QM"| QM["QM"]
     Hol -->|"π_Class"| DM["DensityMat"]
     QM -->|"ℏ → 0"| CM["ClassMech"]

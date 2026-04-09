@@ -308,10 +308,10 @@ The number 7 dimensions is derived by three **independent** routes converging to
 | Track | Method | Result | Status |
 |-------|--------|--------|--------|
 | **Functional** (Theorem S) | (AP)+(PH)+(QG) → N ≥ 7 | Minimality | [T] |
-| **Algebraic** (octonions) | Hurwitz → Im(𝕆) → dim = 7 | Maximality | [T] |
+| **Algebraic** (octonions) | Hurwitz → $\mathrm{Im}(\mathbb{O})$ → dim = 7 | Maximality | [T] |
 | **Categorical** (T-185) | Cohesive ∞-topos → 7 modalities | Canonicity | [T] |
 
-The coincidence of three answers is **not accidental** but reflects the unity of the mathematical structure: differential cohesion (T-185) reproduces the octonion algebra (Im(𝕆)) through functorial semantics, and functional minimality (Theorem S) ensures that no simpler structure is possible.
+The coincidence of three answers is **not accidental** but reflects the unity of the mathematical structure: differential cohesion (T-185) reproduces the octonion algebra ($\mathrm{Im}(\mathbb{O})$) through functorial semantics, and functional minimality (Theorem S) ensures that no simpler structure is possible.
 
 **Corollary (Categorical status of semantic names).**
 The UHM dimensions are **not arbitrary conventions [О]** but projections of **canonical categorical constructions [T]** onto natural language. "Articulation" is a translation of $\Pi$ (Shape), "Logic" is a translation of $\sharp$ (Sharp), etc. The categorical modalities themselves are uniquely determined by the cohesive ∞-topos structure.
@@ -327,12 +327,12 @@ The UHM dimensions are **not arbitrary conventions [О]** but projections of **c
 ## Octonionic interpretation {#октонионная-интерпретация}
 
 :::info Structural derivation of N = 7 via octonions
-The number 7 dimensions receives a **second, independent justification** through the [structural derivation](../../proofs/minimality/theorem-octonionic-derivation): if the space of internal degrees of freedom is isomorphic to Im(𝕆) (the imaginary part of the octonions), then $N = \dim(\text{Im}(\mathbb{O})) = 7$.
+The number 7 dimensions receives a **second, independent justification** through the [structural derivation](../../proofs/minimality/theorem-octonionic-derivation): if the space of internal degrees of freedom is isomorphic to $\mathrm{Im}(\mathbb{O})$ (the imaginary part of the octonions), then $N = \dim(\text{Im}(\mathbb{O})) = 7$.
 :::
 
 The seven imaginary units of the octonions $e_1, \ldots, e_7$ correspond to the seven dimensions of the Holon. This correspondence brings:
 
-- **$G_2$-symmetry:** Aut(𝕆) = $G_2$ ⊂ SO(7) — a 14-parameter group preserving the multiplication structure. $G_2$ is the "gauge group" of the seven-dimensional space: it determines which transformations between dimensions preserve the octonionic multiplication structure.
+- **$G_2$-symmetry:** $\mathrm{Aut}(\mathbb{O})$ = $G_2$ ⊂ SO(7) — a 14-parameter group preserving the multiplication structure. $G_2$ is the "gauge group" of the seven-dimensional space: it determines which transformations between dimensions preserve the octonionic multiplication structure.
 - **The Fano plane:** 7 triplets $(e_i, e_j, e_k)$ define associative sub-triples of dimensions. Each triplet is a "team" within which operations are associative (order does not matter). Between triplets — non-associativity (order matters). The Fano plane determines which triplets "get along" and which do not.
 - **Alternativity:** Any two dimensions generate an associative subalgebra (Artin's theorem [Т]); non-associativity appears only when three or more interact. This means: pairwise connections $\gamma_{ij}$ are always "well-defined"; complications arise only at triple and higher-order interactions.
 
@@ -565,7 +565,7 @@ Each dimension is then examined in detail in its own chapter. We recommend readi
 **Related documents:**
 - [Holon](./holon) — what the configuration $\Gamma$ is
 - [Theorem S](../../proofs/minimality/theorem-minimality-7) — proof of 7D minimality (Track A)
-- [Structural derivation via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7 (Track B)
+- [Structural derivation via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7 (Track B)
 - [Uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) — proof of basis uniqueness
 - [Axiom (AP+PH+QG+V)](../foundations/axiom-septicity) — conditions on the Holon
 - [Emergent time](../../proofs/dynamics/emergent-time) — time from the structure of Γ

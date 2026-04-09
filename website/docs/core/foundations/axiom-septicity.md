@@ -43,7 +43,7 @@ A **holon** is an autonomous sub-system with 7D structure satisfying four condit
 :::info Two-track justification of N = 7
 Axiom 3 ($N = 7$) is supported by two independent routes:
 - **Track A** (this document): Theorem S—(AP)+(PH)+(QG) → N ≥ 7
-- **Track B**: [Structural derivation via octonions](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → 𝕆 → dim Im(𝕆) = 7
+- **Track B**: [Structural derivation via octonions](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7
 :::
 
 [Axiom Ω⁷](./axiom-omega#аксиоматика) fixes **five explicit axioms** of the theory:
@@ -821,7 +821,7 @@ $$(K-1)P(H_1) > 1 - P(H_1)$$
 $$KP(H_1) > 1$$
 $$P(H_1) > \frac{1}{K}$$
 
-**(e)** For $K = 3$ (Aut / 𝒟 / ℛ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) [T]):
+**(e)** For $K = 3$ (Aut / $\mathcal{D}$ / ℛ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) [T]):
 $$P(H_1) > \frac{1}{3}$$
 
 **(f)** Identifying $P(H_1) = R$, where $R$ measures proximity of $\Gamma$ to $\varphi(\Gamma)$:
@@ -1216,7 +1216,7 @@ $$
 - [Axiom Ω⁷](./axiom-omega)—five UHM axioms (∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ as sole primitive)
 - [Consequences](./consequences)—derivations from the axioms
 - [7D minimality theorem](../../proofs/minimality/theorem-minimality-7)—full formal proof (Track A)
-- [Octonion structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → 𝕆 → N=7 (Track B)
+- [Octonion structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → $\mathbb{O}$ → N=7 (Track B)
 - [Emergent time](../../proofs/dynamics/emergent-time)—$\tau$ from structure of Γ
 - [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy)—levels L0→L1→L2→L3→L4
 - [Evolution equation](../dynamics/evolution)—dynamics of $\Gamma(\tau)$

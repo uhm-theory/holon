@@ -463,12 +463,12 @@ Boundaries do not mean a halt to development. Open directions:
 **Related documents:**
 - [Glossary](./glossary) — definitions of terms
 - [Status registry](/docs/reference/status-registry) — complete registry of results with classification [T]/[H]/[P]/[I]/[D]
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos Sh_∞(𝒞) as primitive
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as primitive
 - [Mathematical apparatus](/docs/reference/specification) — formal definitions of $\Gamma$, $d_{\mathrm{FS}}$
 - [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4, thresholds $R_{\text{th}}$, $\Phi_{\text{th}}$, $R^{(n)}_{\text{th}}$
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, categories $\mathbf{DensityMat}$ and $\mathbf{Exp}$
 - [7D minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — proof of $N = 7$
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
 - [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
 - [Theorems](/docs/applied/coherence-cybernetics/theorems) — formal results
 - [CC predictions](/docs/applied/coherence-cybernetics/predictions) — CC-specific falsification criteria

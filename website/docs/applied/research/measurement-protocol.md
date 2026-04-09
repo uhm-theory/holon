@@ -23,7 +23,7 @@ This document describes a **research program** for operationalizing the coherenc
 
 ## Central Problem
 
-UHM theory defines $\Gamma$ as an **object of the ∞-topos Sh_∞(𝒞)** ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)). However, the theory does not specify:
+UHM theory defines $\Gamma$ as an **object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$** ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)). However, the theory does not specify:
 
 1. Which **observables** in an AI system correspond to the elements $\gamma_{ij}$
 2. How to **reconstruct** $\Gamma$ from available data

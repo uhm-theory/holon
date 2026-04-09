@@ -34,7 +34,7 @@ For mathematical notation see [Notation](./notation). For verification criteria 
 | Term | Definition |
 |------|------------|
 | **Base space X** | $X = \|N(\mathcal{C})\|$ — [geometric realisation of the nerve](/docs/core/foundations/spacetime#базовое-пространство) of category $\mathcal{C}$; derived endogenously, not postulated |
-| **Nerve N(𝒞)** | [Simplicial set](/docs/core/foundations/spacetime#нерв-категории): 0-simplices = objects, n-simplices = chains of morphisms |
+| **Nerve $N(\mathcal{C})$** | [Simplicial set](/docs/core/foundations/spacetime#нерв-категории): 0-simplices = objects, n-simplices = chains of morphisms |
 | **Terminal object T** | $T = \Gamma^*$ — [global attractor](/docs/core/foundations/axiom-omega#свойство-3); $\forall\Gamma, \exists! f: \Gamma \to T$; ensures contractibility of X |
 | **Stratification** | Decomposition $X = \bigsqcup_\alpha S_\alpha$ into [strata](/docs/core/foundations/spacetime#стратификация-x); $S_0 = \{T\}$ |
 | **Local–global dichotomy** | [Principle](/docs/core/foundations/spacetime#локально-глобальная-дихотомия): $H^*(X) = 0$ globally (monism), $H^*_{loc}(X,T) \neq 0$ locally (physics) |
@@ -413,4 +413,4 @@ See [Physics overview](/docs/physics/overview) for a full description of the phy
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, ∞-groupoid, ∞-topos, derived categories
 - [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
 - [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7

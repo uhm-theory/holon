@@ -441,9 +441,9 @@ dim = 7 (fundamental)                    Effective dimension
 
 ## 9. Emergent 3+1 Geometry {#геометрия-3+1}
 
-### Decomposition of Im(𝕆) under SU(3)
+### Decomposition of $\mathrm{Im}(\mathbb{O})$ under SU(3)
 
-:::tip Theorem 5.1 (Decomposition of Im(𝕆) under SU(3) ⊂ G₂) [Т]
+:::tip Theorem 5.1 (Decomposition of $\mathrm{Im}(\mathbb{O})$ under SU(3) ⊂ G₂) [Т]
 
 $$
 \mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{C}^3
@@ -499,7 +499,7 @@ The O-direction is stabilized by $SU(3)$ (time), spatial directions rotate under
 
 ### Connection with Physics
 
-| Element | In 𝕆-decomposition | In physics |
+| Element | In $\mathbb{O}$-decomposition | In physics |
 |---|---|---|
 | $\mathbb{R}^1$ (singlet) | O-direction | Time |
 | $\mathbb{C}^3$ ($3 + \bar{3}$) | Orthogonal complement | 3D space |

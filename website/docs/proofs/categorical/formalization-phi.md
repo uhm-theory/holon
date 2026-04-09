@@ -1616,7 +1616,7 @@ If $\varphi(\tau, \cdot)$ is contracting with constant $k < 1$ for all $\tau$, a
 ### Octonionic context of self-modeling {#октонионный-контекст}
 
 :::note Self-modeling and alternativity [И]
-In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), the self-modeling operator $\varphi$ acts on the space Im(𝕆). Alternativity of octonions (Artin's theorem [Т]) guarantees that $\varphi$ is associative when acting on any pair of dimensions, but may exhibit non-associativity when acting simultaneously on three or more dimensions.
+In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), the self-modeling operator $\varphi$ acts on the space $\mathrm{Im}(\mathbb{O})$. Alternativity of octonions (Artin's theorem [Т]) guarantees that $\varphi$ is associative when acting on any pair of dimensions, but may exhibit non-associativity when acting simultaneously on three or more dimensions.
 
 This is consistent with the fixed point property $\varphi(\Gamma^*) = \Gamma^*$: self-consistency is achieved in the full 7-dimensional space where non-associativity is integrated into the structure. Bridge [Т] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::

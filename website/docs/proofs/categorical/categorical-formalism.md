@@ -34,7 +34,7 @@ In this document:
 13. [Derived categories and IC-cohomologies](#производные-категории)
 14. [∞-topos as the true primitive](#infty-топос-как-истинный-примитив)
 15. [L-unification](#l-унификация)
-    - [15.3 Adjunction 𝒟_Ω ⊣ ℛ](#сопряжение-adjunction)
+    - [15.3 Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$](#сопряжение-adjunction)
 17. [Categorical completeness of UHM](#категориальная-полнота)
 
 ---
@@ -2208,7 +2208,7 @@ The ∞-topos structure allows formalizing [free will](/docs/consciousness/ethic
 
 **Definition 14.2 (Freedom: ∞-categorical motivation):**
 
-For a state Γ ∈ Ob(𝒞) the ∞-categorical definition:
+For a state Γ ∈ $\mathrm{Ob}(\mathcal{C})$ the ∞-categorical definition:
 
 $$
 \mathrm{Freedom}(\Gamma) := \pi_0\left(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}}\right)
@@ -2403,7 +2403,7 @@ $$
 
 The evolution of predicates χ ∈ L under ▷ **is** the dynamics of the system. See [internal logic of Ω](/docs/core/foundations/axiom-omega#внутренняя-логика).
 
-### 15.3 Adjunction 𝒟_Ω ⊣ ℛ and derivation of κ₀ {#сопряжение-adjunction}
+### 15.3 Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ and derivation of κ₀ {#сопряжение-adjunction}
 
 :::warning Key theorem
 The regeneration rate $\kappa_0$ is **categorically derived** from the adjunction of dissipation and regeneration functors. This transforms a phenomenological parameter into a structural quantity.
@@ -2523,7 +2523,7 @@ $$
 |----------|-------|----------|
 | $\kappa_0(\Gamma)$ | Regeneration rate for state Γ | Norm of η on Γ |
 | $\kappa_{\text{bootstrap}}$ | Minimal regeneration for viability | Infimum over admissible Γ |
-| $\omega_0$ | Characteristic frequency of the system (parameter, not a universal constant) | Primitive 𝔗 |
+| $\omega_0$ | Characteristic frequency of the system (parameter, not a universal constant) | Primitive $\mathfrak{T}$ |
 
 **Note:** κ₀ depends on state Γ through coherences $\gamma_{OE}, \gamma_{OU}, \gamma_{OO}$. See [master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0).
 
@@ -2551,7 +2551,7 @@ L-unification closes the following open questions:
 | Why 7 dimensions? | Minimal base for Ω ∩ Γ ≠ ∅ | [Theorem 7.1](/docs/proofs/minimality/theorem-minimality-7) |
 | Source of CPTP | Completeness of Ω | §15.2.2 |
 | Emergence of τ | Modality ▷ on Ω | §15.2.3 |
-| Derivation of κ₀ | Unit of adjunction 𝒟_Ω ⊣ ℛ | §15.3 |
+| Derivation of κ₀ | Unit of adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ | §15.3 |
 | Internal logic | Ω-types in HoTT | [Axiom Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика) |
 | Nonlinearity and positivity | CPTP-structure of $\mathcal{R}_\alpha$ | [§15.3.1](/docs/core/dynamics/evolution#сохранение-положительности) |
 
@@ -2600,7 +2600,7 @@ This completes the categorical formalization program: the 5 axioms Ω¹–Ω⁵ 
 12. **Cohomological monism** — H*(X) = 0 globally, H*_loc ≠ 0 locally (section 13)
 13. **∞-topos of Holons $\mathcal{T}_H$** — internal logic HoTT (section 13)
 14. **∞-topos as the true primitive** — completeness, minimality, resolution of teleological determinism (section 14)
-15. **L-unification** — L ≅ Ω ≅ source(L_k), derivation of κ₀ from adjunction 𝒟_Ω ⊣ ℛ (section 15)
+15. **L-unification** — L ≅ Ω ≅ source(L_k), derivation of κ₀ from adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ (section 15)
 
 ### Resolved questions
 
@@ -2611,7 +2611,7 @@ This completes the categorical formalization program: the 5 axioms Ω¹–Ω⁵ 
 | Arrow of time | Collapse of strata to T |
 | Teleological determinism | ∞-topos: contractibility ≠ uniqueness of path (section 14) |
 | Origin of L_k | Atoms of classifier Ω: $L_k = \sqrt{\chi_{S_k}}$ (section 15) |
-| Derivation of κ₀ | Unit of adjunction 𝒟_Ω ⊣ ℛ (section 15) |
+| Derivation of κ₀ | Unit of adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ (section 15) |
 | Unification of L/Ω/L_k | L ≅ Ω ≅ source(L_k) — unified primitive (section 15) |
 
 ### Connection to UHM
@@ -2639,7 +2639,7 @@ The [structural derivation N=7](../minimality/theorem-octonionic-derivation) thr
 - **Associahedra (Stasheff polytopes):** Combinatorial spaces parameterizing ways of bracketing. For $n$ elements the associahedron $K_n$ has dimension $n-2$.
 - **$G_2$-categories:** Categories enriched over $G_2$-representations formalize $G_2$-covariance.
 
-**Connection to the UHM ∞-topos [С]:** The non-associativity of 𝕆 may manifest as a nontrivial $A_\infty$-structure on the morphisms of the ∞-topos Sh_∞(𝒞). Bridge [Т] (closed, T15).
+**Connection to the UHM ∞-topos [С]:** The non-associativity of $\mathbb{O}$ may manifest as a nontrivial $A_\infty$-structure on the morphisms of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Bridge [Т] (closed, T15).
 :::
 
 ---

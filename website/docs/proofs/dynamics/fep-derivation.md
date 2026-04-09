@@ -797,7 +797,7 @@ $$
 :::
 
 :::tip Compatibility with octonionic norm [Т]
-The variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of 𝕆 ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [Т] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
+The variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of $\mathbb{O}$ ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [Т] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
 :::
 
 ---

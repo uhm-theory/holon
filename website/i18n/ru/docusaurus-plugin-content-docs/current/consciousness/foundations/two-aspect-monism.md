@@ -166,7 +166,7 @@ graph LR
 ### Теорема о расщеплении пространства морфизмов {#теорема-расщепление}
 
 :::tip Теорема (Расщепление Map) [Т]
-В ∞-топосе $\mathbf{Sh}_\infty(\mathcal{C})$ для любого Γ ∈ Ob(𝒞) пространство морфизмов в классификатор Ω **расщепляется**:
+В ∞-топосе $\mathbf{Sh}_\infty(\mathcal{C})$ для любого Γ ∈ $\mathrm{Ob}(\mathcal{C})$ пространство морфизмов в классификатор Ω **расщепляется**:
 
 $$
 \text{Map}(\Gamma, \Omega) \twoheadrightarrow \text{Map}_{\text{ext}}(\Gamma, \Omega), \quad \text{слой: } \text{Map}_{\text{int}}(\Gamma, \Omega)
@@ -254,7 +254,7 @@ $$
 ### Теорема о двухаспектности как свойстве примитива {#теорема-двухаспектность}
 
 :::tip Теорема (Двухаспектность) [Т]
-Для любого Γ ∈ Ob(𝒞) существует каноническое разложение:
+Для любого Γ ∈ $\mathrm{Ob}(\mathcal{C})$ существует каноническое разложение:
 
 $$
 \forall \Gamma: \quad \Gamma \simeq (\Gamma_{\text{ext}}, \Gamma_{\text{int}}, \varphi)
@@ -292,7 +292,7 @@ $$
 
 ```mermaid
 graph TB
-    subgraph "∞-топос Sh_∞(𝒞)"
+    subgraph "∞-топос Sh_∞(C)"
         Gamma["Γ (примитив)"]
         GammaExt["Γ_ext (физика)"]
         GammaInt["Γ_int (опыт)"]

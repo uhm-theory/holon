@@ -630,7 +630,7 @@ Status: **[Т]**
 
 **Step 2. Structural distinguishability.**
 
-| Property | Aut (Hamiltonian) | 𝒟 (Dissipation) | ℛ (Regeneration) |
+| Property | Aut (Hamiltonian) | $\mathcal{D}$ (Dissipation) | ℛ (Regeneration) |
 |----------|:---:|:---:|:---:|
 | Generator spectrum | Purely imaginary | Re < 0 | Re < 0 |
 | Action on P | Preserves | Decreases | Increases |
@@ -652,7 +652,7 @@ An arbitrary generator of a Markovian semigroup on $M_7(\mathbb{C})$ compatible 
 
 ### Corollary: K = 3 for the reflexion threshold {#следствие-k3}
 
-The triadic decomposition defines **exactly three** behavioural modes of the system: autonomous (ℛ dominates, attractor $\rho_*$), chaotic (𝒟 dominates, attractor $I/N$), external (Aut dominates, attractor $\sigma_{\text{env}}$). The number of competing hypotheses $K = 3$ is a structural consequence of the axioms, not a postulate.
+The triadic decomposition defines **exactly three** behavioural modes of the system: autonomous (ℛ dominates, attractor $\rho_*$), chaotic ($\mathcal{D}$ dominates, attractor $I/N$), external (Aut dominates, attractor $\sigma_{\text{env}}$). The number of competing hypotheses $K = 3$ is a structural consequence of the axioms, not a postulate.
 
 Hence: $R_{\text{th}} = 1/K = 1/3$ **[Т]** — see [Theorem on the reflexion threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
 

@@ -510,7 +510,7 @@ def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
 
     Три члена:
     1. Унитарный: -i[H_eff, Γ]  (см. /docs/core/dynamics/evolution#1-унитарный-член)
-    2. Диссипативный: 𝒟[Γ]  (см. /docs/core/dynamics/evolution#логический-лиувиллиан)
+    2. Диссипативный: D[Γ]  (см. /docs/core/dynamics/evolution#логический-лиувиллиан)
     3. Регенеративный: ℛ[Γ, E]  (см. /docs/core/dynamics/evolution#3-регенеративный-член)
     """
     gamma = state.gamma.copy()
@@ -519,7 +519,7 @@ def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
     U = expm(-1j * state.hamiltonian * dt)
     gamma = U @ gamma @ U.conj().T
 
-    # 2. Диссипация: 𝒟[Γ] (уравнение Линдблада)
+    # 2. Диссипация: D[Γ] (уравнение Линдблада)
     for L_k in state.lindblad_ops:
         gamma += dt * (
             L_k @ gamma @ L_k.conj().T

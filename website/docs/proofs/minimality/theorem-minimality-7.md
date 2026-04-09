@@ -1126,7 +1126,7 @@ $$
 ---
 
 **Related documents:**
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — Track B: P1+P2 [Т] → 𝕆 → N=7
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — Track B: P1+P2 [Т] → $\mathbb{O}$ → N=7
 - [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
 - [Seven dimensions](/docs/core/structure/dimensions) — basis $\{A, S, D, L, E, O, U\}$
 - [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$

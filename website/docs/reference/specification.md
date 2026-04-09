@@ -162,7 +162,7 @@ where:
 - $\mathrm{Hist}$ — history space (see below)
 - $\times_{\mathrm{Spec}}$ — fibred product over the spectrum
 
-### Context Space 𝒞
+### Context Space $\mathcal{C}$
 
 **Definition:** The context space contains the states of all dimensions except [E](/docs/core/structure/dimension-e):
 
@@ -453,7 +453,7 @@ $$
 
 ## Octonionic Algebra {#октонионная-алгебра}
 
-:::info Definition of 𝕆 ([structural derivation](../proofs/minimality/theorem-octonionic-derivation))
+:::info Definition of $\mathbb{O}$ ([structural derivation](../proofs/minimality/theorem-octonionic-derivation))
 **Octonions** $\mathbb{O}$ — 8-dimensional normed division algebra over $\mathbb{R}$:
 
 $$

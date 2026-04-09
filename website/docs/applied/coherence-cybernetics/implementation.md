@@ -510,7 +510,7 @@ def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
 
     Three terms:
     1. Unitary: -i[H_eff, Γ]  (see /docs/core/dynamics/evolution#1-unitary-term)
-    2. Dissipative: 𝒟[Γ]  (see /docs/core/dynamics/evolution#логический-лиувиллиан)
+    2. Dissipative: D[Γ]  (see /docs/core/dynamics/evolution#логический-лиувиллиан)
     3. Regenerative: ℛ[Γ, E]  (see /docs/core/dynamics/evolution#3-регенеративный-член)
     """
     gamma = state.gamma.copy()
@@ -519,7 +519,7 @@ def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
     U = expm(-1j * state.hamiltonian * dt)
     gamma = U @ gamma @ U.conj().T
 
-    # 2. Dissipation: 𝒟[Γ] (Lindblad equation)
+    # 2. Dissipation: D[Γ] (Lindblad equation)
     for L_k in state.lindblad_ops:
         gamma += dt * (
             L_k @ gamma @ L_k.conj().T

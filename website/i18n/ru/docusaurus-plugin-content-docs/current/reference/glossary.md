@@ -34,7 +34,7 @@ description: Определения основных терминов теори
 | Термин | Определение |
 |--------|-------------|
 | **Базовое пространство X** | $X = \|N(\mathcal{C})\|$ — [геометрическая реализация нерва](/docs/core/foundations/spacetime#базовое-пространство) категории $\mathcal{C}$; выводится эндогенно, не постулируется |
-| **Нерв N(𝒞)** | [Симплициальное множество](/docs/core/foundations/spacetime#нерв-категории): 0-симплексы = объекты, n-симплексы = цепочки морфизмов |
+| **Нерв $N(\mathcal{C})$** | [Симплициальное множество](/docs/core/foundations/spacetime#нерв-категории): 0-симплексы = объекты, n-симплексы = цепочки морфизмов |
 | **Терминальный объект T** | $T = \Gamma^*$ — [глобальный аттрактор](/docs/core/foundations/axiom-omega#свойство-3); $\forall\Gamma, \exists! f: \Gamma \to T$; обеспечивает стягиваемость X |
 | **Стратификация** | Разбиение $X = \bigsqcup_\alpha S_\alpha$ на [страты](/docs/core/foundations/spacetime#стратификация-x); $S_0 = \{T\}$ |
 | **Локально-глобальная дихотомия** | [Принцип](/docs/core/foundations/spacetime#локально-глобальная-дихотомия): $H^*(X) = 0$ глобально (монизм), $H^*_{loc}(X,T) \neq 0$ локально (физика) |
@@ -413,4 +413,4 @@ description: Определения основных терминов теори
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, ∞-группоид, ∞-топос, производные категории
 - [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
 - [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7

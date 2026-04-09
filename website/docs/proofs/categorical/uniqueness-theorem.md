@@ -2,7 +2,7 @@
 slug: /proofs/categorical/uniqueness-theorem
 sidebar_position: 3
 title: "Uniqueness theorem of representation"
-description: "G₂-rigidity of holonomic representation: uniqueness of the map G up to gauge group G₂ = Aut(𝕆). Analogue of the Stone–von Neumann theorem for UHM."
+description: "G₂-rigidity of holonomic representation: uniqueness of the map G up to gauge group G₂ = Aut(O). Analogue of the Stone–von Neumann theorem for UHM."
 ---
 
 # Uniqueness Theorem of Holonomic Representation

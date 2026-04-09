@@ -106,11 +106,11 @@ Twentieth-century physics moved toward an ever-larger number of fundamental obje
 
 ### Primitive Concepts
 
-CC is built on a **single primitive** — **the category 𝒞** with a finite number of objects. The coherence matrix Γ is an **object** of this category.
+CC is built on a **single primitive** — **the category $\mathcal{C}$** with a finite number of objects. The coherence matrix Γ is an **object** of this category.
 
-**Primitive (Category 𝒞):**
+**Primitive (Category $\mathcal{C}$):**
 
-A small category 𝒞 whose objects are density matrices:
+A small category $\mathcal{C}$ whose objects are density matrices:
 
 $$
 \text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42}), \quad \text{Mor}(\mathcal{C}) = \text{CPTP channels}
@@ -135,12 +135,12 @@ In CC, from the category $\mathcal{C}$ are derived:
 
 ### Ontological Status
 
-**Category 𝒞** (not Γ) **is**:
+**Category $\mathcal{C}$** (not Γ) **is**:
 - The single substance
 - Its own structure
 - Its own process
 
-From 𝒞 **are derived**:
+From $\mathcal{C}$ **are derived**:
 - Base space $X = |N(\mathcal{C})|$
 - Monism as theorem: $H^*(X) = 0$
 - Time τ, metric d_strat, arrow of time
@@ -234,7 +234,7 @@ Let us examine each axiom in detail.
 ```mermaid
 graph TD
     subgraph "Axiom Ω⁷ — Five Axioms"
-        AX1["Ax. 1: Structure<br/>∞-Topos Sh∞(𝒞)"]
+        AX1["Ax. 1: Structure<br/>∞-Topos Sh∞(C)"]
         AX2["Ax. 2: Metric<br/>J_Bures"]
         AX3["Ax. 3: Dimensionality<br/>N = 7"]
         AX4["Ax. 4: Scale<br/>ω₀ > 0"]
@@ -530,7 +530,7 @@ The entire theory is organized like an "inverted pyramid": from a small number o
 ```mermaid
 graph TD
     subgraph "Level 0: Primitive"
-        C["𝒞 — category"]
+        C["C — category"]
     end
     subgraph "Level 1: Axioms"
         AX["Ω⁷ (5 axioms)"]
@@ -543,7 +543,7 @@ graph TD
     subgraph "Level 3: Dynamics"
         PHI["φ — self-model"]
         FP["Γ* — stationary point"]
-        VIA["𝒱 — viability region"]
+        VIA["V — viability region"]
     end
     subgraph "Level 4: Phenomenology"
         CON["L0-L4 — consciousness levels"]

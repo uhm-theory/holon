@@ -2,7 +2,7 @@
 slug: /proofs/minimality/theorem-octonionic-derivation
 sidebar_position: 2
 title: "Structural Derivation of N = 7 via Octonions"
-description: "Canonical proof: P1 [Т] + P2 [Т] → 𝕆 → N = 7 via the Hurwitz theorem. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [Т] (T15 chain, 15 steps)"
+description: "Canonical proof: P1 [Т] + P2 [Т] → O → N = 7 via the Hurwitz theorem. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [Т] (T15 chain, 15 steps)"
 ---
 
 # Structural Derivation of N = 7 via Octonions
@@ -22,7 +22,7 @@ The dimensionality $N = 7$ has **two independent justifications**:
 | Track | Path | Status |
 |---|---|---|
 | **Track A** | [Axiom 3](../../core/foundations/axiom-omega#аксиоматика) + [Theorem S](./theorem-minimality-7): (AP)+(PH)+(QG) → N ≥ 7 | [Т] Proven |
-| **Track B** | P1 + P2 → 𝕆 → dim Im(𝕆) = 7 (this document) | [Т] Mathematically rigorous |
+| **Track B** | P1 + P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 (this document) | [Т] Mathematically rigorous |
 | **Bridge** | (AP)+(PH)+(QG)+(V) → P1 + P2 | **[Т]** — complete T15 chain, 15 steps, all [Т] |
 
 The tracks converge: both give N = 7. The bridge is **[Т]** — [fully closed](#мост).
@@ -192,7 +192,7 @@ The connection (AP)+(PH)+(QG)+(V) ⟹ P1+P2 is established via the **complete fo
 |---|---|---|
 | **Direct motivation** | Invertibility of transformations (AP) | Division algebra (P1) |
 | **Exceptionality** | Minimal required dimensionality (Theorem S) | Non-associativity (P2), since dim Im ≤ 3 for associative algebras |
-| **Cayley–Dickson boundary** | Alternativity (minimal nonlinearity of QG) | 𝕆 — last alternative division algebra |
+| **Cayley–Dickson boundary** | Alternativity (minimal nonlinearity of QG) | $\mathbb{O}$ — last alternative division algebra |
 
 ---
 
@@ -267,7 +267,7 @@ The correspondence of the 4+3 Hamming structure with the division of UHM dimensi
 :::info Status: **[Т]** — bridge fully closed (T15 chain)
 The connection P1+P2 ↔ (AP)+(PH)+(QG)+(V) is established via the **complete formal chain** T15 of 15 steps, **all [Т]**. Condition (МП) has become a theorem: T11 (Choi rank = 7 ⟹ b ≥ 7), T12 (BIBD(7,3,1) from minimal projective decomposition), T13 (b ≥ 7 lines), T14 (λ = 1) — together give λ = 1 without additional conditions.
 
-**Status evolution:** [И] (three interpretive arguments) → [С] under (МП) (one condition) → **[Т]** (fully closed). The step PG(2,2) → 𝕆 is a canonical identification, fixed by the uniqueness of BIBD(7,3,1) (Hall) and the Hurwitz theorem.
+**Status evolution:** [И] (three interpretive arguments) → [С] under (МП) (one condition) → **[Т]** (fully closed). The step PG(2,2) → $\mathbb{O}$ is a canonical identification, fixed by the uniqueness of BIBD(7,3,1) (Hall) and the Hurwitz theorem.
 :::
 
 ### 5.1 Complete chain of implications (T15 [Т], 15 steps) {#цепочка-t15}
@@ -434,7 +434,7 @@ The Fano channel dominates by all criteria. $\square$
 
 ---
 
-#### Step T15. T14 → 𝕆: P1 (division algebra) + P2 (non-associativity) [Т] {#шаг-t15}
+#### Step T15. T14 → $\mathbb{O}$: P1 (division algebra) + P2 (non-associativity) [Т] {#шаг-t15}
 
 **Statement.** From BIBD$(7,3,1) \cong \text{PG}(2,2)$ and alternativity it follows that the algebraic structure is the octonions $\mathbb{O}$, yielding P1 (division algebra) and P2 (non-associativity).
 
@@ -464,14 +464,14 @@ The Fano channel dominates by all criteria. $\square$
 | T14 | T13 ⟹ $\lambda = 1$ | T13 | BIBD identity: $42 = 42\lambda$ | **[Т]** |
 | T15 | T14 ⟹ $\mathbb{O}$ ⟹ P1+P2 | T14 | Hall + Hurwitz + Baez | **[Т]** |
 
-:::info Remark on the character of step T15 (PG(2,2) ≅ Im(𝕆))
+:::info Remark on the character of step T15 (PG(2,2) ≅ $\mathrm{Im}(\mathbb{O})$)
 Step T15 of the chain is a **mathematical fact** [Т]: the Fano plane PG(2,2) defines the multiplication table of the imaginary units of the octonions. This is standard algebra (Baez, "The Octonions", 2002).
 
 However, in the context of the full chain there is a **structural identification**: the transition from "Lindblad operators are organized according to PG(2,2)" to "the state space has an octonionic algebraic structure" requires identifying a combinatorial isomorphism with an algebraic one.
 
-This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hall, 1967), and the multiplication table of Im(𝕆) is the unique non-associative normed division algebra of dimension 7 (Hurwitz). Two rigid constraints (dynamical and algebraic) uniquely single out the same structure. Nevertheless, the transition from combinatorial organization to full algebraic interpretation (division, normedness, alternativity) enriches the structure beyond what strictly follows from the dynamical axioms.
+This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hall, 1967), and the multiplication table of $\mathrm{Im}(\mathbb{O})$ is the unique non-associative normed division algebra of dimension 7 (Hurwitz). Two rigid constraints (dynamical and algebraic) uniquely single out the same structure. Nevertheless, the transition from combinatorial organization to full algebraic interpretation (division, normedness, alternativity) enriches the structure beyond what strictly follows from the dynamical axioms.
 
-**Status:** Each of the 15 steps is [Т]. The complete chain is closed [Т]. The structural identification PG(2,2) → 𝕆 is fixed by **uniqueness** on both sides (Hall + Hurwitz), making it a **canonical identification**, not an arbitrary choice.
+**Status:** Each of the 15 steps is [Т]. The complete chain is closed [Т]. The structural identification PG(2,2) → $\mathbb{O}$ is fixed by **uniqueness** on both sides (Hall + Hurwitz), making it a **canonical identification**, not an arbitrary choice.
 :::
 
 :::warning Resolution of the ℝ⁷ → ℂ⁷ problem (complexification of octonions) {#complexification}
@@ -488,7 +488,7 @@ This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hal
    
    Phase IS the quantum content. Without complexification there are no phases, no interference, no quantum mechanics.
 
-3. **Division in $\mathbb{C}^7$ and non-associativity.** $\mathbb{O}_{\mathbb{C}} = \mathbb{O} \otimes_{\mathbb{R}} \mathbb{C}$ is **not** a division algebra (by Hurwitz's theorem, the only normed division algebras are ℝ, ℂ, ℍ, 𝕆 — all over ℝ). But this is **not needed**: UHM uses the **automorphism group** $G_2 = \mathrm{Aut}(\mathbb{O})$ and the **Fano plane** $\mathrm{PG}(2,2)$, not the algebra $\mathbb{O}$ itself for calculations. $G_2$ is a compact Lie group defined over $\mathbb{R}$, canonically acting on $\mathbb{C}^7$. The Fano plane is a combinatorial structure independent of the coefficient field.
+3. **Division in $\mathbb{C}^7$ and non-associativity.** $\mathbb{O}_{\mathbb{C}} = \mathbb{O} \otimes_{\mathbb{R}} \mathbb{C}$ is **not** a division algebra (by Hurwitz's theorem, the only normed division algebras are ℝ, ℂ, ℍ, $\mathbb{O}$ — all over ℝ). But this is **not needed**: UHM uses the **automorphism group** $G_2 = \mathrm{Aut}(\mathbb{O})$ and the **Fano plane** $\mathrm{PG}(2,2)$, not the algebra $\mathbb{O}$ itself for calculations. $G_2$ is a compact Lie group defined over $\mathbb{R}$, canonically acting on $\mathbb{C}^7$. The Fano plane is a combinatorial structure independent of the coefficient field.
 
 4. **Spectral triple (T-53 [T])** works in $\mathbb{C}^7$: $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with $H_{\text{int}} = \mathbb{C}^7$ and KO-dim = 6 — standard NCG construction (Connes 1994). The real structure $J: \mathbb{C}^7 \to \mathbb{C}^7$ (antilinear involution) provides the connection to $\mathbb{R}^7$.
 :::

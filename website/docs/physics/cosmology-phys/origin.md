@@ -316,4 +316,4 @@ This section contains **theorems** (instability of the Source [T], self-amplific
 - [Self-observation](/docs/consciousness/foundations/self-observation) — operator $\varphi$ and measure $D_{\text{diff}}$
 - [Unity dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
 - [Foundation (O)](/docs/core/structure/dimension-o) — connection to the Source
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos Sh_∞(𝒞) as primitive
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as primitive

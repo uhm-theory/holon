@@ -409,8 +409,8 @@ More: [Reflection measure R](/docs/consciousness/foundations/self-observation#м
 
 ### Octonionic norm {#октонионная-норма}
 
-:::note Relation of purity P to the 𝕆 norm [С]
-In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is related to the norm on Im(𝕆): the normativity of octonions ($|xy| = |x||y|$) provides a consistent metric on the state space. The viability condition $P > 2/7$ corresponds to the minimum "distinguishability from noise" in the normed space Im(𝕆). Bridge [Т] (closed, T15). See [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Relation of purity P to the $\mathbb{O}$ norm [С]
+In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is related to the norm on $\mathrm{Im}(\mathbb{O})$: the normativity of octonions ($|xy| = |x||y|$) provides a consistent metric on the state space. The viability condition $P > 2/7$ corresponds to the minimum "distinguishability from noise" in the normed space $\mathrm{Im}(\mathbb{O})$. Bridge [Т] (closed, T15). See [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 **Related documents:**

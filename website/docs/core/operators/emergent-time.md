@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "Emergent Time"
-description: "Derivation of time from the structure of category 𝒞 — definitions and key results"
+description: "Derivation of time from the structure of category C — definitions and key results"
 ---
 
 # Emergent Time

@@ -999,7 +999,7 @@ $$
 
 ### 9.1 Теоремы P1, P2 и вывод
 
-**[Т] P1:** Пространство внутренних степеней свободы ≅ Im($\mathcal{A}$), где $\mathcal{A}$ — нормированная алгебра с делением. *(Выводится по цепочке моста T15 из (AP)+(PH)+(QG)+(V).)*
+**[Т] P1:** Пространство внутренних степеней свободы ≅ $\mathrm{Im}(\mathcal{A})$, где $\mathcal{A}$ — нормированная алгебра с делением. *(Выводится по цепочке моста T15 из (AP)+(PH)+(QG)+(V).)*
 **[Т] P2:** $\mathcal{A}$ неассоциативна. *(Выводится по цепочке моста T15 из (AP)+(PH)+(QG)+(V).)*
 
 **[Т] Вывод:** P1 → [Т] Гурвиц → $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ → P2 исключает $\mathbb{R}, \mathbb{C}, \mathbb{H}$ → $\mathcal{A} = \mathbb{O}$ → $N = 7$.
@@ -1126,7 +1126,7 @@ $$
 ---
 
 **Связанные документы:**
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — Трек B: P1+P2 [Т] → 𝕆 → N=7
+- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — Трек B: P1+P2 [Т] → $\mathbb{O}$ → N=7
 - [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
 - [Семь измерений](/docs/core/structure/dimensions) — базис $\{A, S, D, L, E, O, U\}$
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Spacetime
-description: Emergence of space and time from the structure of the category 𝒞
+description: Emergence of space and time from the structure of the category C
 ---
 
 # Spacetime Structure
@@ -32,7 +32,7 @@ This is a radical departure from standard physics, where spacetime is a given on
 - **Background independence:** [T] $M^4$ derived from categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек))
 :::
 
-## Base space X = |N(𝒞)| {#базовое-пространство}
+## Base space X = $|N(\mathcal{C})|$ {#базовое-пространство}
 
 :::warning Property 5 (Stratification) [D]
 The base space of the theory is defined as the geometric realization of the nerve of the category:
@@ -52,7 +52,7 @@ Key property: **X is defined endogenously**, not introduced from outside.
 | Metric | Introduced by hand | Computed from spectral data |
 | Topology | Fixed | Follows from the nerve structure |
 
-### Nerve of the category N(𝒞) {#нерв-категории}
+### Nerve of the category $N(\mathcal{C})$ {#нерв-категории}
 
 **Definition (Nerve):**
 
@@ -419,9 +419,9 @@ See [Correspondence with physics: GR](../../proofs/physics/physics-correspondenc
 
 ```mermaid
 graph TD
- C["𝒞 — Category"]
- N["N#40;𝒞#41; — Nerve"]
- X["X = |N#40;𝒞#41;| — Base space"]
+ C["C — Category"]
+ N["N#40;C#41; — Nerve"]
+ X["X = |N#40;C#41;| — Base space"]
  STRAT["Stratification: X = ⊔ S_α"]
  T_OBJ["T — Terminal object"]
  DSTRAT["d_strat — Connes metric"]

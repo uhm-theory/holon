@@ -8,7 +8,7 @@ description: Unitary Holonomic Monism — a formal theory of reality and conscio
 
 ## A Formal Theory of Reality and Consciousness
 
-**Unitary Holonomic Monism (UHM)** is a formal theory describing the structure, dynamics, and phenomenology of reality through a single mathematical primitive — the **∞-topos Sh_∞(𝒞)**.
+**Unitary Holonomic Monism (UHM)** is a formal theory describing the structure, dynamics, and phenomenology of reality through a single mathematical primitive — the **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$**.
 
 :::info Meta-theory status
 UHM claims the role of a **meta-theory** (unifying physics, consciousness, and information within a single axiomatic framework). Rigidity of the primitive is proven [T] (T-173): the construction is unique up to $G_2 \times \mathbb{R}_{>0}$ given the axioms. **The universal property in the category of physical theories is proven [T] (T-174)**: for any physical theory $(E, \mathcal{A}, D)$ with $A_{\text{int}} \subset \mathcal{A}$, CPTP dynamics, and $\leq 7$ observables, there exists an essentially unique receiving morphism into $\mathfrak{T}$. **All 4 foundational theorems are proven [T]**: **T-170 [T]** (recovery of the M-theory limit at levels of M-theory definedness): T-170' [T] (perturbative correspondence) + T-170'' [T] (non-perturbative correctness of the UHM integral). **T-171 [T]** (LQG embedding for bounded spin networks $j_e \leq 3$) + **T-171' [T]** (unbounded spin via cluster construction). **T-172 [T]** (causal set embedding) via Lemma C30. The "meta" status is a **proven theorem** for physical theories of the specified class.
@@ -23,7 +23,7 @@ The theory:
 
 ### Etymology of the Name
 
-- **Unitary** — from Lat. *unus* (one): reality is described by a single ∞-topos Sh_∞(𝒞); the underlying unitary evolution preserves information
+- **Unitary** — from Lat. *unus* (one): reality is described by a single ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$; the underlying unitary evolution preserves information
 - **Holonomic** — from Gr. *holon* (whole) + *nomos* (law): every part (Holonom) contains an image of the whole and obeys universal laws
 - **Monism** — from Gr. *monos* (one): reality is one — there are no independent "layers" or "substances." In UHM this is a mathematical theorem (H*(X) = 0), not a philosophical choice
 
@@ -31,9 +31,9 @@ The theory:
 
 ```mermaid
 graph TB
-    C["Sh_∞(𝒞) — ∞-topos<br/>(sole primitive)"] --> X["X = |N(𝒞)|<br/>Base space"]
-    C --> Ob["Ob(𝒞) = {Γ}<br/>Coherence matrices"]
-    C --> Mor["Mor(𝒞)<br/>CPTP channels"]
+    C["Sh_∞(C) — ∞-topos<br/>(sole primitive)"] --> X["X = |N(C)|<br/>Base space"]
+    C --> Ob["Ob(C) = {Γ}<br/>Coherence matrices"]
+    C --> Mor["Mor(C)<br/>CPTP channels"]
     X --> H0["H*(X) = 0<br/>Cohomological monism"]
     X --> Hloc["H*_loc ≠ 0<br/>Local physics"]
     C --> T["T = Γ*<br/>Terminal object"]
@@ -44,7 +44,7 @@ graph TB
 ## Five Structural Properties of the Sole Primitive (Ω⁷)
 
 :::info Sole primitive
-The **∞-topos Sh_∞(𝒞)** is the sole primitive of UHM theory. The notion of a "sheaf" in the ∞-topos is defined via a [Grothendieck topology](./core/foundations/axiom-omega#топология-гротендика) on the category 𝒞.
+The **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$** is the sole primitive of UHM theory. The notion of a "sheaf" in the ∞-topos is defined via a [Grothendieck topology](./core/foundations/axiom-omega#топология-гротендика) on the category $\mathcal{C}$.
 :::
 
 | # | Property | Formulation |
@@ -118,7 +118,7 @@ The formalisms are related by **Morita equivalence** [T]: $\mathrm{Sh}_\infty(\m
 
 ## Central Concepts
 
-### Coherence Matrix Γ (object of category 𝒞)
+### Coherence Matrix Γ (object of category $\mathcal{C}$)
 
 $$
 \Gamma \in \text{Ob}(\mathcal{C}), \quad \Gamma^\dagger = \Gamma, \quad \Gamma \geq 0, \quad \mathrm{Tr}(\Gamma) = 1
@@ -197,7 +197,7 @@ where:
 | **Local nontriviality** | $H^*_{loc}(X, T) \neq 0$ | [T] | [Consequences](./core/foundations/consequences#локально-глобальная-дихотомия) |
 | **7D minimality** | $n < 7 \Rightarrow$ violation of (AP), (PH), or (QG) | [T] | [Proof](./proofs/minimality/theorem-minimality-7) |
 | **Fixed point of φ** | $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$ | [T] | [Proof](./proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) |
-| **Emergent time** | τ derived from 𝒞 (Page–Wootters, Bures, ∞-groupoid) | [T] | [Theorem](./proofs/dynamics/emergent-time) |
+| **Emergent time** | τ derived from $\mathcal{C}$ (Page–Wootters, Bures, ∞-groupoid) | [T] | [Theorem](./proofs/dynamics/emergent-time) |
 | **Arrow of time** | Stratal collapse: $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | [T] | [Theorem](./proofs/dynamics/emergent-time#10-стратификационное-время) |
 | **Critical purity** | $P_{\text{crit}} = 2/N = 2/7$ | [T] | [Theorem](./proofs/dynamics/theorem-purity-critical) |
 | **Necessity of interiority** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [T] | [Theorem 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
@@ -264,15 +264,15 @@ where:
 
 ## What the Theory Derives
 
-### From the ∞-topos Sh_∞(𝒞):
-1. **Base space** X = |N(𝒞)| — geometric realization of the nerve
+### From the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$:
+1. **Base space** X = $|N(\mathcal{C})|$ — geometric realization of the nerve
 2. **Monism** — H*(X) = 0 as a mathematical theorem
 3. **Local physics** — H*_loc(X, T) ≠ 0 near the terminal object
 4. **Time** — τ ∈ ℤ₇ via the Page–Wootters mechanism
 5. **Arrow of time** — stratal collapse toward the terminal T
 6. **Metric** — d_strat (stratified Connes metric)
 7. **Dimensionality** — dim(X) = 6 from N = 7
-8. **Octonionic structure** — P1+P2 → 𝕆 → N=7, $G_2$-symmetry, Fano plane, Hamming code ([Track B](./proofs/minimality/theorem-octonionic-derivation))
+8. **Octonionic structure** — P1+P2 → $\mathbb{O}$ → N=7, $G_2$-symmetry, Fano plane, Hamming code ([Track B](./proofs/minimality/theorem-octonionic-derivation))
 
 ### Research program:
 - **Compactification 6D → 4D** — connection to observed spacetime
@@ -280,7 +280,7 @@ where:
 - Connection to the Standard Model — [formalized program](./proofs/physics/physics-correspondence)
 
 ### Takes as primitive ([categorical gap](/docs/consciousness/foundations/two-aspect-monism#теорема-нетривиальность)):
-- Why the ∞-topos Sh_∞(𝒞) has an "inner side"
+- Why the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ has an "inner side"
 - Why this particular mathematical structure and not another
 
 :::info Minimality of the primitive
@@ -291,7 +291,7 @@ UHM's primitive is **minimal** among all possible axiomatic choices: one axiom i
 
 | Section | Contents |
 |---------|----------|
-| **[Axiom Ω⁷](./core/foundations/axiom-omega)** | Five structural properties with the ∞-topos Sh_∞(𝒞) as primitive |
+| **[Axiom Ω⁷](./core/foundations/axiom-omega)** | Five structural properties with the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as primitive |
 | **[Consequences](./core/foundations/consequences)** | Cohomological monism, local-global dichotomy |
 | **[Structure](./core/structure/holon)** | Holonom and 7 dimensions |
 | **[Dynamics](./core/dynamics/evolution)** | Evolution equations with terminal object T |

@@ -447,7 +447,7 @@ Symbols related to the [bimodular construction](/docs/proofs/physics/bimodule-co
 - [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, ∞-groupoid $\mathbf{Exp}_\infty$
 - [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
 - [Gap dynamics](/docs/core/dynamics/gap-dynamics) — Gap operator $\hat{G}$, bifurcations, non-Markovian dynamics
 - [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $T_{\mathrm{eff}}$, variational principle, FDT
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — $P_{\mathrm{Fano}}$, $\Pi_p$, Yukawa hierarchy

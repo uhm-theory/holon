@@ -208,7 +208,7 @@ Six-dimensional space is a consequence of the categorical structure.
 
 ## 0.5 Octonionic consequences {#октонионные-следствия}
 
-**Status:** [T] Consequences of the [structural derivation N=7](../../proofs/minimality/theorem-octonionic-derivation) (P1+P2 → 𝕆 → 7).
+**Status:** [T] Consequences of the [structural derivation N=7](../../proofs/minimality/theorem-octonionic-derivation) (P1+P2 → $\mathbb{O}$ → 7).
 
 :::info Assumption
 The space of internal degrees of freedom is isomorphic to $\mathrm{Im}(\mathbb{O})$ ([Track B](../../proofs/minimality/theorem-octonionic-derivation)); octonion structure yields several consequences for UHM.
@@ -522,7 +522,7 @@ graph TB
         H2["ℍ₂<br/>dim = 7"]
         H3["ℍ₃<br/>dim = 7"]
     end
-    H1 -.->|"same structure"| S["𝓗 = ℂ⁷"]
+    H1 -.->|"same structure"| S["H = ℂ⁷"]
     H2 -.->|"same structure"| S
     H3 -.->|"same structure"| S
 ```
@@ -773,7 +773,7 @@ Free will in UHM is not subjective feeling or metaphysical guesswork but a **top
 | **Falsifiability** | Testable predictions | ✓ [Criteria](../../reference/falsifiability) |
 | **Free will** | $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ [T] | ✓ [Theorem](#freedom-конечномерное) |
 | **$\Lambda > 0$** | Autopoiesis + local cohomology $\Rightarrow$ $\rho_{\text{vac}} > 0$ [T] | ✓ [Theorem](#теорема-лямбда-положительна) |
-| **Octonionic structure** | P1+P2 → 𝕆 → N=7, $G_2$, Fano | ✓ [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation) |
+| **Octonionic structure** | P1+P2 → $\mathbb{O}$ → N=7, $G_2$, Fano | ✓ [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation) |
 | **Self-reference** | $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$, $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ [T] | ✓ [Theorems T-54–T-56](#самореферентное-замыкание) |
 
 ### 9.1 Meta-theoretic status
@@ -1258,7 +1258,7 @@ with $R^2 > 0.9$ using $O(D_\text{hidden}^2)$ training examples.
 
 **Related documents:**
 - [Axiom Ω⁷](./axiom-omega)—five UHM axioms ($\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as sole primitive)
-- [Octonionic structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → 𝕆 → N=7
+- [Octonionic structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → $\mathbb{O}$ → N=7
 - [Emergent time theorem](../../proofs/dynamics/emergent-time)—time from structure of Γ
 - [Septicity axiom](./axiom-septicity)—(AP+PH+QG+V) and derived constants
 - [Theorem S](../../proofs/minimality/theorem-minimality-7)—7D minimality proof

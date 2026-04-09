@@ -395,5 +395,5 @@ For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_
 - [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — Fisher metric, Lagrangian, T_eff
 - [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, Whitney catastrophes
 - [Dual-aspect Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
-- [G₂ structure](/docs/physics/gauge-symmetry/g2-structure) — G₂ = Aut(𝕆)
+- [G₂ structure](/docs/physics/gauge-symmetry/g2-structure) — G₂ = $\mathrm{Aut}(\mathbb{O})$
 - [Proofs: Fano channel](/docs/proofs/gap/fano-channel) — rigorous theorems on G₂-covariance

@@ -51,7 +51,7 @@ The key difference from an ordinary whirlpool: a Holon in UHM possesses an **int
 ## Ontological status
 
 :::warning Key clarification
-**Category 𝒞 is the only primitive.** The coherence matrix $\Gamma$ is an **object** of that category. A Holon ($\mathbb{H}$) is **not a separate entity**, but a special type of configuration $\Gamma \in \text{Ob}(\mathcal{C})$ satisfying conditions (AP)+(PH)+(QG)+(V).
+**Category $\mathcal{C}$ is the only primitive.** The coherence matrix $\Gamma$ is an **object** of that category. A Holon ($\mathbb{H}$) is **not a separate entity**, but a special type of configuration $\Gamma \in \text{Ob}(\mathcal{C})$ satisfying conditions (AP)+(PH)+(QG)+(V).
 :::
 
 :::info Taxonomy: hierarchy of Γ configurations

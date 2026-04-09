@@ -54,7 +54,7 @@ The dimension $N = 7$ is a **fundamental axiom** (Axiom 3) with two independent 
 | Track | Justification | Status |
 |------|-------------|--------|
 | **A** | [Theorem S](./axiom-septicity#теорема-s-семимерность--следствие-из-аксиомы): (AP)+(PH)+(QG) → N ≥ 7 | [T] Proved |
-| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → 𝕆 → dim Im(𝕆) = 7 | [T] Mathematically rigorous |
+| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | [T] Mathematically rigorous |
 
 The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
 :::
@@ -959,17 +959,17 @@ graph TD
     subgraph "Level -1: Metatheoretic choices"
         Lang["Language: HoTT"]
         Dim["Dimension: N = 7"]
-        Oct["𝕆 (octonions)<br/>P1+P2 → N=7"]
+        Oct["O (octonions)<br/>P1+P2 → N=7"]
     end
 
     subgraph "Level 0: Sole primitive"
-        Primitive["𝔗 = (Sh_∞(𝒞), J_Bures, ω₀)"]
+        Primitive["T = (Sh_∞(C), J_Bures, ω₀)"]
     end
 
     subgraph "Level 1: Primitive structure"
         Omega["Ω — subobject classifier"]
-        Atoms["𝒯_Ω = {S₀,...,S₆}<br/>S_i = |i⟩⟨i| — atomic predicates"]
-        Z7["ℤ₇ action on 𝒯_Ω"]
+        Atoms["T_Ω = {S₀,...,S₆}<br/>S_i = |i⟩⟨i| — atomic predicates"]
+        Z7["ℤ₇ action on T_Ω"]
     end
 
     subgraph "Level 2: Derived structure"
@@ -1013,7 +1013,7 @@ graph TD
 | Level | Construction | Depends on | Formula |
 |---------|-------------|------------|---------|
 | -1 | Language, $N$ | — | Metatheoretic choice |
-| 0 | $\mathfrak{T}$ | Level −1 | $(Sh_∞(𝒞), J_{Bures}, ω_0)$ |
+| 0 | $\mathfrak{T}$ | Level −1 | $(Sh_∞(\mathcal{C}), J_{Bures}, ω_0)$ |
 | 1 | Ω | $\mathfrak{T}$ | Subobject classifier |
 | 1 | $\mathcal{T}_\Omega$ | Ω | $S_i = \vert i\rangle\langle i\vert$ (atomic predicates) |
 | 1 | $\mathbb{Z}_7$ action | $\mathcal{T}_\Omega$ | $g: S_i \mapsto S_{i+1}$ |
@@ -1546,7 +1546,7 @@ $$
 
 ```mermaid
 graph TD
-    Prim["𝔗 = (Sh_∞(𝒞), J_Bures, ω₀)<br/><b>Sole primitive</b>"] --> T["∞-topos Sh_∞(𝒞)"]
+    Prim["T = (Sh_∞(C), J_Bures, ω₀)<br/><b>Sole primitive</b>"] --> T["∞-topos Sh_∞(C)"]
     Prim --> Bures["J_Bures<br/>Bures topology"]
     Prim --> Omega0["ω₀<br/>Fundamental frequency"]
 
@@ -1641,7 +1641,7 @@ In the Ω⁷ formulation UHM is:
 ---
 
 **See also:**
-- [Structural derivation $N{=}7$ via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → $N{=}7$ (track B)
+- [Structural derivation $N{=}7$ via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → $N{=}7$ (track B)
 - [Axiom (AP+PH+QG+V)](./axiom-septicity) — autopoiesis, phenomenology, quantum grounding, viability
 - [Consequences](./consequences) — corollaries of Ω⁷
 - [Deriving FEP from UHM](../../proofs/dynamics/fep-derivation) — variational Thm. 3.1 and classical-limit Thm. 4.2

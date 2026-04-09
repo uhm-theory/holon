@@ -990,11 +990,11 @@ def compute_lindblad_from_omega(Gamma: np.ndarray) -> list:
         L_operators: List of 7 Lindblad operators
 
     Property (CPTP condition):
-        Σ_k L_k† L_k = 𝟙 — holds for basis projectors S_k = |k⟩⟨k|.
+        Σ_k L_k† L_k = 1 — holds for basis projectors S_k = |k⟩⟨k|.
 
     IMPORTANT: CPTP channels in general do NOT preserve purity or viability.
     A CPTP channel may map a viable state (P > P_crit) to a non-viable one.
-    Automatic satisfaction of the completeness condition (Σ L_k† L_k = 𝟙) only
+    Automatic satisfaction of the completeness condition (Σ L_k† L_k = 1) only
     guarantees preservation of trace and positivity, but not P > P_crit.
     """
     L_operators = []
@@ -1020,7 +1020,7 @@ def compute_lindblad_from_omega(Gamma: np.ndarray) -> list:
 
 def verify_cptp_condition(L_operators: list) -> bool:
     """
-    Verification of CPTP condition: Σ_k L_k† L_k = 𝟙.
+    Verification of CPTP condition: Σ_k L_k† L_k = 1.
 
     Returns:
         True if condition is satisfied to within 1e-10
@@ -1308,7 +1308,7 @@ class OmegaClassifier:
     Subobject classifier Ω for the category DensityMat.
 
     Categorical definition:
-        Ω := 𝒪(𝒞, d_B) — lattice of open sets in the Bures topology
+        Ω := O(C, d_B) — lattice of open sets in the Bures topology
 
     For UHM with N = 7 dimensions:
         |Ω| = 7 atoms corresponding to dimensions A, S, D, L, E, O, U
@@ -1379,7 +1379,7 @@ class OmegaClassifier:
 
     def verify_cptp(self) -> bool:
         """
-        Verification of CPTP condition: Σₖ L_k† L_k = 𝕀.
+        Verification of CPTP condition: Σₖ L_k† L_k = I.
 
         For basis projectors S_k = |k⟩⟨k| the condition holds from
         the classifier structure (partition of unity into atoms).

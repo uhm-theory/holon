@@ -398,11 +398,11 @@
     "message": "Формальная теория реальности"
   },
   "homepage.layout.description": {
-    "message": "Унитарный Голономный Монизм — аксиоматическая теория на основе ∞-топоса Sh∞(𝒞). Время, структура и сознание выводятся как следствия пяти аксиом."
+    "message": "Унитарный Голономный Монизм — аксиоматическая теория на основе ∞-топоса Sh∞(C). Время, структура и сознание выводятся как следствия пяти аксиом."
   },
   "homepage.docs.primitive.title": { "message": "Единственный Примитив" },
   "homepage.docs.primitive.description": { "message": "Пять Аксиом Ω⁷" },
-  "homepage.docs.primitive.item.0": { "message": "∞-топос Sh∞(𝒞) — всё остальное выводится" },
+  "homepage.docs.primitive.item.0": { "message": "∞-топос Sh∞(C) — всё остальное выводится" },
   "homepage.docs.primitive.item.1": { "message": "Логика, время и пространство — следствия" },
   "homepage.docs.primitive.item.2": { "message": "Принцип информационной различимости" },
   "homepage.docs.structure.title": { "message": "Структура" },
@@ -412,12 +412,12 @@
   "homepage.docs.structure.item.2": { "message": "Матрица когерентности Γ ∈ ℂ⁷ˣ⁷" },
   "homepage.docs.octonionic.title": { "message": "Октонионное Основание" },
   "homepage.docs.octonionic.description": { "message": "Почему именно 7" },
-  "homepage.docs.octonionic.item.0": { "message": "P1 + P2 → 𝕆 → dim(Im(𝕆)) = 7" },
+  "homepage.docs.octonionic.item.0": { "message": "P1 + P2 → O → dim(Im(O)) = 7" },
   "homepage.docs.octonionic.item.1": { "message": "Плоскость Фано и симметрия G₂" },
   "homepage.docs.octonionic.item.2": { "message": "Код Хэмминга H(7,4) и граница Кэли-Диксона" },
   "homepage.docs.dynamics.title": { "message": "Динамика" },
   "homepage.docs.dynamics.description": { "message": "Уравнение Эволюции" },
-  "homepage.docs.dynamics.item.0": { "message": "dΓ/dτ = −i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]" },
+  "homepage.docs.dynamics.item.0": { "message": "dΓ/dτ = −i[H,Γ] + D[Γ] + ℛ[Γ,E]" },
   "homepage.docs.dynamics.item.1": { "message": "Диссипация от декогеренции, регенерация от интериорности" },
   "homepage.docs.dynamics.item.2": { "message": "Глобальный аттрактор" },
   "homepage.docs.time.title": { "message": "Эмерджентное Время" },

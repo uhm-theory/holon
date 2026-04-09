@@ -296,7 +296,7 @@ $$
 
 | Threshold | Status | Justification |
 |-------|--------|-------------|
-| $R_{\text{th}} = 1/3$ | **[Т]** theorem | $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) (Aut / 𝒟 / ℛ) + Bayesian dominance [Т] |
+| $R_{\text{th}} = 1/3$ | **[Т]** theorem | $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) (Aut / $\mathcal{D}$ / ℛ) + Bayesian dominance [Т] |
 | $\Phi_{\text{th}} = 1$ | **[Т]** theorem | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
 
 See [L2 thresholds: strict derivation](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).

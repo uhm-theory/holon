@@ -109,7 +109,7 @@ $$
 - $\gamma_{EE}$ — диагональный элемент (населённость E) — **[Т]**
 - $\gamma_{Ei}$ — когерентности с другими измерениями — **[Т]**
 - $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-когерентность (HS-проекция)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[Т]**, точная мера
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — полная редуцированная матрица — **[Т]** (вычислима через PW-реконструкцию из Γ ∈ 𝒟(ℂ⁷))
+- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — полная редуцированная матрица — **[Т]** (вычислима через PW-реконструкцию из Γ ∈ $\mathcal{D}(ℂ⁷$))
 - $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — дифференциация — **[Т]** (через PW-реконструкцию)
 - $C = \Phi \times R$ — [каноническая мера сознательности](/docs/proofs/consciousness/operational-closure#t-140) **[Т]** (T-140; $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности)
 :::

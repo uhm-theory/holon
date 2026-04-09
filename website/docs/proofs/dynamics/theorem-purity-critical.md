@@ -348,7 +348,7 @@ Path 5 uses the same criterion $\|\Gamma - I/N\|_F \geq \|I/N\|_F$ as Path 1. Th
 ### 3.6 Path 6: Octonionic norm [И] {#путь-6-октонионная-норма}
 
 :::note Interpretation [И]
-In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is connected to the norm on Im(𝕆). The normativity $|xy| = |x||y|$ ensures a multiplicative metric. The threshold $P_{\text{crit}} = 2/7$ can be interpreted as the minimum norm of a vector in Im(𝕆) ≅ ℝ⁷ at which its projection onto structural directions (Fano triplets) exceeds the noise projection.
+In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is connected to the norm on $\mathrm{Im}(\mathbb{O})$. The normativity $|xy| = |x||y|$ ensures a multiplicative metric. The threshold $P_{\text{crit}} = 2/7$ can be interpreted as the minimum norm of a vector in $\mathrm{Im}(\mathbb{O})$ ≅ ℝ⁷ at which its projection onto structural directions (Fano triplets) exceeds the noise projection.
 
 **Status:** [Т], bridge [Т] (closed, T15). Compatible with the other five paths. See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::

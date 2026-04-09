@@ -449,7 +449,7 @@ graph TD
         SG["Singularities"] -.->|surgery| M
     end
     subgraph "UHM (analogy)"
-        G[Γ ∈ 𝒟ℋ] --> |evolution| PS[Pure state P=1]
+        G[Γ ∈ Dℋ] --> |evolution| PS[Pure state P=1]
         C2[Tr Γ = 1] --> G
         LI[P > P_crit = 2/7] --> G
         CR["Crises"] -.->|restructuring| G

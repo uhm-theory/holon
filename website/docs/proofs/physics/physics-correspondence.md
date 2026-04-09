@@ -37,7 +37,7 @@ The entire categorical structure connecting UHM with physics is based on **L-uni
 UHM generates the following commutative diagram of categories:
 
 ```
-      Sh_∞(𝒞)
+      Sh_∞(C)
          │
          │ Ω (classifier)
          ▼

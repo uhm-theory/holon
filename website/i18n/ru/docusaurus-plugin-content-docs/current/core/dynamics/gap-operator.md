@@ -395,5 +395,5 @@ $\mathrm{Im}(\Gamma)$ определяет антисимметричную би
 - [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — метрика Фишера, лагранжиан, T_eff
 - [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — три фазы, катастрофы Уитни
 - [Дуально-аспектная семантика Gap](/docs/physics/dual-aspect/gap-semantics) — 49-элементная карта
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — G₂ = Aut(𝕆)
+- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — G₂ = $Aut(\mathbb{O}$)
 - [Доказательства: Фано-канал](/docs/proofs/gap/fano-channel) — строгие теоремы о G₂-ковариантности

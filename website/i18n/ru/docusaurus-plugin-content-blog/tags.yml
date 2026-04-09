@@ -151,7 +151,7 @@ Hurwitz:
 G2:
   label: G₂
   permalink: /g2
-  description: Группа G₂ = Aut(𝕆) и калибровочная симметрия
+  description: Группа G₂ = Aut(O) и калибровочная симметрия
 
 cosmology:
   label: Космология

@@ -166,7 +166,7 @@ Imagine that $\Omega$ is a questionnaire with an infinite number of questions ab
 ### Theorem on the Splitting of the Space of Morphisms {#теорема-расщепление}
 
 :::tip Theorem (Map Splitting) [T]
-In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$, for any Γ ∈ Ob(𝒞) the space of morphisms into the classifier Ω **splits**:
+In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$, for any Γ ∈ $\mathrm{Ob}(\mathcal{C})$ the space of morphisms into the classifier Ω **splits**:
 
 $$
 \text{Map}(\Gamma, \Omega) \twoheadrightarrow \text{Map}_{\text{ext}}(\Gamma, \Omega), \quad \text{fibre: } \text{Map}_{\text{int}}(\Gamma, \Omega)
@@ -254,7 +254,7 @@ These predicates define **distinct** points in $\text{Map}(\rho_E, \Omega_E)$, l
 ### Theorem on Two-Aspectness as a Property of the Primitive {#теорема-двухаспектность}
 
 :::tip Theorem (Two-Aspectness) [T]
-For any Γ ∈ Ob(𝒞) there exists a canonical decomposition:
+For any Γ ∈ $\mathrm{Ob}(\mathcal{C})$ there exists a canonical decomposition:
 
 $$
 \forall \Gamma: \quad \Gamma \simeq (\Gamma_{\text{ext}}, \Gamma_{\text{int}}, \varphi)
@@ -292,7 +292,7 @@ Within the theory the question has no answer, since Ω is part of the axiomatic 
 
 ```mermaid
 graph TB
-    subgraph "∞-topos Sh_∞(𝒞)"
+    subgraph "∞-topos Sh_∞(C)"
         Gamma["Γ (primitive)"]
         GammaExt["Γ_ext (physics)"]
         GammaInt["Γ_int (experience)"]

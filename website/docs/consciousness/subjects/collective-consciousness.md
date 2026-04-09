@@ -446,7 +446,7 @@ graph TB
     end
     subgraph Коллектив["Γ_comp"]
         GC["Γ_comp (L2+?)"]
-        UC["𝒰_coll<br/>Emergent coherences"]
+        UC["U_coll<br/>Emergent coherences"]
     end
     G1 — "Tr_{-1}" --- GC
     G2 — "Tr_{-2}" --- GC

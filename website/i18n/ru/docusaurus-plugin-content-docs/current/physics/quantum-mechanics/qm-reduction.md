@@ -244,7 +244,7 @@ $$
 
 ```mermaid
 graph TD
-    Sh["Sh∞(𝒞)"] -->|"Ω (классификатор)"| Hol["Hol"]
+    Sh["Sh∞(C)"] -->|"Ω (классификатор)"| Hol["Hol"]
     Hol -->|"π_QM"| QM["QM"]
     Hol -->|"π_Class"| DM["DensityMat"]
     QM -->|"ℏ → 0"| CM["ClassMech"]

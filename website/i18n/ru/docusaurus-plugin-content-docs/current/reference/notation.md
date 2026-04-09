@@ -447,7 +447,7 @@ $$
 - [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
 - [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
 - [Динамика Gap](/docs/core/dynamics/gap-dynamics) — Gap-оператор $\hat{G}$, бифуркации, немарковская динамика
 - [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — $T_{\mathrm{eff}}$, вариационный принцип, ФДТ
 - [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — $P_{\mathrm{Fano}}$, $\Pi_p$, Юкавская иерархия
