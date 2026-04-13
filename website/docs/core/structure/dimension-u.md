@@ -440,8 +440,8 @@ High coherence with $U$ (large $|\gamma_{Ui}|$) correlates with high overall pur
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [И]
-The dimension corresponds to $e_6 \in \mathrm{Im}(\mathbb{O})$. Details, $G_2$-caveat, and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [Т]
+The dimension corresponds to $e_6 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $U = e_6$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---

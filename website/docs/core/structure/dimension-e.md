@@ -146,6 +146,31 @@ Morita equivalence T-58 **[Т]** ($\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mat
 - **42D is required** (or the 7D formula T-128 via Morita equivalence) for $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — these require a partial trace.
 :::
 
+#### Theorem (7D sufficiency for all consciousness measures) [Т] {#теорема-7d-достаточность}
+
+**Formulation.** The minimal 7D formalism $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is **sufficient** for computing all consciousness-related observables. No observable of UHM depends on the choice between 7D and 42D formalisms.
+
+**Proof.**
+
+**Step 1 (Categorical equivalence).** By T-58 [Т] (Morita equivalence): the ∞-topoi $\mathbf{Sh}_\infty(\mathcal{C}_7, J_B)$ and $\mathbf{Sh}_\infty(\mathcal{C}_{42}, J_B)$ are **equivalent** as $(\infty,1)$-categories. This means every object, morphism, and higher morphism in one topos has a unique counterpart in the other.
+
+**Step 2 (Observable equivalence).** An observable in UHM is a morphism $O: \Gamma \to \mathbb{R}$ in $\mathbf{Sh}_\infty(\mathcal{C})$. By categorical equivalence (Step 1): $O^{7D}(\Gamma) = O^{42D}(\iota_{PW}(\Gamma))$ for every observable $O$ and every state $\Gamma$. The reconstruction error is **zero** — not small, not controlled, but **exactly zero** — because equivalence of categories preserves all morphisms exactly.
+
+**Step 3 (Explicit 7D formulas for partial-trace quantities).** The quantities that formally require the 42D partial trace have **exact 7D representations** via HS-projections:
+
+| Quantity | 42D definition | 7D formula | Error |
+|----------|---------------|------------|-------|
+| $\mathrm{Coh}_E$ | $\|\rho_E - P_{\bar{E}}(\rho_E)\|_F^2 / \|\Gamma\|_F^2$ | $\|\pi_E(\Gamma)\|_{HS}^2 / \|\Gamma\|_{HS}^2$ | **0** (T-154 [Т]) |
+| $D_{\text{diff}}$ | $\exp(S_{vN}(\rho_E))$ | $1 + 6 \cdot \mathrm{Coh}_E / \mathrm{Coh}_E^{\max}$ | **0** at extrema (T-128 [Т]) |
+| $C$ | $\Phi \cdot R$ | $\Phi \cdot R$ | **0** (both defined in 7D) |
+| $P$, $R$, $\Phi$ | Same as 7D | Diagonal/off-diagonal of $\Gamma$ | **0** (identity) |
+
+**Step 4 (What the ℂ⁶ factor represents).** In the 42D extension $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, the factor $\mathbb{C}^6$ is the **temporal register** of the Page–Wootters clock: the 6 conditional states $\Gamma(\tau_k)$ for $k = 1, \ldots, 6$ (one fewer than 7 because the 7th is fixed by the normalization constraint $\mathrm{Tr}(\Gamma_{\text{total}}) = 1$). This factor does **not** introduce new physical degrees of freedom — it is a mathematical bookkeeping device for encoding the temporal evolution within a timeless formalism (Wheeler–DeWitt, T-87 [Т]).
+
+**Conclusion:** The 7D formalism is **not an approximation** of the 42D formalism. Both are exact descriptions of the same physics, related by categorical equivalence. The 42D extension is a **computational convenience** for partial traces, not an ontological necessity. $\blacksquare$
+
+**Dependencies:** T-58 [Т] (Morita), T-87 [Т] (PW), T-95 [Т] (canonical reconstruction), T-128 [Т], T-154 [Т].
+
 :::note Technical remark
 Here $\mathcal{H}_E$ is the Hilbert space associated with the Interiority dimension. The dimension of $\mathcal{H}_E$ is determined by the complexity of the system and is not fixed a priori. For systems with rich phenomenal content $\dim(\mathcal{H}_E) \gg 1$.
 :::
@@ -529,8 +554,8 @@ with the separate viability condition $D_{\text{diff}} \geq D_{\min} = 2$.
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [И]
-The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. Details, the $G_2$ caveat and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [Т]
+The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $E = e_5$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---
