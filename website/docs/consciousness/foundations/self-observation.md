@@ -39,10 +39,10 @@ In [interiority theory](./interiority-theory) we described **what** is experienc
 
 ## Consciousness as Self-Observation of $\Gamma$
 
-Consciousness is neither an epiphenomenon nor a separate substance. **Consciousness is the way Γ experiences its own configuration.**
+Consciousness is neither an epiphenomenon nor a separate substance. **Consciousness is the way Γ experiences its own configuration** [И].
 
-:::info Ontological Status
-Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subjective) side. They are inseparable — this is not dualism, but **two-aspect monism**.
+:::info Ontological Status [П]
+Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subjective) side. They are inseparable — this is not dualism, but **two-aspect monism** [П]. The mathematical structure (functorial isomorphism $F: \mathbf{Phys} \to \mathbf{Phen}$) is [Т] (T-186). The ontological identification of the internal aspect with *experience* is the single postulate [П] of UHM beyond the $\infty$-topos primitive itself.
 :::
 
 ## Self-Modelling Operator φ {#оператор-самомоделирования-φ}

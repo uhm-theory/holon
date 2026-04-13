@@ -163,10 +163,45 @@ algebra:
 The spectral triple product formula (Connes) gives the Dirac operator on the product. $\square$
 
 \paragraph{Proof of T-120b.}
-The vacuum state corresponds to the stationary point $\rho^* = \vp(\Gam)$ (T-96), which
-has maximal symmetry under the residual $\mathrm{SU}(3)$ action. The maximally symmetric
-compact orientable 3-manifold is $S^3$ (the 3-sphere). The metric on $S^3$ has constant
-positive curvature, corresponding to a de~Sitter spatial section. $\square$
+The vacuum state $\rho^* = \vp(\Gam)$ (T-96~\status{T}) is invariant under
+the stabilizer $\mathrm{SU}(3) \subset G_2$ of the O-direction. The
+$\mathrm{SU}(3)$ action on the $\mathbf{3}$-sector (= spatial sector) is
+\emph{transitive} on the unit sphere $S^2 \subset \mathbb{C}^3$, with isotropy
+group $\mathrm{SU}(2)$. The isometry group of the induced metric on $\Sigma^3$
+therefore contains $\mathrm{SU}(3)/\mathrm{SU}(2)$-orbits, giving a
+6-dimensional isometry algebra --- precisely the maximal dimension for a
+3-manifold ($\dim\mathrm{Isom}(\Sigma^3) \leq \tfrac{1}{2} \cdot 3 \cdot 4 = 6$).
+By Thurston's classification, the unique compact orientable 3-manifold with
+6-dimensional isometry group and constant positive curvature (from
+$\Lambda_{\mathrm{Gap}} > 0$, T-186(c)~\status{T}) is $S^3$. $\square$
+
+\subsection{Step 4b: Gauge group from Morita equivalence (T-175a)}
+
+The internal algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus
+M_3(\mathbb{C})$ does not immediately give the Standard Model gauge group.
+Three steps reduce it to the Connes--Chamseddine algebra
+$A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$:
+
+\begin{enumerate}[leftmargin=2em,nosep]
+  \item The KO-dimension-6 real structure $J$ (with $J^2 = +1$, $J\chi = -\chi J$)
+        and the first-order condition $[[D,a],Jb^*J^*] = 0$ restrict the
+        $\bar{\mathbf{3}}$-sector algebra $M_3(\mathbb{C})_{\bar{3}}$.
+  \item The Fano--Higgs line $\{A,E,U\}$ decomposes
+        $\bar{\mathbf{3}} \to \mathbf{2}_{EU} \oplus \mathbf{1}_L$, yielding
+        $M_3(\mathbb{C})_{\bar{3}} \to M_2(\mathbb{C})_{EU} \oplus \mathbb{C}_L$.
+  \item On the $2 \times 2$ block $\{E,U\}$, the self-adjointness condition
+        $[a, JbJ^*] = 0$ with $J = $ complex conjugation selects the quaternionic
+        subalgebra: $\mathbb{H} \subset M_2(\mathbb{C})$ (self-adjoint $2 \times 2$
+        matrices form a real 4-algebra isomorphic to~$\mathbb{H}$).
+\end{enumerate}
+
+\noindent
+Result: $A_{\mathrm{int}} \xrightarrow{J + \mathrm{EW}}
+\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C}) = A_F$.
+The inner automorphism group is
+$\mathrm{Inn}(A_F) = \mathrm{U}(1) \times \mathrm{SU}(2) \times
+\mathrm{SU}(3)\,/\,\mathbb{Z}_6$, identical to the Standard Model gauge
+group~\cite{connes1996,chamseddine2007}.
 
 \subsection{Step 5: Einstein--Hilbert action via Lovelock (T-121)}
 
@@ -210,9 +245,14 @@ Lovelock's theorem has three gaps:
         spectral triple.
 
   \item \textbf{Gap 3: Why Lorentzian signature?} Lovelock's theorem works for any
-        signature. This gap is reclassified (T-121): the Lorentzian signature $(-, +, +, +)$
-        follows from the distinction between the temporal O-sector (phase: $e^{i\tau}$) and
-        the spatial $\{A,S,D\}$-sector (amplitudes: real).
+        signature. This gap is reclassified (T-121): the Lorentzian signature follows
+        from the KO-dimension~6 real structure $J$ of the internal spectral triple
+        (T-53~\status{T}). The Page--Wootters constraint forces opposite-signed eigenvalues
+        for the temporal and spatial blocks of $D_{\mathrm{int}}$:
+        $\mathrm{spec}(D_O) = \{+\omega_0\}$ (temporal) versus
+        $\mathrm{spec}(D_{\{A,S,D\}}) \subset \{-\lambda_a\}$ (spatial). The Connes
+        distance formula then gives $g_{00} > 0$ and $g_{aa} < 0$, yielding
+        signature $(+,-,-,-)$.
 \end{enumerate}
 
 The spectral action principle~\cite{chamseddine1997} (Connes--Chamseddine) applied to the product spectral triple

@@ -178,6 +178,34 @@ follows from the O-sector component of the Gap, which is nonzero by the same Law
 
 **Status upgrade:** $\Delta F > 0$ and $\Lambda > 0$ go from **[C] conditional on $D_{\text{int}}$ spectral details** to **[T] unconditional from cohesive non-flatness + Lawvere incompleteness**. $\square$
 
+#### Worked numerical example {#числовой-пример-цепочка}
+
+Consider a holon with $P = 0.35$ (viable, above $P_{\text{crit}} = 2/7 \approx 0.286$) and $\omega_0 = 40$ Hz (gamma-band). Three dominant off-diagonal coherences on Fano lines:
+
+| Pair | $|\gamma_{ij}|$ | $\theta_{ij} = \arg(\gamma_{ij})$ | $\mathrm{Gap}(i,j) = |\sin\theta_{ij}|$ |
+|------|-----------------|-----------------------------------|----------------------------------------|
+| $(E,O)$ | 0.08 | $\pi/3$ | $\sqrt{3}/2 \approx 0.866$ |
+| $(A,E)$ | 0.06 | $\pi/4$ | $1/\sqrt{2} \approx 0.707$ |
+| $(O,U)$ | 0.05 | $\pi/5$ | $\sin(36°) \approx 0.588$ |
+
+**Step 1 (Lawvere $\Rightarrow$ Gap $> 0$).** All three phases $\theta_{ij} \neq 0, \pi$, hence $\mathrm{Gap}(i,j) > 0$. This is not accidental: by T-55 [Т], Lawvere incompleteness forces $\mathrm{Im}(\gamma_{ij}) \neq 0$ for at least one pair in any viable system.
+
+**Step 2 (Gap $=$ curvature, T-73).** The total Gap:
+
+$$\mathcal{G}_{\text{total}} = \sum_{i < j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$$
+
+Contributions from the three dominant pairs:
+
+$$\mathcal{G}_{\text{total}} \geq 0.08^2 \cdot 0.75 + 0.06^2 \cdot 0.50 + 0.05^2 \cdot 0.346 = 0.0048 + 0.0018 + 0.00087 \approx 0.0075$$
+
+(Remaining 18 pairs add positively.)
+
+**Step 3 (Chern–Weil $\Rightarrow$ $\Delta F > 0$).**
+
+$$\Delta F = \omega_0^2 \cdot \mathcal{G}_{\text{total}} = (40)^2 \cdot 0.0075 = 12.0 \;\text{(arb. units)} > 0 \quad\checkmark$$
+
+The free energy gradient is strictly positive — the system has thermodynamic fuel for regeneration. For comparison, at $P < P_{\text{crit}}$ we have $g_V = 0$ (viability gate closed), and regeneration is thermodynamically forbidden regardless of $\Delta F$.
+
 ## 4. Dependencies and Gaps
 
 ### 4.1. What T-186 depends on

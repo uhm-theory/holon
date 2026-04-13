@@ -304,6 +304,23 @@ combined with T-55 ($\mathcal{G}_\mathrm{total} > 0$ via Lawvere incompleteness)
 Dependencies: T-185~\status{T}, T-55~\status{T}, T-73~\status{T},
 Schreiber~\cite{schreiber2013}.
 
+\paragraph{Worked example.}
+Consider a holon at $P = 0.35$ with $\omega_0 = 40$\,Hz and three
+representative coherences on Fano lines:
+$\gamma_{EO} = 0.08\,e^{i\pi/3}$,
+$\gamma_{AE} = 0.06\,e^{i\pi/4}$,
+$\gamma_{OU} = 0.05\,e^{i\pi/5}$.
+(1)~Lawvere incompleteness (T-55) forces
+$\mathrm{Gap}(i,j) = |\sin\theta_{ij}| > 0$ for at least one pair.
+(2)~The total Gap
+$\mathcal{G}_{\mathrm{total}} = \sum_{i<j}|\gamma_{ij}|^2\,\mathrm{Gap}(i,j)^2
+\geq 0.0048 + 0.0018 + 0.0009 = 0.0075$.
+(3)~By Chern--Weil (T-73):
+$\Delta F = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
+= 1600 \cdot 0.0075 = 12.0 > 0$.
+The free energy gradient is strictly positive --- the system has thermodynamic
+fuel for regeneration.
+
 \begin{theorembox}[T-187: Canonicity of the Bures Enrichment \status{T}]
 Within the Petz family of CPTP-monotone Riemannian metrics on $\Dens(\mathbb{C}^7)$, the
 Bures metric $d_B$ is uniquely fixed by three independent characterizations:

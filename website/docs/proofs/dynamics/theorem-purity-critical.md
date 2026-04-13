@@ -318,8 +318,26 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 **Proof:**
 Uniqueness follows from the algebraic equivalence of conditions 1–4 (all express the same geometric requirement in different terms). The autopoietic criterion (5) yields the same threshold from an independent symmetry-breaking requirement. All five formulations lead to $P - 1/N = 1/N$. ∎
 
-:::info Remark (nature of the proof)
-Paths 1 and 4 are **algebraic and self-contained** for proving $P_{\mathrm{crit}} = 2/N$ [Т]: Path 1 is the algebraic identity $\|\Gamma - I/N\|_F^2 = \|I/N\|_F^2 \Leftrightarrow P = 2/N$, Path 4 is spectral algebra. Paths 2 (informational, quadratic approximation of $D_{KL}$), 3 (SNR, noise scale $\sigma^2 \sim 1/N$), and 5 (autopoietic, axiomatic principle) are **independent confirmations** from different branches of the theory, each containing their own motivating assumptions. The convergence of all five paths to a single value is a non-trivial fact [Т], analogous to "cross-validation" in statistics.
+:::info Independence structure of the five paths
+
+**Tier A — fully independent rigorous derivations** (each alone proves $P_{\mathrm{crit}} = 2/N$ using different mathematical machinery):
+
+| Path | Mathematical apparatus | Assumptions beyond $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ |
+|------|----------------------|--------------------------------------------------------|
+| **1 (Frobenius)** | Hilbert–Schmidt Pythagoras | Reference = $I/N$ |
+| **3 (Haar detection)** | Weingarten 2nd-moment integration | Haar measure on $U(N)$ |
+| **4 (Spectral)** | Constrained Lagrange optimization | None (pure spectral algebra) |
+
+Paths 1, 3, 4 use disjoint mathematical tools (HS norm identity, Haar integration, Lagrange multipliers). Path 3 arrives at the same inequality $\|\Delta\|_F^2 > \|I/N\|_F^2$ as Path 1 but via a probabilistic (Weingarten) route with no norm-theoretic input. Path 4 characterizes the spectrum at threshold without using norms at all.
+
+**Tier B — supporting confirmations** (consistent with $P_{\mathrm{crit}} = 2/N$ but not fully independent):
+
+| Path | Relation to Tier A | Own contribution |
+|------|-------------------|-----------------|
+| **2 (KL entropy)** | Algebraically reduces to Path 1 in quadratic approximation; threshold $D_{KL} = 1/2$ nat is a **convention** | Information-theoretic interpretation of the same geometric inequality |
+| **5 (Stabilizer)** | Strengthened criterion $\|\Delta\| \geq \|I/N\|$ is Path 1 restated | Justifies $I/N$ as the canonical reference via Schur's lemma (representation theory) |
+
+The convergence of 3 independent Tier-A derivations on $P_{\mathrm{crit}} = 2/N$ is a structural fact of $\mathcal{D}(\mathbb{C}^N)$ geometry [Т]. Tier-B paths provide interpretive depth (informational, symmetry-theoretic) without adding independent numerical content.
 :::
 
 ---

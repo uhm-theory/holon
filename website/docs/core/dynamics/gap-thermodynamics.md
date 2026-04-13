@@ -618,6 +618,14 @@ $$
 
 (the last equality is the [definition of $\mathcal{G}_{\mathrm{total}}$](/docs/core/dynamics/gap-operator#g-total-definition) [О]). This identity confirms [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [Т] (Gap = curvature).
 
+:::info Worked numerical example
+For a holon at $P = 0.35$ with three representative off-diagonal coherences $\gamma_{EO} = 0.08\,e^{i\pi/3}$, $\gamma_{AE} = 0.06\,e^{i\pi/4}$, $\gamma_{OU} = 0.05\,e^{i\pi/5}$:
+
+$$\mathcal{G}_{\text{total}} \geq 0.08^2 \cdot \sin^2(\pi/3) + 0.06^2 \cdot \sin^2(\pi/4) + 0.05^2 \cdot \sin^2(\pi/5) = 0.0048 + 0.0018 + 0.0009 \approx 0.0075$$
+
+At $\omega_0 = 40$ Hz: $\mathrm{Tr}(D_{\text{int}}^2) = 1600 \cdot 0.0075 = 12.0 > 0$. The spectral action contribution is strictly positive — reflecting the thermodynamic fuel for regeneration. By T-55 [Т], $\mathcal{G}_{\text{total}} = 0$ requires all $\sin\theta_{ij} = 0$ (purely real coherences), which Lawvere incompleteness forbids for viable systems.
+:::
+
 **Step 2 ($V_2$ from the Seeley–DeWitt coefficient $a_2$).** The [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) for the product $M_4 \times F_7$:
 
 $$

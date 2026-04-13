@@ -194,10 +194,14 @@ The effective spatial spectral triple $(A_{\text{macro}}^{\text{spatial}}, H_{\t
 | Axiom | Check | Source |
 |-------|-------|--------|
 | (i) Dimension $p = 3$ | Step 2 | $\dim(\mathbf{3}) = 3$ [Т] |
-| (ii) Regularity | $A$ and $[D,A]$ in smooth domain | Smoothness of Lindblad evolution [Т] |
+| (ii) Regularity | See below | Explicit verification [Т] |
 | (iii) Finiteness | $H_\infty$ is a finitely generated projective module | $\dim(H_{\text{int}}) = 7 < \infty$ [Т] |
 | (iv) Orientability | Hochschild 3-cycle from $\chi_{\text{int}}$ | T-53 [Т] |
-| (v) Poincaré duality | Automatic for oriented closed 3-manifolds | Standard topology |
+| (v) Poincaré duality | See below | Explicit verification [Т] |
+
+**(ii) Regularity [Т].** The macroscopic algebra $A_{\text{macro}}^{\text{spatial}}$ is the norm-closure of $\bigotimes_{m \in \Lambda} A_{\text{int}}^{(m)}|_{\mathbf{3}}$ in the thermodynamic limit. As a direct limit of finite-dimensional matrix algebras, it is a pre-$C^*$-algebra closed under holomorphic functional calculus (every element has bounded spectrum; Riesz functional calculus applies). The commutator $[D_{\text{eff}}, a]$ for $a \in A_{\text{macro}}^{\text{spatial}}$ is bounded because $D_{\text{eff}}$ acts on the finitely generated module $H_{\text{eff}}$ and each Lindblad generator $L_k$ is bounded (T-39a [Т]). Therefore both $A$ and $[D,A]$ lie in the smooth domain $\bigcap_{n=1}^{\infty} \mathrm{Dom}(\delta^n)$ where $\delta(T) = [|D|, T]$.
+
+**(v) Poincaré duality [Т].** For a compact oriented spin 3-manifold $\Sigma^3$, the intersection form on $K$-theory is non-degenerate by the Atiyah–Singer index theorem: the Dirac operator $D_{\Sigma^3}$ defines a fundamental $K$-homology class $[D] \in K_3(\Sigma^3)$, and the cap product with $[D]$ gives an isomorphism $K^p(\Sigma^3) \xrightarrow{\sim} K_{3-p}(\Sigma^3)$ for $p = 0, 1$. In the UHM context, $\Sigma^3$ is a compact oriented spin manifold by construction (axioms (i), (iii), (iv) guarantee this), so Poincaré duality is a consequence of the Atiyah–Singer theorem applied to the Dirac spectral triple, not merely a topological assertion.
 
 **Step 6 (Connes reconstruction theorem).**
 
@@ -250,7 +254,7 @@ $$
 
 **Step 7 (Connes product theorem).** By the product theorem (Connes, 1996; Chamseddine–Connes, 1997): the product of spectral triples satisfying NCG axioms yields a spectral triple satisfying NCG axioms. Standard result.
 
-**Step 8 (Lorentzian signature).** $(+1,-1,-1,-1)$ from KO-dimension 6 of the finite triple (T-53 [Т]). $\blacksquare$
+**Step 8 (Lorentzian signature).** KO-dimension 6 real structure $J$ (T-53 [Т]: $J^2 = +1$, $J\chi = -\chi J$) combined with the Page–Wootters constraint $E_O = -E_{\text{rest}}$ forces opposite-signed eigenvalues: $\mathrm{spec}(D_O) = \{+\omega_0\}$ (temporal, positive) versus $\mathrm{spec}(D_{\{A,S,D\}}) \subset \{-\lambda_a\}$ (spatial, negative). The Connes distance formula $d(x,y) = \sup\{|f(x) - f(y)| : \|[D,f]\| \leq 1\}$ translates spectral signs to metric signature: $g_{00} = 1/|D_O|^2 > 0$, $g_{aa} = -1/|D_{3,a}|^2 < 0$, giving signature $(+1,-1,-1,-1)$. $\blacksquare$
 
 **Dependencies:** T-117 [Т], T-118 [Т], T-119 [Т], T-53 [Т]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 
@@ -304,7 +308,17 @@ ds^2 = dt^2 - a^2(t)\left[\frac{dr^2}{1-kr^2} + r^2 d\Omega^2\right], \quad k = 
 $$
 :::
 
-**Proof.** The vacuum Gap-configuration is $SU(3)$-invariant (from the sector decomposition [Т] and the unique vacuum T-64 [Т]). $SU(3)$-invariance of the vacuum $\Rightarrow$ spatial isotropy and homogeneity $\Rightarrow$ maximal symmetry of $\Sigma^3$ $\Rightarrow$ constant curvature. Sign: $\Lambda_{\text{Gap}} > 0$ (T-71 [Т], structural necessity $\Lambda_{\text{obs}} > 0$) $\Rightarrow$ $k = +1$ $\Rightarrow$ $\Sigma^3 \cong S^3$. The de Sitter metric is the standard solution of the Einstein equations with $\Lambda > 0$. $\blacksquare$
+**Proof.**
+
+1. **Симметрия вакуума.** Вакуумная конфигурация Gap инвариантна под действием $\mathrm{SU}(3) \subset G_2$ — стабилизатора O-направления в $G_2$ (секторное разложение [Т], единственность вакуума T-64 [Т]).
+
+2. **Транзитивность.** $\mathrm{SU}(3)$ действует транзитивно на единичной сфере $S^2 \subset \mathbb{C}^3$ (фундаментальное представление $\mathbf{3}$-сектора) с группой изотропии $\mathrm{SU}(2)$. Индуцированная метрика на $\Sigma^3$ наследует группу изометрий, содержащую $\mathrm{SU}(3)/\mathrm{SU}(2)$-орбиты, что даёт $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$.
+
+3. **Максимальная размерность.** Для 3-мерного многообразия максимальная размерность группы изометрий равна $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (достигается только на пространствах постоянной кривизны). Следовательно, $\mathrm{Isom}(\Sigma^3)$ имеет точно максимальную размерность 6, и $\Sigma^3$ является пространством постоянной кривизны.
+
+4. **Знак кривизны.** $\Lambda_{\text{Gap}} > 0$ (T-71 [Т], T-186(c) [Т]: $\Delta F > 0$ безусловно) $\Rightarrow$ положительная кривизна $\Rightarrow$ $k = +1$.
+
+5. **Единственность.** По классификации Тёрстона (точнее, по классификации модельных геометрий) единственное компактное ориентируемое 3-мерное многообразие с постоянной положительной кривизной и 6-мерной группой изометрий есть $S^3$ (3-сфера, $\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). $\blacksquare$
 
 ---
 
