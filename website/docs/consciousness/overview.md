@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: "Сознание: обзор"
+title: "Consciousness: Overview"
 description: "Consciousness in UHM — a complete derivation from five Ω⁷ axioms via the coherence matrix Γ"
 slug: /consciousness/overview
 ---

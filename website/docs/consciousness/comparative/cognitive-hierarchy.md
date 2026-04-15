@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Когнитивная иерархия
+title: Cognitive Hierarchy
 description: Levels of cognitive functions K1-K5 and their connection to the interiority hierarchy
 slug: /consciousness/comparative/cognitive-hierarchy
 ---

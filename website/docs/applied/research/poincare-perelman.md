@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Теорема Пуанкаре-Перельмана
+title: Poincaré–Perelman Theorem
 description: Topological analogy for cognitive evolution in UHM
 ---
 

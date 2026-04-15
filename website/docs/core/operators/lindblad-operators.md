@@ -497,7 +497,7 @@ $$
 $$
 
 $$
-\xrightarrow{[\text{Т}]} S_7\text{-равномерность} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \text{ранга-3 проекторы} \xrightarrow{[\text{Т}]} b = 7
+\xrightarrow{[\text{Т}]} S_7\text{-uniformity} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \text{rank-3 projectors} \xrightarrow{[\text{Т}]} b = 7
 $$
 
 $$

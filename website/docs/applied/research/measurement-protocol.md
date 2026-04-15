@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Протокол измерения Γ
+title: Measurement Protocol for Γ
 description: Operationalization of coherence matrix measurement for AI systems
 ---
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: "Символические соответствия"
+title: "Symbolic Correspondences"
 slug: /applied/research/symbolic-correspondence
 description: "Operationalization of symbolic correspondences: back-projection protocol, correspondence tables (zodiac, hexagrams, arcana), research program"
 ---

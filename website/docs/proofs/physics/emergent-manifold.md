@@ -379,15 +379,15 @@ $$
 
 **Proof.**
 
-1. **Симметрия вакуума.** Вакуумная конфигурация Gap инвариантна под действием $\mathrm{SU}(3) \subset G_2$ — стабилизатора O-направления в $G_2$ (секторное разложение [Т], единственность вакуума T-64 [Т]).
+1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [Т], vacuum uniqueness T-64 [Т]).
 
-2. **Транзитивность.** $\mathrm{SU}(3)$ действует транзитивно на единичной сфере $S^2 \subset \mathbb{C}^3$ (фундаментальное представление $\mathbf{3}$-сектора) с группой изотропии $\mathrm{SU}(2)$. Индуцированная метрика на $\Sigma^3$ наследует группу изометрий, содержащую $\mathrm{SU}(3)/\mathrm{SU}(2)$-орбиты, что даёт $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$.
+2. **Transitivity.** $\mathrm{SU}(3)$ acts transitively on the unit sphere $S^2 \subset \mathbb{C}^3$ (fundamental representation of the $\mathbf{3}$-sector) with isotropy group $\mathrm{SU}(2)$. The induced metric on $\Sigma^3$ inherits an isometry group containing the $\mathrm{SU}(3)/\mathrm{SU}(2)$ orbits, giving $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$.
 
-3. **Максимальная размерность.** Для 3-мерного многообразия максимальная размерность группы изометрий равна $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (достигается только на пространствах постоянной кривизны). Следовательно, $\mathrm{Isom}(\Sigma^3)$ имеет точно максимальную размерность 6, и $\Sigma^3$ является пространством постоянной кривизны.
+3. **Maximal dimension.** For a 3-manifold, the maximum isometry-group dimension is $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (attained only on spaces of constant curvature). Hence $\mathrm{Isom}(\Sigma^3)$ has exactly the maximal dimension 6, and $\Sigma^3$ is a space of constant curvature.
 
-4. **Знак кривизны.** $\Lambda_{\text{Gap}} > 0$ (T-71 [Т], T-186(c) [Т]: $\Delta F > 0$ безусловно) $\Rightarrow$ положительная кривизна $\Rightarrow$ $k = +1$.
+4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [Т], T-186(c) [Т]: $\Delta F > 0$ unconditionally) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$.
 
-5. **Единственность.** По классификации Тёрстона (точнее, по классификации модельных геометрий) единственное компактное ориентируемое 3-мерное многообразие с постоянной положительной кривизной и 6-мерной группой изометрий есть $S^3$ (3-сфера, $\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). $\blacksquare$
+5. **Uniqueness.** By Thurston's classification (more precisely, the classification of model geometries), the unique compact orientable 3-manifold of constant positive curvature with a 6-dimensional isometry group is $S^3$ (the 3-sphere, $\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). $\blacksquare$
 
 ---
 

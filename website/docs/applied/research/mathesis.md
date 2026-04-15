@@ -249,7 +249,7 @@ $$
 
 To each theory $T$ is assigned a **representable sheaf** $y(T)$: a functor that assigns to theory $S$ the space of all interpretations of $S$ into $T$.
 
-**Yoneda lemma (∞-version, HTT 5.1.3).** The embedding $y$ is fully faithful (вполне верно):
+**Yoneda lemma (∞-version, HTT 5.1.3).** The embedding $y$ is fully faithful:
 
 $$
 \mathrm{Map}_{\mathfrak{M}}(y(T_1), y(T_2)) \simeq \mathrm{Map}_{\mathbf{Th}}(T_1, T_2)
