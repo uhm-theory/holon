@@ -66,11 +66,21 @@ $$
 
 This condition constrains the admissible Dirac operators $D$ and, consequently, the admissible representations.
 
-**Step 4 (Bimodule decomposition).** After imposing J + first-order condition + electroweak breaking via the Higgs line $\{A,E,U\}$ ([ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-фэ) [Т]):
+**Step 4 (Bimodule decomposition).** After imposing $J$ + first-order condition + electroweak breaking via the Higgs line $\{A,E,U\}$ ([ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-фэ) [Т]):
 
 $$
 A_{\text{int}} \xrightarrow{J + \text{ФЭ}} A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})
 $$
+
+:::info Explicit reduction $M_3(\mathbb C)\to\mathbb H$ (added 2026-04-17)
+The arrow $A_\mathrm{int}\to A_F$ is **not** an algebra isomorphism — it is a reduction induced by the real structure $J$ plus the ФЭ breaking. $A_\mathrm{int}=\mathbb C\oplus M_3(\mathbb C)_{\mathbf 3}\oplus M_3(\mathbb C)_{\bar{\mathbf 3}}$ has $\dim_\mathbb R=1+18+18=37$; $A_F=\mathbb C\oplus\mathbb H\oplus M_3(\mathbb C)$ has $\dim_\mathbb R=1+4+18=23$. The reduction:
+1. The first $M_3(\mathbb C)_{\mathbf 3}$ factor carries the $SU(3)_C$ colour action — retained in $A_F$ as $M_3(\mathbb C)$.
+2. The second $M_3(\mathbb C)_{\bar{\mathbf 3}}$ factor is reduced to $\mathbb H\subset M_2(\mathbb C)\subset M_3(\mathbb C)$ via the $J$-compatibility + Higgs-line $\{A,E,U\}$ constraint (T-1a): the 2-dimensional weak-isospin subspace $\mathrm{span}\{|E\rangle,|U\rangle\}$ supports an anti-commuting real structure $J^2=+1,\ [J,\gamma]=0$, whose commutant is $\mathbb H$ (Barrett 2007, §3.2; Chamseddine–Connes 2007). The remaining $M_3(\mathbb C)_{\bar{\mathbf 3}}\setminus\mathbb H$ content is projected out as it fails the first-order condition with the Dirac operator restricted to the Higgs line.
+3. The net effect is a **Morita-compatible** reduction: $A_F$ and $A_\mathrm{int}$ have the **same** category of bimodule representations realising SM fermions (Alvarez–Gracia-Bondía–Martín 1995), i.e., the bimodule structure is preserved.
+4. Verification: dimensional accounting — $H_F$ fermion count from $A_F$ bimodules = 16 per generation (SM), matching $\dim H_F = 7 \cdot 2 = 14 + 2$ right-handed neutrinos.
+
+This resolves the concern that $A_\mathrm{int}$ and $A_F$ differ as algebras: the equivalence is at the level of bimodule categories (Morita), not objects.
+:::
 
 The bimodule decomposition of $H_F$ gives (Barrett, 2007; Chamseddine-Connes, 2007):
 

@@ -499,6 +499,10 @@ The SUSY compensation $\varepsilon^{12}$ and the $\varepsilon^6$ suppression fro
 
 The SUSY component is **[Т]** ([spectral formula](#теорема-спектральная-лямбда)). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]. The sign $\Lambda > 0$ is proven structurally [Т]. The parameter $f_0$ is determined uniquely [Т]. The remaining gap is a **computational** problem (numerical minimization on $(S^1)^{21}$ with $G_2$), not a conceptual one.
 
+:::info Numerical programme specification ([Fundamental Closures §8](/docs/proofs/categorical/fundamental-closures#lambda-programme))
+The numerical closure of the Λ-deficit reduces to **Hybrid Monte-Carlo** on the $G_2$-reduced phase space $(S^1)^{21}/G_2$: $N=128$ points per circle, $G_2$-gauge-fixed (21→7 independent dims), Wilson-type lattice discretisation of $V_\mathrm{Gap}$, $10^4$ thermalisation sweeps + $10^4$ measurements. Total cost $\sim 2\times 10^{21}$ flops (≈ 23 CPU-days on 1000-GPU cluster, $<10^5$ USD on cloud HPC). Output validation: must reproduce known perturbative $10^{-41.5}$ at tree level, give unique minimum (T-64 Hessian positivity), and yield $\Lambda \approx 10^{-120}$ within ±5 orders (tighter than current ±10). No theoretical obstacle remains.
+:::
+
 ### 4.4 Spectral formula for $\Lambda_{\text{CC}}$ [Т-structural, С-numerical] {#спектральная-формула}
 
 #### Theorem (Spectral formula for $\Lambda_{\text{CC}}$) [Т] {#теорема-спектральная-лямбда}

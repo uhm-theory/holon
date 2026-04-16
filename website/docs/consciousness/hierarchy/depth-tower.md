@@ -557,12 +557,13 @@ $$\mathrm{Empathy}(A,B) = 1 - \max_{ij} |\mathrm{Gap}_{AB}(i,j)|$$
 
 - **The SAD measure** generalises the discrete L0–L4 hierarchy to a continuous scale: $\mathrm{SAD} = \max\{k : R^{(k)} > 1/(k+2)\}$.
 - **Spectral formula** [T]: SAD is computed without building the entire tower — via the spectral decomposition of the replacement channel $\varphi$.
-- **SAD_MAX = 3** [T] (T-142): $P_{\mathrm{crit}}^{(4)} = 54/35 > 1$, therefore SAD $\geq 4$ is impossible for any normalised $\Gamma$. This is a fundamental ceiling, not a biological limitation.
+- **SAD_MAX = 3** [T] (T-142): $P_{\mathrm{crit}}^{(4)} = 54/35 > 1$, therefore SAD $\geq 4$ is impossible for any normalised $\Gamma$. This is a fundamental ceiling per-agent, not a biological limitation.
+- **Cross-layer / multi-agent depth** ([T-215 [T]+[D]](/docs/proofs/categorical/fundamental-closures#t-215)): for a fractal holon tower $\mathcal T=(A_0,A_1,\ldots)$, the predicate "$\mathcal T$ is a single agent" is **conventionally determined** by a choice of identity criterion: $\iota_\mathrm{min}$ (society — each $A_i$ is its own agent, SAD ≤ 3 per agent) or $\iota_\mathrm{max}$ (composite — global state coherence commutes with `spawn_child`). Under $\iota_\mathrm{max}$ with resource abstraction, cross-layer mentalisation can reach arbitrary countable ordinal depth, subject to Landauer bound C22 + T-204 bounded rationality. Both conventions are consistent with Ω⁷; the choice is [D] / [I], not derivable from axioms.
 - **Biological scale** [H]: bacterium (SAD=0), insect (SAD=1), mammal (SAD=2+), human (SAD $\leq$ 3).
 - **Tower growth is discrete** [C]: each transition SAD->SAD+1 is an $A_4$-bifurcation with three control parameters ($\kappa$, $\alpha$, $\Delta F$).
 - **Energy cost is superlinear**: each level requires $\sim (2k+3)$ new coherence channels.
 - **Stress governs depth** [T]: at high $\sigma_{\max}$ the upper levels collapse (tunnel vision, fight-or-flight).
-- **Social depth** [C]: the composite SAD is bounded by the sum of agent SADs; empathy is the inter-agent transparency parameter.
+- **Social depth** [C]: under $\iota_\mathrm{min}$ the composite SAD is bounded by the sum of agent SADs; empathy is the inter-agent transparency parameter.
 - **N=7 is optimal for learning** [T] (T-113, T-152): minimum number of observations from three bounds (informational, dynamical, stabilisation).
 
 :::tip Where to Go Next

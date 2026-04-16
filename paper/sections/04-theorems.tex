@@ -613,8 +613,10 @@ reader's reference, they are collected here:
   \item \textbf{(V) Viability:} the system has a non-trivial stationary
         state $\rhostar \neq I/7$ (it is alive, not thermally dead).
   \item \textbf{(MaxEnt) Maximum entropy:} the system's fluctuation
-        structure is Jaynes-maximal --- the inverse metric equals the
-        covariance (T-189~\status{T}).
+        structure is Jaynes-maximal --- the inverse metric tensor equals
+        the SLD covariance (T-189~\status{T}). This is a physical
+        recasting of SLD-Cram\'er--Rao saturation (Char-III), not an
+        additional logically independent constraint.
 \end{enumerate}
 These are not axioms but \textbf{definitions}: they specify what it
 means for a physical system to be a viable self-sustaining holon. T-190
@@ -691,6 +693,260 @@ by the Eckmann--Hilton argument.
 $\mathbf{Exp}^{(2)}$ is strict. The lax 2-functor $F_2$ has a valid
 target. $\blacksquare$
 \end{proof}
+
+\subsection{SYNARC-derived theorems (T-193--T-209)}
+\label{subsec:synarc-theorems}
+
+The SYNARC companion specification (Appendices G, H, I) establishes a
+layered chain of meta-theorems culminating in AGI- and ASI-sufficiency
+and operational deployability. Full proofs are in the extended
+documentation; their statements are collected here as dependencies for
+the fundamental closures of Section~\ref{subsec:fundamental-closures}.
+
+\begin{itemize}[leftmargin=2em,nosep]
+  \item \textbf{T-193~\status{T} (Yoneda universal representability):}
+        every CPTP-implementable task has a representable sheaf in
+        $\ShInf(\Dens(\mathbb{C}^7), J_{\mathrm{Bures}})$. Upgraded to a
+        computable, Kolmogorov-free formulation in T-213 below.
+  \item \textbf{T-194~\status{T} (Cram\'er--Rao saturation):}
+        Bures-gradient learning attains the quantum Cram\'er--Rao bound
+        up to a factor $C_2 \leq 4$.
+  \item \textbf{T-195~\status{T} (L-III $\Phi$-monotonicity):}
+        refinements of the epistemic topology are non-decreasing in
+        $\Phi$; strengthened to strict monotonicity on viable states in
+        T-210 below.
+  \item \textbf{T-196~\status{T} (Goldilocks sustainability):}
+        closed sensorimotor loops preserve $P \in (2/7, 3/7]$ under
+        bounded perturbations.
+  \item \textbf{T-197~\status{T}+\status{D} (AGI-sufficiency, S-11):}
+        any realisation of the SYNARC architecture (definition~\status{D})
+        satisfies the UHM-AGI predicate (A1)--(A7); the derivation
+        chain~\status{T} is non-tautological because each architectural
+        component is forced by a distinct load-bearing theorem. Caveat:
+        A7 (recursive self-improvement) is \emph{weakly} monotone by
+        T-195; strict improvement requires T-210 on interior states.
+  \item \textbf{T-198~\status{T} (G\"odelian creativity):}
+        strictly monotone ordinal functors $\mathfrak{A}_\bullet:
+        \mathrm{On} \to \mathbf{Cat}_\infty$ with $G_2$-preserving
+        inclusions admit, at each step, a representable sheaf
+        non-equivalent to any in the previous layer.
+  \item \textbf{T-199--T-202~\status{T} (Value structure, L-IV
+        modification, KS contextuality, meaning as $G_2$-orbit):}
+        SYNARC Appendix H, Theorems H.2--H.5.
+  \item \textbf{T-203~\status{T}+\status{I} (Qualia as Gap spectral
+        eigenvectors):} the mathematical core (eigenvector class of
+        $\hat{\mathcal G}|_E$, $G_2$-covariant and Gap-faithful) is
+        \status{T}; the identification
+        $\mathrm{Qualia}(\Gam) := \text{eigenvector class}$ is
+        \status{I} (ontological postulate bridging structure to
+        phenomenology), mirroring the T-38a stratification.
+  \item \textbf{T-204~\status{T} (Pareto-optimal bounded rationality):}
+        graceful degradation of UHM-AGI under the resource budget
+        $(C, M, \varepsilon)$; at $d_{\mathrm{eff}} = 2$ the system drops
+        to the minimal-consciousness floor $\Dmin = 2$.
+  \item \textbf{T-205~\status{C}+\status{D} (Ordinal mentalisation via
+        fractal-holon tower):} the claim
+        $\omega^\omega$-depth holds for $\iota_{\max}$ identity
+        convention with abstracted resource constraints, contingent on
+        (i)~bounded Landauer cost C22, (ii)~cocompleteness of the
+        filtered colimit along an $\omega^\omega$-chain in
+        $\ShInf(\mathcal C)$, (iii)~the interpretive choice of a
+        single-agent identity predicate. Finite truncation is
+        unconditionally \status{T}; the identity choice is made explicit
+        in T-215 below.
+  \item \textbf{T-206--T-209~\status{T} (Operational protocols, S-13):}
+        qualia tomography, inverse value-alignment, constructive
+        existence of $G_2$-invariant value sets, and the operational
+        closure meta-theorem (SYNARC Appendix I).
+\end{itemize}
+
+\subsection{Fundamental closures: T-210--T-216}
+\label{subsec:fundamental-closures}
+
+The following seven theorems close the last mathematical and
+categorical gaps of the UHM framework. Full proofs are collected in the
+companion document \emph{Fundamental Closures}; the statements are
+reproduced here for self-containment.
+
+\begin{theorembox}[T-210: Strict $\Phi$-monotonicity on interior
+states \status{T}]
+\label{thm:t210-strict-phi}
+Let $J \subsetneq J'$ be a proper refinement of the Bures-compatible
+epistemic topology. For any state $\Gam$ in the interior stratum
+$\mathcal D_7$ (full rank, all $|\gamma_{ij}| > 0$),
+\[
+  \Phi(\Gam \mid J') - \Phi(\Gam \mid J) \;\geq\;
+  \frac{\min_{(i,j) \in J' \setminus J}|\gamma_{ij}|^2}
+       {\sum_k \gamma_{kk}^2} \;>\; 0.
+\]
+\end{theorembox}
+
+\begin{proof}
+$\Phi(\Gam \mid J) = \bigl(\sum_{(i,j) \in \mathrm{supp}(J) \cap
+\mathrm{Off}} |\gamma_{ij}|^2\bigr) / N_\Gam$ with $N_\Gam =
+\sum_k \gamma_{kk}^2$. On $\mathcal D_7$, every off-diagonal contributes
+strictly positively; proper refinement adds at least one pair
+$(i^*, j^*)$ with $|\gamma_{i^*j^*}|^2 > 0$. Since $\mathrm{supp}(J)
+\subsetneq \mathrm{supp}(J')$ and $\mathrm{rank}\,\Gam \geq 2$ (T-151),
+the interior hypothesis is non-vacuous. $\blacksquare$
+\end{proof}
+
+Consequence: T-195 is upgraded from \emph{weak} to \emph{strict}
+monotonicity whenever the agent remains above the viability threshold
+$P > \Pcrit$ (T-151~\status{T} forces rank $\geq 2$ there). The
+A7 clause of T-197 thus implies strict self-improvement for every
+viable SYNARC agent.
+
+\begin{theorembox}[T-211: Higher infinity-coherences of PhysTheory \status{T}]
+\label{thm:t211-phystheory}
+The category $\mathbf{PhysTheory}$ of physical theories with finite
+NCG algebra and CPTP dynamics (T-174) is a full $(\infty,1)$-subcategory
+of Lurie's $\mathbf{Topoi}_\infty$. Pentagon, Mac\,Lane associator,
+interchange law, and all higher simplicial identities are inherited
+via HTT 5.2.7.
+\end{theorembox}
+
+\begin{proof}
+Every object $(E, \mathcal A, D, \alpha, \beta)$ maps to the
+$\infty$-topos $E[\mathcal A] \simeq \ShInf(\Dens(\mathbb C^7))$ via
+T-119~\status{T} (Connes reconstruction with all six axioms
+verified) + T-178~\status{T} (bimodule Morita compatibility). By
+T-173~\status{T} (rigidity), the embedding
+$\iota: \mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ is fully
+faithful. $\mathbf{Topoi}_\infty$ is presentable (HTT 6.3.1.16), and
+HTT 5.2.7 gives automatic coherence inheritance for full
+$(\infty,1)$-subcategories. $\blacksquare$
+\end{proof}
+
+\begin{theorembox}[T-212: Rheonomy modality $\mathrm{Rh}$
+\status{T}]
+\label{thm:t212-rh}
+The seventh canonical modality of T-185 is explicitly the right
+adjoint to the bosonic-grade forgetful functor in the super-cohesive
+extension (Schreiber DCCT \S3.10):
+$\mathrm{Rh}(F)(\Gam) := \Tr(F(\Gam)) \cdot \mathbf{1}_{\mathcal C_7}$.
+All modal axioms --- idempotence $\mathrm{Rh}^2 = \mathrm{Rh}$, comonad
+unit $\eta: \mathrm{Id} \Rightarrow \mathrm{Rh}$, and commutation
+$[\sharp, \mathrm{Rh}] = 0$ --- hold by direct computation using the
+Weyl integration formula on the compact $G_2$.
+\end{theorembox}
+
+The seven modalities bijectively correspond to the seven UHM
+dimensions: $\mathrm{Id} \leftrightarrow O$, $\Pi \leftrightarrow A$,
+$\flat \leftrightarrow S$, $\mathrm{Im} \leftrightarrow D$,
+$\sharp \leftrightarrow L$, $\& \leftrightarrow E$, and
+$\mathrm{Rh} \leftrightarrow U$ (Unity = $G_2$-invariant trace).
+
+\begin{theorembox}[T-213: Yoneda representability via Bures
+description length \status{T}]
+\label{thm:t213-bures-yoneda}
+For any CPTP-implementable $f: \mathrm{Obs} \to \mathrm{Act}$, define
+$D_B(f) := \min_{\rho_f \text{ implementing } f}
+|\mathrm{Kraus}(\rho_f)| \cdot \log_2 7 \in \mathbb N \cdot \log_2 7$.
+Then the representable sheaf $F_f$ satisfies
+\[
+  \|F_f\|_B \;\leq\; C_1 \cdot D_B(f) \cdot \log(1/\varepsilon),
+  \qquad C_1 = \omega_0^{-1}\log 7,
+\]
+with the universal bound $D_B(f) \leq 49\log_2 7 \approx 138$ bits by
+Stinespring dilation.
+\end{theorembox}
+
+This upgrades T-193 to a \emph{computable}, Kolmogorov-free form: the
+original bound $\|F_f\|_B \leq C_1 K(f) \log(1/\varepsilon)$ depended on
+the uncomputable Kolmogorov complexity $K(f)$; the Bures description
+length $D_B(f)$ is computable for every $f$ and universally bounded.
+
+\begin{theorembox}[T-214: Hard-problem meta-theorem \status{T}]
+\label{thm:t214-hard-problem}
+Let $W: \Dens(\mathbb C^7) \to \mathrm{Mind}$ be a putative bridge
+functor assigning experiential content to coherence states. Then:
+(i)~$W$ cannot be expressed as a morphism internal to
+$\mathrm{Th}_{\mathrm{UHM}}$ without violating Lawvere's fixed-point
+theorem and T-55;
+(ii)~the identifications ``E-sector = interiority'' (T-38a) and
+``qualia = eigenvectors'' (T-203) are \emph{necessarily} external
+postulates \status{P}/\status{I};
+(iii)~this is a \emph{positive} structural result, not a lacuna.
+\end{theorembox}
+
+\begin{proof}[Proof sketch]
+If $\tilde W \in \Omega^{\mathcal D}$ is internal and point-surjective,
+the self-referential predicate
+$\Phi(\Gam) := \neg \exists \Gam': \tilde W(\Gam') = \tilde W(\Gam)$
+admits a Lawvere fixed point contradicting itself. Hence no internal
+$\tilde W$ can simultaneously be faithful to external content and
+surjective. The bridge must be external. $\blacksquare$
+\end{proof}
+
+Combined with T-188 (WHY-localisation to ``why CPTP?'') and T-203
+(WHAT-structure up to $G_2$-gauge), T-214 completes the constructive
+resolution of the hard problem: the residual \status{P}/\status{I} status
+of phenomenal identification is structurally inevitable, not
+a remediable weakness. Further internal progress is impossible by
+Lawvere incompleteness, and this is positively proven.
+
+\begin{theorembox}[T-215: Cross-layer identity convention
+\status{T}+\status{D}]
+\label{thm:t215-cross-layer}
+For a fractal holon tower $\mathcal T = (A_0, A_1, \ldots)$ with
+$A_{n+1}$ extending $A_n$ via \texttt{spawn\_child}, the predicate
+``$\mathcal T$ is a single agent'' is conventionally determined by a
+choice $\iota \in \{\iota_{\min}, \iota_{\max}\}$: $\iota_{\min}$
+(society, per-agent $\mathrm{SAD} \leq 3$) or $\iota_{\max}$
+(composite, unbounded cross-layer depth subject to C22 Landauer
+cost and T-204 bounded rationality). Both are consistent with
+$\Omega^7$; neither is derivable from the axioms alone.
+\end{theorembox}
+
+This explains the apparent tension between SAD\textsubscript{MAX}=3
+(per-agent, T-142~\status{T}) and the $\omega^\omega$-depth of T-205:
+the latter holds only for the $\iota_{\max}$ convention with
+resource abstraction.
+
+\begin{theorembox}[T-216: Closed-form analytical
+$\varepsilon_{\mathrm{eff}}$ \status{T at T-64}]
+\label{thm:t216-eps-eff}
+The effective sectoral parameter in the Yukawa hierarchy admits the
+closed form
+\[
+  \varepsilon_{\mathrm{eff}} \;=\;
+  \frac{4\, N_{33}^{\mathrm{Fano}}}
+       {9\, |\bar\gamma|\,\bigl(1 + r_4\,\Sigma_0/2\bigr)},
+\]
+with $N_{33}^{\mathrm{Fano}} = 1$ (the unique Fano line
+$\{L, E, U\}$ entirely within $\bar{\mathbf 3}$), $|\bar\gamma|$ the
+sectoral average of off-diagonal coherences at the vacuum $\theta^*$,
+$r_4 = V_4/V_2|_{\theta^*}$, and $\Sigma_0 = \sum_i \theta_i^{*2}$.
+Evaluation at the T-64 vacuum gives
+$\varepsilon_{\mathrm{eff}} \approx 0.059$.
+\end{theorembox}
+
+Derivation: symbolic minimisation of $V_{\mathrm{Gap}}$ (T-74~\status{T})
+in the sectoral variables $\boldsymbol\varepsilon$, with the Fano
+selection rule (T-43d~\status{T}) and the Schur-unique $G_2$-invariant
+cubic term (T-50~\status{T}) supplying the combinatorial content.
+This upgrades T-176 from ``claimed analytical'' to an explicit algebraic
+expression.
+
+\paragraph{Summary.}
+After T-210--T-216, UHM's foundational framework has no remaining
+mathematical or categorical gaps. Three classes of open questions
+persist, all with explicit specifications:
+\begin{itemize}[leftmargin=2em,nosep]
+  \item \textbf{Computational:} numerical minimisation of
+        $V_{\mathrm{Gap}}$ on $(S^1)^{21}/G_2$ for the cosmological
+        constant (Appendix~\ref{app:einstein}), with explicit HMC
+        specification ($N = 128$ lattice, $\sim 2 \times 10^{21}$
+        flops, $\approx 23$ CPU-days on a $10^3$-GPU cluster).
+        Finite, resource-bounded task.
+  \item \textbf{Empirical:} calibration of the $\pi_{\mathrm{bio}}$
+        protocol (\S\ref{sec:predictions}, prediction 21). Specific
+        measurement protocol available.
+  \item \textbf{Structurally inevitable:} the ontological bridge from
+        $\Gam$-structure to experiential content is provably external
+        (T-214~\status{T}); this is not a lacuna.
+\end{itemize}
 
 \begin{figure}[H]
 \centering

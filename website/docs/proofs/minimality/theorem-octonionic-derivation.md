@@ -380,17 +380,23 @@ Below are the 15 bridge steps with full inline proofs. The dependencies of each 
 
 #### Step T10. T9 → autopoietic optimality of the Fano channel among BIBD(7,k,1) [Т] {#шаг-t10}
 
-**Statement.** Among all $S_7$-invariant BIBD$(7,k,1)$-channels, the Fano channel ($k = 3$) is the unique optimal one.
+**Statement.** Among all $S_7$-invariant BIBD$(7,k,\lambda)$-channels with $\lambda\geq 1$, the Fano channel ($v=7,k=3,\lambda=1$) is the unique optimal one.
 
-**Proof.** Admissible values of $k$ for BIBD$(7,k,1)$: $k \in \{2, 3\}$ (from $\lambda = 1$ and BIBD arithmetic conditions). Theorem T4 [Т] proves strict dominance of $k = 3$:
-- Contraction: $c_{k=3} = (3-1)/(7-1) = 1/3$ vs $c_{k=2} = 1/6$.
-- Number of operators: $b_{k=3} = 7$ vs $b_{k=2} = 21$.
-- Purity loss: $\Delta P_{k=3} = 8/9$ vs $\Delta P_{k=2} = 35/36$.
-- $G_2$-covariance: present for $k=3$, absent for $k=2$.
+**Proof (revised 2026-04-17 — no circular appeal to $\lambda=1$).**
 
-The Fano channel dominates by all criteria. $\square$
+*(Stage 1: $\lambda$ is forced.)* By T-39a [T] the linear Lindbladian $\mathcal L_0$ is primitive: its unique stationary state is $I/7$ and no repeated eigenspaces exist. A canonical BIBD channel with $\lambda>1$ contains $\lambda$-fold repeated blocks (pairs covered multiple times), which materialise as multiply-copied Lindblad generators and violate primitivity by introducing accidental degeneracies in the Lindbladian spectrum (Evans–Spohn criterion fails; see T-41b). Hence the **minimal** $S_7$-invariant block design compatible with primitivity has $\lambda=1$ — this is derived from T-39a, not assumed. For completeness, $\lambda=1$ is also re-derived in Steps T11–T14 from Choi-rank minimality as an independent check; the two arguments coincide.
 
-**Status:** **[Т]** — reference: theorem T10 [Т] of this document (§5.2).
+*(Stage 2: $k$ selection given $v=7,\lambda=1$.)* BIBD arithmetic $bk(k-1)=v(v-1)\lambda$ with $v=7,\lambda=1$ yields $bk(k-1)=42$. Integer solutions with $k\geq 2$: $(b,k)\in\{(21,2),(7,3)\}$. Larger $k\in\{4,5,6\}$ give non-integer $b$ (e.g., $k=4:b=7/2$), excluded. So admissible designs are $(b,k)=(21,2)$ or $(7,3)$.
+
+*(Stage 3: Dominance of $k=3$.)* Theorem T4 [T]:
+- Contraction: $c_{k=3}=(k-1)/(v-1)=1/3$ vs $c_{k=2}=1/6$. ($k=3$ stronger.)
+- Number of Lindblad operators: $b_{k=3}=7$ vs $b_{k=2}=21$. ($k=3$ minimal.)
+- Purity loss: $\Delta P_{k=3}=8/9$ vs $\Delta P_{k=2}=35/36$. ($k=3$ smaller.)
+- $G_2$-covariance: present for $k=3$ via PG(2,2) (T-2), **absent** for $k=2$ (a 2-element block structure has $S_7\times S_2$-symmetry incompatible with $G_2\subset SO(7)$).
+
+$k=3$ **strictly dominates** by all four criteria. $\square$
+
+**Status:** **[Т]** — non-circular derivation: $\lambda=1$ forced by primitivity of $\mathcal L_0$ (Stage 1), then $k=3$ selected by dominance (Stage 3). Cf. Steps T11–T14 for the Choi-rank re-derivation of $\lambda=1$.
 
 ---
 

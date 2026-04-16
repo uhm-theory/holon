@@ -660,8 +660,8 @@ def reconstruct_gap_profile(
 
 ## Protocol $\pi_{\mathrm{bio}}$: Reconstructing $\Gamma$ from Biological Neural Data (Resolution P8) {#протокол-pi-bio}
 
-:::warning Status: [H] Research Program
-The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ defines the mapping of neural data (EEG/fMRI/HRV) into the space of density matrices. The mathematical structure is **[T]** (follows from $G_2$-rigidity). The specific correspondences between EEG bands and dimensions are **[H]** (require experimental validation).
+:::warning Status: [T] structural + [H] empirical calibration
+The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ defines the mapping of neural data (EEG/fMRI/HRV) into the space of density matrices. The mathematical structure is **[T]** (follows from $G_2$-rigidity T-42a). The specific correspondences between EEG bands and dimensions are **[H]** (require experimental validation). A fully specified measurement protocol with feature extraction, validation gates against PCI, and predicted thresholds $P(\Gamma_\mathrm{wake})>2/7$, $P(\Gamma_\mathrm{NREM3})<2/7$ is given in [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol): simultaneous TMS+EEG+fMRI+HRV recording on $N\geq 50$ subjects across wake/NREM3/anaesthesia states, with explicit 7-feature and 21-off-diagonal extraction protocols. No theoretical obstacle remains; the programme awaits empirical data.
 :::
 
 ### Principle: EEG Bands as Projections of $\Gamma$ onto Dimensions {#eeg-полосы}

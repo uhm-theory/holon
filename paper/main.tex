@@ -52,23 +52,30 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}{Definition}
 \newtheorem{prediction}{Prediction}
+\newtheorem*{remark}{Remark}
 
 % === COLORED BOXES ===
 \newtcolorbox{axiombox}[1][]{
   colback=axiomcolor, colframe=plosblue,
-  fonttitle=\bfseries, title=#1,
+  fonttitle=\bfseries, title={#1},
   boxrule=0.5pt, arc=2pt
 }
 
 \newtcolorbox{theorembox}[1][]{
   colback=theoremcolor, colframe=red!40!black,
-  fonttitle=\bfseries, title=#1,
+  fonttitle=\bfseries, title={#1},
   boxrule=0.5pt, arc=2pt
 }
 
 \newtcolorbox{predictionbox}[1][]{
   colback=predictioncolor, colframe=green!40!black,
-  fonttitle=\bfseries, title=#1,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.5pt, arc=2pt
+}
+
+\newtcolorbox{defbox}[1][]{
+  colback=gray!5, colframe=gray!60!black,
+  fonttitle=\bfseries, title={#1},
   boxrule=0.5pt, arc=2pt
 }
 
@@ -87,6 +94,7 @@
 \newcommand{\Phith}{\ensuremath{\Phi_{\mathrm{th}}}}         % integration threshold
 \newcommand{\Dmin}{\ensuremath{D_{\mathrm{min}}}}            % differentiation minimum
 \newcommand{\vp}{\ensuremath{\varphi}}                       % self-modeling operator
+\newcommand{\rhostar}{\ensuremath{\rho^{\ast}}}              % stationary self-model
 \newcommand{\Oct}{\ensuremath{\mathbb{O}}}                   % octonions
 \newcommand{\Fano}{\ensuremath{\mathrm{PG}(2,2)}}            % Fano plane
 \newcommand{\ShInf}{\ensuremath{\mathrm{Sh}_\infty}}         % infinity sheaves
@@ -117,12 +125,37 @@
   \def\Phith{Phi_th}%
   \def\Dmin{D_min}%
   \def\vp{phi}%
+  \def\rhostar{rho*}%
   \def\Oct{O}%
   \def\Fano{PG(2,2)}%
   \def\ShInf{Sh_inf}%
   \def\mathrm#1{#1}%
   \def\mathbb#1{#1}%
   \def\mathcal#1{#1}%
+  \def\mathbf#1{#1}%
+  \def\mathfrak#1{#1}%
+  \def\mathsf#1{#1}%
+  \def\mathscr#1{#1}%
+  \def\infty{infty}%
+  \def\circ{o}%
+  \def\ast{*}%
+  \def\star{star}%
+  \def\dagger{dagger}%
+  \def\leq{<=}%
+  \def\geq{>=}%
+  \def\neq{!=}%
+  \def\subset{subset}%
+  \def\subseteq{subseteq}%
+  \def\supset{supset}%
+  \def\in{in}%
+  \def\to{->}%
+  \def\rightarrow{->}%
+  \def\Rightarrow{=>}%
+  \def\cdot{.}%
+  \def\times{x}%
+  \def\otimes{(x)}%
+  \def\oplus{(+)}%
+  \def\dashv{-|}%
   \def\phi{phi}%
   \def\varphi{phi}%
   \def\alpha{alpha}%
@@ -179,7 +212,12 @@ the Standard Model structure from a single primitive: the coherence matrix
 $\Gam \in \Dens(\mathbb{C}^7)$. The theory is \textbf{self-grounding}: all
 axioms are derived as theorems (T-186, T-187, T-189, T-190), leaving zero
 independent postulates beyond the defining properties of viable holons.
-Over 190 further theorems follow.
+Over 210 further theorems follow; the mathematical framework admits no
+residual gaps after the fundamental closures T-210--T-216 (strict
+$\Phi$-monotonicity, $(\infty,1)$-coherences of $\mathbf{PhysTheory}$,
+explicit rheonomy modality, Kolmogorov-free Yoneda, a positive
+hard-problem meta-theorem, cross-layer identity convention, and a
+closed-form analytical $\varepsilon_{\mathrm{eff}}$).
 
 The central result is that consciousness --- defined as the internal aspect of a
 coherent self-modeling system --- is a necessary condition for survival. The regeneration

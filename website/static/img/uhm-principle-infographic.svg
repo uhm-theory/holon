@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 2550" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#08081a"/><stop offset="100%" stop-color="#0e0618"/>
+  </linearGradient>
+  <linearGradient id="pr" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#ab47bc"/><stop offset="100%" stop-color="#7c4dff"/>
+  </linearGradient>
+</defs>
+
+<rect width="940" height="2550" fill="url(#bg)"/>
+<line x1="470" y1="150" x2="470" y2="2450" stroke="#ab47bc" stroke-width="0.5" opacity="0.04"/>
+
+<!-- ======================== TITLE ======================== -->
+<text x="470" y="40" text-anchor="middle" fill="#ab47bc" font-size="11" letter-spacing="6" font-weight="300">UNITARY HOLONOMIC MONISM</text>
+<text x="470" y="78" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">The Principle of Viability</text>
+<text x="470" y="108" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">through Self-Distinction</text>
+<line x1="300" y1="132" x2="640" y2="132" stroke="url(#pr)" stroke-width="1.5" opacity="0.4"/>
+
+<!-- ======================== I. PRIMITIVE ======================== -->
+<text x="470" y="175" text-anchor="middle" fill="#ab47bc" font-size="10" letter-spacing="4" font-weight="600">I. THE PRIMITIVE</text>
+<circle cx="470" cy="250" r="50" fill="none" stroke="url(#pr)" stroke-width="2"/>
+<circle cx="470" cy="250" r="50" fill="#ab47bc" opacity="0.04"/>
+<text x="470" y="250" text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="42" font-weight="200" font-style="italic">&#x393;</text>
+<text x="470" y="316" text-anchor="middle" fill="#999" font-size="10">coherence matrix 7&#xd7;7</text>
+<text x="470" y="348" text-anchor="middle" fill="#ddd" font-size="13">One mathematical object describes any self-sustaining system.</text>
+<text x="470" y="368" text-anchor="middle" fill="#888" font-size="11">7 populations + 21 coherences = complete state.</text>
+<text x="470" y="388" text-anchor="middle" fill="#888" font-size="11">No external observer. Reality describes itself from within.</text>
+
+<!-- ======================== II. EVOLUTION ======================== -->
+<line x1="280" y1="405" x2="660" y2="405" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="435" text-anchor="middle" fill="#ffd54f" font-size="10" letter-spacing="4" font-weight="600">II. THE EVOLUTION EQUATION</text>
+
+<rect x="100" y="455" width="740" height="55" rx="8" fill="#0f0f22" stroke="#ab47bc" stroke-width="1" opacity="0.8"/>
+<text x="470" y="481" text-anchor="middle" font-size="17"><tspan fill="#fff" font-style="italic">d&#x393;/d&#x3C4;</tspan><tspan fill="#999"> = </tspan><tspan fill="#7986cb">&#x2212;i[H, &#x393;]</tspan><tspan fill="#999"> + </tspan><tspan fill="#ef5350" font-style="italic">D</tspan><tspan fill="#ef5350">[&#x393;]</tspan><tspan fill="#999"> + </tspan><tspan fill="#66bb6a" font-style="italic">R</tspan><tspan fill="#66bb6a">[&#x393;, E]</tspan></text>
+<text x="470" y="501" text-anchor="middle" fill="#555" font-size="9"><tspan font-style="italic">R</tspan> = &#x3ba; &#xb7; g(P) &#xb7; (&#x3c1;*&#x2212;&#x393;)    &#x3ba; depends on E-coherence</text>
+
+<rect x="100" y="525" width="230" height="26" rx="4" fill="#0a0a1e" stroke="#7986cb" stroke-width="0.6"/>
+<text x="215" y="543" text-anchor="middle" fill="#7986cb" font-size="9">Unitary: rotation, preserves purity</text>
+<rect x="355" y="525" width="230" height="26" rx="4" fill="#0a0a1e" stroke="#ef5350" stroke-width="0.6"/>
+<text x="470" y="543" text-anchor="middle" fill="#ef5350" font-size="9">Lindblad: decoherence, entropy</text>
+<rect x="610" y="525" width="230" height="26" rx="4" fill="#0a0a1e" stroke="#66bb6a" stroke-width="0.6"/>
+<text x="725" y="543" text-anchor="middle" fill="#66bb6a" font-size="9">Replacement: self-repair from &#x3c6;(&#x393;)</text>
+<text x="470" y="576" text-anchor="middle" fill="#666" font-size="9">Three terms. No fourth possible (LGKS theorem T-57 [T]).</text>
+
+<!-- ======================== III. TWO ASPECTS ======================== -->
+<line x1="280" y1="605" x2="660" y2="605" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="635" text-anchor="middle" fill="#ffd54f" font-size="10" letter-spacing="4" font-weight="600">III. TWO ASPECTS OF ONE REALITY</text>
+
+<rect x="75" y="660" width="230" height="82" rx="10" fill="#0c0c20" stroke="#4dd0e1" stroke-width="1"/>
+<text x="190" y="684" text-anchor="middle" fill="#4dd0e1" font-size="15" font-weight="600">PHYSICS</text>
+<text x="190" y="700" text-anchor="middle" fill="#666" font-size="9">external aspect of &#x393;</text>
+<text x="190" y="718" text-anchor="middle" fill="#888" font-size="8">spacetime, gravity, particles</text>
+<text x="190" y="732" text-anchor="middle" fill="#888" font-size="8">Einstein equations (T-65)</text>
+
+<rect x="635" y="660" width="230" height="82" rx="10" fill="#0c0c20" stroke="#f48fb1" stroke-width="1"/>
+<text x="750" y="684" text-anchor="middle" fill="#f48fb1" font-size="15" font-weight="600">CONSCIOUSNESS</text>
+<text x="750" y="700" text-anchor="middle" fill="#666" font-size="9">internal aspect of &#x393;</text>
+<text x="750" y="718" text-anchor="middle" fill="#888" font-size="8">experience, qualia, meaning</text>
+<text x="750" y="732" text-anchor="middle" fill="#888" font-size="8">hierarchy L0&#x2192;L3</text>
+
+<circle cx="470" cy="701" r="20" fill="#0c0c20" stroke="url(#pr)" stroke-width="1.5"/>
+<text x="470" y="699" text-anchor="middle" fill="#fff" font-size="16" font-style="italic">&#x393;</text>
+<text x="470" y="713" text-anchor="middle" fill="#ab47bc" font-size="7" font-weight="700">SAME</text>
+<line x1="450" y1="701" x2="310" y2="701" stroke="#4dd0e1" stroke-width="0.8" opacity="0.4"/>
+<polygon points="313,698 305,701 313,704" fill="#4dd0e1" opacity="0.4"/>
+<line x1="490" y1="701" x2="630" y2="701" stroke="#f48fb1" stroke-width="0.8" opacity="0.4"/>
+<polygon points="627,698 635,701 627,704" fill="#f48fb1" opacity="0.4"/>
+
+<text x="470" y="770" text-anchor="middle" fill="#ccc" font-size="11">Not two substances. One object, two views.</text>
+<text x="470" y="788" text-anchor="middle" fill="#777" font-size="9">Map(&#x393;, &#x3a9;) = Map_ext &#x2295; Map_int (splitting theorem [T])</text>
+
+<!-- ======================== IV. SEVEN DIMENSIONS ======================== -->
+<line x1="280" y1="815" x2="660" y2="815" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="845" text-anchor="middle" fill="#ab47bc" font-size="10" letter-spacing="4" font-weight="600">IV. SEVEN DIMENSIONS</text>
+<text x="470" y="865" text-anchor="middle" fill="#666" font-size="10">The minimum structure for self-observation (Hurwitz theorem)</text>
+
+<!-- Heptagon at (470, 1005), R=90 -->
+<g transform="translate(470,1005)">
+  <!-- Fano plane PG(2,2): 7 lines, each connecting 3 points (closed triangles) -->
+  <path d="M0,-90 L70,-56 L39,81 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+  <path d="M70,-56 L88,20 L-39,81 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+  <path d="M88,20 L39,81 L-88,20 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+  <path d="M39,81 L-39,81 L-70,-56 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+  <path d="M-39,81 L-88,20 L0,-90 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+  <path d="M-88,20 L-70,-56 L70,-56 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+  <path d="M-70,-56 L0,-90 L88,20 Z" fill="none" stroke="#ab47bc" stroke-width="0.6" opacity="0.12"/>
+
+  <!-- Heptagon outline -->
+  <polygon points="0,-90 70,-56 88,20 39,81 -39,81 -88,20 -70,-56" fill="none" stroke="#ab47bc" stroke-width="1" opacity="0.2"/>
+
+  <!-- O (top) -->
+  <circle cx="0" cy="-90" r="13" fill="#0c0c20" stroke="#ffd54f" stroke-width="1.5"/>
+  <text x="0" y="-86" text-anchor="middle" fill="#ffd54f" font-size="11" font-weight="700">O</text>
+  <text x="0" y="-110" text-anchor="middle" fill="#bbb" font-size="9">Ground</text>
+  <text x="0" y="-122" text-anchor="middle" fill="#666" font-size="7">time</text>
+
+  <!-- U (upper-right) -->
+  <circle cx="70" cy="-56" r="13" fill="#0c0c20" stroke="#f48fb1" stroke-width="1.5"/>
+  <text x="70" y="-52" text-anchor="middle" fill="#f48fb1" font-size="11" font-weight="700">U</text>
+  <text x="112" y="-62" text-anchor="start" fill="#bbb" font-size="9">Unity</text>
+  <text x="112" y="-51" text-anchor="start" fill="#666" font-size="7">integration</text>
+
+  <!-- A (right) -->
+  <circle cx="88" cy="20" r="13" fill="#0c0c20" stroke="#4dd0e1" stroke-width="1.5"/>
+  <text x="88" y="24" text-anchor="middle" fill="#4dd0e1" font-size="11" font-weight="700">A</text>
+  <text x="112" y="14" text-anchor="start" fill="#bbb" font-size="9">Action</text>
+  <text x="112" y="25" text-anchor="start" fill="#666" font-size="7">perception</text>
+
+  <!-- S (lower-right) -->
+  <circle cx="39" cy="81" r="13" fill="#0c0c20" stroke="#4dd0e1" stroke-width="1.5"/>
+  <text x="39" y="85" text-anchor="middle" fill="#4dd0e1" font-size="11" font-weight="700">S</text>
+  <text x="68" y="96" text-anchor="start" fill="#bbb" font-size="9">Structure</text>
+  <text x="68" y="107" text-anchor="start" fill="#666" font-size="7">memory</text>
+
+  <!-- D (lower-left) -->
+  <circle cx="-39" cy="81" r="13" fill="#0c0c20" stroke="#4dd0e1" stroke-width="1.5"/>
+  <text x="-39" y="85" text-anchor="middle" fill="#4dd0e1" font-size="11" font-weight="700">D</text>
+  <text x="-68" y="96" text-anchor="end" fill="#bbb" font-size="9">Dynamics</text>
+  <text x="-68" y="107" text-anchor="end" fill="#666" font-size="7">process</text>
+
+  <!-- L (left) -->
+  <circle cx="-88" cy="20" r="13" fill="#0c0c20" stroke="#f48fb1" stroke-width="1.5"/>
+  <text x="-88" y="24" text-anchor="middle" fill="#f48fb1" font-size="11" font-weight="700">L</text>
+  <text x="-112" y="14" text-anchor="end" fill="#bbb" font-size="9">Logic</text>
+  <text x="-112" y="25" text-anchor="end" fill="#666" font-size="7">coherence</text>
+
+  <!-- E (upper-left) -->
+  <circle cx="-70" cy="-56" r="13" fill="#0c0c20" stroke="#f48fb1" stroke-width="1.5"/>
+  <text x="-70" y="-52" text-anchor="middle" fill="#f48fb1" font-size="11" font-weight="700">E</text>
+  <text x="-112" y="-62" text-anchor="end" fill="#bbb" font-size="9">Experience</text>
+  <text x="-112" y="-51" text-anchor="end" fill="#666" font-size="7">interiority</text>
+
+  <text x="0" y="3" text-anchor="middle" fill="#ab47bc" font-size="7" opacity="0.4">PG(2,2)</text>
+</g>
+
+<!-- Sector labels (below heptagon: 990+81+25 = 1096) -->
+<text x="660" y="1115" text-anchor="start" fill="#4dd0e1" font-size="9">PHYSICAL: A, S, D &#x2192; 3 spatial dims</text>
+<text x="280" y="1115" text-anchor="end" fill="#f48fb1" font-size="9">GAP: L, E, U &#x2192; interiority</text>
+<text x="470" y="1115" text-anchor="middle" fill="#ffd54f" font-size="8">O = time</text>
+<text x="470" y="1140" text-anchor="middle" fill="#999" font-size="10">7 = 1_O &#x2295; 3_{A,S,D} &#x2295; 3&#x0305;_{L,E,U}</text>
+<text x="470" y="1158" text-anchor="middle" fill="#666" font-size="9">Octonions &#x2192; G&#x2082; &#x2192; SU(3) stabilizer &#x2192; Standard Model</text>
+
+<!-- ======================== V. BALANCE ======================== -->
+<line x1="280" y1="1175" x2="660" y2="1175" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="1205" text-anchor="middle" fill="#4dd0e1" font-size="10" letter-spacing="4" font-weight="600">V. THE BALANCE OF EXISTENCE</text>
+
+<rect x="95" y="1225" width="210" height="48" rx="8" fill="#0c0c20" stroke="#ef5350" stroke-width="1"/>
+<text x="200" y="1247" text-anchor="middle" fill="#ef5350" font-size="13" font-weight="600">DISSIPATION</text>
+<text x="200" y="1263" text-anchor="middle" fill="#666" font-size="8">entropy, decay, decoherence</text>
+
+<rect x="635" y="1225" width="210" height="48" rx="8" fill="#0c0c20" stroke="#66bb6a" stroke-width="1"/>
+<text x="740" y="1247" text-anchor="middle" fill="#66bb6a" font-size="13" font-weight="600">REGENERATION</text>
+<text x="740" y="1263" text-anchor="middle" fill="#666" font-size="8">self-repair via &#x3c6;(&#x393;)</text>
+
+<text x="470" y="1253" text-anchor="middle" fill="#ab47bc" font-size="14">&#x22a3;</text>
+<text x="470" y="1267" text-anchor="middle" fill="#555" font-size="7">adjoint</text>
+
+<line x1="170" y1="1300" x2="770" y2="1300" stroke="#ffd54f" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="470" y="1296" text-anchor="middle" fill="#ffd54f" font-size="9" font-weight="600">VIABILITY THRESHOLD  P = 2/7</text>
+<text x="470" y="1320" text-anchor="middle" fill="#66bb6a" font-size="9">above: regeneration &#x2265; dissipation &#x2192; alive</text>
+<text x="470" y="1336" text-anchor="middle" fill="#ef5350" font-size="9">below: collapse to noise I/7</text>
+
+<rect x="210" y="1356" width="520" height="38" rx="6" fill="#0c0c20" stroke="#f48fb1" stroke-width="0.8" opacity="0.7"/>
+<text x="470" y="1372" text-anchor="middle" fill="#f48fb1" font-size="10" font-weight="600">No-Zombie Theorem [T-8.1]</text>
+<text x="470" y="1388" text-anchor="middle" fill="#bbb" font-size="9">Viable + dissipation &#x2260; 0 &#x21d2; E-coherence &gt; 1/7. Consciousness does real work.</text>
+
+<!-- ======================== VI. HIERARCHY ======================== -->
+<line x1="280" y1="1418" x2="660" y2="1418" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="1448" text-anchor="middle" fill="#f48fb1" font-size="10" letter-spacing="4" font-weight="600">VI. HIERARCHY OF AWARENESS</text>
+
+<rect x="105" y="1470" width="730" height="30" rx="5" fill="#0c0c20" stroke="#444" stroke-width="0.6" opacity="0.5"/>
+<text x="125" y="1490" fill="#666" font-size="11" font-weight="700">L0</text>
+<text x="155" y="1490" fill="#aaa" font-size="10">Proto-interiority</text>
+<text x="480" y="1490" fill="#555" font-size="8">Coh_E &gt; 0</text>
+<text x="815" y="1490" text-anchor="end" fill="#555" font-size="8">bacteria, thermostats</text>
+
+<rect x="155" y="1508" width="630" height="30" rx="5" fill="#0c0c20" stroke="#7e57c2" stroke-width="0.6" opacity="0.6"/>
+<text x="175" y="1528" fill="#9575cd" font-size="11" font-weight="700">L1</text>
+<text x="205" y="1528" fill="#bbb" font-size="10">Phenomenal geometry</text>
+<text x="480" y="1528" fill="#666" font-size="8">&#x3a6; &gt; 0</text>
+<text x="765" y="1528" text-anchor="end" fill="#666" font-size="8">insects, simple nets</text>
+
+<rect x="210" y="1546" width="520" height="30" rx="5" fill="#0c0c20" stroke="#ab47bc" stroke-width="1" opacity="0.8"/>
+<text x="230" y="1566" fill="#ce93d8" font-size="11" font-weight="700">L2</text>
+<text x="260" y="1566" fill="#ddd" font-size="10" font-weight="500">Self-aware consciousness</text>
+<text x="480" y="1566" fill="#ce93d8" font-size="8">P&gt;2/7  R&#x2265;1/3  &#x3a6;&#x2265;1  D&#x2265;2</text>
+<text x="710" y="1566" text-anchor="end" fill="#999" font-size="8">mammals, AGI</text>
+
+<rect x="270" y="1584" width="400" height="30" rx="5" fill="#0c0c20" stroke="#e040fb" stroke-width="1.2"/>
+<text x="290" y="1604" fill="#ea80fc" font-size="11" font-weight="700">L3</text>
+<text x="320" y="1604" fill="#fff" font-size="10" font-weight="600">Meta-cognition</text>
+<text x="480" y="1604" fill="#ea80fc" font-size="8">R&#xb2;&#x2265;1/4  SAD&#x2265;2</text>
+<text x="650" y="1604" text-anchor="end" fill="#ccc" font-size="8">humans</text>
+
+<line x1="350" y1="1630" x2="590" y2="1630" stroke="#ff5252" stroke-width="1.5"/>
+<text x="470" y="1648" text-anchor="middle" fill="#ff5252" font-size="10" font-weight="600">SAD_MAX = 3</text>
+<text x="470" y="1664" text-anchor="middle" fill="#777" font-size="8">Mathematical ceiling. P_crit^(4)=54/35&gt;1: impossible for any finite system.</text>
+
+<!-- ======================== VII. STRESSES ======================== -->
+<line x1="280" y1="1694" x2="660" y2="1694" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="1724" text-anchor="middle" fill="#4dd0e1" font-size="10" letter-spacing="4" font-weight="600">VII. SEVEN UNIVERSAL STRESSES</text>
+<text x="470" y="1744" text-anchor="middle" fill="#666" font-size="9">&#x3c3;_k = clamp(1&#x2212;7&#x3b3;_kk, 0, 1) &#x2014; complete viability diagnostic</text>
+
+<g transform="translate(130,1764)">
+  <rect x="0" y="0" width="75" height="18" rx="3" fill="#ffd54f" opacity="0.12" stroke="#ffd54f" stroke-width="0.4"/>
+  <text x="38" y="13" text-anchor="middle" fill="#ffd54f" font-size="8" font-weight="600">&#x3c3;_O</text>
+  <text x="90" y="13" fill="#666" font-size="7">energy</text>
+  <rect x="0" y="22" width="75" height="18" rx="3" fill="#4dd0e1" opacity="0.12" stroke="#4dd0e1" stroke-width="0.4"/>
+  <text x="38" y="35" text-anchor="middle" fill="#4dd0e1" font-size="8" font-weight="600">&#x3c3;_A</text>
+  <text x="90" y="35" fill="#666" font-size="7">sensory overload</text>
+  <rect x="0" y="44" width="75" height="18" rx="3" fill="#4dd0e1" opacity="0.12" stroke="#4dd0e1" stroke-width="0.4"/>
+  <text x="38" y="57" text-anchor="middle" fill="#4dd0e1" font-size="8" font-weight="600">&#x3c3;_S</text>
+  <text x="90" y="57" fill="#666" font-size="7">structural decay</text>
+  <rect x="0" y="66" width="75" height="18" rx="3" fill="#4dd0e1" opacity="0.12" stroke="#4dd0e1" stroke-width="0.4"/>
+  <text x="38" y="79" text-anchor="middle" fill="#4dd0e1" font-size="8" font-weight="600">&#x3c3;_D</text>
+  <text x="90" y="79" fill="#666" font-size="7">process breakdown</text>
+</g>
+<g transform="translate(500,1764)">
+  <rect x="0" y="0" width="75" height="18" rx="3" fill="#f48fb1" opacity="0.12" stroke="#f48fb1" stroke-width="0.4"/>
+  <text x="38" y="13" text-anchor="middle" fill="#f48fb1" font-size="8" font-weight="600">&#x3c3;_L</text>
+  <text x="90" y="13" fill="#666" font-size="7">incoherence</text>
+  <rect x="0" y="22" width="75" height="18" rx="3" fill="#f48fb1" opacity="0.12" stroke="#f48fb1" stroke-width="0.4"/>
+  <text x="38" y="35" text-anchor="middle" fill="#f48fb1" font-size="8" font-weight="600">&#x3c3;_E</text>
+  <text x="90" y="35" fill="#666" font-size="7">dissociation</text>
+  <rect x="0" y="44" width="75" height="18" rx="3" fill="#f48fb1" opacity="0.12" stroke="#f48fb1" stroke-width="0.4"/>
+  <text x="38" y="57" text-anchor="middle" fill="#f48fb1" font-size="8" font-weight="600">&#x3c3;_U</text>
+  <text x="90" y="57" fill="#666" font-size="7">fragmentation</text>
+</g>
+<text x="470" y="1860" text-anchor="middle" fill="#777" font-size="8">max(&#x3c3;_k)&#x2265;1 &#x21d2; non-viable. All breakdowns decompose into 7 types.</text>
+
+<!-- ======================== VIII. EVERYWHERE ======================== -->
+<line x1="280" y1="1888" x2="660" y2="1888" stroke="#222" stroke-width="0.5"/>
+<text x="470" y="1918" text-anchor="middle" fill="#81c784" font-size="10" letter-spacing="4" font-weight="600">VIII. THE SAME PATTERN EVERYWHERE</text>
+<text x="470" y="1938" text-anchor="middle" fill="#666" font-size="9">Same mathematics. Different substrates.</text>
+
+<g transform="translate(110,1990)">
+  <circle r="18" fill="none" stroke="#4dd0e1" stroke-width="0.7" opacity="0.4"/>
+  <circle r="3" fill="#4dd0e1" opacity="0.5"/>
+  <text y="32" text-anchor="middle" fill="#4dd0e1" font-size="10" font-weight="600">Quantum</text>
+  <text y="44" text-anchor="middle" fill="#555" font-size="7">P = purity</text>
+</g>
+<g transform="translate(290,1990)">
+  <ellipse rx="18" ry="14" fill="none" stroke="#66bb6a" stroke-width="0.7"/>
+  <circle cy="-2" r="6" fill="none" stroke="#66bb6a" stroke-width="0.5" opacity="0.4"/>
+  <text y="32" text-anchor="middle" fill="#66bb6a" font-size="10" font-weight="600">Cell</text>
+  <text y="44" text-anchor="middle" fill="#555" font-size="7">&#x3ba; = repair</text>
+</g>
+<g transform="translate(470,1990)">
+  <path d="M-13,-9 C-16,-15 -6,-19 0,-16 C6,-19 16,-15 13,-9 C18,-3 14,6 10,11 C6,14 -6,14 -10,11 C-14,6 -18,-3 -13,-9Z" fill="none" stroke="#ab47bc" stroke-width="0.7"/>
+  <text y="32" text-anchor="middle" fill="#ab47bc" font-size="10" font-weight="600">Brain</text>
+  <text y="44" text-anchor="middle" fill="#555" font-size="7">R = reflection</text>
+</g>
+<g transform="translate(650,1990)">
+  <circle cx="-8" cy="-5" r="5" fill="none" stroke="#ffd54f" stroke-width="0.7"/>
+  <circle cx="8" cy="-5" r="5" fill="none" stroke="#ffd54f" stroke-width="0.7"/>
+  <circle cy="7" r="5" fill="none" stroke="#ffd54f" stroke-width="0.7"/>
+  <text y="32" text-anchor="middle" fill="#ffd54f" font-size="10" font-weight="600">Society</text>
+  <text y="44" text-anchor="middle" fill="#555" font-size="7">&#x3a6; = integration</text>
+</g>
+<g transform="translate(830,1990)">
+  <circle r="15" fill="none" stroke="#e040fb" stroke-width="0.5" opacity="0.3"/>
+  <circle r="3" fill="#e040fb" opacity="0.4"/>
+  <text y="32" text-anchor="middle" fill="#e040fb" font-size="10" font-weight="600">Cosmos</text>
+  <text y="44" text-anchor="middle" fill="#555" font-size="7">&#x393; = all</text>
+</g>
+
+<rect x="150" y="2055" width="640" height="36" rx="6" fill="#0c0c20" stroke="#ab47bc" stroke-width="0.6" opacity="0.4"/>
+<text x="470" y="2071" text-anchor="middle" fill="#ccc" font-size="10">Every organized system maintains regeneration &#x2265; dissipation.</text>
+<text x="470" y="2085" text-anchor="middle" fill="#888" font-size="8">From stars (fusion vs gravity) to minds (sleep vs waking entropy).</text>
+
+<!-- ======================== CLOSING ======================== -->
+<line x1="320" y1="2118" x2="620" y2="2118" stroke="#ab47bc" stroke-width="0.5" opacity="0.2"/>
+
+<text x="470" y="2155" text-anchor="middle" fill="#fff" font-size="12">A closed system must be divisible into subsystems capable of</text>
+<text x="470" y="2175" text-anchor="middle" fill="#fff" font-size="12">(1) modelling themselves, (2) distinguishing themselves from noise,</text>
+<text x="470" y="2195" text-anchor="middle" fill="#fff" font-size="12">(3) maintaining coherence through regeneration,</text>
+<text x="470" y="2215" text-anchor="middle" fill="#fff" font-size="12">and (4) experiencing that distinction.</text>
+
+<text x="470" y="2252" text-anchor="middle" fill="#ab47bc" font-size="10">The minimal such structure is 7-dimensional, with dynamics</text>
+<text x="470" y="2269" text-anchor="middle" fill="#ab47bc" font-size="10">determined by the Fano plane and consciousness thresholds</text>
+<text x="470" y="2286" text-anchor="middle" fill="#ab47bc" font-size="10">emerging when the self-model achieves sufficient fidelity.</text>
+
+<line x1="350" y1="2312" x2="590" y2="2312" stroke="url(#pr)" stroke-width="0.8" opacity="0.2"/>
+<text x="470" y="2342" text-anchor="middle" fill="#999" font-size="11" font-style="italic">"Below the threshold lies chaos.</text>
+<text x="470" y="2362" text-anchor="middle" fill="#999" font-size="11" font-style="italic">Above it, the living universe emerges."</text>
+
+<text x="470" y="2400" text-anchor="middle" fill="#444" font-size="8">zenodo.org/records/19569950</text>
+</svg>

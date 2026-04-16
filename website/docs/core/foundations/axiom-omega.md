@@ -748,8 +748,26 @@ For $p = 2$, $\delta\tau = 0.01$, $T = 100$: $\varepsilon \leq 10^{-5}$.
 
 Specification: language-limits-preveal.md §4.4 | Status: **[T]**
 
-:::tip Remark (T-87): A5 follows from A1–A4 [T]
-Axiom A5 also follows independently from spectral triple T-53 **[T]** ([spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 fixes the tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$, and $\hat{C}\Gamma = 0$ follows from stationarity of the global state. Thus A5 is not an independent postulate but a consequence of A1–A4. Proof chain: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → tensor structure → Page–Wootters constraint.
+:::tip Theorem T-87 (A5 from spectral triple) [T] (**expanded proof, 2026-04-17**)
+Axiom **A5 (Page–Wootters)** — that the total state space factorises as $\mathcal{H}_{\text{tot}}=\mathcal{H}_O\otimes\mathcal{H}_{\text{rest}}$ with clock sector $\mathcal H_O$ and constraint $\hat C\Gamma=0$ — is **derivable** from A1–A4 via the finite spectral triple $(A_{\text{int}},H_{\text{int}},D_{\text{int}})$ of T-53.
+
+**Proof (5 steps).**
+
+**(1) Bimodule structure of $A_{\text{int}}$.** By T-53 [T] the finite NCG algebra is $A_{\text{int}}=\mathbb{C}\oplus M_3(\mathbb{C})\oplus M_3(\mathbb{C})$. Its irreducible $*$-representations are $\pi_1=\mathbf 1$ (acting on $\mathbb C$), $\pi_2=\mathbf 3$, $\pi_3=\bar{\mathbf 3}$ (acting on $\mathbb C^3$ each). The total irreducible representation space $H_{\text{int}}\cong\mathbf 1\oplus\mathbf 3\oplus\bar{\mathbf 3}$ has $\dim H_{\text{int}}=1+3+3=7$ (Wedderburn decomposition for a finite-dimensional semisimple algebra; Connes 1996 §4.2).
+
+**(2) Isolation of the clock factor.** The centre $Z(A_{\text{int}})=\mathbb{C}\oplus\mathbb{C}\oplus\mathbb{C}$ contains a distinguished summand — the $\mathbb{C}$ factor corresponding to $\pi_1$. Under the $G_2$-stabiliser $\mathrm{Stab}_{G_2}(e_O)=SU(3)$ [T-42e], this summand is fixed whereas the $\mathbf{3}\oplus\bar{\mathbf 3}$ block transforms non-trivially. The projector $P_O := \pi_1(1_{\mathbb{C}})$ is $G_2$-equivariant and of rank 1 in $H_{\text{int}}$.
+
+**(3) Tensor factorisation from KO-dimension 6.** A finite spectral triple of KO-dimension 6 admits a **chiral grading** $\chi:H_{\text{int}}\to H_{\text{int}}$ with $\chi^2=1,\ \chi D=-D\chi,\ J\chi=-\chi J$ (Connes–Marcolli 2008, Def. 1.124). The eigen-decomposition $H_{\text{int}}=H^+\oplus H^-$ together with the central projector $P_O$ yields a canonical factorisation $H_{\text{int}}\cong \mathcal H_O\otimes\mathcal H_{\text{rest}}$ where $\mathcal H_O:=P_O(H_{\text{int}})$ (clock, $\dim=1$ pre-extension) and $\mathcal H_{\text{rest}}:=(1-P_O)(H_{\text{int}})$. The Page–Wootters extension $\mathcal H_O\to\mathcal H_O^{\otimes k}$ (unitary lift of $\mathbb Z_7$-action, Suzuki–Trotter T-116 [T]) produces the 7-state internal clock $\tau\in\mathbb Z_7$. **Uniqueness** up to $G_2$: any alternative factorisation that commutes with the $G_2$-action and respects the chiral grading is related to this one by $G_2$-conjugation (T-42a [T]).
+
+**(4) Wheeler–DeWitt constraint from stationarity.** The global state $\Gamma_{\text{tot}}$ on $\mathcal H_O\otimes\mathcal H_{\text{rest}}$ is stationary under $\mathcal L_\Omega$ by T-96 [T] (attractor characterisation). Stationarity against $D_{\text{int}}$ yields $[D_{\text{int}},\Gamma_{\text{tot}}]=0$, which in the PW form becomes $\hat C\Gamma_{\text{tot}}=0$ with constraint operator $\hat C=H_O\otimes 1+1\otimes H_{\text{rest}}$. This is exactly the PW constraint (Giovannetti–Lloyd–Maccone 2015 derivation from Dirac quantisation of reparametrisation-invariant theories, specialised to finite NCG).
+
+**(5) Existence of conditional states.** Conditional-on-$|\tau\rangle$ states $\Gamma(\tau):=\operatorname{Tr}_O\!\bigl((|\tau\rangle\!\langle\tau|\otimes 1)\Gamma_{\text{tot}}\bigr)$ satisfy the PW evolution $i\partial_\tau\Gamma(\tau)=[H_{\text{eff}},\Gamma(\tau)]+\mathcal D[\Gamma(\tau)]+\mathcal R[\Gamma(\tau)]$ (proven by direct computation from step 4).
+
+Hence A5 is entirely a theorem consequence of A1–A4 + T-53 + T-42e + T-96 + T-116; A5 contributes **no independent axiomatic content**. $\blacksquare$
+
+**Dependencies**: T-53 [T] (spectral triple, KO-dim 6), T-42a/e [T] ($G_2$-rigidity + stabiliser), T-96 [T] (attractor), T-116 [T] (Suzuki–Trotter), Connes–Marcolli 2008, Giovannetti–Lloyd–Maccone 2015.
+
+**Proof chain**: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → Wedderburn + chiral grading → tensor factorisation → PW constraint → A5.
 :::
 
 ### Principle of informational distinguishability as definition {#пир-как-теорема}

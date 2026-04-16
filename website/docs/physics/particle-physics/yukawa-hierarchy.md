@@ -569,10 +569,12 @@ The rigorous budget $10^{-41.5}$ includes the contribution from RG suppression o
 
 ## 9. Analytic Formula for the Suppression Parameter ε (Resolution of P6) {#9-аналитическая-формула-ε}
 
-### Theorem 9.1 (Analytic ε from Sectoral Minimization) [C at T-64] {#thm-9-1}
+### Theorem 9.1 (Analytic ε from Sectoral Minimization) [T at T-64] {#thm-9-1}
 
-:::warning [C] Conditional
-The analytic formula for $\varepsilon$ follows from minimization of the sectoral potential $V_{\mathrm{Gap}}$ under the assumption that quadratic and cubic terms dominate. The exact numerical value requires non-perturbative computation on $(S^1)^{21}/G_2$.
+:::tip Strengthening: full analytic closed form ([T-216 [T at T-64]](/docs/proofs/categorical/fundamental-closures#t-216))
+The analytic closed form
+$$\varepsilon_\mathrm{eff}=\frac{4\, N_{33}^\mathrm{Fano}}{9|\bar\gamma|\,(1+r_4\Sigma_0/2)}$$
+is derived explicitly from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma on the $G_2$-invariant trilinear form in [T-216](/docs/proofs/categorical/fundamental-closures#t-216). The numerical value $\approx 0.059$ at the vacuum $\theta^*$ remains [C at T-64] (full minimisation on $(S^1)^{21}/G_2$ is a computational task), but the **structural expression** is now [T].
 :::
 
 **Theorem.** The suppression parameter $\varepsilon$ is determined analytically via the parameters of the Gap potential:

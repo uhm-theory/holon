@@ -173,6 +173,7 @@ const sidebars: SidebarsConfig = {
         'proofs/categorical/formalization-phi',
         'proofs/categorical/uniqueness-theorem',
         'proofs/categorical/cohesive-closure',
+        'proofs/categorical/fundamental-closures',
       ],
     },
     {

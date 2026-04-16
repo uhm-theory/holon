@@ -844,7 +844,7 @@ in $\mathbf{PhysTheory}$.
 
 **Composition.** $(g^*, \alpha', \beta') \circ (f^*, \alpha, \beta) = (g^* \circ f^*, (f^*\alpha') \circ \alpha, \beta_{\text{comp}})$, where $\beta_{\text{comp}}$ is the composition of 2-morphisms via $(\infty,1)$-topos coherence.
 
-**Verification of $(\infty,1)$-category axioms.** Associativity of composition up to coherent homotopy follows from standard theory of $(\infty,1)$-topoi ([Lurie HTT Ch. 6](https://www.math.ias.edu/~lurie/papers/HTT.pdf)). Identity morphisms $(\mathrm{id}_E, \mathrm{id}_\mathcal{A}, \mathrm{id}_D)$ exist. Higher coherences are inherited from the $(\infty,1)$-structure of components. $\square$
+**Verification of $(\infty,1)$-category axioms.** Associativity of composition up to coherent homotopy follows from standard theory of $(\infty,1)$-topoi ([Lurie HTT Ch. 6](https://www.math.ias.edu/~lurie/papers/HTT.pdf)). Identity morphisms $(\mathrm{id}_E, \mathrm{id}_\mathcal{A}, \mathrm{id}_D)$ exist. Higher coherences (pentagon, Mac Lane associator, interchange law, and all higher simplicial identities) are **verified rigorously** via full embedding of $\mathbf{PhysTheory}$ into Lurie's presentable $(\infty,1)$-category $\mathbf{Topoi}_\infty$ — see [T-211 [T]](/docs/proofs/categorical/fundamental-closures#t-211). The functor $\iota: \mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ is fully faithful by T-173 [T] (rigidity); HTT 5.2.7 then gives automatic inheritance of all higher coherences. $\square$
 
 ### Proof of T-174
 

@@ -322,21 +322,30 @@ $$g^{ij}_B(\Gamma) = C^{ij}(\Gamma) := \mathrm{Cov}_\Gamma(\hat{O}_i, \hat{O}_j)
 
 where $C^{ij}$ is the quantum covariance of observables at state $\Gamma$. This follows from a 4-step argument:
 
-**Step 1 (MaxEnt distribution).** Consider the maximum entropy distribution $\tilde{\rho}$ on $\mathcal{D}(\mathbb{C}^N)$ concentrated near a state $\Gamma$, subject to constraints on the mean $\langle\Gamma'\rangle = \Gamma$ and the expected squared Bures distance $\langle d_B^2(\Gamma', \Gamma)\rangle = \sigma^2$. In Riemannian normal coordinates (where $g_B \to \delta_{ij}$ locally), the MaxEnt distribution is Gaussian (Jaynes 1957):
+**Step 1 (Metric-agnostic MaxEnt).** For **any** Petz-monotone metric $d_f$ on $\mathcal D(\mathbb C^7)$, consider the maximum entropy distribution $\tilde\rho_f$ concentrated near $\Gamma$ under constraints $\langle\Gamma'\rangle=\Gamma$ and $\langle d_f^2(\Gamma',\Gamma)\rangle=\sigma^2$. In $g_f$-normal coordinates the MaxEnt is Gaussian (Jaynes 1957):
 
-$$\tilde{\rho}(\tilde{\Gamma}) = \frac{1}{Z}\exp\!\left(-\frac{\lambda}{2}\delta_{ij}(\tilde{\Gamma}^i - \bar{\Gamma}^i)(\tilde{\Gamma}^j - \bar{\Gamma}^j)\right)$$
+$$\tilde\rho_f(\tilde\Gamma)=\frac{1}{Z_f}\exp\!\left(-\frac{\lambda}{2}\delta_{ij}(\tilde\Gamma^i-\bar\Gamma^i)(\tilde\Gamma^j-\bar\Gamma^j)\right).$$
 
-**Step 2 (Covariance in normal coordinates).** The covariance matrix of this MaxEnt distribution in normal coordinates is proportional to the identity: $c^{ij} = (\sigma^2/\dim) \cdot \delta^{ij}$. By appropriate rescaling, $c^{ij} = \delta^{ij}$.
+This construction is **metric-agnostic**: each choice of $f$ produces a Gaussian in its own normal frame.
 
-**Step 3 (Transformation to general coordinates).** In arbitrary coordinates on $\mathcal{D}(\mathbb{C}^N)$, the covariance transforms as a (2,0)-tensor: $C^{ij} = (\partial x^i/\partial\tilde{x}^r)(\partial x^j/\partial\tilde{x}^s) \cdot c^{rs}$. The inverse metric transforms identically: $G^{ij} = (\partial x^i/\partial\tilde{x}^r)(\partial x^j/\partial\tilde{x}^s) \cdot \delta^{rs}$. Since $c^{rs} = \delta^{rs}$ in normal coordinates:
+**Step 2 (MaxEnt-covariance identity per metric).** The covariance of $\tilde\rho_f$ in $g_f$-normal coordinates is $\delta^{ij}$. Transforming to a common coordinate chart: $C_f^{ij}(\Gamma)=g_f^{ij}(\Gamma)$, i.e., every Petz metric satisfies $\mathrm{Cov}_{\tilde\rho_f}=g_f^{-1}$ **by construction**. This step is therefore **not** a selector.
 
-$$G^{ij} = C^{ij}$$
+**Step 3 (Metric-independent physical covariance — Lemma).**
+:::info Lemma (SLD covariance is Petz-free)
+The SLD quantum covariance $C^{ij}_{\mathrm{SLD}}(\Gamma):=\tfrac12\operatorname{Tr}\!\bigl(\Gamma\{L_i,L_j\}\bigr)$, where $L_i$ is the SLD defined by $\partial_i\Gamma=\tfrac12(L_i\Gamma+\Gamma L_i)$, involves only $\Gamma$ and its derivative; **no metric on $\mathcal D(\mathbb C^7)$ enters its definition**. Hence $C_{\mathrm{SLD}}$ is a physical observable that assigns a $(2,0)$-tensor to each $\Gamma$ independently of any metric choice.
+:::
 
-**Step 4 (Selection of Bures).** The identification $G^{-1} = C$ holds for **any** Petz metric in its own normal coordinates. But the covariance $C^{ij}$ is a **physical observable** — it does not depend on the choice of metric. Therefore, the metric whose inverse equals the physical covariance is **uniquely selected**. For quantum states, the SLD quantum Fisher information $\mathcal{F}_{\mathrm{SLD}} = 4g_B$ is the unique quantum Fisher information that equals the inverse of the quantum covariance in the Cramér–Rao sense (Braunstein–Caves 1994). This closes the circle: MaxEnt → $G^{-1} = C$ → $G = \mathcal{F}_{\mathrm{SLD}}^{-1}/4 = g_B^{-1}$ → Bures. $\square_{\mathrm{IV}}$
+**Step 4 (Unique selection by matching).** Set the universal selector equation
+$$g^{ij}(\Gamma) = C^{ij}_{\mathrm{SLD}}(\Gamma)\qquad (\star)$$
+and ask: **which** Petz metric satisfies $(\star)$? By Braunstein–Caves 1994, the SLD Fisher information $\mathcal F_{\mathrm{SLD}}=4g_B$ and its inverse is the SLD covariance, giving $(g_B)^{-1}=C_{\mathrm{SLD}}$. For any other Petz $g_f$ ($f\neq\tfrac{1+t}{2}$), $(g_f)^{-1}\neq C_{\mathrm{SLD}}$ because the corresponding Fisher information $\mathcal F_f\neq\mathcal F_{\mathrm{SLD}}$ (Petz 1996; distinct monotone means give distinct Fisher tensors). Hence $(\star)$ is satisfied **uniquely** by Bures. $\square_{\mathrm{IV}}$
+
+:::warning Scope clarification (2026-04-17 audit)
+Char-IV is **not logically independent of Char-III**: the selection mechanism is matching $g^{-1}$ against $C_{\mathrm{SLD}}$, which reduces Char-IV to the SLD-Fisher characterization. The value added by Char-IV is **interpretive**: it recasts "saturate Cramér–Rao" (estimation-theoretic) as "inverse metric equals physical covariance" (statistical-mechanical), and it makes explicit that **no circularity arises** in T-187: the constraint metric in Step 1 can be any Petz member, yet the same Bures is selected in Step 4. Char-IV strengthens T-187's physical motivation without producing an additional logically independent witness.
+:::
 
 **Scope of Char-IV.** This characterization selects Bures by privileging the **statistical-mechanical** interpretation: the metric is determined by the fluctuation structure of the state, not by an information-geometric choice. Unlike Char-I–III (which are canonical but allow other Petz members to have their own characterizations), Char-IV is **physically forced**: the covariance of quantum fluctuations is a fact about the state, not a convention.
 
-**Joint scope.** Char-I + II + III + IV together fix Bures by **four** independent arguments: minimum-information-distance + purification-coherence + classical-estimation-saturation + **maximum-entropy covariance**. The fourth characterization is the strongest: it derives the metric from the statistical structure of the state itself, without any choice of interpretation cluster.
+**Joint scope (revised 2026-04-17).** Char-I + II + III are **three logically independent** witnesses: minimum-information-distance, purification-coherence, classical-estimation-saturation. Char-IV is a **physical recasting** of Char-III via the SLD covariance identity $g_B^{-1}=C_{\mathrm{SLD}}$. The four characterizations together make Bures the canonical choice by (a) triple independent mathematical selection and (b) single unambiguous physical selector. T-187's status remains [T] on the strength of Char-I alone (Petz extremality); Char-II–IV are supplementary witnesses, each robustly picking Bures under its natural interpretation.
 
 **Proof of equivalence and uniqueness.**
 
