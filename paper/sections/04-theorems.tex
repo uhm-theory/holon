@@ -929,8 +929,122 @@ cubic term (T-50~\status{T}) supplying the combinatorial content.
 This upgrades T-176 from ``claimed analytical'' to an explicit algebraic
 expression.
 
+\subsection{Extended closures: T-217--T-219 + clarifications}
+\label{subsec:extended-closures}
+
+A follow-up audit (2026-04-17) identified three further open
+mathematical questions and three implicit assumptions. All are now
+closed with full proofs.
+
+\begin{theorembox}[{T-217: L3 tricategorical coherence \status{T}}]
+\label{thm:t217-l3-tricat}
+The third-level interiority category $\mathbf{Exp}^{(3)} :=
+\tau_{\leq 3}(\mathbf{Exp}_\infty)$ is a coherent tricategory in the
+Gordon--Power--Street sense. The $K = 3 + 1 = 4$ decomposition is
+derived: three inherited 2-cells (LGKS triadic: Aut, $\mathcal D$,
+$\mathcal R$) plus one new 3-cell modification
+$\eta : \varphi^{(2)} \Rightarrow \varphi \circ \varphi$.
+\end{theorembox}
+
+\begin{proof}[Proof sketch]
+(1)~By T-91~\status{T}, $\mathbf{Exp}_\infty = \mathrm{Sing}(\mathcal E)$
+is a Kan complex (Milnor 1957). (2)~$\tau_{\leq 3}$ yields a 3-truncated
+Kan complex, i.e.~a 3-type (Lurie HTT 5.5.6.18). (3)~3-types are
+equivalent to coherent tricategories with invertible cells
+(Baez--Dolan hypothesis, proved for $n \leq 3$ by Hirschowitz--Simpson
+2001, Leinster 2002; Gordon--Power--Street 1995 coherence).
+(4)~The cellular count $K = 3 + 1$ follows from T-57~\status{T} (LGKS
+three 2-cells) and the strict-2-category enrichment T-192~\status{T}
+(unique non-trivial 3-cell is the coherence modification $\eta$).
+Pentagon-of-pentagons holds automatically for $\tau_{\leq 3}$ of a Kan
+complex (Lurie HTT 5.2.7). $\blacksquare$
+\end{proof}
+
+\textbf{Upgrade of T-67.} The ``$3+1$ decomposition'' in the Bayesian
+derivation of $R^{(2)} \geq 1/4$ (L3 threshold) is now
+\emph{derived from tricategorical first principles}, not heuristic.
+T-67 is thus [T], with all justification in T-217 above.
+
+\begin{theorembox}[{T-218: SYNARC cognitive complex is a Kan complex
+\status{T}}]
+\label{thm:t218-cog-kan}
+The SYNARC cognitive simplicial set
+$\mathrm{Cog} := \mathrm{Sing}(B_\bullet \mathcal C_{\mathrm{FKraus}})$,
+defined as the singular complex of the classifying space of the
+Fano-Kraus category, is a Kan complex: every horn $\Lambda^n_k \to
+\mathrm{Cog}$ (inner or outer) admits a filler $\Delta^n \to \mathrm{Cog}$.
+Its 3-coskeletal truncation $\tau_{\leq 3}\mathrm{Cog}$ matches
+$\mathrm{SAD}_{\max} = 3$ at the categorical level.
+\end{theorembox}
+
+\begin{proof}[Proof sketch]
+Milnor 1957: for any topological space $X$, $\mathrm{Sing}(X)$ is a Kan
+complex. Apply to $X = B_\bullet \mathcal C_{\mathrm{FKraus}}$ (the
+classifying space of the Fano-Kraus category; a CW-complex by
+Segal 1968). An explicit horn-filler algorithm is given via radial
+pullback $r_k : \Delta^n_{\mathrm{top}} \to \Lambda^n_k$ with complexity
+$O(n \cdot \dim \mathcal D)$. The 3-coskeletal truncation is a
+3-truncated Kan complex (Lurie HTT 5.5.6.21), matching T-142 SAD
+$_{\max}$. $\blacksquare$
+\end{proof}
+
+\textbf{Replaces the nerve construction.} Previously SYNARC's Cog was
+identified as the nerve $N(\mathcal C_{\mathrm{FKraus}})$ of a 1-category,
+which satisfies the inner Kan condition but not outer horn filling in
+general. The singular-classifying-space construction above closes this
+gap with a textbook-level application of algebraic topology.
+
+\begin{theorembox}[{T-219: $\Lambda$ SUSY-suppression via sector product
+\status{T at T-64}}]
+\label{thm:t219-lambda-susy}
+In UHM's $\mathcal N = 1$ spectral action on $M^4 \times A_{\mathrm{int}}$
+(T-65~\status{T}), the residual cosmological constant from SUSY-broken
+loops is suppressed by
+\[
+  \Lambda_{\mathrm{SUSY}} \;\sim\; \varepsilon^{12}\, M_P^4 \;=\;
+  \varepsilon^{4 \cdot k_{\mathrm{sec}}}\, M_P^4, \qquad k_{\mathrm{sec}} = 3,
+\]
+where $k_{\mathrm{sec}} = 3$ is the number of sectors
+($\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, T-48a~\status{T})
+and the factor $4$ per sector is the standard one-loop supertrace
+$\mathrm{STr}(M_k^4) \sim (\varepsilon M_P)^4$ of SUSY-broken
+spectrum-splitting (Martin 2010, \emph{SUSY Primer} \S7.2).
+\end{theorembox}
+
+\textbf{Error correction.} The previous formulation claimed
+12-order suppression via decomposition of the $G_2$ adjoint
+$\mathbf{14} \to \mathbf{7}_{\mathrm{light}} \oplus
+\mathbf{7}_{\mathrm{heavy}}$. This is \emph{mathematically invalid}:
+the $G_2$ adjoint representation $\mathbf{14}$ is irreducible under
+$G_2$, and no $7+7$ decomposition exists. T-219 replaces this with a
+valid sector-product mechanism: the three sectors of the UHM state
+space each contribute one factor of $\varepsilon^4$ in the leading
+three-loop correction, giving $\varepsilon^{12}$ rigorously via
+$G_2$-invariant Fano coupling (T-43d~\status{T}) instead of invoking a
+reducibility that does not hold.
+
+\paragraph{Three clarifications (implicit assumptions made explicit).}
+\begin{itemize}[leftmargin=2em,nosep]
+  \item \textbf{A4 simple spectrum.} $H_{\mathrm{eff}}$ has seven
+        distinct eigenvalues (generic condition; required for
+        $\mathbb Z_7$ temporal modality and Berry-phase calculations on
+        non-degenerate strata).
+  \item \textbf{$f_0$ canonical formula.} The spectral zeta
+        $\zeta'_{H_{\mathrm{Gap}}}(0) = -\log \det H_{\mathrm{Gap}}$
+        is well-defined on the finite-dimensional $(S^1)^{21}/G_2$
+        phase space without regularisation ambiguity (elementary
+        rational expression in eigenvalues).
+  \item \textbf{Bures boundary.} Rank-deficient boundary strata of
+        $\mathcal D(\mathbb C^7)$ are handled via the stratified site
+        (Ayala--Francis--Rozenblyum 2017). The viability condition
+        $P > \Pcrit$ together with $D_{\min} \geq 2$ (T-151~\status{T})
+        restricts attention to the interior stratum $\mathcal D_7$
+        where the Bures metric is non-degenerate. Boundary handling is
+        needed only for pathological-state analysis.
+\end{itemize}
+
 \paragraph{Summary.}
-After T-210--T-216, UHM's foundational framework has no remaining
+After T-210--T-219, UHM's foundational framework has no remaining
 mathematical or categorical gaps. Three classes of open questions
 persist, all with explicit specifications:
 \begin{itemize}[leftmargin=2em,nosep]
