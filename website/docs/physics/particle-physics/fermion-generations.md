@@ -795,6 +795,138 @@ Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. Discrepancy ~30% — within the 
 
 ---
 
+## Koide relation and its UHM-structural status {#koide-uhm-status}
+
+### Empirical statement
+
+The Koide relation (Yoshio Koide, *Lett. Nuovo Cimento* 1981, *Phys. Rev. D* 28:252, 1983) is an empirical identity observed in charged lepton masses:
+$$
+\boxed{K \equiv \frac{m_e + m_\mu + m_\tau}{\bigl(\sqrt{m_e} + \sqrt{m_\mu} + \sqrt{m_\tau}\bigr)^2} = \frac{2}{3}}
+$$
+
+With PDG 2023 values $m_e = 0.51099895$ MeV, $m_\mu = 105.6583755$ MeV, $m_\tau = 1776.86$ MeV:
+- $\sqrt{m_e} = 0.7148460$ MeV$^{1/2}$
+- $\sqrt{m_\mu} = 10.27903$ MeV$^{1/2}$
+- $\sqrt{m_\tau} = 42.1528$ MeV$^{1/2}$
+- Numerator $\sum m_i = 1883.035$ MeV
+- Denominator $(\sum \sqrt{m_i})^2 = 53.1466^2 = 2824.566$
+- $K_\mathrm{obs} = 0.66672$, i.e. $2/3 - 6.1 \times 10^{-5}$
+
+Running to $\mu = M_Z$ (Foot, Li, Peterson 2007): $K(M_Z) = 0.6672 \pm 0.0004$, consistent with $2/3$ to below $0.1\%$.
+
+This precision (five digits) strongly suggests a **structural origin** rather than accidental coincidence.
+
+### Equivalent formulations
+
+Setting $x_i = \sqrt{m_i}$, $s_k = \sum_i x_i^k$, and $e_k$ the elementary symmetric polynomials, Koide's relation is equivalent to any of:
+
+**Form A (Koide 1983):** $s_2 = \tfrac{2}{3} s_1^2$.
+
+**Form B (elementary polynomials):** $s_2 = 4 e_2$, or equivalently $e_2 / s_2 = 1/4$.
+
+**Form C (geometric):** the vector $(x_1, x_2, x_3)$ lies on a cone:
+$$
+4(x_1 x_2 + x_2 x_3 + x_1 x_3) = x_1^2 + x_2^2 + x_3^2
+$$
+
+**Form D (angular):** $(x_1, x_2, x_3)$ makes angle $\arccos(1/\sqrt{3})$ with $(1,1,1)$.
+
+Each form defines a **2-dimensional surface** in $\mathbb{R}^3_+$ (one equation, three unknowns), so Koide by itself does not fix three masses uniquely — it is a **constraint**, not a full prediction.
+
+### The UHM numerical coincidence
+
+UHM derives a state-independent contraction coefficient $\alpha_\mathrm{Fano} = 2/3$ for the Fano channel (Corollary 2.1a in [Fano Channel](/docs/proofs/gap/fano-channel)). This originates from the combinatorial replication number $r = 3$ of the Steiner triple system $S(2,3,7) = \mathrm{PG}(2,2)$:
+$$
+\alpha_\mathrm{Fano} = 1 - \frac{1}{r} = 1 - \frac{1}{3} = \frac{2}{3}.
+$$
+
+Two distinct "2/3" appear in UHM-relevant physics:
+1. **$\alpha_\mathrm{Fano} = 2/3$** — Fano contraction of off-diagonal coherences (derived from PG(2,2) combinatorics).
+2. **$K = 2/3$** — empirical lepton mass relation.
+
+Whether these are manifestations of a single underlying structure is a structural question analysed below.
+
+### Structural analysis via T-220 branching
+
+Theorem T-220 Obstruction I establishes the decomposition
+$$
+\mathcal{J}_3(\mathbb{O}) \big|_{A_1 \times G_2} = (\mathbf{4}, \mathbf{1}) \oplus (\mathbf{2}, \mathbf{7}) \oplus (\mathbf{1}, \mathbf{7}) \oplus (\mathbf{1}, \mathbf{1}).
+$$
+
+The three copies of the $G_2$-fundamental $\mathbf{7}$ are:
+- $\mathbf{7}_{(a)} \equiv (\mathbf{2}, \mathbf{7})$ with components $\{a_+, a_-\}$: $A_1$-doublet (spin $1/2$).
+- $\mathbf{7}_{(c)} \equiv (\mathbf{1}, \mathbf{7})$: $A_1$-singlet (spin $0$).
+
+Under $A_1$-breaking with VEV $v$, the doublet splits: $a_+$ gets mass $m_d + v$, $a_-$ gets mass $m_d - v$. The singlet keeps mass $m_s$ unchanged. Three mass parameters $(m_s, m_d, v)$ and three eigenvalues $(m_s, m_d - v, m_d + v)$.
+
+If the charged lepton generations are identified with these three eigenvalues (singlet = electron, doublet = $\{\mu, \tau\}$ with specific splitting):
+- $m_e = m_s$
+- $m_\mu = m_d - v$
+- $m_\tau = m_d + v$
+
+This gives the central mass $m_d = (m_\mu + m_\tau)/2 = 941.263$ MeV and splitting $v = (m_\tau - m_\mu)/2 = 835.601$ MeV.
+
+### Koide equation in UHM parametrisation
+
+Substituting into $s_2 = (2/3) s_1^2$:
+$$
+m_e + (m_d - v) + (m_d + v) = \frac{2}{3}\bigl(\sqrt{m_e} + \sqrt{m_d - v} + \sqrt{m_d + v}\bigr)^2
+$$
+
+This is **one equation** in the three parameters $(m_s, m_d, v)$, so it defines a 2-parameter family of solutions. The observed $(m_e, m_\mu, m_\tau)$ lies on this surface but is not uniquely determined by Koide alone.
+
+### Three candidates for an additional UHM constraint
+
+To derive the observed masses uniquely, an additional constraint tied to UHM structure would be needed. Three candidates were examined:
+
+**Candidate A: $m_s / m_d = \alpha = 2/3$**
+
+Observed: $m_e / m_d = 0.511 / 941.26 = 5.4 \times 10^{-4} \ne 2/3$. **Rejected**.
+
+**Candidate B: $\sqrt{m_s} / \sqrt{m_d} = 1/r$ for $r$ from Fano combinatorics**
+
+Observed: $\sqrt{m_e}/\sqrt{m_d} = 0.715 / \sqrt{941.26} = 0.0233 \approx 1/42.9$. No clean match to $1/3$, $1/7$, $1/21$, or other Fano invariants. **Rejected**.
+
+**Candidate C: $v_{A_1} = v_\mathrm{EW} = 246$ GeV**
+
+Observed $v = (m_\tau - m_\mu)/2 = 0.836$ GeV, not 246 GeV. **Rejected**.
+
+None of the structurally natural UHM-parameter identifications reproduce the observed lepton masses.
+
+### Conclusion: empirical-input classification
+
+:::info Koide in UHM — empirical input, not derived prediction {#koide-empirical}
+**Rigorous statement**: UHM's $A_1 \times G_2$ branching of $\mathcal{J}_3(\mathbb{O})$ is **structurally compatible** with a three-mass spectrum of the form $\{m_s,\; m_d - v,\; m_d + v\}$ satisfying Koide's relation. However, the **specific values** $(m_e, m_\mu, m_\tau)$ — and hence the observed $K = 2/3$ — require an $A_1$-breaking pattern **not uniquely fixed** by the current UHM formulation.
+
+**Classification**: Koide is accepted as an **empirical input** compatible with UHM's generation structure, not a derived prediction.
+
+**Numerical coincidence $K_\mathrm{obs} = 2/3 = \alpha_\mathrm{Fano}$** is flagged as **structurally suggestive** but **does not constitute proof**: the two "2/3" originate in mathematically distinct structures (combinatorial incidence vs. algebraic mass constraint). Demonstrating a common origin would require explicit construction of a mass operator on $\mathcal{J}_3(\mathbb{O})$, which is not provided by current UHM.
+
+**Hypothesis T-220-H** (speculative research direction): there exists a canonical mass operator $\hat M$ on $\mathcal{J}_3(\mathbb{O})$, invariant under $A_1 \times G_2$-equivariant dynamics, whose eigenvalues restricted to the three $\mathbf{7}$-copies reproduce $(m_e, m_\mu, m_\tau)$ and satisfy Koide with $K = 2/3$ derived from $\alpha_\mathrm{Fano} = 2/3$. **Status**: conjectural; pending construction of explicit $\hat M$. Beyond current UHM scope.
+:::
+
+### Why "empirical input" is not a failure
+
+Classifying Koide as empirical input rather than prediction is **not** a weakness of UHM:
+
+1. **Honest classification**: presenting an unproved identity as a "derivation" would falsely claim success.
+2. **Structural compatibility**: the 3-generation pattern (singlet + doublet) emerging from UHM's $A_1 \times G_2$ branching is itself a nontrivial structural success — it matches the observed one-outlier-two-close pattern qualitatively.
+3. **Open direction formulated precisely**: T-220-H gives a specific, falsifiable research question (construct $\hat M$ or prove impossibility).
+
+Standard Model fits most parameters empirically and is still a predictive theory; UHM's partial structural success on lepton masses places it in analogous territory, honestly documented.
+
+### Relation to $\alpha_\mathrm{Fano}$ — why the numerical match is not accidental-looking
+
+The two "2/3" are algebraically distinct but both arise in the context of 3-fold symmetry:
+- $\alpha_\mathrm{Fano} = 2/3$ from Fano replication number $r = 3$ (geometric/combinatorial).
+- $K = 2/3$ from symmetric polynomial identity in 3 variables (algebraic).
+
+Both involve a 3-element structure; this motivates the T-220-H hypothesis that a deeper unifying structure exists. However, identical numerical values across distinct mathematical structures are not uncommon (cf. Feigenbaum constant, fine-structure constant, etc.), so this parallel is **suggestive** at best.
+
+## Connection to other sections
+
+- **Mass hierarchy:** Mechanism $y_t \sim 1$ (tree-level) from the Fano selection rule → [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
+
 ## Connection to other sections
 
 - **Mass hierarchy:** Mechanism $y_t \sim 1$ (tree-level) from the Fano selection rule → [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)

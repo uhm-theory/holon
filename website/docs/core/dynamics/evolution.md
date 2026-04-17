@@ -91,6 +91,79 @@ where:
 The Lindblad operators L_k are **not postulated** arbitrarily — they are **derived** from the atoms of the classifier Ω. This eliminates the ambiguity "L_k depend on the system".
 :::
 
+### Applicability scope: Markovian regime {#markovian-scope}
+
+The evolution equation $\mathcal{L}_\Omega$ is a **Lindbladian** (Markovian) master equation. The mathematical guarantees of UHM — stability of the subobject lattice, monotone contraction of the Bures metric, well-definedness of the regeneration operator $\mathcal{R}$, existence of the fixed point $\rho^* = \varphi(\Gamma)$ — all rely on the CPTP (completely positive, trace preserving) structure of each infinitesimal evolution step. This section states the exact scope of applicability.
+
+#### Theorem (Petz–Ruskai monotonicity, 1996) [T]
+
+For any CPTP map $\mathcal{E}: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ and any two density operators $\rho_1, \rho_2 \in \mathcal{D}(\mathcal{H})$:
+$$
+d_\mathrm{Bures}(\mathcal{E}(\rho_1), \mathcal{E}(\rho_2)) \;\leq\; d_\mathrm{Bures}(\rho_1, \rho_2).
+$$
+Strict inequality holds unless $\mathcal{E}$ is unitary on the span of $(\rho_1, \rho_2)$.
+
+**Consequence for UHM**: since $\mathcal{L}_\Omega$ generates a one-parameter semigroup of CPTP maps $\mathcal{E}_\tau = \exp(\tau \mathcal{L}_\Omega)$ (Lindblad form), the Bures metric is **monotonically non-increasing** along any UHM trajectory. This is the categorical foundation for:
+- Stability of the subobject lattice (T-62 [T]);
+- Uniqueness of the fixed point $\rho^*$ (T-96 [T]);
+- Convergence of the iterative scheme for $\varphi$ (above);
+- Well-defined Bures topology $J_\mathrm{Bures}$ on the site $\mathcal{C}$ (A1 axiom).
+
+#### Markovian vs. non-Markovian quantum dynamics
+
+Quantum dynamics of a system $S$ coupled to a bath $B$ on total Hilbert space $\mathcal{H}_S \otimes \mathcal{H}_B$ is **unitary on the total space**: $\rho_\mathrm{tot}(t) = U(t) \rho_\mathrm{tot}(0) U(t)^\dagger$. The reduced system dynamics $\rho_S(t) = \mathrm{Tr}_B \rho_\mathrm{tot}(t)$ is obtained by partial trace. Two regimes:
+
+- **Markovian (CP-divisible)**: $\rho_S(t) = \mathcal{E}(t, t_0)[\rho_S(t_0)]$ with $\mathcal{E}(t_2, t_0) = \mathcal{E}(t_2, t_1) \circ \mathcal{E}(t_1, t_0)$ and each $\mathcal{E}(t_j, t_i)$ is CPTP. Equivalent to Lindblad form $\dot\rho_S = \mathcal{L}[\rho_S]$ with time-local $\mathcal{L}$.
+- **Non-Markovian (CP-indivisible)**: the intermediate propagators fail to be CPTP. Memory effects from bath-system correlations cause apparent "information backflow" into the system. Time-local generators $\mathcal{L}(t)$ can develop negative rates, Lindblad form breaks down.
+
+The **Born–Markov approximation** (Breuer–Petruccione 2002, §3.3) is valid when:
+1. **Weak coupling**: system-bath interaction $g \ll $ bath-internal energy scale.
+2. **Time-scale separation**: $\tau_\mathrm{bath} \ll \tau_\mathrm{sys}$, where $\tau_\mathrm{bath}$ is the bath correlation decay time and $\tau_\mathrm{sys}$ is the system dynamical time.
+3. **Bath stationarity**: bath correlations depend only on time differences.
+
+Under these conditions, second-order perturbation in coupling yields a time-local Lindblad generator whose CPTP property is guaranteed by the Gorini–Kossakowski–Sudarshan–Lindblad (GKSL) theorem.
+
+#### Scope declaration for UHM
+
+:::info UHM applicability scope [T] — Markovian domain
+**UHM is defined and applicable** in the Markovian regime where the generator $\mathcal{L}_\Omega$ takes Lindblad form. In this regime all categorical guarantees hold unconditionally:
+
+- Petz–Ruskai monotonicity of Bures metric — Grothendieck topology $J_\mathrm{Bures}$ well-defined.
+- Spectral gap $\omega_0 > 0$ of $\mathcal{L}_\Omega$ (T-39a [T]) — primitivity of unitary part $\mathcal{L}_0$.
+- Existence and uniqueness of $\rho^*$ (T-96 [T]) — categorical self-model well-defined.
+- Bounded off-diagonal coherences (Fano contraction $\alpha = 2/3$, T-142 [T]).
+- $D_\mathrm{min} = 2$ stratification (T-151 [T]) — boundary of density-matrix manifold handled.
+
+**Non-Markovian extensions** are **outside current UHM scope**. This is an **explicit limitation**, not a gap: attempting to apply UHM to strongly memory-coupled dynamics (e.g., sub-picosecond quantum optics, spin-bath decoherence at fs scale) would violate the Petz–Ruskai premise and invalidate categorical guarantees.
+:::
+
+#### Physical time-scales where Markovian approximation holds
+
+For physical systems relevant to UHM applications:
+
+| System | $\tau_\mathrm{sys}$ | $\tau_\mathrm{bath}$ | Markovian valid? |
+|---|---|---|---|
+| Neural ensembles (consciousness) | $\gtrsim 1$ ms | $\lesssim 1$ μs (thermal) | **Yes** |
+| Superconducting qubits (FSQCE-SC) | $\sim 10^{-6}$ s ($T_2$) | $\sim 10^{-9}$ s | **Yes** |
+| NV centres (FSQCE-NV) | $\sim 10^{-3}$ s ($T_2$ at 77 K) | $\sim 10^{-6}$ s | **Yes** |
+| Molecular photosynthesis (FMO) | $\sim 10^{-13}$ s | $\sim 10^{-13}$ s | **Borderline** |
+| Nuclear dynamics | $\sim 10^{-22}$ s | $\sim 10^{-22}$ s | **No** — outside UHM |
+| Planck-scale physics | $\sim 10^{-43}$ s | $\sim 10^{-43}$ s | **No** — different framework |
+
+The principal UHM domain — **consciousness** (neural millisecond dynamics) and **macroscopic physics** (Einstein equations emerging in spectral-action limit) — falls squarely in the Markovian regime. FSQCE experimental validation targets systems where Markovian approximation holds by design (choice of cryogenic temperatures, isolation from noise).
+
+#### Relation to other UHM theorems
+
+The Markovian scope is structurally consistent with:
+- **T-62 [T]** (unitarity at the topos level): unitary evolution on the total system-bath space projects to CPTP on the system — consistent with Markovian reduction.
+- **T-65 [T]** (spectral action): derives Einstein equations as low-energy limit; naturally Markovian in this regime.
+- **T-117 [T]** (quantum central-limit theorem): macroscopic observables become classical (commutative), which is a Markovian limit.
+- **T-214 [T]** (hard-problem meta-theorem): bridge functor from $\mathcal{D}(\mathbb{C}^7)$ to experiential content is external; does not require non-Markovian dynamics.
+
+#### Note on "non-Markovian extension" as open direction
+
+Extending UHM to non-Markovian regimes is a **well-defined research direction** (time-local generators with memory kernels, hierarchical equations of motion, dissipaton formalism), but is **not a required closure** of the current theory — UHM is **complete as a Markovian framework**. Classifying this as an "open question" would be a category error: UHM makes no claim of universality across all quantum dynamical regimes; it claims rigorous mathematical structure in the Markovian domain, which is where its physical applications lie.
+
 :::note On notation
 - $\mathcal{D}$ (calligraphic) — **dissipative** term
 - $\mathcal{R}$ (calligraphic) — **regenerative** term
