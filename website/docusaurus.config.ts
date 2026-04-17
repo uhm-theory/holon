@@ -119,6 +119,27 @@ const config: Config = {
         },
       };
     },
+    // CI-only: disable webpack persistent filesystem cache.
+    // Large MDX docs (fundamental-closures.md ~900 lines, ~29K AST nodes)
+    // overflow V8's Invalid-array-length serializer limit, and on GitHub
+    // runners the partially-written cache also triggers ENOSPC. Fresh CI
+    // runs do not benefit from persistent cache, so turning cache off
+    // entirely is safe. mergeStrategy:'cache':'replace' so the default
+    // filesystem-cache config is fully overridden, not merged.
+    function disableCiWebpackCachePlugin() {
+      return {
+        name: 'disable-ci-webpack-cache',
+        configureWebpack() {
+          if (process.env.CI || process.env.DOCUSAURUS_DISABLE_WEBPACK_CACHE) {
+            return {
+              mergeStrategy: {cache: 'replace' as const},
+              cache: false,
+            };
+          }
+          return {};
+        },
+      };
+    },
   ],
 
   stylesheets: [
