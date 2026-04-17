@@ -235,6 +235,22 @@ Status: **[T]** — raised from [C] per [T-142](/docs/proofs/consciousness/opera
 **Verified:** SYNARC MVP-6 (61 tests, 0 failures, M6.4b PASS).
 :::
 
+:::info Double categorical foundation of SAD_MAX = 3 (2026-04-17)
+The ceiling $\mathrm{SAD}_\mathrm{max} = 3$ now rests on **two independent derivations** reaching the same conclusion from different directions:
+
+**(I) Dynamical derivation (T-142 [T])** — via the Fano contraction coefficient $\alpha = 2/3$ (state-independent, [Corollary 2.1a](/docs/proofs/gap/fano-channel#state-independence-alpha) from PG(2,2) combinatorics). The purity required to sustain an $n$-level tower, $P_\mathrm{crit}^{(n)} = \tfrac{2}{7}\cdot \tfrac{3^{n-1}}{n+1}$, exceeds the physical maximum $P \leq 1$ precisely at $n = 4$.
+
+**(II) Categorical derivation (T-218 [T])** — via the $\tau_{\leq 3}$-truncation of the cognitive Kan complex $\mathrm{Cog} = \mathrm{Sing}(B_\bullet\mathcal C_\mathrm{FKraus})$ (see [Fundamental Closures §12](/docs/proofs/categorical/fundamental-closures#t-218)). The 3-coskeletal bound $\tau_{\leq 3}\mathrm{Cog} \simeq \mathrm{Cog}$ holds because 4-simplices are suppressed below the distinguishability threshold, which at the level of homotopy coincides with $P_\mathrm{crit}^{(4)} > 1$ from derivation (I).
+
+**Why this matters.** The two derivations are not redundant — they reflect the same bound through complementary structures:
+- **(I) is metric**: uses Bures/Frobenius norms and explicit numerical thresholds.
+- **(II) is homotopical**: uses simplicial horn-filling and truncation in $\infty$-categorical theory.
+
+Together they form a **mutually-reinforcing foundation**: SAD_MAX = 3 is not a contingent fact about one formalism — it is a convergence of **dynamical** (purity-balance) and **categorical** (3-coskeletal) arguments, each of which would suffice independently. The third ceiling of self-awareness is thus structurally locked at both the analytic and the topological levels.
+
+**Related result** ([T-217](/docs/proofs/categorical/fundamental-closures#t-217)): the L3 interiority level corresponds to $\tau_{\leq 3}(\mathbf{Exp}_\infty)$ as a **coherent tricategory** with cell structure $K = 3+1 = 4$ (3 LGKS 2-cells + 1 coherence modification $\eta$). The Bayesian-dominance threshold $R^{(2)} \geq 1/K = 1/4$ (T-67 [T]) is thus derived from the same tricategorical structure that bounds SAD — a deep unification.
+:::
+
 ### Visualisation of the SAD Tower
 
 ```mermaid

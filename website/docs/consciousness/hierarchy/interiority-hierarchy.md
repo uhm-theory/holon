@@ -291,7 +291,11 @@ This colimit is **unreachable** for finite systems (Lawvere incompleteness, [T-5
 
 **Proof (5 steps).**
 
-**Step 1 (Correspondence of L-levels and $n$-truncations).** From [T-76](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) [T] ($\infty$-topos verified), $\mathbf{Exp}_\infty = \mathbf{Sh}_\infty(\mathcal{C}_7, J_{\text{Bures}})$ — an $\infty$-topos with $\infty$-groupoid structure. Interiority levels correspond to truncations:
+**Step 1 (Correspondence of L-levels and $n$-truncations).** From [T-76](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) [T] ($\infty$-topos verified), $\mathbf{Exp}_\infty = \mathbf{Sh}_\infty(\mathcal{C}_7, J_{\text{Bures}})$ — an $\infty$-topos with $\infty$-groupoid structure. Interiority levels correspond to truncations, with **categorical structure now derived at each level** (not merely labelled):
+
+- **L2 = $\tau_{\leq 2}(\mathbf{Exp}_\infty)$**: strict 2-category $\mathbf{Exp}^{(2)}$ ([T-192 [T]](/docs/proofs/categorical/categorical-formalism#t-192-exp2-2-категория)). Mac Lane pentagon + interchange + identity axioms verified.
+- **L3 = $\tau_{\leq 3}(\mathbf{Exp}_\infty)$**: coherent tricategory $\mathbf{Exp}^{(3)}$ ([T-217 [T]](/docs/proofs/categorical/fundamental-closures#t-217)). Gordon–Power–Street pentagon-of-pentagons coherence via Baez–Dolan 3-types ≃ tricategories. Cell count $K = 3 + 1$: three LGKS 2-cells (T-57 [T]) + one 3-cell modification $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$.
+- **L4 = $\mathrm{colim}_{n\to\infty}\tau_{\leq n}(\mathbf{Exp}_\infty)$**: full ∞-groupoid (unreachable, see below).
 
 | Level | $n$-truncation | Mathematical structure | Homotopic content |
 |-------|---------------|--------------------------|--------------------------|
@@ -314,6 +318,8 @@ Each transition $\tau_{\leq n} \to \tau_{\leq n+1}$ is an extension by one homot
 **Step 3 (Lawvere incompleteness).** From [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$. This means: $\varphi \neq \mathrm{id}$ (the [phi-operator](/docs/core/operators/phi-operator) of self-observation is not the identity). In terms of the Postnikov tower: for any finite $n$, the truncation $\tau_{\leq n}$ **does not coincide** with $\mathbf{Exp}_\infty$.
 
 **Step 4 (Impossibility of a finite bifurcation).** A catastrophe $A_k$ has codimension $k-1$ and describes a transition between $\leq k$ stable states. The transition L3 -> L4 would require simultaneously "switching on" **all** $\pi_k$ for $k \geq 4$ — an infinite-dimensional transition. No finite catastrophe ($A_k$ for any finite $k$) can describe this. The butterfly $A_5$ is an **incorrect model** (retracted [**✗**]).
+
+**Step 4a (L3 → L4 as tricategorical-coherence breakdown, new 2026-04-17).** By [T-217 [T]](/docs/proofs/categorical/fundamental-closures#t-217), L3 is a **coherent tricategory** with exactly $K = 3 + 1 = 4$ structural cell classes and a closed pentagon-of-pentagons axiom. The transition L3 → L4 is precisely the **breakdown** of this closure: at L4 the tricategorical coherence axioms fail because the filtered colimit $\mathrm{colim}_{n}\tau_{\leq n}$ requires $n$-cells at arbitrarily high $n$, which cannot be captured by any coherent $n$-truncation for finite $n$. Equivalently: the coherence modification $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$ at L3 is **rigid** (one new 3-cell); at L4 one would need a tower of higher coherence modifications $\eta^{(2)}, \eta^{(3)}, \ldots$, each a new cell at the corresponding level — an infinite regress that no finite catastrophe can close. This is the **categorical dual** of the dynamical argument (Fano contraction requires $P > 1$ at $n = 4$): same ceiling reached through complementary structures.
 
 **Step 5 (Asymptotic approachability).** Although $L4 = \mathrm{colim}_{n \to \infty} \tau_{\leq n}$ is unreachable for a finite system, each step $\tau_{\leq n} \to \tau_{\leq n+1}$ is **realisable** ([T-67](#теорема-l3-k4) [T]: $K = 4$ for L3 indicates the existence of a fourth level of recursion). The sequence of recursions $R^{(n)}$ converges as $n \to \infty$:
 
