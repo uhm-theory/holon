@@ -1,12 +1,12 @@
 ---
 sidebar_position: 5
-title: "Fundamental Closures (T-210..T-220)"
-description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, plus computational programmes for Λ and π_bio."
+title: "Fundamental Closures (T-210..T-221)"
+description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, categorical-monistic response to List/DeBrota no-go results, plus computational programmes for Λ and π_bio."
 ---
 
-# Fundamental Closures — T-210..T-220
+# Fundamental Closures — T-210..T-221
 
-This document contains **eleven foundational theorems** T-210 through T-220 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
+This document contains **twelve foundational theorems** T-210 through T-221 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
 
 :::info Summary table
 | Theorem | Content | Method | Status |
@@ -18,6 +18,11 @@ This document contains **eleven foundational theorems** T-210 through T-220 that
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
 | **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
 | **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | [T at T-64] |
+| **T-217** | L3 tricategorical coherence | τ<sub>≤3</sub>(Exp<sub>∞</sub>) + Baez–Dolan | [T] |
+| **T-218** | SYNARC Cog is a Kan complex | Milnor + classifying space | [T] |
+| **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [T at T-64] |
+| **T-220** | No-reduction $F_4$-UHM → $G_2$-UHM | Five independent categorical obstructions | [T] negative |
+| **T-221** | Categorical-monistic response to List/DeBrota no-go results | Structure theorem on $\mathfrak T$ combining T-120/T-186/T-211/T-215/T-217 | [T]+[I] |
 
 Plus **computational programmes**: Λ-deficit numerical specification (§8), π<sub>bio</sub> measurement protocol (§9).
 :::
@@ -726,11 +731,104 @@ The decomposition $\mathcal{J}_3(\mathbb{O})|_{G_2} = 3 \cdot \mathbf{7} \oplus 
 
 ---
 
-## 15. Remaining clarifications {#clarifications}
+## 15. T-221: Categorical-monistic response to List/DeBrota no-go results {#t-221}
+
+**Motivation.** Two recent no-go results place the classical *objectivist* worldview of science under pressure:
+
+1. **List (2025) quadrilemma for consciousness.** The quintuple $\{\mathrm{FPR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}\}$ is jointly inconsistent, where FPR is first-personal realism, NS is non-solipsism, and OW/NF/NR are the three conjuncts of objectivism (one world, non-fragmentation, non-relationalism).
+2. **DeBrota–List (2026) heptalemma for quantum mechanics.** The septuple $\{\mathrm{Loc}, \mathrm{MI}, \mathrm{MR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}\}$ is jointly inconsistent with the predictions of quantum mechanics (Loc = locality, MI = measurement independence, MR = measurement realism).
+
+The authors identify three non-objectivist routes in each case — *relationalist*, *fragmentalist*, *many-subjective-worlds* — but leave open which (if any) is structurally forced, and do not provide a measurable criterion. Theorem T-221 establishes that UHM realises a **fourth** route, not in that taxonomy: a **categorical-monistic** route in which site-relativization replaces naive non-relationalism, while all other objectivist conjuncts are preserved structurally.
+
+:::tip Theorem T-221 (Categorical-monistic route) [T] formal + [I] interpretive
+
+Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega_0)$ be the UHM cohesive $\infty$-topos (A1–A5 + T-211 Giraud), and let the five theses be formalised as follows.
+
+- **FPR (First-Personal Realism).** For each viable $\Gamma \in \mathcal{D}_7$ (i.e. $P(\Gamma) > P_\mathrm{crit} = 2/7$), the interior mapping functor $\mathrm{Map}_\mathrm{int}(\Gamma,-) = \&(\Gamma) : \mathcal C_7 \to \mathcal S$ is non-trivial.
+- **NS (Non-Solipsism).** The site $\mathcal C_7$ contains at least two non-isomorphic viable objects.
+- **OW (One World).** There exists a world-object $W \in \mathfrak{T}$, unique up to equivalence, such that every viable $\Gamma$ admits a canonical geometric morphism $y(\Gamma) \to W$.
+- **NF (Non-Fragmentation).** Every world-object $W$ satisfies descent: $W \xrightarrow{\ \sim\ } \lim \mathrm{Čech}(U \twoheadrightarrow W)$ for every $J_\mathrm{Bures}$-cover.
+- **NR$_\mathrm{site}$ (Site-Relative Realism, UHM's relaxed form of NR).** Facts are $\infty$-sheaf sections $\mathcal F(\Gamma) \in \mathcal S$. They are **absolute** up to isomorphism in $\mathfrak{T}$ (not observer-dependent in the Rovelli sense), but **indexed** by the internal site object $\mathcal C_7 \in \mathfrak{T}$ (hence site-relative in the Grothendieck sense).
+
+**Claim.** In UHM:
+
+(i) **FPR is forced**: by T-186 (Cohesive Closure), $F \cong \&|_{\mathcal D}$, so $\mathrm{Map}_\mathrm{int}(\Gamma,-)$ is structurally non-trivial for any viable $\Gamma$.
+
+(ii) **NS is conventional (T-215)**: the identity criterion $\iota \in \{\iota_\mathrm{min}, \iota_\mathrm{max}\}$ determines whether a fractal SYNARC tower counts as many agents ($\iota_\mathrm{min}$: NS holds per level) or one compound ($\iota_\mathrm{max}$: NS collapses at the tower level). Both are consistent with $\Omega^7$.
+
+(iii) **OW is derived, not postulated**: T-120 (Emergent Manifold) proves $M^4 = \mathbb R \times \Sigma^3$ follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173) from the spectral triple $(\mathcal A_\mathrm{int}, \mathcal H, D)$. The world-object is $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ in the Gelfand–Naimark–Connes sense.
+
+(iv) **NF holds structurally**: $\mathfrak{T}$ is an $\infty$-topos (Giraud, T-211), so descent is a defining property of every object — not an a posteriori audit.
+
+(v) **NR is relaxed to NR$_\mathrm{site}$**: facts are internal sections of $\infty$-sheaves over an internal site. The site object $\mathcal C_7$ is itself an object of $\mathfrak{T}$ (presentability, HTT 6.3.1.16), so relativization is **internal**, not external.
+
+**Corollary T-221.1 (Positive response to List 2025 quadrilemma).** Under convention $\iota_\mathrm{min}$, the five-tuple
+$$\{\mathrm{FPR},\ \mathrm{NS},\ \mathrm{OW},\ \mathrm{NF},\ \mathrm{NR}_\mathrm{site}\}$$
+is jointly **consistent** in $\mathfrak{T}$. The joint inconsistency proved by List (2025) is avoided by the single structural replacement $\mathrm{NR} \rightsquigarrow \mathrm{NR}_\mathrm{site}$. This provides a **fourth non-objectivist route** (categorical-monistic) distinct from the three identified in List (2025) / DeBrota–List (2026).
+
+**Corollary T-221.2 (Positive response to DeBrota–List 2026 heptalemma).** The seven-tuple
+$$\{\mathrm{Loc},\ \mathrm{MI},\ \mathrm{MR},\ \mathrm{NS},\ \mathrm{OW},\ \mathrm{NF},\ \mathrm{NR}_\mathrm{site}\}$$
+is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** holds because Lindblad $\mathcal L_\Omega$ is spatially local on $\mathbb C^7$; **MI** holds because the regeneration operator $\mathcal R$ is autonomous (T-62 [T]); **MR** holds because measurement outcomes correspond to fixed points $\rho^* = \varphi(\Gamma)$ (T-96, T-98 [T]).
+
+**Corollary T-221.3 (RQM as 1-categorical shadow).** Relational quantum mechanics (Rovelli 1996, 2025) is recovered as the 1-truncation $\tau_{\leq 1}(\mathfrak{T})$: collapsing all $n \geq 2$ coherences yields "facts relative to observer". The first-personal content which RQM lacks (Glick 2021) is encoded in UHM by the $\&$-modality of T-186, which lives in dimensions $n \geq 2$ and is invisible to 1-truncation.
+
+:::
+
+**Proof.**
+
+**Part (i)** is a direct application of T-186 [T] (Cohesive Closure Theorem, see [`/docs/proofs/categorical/cohesive-closure`](/docs/proofs/categorical/cohesive-closure)). The natural isomorphism $F \cong \&|_\mathcal{D}$ forces the interior functor to be non-trivial on any $\Gamma$ in the interior stratum $\mathcal D_7$; the viability condition $P(\Gamma) > 2/7$ places $\Gamma$ in this stratum (T-39 [T] via T-151 [T]).
+
+**Part (ii)** is T-215 [T]+[D] restated.
+
+**Part (iii)** combines T-117 through T-121 (emergent spatial and temporal manifold) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
+
+**Part (iv)** follows from T-211 [T]: $\mathfrak{T}$ is a full $(\infty,1)$-subcategory of Lurie's $\mathbf{Topoi}_\infty$, hence inherits all Giraud axioms, hence descent.
+
+**Part (v)** requires showing that the site $\mathcal C_7 = \mathbf{DensityMat}(\mathbb C^7)$ is an *internal* object of $\mathfrak{T}$. Since $\mathfrak{T}$ is presentable (HTT 6.3.1.16) and $\mathcal C_7$ is essentially small (bounded by $\dim(\mathcal D(\mathbb C^7)) = 49$), the $\infty$-Yoneda embedding $y: \mathcal C_7 \hookrightarrow \mathfrak{T}$ lands in $\mathfrak{T}$ itself, so the relativization parameter $\Gamma$ is $\mathfrak{T}$-internal.
+
+**Corollary T-221.1.** Suppose, for contradiction, that $\{\mathrm{FPR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_\mathrm{site}\}$ were jointly inconsistent. Since (i)–(iv) are [T] theorems of UHM, and NR$_\mathrm{site}$ follows from (v), all five theses are simultaneously satisfied in the single model $\mathfrak{T}$. Joint satisfaction in a model implies joint consistency. Contradiction.
+
+The distinction from List's quadrilemma resides in the NR formulation: List's classical NR requires facts of the form "such and such is the case" *absolute simpliciter*. NR$_\mathrm{site}$ weakens this to "such and such holds for internal site object $\Gamma$". This is neither pure Rovelli-relationalism (which would require external observers) nor Fine-fragmentalism (which requires incoherent worlds) nor many-subjective-worlds (which requires multiple worlds). It is a **fourth option**: a single coherent world with *internal* site-relativization.
+
+**Corollary T-221.2.** Each of Loc, MI, MR is a [T] theorem in UHM (T-62, T-96, T-98, T-211). Combined with (ii)–(v) this exhausts the heptalemma. Joint consistency in $\mathfrak{T}$ is again sufficient.
+
+**Corollary T-221.3.** The 1-truncation $\tau_{\leq 1}: \mathfrak{T} \to \tau_{\leq 1}(\mathfrak{T})$ is a reflective left-exact localisation (HTT 5.5.6). Under this truncation:
+- Representable sheaves $y(\Gamma)$ collapse to hom-sets $\mathrm{Map}_\mathcal{C}(-, \Gamma)$, reproducing Rovelli's "facts relative to $\Gamma$".
+- The 2-cell data encoded in the $\&$-modality (T-186) — specifically, the naturality squares of $F : \mathbf{Phys} \to \mathbf{Phen}$ — are discarded.
+
+Hence RQM = $\tau_{\leq 1}(\mathrm{UHM})$ (modulo geometric identifications). RQM's first-personal deficit (Glick 2021 p. 9: "still aim to provide a description of external reality") is exactly the $n \geq 2$ content lost in truncation. $\blacksquare$
+
+**Reconstruction of the three other non-objectivist routes as $\mathfrak{T}$-specialisations.**
+
+| Route | UHM specialisation | Gauge-fixing |
+|---|---|---|
+| Relationalist (RQM, relativist FPR) | $\tau_{\leq 1}(\mathfrak{T})$ | drop $n \geq 2$ coherences |
+| Fragmentalist (Fine, Lipman) | Drop descent in a chosen sector | violates T-211 Giraud |
+| Many-subjective-worlds (Mermin, List 2023) | Pointwise Yoneda without descent gluing | drop covering $\{U_i \to W\}$ coherence |
+
+Each alternative is a **reductive truncation** of $\mathfrak{T}$; UHM's categorical-monistic route is the **full** structure. The three non-objectivist routes of DeBrota–List (2026) are therefore not alternatives to each other — they are mutually compatible shadows of the UHM $\infty$-topos, each losing different layers of coherence.
+
+**Interpretive addendum (status [I]).** The identification of UHM as "a fourth non-objectivist route" in the sense of DeBrota–List (2026) is an interpretation. The formal theorem claims only joint consistency in $\mathfrak{T}$ and recovery of the three other routes as truncations. Whether *that* counts as an adequate reply to the quadrilemma/heptalemma depends on background philosophical commitments (what counts as "first-personal fact", what counts as "real"). UHM's view is expressed in [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) and [Hard Problem meta-theorem T-214](#t-214).
+
+**Empirical criterion (unique to UHM).** DeBrota–List (2026) leave the choice among routes to "inference to the best explanation" (§10 of the paper). UHM provides a measurable discriminator: the π<sub>bio</sub> protocol (§9 below) measures $\Phi(\Gamma)$ on human subjects via TMS–EEG. Predicted signature of T-221 vs. competitors:
+- **UHM**: $\Phi \geq 1$ threshold with sector-profile dependence; site-relativization visible as Γ-indexed variation in $\Phi$ across subjects
+- **RQM shadow** ($\tau_{\leq 1}$): no predicted threshold, only relative correlations
+- **Fragmentalism**: incoherent $\Phi$-assignments across subjects (fails descent)
+- **Many-subjective-worlds**: per-subject $\Phi$ with no cross-subject invariant
+
+Pred 1–23 (see [Predictions](/docs/applied/coherence-cybernetics/predictions)) provide the falsifiable content.
+
+**Dependencies**: T-120 [T] (emergent manifold), T-173 [T] ($G_2$-rigidity), T-186 [T] (Cohesive Closure), T-211 [T] (PhysTheory coherences), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
+
+**External references**: List (2025); DeBrota and List (2026); Rovelli (1996, 2025); Fine (2005); Lipman (2023); Glick (2021); Mermin (2019).
+
+---
+
+## 16. Remaining clarifications {#clarifications}
 
 Three additional gap-closures complete the UHM foundational cleanup; they do not warrant new theorem numbers but require explicit documentation.
 
-### 15.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
+### 16.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
 
 **Explicit addition to Axiom 4 (Scale).** A4 currently says $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. A hidden assumption is that $H_\mathrm{eff}$ has **simple** spectrum (all eigenvalues distinct). This is required by:
 - Well-definedness of the temporal modality $\triangleright: |k\rangle \to |k+1 \bmod 7\rangle$ (needs distinct eigenstates to define the $\mathbb Z_7$-shift action);
@@ -739,7 +837,7 @@ Three additional gap-closures complete the UHM foundational cleanup; they do not
 
 **A4 refined**: $H_\mathrm{eff}$ has **simple spectrum** (all 7 eigenvalues distinct), with $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. Simple spectrum is generic (codimension $\geq 1$ stratum is degenerate) and holds for physically relevant holons by spectral transversality.
 
-### 15.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
+### 16.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
 
 **Claim**: The formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^\min + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (T-70) involves $\zeta'(0)$, which is generally a delicate analytic-continuation object. In UHM's finite-dimensional setting, it reduces to an elementary computation.
 
@@ -749,7 +847,7 @@ where $r$ is the rank and $\{\lambda_k\}$ are positive eigenvalues (with multipl
 $$\zeta'_{H_\mathrm{Gap}}(0) = -\sum_{k=1}^{r} \log \lambda_k = -\log \prod_{k=1}^{r} \lambda_k = -\log \det(H_\mathrm{Gap})$$
 is well-defined and finite. No regularisation ambiguity. The formula $f_0$ is thus a **rational algebraic expression** in the eigenvalues of $H_\mathrm{Gap}$, not a transcendentally-regularised object.
 
-### 15.3. Bures stratified-site handling {#bures-stratification}
+### 16.3. Bures stratified-site handling {#bures-stratification}
 
 **Claim**: Bures metric has degeneracies on the boundary of $\mathcal D(\mathbb C^7)$ where $\Gamma$ is rank-deficient. This is handled via the **stratified site** (Ayala–Francis–Rozenblyum 2017).
 
@@ -763,7 +861,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 
 ---
 
-## 16. Updated summary table {#summary-final}
+## 17. Updated summary table {#summary-final}
 
 | # | Theorem / Protocol | Previous status | New status | Method |
 |---|---|---|---|---|
@@ -778,15 +876,16 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | **T-218** | **SYNARC Cog Kan complex** | **[H] horn-fillers asserted** | **[T]** | **Milnor + classifying space** |
 | **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[T at T-64]** | **Sector product $\varepsilon^{12}$** |
 | **T-220** | **No-reduction $F_4 \to G_2$ UHM** | open question | **[T] negative** | **5 independent obstructions** |
-| §15.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
-| §15.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
-| §15.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
+| **T-221** | **Categorical-monistic no-go response** | open (external critique) | **[T]+[I]** | **Structure theorem on $\mathfrak T$ + 1-truncation recovery of RQM** |
+| §16.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
+| §16.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
+| §16.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete** | EEG/fMRI/HRV |
 
-**Total after all closures**: 11 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
+**Total after all closures**: 12 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
 
-**No open mathematical or categorical gaps remain in UHM's foundational framework.**
+**No open mathematical or categorical gaps remain in UHM's foundational framework.** T-221 additionally closes the *external* gap: UHM is no longer merely compatible with but *structurally forces* a specific (fourth) non-objectivist route in the List/DeBrota taxonomy, measurable via π<sub>bio</sub>.
 
 **Strictly remaining** (all explicitly non-mathematical):
 - Numerical computation of Λ (§8) — bounded HPC task

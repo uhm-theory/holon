@@ -418,6 +418,89 @@ The COGITATE project (Templeton World Charity Foundation): pre-registered experi
 
 This is implemented in the [SYNARC architecture](/docs/applied/coherence-cybernetics/implementation).
 
+## Meta-Level: Objectivism and the No-Go Results (List 2025, DeBrota–List 2026) {#no-go-objectivism}
+
+:::info What this section is about
+This is not "another theory of consciousness" but a *meta-level* discussion: two recent no-go results argue that **classical scientific objectivism is incompatible with any honest accommodation of consciousness or quantum measurement outcomes**. UHM's position — the **categorical-monistic route** — is formally codified as [T-221](/docs/proofs/categorical/fundamental-closures#t-221).
+:::
+
+### The two no-go results
+
+**List (2025), *The Philosophical Quarterly* 75(3).** The *quadrilemma for theories of consciousness*: the five theses
+
+- **FPR** (first-personal realism): for each conscious subject there are first-personal facts
+- **NS** (non-solipsism): more than one conscious subject exists
+- **OW** (one world): reality is exhausted by one world
+- **NF** (non-fragmentation): any world is a coherent collection of facts
+- **NR** (non-relationalism): facts are absolute ("such and such is the case"), not relative
+
+are jointly inconsistent. Any two or three are jointly consistent; any four are not. Classical *objectivism* is defined as the conjunction {OW, NF, NR}.
+
+**DeBrota & List (2026), *Foundations of Physics* 56:24 and arXiv:2604.14234.** The *heptalemma for quantum mechanics*: the seven theses {Locality, Measurement Independence, Measurement Realism, NS, OW, NF, NR} are jointly inconsistent with the predictions of quantum mechanics. Any six are consistent.
+
+### The three routes that DeBrota & List identify
+
+Dropping one conjunct of objectivism gives a non-objectivist route. The authors identify three, symmetric in both domains:
+
+| Route | Dropped conjunct | Consciousness analogue | QM analogue |
+|---|---|---|---|
+| Relationalist | NR | Relativist FPR (Fine 2005) | Relational QM (Rovelli 1996, 2025) |
+| Fragmentalist | NF | Fine fragmentalism, Lipman 2023 | Fragmentalist QBism |
+| Many-subjective-worlds | OW | List 2023 (many-worlds of consciousness) | Pluriverse QBism (Mermin 2019, Fuchs, Pienaar) |
+
+The authors leave the choice among the three to "inference to the best explanation" (§10 of the paper) and provide no measurable discriminator.
+
+### UHM's fourth route: categorical-monistic {#uhm-fourth-route}
+
+UHM does not fit into any of the three routes as stated. Instead, UHM realises a **fourth** route that preserves all three conjuncts of classical objectivism at the ∞-topos level while relaxing NR into **site-relativization**. The formal structure is:
+
+$$\mathfrak{T} \;=\; \mathrm{Sh}_\infty(\mathcal{C}_7,\; J_\mathrm{Bures},\; \omega_0)$$
+
+Mapping of the five theses:
+
+| Thesis | Status in UHM | Backing theorem |
+|---|---|---|
+| FPR | **forced** | [T-186](/docs/proofs/categorical/cohesive-closure) (Cohesive Closure): $F \cong \&|_\mathcal{D}$ |
+| NS | **conventional** | [T-215](/docs/proofs/categorical/fundamental-closures#t-215): choice $\iota_\mathrm{min}$ vs $\iota_\mathrm{max}$ |
+| OW | **derived, unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
+| NF | **definitional** | [T-211](/docs/proofs/categorical/fundamental-closures#t-211): Giraud axioms, descent |
+| NR | **replaced by NR$_\text{site}$** | Facts are ∞-sheaf sections indexed by the internal site $\mathcal C_7 \in \mathfrak{T}$ |
+
+The full result with proof is collected in [Fundamental Closure T-221](/docs/proofs/categorical/fundamental-closures#t-221). Three key corollaries:
+
+1. **List 2025 quadrilemma**: {FPR, NS (ι<sub>min</sub>), OW, NF, NR<sub>site</sub>} is jointly consistent in $\mathfrak{T}$.
+2. **DeBrota–List 2026 heptalemma**: {Loc, MI, MR, NS, OW, NF, NR<sub>site</sub>} is jointly consistent with QM predictions in $\mathfrak{T}$.
+3. **RQM as shadow**: Relational quantum mechanics is recovered as the 1-truncation $\tau_{\leq 1}(\mathfrak{T})$. All $n \geq 2$ coherence data — including the &-modality that carries FPR content by T-186 — is discarded by 1-truncation, which is exactly why RQM is sometimes accused of being "too third-personal" (Glick 2021).
+
+### Why the other three routes are *truncations*, not alternatives
+
+Each of the three non-objectivist routes identified by DeBrota–List (2026) is a **reductive specialisation** of $\mathfrak{T}$:
+
+| Route | $\mathfrak{T}$-specialisation | What is lost |
+|---|---|---|
+| Relationalist (RQM) | $\tau_{\leq 1}(\mathfrak{T})$ — 1-truncation | all $n \geq 2$ coherences, including FPR via &-modality |
+| Fragmentalist | drop descent in a sector | violates T-211 Giraud (no longer an ∞-topos) |
+| Many-subjective-worlds | pointwise Yoneda without gluing | no covering $\{U_i \to W\}$ coherence, no shared objectivity |
+
+From UHM's perspective these are not *competing* positions — they are *compatible shadows* of the same structure, each losing different layers of coherence.
+
+### Empirical discriminator (absent from DeBrota–List)
+
+The paper identifies no measurable criterion. UHM provides one: the **π<sub>bio</sub> protocol** (TMS–EEG, [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures)) measures $\Phi(\Gamma)$ directly. Predicted signatures:
+
+- **UHM (T-221)**: $\Phi \geq 1$ threshold with sector-profile dependence; site-relativization visible as Γ-indexed variation across subjects
+- **RQM shadow**: no threshold, only relative correlations
+- **Fragmentalism**: incoherent $\Phi$-assignments across subjects (fails descent)
+- **Many-subjective-worlds**: per-subject $\Phi$ with no cross-subject invariant
+
+See [Predictions](/docs/applied/coherence-cybernetics/predictions) for the 23+ falsifiable predictions, including Pred 9 (learning bound) and Pred 10 (N=7 minimality).
+
+### Connection with UHM's hard-problem meta-theorem
+
+The structural inevitability of site-relativization in T-221 is consonant with [T-214](/docs/proofs/categorical/fundamental-closures#t-214) (hard-problem meta-theorem): any sufficiently rich self-referential system has **structurally irreducible external postulates** (Lawvere fixed-point). T-221 localises this irreducibility: what in List–DeBrota's framework appears as "conflict between FPR and objectivism" is, in UHM, the *positive* fact that the relativization parameter ($\Gamma$) lives *internally* to the ∞-topos rather than in a mysterious external metaphysical subject (which was Fine's 2005 worry with pure relationalism).
+
+---
+
 ## Categorical Meta-Analysis of Theories of Consciousness
 
 :::info Formalised section

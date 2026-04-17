@@ -941,12 +941,15 @@ cubic term (T-50~\status{T}) supplying the combinatorial content.
 This upgrades T-176 from ``claimed analytical'' to an explicit algebraic
 expression.
 
-\subsection{Extended closures: T-217--T-220 + clarifications}
+\subsection{Extended closures: T-217--T-221 + clarifications}
 \label{subsec:extended-closures}
 
 A follow-up audit (2026-04-17) identified three further open
 mathematical questions and three implicit assumptions. All are now
-closed with full proofs.
+closed with full proofs. A further closure (T-221, 2026-04 v1.5)
+integrates UHM's response to the recent no-go results of List
+(2025)~\citep{list2025quadrilemma} and DeBrota--List
+(2026)~\citep{debrota2026heptalemma,debrotalist2026preprint}.
 
 \begin{theorembox}[{T-217: L3 tricategorical coherence \status{T}}]
 \label{thm:t217-l3-tricat}
@@ -1141,8 +1144,129 @@ generations of the Standard Model. This connects to the
 Dubois-Violette and Boyle--Farnsworth octonionic-SM programmes, but
 requires a separate empirical study.
 
+\begin{theorembox}[{T-221: Categorical-monistic response to List/DeBrota
+no-go results \status{T}~formal + \status{I}~interpretive}]
+\label{thm:t221-categorical-monistic}
+Let $\mathfrak T = \mathbf{Sh}_\infty(\mathcal C_7, J_{\mathrm{Bures}},
+\omega_0)$ be the UHM cohesive $\infty$-topos (A1--A5 + T-211~\status{T}
+Giraud). Formalise the five theses of List~\citep{list2025quadrilemma}
+and DeBrota--List~\citep{debrota2026heptalemma,debrotalist2026preprint}
+as follows: \emph{FPR} (first-personal realism) --- the interior
+functor $\mathrm{Map}_{\mathrm{int}}(\Gam,-) = \&(\Gam) :
+\mathcal C_7 \to \mathcal S$ is non-trivial for viable $\Gam$;
+\emph{NS} (non-solipsism) --- the site $\mathcal C_7$ contains at
+least two non-isomorphic viable objects; \emph{OW} (one world) ---
+there exists a world-object $W \in \mathfrak T$, unique up to
+equivalence, such that every viable $\Gam$ admits a canonical
+geometric morphism $y(\Gam) \to W$; \emph{NF}
+(non-fragmentation) --- every world-object satisfies descent;
+\emph{NR}$_{\mathrm{site}}$ (site-relative realism) --- facts are
+$\infty$-sheaf sections $\mathcal F(\Gam) \in \mathcal S$, absolute up
+to isomorphism in $\mathfrak T$ but indexed by the internal site
+object $\mathcal C_7 \in \mathfrak T$ (site-relative in the
+Grothendieck sense). Then:
+
+\begin{enumerate}[label=(\roman*),nosep]
+  \item \emph{FPR is forced} by T-186 ($F \cong \&|_{\mathcal D}$) ---
+        a theorem of UHM, not an optional postulate.
+  \item \emph{NS is conventional} by T-215: choice of
+        $\iota \in \{\iota_{\min}, \iota_{\max}\}$ resolves whether a
+        fractal tower is many agents or one compound.
+  \item \emph{OW is derived} by T-120: $M^4 = \mathbb R \times \Sigma^3$
+        follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173)
+        from the spectral triple.
+  \item \emph{NF is definitional} by T-211 Giraud: descent is the
+        defining property of $\infty$-sheaves.
+  \item \emph{NR relaxes to} NR$_{\mathrm{site}}$: by presentability
+        of $\mathfrak T$ (HTT 6.3.1.16), $\mathcal C_7$ is internal to
+        $\mathfrak T$, so the relativisation parameter $\Gam$ is
+        $\mathfrak T$-internal, not external.
+\end{enumerate}
+
+\noindent
+\textbf{Corollaries.}
+\begin{itemize}[leftmargin=2em,nosep]
+  \item \emph{C1 (quadrilemma).} Under $\iota_{\min}$, $\{\mathrm{FPR},
+        \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_{\mathrm{site}}\}$
+        is jointly consistent in $\mathfrak T$, resolving the List
+        (2025) quadrilemma by a single structural replacement
+        $\mathrm{NR} \rightsquigarrow \mathrm{NR}_{\mathrm{site}}$.
+  \item \emph{C2 (heptalemma).} $\{\mathrm{Loc}, \mathrm{MI},
+        \mathrm{MR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF},
+        \mathrm{NR}_{\mathrm{site}}\}$ is jointly consistent with
+        QM predictions in $\mathfrak T$ (Loc from Lindblad locality on
+        $\mathbb C^7$; MI from autonomy of $\mathcal R$, T-62~\status{T};
+        MR from $\rho^* = \vp(\Gam)$, T-96/T-98~\status{T}).
+  \item \emph{C3 (RQM as shadow).} Relational quantum mechanics
+        (Rovelli~\citep{rovelli1996rqm}) is the 1-truncation
+        $\tau_{\leq 1}(\mathfrak T)$: collapsing $n \geq 2$ coherences
+        yields ``facts relative to observer''. The first-personal content
+        absent in RQM~\citep{glick2021qbism} is encoded in UHM by the
+        $\&$-modality of T-186, invisible to 1-truncation.
+\end{itemize}
+\end{theorembox}
+
+\begin{proof}[Proof sketch]
+Part~(i) is T-186; (ii) is T-215; (iii) is T-117--T-121 + T-173; (iv) is
+T-211 Giraud. For (v): since $\mathfrak T$ is presentable and
+$\mathcal C_7$ is essentially small (bounded by $\dim \mathcal D(\mathbb C^7) =
+49$), the $\infty$-Yoneda embedding $y : \mathcal C_7 \hookrightarrow
+\mathfrak T$ lands in $\mathfrak T$ itself. Hence $\Gam$ is
+$\mathfrak T$-internal, resolving Fine's~\citep{fine2005tense} worry
+that relationalism requires a ``pure metaphysical self'' outside the
+world. C1 and C2 follow because joint satisfaction in a model
+(namely $\mathfrak T$) implies joint consistency. C3: the truncation
+$\tau_{\leq 1}$ is a reflective left-exact localisation (HTT 5.5.6);
+representable sheaves $y(\Gam)$ collapse to hom-sets
+$\mathrm{Map}_{\mathcal C}(-,\Gam)$, reproducing Rovelli's relative
+facts; the 2-cell data of the $\&$-modality (naturality squares of
+$F : \mathbf{Phys} \to \mathbf{Phen}$) is discarded. $\blacksquare$
+\end{proof}
+
+\textbf{Reconstruction of the three other non-objectivist routes.}
+Each of the routes identified by DeBrota--List~(2026) is a reductive
+truncation of $\mathfrak T$:
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}p{4.2cm} p{4.5cm} p{5cm}@{}}
+\toprule
+\textbf{Route} & \textbf{Specialisation of $\mathfrak T$} & \textbf{What is lost} \\
+\midrule
+Relationalist (RQM, relativist FPR) & $\tau_{\leq 1}(\mathfrak T)$ & all $n \geq 2$ coherences, FPR via $\&$-modality \\
+\midrule
+Fragmentalist (Fine, Lipman) & drop descent in a sector & violates T-211 Giraud (no longer an $\infty$-topos) \\
+\midrule
+Many-subjective-worlds (Mermin~\citep{mermin2019better}, List 2023) & pointwise Yoneda without gluing & covering coherence $\{U_i \to W\}$, shared objectivity \\
+\bottomrule
+\end{tabular}
+\caption{The three non-objectivist routes of DeBrota--List (2026) as reductive truncations of the UHM cohesive $\infty$-topos. They are \emph{compatible shadows} of a single structure, not competing positions. UHM realises the \emph{fourth} (categorical-monistic) route, absent from the DeBrota--List taxonomy.}
+\label{tab:t221-routes}
+\end{table}
+
+\textbf{Empirical discriminator (absent from DeBrota--List 2026).}
+The external no-go results leave route-selection to inference to the
+best explanation. UHM provides a measurable discriminator via the
+$\pi_{\mathrm{bio}}$ protocol (TMS--EEG measurement of $\Phi(\Gam)$,
+see \S\ref{sec:predictions} prediction~21):
+\emph{UHM (T-221)} predicts $\Phi \geq 1$ threshold with
+sector-profile dependence; \emph{RQM shadow} predicts no threshold,
+only relative correlations; \emph{fragmentalism} predicts incoherent
+$\Phi$-assignments across subjects (fails descent);
+\emph{many-subjective-worlds} predicts per-subject $\Phi$ with no
+cross-subject invariant. This converts a philosophical choice into
+an empirically resolvable question.
+
+\textbf{Position in UHM's axiomatic architecture.}
+Axiomatic closure T-190 is \emph{internal} (every UHM axiom is a
+theorem of the remaining structure). T-221 is the \emph{external}
+axiomatic closure --- UHM's position in the contemporary debate over
+scientific objectivism and the status of first-personal facts in
+science. Together, T-190 + T-221 complete the axiomatic
+self-grounding against both internal and external critiques.
+
 \paragraph{Summary.}
-After T-210--T-220, UHM's foundational framework has no remaining
+After T-210--T-221, UHM's foundational framework has no remaining
 mathematical or categorical gaps. Three classes of open questions
 persist, all with explicit specifications:
 \begin{itemize}[leftmargin=2em,nosep]
@@ -1180,7 +1304,7 @@ $\Omega$. Gravity is what coherence looks like from the external (physical) aspe
 \subsection{Theoretical closures T1--T6: residual specification}
 \label{subsec:theoretical-closures}
 
-The foundational theorems T-210 through T-220 close all identified gaps of
+The foundational theorems T-210 through T-221 close all identified gaps of
 UHM's categorical and physical structure. Six residual technical items (T1--T6)
 concern explicit specifications or scope declarations rather than open research
 questions; this subsection records each closure. The classification follows the

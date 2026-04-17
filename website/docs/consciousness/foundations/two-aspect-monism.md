@@ -157,6 +157,8 @@ Two-aspect monism receives a **categorical formulation** in terms of the ∞-top
 **Separation of statuses:** Formal results (splitting of the map, Yoneda's lemma, uniqueness of FV, self-referential closure) — **[T]**. Their interpretation as two-aspect monism (identification of $\mathrm{Map}_{\mathrm{ext}}$ with 'physics' and $\mathrm{Map}_{\mathrm{int}}$ with 'experience') — **[I]**.
 
 **Status upgrade (T-186):** The [Cohesive Closure Theorem](/docs/proofs/categorical/cohesive-closure) proves that the phenomenal functor $F$ is naturally isomorphic to the infinitesimal flat modality $\&$: $F \cong \&|_{\mathcal{D}}$. The Postnikov filtration of $\&(\Gamma)$ forces the L0–L4 hierarchy. This upgrades the phenomenal identification from **[I]** to **[T]** — it is structurally necessitated by the cohesive adjunction $\iota^* \dashv \mathrm{Inf}$, not by interpretive choice.
+
+**Response to objectivism no-go ([T-221](/docs/proofs/categorical/fundamental-closures#t-221)).** Two-aspect monism is the UHM realisation of the **categorical-monistic route** — a fourth non-objectivist option beyond the three (relationalist / fragmentalist / many-subjective-worlds) identified by List (2025) and DeBrota–List (2026). The $\&$-modality of T-186 is exactly what makes first-personal realism (FPR) a *theorem* in UHM rather than an optional postulate. See [Theories of Consciousness §Meta-Level](/docs/consciousness/comparative/consciousness-theories#no-go-objectivism) for the full discussion.
 :::
 
 ### What Morphisms Are and Why We Need Them
