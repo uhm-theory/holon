@@ -17,12 +17,12 @@ Each UHM result carries one of seven statuses:
 - **[✗]** Retracted — proven erroneous or withdrawn
 :::
 
-:::info Foundational closures (T-210..T-221)
+:::info Foundational closures (T-210..T-222)
 Twelve theorems close all mathematical and categorical gaps of the UHM framework: strict Φ-monotonicity, PhysTheory higher coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε<sub>eff</sub>, L3 tricategorical coherence, SYNARC Cog as Kan complex, sector-product Λ-suppression, **no-reduction $F_4$→$G_2$ UHM**, and **categorical-monistic response to List/DeBrota no-go results**. Full proofs in [Fundamental Closures T-210..T-221](/docs/proofs/categorical/fundamental-closures). Plus two computational-programme specifications (Λ-deficit and π<sub>bio</sub>) reducing remaining open questions to bounded empirical/computational tasks.
 :::
 
-:::info Theorem Correspondence Matrix (T-193..T-221 provenance)
-The block T-193..T-221 aggregates results from multiple sources:
+:::info Theorem Correspondence Matrix (T-193..T-222 provenance)
+The block T-193..T-222 aggregates results from multiple sources:
 
 | T-number | Origin | Status | Relates to |
 |---|---|---|---|
@@ -49,6 +49,7 @@ The block T-193..T-221 aggregates results from multiple sources:
 | **T-219** | UHM Fundamental Closures §13 (**new 2026-04-17**) | **[T at T-64]** | Λ SUSY-suppression $\varepsilon^{12}=\varepsilon^{4\cdot 3}$ from 3-sector decomposition (T-48a), replacing invalid G₂-adjoint argument |
 | **T-220** | UHM Fundamental Closures §14 (**new 2026-04-17**) | **[T] negative** | No reduction functor $F_4$-UHM → $G_2$-UHM exists: 5 independent obstructions (rep-theory $3\cdot\mathbf{7}\oplus 6\cdot\mathbf{1}$, $F_4$-transitivity on $\mathbb{O}P^2$, Zelmanov exceptionality, numerical mismatch $\alpha,P_\text{crit}$, Euler $\chi$(ℂP⁶)=7≠3=χ(𝕆P²)) |
 | **T-221** | UHM Fundamental Closures §15 (**new 2026-04-17**) | **[T] formal + [I] interpretive** | Categorical-monistic response to List (2025) quadrilemma + DeBrota–List (2026) heptalemma: joint consistency in $\mathfrak T$ of {FPR, NS (ι<sub>min</sub>), OW, NF, NR<sub>site</sub>} and heptuple with QM predictions. Relational QM = $\tau_{\leq 1}(\mathfrak T)$ (1-categorical shadow); fragmentalism/many-worlds = reductive truncations. π<sub>bio</sub> as empirical discriminator |
+| **T-222** | UHM Fundamental Closures §16 (**new 2026-04-18**) | **[T]** | **H-MRQT-Lawvere**: Lawvere fixed-point $\rho^* = \varphi(\Gamma)$ from T-96 coincides with Pareto-optimum of full MRQT resource vector $R(\rho) = (E, F_\alpha, C_\text{rel}, C_{HS}, S_\text{vN}, K_Q, Q_a)$ (25 simultaneous monotones: 5 Rényi free energies, 2 coherence measures, von Neumann entropy, quantum Kolmogorov complexity, 14 non-Abelian $G_2$-charges) on $G_2$-covariant submanifold of $\mathcal{V}_\text{full}$. Proved via six lemmas (L1: $G_2$-covariance zeroes non-Abelian charges via Schur; L2: $P = 2/7$ minimises $F_2$ at $\beta \to 0$; L3: $K_Q(\rho^*) = O(1)$ algorithmic simplicity; L4: $C_{HS}(\rho^*) = 1/7$ minimal viable; L5: $C_\text{rel} \propto F_1$ on $G_2$-covariant class; L6: all $F_\alpha$ minimised simultaneously via convex analysis on eigenvalue spectrum). $\rho^*$ is **terminal object** of category $\mathbf{Res}_{G_2}$ of $G_2$-covariant resource objects. **UHM is MRQT-complete in its applicability domain** (markovian + low-temperature + $G_2$-covariant). Follows from Brandão-Horodecki PNAS 2015 (Rényi family second laws), Baumgratz-Cramer-Plenio 2014 (coherence monotones), Yunger-Halpern 2023 (non-Abelian thermodynamics), Bennett-Zurek algorithmic Landauer |
 
 **Cross-framework relation.** UHM theory and SYNARC AGI architecture are **linked but independent** (UHM = foundational theory; SYNARC = UHM-inspired cognitive architecture). **Mathesis** is a **separate, standalone** project for theory-navigation meta-epistemics — it operates *on* theories (including UHM) as objects in $\mathbf{Th}$; it does not compose with SYNARC.
 

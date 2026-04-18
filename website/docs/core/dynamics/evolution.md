@@ -625,6 +625,10 @@ where $\varphi$ is the self-modelling operator (left adjoint to the inclusion of
 The regeneration target $\rho_* = \varphi(\Gamma)$ is **uniquely determined** by the [categorical structure](/docs/core/operators/phi-operator) of the self-modelling operator φ (left adjoint to the inclusion of subobjects). For each current state Γ the self-model $\varphi(\Gamma)$ is unique (CPTP channel [Т]).
 :::
 
+:::info MRQT-resource universality of $\rho^*$ (T-222) [Т]
+By [T-222](/docs/proofs/categorical/fundamental-closures#t-222), the Lawvere fixed point $\rho^* = \varphi(\Gamma)$ is **Pareto-optimal** with respect to the full Multi-Resource Quantum Theory (MRQT) vector $R(\rho)$ on the $G_2$-covariant viable submanifold. This comprises 25 simultaneous monotones: 5 Rényi free energies $F_\alpha$ (Brandão–Horodecki 2015), 2 coherence measures ($C_\text{rel}$, $C_{HS} = \mathrm{Coh}_E$), von Neumann entropy, quantum Kolmogorov complexity $K_Q$, and 14 non-Abelian $G_2$-charges. Consequently, the regeneration operator $\mathcal{R}$ acting as $\rho \to \rho^*$ is the **universal resource-monotone CPTP morphism**: it simultaneously improves *all* MRQT resources without explicit multi-objective optimisation. UHM is MRQT-complete in its applicability domain (Markovian + $G_2$-covariant + viability + low-temperature).
+:::
+
 :::caution Formal uncomputability of $\rho_*$
 The target state $\rho_* = \varphi(\Gamma)$ is defined through the operator $\varphi$ — a [categorical left adjoint](/docs/core/operators/phi-operator), concretely realized via $\varphi_{\mathrm{coh}}$ ([Fano channel](/docs/core/operators/phi-operator#каноническая-конструкция-φ_coh-из-фано-структуры)). Computing $\varphi_{\mathrm{coh}}(\Gamma)$ in the 7D formalism requires $O(N^2)$ operations ($N = 7$). In the 42D formalism ($N=42$) an analogous Fano structure on the extended space is required, which makes the evolution equation formally closed but **practically costly** for the extended formalism without approximations.
 :::
