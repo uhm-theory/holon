@@ -291,6 +291,12 @@ const config: Config = {
             { label: 'Glossary', to: '/docs/reference/glossary' },
           ],
         },
+        {
+          title: 'Related',
+          items: [
+            { label: 'Verum language', href: 'https://verum-lang.org/' },
+          ],
+        },
       ],
       copyright: `© 2024-${new Date().getFullYear()} UHM Theory · Max Sereda. Theory: CC BY-NC-SA 4.0 | Code: MIT`,
     },
