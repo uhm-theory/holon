@@ -1667,7 +1667,7 @@ In the Ω⁷ formulation UHM is:
 
 **See also:**
 - [Structural derivation $N{=}7$ via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → $N{=}7$ (track B)
-- [Axiom (AP+PH+QG+V)](./axiom-septicity) — autopoiesis, phenomenology, quantum grounding, viability
+- [Axiom (AP+PH+QG+V)](./axiom-septicity) — autopoiesis, phenomenology, quantum grounding, viability (extended with **(MaxEnt)** for T-190 axiomatic closure)
 - [Consequences](./consequences) — corollaries of Ω⁷
 - [Deriving FEP from UHM](../../proofs/dynamics/fep-derivation) — variational Thm. 3.1 and classical-limit Thm. 4.2
 - [Emergent time theorem](../../proofs/dynamics/emergent-time) — time from ∞-structure
