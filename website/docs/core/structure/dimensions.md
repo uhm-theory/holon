@@ -123,8 +123,10 @@ Remove any element — and the walk becomes impossible. Without eyes you cannot 
 
 ### Combinatorial uniqueness of semantic roles (T-177) [Т] {#комбинаторная-единственность}
 
-:::tip Theorem T-177 [Т]: Combinatorial uniqueness of semantic roles
+:::tip Theorem T-177 [Т]+[С at combinatorial-constraint set]: Combinatorial uniqueness of semantic roles
 After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
+
+**Stratification:** The distinguishability of the 7 fingerprints is **[Т]** as a combinatorial fact on the Fano plane PG(2,2) once **the combinatorial constraint set** is fixed (sector decomposition T-48a + Higgs line $\{A,E,U\}$). The choice of that constraint set itself is **[С at combinatorial-constraint set]**: T-48a and the Higgs line come from upstream axiomatic structure (A3, electroweak fit), not from T-177 in isolation. Conditional on those inputs, the fingerprint table is exact.
 :::
 
 **Proof.** For each $e_k$ we define the **functional fingerprint** $\mathcal{F}(e_k)$ — the triple (sector, set of Fano lines, sector type of each line):
@@ -151,8 +153,10 @@ After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\ma
 
 All 7 fingerprints are pairwise distinct. $\blacksquare$
 
-:::info Theorem T-183 [Т]: Uniqueness of functional assignment for all 7 roles
+:::info Theorem T-183 [Т]+[С at combinatorial-uniqueness chain]: Uniqueness of functional assignment for all 7 roles
 All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the combinatorial structure (T-177 [Т]), the functional requirements of the evolution equation $\mathcal{L}_\Omega$, and axioms (AP)+(PH)+(QG)+(V):
+
+**Stratification:** Given the combinatorial-uniqueness chain of upstream inputs — sector decomposition T-48a, the Higgs line $\{A,E,U\}$, $L$-mediation of the regeneration formula, and sector-covariance of unitary evolution — each step (4)–(7) of the proof is **[Т]**. The result is thus **[С at combinatorial-uniqueness chain]**: strip any single link (e.g. change the Higgs line, or allow $S$-mediated regeneration), and the uniqueness argument no longer runs. The chain itself is justified upstream in T-48a + axioms; T-183 is not independently axiom-free.
 
 | Role | Determining property | Status |
 |------|----------------------|--------|

@@ -101,6 +101,8 @@ $$
 
 :::info Clustering of the full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$
 The Goderis–Verbeure–Vets theorem requires exponential decay of correlations for the **full** dynamics, not just the linear part $\mathcal{L}_0$. Formally: (1) $\mathcal{L}_0$ is primitive [T-39a], spectral gap $\lambda_{\text{gap}} > 0$; (2) regeneration $\mathcal{R}$ is a **local** operator (acts on each holon independently, introducing no long-range correlations); (3) by standard perturbation theory (Nachtergaele–Sims, 2006), adding a local perturbation $\mathcal{R}$ with $\|\mathcal{R}\| < \lambda_{\text{gap}}$ **preserves** the spectral gap and exponential decay. The condition $\|\mathcal{R}\| < \lambda_{\text{gap}}$ holds when $\kappa < \kappa_{\text{max}}$ (T-96 [Т]).
+
+**Scope note (framework-conditional).** Goderis–Verbeure–Vets 1989 applies under a clustering hypothesis (exponential decay of connected correlation functions). For the full UHM dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, clustering is argued above via primitivity of $\mathcal{L}_0$ (spectral gap, T-39a) plus local-perturbation stability of $\mathcal{R}$. The distinction **spectral gap of $\mathcal{L}_0$ alone $\neq$ clustering decomposition of $\mathcal{L}_\Omega$** must be kept in mind: the gap gives convergence to the invariant state $I/7$ but, strictly, clustering of the full generator requires a separate Lieb–Robinson / Nachtergaele–Sims-style bound that is sketched but not fully verified here. Full verification of this step is **pending** (listed as framework-conditional for T-117 in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости)).
 :::
 
 :::info Verification of the clustering condition
@@ -193,6 +195,10 @@ $$
 
 The exponent $d_s = 3$ is determined by the dimension of the single-holon spatial representation $\mathbf{3}$. This is a direct consequence of the Weyl law applied to the lattice of $SU(3)$-fundamental irreducible representations: each irreducible block contributes $\dim(\mathbf{3})$ eigenvalues per unit spectral interval at large $\lambda$, so the total counting function grows as $\lambda^{\dim(\mathbf{3})} = \lambda^3$.
 
+:::note Scope: Weyl-law bridge
+The spectral-dimension claim $d_s = 3$ rests on a **bridge** between two distinct objects: the classical Weyl-law growth rate $N(\lambda) \sim \lambda^{d}$ for elliptic PDE operators on a smooth $d$-manifold, and the eigenvalue counting on the tensor-product Hilbert space $\bigotimes_m \mathbb{C}^3$ with operator $D_{\text{eff}}^{(M)}$. The identification used here — that the per-holon representation dimension $\dim(\mathbf{3})$ plays the role of $d$ in the asymptotic growth — is a **physical** identification compatible with Connes' NCG definition of spectral dimension, not a direct theorem of PDE analysis. A rigorous derivation would require constructing $D_{\text{eff}}^{(M)}$ as a (pseudo-)differential operator on the thermodynamic-limit manifold and verifying its Weyl asymptotics by standard microlocal methods. The claim is consistent with Connes 1996 §VI.1 but the explicit bridge is physical in status.
+:::
+
 **Step 2d (Independence from $\dim(G_2)$ and $\dim(SU(3))$).** The spectral dimension is $d_s = \dim(\mathbf{3}) = 3$, **not** $\dim(SU(3)) = 8$ or $\dim(G_2) = 14$. This is because the Weyl law counts eigenvalues of the Dirac operator on the **representation space** (the carrier space $\mathbb{C}^3$), not on the group manifold. Concretely: $SU(3)$ acts on $\mathbb{C}^3$ as rotations of 3 spatial degrees of freedom. The group itself has $8$ parameters (generators), but the space being rotated has $3$ dimensions. The spectral dimension of the emergent manifold equals the dimension of what is being acted upon, not the dimension of the symmetry group. This distinction is standard in NCG (Connes, 1996, §VI.1). $\square_2$
 
 **Step 3 (Gelfand reconstruction).**
@@ -246,7 +252,11 @@ A spectral triple satisfies *absolute continuity* if the positive linear functio
 
 By Connes' reconstruction theorem (Connes, 2008; Connes, 2013): a commutative spectral triple satisfying axioms (i)–(vi) above is canonically isomorphic to the triple $(C^\infty(\Sigma), L^2(\Sigma, S), D_\Sigma)$ for a unique smooth compact spin manifold $\Sigma$. With **all six axioms verified** (not merely stated), $Y = \Sigma^3$ is a smooth 3-manifold. $\blacksquare$
 
-**Dependencies:** T-117 [Т], T-53 [Т], sector decomposition [Т]. Standard mathematics: Gelfand–Naimark, Connes (2008, 2013).
+:::note Scope: Connes reconstruction axioms (framework-conditional)
+The formulation of Connes' 2013 reconstruction theorem uses **seven** axioms. In Step 5 above, axioms (i)–(vi) are argued explicitly via the constructions listed (sector decomposition for dimension, direct-limit argument for regularity, finitely-generated-module structure for finiteness, explicit Hochschild 3-cycle for orientability, Atiyah–Singer for Poincaré duality, heat-kernel density for absolute continuity). The **seventh axiom — the first-order (order-one) condition** $[[D,a],b^\circ]=0$ for $a,b\in A$ and $b^\circ = Jb^*J^{-1}$ — is satisfied automatically for $A_{\text{macro}}^{\text{spatial}}$ commutative acting diagonally, but for the composite triple carrying the $J$-induced bimodule structure it reduces to a specific computation on the effective Dirac operator restricted to the $\mathbf{3}$-sector. This computation is **sketched** (via the product-triple KO-dim-6 structure from T-53) but has **not been fully written out**; full verification is the framework-conditional gap flagged for T-119 in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости).
+:::
+
+**Dependencies:** T-117 [Т], T-53 [Т], sector decomposition [Т]. Standard mathematics: Gelfand–Naimark, Connes (2008, 2013). **Framework-conditional**: applicability of Connes 2013 reconstruction to the UHM effective spatial triple requires the 7-axiom check with the first-order condition treated as noted above.
 
 ---
 
@@ -329,7 +339,11 @@ $$
 
 Inverting: $g_{00} > 0$, $g_{aa} < 0$, giving Lorentzian signature $(+1,-1,-1,-1)$.
 
-**Step 8d (Uniqueness of the sign assignment).** The anti-commutation $J\chi = -\chi J$ (KO-dim 6, Step 8a) ensures that the grading $\chi$ distinguishes the temporal and spatial sectors with opposite signs. With $\chi|_O = +1$ and $\chi|_{\{A,S,D\}} = -1$ (from the $\mathbb{Z}_2$-grading induced by the sector decomposition $1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$), the relation $J\chi = -\chi J$ forces $J$ to interchange the $+1$ and $-1$ eigenspaces of $\chi$, preserving the sign separation. This is precisely the condition for a Lorentzian (rather than Euclidean) metric signature (Barrett, 2007, §3; Connes–Marcolli, 2008, Ch. 1.17). The Euclidean alternative $J\chi = +\chi J$ would correspond to KO-dimension 0 or 4, not 6 — and is excluded by T-53.
+**Step 8d (Uniqueness of the sign assignment).** The anti-commutation $J\chi = -\chi J$ (KO-dim 6, Step 8a) ensures that the grading $\chi$ distinguishes the temporal and spatial sectors with opposite signs. With $\chi|_O = +1$ and $\chi|_{\{A,S,D\}} = -1$ (from the $\mathbb{Z}_2$-grading induced by the sector decomposition $1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$), the relation $J\chi = -\chi J$ forces $J$ to interchange the $+1$ and $-1$ eigenspaces of $\chi$, preserving the sign separation. This is precisely the condition for a Lorentzian (rather than Euclidean) metric signature (Barrett, 2007, *A Lorentzian version of the non-commutative geometry of the standard model of particle physics*, J. Math. Phys. 48, 012303, §3; Connes–Marcolli, 2008, Ch. 1.17). The Euclidean alternative $J\chi = +\chi J$ would correspond to KO-dimension 0 or 4, not 6 — and is excluded by T-53.
+
+:::note Scope: Lorentzian signature via Barrett 2007
+The argument that KO-dim 6 plus the sign relations $J^2=+1$, $JD=DJ$, $J\chi=-\chi J$ forces Lorentzian signature $(+,-,-,-)$ (rather than Euclidean or any sign pattern) invokes **Barrett's Lorentzian reformulation** of the NCG spectral triple. Barrett 2007 constructs a KO-dim-6 real spectral triple such that the Dirac-operator commutator $\|[D,f]\|^2$ reproduces a **Lorentzian** line element — specifically signature $(+,-,-,-)$ with one positive eigenspace ($\chi=+1$, the O-sector here) and three negative ($\chi=-1$, the $\{A,S,D\}$-sector). Steps 8a–8d above apply this construction, with the O-direction playing the role of Barrett's timelike sector and $\{A,S,D\}$ the spacelike sector; uniqueness is up to the orientation convention $D_O>0$ fixed in Step 8c.
+:::
 
 **Conclusion:** The signature $(+1,-1,-1,-1)$ is uniquely determined by:
 - KO-dimension 6 (from $G_2$-structure, T-53 [Т])

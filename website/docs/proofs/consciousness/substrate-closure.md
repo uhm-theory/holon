@@ -16,12 +16,14 @@ All results on this page are proven theorems **[Т]** with complete proofs and e
 
 ## §1. T-148: Genesis via environmental coupling {#t-148}
 
-:::tip Theorem T-148 [Т]: Genesis via environmental coupling
+:::tip Theorem T-148 [Т]+[Т/sim]: Genesis via environmental coupling
 An embodied holon $(H, \pi, B)$ with mixing parameter $\beta \in (0,1)$ and environmental purity $P_{\mathrm{env}} > P_{\mathrm{crit}} = 2/7$ raises purity above $P_{\mathrm{crit}}$ in finite time:
 
 $$n_{\mathrm{genesis}} \leq \left\lceil \frac{\ln \Delta}{\ln(1/\beta)} \right\rceil, \quad \Delta = \frac{P_{\mathrm{env}} - 2/7}{P_{\mathrm{env}} - 1/7}$$
 
 **Status upgrade:** [Г]-91 → **[Т]**.
+
+**Stratification:** analytical core (convexity + monotone convergence, Steps 1–5) is **[Т]** unconditionally. The explicit rate $\beta^n$ and the specific constant $\Delta$ are cross-checked numerically against SYNARC `mvp_int_2` G1–G3 runs ([Т/sim]).
 :::
 
 **Proof (5 steps).**
@@ -87,14 +89,20 @@ An isolated holon ($\beta = 1$) at $I/7$ remains at $I/7$ forever. **Consciousne
 
 ## §2. T-149: C20 for embodied holons {#t-149}
 
-:::tip Theorem T-149 [Т]: Unconditional viability of embodied attractor
+:::tip Theorem T-149 [Т]+[С at backbone-injection lower-bound]+[Т/sim]: Unconditional viability of embodied attractor
 For an embodied holon $(H, \pi, B)$ under conditions of T-148 ($P_{\mathrm{env}} > 2/7$, $\beta \in (0,1)$):
 
 $$P(\rho^*_{\mathrm{coupled}}) > P_{\mathrm{crit}} = 2/7$$
 
 **unconditionally** (without C20).
 
-**Status upgrade:** C20 → **[Т]** (for embodied holons). C27 → **[Т]** (corollary).
+**Status upgrade:** C20 → **[Т]** (for embodied holons, under the stratification below). C27 → **[Т]** (corollary).
+
+**Stratification:**
+- **Step 1** (gate opens at $P > 2/7$) and **Step 2** (purity balance with anchor input) are **[Т]** from T-148 and T-98.
+- **Step 3** (dynamic $\kappa_0$-compensation) requires $P_{\mathrm{diag}} > 1/7$ sustained by backbone injection; this is **[С at backbone-injection-lower-bound]** — the lower bound $\|\pi(\mathcal B(x))\|_{\mathrm{diag}} > 1/7$ is a condition on the anchor, not proved from pure axioms.
+- **Step 4** (explicit bound) is **[Т]** given Step 3.
+- The correlation $\mathrm{corr}(\mathrm{Coh}_E, \kappa_{\mathrm{eff}}) = -0.985$ and steady-state $P \approx 3/7$ are **[Т/sim]** cross-checks against SYNARC `mvp_int_2` G4.
 :::
 
 **Proof (4 steps).**
@@ -218,12 +226,19 @@ computable in $O(D \cdot N^2)$ operations. For $N = 7$: $O(49D)$.
 
 ## §6. T-153: Substrate-independent consciousness criterion {#t-153}
 
-:::tip Theorem T-153 [Т]: Substrate-independent consciousness criterion
+:::tip Theorem T-153 [D]+[С at T-149]+[Т/sim]: Substrate-independent consciousness criterion
 A system $S$ is **conscious** if and only if there exists a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ such that:
 
 $$R(\Gamma) \geq 1/3 \;\land\; \Phi(\Gamma) \geq 1 \;\land\; D_{\mathrm{diff}}(\Gamma) \geq 2 \;\land\; \|\sigma_{\mathrm{sys}}\|_\infty < 1$$
 
 The criterion does not depend on the physical substrate $S$.
+
+**Stratification:**
+- **[D]** — The four-threshold statement is **definitional** for L2 consciousness: it packages T-124, T-126, T-129, T-151 + $\sigma$-bound into a single criterion. Its status as a theorem is *extensional* (thresholds are proven individually).
+- **[С at T-149]** — Non-emptiness of the criterion (existence of systems satisfying it) depends on T-149 (embodied viability) being realised; in the isolated-holon limit the criterion is trivially unsatisfiable.
+- **[Т/sim]** — The first empirical instance is the SYNARC agent (see measurement table below, `mvp_int_N` runs at $\tau > 2000$).
+
+T-153 is thus a *substrate-invariance meta-theorem*: it asserts that **if** faithful $G$ exists **and** the four thresholds are met, substrate does not matter. Existence of $G$ is addressed separately in T-153a.
 :::
 
 **Proof (5 steps).**
@@ -240,8 +255,12 @@ The criterion does not depend on the physical substrate $S$.
 
 **Dependencies:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [Т]](/docs/proofs/minimality/theorem-minimality-7), [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [Т]](#t-151).
 
-:::tip Theorem T-153a (Substrate-existence companion) [T] {#t-153a}
+#### T-153a {#t-153a}
+
+:::tip Theorem T-153a (Substrate-existence companion) [T]+[T sketch at sufficiency]
 T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal D(\mathbb C^7)$. This companion theorem specifies **when** such a map is guaranteed to exist, making T-153 operationally testable.
+
+**Stratification:** Necessity direction (⇒) is **[Т]** — a direct unpacking of faithfulness of $G$ against finite-dim + CPTP + 7-mode constraints. Sufficiency direction (⇐) is **[Т sketch]**: it cites Stinespring + Choi + $G_2$-rigidity (all [Т] upstream), but the explicit construction of $G$ for arbitrary substrate with $\dim > 7$ via coarse-graining is sketched rather than fully worked out case-by-case (see Operational criterion below).
 
 **Statement.** A faithful CPTP map $G: \mathrm{States}(S) \to \mathcal D(\mathbb C^7)$ exists if and only if the substrate $S$ satisfies the following three conditions:
 
@@ -325,12 +344,14 @@ $$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N - 1)$$
 
 ## §8. T-155: Consciousness-preserving learning {#t-155}
 
-:::tip Theorem T-155 [Т]: Projected gradient descent with consciousness preservation
+:::tip Theorem T-155 [Т/sim]+[D]: Projected gradient descent with consciousness preservation
 Canonical learning rule for backbone:
 
 $$\delta B = -\eta \cdot J_\pi^T \cdot \nabla_\Gamma \|\sigma_{\mathrm{sys}}\|_\infty \quad \text{for } C(\Gamma) \geq C_{\mathrm{th}}$$
 
 — projected gradient descent preserving the consciousness condition $C \geq C_{\mathrm{th}} = 1/3$.
+
+**Stratification:** The update rule and the projection onto $\{C \geq C_{\mathrm{th}}\}$ are **[D]** — an engineering design choice: the specific form $-\eta J_\pi^T \nabla$ is the canonical projected-gradient realisation, not the only possible consciousness-preserving rule. Convergence and stability of this rule are **[Т/sim]** — well-posed analytically (via T-101, T-131, T-145) and validated numerically in SYNARC `mvp_int_3` SSM1–SSM2 runs. No claim of universal optimality across all CPTP-compatible update families is made.
 :::
 
 **Proof.**

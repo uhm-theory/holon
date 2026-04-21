@@ -1432,7 +1432,12 @@ $$
 
 There is a minimal regeneration rate independent of the current state.
 
-#### Theorem (spectral gap of the Fano dissipator) [T] {#теорема-kappa-bootstrap-bound}
+#### Theorem T-59 (spectral gap of the Fano dissipator) [T]+[T/sim] {#теорема-kappa-bootstrap-bound}
+
+:::info Stratification
+The analytical derivation $\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$ from the adjunction unit $\eta$ and the Fano-dissipator spectral structure is **[T]** (Steps below). The specific numerical value $1/7$ is additionally cross-checked to $10^{-10}$ precision in SYNARC integration test `mvp_int_2` G5 — this empirical confirmation is **[T/sim]**. No rigid analytical–empirical separation is claimed; the two layers are independently sound and mutually consistent.
+:::
+
 
 For the canonical Fano dissipator with 14 Lindblad operators (7 atomic + 7 Fano):
 

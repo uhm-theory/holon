@@ -1014,9 +1014,13 @@ This is the quantum data-processing inequality for the Bures metric, equivalent 
 
 **Axiom 3 (Transitivity / composition of covers).** Let $\{\Phi_i: \rho_i \to \rho\}$ be a cover of $\rho$, and for each $i$, let $\{\Psi_{ij}: \rho_{ij} \to \rho_i\}$ be a cover of $\rho_i$. The composite family $\{\Phi_i \circ \Psi_{ij}\}$ covers $\rho$. Proof: for any $\sigma \in B_B(\rho, \delta)$, the first cover gives $\sigma \in \Phi_i(B_B(\rho_i, \epsilon_1))$ for some $i$. The second cover gives $B_B(\rho_i, \epsilon_1) \subseteq \bigcup_j \Psi_{ij}(B_B(\rho_{ij}, \epsilon_2))$. By the triangle inequality for $d_B$: $\sigma \in \Phi_i(\Psi_{ij}(B_B(\rho_{ij}, \epsilon_2)))$ for some $j$. The Bures metric satisfies the triangle inequality (it is a genuine metric on $\mathcal{D}(\mathbb{C}^7)$, Uhlmann 1976), so this composition is well-defined. $\checkmark$
 
-**Essentially small presentation.** The space $\mathcal{D}(\mathbb{C}^7)$ is **compact metrizable** (closed bounded subset of $\mathbb{C}^{7 \times 7}$). By standard topology: every compact metrizable space has a countable dense subset. Fix a countable dense $\mathcal{C}_0 \subset \mathcal{D}(\mathbb{C}^7)$. The restriction $(\mathcal{C}_0, J_{Bures}|_{\mathcal{C}_0})$ is an **essentially small** site generating the same sheaf topos (Johnstone, *Elephant*, C2.2.3). This ensures Lurie's theorem (HTT 6.1.0.6) applies: $\mathbf{Sh}_\infty(\mathcal{C}_0, J_{Bures}) \simeq \mathbf{Sh}_\infty(\mathcal{C}, J_{Bures})$ is an $\infty$-topos. $\blacksquare$
+**Essentially small presentation.** The space $\mathcal{D}(\mathbb{C}^7)$ is **compact metrizable** (closed bounded subset of $\mathbb{C}^{7 \times 7}$). By standard topology: every compact metrizable space has a countable dense subset. Fix a countable dense $\mathcal{C}_0 \subset \mathcal{D}(\mathbb{C}^7)$. The restriction $(\mathcal{C}_0, J_{Bures}|_{\mathcal{C}_0})$ is an **essentially small** site generating the same sheaf topos (Johnstone, *Elephant*, C2.2.3). This ensures Lurie's sheafification theorem (HTT 6.2.2.7: sheaves on a small site form an $\infty$-topos as left-exact localization of presheaves) applies: $\mathbf{Sh}_\infty(\mathcal{C}_0, J_{Bures}) \simeq \mathbf{Sh}_\infty(\mathcal{C}, J_{Bures})$ is an $\infty$-topos. $\blacksquare$
 
-**Dependencies:** Uhlmann (1976) [standard], Petz (1996) [standard], Johnstone C2.1.9–12 [standard], Lurie HTT 6.1.0.6 [standard].
+**Dependencies:** Uhlmann (1976) [standard], Petz (1996) [standard], Johnstone C2.1.9–12 [standard], Lurie HTT 6.2.2.7 [site → ∞-topos sheafification] + 6.1.0.6 [Giraud characterization of ∞-topos structure].
+
+:::note Framework dependency (see [Rigour Stratification §T-76](/docs/reference/status-registry#стратификация-строгости))
+This site-level proof of T-76 is [T]: the three Grothendieck-topology axioms for $(\mathbf{DensityMat}, J_{Bures})$ are verified directly via CPTP contractivity of the Bures metric, and Lurie's sheafification theorem (HTT 6.2.2.7) is then applied. The Exp-extension (Claim 10.2 in §10.4) carries a weaker status — see §10.4 and the registry row for the Giraud-axiom verification that remains pending.
+:::
 
 #### 6.3.2 Induced topology on Exp
 
@@ -1684,6 +1688,10 @@ $\mathbf{Sh}_\infty(\mathbf{Exp})$ — category of ∞-sheaves on $\mathbf{Exp}_
 2. **Internal time:** Modality of the type "in the future", "in the past"
 3. **Subobject classifier:** ∞-groupoid of truth values
 
+:::warning Scope: Exp-extension is weaker than the site-level result
+The site-level part of T-76 — that $(\mathbf{DensityMat}, J_{Bures})$ is a Grothendieck site and $\mathbf{Sh}_\infty(\mathbf{DensityMat}, J_{Bures})$ is an ∞-topos — is [T] via the direct axiom-verification in [§6.3.1](#631-bures-топология-на-densitymat) plus HTT 6.2.2.7. The extension to $\mathbf{Sh}_\infty(\mathbf{Exp})$ stated here is **Claim 10.2 (requires verification)**: full Giraud-axiom verification (small colimits, effective unions, descent) for the $\mathbf{Exp}$-site is pending. See [Rigour Stratification §T-76](/docs/reference/status-registry#стратификация-строгости).
+:::
+
 **Corollary:** The logic of experiential content is a **temporal modal logic**, derivable from the internal structure of the ∞-topos.
 
 ### 10.5 Extended categorical diagram
@@ -1902,9 +1910,11 @@ The category $\mathbf{Sh}_\infty(\mathbf{Exp}^{disc}_\infty)$ is an **∞-topos*
 - Stability under pullback
 - Transitivity
 
-**Step 3:** By **Lurie's theorem** (Higher Topos Theory, Theorem 6.1.0.6):
+**Step 3:** By **Lurie's sheafification theorem** (Higher Topos Theory, Theorem 6.2.2.7):
 
-> For a small ∞-category $\mathcal{C}$ with Grothendieck topology, the category of ∞-sheaves $\mathbf{Sh}_\infty(\mathcal{C})$ is an ∞-topos.
+> For a small ∞-category $\mathcal{C}$ with Grothendieck topology, the category of ∞-sheaves $\mathbf{Sh}_\infty(\mathcal{C})$ is an ∞-topos (constructed as a left-exact localization of the presheaf ∞-category).
+
+(HTT 6.1.0.6 is the Giraud-style **characterization** of ∞-topoi; HTT 6.2.2.7 is the **constructive** statement that sheaves on a site satisfy that characterization.)
 
 ∎
 

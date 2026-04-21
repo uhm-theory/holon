@@ -38,7 +38,7 @@ The regeneration term $\mathcal{R}$ requires $\Delta F > 0$ (Landauer principle,
 
 ### 2.1. T-185 as foundation
 
-Theorem T-185 [T] establishes that $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ is a **differentially cohesive** $\infty$-topos (Schreiber 2013) with two tiers of adjunctions:
+Theorem T-185 [T] establishes that $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ is a **differentially cohesive** $\infty$-topos (Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos*, §3.9 cohesion + §3.10 super-/differential cohesion) with two tiers of adjunctions:
 
 $$
 \text{Cohesive:} \quad \Pi \dashv \mathrm{Disc} \dashv \Gamma_! \dashv \mathrm{coDisc}
@@ -48,6 +48,10 @@ $$
 $$
 
 generating 7 canonical modalities: $\mathrm{Id}$ (O), $\Pi$ (A), $\flat$ (S), $\Im$ (D), $\sharp$ (L), $\&$ (E), $\mathrm{Rh}$ (U).
+
+:::note Framework-conditional citation (see [Rigour Stratification §T-185](/docs/reference/status-registry#стратификация-строгости))
+Schreiber's DCCT §3.9/§3.10 axiomatises differential cohesion for smooth $\infty$-stacks. Its applicability to the **stratified** $\mathcal{D}(\mathbb{C}^7)$-site (boundary of rank-deficient matrices) is the subject of **Gap A** in §4.2 below: cohesion axioms hold for stratified smooth spaces (Lurie HTT §7.3.6; Ayala–Francis–Rozenblyum 2017), but the specific verification for the Bures-stratified site is what T-185 actually asserts.
+:::
 
 Currently, T-185 is used only for **dimension counting** — matching 7 modalities to 7 dimensions. The key insight of this chapter: if the cohesive structure is **operationalized** (each modality applied to $\Gamma$ as a mathematical operation), all three vulnerabilities close simultaneously.
 
@@ -226,7 +230,7 @@ The free energy gradient is strictly positive — the system has thermodynamic f
 
 **Gap C (counit exactness).** The counit $\varepsilon: \Pi \circ \flat \Rightarrow \mathrm{Id}$ is exact for any cohesive $\infty$-topos (Schreiber 2013, Proposition 3.4.5). For finite-dimensional sites, the exactness follows from the finite generation of the covering sieves. **Clarification:** The $O(H_{\text{int}})$ correction in the original Page-Wootters formulation arises **only** when projecting the cohesive $\mathbb{Z}_7$-time onto classical $\mathbb{R}$. Within the internal logic of the topos, $\mathbb{Z}_7$-cyclic time is absolutely exact — the counit is an exact natural transformation by definition. The approximation is an artifact of the classical projection, not of the dynamics. Status: [T] from Schreiber's published proof.
 
-**Gap D ($G_2$ Chern-Weil computation).** The Chern-Weil homomorphism for $G_2$-bundles is standard (Milnor-Stasheff for compact Lie groups). The specific computation for the UHM bundle over $\mathcal{D}(\mathbb{C}^7)$ requires identifying $c_2$ with the Gap total $\mathcal{G}_{\text{total}}$. This is exactly T-73 [T]. Status: already [T].
+**Gap D ($G_2$ Chern-Weil computation).** The Chern-Weil homomorphism for $G_2$-bundles is standard for compact Lie groups over **smooth manifolds** (Milnor–Stasheff 1974). The UHM bundle, however, lives over the **stratified** space $\mathcal{D}(\mathbb{C}^7)$ (strata indexed by rank; cf. Gap A), so the Milnor–Stasheff formalism does not apply verbatim. Resolution: we work stratum-wise — on the full-rank open stratum $\mathcal{D}^\circ$ the computation is classical, and continuity of $c_2$ across the rank boundary follows from the continuous extension of the Bures metric (Uhlmann 1976) combined with the stratified Chern–Weil theory of Ayala–Francis–Rozenblyum 2017. The stratum-wise identification of $c_2$ with the Gap total $\mathcal{G}_{\text{total}}$ is exactly T-73 [T]; the cross-stratum continuity adds no new hypothesis. Status: [T] from T-73 + continuity of the Bures extension.
 
 ## 5. Consequences
 

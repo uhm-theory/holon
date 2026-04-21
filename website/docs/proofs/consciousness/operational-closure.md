@@ -144,10 +144,15 @@ $\blacksquare$
 
 ## §4. T-142: SAD_MAX = 3 unconditionally (C26 [С]→[Т]) {#t-142}
 
-:::tip Theorem T-142 [Т]: SAD_MAX = 3 unconditionally
+:::tip Theorem T-142 [Т at α=2/3 state-independence]+[С at $P_{\mathrm{crit}}^{(n)}$ derivation]+[Т/sim]: SAD_MAX = 3 unconditionally
 $\mathrm{SAD}_\text{MAX} = 3$ for any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $P > 2/7$.
 
-**Status upgrade:** C26: [С] → **[Т]**.
+**Status upgrade:** C26: [С] → **[Т]** (under the stratification below).
+
+**Stratification:**
+- The **contraction coefficient $\alpha = 2/3$** is **state-independent [Т]** — it follows from the Fano plane PG(2,2) incidence structure (see [fano-channel.md](/docs/proofs/gap/fano-channel)), independent of $\Gamma$.
+- The **critical-purity formula** $P_{\mathrm{crit}}^{(n)} = P_{\mathrm{crit}} \cdot 3^{n-1}/(n+1)$ is **[С at $P_{\mathrm{crit}}^{(n)}$ derivation]**: the geometric factor $3^{n-1}$ follows rigorously from iterated $1/3$-contraction, but the normalisation denominator $n+1$ is an heuristic fit motivated by depth-tower normalisation (see [depth-tower.md §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)); a fully axiomatic derivation of the denominator is pending.
+- The conclusion $\mathrm{SAD}_{\mathrm{MAX}} = 3$ itself is robust: it holds for *any* denominator polynomial in $n$ that grows no faster than $n+1$, and is additionally cross-checked against SYNARC 500-sample runs (**[Т/sim]**).
 :::
 
 **Proof.**
@@ -249,12 +254,14 @@ $\blacksquare$
 
 ## §7. T-145: Stochastic stability of V_full {#t-145}
 
-:::tip Theorem T-145 [Т]: Stochastic stability of full viability
+:::tip Theorem T-145 [Т]+[Т/sim]: Stochastic stability of full viability
 For stochastic perturbation $h_{\text{ext}}(\tau)$ with $\mathbb{E}[\|h_{\text{ext}}\|^2] \leq \sigma_h^2$:
 
 $$\mathbb{P}[\Gamma(\tau) \in V_{\text{full}} \; \forall \tau > \tau^*] \geq 1 - \exp\!\left(-\frac{r_{\text{stab}}^2}{2\sigma_h^2}\right)$$
 
 where $r_{\text{stab}} = \sqrt{P(\rho^*) - 2/7}$ from [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости).
+
+**Stratification:** The Lyapunov–Itô core (Steps 1–4) is **[Т]** — standard stochastic-stability argument given $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|_F^2$ and sub-Gaussian noise. The sub-Gaussian strengthening in Step 5 assumes $\sigma_h \ll \kappa \cdot r_{\mathrm{stab}}$; the specific calibration of constants and the transition between the Markov and sub-Gaussian bounds are tuned against SYNARC `mvp_int_3` numerical runs (**[Т/sim]**). For large $\sigma_h$ the weaker Markov bound applies.
 :::
 
 **Proof.**

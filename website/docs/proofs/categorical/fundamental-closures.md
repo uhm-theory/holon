@@ -85,6 +85,10 @@ The category $\mathbf{PhysTheory}$ of physical theories $(E, \mathcal A_\mathrm{
 
 **Step 4 (Coherence inheritance).** $\mathbf{Topoi}_\infty$ is a **presentable** $(\infty,1)$-category (Lurie HTT 6.3.1.16). By HTT Proposition 5.2.7 ("full subcategories of presentable $(\infty,1)$-categories closed under relevant colimits inherit the $(\infty,1)$-structure"), the full subcategory $\iota(\mathbf{PhysTheory})$ automatically satisfies all higher coherence axioms: pentagon (associativity of 1-morphism composition), associator for 2-morphisms, interchange law, Mac Lane pentagon-in-pentagon, and all higher simplicial identities of the $\infty$-nerve.
 
+:::note Framework-conditional citation (see [Rigour Stratification §T-211](/docs/reference/status-registry#стратификация-строгости))
+HTT 5.2.7 ("presentable coherence inheritance") applies once $\iota: \mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ is established as a full $(\infty,1)$-subcategory closed under the relevant colimits. Fullness is argued in Step 3 via T-173 + T-174, and presentability of $\mathbf{Topoi}_\infty$ is HTT 6.3.1.16 [standard]. The applicability of HTT 5.2.7 to this specific embedding thus depends on the T-173/T-174 chain holding; if either is retracted, Step 4 would require re-verification.
+:::
+
 **Size issue resolution.** $\mathbf{PhysTheory}$ is a **large** $(\infty,1)$-category (objects form a proper class because the finite NCG algebras $\mathcal A$ range over a proper class of Wedderburn forms), consistent with $\mathbf{Topoi}_\infty$'s size. The "essential uniqueness" of T-174 is unique **up to natural isomorphism** in $\mathbf{PhysTheory}$, equivalently up to equivalence in $\mathbf{Topoi}_\infty$. $\blacksquare$
 
 **Dependencies**: T-119 [T] (Connes reconstruction, now fully verified), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 [T] (bimodule equivalence), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
@@ -108,7 +112,11 @@ $$\mathrm{Id} \leftrightarrow O,\quad \Pi \leftrightarrow A,\quad \flat \leftrig
 
 **Proof (three-step).**
 
-**Step 1 (Adjunction $\flat_\mathrm{bos} \dashv \mathrm{Rh}$).** The super-cohesive extension of $\mathbf{Sh}_\infty(\mathcal C_7)$ (Schreiber 2013 §3.10; Sati–Schreiber 2018 §4.1) has an additional adjoint pair $(\flat_\mathrm{bos}, \mathrm{Rh})$ where $\flat_\mathrm{bos}$ is the inclusion of the bosonic (grade-0) subcategory and $\mathrm{Rh}$ its right adjoint. In the finite-dimensional UHM setting, the bosonic subcategory corresponds to **$G_2$-invariant** scalars: $\flat_\mathrm{bos}(F) = F^{G_2}$ (the $G_2$-fixed subspace).
+**Step 1 (Adjunction $\flat_\mathrm{bos} \dashv \mathrm{Rh}$).** The super-cohesive extension of $\mathbf{Sh}_\infty(\mathcal C_7)$ (Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos*, §3.10; Sati–Schreiber 2018 §4.1) has an additional adjoint pair $(\flat_\mathrm{bos}, \mathrm{Rh})$ where $\flat_\mathrm{bos}$ is the inclusion of the bosonic (grade-0) subcategory and $\mathrm{Rh}$ its right adjoint. In the finite-dimensional UHM setting, the bosonic subcategory corresponds to **$G_2$-invariant** scalars: $\flat_\mathrm{bos}(F) = F^{G_2}$ (the $G_2$-fixed subspace).
+
+:::note Framework-conditional citation (see [Rigour Stratification §T-212](/docs/reference/status-registry#стратификация-строгости))
+The super-cohesive extension of Schreiber DCCT §3.10 was developed for smooth super-$\infty$-stacks. Its instantiation on the **finite-dimensional** UHM site $\mathcal C_7 = \mathcal{D}(\mathbb{C}^7)$ reduces super-cohesion to the $G_2$-grading here; full axiomatic equivalence with Schreiber's infinite-dimensional setting is implicit in Sati–Schreiber 2018 §4.1 but not separately verified for the stratified Bures site.
+:::
 
 **Step 2 (Explicit formula).** By direct computation: the right adjoint to $\flat_\mathrm{bos}$ in a finite Cartesian-closed $\infty$-category is given by the trace map followed by unit embedding:
 $$\mathrm{Rh}(F)(\Gamma) = \int_{g \in G_2} F(g \cdot \Gamma) \, dg = \operatorname{Tr}(F(\Gamma)) \cdot \mathbf{1},$$
@@ -437,9 +445,13 @@ The third-level interiority category $\mathbf{Exp}^{(3)} := \tau_{\leq 3}(\mathb
 
 **Step 2 (Truncation functor preserves coherence).** The truncation functor $\tau_{\leq n}: s\mathbf{Set} \to s\mathbf{Set}_{\leq n}$ maps Kan complexes to $n$-truncated Kan complexes (Lurie HTT 5.5.6.18). Applied at $n = 3$: $\tau_{\leq 3}(\mathbf{Exp}_\infty)$ is a 3-truncated Kan complex, equivalently a **3-type** (homotopy type with $\pi_k = 0$ for $k > 3$).
 
-**Step 3 (3-types ≃ tricategories).** By the Baez–Dolan stabilisation hypothesis (proved for $n \leq 3$ by Hirschowitz–Simpson 2001 and Leinster 2002) in conjunction with the Gordon–Power–Street coherence theorem:
+**Step 3 (3-types ≃ tricategories).** By the Baez–Dolan stabilisation hypothesis (proved for $n \leq 3$ by Hirschowitz–Simpson, *Descente pour les n-champs*, arXiv:math/9807049, 2001; Leinster, *A Survey of Definitions of n-Category*, *Theory Appl. Categ.* 10 (2002), 1–70) in conjunction with the Gordon–Power–Street coherence theorem (*Coherence for Tricategories*, Mem. AMS 117 (1995)):
 $$\bigl\{\text{3-types}\bigr\} \;\simeq\; \bigl\{\text{coherent tricategories with invertible cells}\bigr\}.$$
 The equivalence is realised by the classifying-space functor $B: \mathrm{Tricat} \to s\mathbf{Set}_{\leq 3}$ and its left adjoint $\Pi_3: s\mathbf{Set}_{\leq 3} \to \mathrm{Tricat}$. Under this equivalence, $\tau_{\leq 3}(\mathbf{Exp}_\infty)$ corresponds to a coherent tricategory $\mathbf{Exp}^{(3)} := \Pi_3(\tau_{\leq 3}(\mathbf{Exp}_\infty))$.
+
+:::note Framework-conditional citation (see [Rigour Stratification §T-217](/docs/reference/status-registry#стратификация-строгости))
+The Baez–Dolan correspondence "3-types ≃ coherent tricategories" is standard in the category-theoretic literature (Hirschowitz–Simpson 2001; Leinster 2002; Gordon–Power–Street 1995). Its applicability here rests on $\tau_{\leq 3}(\mathbf{Exp}_\infty)$ being a 3-type admissible under the correspondence — this is immediate from Step 2 (Kan complex truncation) but the passage from the Kan complex to the GPS tricategory $\mathbf{Exp}^{(3)}$ is a category-bridging step, not a direct simplicial identity.
+:::
 
 **Step 4 (K=3+1 cellular count).** The $n$-cells of $\mathbf{Exp}^{(3)}$ are identified as:
 
@@ -503,6 +515,10 @@ Construction: each $\sigma_i$ represents a continuous map $\Delta^{n-1}_{\mathrm
 - By T-142 [T] (SAD_MAX = 3), the Fano contraction suppresses 4-simplices below distinguishability: every 4-horn filler has Bures-support below $P_{\mathrm{crit}}^{(4)} = 54/35 > 1$, hence fails the viability constraint.
 - Therefore $\tau_{\leq 3}\mathrm{Cog} \simeq \mathrm{Cog}$ in the sense that truncation is an equivalence on cells above dimension 3.
 - $\tau_{\leq 3}\mathrm{Cog}$ is itself a Kan complex (Lurie HTT 5.5.6.21: truncation preserves Kan fibrancy).
+
+:::note Scope of the suppression argument (see [Rigour Stratification §T-218](/docs/reference/status-registry#стратификация-строгости))
+The "Fano contraction suppresses 4-simplices below distinguishability" step is a **category-bridging argument** (simplicial-combinatorial $\leftrightarrow$ Bures-metric viability), not a simplicial-identity proof. Formally: the Kan-complex part of T-218 (Steps 1–3) is [T] via Milnor 1957 + Segal 1968. The 3-coskeletal truncation in Step 4 is equivalent to $\mathrm{Cog}$ only **on the SYNARC-viable subset** where the $P_{\mathrm{crit}}^{(n)}$ constraint of T-142 [T] applies. Off the viable subset, $\tau_{\leq 3}$ is the standard simplicial truncation and is not an equivalence. This is the intended reading of "SAD_MAX = 3 at the categorical level."
+:::
 
 Hence SYNARC's 3-coskeletal bound is now rigorously verified: Cog is a Kan complex, fillers are explicitly constructible, and the 3-truncation matches the SAD_MAX = 3 cognitive ceiling. $\blacksquare$
 

@@ -150,6 +150,10 @@ $$
 $$
 where $M_P = 1.22 \times 10^{19}$ GeV is the Planck mass.
 
+:::note Scope: canonical vs. derived cutoff
+The choice $f(u) = e^{-u}$ is **adopted** (fixed by the theory as a definition) rather than **derived** from an independent UHM principle. The physical motivations listed below (heat-kernel regularisation, integer-valued moments, compatibility with $\Lambda = M_P$) are justifications for the choice, not a derivation. In the Connes–Chamseddine spectral action program (Chamseddine–Connes 1996, *Comm. Math. Phys.* 186, 731–750; Connes–Chamseddine 2010) the cutoff $f$ is similarly a definitional input — typically a bump or truncated Gaussian — with physical observables depending on a small number of moments $f_0, f_2, f_4$. UHM's predictions that depend on moments individually (dimensional constants: $G_N$, $\Lambda_{\mathrm{cc}}$) are thus canonical-choice-conditional; the **structural** predictions listed in the [$f$-independence box](#f-independence) below hold for any reasonable $f$.
+:::
+
 With this choice:
 - $f_2 = \int_0^\infty e^{-u} \, du = 1! = 1$.
 - $f_4 = \int_0^\infty u \, e^{-u} \, du = 3! = 6$.
@@ -178,7 +182,9 @@ $$
 
 which changes by $\mathcal O(1)$ factor across reasonable choices of $f$. More importantly:
 
-:::info $f$-independence of UHM-structural predictions [T] {#f-independence}
+#### $f$-independence {#f-independence}
+
+:::info $f$-independence of UHM-structural predictions [T]
 The following UHM predictions are **manifestly $f$-independent**:
 
 1. **Sector count**: $7 = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]) — combinatorial.
