@@ -7,6 +7,16 @@ slug: /consciousness/foundations/self-observation
 
 # Self-Observation and Consciousness
 
+:::note Articulation-hygiene convention
+The terms **self-observation**, **self-modelling**, **self-reference** as used throughout this document are *lifted technical terms*, not rhetorical shorthands. Each carries an explicit operator-factorization per the articulation-hygiene protocol (NO-19 in Noesis / [`reference/articulation-hygiene`](/docs/reference/articulation-hygiene)):
+
+- **self-modelling** ⟼ CPTP functor $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ with fixed-point equation $\rho^* = \varphi(\Gamma)$ (T-96).
+- **self-observation** ⟼ terminal-coalgebra structure on Γ-dynamics, characterised by reflection measure $R = 1/(7P)$ (T-126).
+- **self-reference** ⟼ Lawvere fixed-point morphism bounded by T-2f\*-depth-stratification (105.T in Diakrisis).
+
+The pair (operator Φ, fixed object $t$) is explicit at every occurrence; the description-position and described-position are structurally distinct even when visually co-located in the term.
+:::
+
 ## Can the Eye See Itself?
 
 This ancient paradox is the key to understanding consciousness. The eye sees everything except itself. The brain processes all information except... its own processing? At first glance, self-observation seems logically impossible: to observe oneself, one needs an observer, but who observes the observer?

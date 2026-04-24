@@ -385,6 +385,7 @@ const sidebars: SidebarsConfig = {
     'reference/specification',
     'reference/computational',
     'reference/status-registry',
+    'reference/articulation-hygiene',
   ],
 };
 
