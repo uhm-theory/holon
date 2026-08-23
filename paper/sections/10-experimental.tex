@@ -119,6 +119,34 @@ $O(N^{-1/2})$ rate, the $U$-statistic debiasing, and the $N_{\mathrm{eff}}$
 correction numerically. The single irreducible modelling choice is the
 7-channel embedding $\pi$ itself; the estimation below it is rigorous.
 
+\paragraph{The information price of self-tomography (candidate).}
+The estimator above has a universal-coding twin: the cumulative
+prequential cost of \emph{learning} an unknown $\Gam \in D(\mathbb{C}^d)$
+from $n$ samples, over and above the cost of knowing it, is
+$\tfrac{d^2-1}{2}\log_2 n + C_Q(d) + o(1)$ --- the dimension term is
+fixed by the $48 = d^2{-}1$ readout theorem, and the constant admits an
+exact identity. With the Bures metric normalized as one quarter of the
+quantum (SLD) Fisher metric --- this paper's standing convention --- the
+Jeffreys-type volume of state space obeys
+$2^{\,d^2-1}\,V_{\mathrm{Bures}}(d) = \pi^{d^2/2}/\Gamma(d^2/2)$
+exactly (the dyadic factor of the quarter-Fisher convention cancels the
+$2^{\,1-d^2}$ of the Sommers--\.Zyczkowski volume identically), so the
+Clarke--Barron-type constant \emph{collapses onto the classical family}:
+$C_Q(d) = C(d^2)$, where $C(m) = \tfrac{m}{2}\log_2\pi -
+\tfrac{m-1}{2}\log_2(2\pi) - \log_2\Gamma(m/2)$ is the startup constant
+of a classical $m$-outcome source under the Krichevsky--Trofimov
+mixture. Informationally, a quantum state of dimension $d$ begins its
+life as a classical die with $d^2$ faces; for the organism's
+$\Gam \in D(\mathbb{C}^7)$ the price is $24\log_2 n + C(49)$ with
+$C(49) = -99.9119$~bits. Status is kept honest by layer: the volume
+identity and the family collapse are exact algebra (verified to
+$10^{-12}$ for $d = 2..7$ by \texttt{natal\_startup\_verify.py}, 4/4,
+including the closed qubit volume $V_{\mathrm{Bures}}(2) = \pi^2/8$);
+the $\tfrac{d^2-1}{2}\log_2 n$ dimension term is standard for
+mixed-state universal coding; the \emph{operational} attainability of
+the constant by adaptive tomography is the candidate's named open
+court.
+
 \paragraph{Equipment.}
 All required instruments are commercially available and standard in
 neuroscience labs (Table~\ref{tab:equipment}). No custom hardware is needed.
