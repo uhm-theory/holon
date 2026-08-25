@@ -66,6 +66,9 @@ SKIP_RE = re.compile(r"^(?:\*\*)?(?:Skipped numbers|Пропущенные но�
 #: обязан отличать «объявлено» от «обнаружено». Без этой строки прибор выходил
 #: с единицей ВСЕГДА, а код возврата, который никогда не ноль, ничего не значит.
 EARLY_RE = re.compile(r"^(?:\*\*)?(?:Early numbers|Ранние номера)[^\n]*", re.M)
+#: Объявление опор без формулировки. Реестр вправе признать их открытым долгом —
+#: но признать ЯВНО и поимённо, а не молчанием: пока строки нет, прибор красен.
+GHOST_RE = re.compile(r"^(?:\*\*)?(?:Unstated supports|Опоры без формулировки)[^\n]*", re.M)
 #: Ссылка на теорему: номер с возможным подномером `.k` или буквой.
 #: БУКВА — ЧАСТЬ ИМЕНИ, а не украшение. Прежняя редакция брала только цифры
 #: (`int(m.group(1))`), и потому T-129a была для неё неотличима от T-129: ссылка
@@ -106,6 +109,41 @@ def skipped() -> set[str]:
 
 
 HOMOGLYPHS: collections.Counter = collections.Counter()
+
+
+def registry_only() -> list[tuple[str, int]]:
+    """Номера, на которые ссылается САМ реестр, не имея под ними строки и не
+    встречаясь больше нигде в корпусе.
+
+    Это иной род пробела, чем «ранний номер»: ранний просто цитируется, а эти
+    номера реестр ИСПОЛЬЗУЕТ — повышает на них статусы («Raised to [C at
+    T-4.2]»), строит цепи вывода («AP → c>0 → T-41b → T-11 → T-12 → T-13»),
+    ссылается на них как на доказанное («[T]+[I]: K = 3 derived from triadic
+    decomposition [T-40a, 40b]»). Формулировки под этими метками нет нигде —
+    даже на страницах, куда ведут сами ссылки. Опора, которой не видно, хуже
+    названного пробела: пробел честен, а опора обещает.
+    """
+    reg = Path(REGISTRY)
+    regt = reg.read_text(encoding="utf-8")
+    rows = declared()
+    inside: collections.Counter = collections.Counter()
+    outside: set[str] = set()
+    for pattern in SOURCES:
+        for path in glob.glob(pattern, recursive=True):
+            text = mask(Path(path).read_text(encoding="utf-8"))
+            names = {m.group(1) for m in REF_RE.finditer(text)}
+            if Path(path) == reg:
+                inside.update(names)
+            else:
+                outside |= names
+    skips = skipped()
+    early_decl = {m.group(1) for line in EARLY_RE.finditer(regt)
+                  for m in re.finditer(r"T-(\d{1,3}(?:\.\d+|[a-z])?)", line.group())}
+    ghosts = [k for k in inside
+              if k not in outside and k not in rows and k not in skips
+              and k not in early_decl]
+    return sorted(((k, inside[k]) for k in ghosts),
+                  key=lambda x: (base(x[0]), x[0]))
 
 
 def referenced() -> tuple[collections.Counter, dict[str, collections.Counter]]:
@@ -175,7 +213,25 @@ def main() -> int:
         print("   Инструмент сообщает, а не сочиняет — выдуманная строка")
         print("   реестра подделала бы полноту вместо того, чтобы её закрыть.")
 
-    if late:
+    ghosts = registry_only()
+    regtext = Path(REGISTRY).read_text(encoding="utf-8")
+    ghost_declared = {m.group(1) for line in GHOST_RE.finditer(regtext)
+                      for m in re.finditer(r"T-(\d{1,3}(?:\.\d+|[a-z])?)", line.group())}
+    undeclared_ghosts = [g for g in ghosts if g[0] not in ghost_declared]
+    if ghosts:
+        print(f"\nОПОРА БЕЗ ФОРМУЛИРОВКИ ({len(ghosts)}): реестр ссылается на эти номера,")
+        print("   строки под ними не имеет, и нигде в корпусе они больше не встречаются —")
+        print("   в том числе на страницах, куда ведут сами ссылки:")
+        for k, n in ghosts:
+            print(f"   T-{k:<7} упоминаний в реестре {n}")
+
+        if undeclared_ghosts:
+            print("   НЕ ОБЪЯВЛЕНЫ реестром: "
+                  + ", ".join("T-" + g[0] for g in undeclared_ghosts))
+        else:
+            print("   все они объявлены реестром как открытый долг")
+
+    if late or undeclared_ghosts:
         return 1
     if early and not (allow_early or early_declared):
         return 1

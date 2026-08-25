@@ -32,6 +32,15 @@ Inventing rows would counterfeit exactly the completeness that is missing, so
 the gap is named instead. Reader's practical rule: a `T-n` with `n < 50`
 resolves through the page it links to, not through this table.
 
+**Unstated supports (open debt):** T-4.2, T-11, T-12, T-13, T-40a, T-41e. These six numbers
+are used BY THIS REGISTRY as load-bearing steps — a status raised "to [C at T-4.2]", the
+inference chain "AP → c>0 → T-41b → T-11 → T-12 → T-13", the K = 3 justification "[T-40a,
+40b]", the pointer "see T-41e" — and no statement carrying any of those labels exists
+anywhere in the corpus, including the pages those very links target. This is a different gap
+from the early range: an early number is merely cited, whereas these are leaned on. The debt
+is named rather than papered over, `check_theorem_refs.py` reads this line, and the checker
+turns red again the moment a seventh such number appears.
+
 **Skipped numbers (never assigned):** T-167, T-168, T-169. They carry no row and
 are cited nowhere; the numbering simply skips them. This line is machine-read by
 `check_theorem_refs.py`, so that the declaration of a gap is not itself counted as
