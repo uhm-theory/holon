@@ -114,7 +114,7 @@ $$\sup_{P \in (2/7,\, 3/7]} \frac{4k\sqrt{P-1/7}}{3P} = \frac{4k\sqrt{1/7}}{6/7}
 #### Лемма: граница Фробениуса для off-diagonal части [Т] {#лемма-фробениус-off-diag}
 
 **Шаг 3a.**
-Диагональная и off-diagonal части ортогональны в пространстве Гильберта-Шмидта:
+Диагональная и off-diagonal части ортогональны в пространстве Гильберта–Шмидта:
 
 $$\|\Gamma\|_F^2 = \|\Gamma_{\text{diag}}\|_F^2 + \|\Gamma_{\text{off-diag}}\|_F^2$$
 
@@ -122,7 +122,7 @@ $$\|\Gamma\|_F^2 = \|\Gamma_{\text{diag}}\|_F^2 + \|\Gamma_{\text{off-diag}}\|_F
 
 $$\|\Gamma_{\text{off-diag}}\|_F^2 = \mathrm{Tr}(\Gamma^2) - \sum_k \gamma_{kk}^2 = P - \sum_k \gamma_{kk}^2$$
 
-По неравенству Коши-Шварца: $\sum_k \gamma_{kk}^2 \geq (\sum_k \gamma_{kk})^2 / N = 1/7$, откуда:
+По неравенству Коши–Шварца: $\sum_k \gamma_{kk}^2 \geq (\sum_k \gamma_{kk})^2 / N = 1/7$, откуда:
 
 $$\|\Gamma_{\text{off-diag}}\|_F \leq \sqrt{P - 1/7}$$
 

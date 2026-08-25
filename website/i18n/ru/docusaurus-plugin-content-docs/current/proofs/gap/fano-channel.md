@@ -516,7 +516,7 @@ flowchart TD
 ## Связанные документы
 
 - [Gap-оператор](/docs/core/dynamics/gap-operator) — определение $\hat{\mathcal{G}}$, спектр, G₂-разложение
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — Чой-Ямиолковский, бифуркации
+- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — Чой–Ямиолковский, бифуркации
 - [Фано-правила отбора](/docs/physics/gauge-symmetry/fano-selection-rules) — плоскость Фано $PG(2,2)$
 - [Формализация φ](/docs/proofs/categorical/formalization-phi) — вариационная характеризация
 - [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$

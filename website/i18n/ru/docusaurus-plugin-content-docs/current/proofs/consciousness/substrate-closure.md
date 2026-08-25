@@ -358,7 +358,7 @@ $$\max_{\Gamma \in \mathcal{D}(\mathbb{C}^7)} \mathrm{Coh}_E(\Gamma) = 1$$
 
 $$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|^2_{HS}}{\|\Gamma\|^2_{HS}} = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}$$
 
-**Шаг 2 (Верхняя граница).** $\pi_E$ — ортогональная проекция в пространстве Гильберта-Шмидта. Для любой ортогональной проекции: $\|\pi_E(\Gamma)\|_{HS} \leq \|\Gamma\|_{HS}$. Следовательно: $\mathrm{Coh}_E \leq 1$.
+**Шаг 2 (Верхняя граница).** $\pi_E$ — ортогональная проекция в пространстве Гильберта–Шмидта. Для любой ортогональной проекции: $\|\pi_E(\Gamma)\|_{HS} \leq \|\Gamma\|_{HS}$. Следовательно: $\mathrm{Coh}_E \leq 1$.
 
 **Шаг 3 (Достижимость).** Для $\Gamma = |E\rangle\langle E|$: $\pi_E(|E\rangle\langle E|) = |E\rangle\langle E|$, поэтому $\mathrm{Coh}_E = \||E\rangle\langle E|\|^2_{HS} / \||E\rangle\langle E|\|^2_{HS} = 1$. $\blacksquare$
 

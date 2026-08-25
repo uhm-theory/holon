@@ -498,7 +498,7 @@ $$\tilde{g}_{(ij),(kl)}^{(F)} = 49 \cdot \delta_{(ij),(kl)} \cdot \frac{\cos^2(\
 
 где $\Delta\varphi_{ij} = \varphi_i - \varphi_j$.
 
-**(b)** Минимальная дисперсия оценки $\mathrm{Gap}(i,j)$ (неравенство Крамера-Рао):
+**(b)** Минимальная дисперсия оценки $\mathrm{Gap}(i,j)$ (неравенство Крамера–Рао):
 
 $$\mathrm{Var}(\hat{G}_{ij}) \geq \frac{\sin^2(\Delta\varphi_{ij}) + 6}{49 \, N \, \cos^2(\Delta\varphi_{ij})}$$
 

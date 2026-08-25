@@ -119,7 +119,7 @@ description: Полная карта физических результатов
 :::tip Теорема: ABJ-аномалия из Cliff(7)
 **Подробнее:** [Конфайнмент](/docs/physics/gauge-symmetry/confinement)
 
-Стандартная индексная теорема Атьи-Зингера. Результат $\pi^0 \to \gamma\gamma$ корректен.
+Стандартная индексная теорема Атьи–Зингера. Результат $\pi^0 \to \gamma\gamma$ корректен.
 
 **См.:** [Калибровочные симметрии](/docs/physics/gauge-symmetry/g2-structure)
 :::
@@ -148,7 +148,7 @@ description: Полная карта физических результатов
 **См.:** [Физика частиц](/docs/physics/particle-physics/fermion-generations)
 :::
 
-:::tip Теорема: $m_t \sim 173$ ГэВ (Пендлтон-Росс)
+:::tip Теорема: $m_t \sim 173$ ГэВ (Пендлтон–Росс)
 **Подробнее:** [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector)
 
 Стандартный результат из инфракрасной фиксированной точки top-Юкавы. Стандартная физика.
@@ -259,7 +259,7 @@ $k \to 7-k \notin \text{Aut}(\text{Fano})$.
 :::
 
 :::tip Теорема: $m_t \sim 173$ ГэВ [Т]
-Стандартный результат Пендлтона-Росса.
+Стандартный результат Пендлтона–Росса.
 :::
 
 :::tip Теорема: $N=1$ SUSY из $G_2$-голономии [Т]
@@ -397,7 +397,7 @@ Gap-функциональный интеграл $Z = \int \mathcal{D}[\theta_{
 :::tip Теорема: Уравнения Эйнштейна из Gap [Т]
 **Подробнее:** [Уравнения Эйнштейна](/docs/physics/gravity/einstein-equations)
 
-Полная спектральная тройка $(A, H, D)$ из [T-53 [Т]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) удовлетворяет аксиомам Конна. Спектральное действие $\mathrm{Tr}(f(D_A/\Lambda))$ воспроизводит действие Эйнштейна-Гильберта с $G_N = 3\pi/(7 f_2\Lambda^2)$ **[Т]**. Дополнительный аргумент: теорема Лавлока [Т] (T-121).
+Полная спектральная тройка $(A, H, D)$ из [T-53 [Т]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) удовлетворяет аксиомам Конна. Спектральное действие $\mathrm{Tr}(f(D_A/\Lambda))$ воспроизводит действие Эйнштейна–Гильберта с $G_N = 3\pi/(7 f_2\Lambda^2)$ **[Т]**. Дополнительный аргумент: теорема Лавлока [Т] (T-121).
 
 **См.:** [Гравитация](/docs/physics/gravity/emergent-geometry) | [Уравнения Эйнштейна](/docs/physics/gravity/einstein-equations) | [Квантовая гравитация](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
 :::
@@ -685,7 +685,7 @@ $P$ не зависит от фаз (внутреннее противоречи
 
 **Подробнее:** [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан)
 
-Формализм Швингера-Келдыша: $S_{Gap} = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_- - \mathcal{L}_\Omega[\rho_+]\ln\rho_-]$. Классический предел ($\hbar \to 0$, $\rho_\pm = \rho \pm \delta\rho/2$) точно воспроизводит все три компоненты: кинетику ($L_{kin}$), потенциал ($V_{Gap}$) и диссипацию ($\Gamma_2$). Происхождение диссипативных членов — из открытости системы в Келдышевом контуре. См. [теорему T-75](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
+Формализм Швингера–Келдыша: $S_{Gap} = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_- - \mathcal{L}_\Omega[\rho_+]\ln\rho_-]$. Классический предел ($\hbar \to 0$, $\rho_\pm = \rho \pm \delta\rho/2$) точно воспроизводит все три компоненты: кинетику ($L_{kin}$), потенциал ($V_{Gap}$) и диссипацию ($\Gamma_2$). Происхождение диссипативных членов — из открытости системы в Келдышевом контуре. См. [теорему T-75](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
 
 ### 3. Замыкание моста: [Т] (T15)
 
@@ -714,7 +714,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. В Фано-электрослаб
 7. $L_4 \neq \text{Gap}=0$ — [Композитные системы](/docs/core/dynamics/composite-systems)
 8. Единственность триплета (1,2,4) — [Стандартная модель](/docs/physics/gauge-symmetry/standard-model)
 9. Единственность Хиггсовой линии $\{A,E,U\}$ — [Фано-правила отбора](/docs/physics/gauge-symmetry/fano-selection-rules)
-10. $m_t \sim 173$ ГэВ (Пендлтон-Росс) — [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector)
+10. $m_t \sim 173$ ГэВ (Пендлтон–Росс) — [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector)
 11. RG-подавление $\lambda_3^2$: $10^{-14.5}$ — [Уравнения Эйнштейна](/docs/physics/gravity/einstein-equations)
 12. Фактор $19/49$ из тождеств Уорда — [Стандартная модель](/docs/physics/gauge-symmetry/standard-model)
 13. ABJ-аномалия из Cliff(7) — [Конфайнмент](/docs/physics/gauge-symmetry/confinement)
@@ -725,7 +725,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. В Фано-электрослаб
 18. $B^{(b)}$ единственна с точностью до скаляра — [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization)
 19. $Z_\Phi(-k) = 0$ для $k \geq 1$ — [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization)
 20. $V_{Gap}$ из спектрального действия (T-74): $\mathrm{Tr}(D_{\text{int}}^2) = \omega_0^2 G_{\text{total}}$ — [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия)
-21. $S_{Gap}$ из Швингера-Келдыша (T-75): диссипация + кинетика + потенциал — [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан)
+21. $S_{Gap}$ из Швингера–Келдыша (T-75): диссипация + кинетика + потенциал — [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан)
 22. Спектральное самозамыкание (T-79): аксиомы → спектральная тройка → аксиомы — [Следствия](/docs/core/foundations/consequences#теорема-самозамыкание)
 
 ### Уровень 1a: Условные результаты [С] (3 результата)

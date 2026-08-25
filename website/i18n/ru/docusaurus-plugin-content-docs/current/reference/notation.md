@@ -149,9 +149,9 @@ $$
 | $\vert q_i\rangle$ | Собственный вектор $\Gamma$ (качество) |
 | $[\vert q\rangle]$ | Класс эквивалентности в $\mathbb{P}(\mathcal{H}_E)$ |
 | $\mathbb{P}(\mathcal{H}_E)$ | [Проективное пространство](/docs/reference/specification#проективное-пространство-качеств) качеств |
-| $d_{\mathrm{FS}}$ | [Метрика Фубини-Штуди](/docs/reference/specification#метрика-фубини-штуди) |
+| $d_{\mathrm{FS}}$ | [Метрика Фубини–Штуди](/docs/reference/specification#метрика-фубини-штуди) |
 
-**Метрика Фубини-Штуди:**
+**Метрика Фубини–Штуди:**
 $$
 d_{\mathrm{FS}}([|\psi\rangle], [|\phi\rangle]) = \arccos(|\langle\psi|\phi\rangle|) \in [0, \pi/2]
 $$
@@ -355,7 +355,7 @@ $$
 | $\Theta(\Delta F)$ | Функция Хевисайда от изменения свободной энергии $\Delta F$; необходимое условие из принципа Ландауэра (уточнено $g_V(P)$) |
 | $\rho_*$ ($= \Gamma_{\text{target}}$) | Единственное стационарное состояние $\mathcal{L}_\Omega$ [Т]: $\rho_* = \varphi(\Gamma) = \lim_{\tau\to\infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ — цель регенерации |
 | $\omega_0$ | Фундаментальная частота часов — параметр вычислительного приближения; см. [κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
-| $D_{\mathrm{KL}}$ | Расхождение Кульбака-Лейблера: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |
+| $D_{\mathrm{KL}}$ | Расхождение Кульбака–Лейблера: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |
 
 ## Индексы измерений (Протокол измерения) {#индексы-измерений-протокол-измерения}
 

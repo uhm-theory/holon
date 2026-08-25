@@ -13,7 +13,7 @@ description: Verum-реализация Голонома
 - `H` — [гамильтониан](/docs/core/dynamics/evolution#1-унитарный-член)
 - `L` ($L_k$) — операторы Линдблада
 - `purity` ($P$) — [мера жизнеспособности](/docs/core/dynamics/viability#определение-чистоты)
-- `d_FS` ($d_{\mathrm{FS}}$) — [метрика Фубини-Штуди](/docs/reference/specification#метрика-фубини-штуди)
+- `d_FS` ($d_{\mathrm{FS}}$) — [метрика Фубини–Штуди](/docs/reference/specification#метрика-фубини-штуди)
 - `kappa_0` ($\kappa_0$) — [базовая скорость регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) (категориальный вывод)
 - `P_CRIT` ($P_{\text{crit}} = 2/7$) — [критическая чистота](/docs/proofs/dynamics/theorem-purity-critical)
 :::
