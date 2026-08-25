@@ -88,7 +88,7 @@ $$
 - $\mathcal{R}[\Gamma, E]$ — регенерация (сопряжённый функтор к диссипации)
 
 :::warning Ключевое отличие от стандартной формулировки
-Операторы Линдблада L_k **не постулируются** произвольно — они **выводятся** из атомов классификатора Ω. Это устраняет неопределённость «L_k зависят от системы».
+Операторы Линдблада L_k **не постулируются** произвольно — они **выводятся** из атомов классификатора Ω. Это устраняет неопределённость "L_k зависят от системы".
 :::
 
 ### Область применимости: марковский режим {#markovian-scope}
@@ -1194,8 +1194,8 @@ $$
 $\mathcal{R}$ отстраивает её к самомодели.
 
 <p align="center">
-  <img class="themedImage themedImage--light" alt=«Оборот живой стационарности и связка как орбита» src="/img/theory/turnover-ru-light.svg" width="860"/>
-  <img class="themedImage themedImage--dark" alt=«Оборот живой стационарности и связка как орбита» src="/img/theory/turnover-ru-dark.svg" width="860"/>
+  <img class="themedImage themedImage--light" alt="Оборот живой стационарности и связка как орбита" src="/img/theory/turnover-ru-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Оборот живой стационарности и связка как орбита" src="/img/theory/turnover-ru-dark.svg" width="860"/>
 </p>
 
 #### Следствие (оборот живой стационарности) [Т] {#следствие-оборот-живого}
@@ -1267,8 +1267,8 @@ $\Lambda^* = 50.5$ при референс-самомодели — провер
 и вибрация, звучащая в живом состоянии, поднимает ему ренту.
 
 <p align="center">
-  <img class="themedImage themedImage--light" alt=«Порог жизни и критическое замедление у складки» src="/img/theory/fold-ru-light.svg" width="860"/>
-  <img class="themedImage themedImage--dark" alt=«Порог жизни и критическое замедление у складки» src="/img/theory/fold-ru-dark.svg" width="860"/>
+  <img class="themedImage themedImage--light" alt="Порог жизни и критическое замедление у складки" src="/img/theory/fold-ru-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Порог жизни и критическое замедление у складки" src="/img/theory/fold-ru-dark.svg" width="860"/>
 </p>
 
 
@@ -1318,8 +1318,8 @@ $\Lambda^* = 50.5$ при референс-самомодели — провер
 #### Аккорд: частоты — устройство, амплитуды — личность {#аккорд-вибрации}
 
 <p align="center">
-  <img class="themedImage themedImage--light" alt=«Аккорд устройства: 21 связка, 10 частот Бора, хоры» src="/img/theory/chord-ru-light.svg" width="860"/>
-  <img class="themedImage themedImage--dark" alt=«Аккорд устройства: 21 связка, 10 частот Бора, хоры» src="/img/theory/chord-ru-dark.svg" width="860"/>
+  <img class="themedImage themedImage--light" alt="Аккорд устройства: 21 связка, 10 частот Бора, хоры" src="/img/theory/chord-ru-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Аккорд устройства: 21 связка, 10 частот Бора, хоры" src="/img/theory/chord-ru-dark.svg" width="860"/>
 </p>
 
 
