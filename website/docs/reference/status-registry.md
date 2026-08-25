@@ -18,10 +18,13 @@ Each UHM result carries one of seven statuses:
 :::
 
 :::warning What this registry does not cover {#ранние-номера}
-The rows below run from **T-50** onward. Twenty-three earlier numbers are cited
-across the corpus and have no row here — among them load-bearing ones:
-**T-39 (129 citations)**, T-42 (90), T-38 (28), T-48 (26), T-41 (17), T-40 and
-T-43 (16 each), T-15 (10). Their statements are not recoverable in a form fit
+**Early numbers (below the registry):** T-1..T-49 — 54 distinct names, 421
+citations, no rows. The rows below run from **T-50** onward. Among the early
+names are load-bearing ones: **T-39a (127 citations)**, T-42a (75), T-48a (25),
+T-42e and T-38a (18 each), T-38b (13), T-39 (12), T-43d (11). These figures were
+recomputed after the checker learned that a letter is part of the name: the
+earlier text here said "T-39 (129 citations)" and was summing T-39 together with
+T-39a, two different results. Their statements are not recoverable in a form fit
 for this table: no complete source exists, and the numbering of
 `math-foundations` is a *different* one (its T-42 is «G₂ ⊂ SO(7) ⊂ U(7)», while
 the corpus links T-42 to the Uniqueness Theorem of Holonomic Representation).
