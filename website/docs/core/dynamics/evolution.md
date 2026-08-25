@@ -1201,7 +1201,7 @@ rebuilding it toward the self-model.
   <img class="themedImage themedImage--dark" alt="Turnover of living stationarity and a coupling as an orbit" src="/img/theory/turnover-en-dark.svg" width="860"/>
 </p>
 
-#### Corollary (turnover of living stationarity) [Т] {#следствие-оборот-живого}
+#### Corollary (turnover of living stationarity) [T] {#следствие-оборот-живого}
 
 Let $\sigma$ be a stationary point of the canonical dynamics
 $\mathcal{L}_\Omega = -i[H_{\text{eff}},\cdot] + \mathcal{D}_\Omega + \mathcal{R}$
@@ -1274,7 +1274,7 @@ sings in the living state also raises its rent.
 </p>
 
 
-#### Theorem T-292: regeneration lives on the gap — the self-model as gradient [Т] {#теорема-эго-градиент}
+#### Theorem T-292: regeneration lives on the gap — the self-model as gradient [T] {#теорема-эго-градиент}
 
 The regenerative term is `ℛ[Γ] = κ(Γ)·g_V(P)·(ρ* − Γ)`: it is proportional to
 the **difference** between the state and the self-model. Three consequences
@@ -1343,7 +1343,7 @@ $(\omega_{jk}, |\gamma_{jk}|)$; and the whole section above says the chord
 does not merely decorate the stationarity — the tangential rotation *is* what
 the two radial flows jointly sustain.
 
-#### Kalāpas and Nāda: two old reports of the same structure [И] {#калапы-и-нада}
+#### Kalāpas and Nāda: two old reports of the same structure [I] {#калапы-и-нада}
 
 The Abhidhamma tradition reports matter as *kalāpas* — clusters that arise
 and pass with enormous rapidity, so that nothing persists except the pattern

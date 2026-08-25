@@ -178,7 +178,7 @@ The connection between these two formulas is fundamental: system stress ($\sigma
 
 ## 4. Stability Radius: How Much the System Can Withstand {#радиус-стабильности-сколько-система-может-выдержать}
 
-### 4.1 Stability radius (T-104) [С] — corrected 2026-08-07 {#радиус-устойчивости}
+### 4.1 Stability radius (T-104) [C] — corrected 2026-08-07 {#радиус-устойчивости}
 
 :::danger The earlier closed form was refuted, and it erred toward danger
 Revisions through 2026-08 stated
@@ -230,7 +230,7 @@ Machine check: this agrees with direct constrained minimisation to $10^{-14}$–
 $a_c = (1+\sqrt6)/7$ is exactly the $\lambda_{\max} = (1+\sqrt{N-1})/N$ of [path 4 in the critical-purity theorem](/docs/proofs/dynamics/theorem-purity-critical#теорема-фробениусова-различимость). The state you are closest to when you approach the viability wall is precisely the state that independent derivation singles out as sitting *on* it.
 :::
 
-**Step 3 — general states: a conservative lower bound [Г].** $r_{\mathrm{stab}}$ is *not* a function of purity alone. Across 41 random spectra spanning concentrations from $0.3$ to $5.0$, the measured radius exceeded the one-dominant value at the same purity in every case (ratio $\in [1.08,\ 2.52]$, median $1.40$), with zero violations. So the closed form above is a **lower** bound for arbitrary states — which is the safe direction: an alert built on it fires no later than it should. Machine-supported, not yet proven.
+**Step 3 — general states: a conservative lower bound [H].** $r_{\mathrm{stab}}$ is *not* a function of purity alone. Across 41 random spectra spanning concentrations from $0.3$ to $5.0$, the measured radius exceeded the one-dominant value at the same purity in every case (ratio $\in [1.08,\ 2.52]$, median $1.40$), with zero violations. So the closed form above is a **lower** bound for arbitrary states — which is the safe direction: an alert built on it fires no later than it should. Machine-supported, not yet proven.
 
 **Step 4 — the law near the wall is linear, not square-root.** Expanding the closed form in $\varepsilon = P - 2/7$:
 

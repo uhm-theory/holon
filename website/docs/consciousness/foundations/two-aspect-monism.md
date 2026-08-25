@@ -633,7 +633,7 @@ The probability of overcoming all three simultaneously is the product of three s
 ### Identity as a pattern of turnover {#идентичность-как-узор-оборота}
 
 The laser row of the table above is now a theorem, not an analogy: by the
-[turnover corollary [Т]](/docs/core/dynamics/evolution#следствие-оборот-живого),
+[turnover corollary [T]](/docs/core/dynamics/evolution#следствие-оборот-живого),
 any stationary state with $P > 1/7$ keeps **both** flows nonzero — the living
 «steady» state is a standing balance of continuous destruction and rebuilding.
 Substrate closure (T-153) says that *in space* what carries you is algebraic

@@ -691,7 +691,7 @@ A symbolic system is not part of the $\Gamma$-formalism and not an approximation
 2. **Geocentrism is a reference frame, not an error.** "Earth as the ship, I at the centre" is the *correct covariant choice* for a holon whose body rides this planet: an ephemeris is the shared atlas-clock of the local nesting (the [blueprint](/docs/applied/research/prime-radiant#чертёж) row "astrology = deterministic shared clock"), and the [geo-layer](/docs/applied/research/homoholograph#часть-xxii-углы-места) reads *place* as a re-calibration of the same frame. A holon riding a different body — or none — would build a different atlas with the same functor.
 3. **The projection functor is generic.** Nothing in the construction $\pi_S: \Gamma \to \mathcal{C}_S$ (§1) mentions humans or Earth. For **any** holon at **any** rung, the same machinery — take the neighbourhood's periodic structure, build the shared clock, project the state — yields "an astrology of that nestedness". The bridges and the full holonomy of computation are derivable for people *and for anything else*; what changes between rungs is only the atlas.
 
-### 10.2 What this predicts and what it forbids [И]
+### 10.2 What this predicts and what it forbids [I]
 
 - **Predicts:** any stable symbolic tradition, anywhere, decomposes as *Encoder + shared Atlas-clock + compact alphabet* (the blueprint organs) — and its "empirical constants" are epoch- and place-functions of its rung. Both decompositions have now been verified on the two richest Earth traditions (HD dissected; the jyotish reconstruction programme).
 - **Forbids:** a symbolic system that reads the core *directly* — i.e., a finite vocabulary that beats the [dimensionality theorem](#таксономия) or extracts the phase layer without instrumentation. Also forbids "one true zodiac": rung-interfaces are plural by construction; the question "which system of longitudes is real?" dissolved empirically into a null ([the optics duel](/docs/applied/research/homoholograph#x-oracle)).
@@ -699,7 +699,7 @@ A symbolic system is not part of the $\Gamma$-formalism and not an approximation
 
 ### 10.3 Status honesty
 
-The *placement* (emergent interface, not core) is [О]-convention resting on [Т]-anchors (lattice non-embedding, era-functions, Kepler bias, the Enc functor). The *generalisation to arbitrary holons* is a research direction [П]: it becomes testable exactly when a second nestedness is instrumented (a long-duration crew, a non-terrestrial holon, an artificial holon with its own periodic neighbourhood — the [environment mandate](/docs/applied/research/homoholograph#часть-xxiv-мир-как-холон) is the first step). Until then it earns its keep as the *organising frame* that already explains why traditions look the way they do — and why none of them could have been the core.
+The *placement* (emergent interface, not core) is [D]-convention resting on [T]-anchors (lattice non-embedding, era-functions, Kepler bias, the Enc functor). The *generalisation to arbitrary holons* is a research direction [П]: it becomes testable exactly when a second nestedness is instrumented (a long-duration crew, a non-terrestrial holon, an artificial holon with its own periodic neighbourhood — the [environment mandate](/docs/applied/research/homoholograph#часть-xxiv-мир-как-холон) is the first step). Until then it earns its keep as the *organising frame* that already explains why traditions look the way they do — and why none of them could have been the core.
 
 ---
 

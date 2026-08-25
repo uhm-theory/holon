@@ -228,7 +228,7 @@ apply — is spelled out in §9.1.
 
 ## 3. The Kraus covariance is exactly multinomial {#теорема-мультиномиальность}
 
-:::tip Theorem [Т]
+:::tip Theorem [T]
 For the atomic part of the canonical dissipator and any diagonal state
 $\rho=\operatorname{diag}(\lambda)$,
 
@@ -274,7 +274,7 @@ it as though it were a surprise.
 On commuting perturbations the Bures/SLD metric reduces to $c_g$ times
 the classical Fisher–Rao metric (§2.1).
 
-:::tip Theorem (natural gradient) [Т]
+:::tip Theorem (natural gradient) [T]
 On the tangent space $T$,
 
 $$
@@ -362,7 +362,7 @@ and carry the new content.
 
 ## 5. The Fano correction is the universal factor 11/9 {#теорема-фано-множитель}
 
-:::tip Theorem [Т]
+:::tip Theorem [T]
 With the full canonical dissipator (atomic + Fano) at matched
 per-channel rate $\gamma/N$, for **every** state,
 
@@ -478,7 +478,7 @@ instrument `shadow_marks.py` alongside the reproduction script.
 
 ## 6. Noise magnitude is fixed by purity {#теорема-шум-чистота}
 
-:::tip Theorem [Т]
+:::tip Theorem [T]
 $\operatorname{Tr}\kappa_{\text{at}}=\frac{\gamma}{N}(1-P)$ and
 $\operatorname{Tr}\kappa_{\text{at}}^2=\frac{\gamma^2}{N^2}
 (P+P^2-2S_3)$, where $P=\operatorname{Tr}\rho^2$ is the purity and
@@ -520,7 +520,7 @@ metric-free, it is the most directly testable of the predictions.
 
 ### 7.1 The dissipator is pure noise on populations {#нулевой-снос}
 
-:::tip Theorem [Т]
+:::tip Theorem [T]
 The canonical dissipator annihilates every diagonal state:
 $\mathcal D_\Omega[\operatorname{diag}\lambda]=0$, equivalently
 $\sum_e p_e\Delta_e=0$. Hence the second moment *is* the centred
@@ -547,7 +547,7 @@ the population sector.
 
 ### 7.2 What the Fano layer is, and is not {#область-действия-фано}
 
-:::tip Theorem [Т]
+:::tip Theorem [T]
 The full canonical dissipator equals total dephasing at rate
 $5\gamma/21$: its $49\times49$ generator has spectrum exactly
 $\{0^{\times7},(-5\gamma/21)^{\times42}\}$, and it coincides identically
@@ -583,7 +583,7 @@ Both are exact. Quoting $11/9$ for the second comparison would be wrong.
 
 ### 7.3 The sector split {#расщепление-секторов}
 
-:::tip Theorem [Т]
+:::tip Theorem [T]
 All fourteen canonical Lindblad operators are diagonal in the classifier
 basis. Hence **on the decohered manifold** (diagonal $\rho$) every
 increment $\Delta_e$ is diagonal and $\kappa^{\text{coh}}=0$ exactly,
@@ -785,7 +785,7 @@ The derivation is at the level of a holon's internal state dynamics.
 Applying it to population genetics assumes that an evolving population
 is itself a holon — which is exactly what UHM's scale-invariance theorem
 (T-72, with contraction $c_F=1/3$) asserts, but which remains a bridge
-assumption **[И]** rather than a theorem about biology. If the
+assumption **[I]** rather than a theorem about biology. If the
 identification is rejected, P1 still stands for physical holons and for
 engineered learning systems built on the UHM core.
 :::

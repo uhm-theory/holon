@@ -3639,7 +3639,7 @@ possible discriminator, the children's luminaries against the parent's
 axes, turned out to lie outside four kernel widths of every candidate
 axis: a structural zero. Five of the six second-wave channels put more
 mass on 11:00 than on 10:57, with no statistical force anywhere. The
-verdict that survives is the documentary one: **11:00 ± 7 minutes [И]**,
+verdict that survives is the documentary one: **11:00 ± 7 minutes [I]**,
 the typical rounding of a maternity clock. And the old "a few minutes
 earlier" is explained rather than refuted: a point answer extracted from
 event fitting *without a null model* is the noise of whichever kernel one
@@ -3881,7 +3881,7 @@ lattices carve reality at joints ours misses, our silences might be
 mere blindness. The audit below answers with arithmetic first and
 statistics second — and both speak plainly.
 
-### §X.1 The lattices do not embed [Т] {#x-lattices}
+### §X.1 The lattices do not embed [T] {#x-lattices}
 
 Write every grid as an exact fraction of the circle: the sign 30°, the
 nakshatra 40/3°, the pada (= navamsha segment) 10/3°, our gate 45/8°,
@@ -3948,7 +3948,7 @@ Mars (2.135 years, itself above q95). The reading discipline learned
 from the world layer applies unchanged: a hint that survived two gates
 (global correction, jackknife) still owes a third — replication on
 independent people. Until family event corpora repeat it, it is an
-[И]-tier lead, not a carrier; it enters no reading.
+[I]-tier lead, not a carrier; it enters no reading.
 
 ### §X.4 Where the search points instead {#x-conditional}
 
@@ -4208,7 +4208,7 @@ layer — pairwise planet contacts between two charts — which our
 composite provably loses when it aggregates activations into the seven
 voices. Second, a product bridge: the cross-aspect layer is now an
 engine function, and the pair page carries it as a heritage bridge
-[О] — bare facts with degrees, no promise of mechanics, in the same
+[D] — bare facts with degrees, no promise of mechanics, in the same
 key as every other bridge to the old schools. Third, a duel registered
 before any verdict: two candidate mechanisms — the top of the
 composite sphere profile against the cross-chart aspect layer — will
@@ -4286,6 +4286,6 @@ exactly the data of a holon's state at one level: nothing missing,
 nothing spare. Optimality here is the mathematician's kind: a
 bijection with no smaller domain.
 
-*Status: composition of [Т] results (carrier type; d = 7 minimality;
+*Status: composition of [T] results (carrier type; d = 7 minimality;
 T2 pair coverage; λ = 1 exactness; the 48-number bound §84). The
 composition itself introduces no new assumptions.*

@@ -372,9 +372,9 @@ This settles a question that recurs whenever the theory meets a system unlike us
 
 ### The twelve profiles, named {#двенадцать-режимов}
 
-Each cell is a distinct mode with its own character. The correspondences in the last column are interpretive **[И]** — they say which known state *looks like* the mode, not that the mode has been measured there.
+Each cell is a distinct mode with its own character. The correspondences in the last column are interpretive **[I]** — they say which known state *looks like* the mode, not that the mode has been measured there.
 
-| # | $P$ | $\Phi$ | $D$ | Mode | Character | Looks like [И] |
+| # | $P$ | $\Phi$ | $D$ | Mode | Character | Looks like [I] |
 |---|---|---|---|---|---|---|
 | **1** | in | $\ge1$ | $\ge2$ | **conscious** | bound, distinguishing, self-holding | ordinary waking |
 | 2 | in | $\ge1$ | $<2$ | contentless unity | one field, nothing to tell apart | claimed "pure awareness" states — see the disagreement below |

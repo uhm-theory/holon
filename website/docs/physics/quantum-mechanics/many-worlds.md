@@ -32,7 +32,7 @@ To compare rigorously, fix MWI as Deutsch defends it:
 
 ## 2. Point-by-point rigorous comparison
 
-### 2.1 The ontic carrier: $\lvert\Psi\rangle$ vs $\Gamma$ — strict divergence [Т]
+### 2.1 The ontic carrier: $\lvert\Psi\rangle$ vs $\Gamma$ — strict divergence [T]
 
 UHM's fundamental object is not a universal pure vector but a
 **density operator** $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ on the
@@ -60,7 +60,7 @@ a pure-state holon is non-viable. So the divergence at M1 is not
 aesthetic — **UHM's living systems are constitutively mixed, and
 mixedness kills canonical branching.**
 
-### 2.2 Dynamics: unitarity-only vs the triad — strict divergence [Т]
+### 2.2 Dynamics: unitarity-only vs the triad — strict divergence [T]
 
 MWI's M2 says the generator is $-i[H,\cdot]$ and nothing else. UHM
 proves ([T-57, LGKS completeness](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции))
@@ -84,7 +84,7 @@ on system⊗environment); in UHM dissipation and regeneration are
 **generative** — part of the law itself. A holon does not branch;
 it *metabolises* coherence.
 
-### 2.3 Preferred basis: UHM's contribution to the MWI programme [Т]
+### 2.3 Preferred basis: UHM's contribution to the MWI programme [T]
 
 MWI's weakest joint (M4) is well known: einselection answers "which
 basis survives decoherence" by pointing at the interaction
@@ -98,14 +98,14 @@ this joint structurally:
   ([T-42a, Stone–von-Neumann analogue](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность));
 - and the seven atoms are not anonymous: they are the derived
   dimension set $\{A,S,D,L,E,O,U\}$ with
-  [7/7 functional uniqueness [Т]](/docs/proofs/minimality/theorem-minimality-7).
+  [7/7 functional uniqueness [T]](/docs/proofs/minimality/theorem-minimality-7).
 
 **Read against Deutsch**: this is the exact structure MWI would need
 to *earn* its quasi-classical domains rather than borrow them from
 the environment. It is exportable: even a committed Everettian can
 take the $\Omega$-atomic answer to M4 as a standalone result.
 
-### 2.4 The Born rule: two derivations, different premisses [Т]/[С]
+### 2.4 The Born rule: two derivations, different premisses [T]/[C]
 
 Deutsch (1999) recovers Born weights from decision-theoretic axioms
 (rational preference over quantum games); critics (Barnum et al.)
@@ -114,11 +114,11 @@ press circularity. UHM derives measurement probability from the
 characterisation ([T-187](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187))
 plus the classifier-projection reading of measurement
 ([§3, Born rule from UHM](/docs/physics/quantum-mechanics/measurement#3-правило-борна)).
-Statuses differ: Deutsch's route imports rationality axioms **[П]**
-in our vocabulary; UHM's route stays inside A1–A2 **[Т]** with the
-interpretive bridge confined to what "measurement" names **[И]**.
+Statuses differ: Deutsch's route imports rationality axioms **[P]**
+in our vocabulary; UHM's route stays inside A1–A2 **[T]** with the
+interpretive bridge confined to what "measurement" names **[I]**.
 
-### 2.5 Page–Wootters: the point of maximal kinship [Т]
+### 2.5 Page–Wootters: the point of maximal kinship [T]
 
 Here the two programmes genuinely touch. Everett's original name was
 the *relative-state* formulation; Deutsch has always emphasised
@@ -137,7 +137,7 @@ and its cardinality is fixed by the algebra (7), not exponentiating
 with every interaction. Call it what it is [И]: *co-present moments,
 not parallel worlds.*
 
-### 2.6 "Where was Shor computed?" — UHM's answer [Т]/[И]
+### 2.6 "Where was Shor computed?" — UHM's answer [T]/[I]
 
 Deutsch's M6 argument takes exponential quantum speed-up as direct
 evidence of parallel worlds. UHM answers without multiplying
@@ -151,10 +151,10 @@ Amplitude paths interfering within one state are *resources*, not
 *places*. The quantitative UHM-native measure of "how much parallel
 room" a configuration has is
 $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$
-([finite-dimensional theorem [Т]](/docs/core/foundations/consequences#freedom-конечномерное)) —
+([finite-dimensional theorem [T]](/docs/core/foundations/consequences#freedom-конечномерное)) —
 flat directions of one landscape, bounded by 7, never $2^n$ worlds.
 
-### 2.7 The falsifiable fork [П]
+### 2.7 The falsifiable fork [P]
 
 The comparison yields one experiment-class divergence, stated
 honestly:
@@ -177,11 +177,11 @@ threshold (large biomolecules → viruses → viable cells). Persistent
 full-visibility interference of a demonstrably *viable* system would
 falsify the UHM triad; a shielding-independent visibility floor
 matching $5\gamma/21$ scaling would falsify unitarity-only MWI.
-Status: research programme [П] — the numbers ($\gamma$ per system)
+Status: research programme [P] — the numbers ($\gamma$ per system)
 need the $\omega_0$-calibration layer.
 :::
 
-### 2.8 The Fabric's four strands — structural concordance [И]
+### 2.8 The Fabric's four strands — structural concordance [I]
 
 Deutsch's *Fabric of Reality* weaves four strands and claims they
 form one explanatory fabric. UHM, built independently, arrives at a
@@ -202,7 +202,7 @@ $\Phi_{\text{th}}$, the conscious window) *is* a catalogue of
 possible-versus-impossible configurations, maintained with
 registry discipline.
 
-## 2.9 The learning-theoretic bridge: UHM fixes Vanchurin's free function [Т]
+## 2.9 The learning-theoretic bridge: UHM fixes Vanchurin's free function [T]
 
 Deutsch's multiverse and Vanchurin's *self-learning universe* are the
 two live programmes that derive physics from something more primitive
@@ -300,7 +300,7 @@ complement.
    $\Omega$-atomic, $G_2$-rigid preferred basis — the missing answer
    to M4 — stands independently of whether one accepts branching.
 4. **The quantum-computation argument is answered without worlds**
-   [Т]/[И]: coherences of one state are the resource; Freedom counts
+   [T]/[И]: coherences of one state are the resource; Freedom counts
    the flat directions and is bounded by 7.
 5. **One honest experimental fork** [П]: a law-level decoherence
    floor for living matter versus unitarity's unbounded

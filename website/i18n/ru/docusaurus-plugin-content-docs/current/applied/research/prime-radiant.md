@@ -88,7 +88,8 @@ $$
 $$
 S = -\operatorname{tr}(\Gamma\ln\Gamma), \qquad
 D_{\text{diff}} = e^{S}, \qquad
-\mathrm{Coh}_E = \sum_{j \neq E}|\gamma_{Ej}|^2, \qquad
+\mathrm{Coh}_E = \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2}
+     = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\operatorname{tr}\Gamma^2}, \qquad
 \kappa_0 = \omega_0\,\frac{|\gamma_{OE}|\,|\gamma_{OU}|}{\gamma_{OO}},\quad \kappa_{\text{boot}} = \frac{\omega_0}{7}.
 $$
 
@@ -192,7 +193,7 @@ $$
 
 $$
 S = 1{,}5271,\;\; D_{\text{diff}} = 4{,}60 \ge 2,\qquad
-\mathrm{Coh}_E = 0{,}08^2 + 0{,}07^2 = 0{,}0113,\qquad
+\mathrm{Coh}_E = \frac{0{,}14^2 + 2(0{,}08^2 + 0{,}07^2)}{0{,}2916} = \frac{0{,}0422}{0{,}2916} = 0{,}1447,\qquad
 \kappa_0 = \frac{0{,}07 \cdot 0{,}05}{0{,}10} = 0{,}0350.
 $$
 

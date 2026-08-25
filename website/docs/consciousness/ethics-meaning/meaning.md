@@ -317,7 +317,7 @@ in every human `[О]`; the vibration frequencies of the couplings are fixed by
 the design — of 21 Bohr frequencies only 10 are distinct, binding couplings
 into choirs — while the **amplitudes** are personal
 ([the chord](/docs/core/dynamics/evolution#аккорд-вибрации)). And by the
-[turnover corollary T-291 [Т]](/docs/core/dynamics/evolution#следствие-оборот-живого),
+[turnover corollary T-291 [T]](/docs/core/dynamics/evolution#следствие-оборот-живого),
 a living stationary state is not a thing but a standing **turnover** —
 destruction and rebuilding in exact balance; what persists is the pattern,
 not a substance (substrate closure T-153). «Directly feeling one's true

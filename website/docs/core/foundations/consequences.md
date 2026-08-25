@@ -753,7 +753,7 @@ L0 systems have more zero modes (fewer constraints); L2 systems have fewer (refl
 | Notion | Relation to freedom (consistent with properties (a)–(d) above) |
 |---|---|
 | **Integration $\Phi$** | Higher $\Phi$ means more structure and hence **fewer** flat directions: quantitative Freedom *decreases* (the maximum, $\mathrm{Freedom}=7$, sits at $I/7$ with $\Phi=0$) |
-| **Reflection $R$** | $R \geq 1/3$ is needed to **experience** freedom as such [И]; it also pins the direction of $\varphi$, reducing zero modes |
+| **Reflection $R$** | $R \geq 1/3$ is needed to **experience** freedom as such [I]; it also pins the direction of $\varphi$, reducing zero modes |
 | **L2 level** | Quantitative Freedom **shrinks** along L0 → L2 (property (d)); what L2 gains is not more zero modes but *awareness* of the remaining ones — choice of a qualitatively new kind |
 | **Autopoiesis** | Freedom is an aspect of autopoietic self-organization: the system spends flat directions to buy structure |
 
