@@ -150,9 +150,17 @@ const config: Config = {
     // runs do not benefit from persistent cache, so turning cache off
     // entirely is safe. mergeStrategy:'cache':'replace' so the default
     // filesystem-cache config is fully overridden, not merged.
-    function disableCiWebpackCachePlugin() {
+    function boundWebpackCachePlugin() {
+      // ВНИМАНИЕ о кэше. Этот сайт собирается rspack'ом (future.experimental_faster
+      // rspackBundler + rspackPersistentCache), и его постоянный кэш живёт в
+      // node_modules/.cache/rspack — на этой машине 13 ГБ. Настройки ниже относятся к
+      // webpack-ветке и на rspack НЕ действуют: под rspack параметров сжатия и старения
+      // Docusaurus не пробрасывает. Совокупные кэши корпусов однажды заполнили диск, и
+      // сборка соседнего корпуса упала с ENOSPC — поэтому цифра названа здесь: пока
+      // rspackPersistentCache включён ради скорости, папку нужно чистить руками
+      // (`rm -rf node_modules/.cache/rspack`), а под CI кэш отключается ветвью ниже.
       return {
-        name: 'disable-ci-webpack-cache',
+        name: 'bound-webpack-cache',
         configureWebpack() {
           if (process.env.CI || process.env.DOCUSAURUS_DISABLE_WEBPACK_CACHE) {
             return {
@@ -160,7 +168,14 @@ const config: Config = {
               cache: false,
             };
           }
-          return {};
+          return {
+            mergeStrategy: {cache: 'replace' as const},
+            cache: {
+              type: 'filesystem' as const,
+              compression: 'gzip' as const,
+              maxAge: 7 * 24 * 60 * 60 * 1000,
+            },
+          };
         },
       };
     },
