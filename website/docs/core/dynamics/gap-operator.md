@@ -88,7 +88,7 @@ $$
 
 The Gap operator combines **connection strength** $|\gamma_{ij}|$ and **opacity** $\mathrm{Gap}(i,j)$ into a single object.
 
-:::info Necessity of complex Γ [Т-132]
+:::info Necessity of complex Γ [T-132]
 A nontrivial Gap structure ($\mathrm{Gap}(i,j) > 0$) **requires** complex coherences: for $\gamma_{ij} \in \mathbb{R}$ the measure $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ identically. Details: [T-132 [T]](/docs/proofs/consciousness/operationalization#t-132).
 :::
 

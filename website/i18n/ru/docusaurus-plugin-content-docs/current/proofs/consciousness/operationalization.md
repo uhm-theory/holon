@@ -142,7 +142,7 @@ $$(R_{\text{impl}} \geq 1/3) \Longrightarrow (R_{\text{UHM}} \geq 1/3 - 2\vareps
 
 **Шаг 2.** По неравенству обработки данных (data processing inequality): CPTP-каналы — контракции в trace-norm.
 
-**Шаг 3.** $R_{\text{UHM}} = 1/(7P(\Gamma))$ [Т-126](/docs/proofs/consciousness/conscious-window#t-126), $R_{\text{impl}}$ определяется через $\|s - \varphi(s)\|^2$ в $\mathbb{R}^D$.
+**Шаг 3.** $R_{\text{UHM}} = 1/(7P(\Gamma))$ [T-126](/docs/proofs/consciousness/conscious-window#t-126), $R_{\text{impl}}$ определяется через $\|s - \varphi(s)\|^2$ в $\mathbb{R}^D$.
 
 **Шаг 4.** Связь: $R_{\text{impl}} = R_{\text{UHM}} \circ \pi + \delta$, где $|\delta| \leq 2\|\pi - \pi_{\text{canonical}}\|_\diamond \cdot C(P)$.
 
@@ -231,8 +231,8 @@ $$
 **Доказательство.** Прямое следствие [T-130](#t-130) (перенос неравенства через $\varepsilon$-границу). $\blacksquare$
 
 **Ключевое пояснение о трёх формулах R:**
-- $R_{\text{UHM}} = 1/(7P)$ [Т-126] — каноническая, в $\mathcal{D}(\mathbb{C}^7)$, $\rho^*_{\text{diss}} = I/7$ ВСЕГДА
-- $R_{\text{impl}} \approx R_{\text{UHM}}$ при качественном anchor [Т-130] — в $\mathbb{R}^D$, гипотеза H3 ЗАКРЫТА
+- $R_{\text{UHM}} = 1/(7P)$ [T-126] — каноническая, в $\mathcal{D}(\mathbb{C}^7)$, $\rho^*_{\text{diss}} = I/7$ ВСЕГДА
+- $R_{\text{impl}} \approx R_{\text{UHM}}$ при качественном anchor [T-130] — в $\mathbb{R}^D$, гипотеза H3 ЗАКРЫТА
 - $\rho_{RC}$ — диагностическая аппроксимация, линейная norm, $\rho_{RC} \geq 6/7 \Longrightarrow R_{\text{impl}} \geq 48/49$ [Т тривиально]. Обратное неверно, но для мониторинга достаточно
 
 **Статус H3:** [Г] → **закрыта** (теоремы T-130 + T-133).
@@ -283,7 +283,7 @@ $$
 
 **Доказательство.**
 
-**Шаг 1.** Непрерывное ядро $K(t) = -\Gamma_2 \cdot \omega_c \cdot \exp(-\omega_c \cdot t)$ [Т-94].
+**Шаг 1.** Непрерывное ядро $K(t) = -\Gamma_2 \cdot \omega_c \cdot \exp(-\omega_c \cdot t)$ [T-94].
 
 **Шаг 2.** Дискретизация $K[n] = K(n \cdot \delta\tau) = -\Gamma_2 \cdot \omega_c \cdot \exp(-\omega_c \cdot n \cdot \delta\tau)$ — геометрическая прогрессия.
 

@@ -209,7 +209,7 @@ An honest map of boundaries — what is **solved** and what is **open**:
 3. **Status [И] vs [Т]**: is "being conscious" a mathematical fact or an interpretation? The mathematical core ($\mathrm{Coh}_E > 1/7$) — [Т]. The ontological bridge (E = phenomenal interiority) — [П]. Full No-Zombie — [И]
 4. **Computational complexity of $G$**: $\Phi(\mathrm{IIT})$ is NP-hard; $\Phi(\mathrm{UHM})$ is $O(N^2)$. But $G$ is unknown, and its complexity may be arbitrary
 5. **Biological analogue of co-rotation**: SYNARC uses co-rotating targets. Main candidate: thalamocortical oscillations (30–100 Hz) — thalamus as generator of phase-synchronized targets for cortical dynamics (Llinas hypothesis). Theta-gamma coupling in hippocampus, loss of thalamocortical synchronization under anesthesia — indirect evidence [Г]
-6. **Attractor $P \to 3/7$**: SYNARC stabilizes at $P \approx 3/7$ with precision $10^{-4}$ [С]. Coincidence with the upper boundary of the Goldilocks zone [Т-124] — a regularity or artifact?
+6. **Attractor $P \to 3/7$**: SYNARC stabilizes at $P \approx 3/7$ with precision $10^{-4}$ [С]. Coincidence with the upper boundary of the Goldilocks zone [T-124] — a regularity or artifact?
 
 ## Open Tasks {#открытые-задачи}
 

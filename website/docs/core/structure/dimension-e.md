@@ -201,7 +201,7 @@ where $\mathbb{C}^7$ is the "outer" space of seven dimensions, $\mathbb{C}^6$ is
 2. The partial trace over the inner space **recovers** the original $\Gamma$: $\mathrm{Tr}_{\mathrm{int}}(\Gamma_{\mathrm{total}}) = \Gamma$;
 3. The reduced matrix $\rho_E$ is computed as the **standard** partial trace in 42D.
 
-**Equivalent 7D computational route [Т-128].**
+**Equivalent 7D computational route [T-128].**
 
 For key scalar quantities the 42D extension is **not required** — they are computable directly from $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
 
@@ -257,7 +257,7 @@ The eigenvalues of $\rho_E^{42D}$ depend on $\gamma_{EE}$ and the coherences $\g
 - at $\mathrm{Coh}_E > 0$: additional eigenvalues appear → $D_{\text{diff}}^{42D} \geq 2$.
 
 **Step 3 (Threshold equivalence).** By definition:
-- $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ [Т-128]
+- $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ [T-128]
 - $D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E^{42D}))$
 
 Both quantities are:
@@ -552,7 +552,7 @@ $$
 
 Requires computing $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ — the partial trace defined **only** in the extended formalism $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, since $\mathbb{C}^7$ does not factorise (7 is prime). This is a **nonlinear** function depending on the eigenvalues of $\rho_E$. Detailed discussion of the factorisation problem: [Computing the reduced state](#вычисление-rho-e).
 
-**7D formula [Т-128]** (computational route):
+**7D formula [T-128]** (computational route):
 
 $$
 D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)

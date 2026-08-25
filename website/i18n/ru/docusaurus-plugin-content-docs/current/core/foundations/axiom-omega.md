@@ -708,13 +708,13 @@ $$T := \frac{\omega_0}{2\pi i} \log(\triangleright) = \omega_0 \sum_{k=0}^{6} \f
 
 **Шаг 2 (Точное воспроизведение).** По построению: $e^{i \cdot (2\pi/(7\omega_0)) \cdot T} = e^{i \cdot (2\pi/(7\omega_0)) \cdot \omega_0 \sum_k (k/7) |\tilde{k}\rangle\langle\tilde{k}|} = \sum_k e^{2\pi i k/7} |\tilde{k}\rangle\langle\tilde{k}| = \triangleright$ точно. Следовательно, $\delta\tau = 2\pi/(7\omega_0)$ — канонический шаг времени.
 
-**Шаг 3 (Отождествление с $H_{\text{eff}}$).** Эффективный гамильтониан $H_{\text{eff}}$ из [вывода Пейдж–Вуттерса](../dynamics/evolution#вывод-h_eff) действует на 6D пространстве условных состояний. Унитарная часть лиувиллиана: $\mathcal{L}_{\text{unit}}[\Gamma] = -i[H_{\text{eff}}, \Gamma]$. По теореме $S_7$-эквивариантности [Т-41d]: $H_{\text{eff}}$, ограниченный на диагональ, генерирует ту же циклическую перестановку, что и $T$. Следовательно, $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}} = \triangleright^*$ точно.
+**Шаг 3 (Отождествление с $H_{\text{eff}}$).** Эффективный гамильтониан $H_{\text{eff}}$ из [вывода Пейдж–Вуттерса](../dynamics/evolution#вывод-h_eff) действует на 6D пространстве условных состояний. Унитарная часть лиувиллиана: $\mathcal{L}_{\text{unit}}[\Gamma] = -i[H_{\text{eff}}, \Gamma]$. По теореме $S_7$-эквивариантности [T-41d]: $H_{\text{eff}}$, ограниченный на диагональ, генерирует ту же циклическую перестановку, что и $T$. Следовательно, $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}} = \triangleright^*$ точно.
 
 **Шаг 4 (Ошибка от неунитарных членов).** Полный лиувиллиан $\mathcal{L}_\Omega = \mathcal{L}_{\text{unit}} + \mathcal{D}_\Omega + \mathcal{R}$. По формуле Бейкера–Кэмпбелла–Хаусдорфа: $e^{\delta\tau(\mathcal{L}_{\text{unit}} + \mathcal{D}_\Omega + \mathcal{R})} = e^{\delta\tau \mathcal{L}_{\text{unit}}} \cdot e^{\delta\tau(\mathcal{D}_\Omega + \mathcal{R})} \cdot e^{-\frac{1}{2}\delta\tau^2[\mathcal{L}_{\text{unit}}, \mathcal{D}_\Omega + \mathcal{R}] + \cdots}$. Поскольку $\|\mathcal{D}_\Omega\| + \|\mathcal{R}\| \leq C$ для ограниченных операторов на $M_7(\mathbb{C})$: $\|e^{\delta\tau \mathcal{L}_\Omega} - \triangleright^*\|_{\text{op}} \leq \delta\tau \cdot (\|\mathcal{D}_\Omega\| + \|\mathcal{R}\|) + O(\delta\tau^2) \leq 5\delta\tau + O(\delta\tau^2)$, где множитель 5 возникает из $\|\mathcal{D}_\Omega\| \leq \gamma \cdot 4/3$ (Фано-декогеренция, T-39a) плюс $\|\mathcal{R}\| \leq \kappa_{\max} \cdot 2$ (норма канала замещения). $\blacksquare$
 
 #### Теорема (Алгебра→динамика с оценкой ошибки) [Т] {#теорема-алгебра-динамика-ошибка}
 
-При $\delta\tau = 2\pi/(7\omega_0)$: унитарная часть $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}}$ **точно** воспроизводит $Z_7$-сдвиг $\triangleright^*$ (из $S_7$-эквивариантности [Т-41d]). Полная ошибка:
+При $\delta\tau = 2\pi/(7\omega_0)$: унитарная часть $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}}$ **точно** воспроизводит $Z_7$-сдвиг $\triangleright^*$ (из $S_7$-эквивариантности [T-41d]). Полная ошибка:
 
 $$\left\| e^{\delta\tau \cdot \mathcal{L}_\Omega} - \triangleright^* \right\|_{\text{op}} \leq 5\delta\tau + O((\delta\tau)^2)$$
 

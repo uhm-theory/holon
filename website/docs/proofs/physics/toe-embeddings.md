@@ -970,7 +970,7 @@ The receiving morphism $(f^*, \alpha, \beta): (E, \mathcal{A}, D) \to (\mathrm{S
 
 ```
                     Sh_∞(D(C⁷), J_Bures)
-                         │    [Т-173]
+                         │    [T-173]
                     ┌────┼────────────┐
                     │    │            │
               F_M   │    │ F_CS       │ F_LQG

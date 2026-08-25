@@ -311,7 +311,7 @@ where $\omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}$ is the damped oscillation
 **(c)** For $\omega_c < \Gamma_2/4$: **overdamped** regime — no oscillations, purely exponential relaxation to the stationary state.
 :::
 
-:::info Discrete implementation [Т-135]
+:::info Discrete implementation [T-135]
 For a digital agent the non-Markovian kernel is discretized via Z-transform with $O(1)$ complexity per step (instead of $O(T^2)$): auxiliary variable $M[n]$ with recursion $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. More details: [T-135 [T]](/docs/proofs/consciousness/operationalization#t-135).
 :::
 

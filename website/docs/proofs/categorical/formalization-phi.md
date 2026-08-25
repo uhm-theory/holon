@@ -45,7 +45,7 @@ The operator $\varphi$ is defined **through** the stationary state $\rho^*_{\mat
 
 $$\Omega \xrightarrow{\text{L-unification}} \mathcal{L}_\Omega \xrightarrow{\text{primitivity}} \rho^*_{\mathrm{diss}} = I/7 \xrightarrow{\text{proximity}} R(\Gamma) = \frac{1}{7P} \xrightarrow{k=1-R} \varphi_k$$
 
-All components of the chain have independent definitions: $\rho^*_{\mathrm{diss}}$ — via primitivity of the linear part $\mathcal{L}_0$ [Т-39a], $R$ — via the distance from $\Gamma$ to $I/7$, parameter $k = 1 - R$ — via $R$. There is no circularity: the full hierarchy of levels 0–9 is in the [Ω⁷ axiom](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+All components of the chain have independent definitions: $\rho^*_{\mathrm{diss}}$ — via primitivity of the linear part $\mathcal{L}_0$ [T-39a], $R$ — via the distance from $\Gamma$ to $I/7$, parameter $k = 1 - R$ — via $R$. There is no circularity: the full hierarchy of levels 0–9 is in the [Ω⁷ axiom](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 :::
 
 ## Categorical definition of φ {#категориальное-определение-φ}

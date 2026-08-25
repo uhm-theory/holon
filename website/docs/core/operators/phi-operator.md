@@ -220,7 +220,7 @@ where:
 - $\mathcal{P}_{\text{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p\,\Gamma\,\Pi_p$ — Fano channel
 - $\alpha \in [0, 1]$ — **decoherence depth parameter** (balance between atomic and Fano observation)
 - $k = 1 - R$ — compression parameter determined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$ **[T]**. Not a free parameter
-- $\Gamma_{\text{anchor}} = \rho^*_{\mathrm{diss}} = I/7$ — **anchor state**, coinciding with the attractor of the dissipative part $\mathcal{L}_0$. This choice is dictated by the primitivity of $\mathcal{L}_0$ [Т-39a]: the unique stationary state of the linear dynamics is the maximally mixed $I/7$. Under full compression ($k \to 1$, $R \to 0$) the self-model tends to $I/7$ — the state of complete absence of information about itself.
+- $\Gamma_{\text{anchor}} = \rho^*_{\mathrm{diss}} = I/7$ — **anchor state**, coinciding with the attractor of the dissipative part $\mathcal{L}_0$. This choice is dictated by the primitivity of $\mathcal{L}_0$ [T-39a]: the unique stationary state of the linear dynamics is the maximally mixed $I/7$. Under full compression ($k \to 1$, $R \to 0$) the self-model tends to $I/7$ — the state of complete absence of information about itself.
 
 $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ — a convex combination of CPTP channels, hence CPTP.
 [Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
@@ -370,7 +370,7 @@ $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
 $$
 
-The invariant measure $\mu$ is unique by the primitivity of the linear part $\mathcal{L}_0$ [Т-39a].
+The invariant measure $\mu$ is unique by the primitivity of the linear part $\mathcal{L}_0$ [T-39a].
 [Full proof →](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) | Status: **[T]**
 :::
 
@@ -418,7 +418,7 @@ $$
 :::info Resolution of circularity
 The definition of φ **contains no vicious circle**. The derivation order is strictly linear:
 
-1. **$\rho^*_{\mathrm{diss}} = I/7$** is determined from the primitivity of the linear part $\mathcal{L}_0$ [Т-39a] — this is a property of the **dynamics**, independent of φ.
+1. **$\rho^*_{\mathrm{diss}} = I/7$** is determined from the primitivity of the linear part $\mathcal{L}_0$ [T-39a] — this is a property of the **dynamics**, independent of φ.
 2. **$R(\Gamma) = 1/(7P(\Gamma))$** is determined only by the current state $\Gamma$ and the constant $\rho^*_{\mathrm{diss}} = I/7$ — not through $\varphi$.
 3. **$k = 1 - R$** is a function of the state $\Gamma$, not a free parameter.
 4. **$\varphi_k(\Gamma)$** is fully determined through $\Gamma$, $\rho^*_{\mathrm{diss}}$, and $k$ without self-reference.

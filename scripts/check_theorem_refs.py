@@ -44,6 +44,11 @@ SOURCES = ["docs/**/*.md*"]
 ROW_RE = re.compile(r"^\|\s*\*{0,2}~{0,2}T-(\d+)", re.M)
 #: Ссылка на теорему: номер с возможным подномером `.k` или буквой.
 REF_RE = re.compile(r"\bT-(\d{1,3})(?:\.\d+|[a-z])?\b")
+# Кириллическая «Т» неотличима на вид от латинской «T», но не совпадает с ней
+# ни в одном сравнении. Ссылок вида «Т-nnn» кириллицей в корпусе было 57 в 29
+# файлах — REF_RE их не видел, и потому они не проверялись на разрешимость
+# вовсе: указывай такая ссылка на несуществующий номер, прибор бы промолчал.
+HOMOGLYPH_RE = re.compile(r"\bТ-(\d{1,3})(?:\.\d+|[a-z])?\b")
 #: Ниже этого номера — результаты, полученные до заведения реестра.
 EARLY_BELOW = 50
 
@@ -51,6 +56,9 @@ EARLY_BELOW = 50
 def declared() -> set[int]:
     text = Path(REGISTRY).read_text(encoding="utf-8")
     return {int(m.group(1)) for m in ROW_RE.finditer(text)}
+
+
+HOMOGLYPHS: collections.Counter = collections.Counter()
 
 
 def referenced() -> tuple[collections.Counter, dict[int, collections.Counter]]:
@@ -64,6 +72,8 @@ def referenced() -> tuple[collections.Counter, dict[int, collections.Counter]]:
                 n = int(m.group(1))
                 counts[n] += 1
                 where[n][path] += 1
+            for m in HOMOGLYPH_RE.finditer(text):
+                HOMOGLYPHS[path] += 1
     return counts, where
 
 
@@ -79,6 +89,13 @@ def main() -> int:
 
     print(f"реестр: {len(have)} строк, T-{lo}..T-{hi}")
     print(f"корпус ссылается на {len(refs)} различных номеров")
+    if HOMOGLYPHS:
+        total = sum(HOMOGLYPHS.values())
+        print(f"\nКИРИЛЛИЧЕСКАЯ «Т» В НОМЕРЕ ТЕОРЕМЫ: {total} в {len(HOMOGLYPHS)} файлах")
+        for path, k in HOMOGLYPHS.most_common(10):
+            print(f"   {Path(path).name}: {k}")
+        print("   такая ссылка НЕ ПРОВЕРЯЕТСЯ: она неотличима на вид и не совпадает")
+        print("   с латинской ни в одном сравнении — и потому невидима этой проверке")
     if gaps:
         unused = [n for n in gaps if not refs.get(n)]
         used = [n for n in gaps if refs.get(n)]
