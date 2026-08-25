@@ -673,11 +673,11 @@ The term **"qualia"** is categorially correct ONLY for L2. Using "qualia of an a
 
 ## Part V: Philosophical Implications
 
-## 5.1 Panpsychism vs. Paninteriori­sm
+## 5.1 Panpsychism vs. Paninteriorism
 
 **Classical panpsychism** (Chalmers, 2015): Everything possesses consciousness (or proto-consciousness).
 
-**Paninteriori­sm of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2).
+**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2).
 
 This avoids:
 1. The combination problem — the transition from L0 to L2 is mathematically defined
@@ -1576,7 +1576,7 @@ The term **"qualia"** is used **ONLY for L2**. Special terms are used for L3/L4.
 | Theory | Relation to hierarchy L0→L1→L2→L3→L4 | Status |
 |--------|----------------------------------|--------|
 | **IIT (Tononi)** | $\Phi$ of UHM generalizes $\Phi$ of IIT; UHM adds $R$, $D_{\text{diff}}$ and $R^{(n)}$ | Compatible |
-| **Panpsychism** | L0 = paninteriori­sm (not panpsychism); L3/L4 formalize "higher forms" | Extension |
+| **Panpsychism** | L0 = paninteriorism (not panpsychism); L3/L4 formalize "higher forms" | Extension |
 | **Hoffman Conscious Agents** | Conscious agent $\approx$ L2-[Holon](/docs/core/structure/holon); network of agents $\approx$ L3 | Compatible |
 | **Global Workspace (Baars)** | Global access $\approx$ condition $\Phi \geq \Phi_{\text{th}}$ | Conceptually compatible |
 | **Higher-Order Theories** | Reflection $R \approx$ higher-order; $R^{(2)} \approx$ higher-higher-order | Conceptually compatible |
