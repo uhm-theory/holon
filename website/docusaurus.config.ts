@@ -166,12 +166,13 @@ const config: Config = {
     },
   ],
 
+  // KaTeX CSS — локально: рендерит установленный katex (0.16.28), а CDN-ссылка была
+  // прибита SRI-хешем к 0.16.9. Код и стили KaTeX поставляются парой; расхождение версий
+  // даёт тихие расхождения вёрстки, невидимые проверке разбора формул.
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+      href: '/katex/katex.min.css',
       type: 'text/css',
-      integrity: 'sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV',
-      crossorigin: 'anonymous',
     },
   ],
 
