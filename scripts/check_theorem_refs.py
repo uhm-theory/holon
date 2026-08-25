@@ -5,12 +5,27 @@
 чужие номера. Рёбра этого графа не проверял никто, и вот что нашлось при первом
 прогоне 2026-07-28:
 
-* **двадцать три ранних номера** (T-1…T-48) упоминаются в корпусе, но строк в
-  реестре не имеют. Среди них несущие: **T-39 — 129 упоминаний**, T-42 — 90,
-  T-38 — 28, T-48 — 26. Реестр при этом объявлял себя «Complete registry of all
-  UHM results»;
+* **ранние номера** (T-1…T-49) упоминаются в корпусе, но строк в реестре не
+  имеют — при первом прогоне их насчитывалось двадцать три, а после того, как
+  буква стала частью имени (см. REF_RE), стало **пятьдесят четыре имени и 421
+  ссылка**: прежняя редакция считала T-39 и T-39a за один номер, отчего «T-39 —
+  129 упоминаний» оказалось суммой двух разных результатов. Реестр при этом
+  объявлял себя «Complete registry of all UHM results»;
 * три номера внутри его собственного диапазона (T-167, T-168, T-169) не
-  объявлены и не упоминаются — просто пропуск нумерации.
+  присвоены — просто пропуск нумерации. Реестр объявляет это строкой
+  «Skipped numbers / Пропущенные номера», которую читает SKIP_RE: без неё
+  прибор ловил реестр на его же объявлении, считая единственное упоминание
+  «этих номеров нет» за ссылку на несуществующий номер.
+
+Второй прогон, после починки имени (2026-08-25), нашёл в рабочем диапазоне
+восемнадцать висячих имён — тринадцать из них были настоящими результатами с
+формулировкой и доказательством, но без строки реестра (T-53a–d о времени,
+T-98a, T-100a, T-107a–c, T-108a о сенсомоторике, T-221.1–.3 о no-go-теоремах), а
+две — опечатками (T-257a и T-301a, у которых нет и никогда не было источника;
+одна из ссылок на «T-257a» вела на якорь #t-257). Строки написаны, опечатки
+исправлены, рабочий диапазон чист. Найдено это, что важно, ЧУЖИМ прибором:
+gateway_lint корпуса math-foundations сообщил, что цитируемая им T-129a реестром
+не покрыта, — своему прибору она была невидима по построению.
 
 Восстановить формулировки ранних теорем нельзя: полного источника нет ни в
 корпусе, ни в `math-foundations` (там T-42 значится как «G₂ ⊂ SO(7) ⊂ U(7)», а
@@ -40,10 +55,23 @@ from check_status_markers import mask  # noqa: E402
 
 REGISTRY = "docs/reference/status-registry.md"
 SOURCES = ["docs/**/*.md*"]
-#: Строка реестра: `| T-123 | …` — возможно, жирная и/или зачёркнутая.
-ROW_RE = re.compile(r"^\|\s*\*{0,2}~{0,2}T-(\d+)", re.M)
+#: Строка реестра: `| T-123 | …` или `| T-123a | …` — возможно, жирная и/или зачёркнутая.
+ROW_RE = re.compile(r"^\|\s*\*{0,2}~{0,2}T-(\d+(?:\.\d+|[a-z])?)", re.M)
+#: Объявленный пропуск нумерации. Реестр называет номера, которые НЕ присвоены;
+#: без такой строки прибор ловил реестр на его же объявлении: единственные
+#: «ссылки» на T-167..T-169 — это фраза, сообщающая, что их нет.
+SKIP_RE = re.compile(r"^(?:\*\*)?(?:Skipped numbers|Пропущенные номера)[^\n]*", re.M)
 #: Ссылка на теорему: номер с возможным подномером `.k` или буквой.
-REF_RE = re.compile(r"\bT-(\d{1,3})(?:\.\d+|[a-z])?\b")
+#: БУКВА — ЧАСТЬ ИМЕНИ, а не украшение. Прежняя редакция брала только цифры
+#: (`int(m.group(1))`), и потому T-129a была для неё неотличима от T-129: ссылка
+#: на следствие «разрешалась» строкой базовой теоремы, а собственная строка
+#: следствия, даже будь она написана, просто повторно добавляла бы 129. Найдено
+#: это не здесь, а СНАРУЖИ: gateway_lint соседнего корпуса math-foundations
+#: сообщил, что цитируемая им T-129a реестром не покрыта, — своему прибору она
+#: была невидима по построению. После починки в рабочем диапазоне открылось
+#: двенадцать таких имён (38 ссылок), а «T-39 — 129 упоминаний» из шапки этого
+#: файла оказалось суммой T-39 и T-39a, двух разных результатов.
+REF_RE = re.compile(r"\bT-(\d{1,3}(?:\.\d+|[a-z])?)\b")
 # Кириллическая «Т» неотличима на вид от латинской «T», но не совпадает с ней
 # ни в одном сравнении. Ссылок вида «Т-nnn» кириллицей в корпусе было 57 в 29
 # файлах — REF_RE их не видел, и потому они не проверялись на разрешимость
@@ -53,23 +81,37 @@ HOMOGLYPH_RE = re.compile(r"\bТ-(\d{1,3})(?:\.\d+|[a-z])?\b")
 EARLY_BELOW = 50
 
 
-def declared() -> set[int]:
+def base(ident: str) -> int:
+    """Числовая часть имени: `129a` → 129. Порядок — по ней, имя — целиком."""
+    return int(re.match(r"\d+", ident).group())
+
+
+def declared() -> set[str]:
     text = Path(REGISTRY).read_text(encoding="utf-8")
-    return {int(m.group(1)) for m in ROW_RE.finditer(text)}
+    return {m.group(1) for m in ROW_RE.finditer(text)}
+
+
+def skipped() -> set[str]:
+    """Номера, которые реестр объявил непри­своенными."""
+    text = Path(REGISTRY).read_text(encoding="utf-8")
+    out: set[str] = set()
+    for line in SKIP_RE.finditer(text):
+        out |= {m.group(1) for m in re.finditer(r"T-(\d+(?:\.\d+|[a-z])?)", line.group())}
+    return out
 
 
 HOMOGLYPHS: collections.Counter = collections.Counter()
 
 
-def referenced() -> tuple[collections.Counter, dict[int, collections.Counter]]:
+def referenced() -> tuple[collections.Counter, dict[str, collections.Counter]]:
     counts: collections.Counter = collections.Counter()
-    where: dict[int, collections.Counter] = collections.defaultdict(
+    where: dict[str, collections.Counter] = collections.defaultdict(
         collections.Counter)
     for pattern in SOURCES:
         for path in glob.glob(pattern, recursive=True):
             text = mask(Path(path).read_text(encoding="utf-8"))
             for m in REF_RE.finditer(text):
-                n = int(m.group(1))
+                n = m.group(1)
                 counts[n] += 1
                 where[n][path] += 1
             for m in HOMOGLYPH_RE.finditer(text):
@@ -80,12 +122,16 @@ def referenced() -> tuple[collections.Counter, dict[int, collections.Counter]]:
 def main() -> int:
     allow_early = "--allow-early" in sys.argv
     have = declared()
+    skips = skipped()
     refs, where = referenced()
-    lo, hi = min(have), max(have)
-    gaps = [n for n in range(lo, hi + 1) if n not in have]
-    dangling = sorted(n for n in refs if n not in have)
-    early = [n for n in dangling if n < EARLY_BELOW]
-    late = [n for n in dangling if n >= EARLY_BELOW]
+    bases = {base(x) for x in have}
+    lo, hi = min(bases), max(bases)
+    gaps = [n for n in range(lo, hi + 1) if n not in bases]
+    ref_bases = {base(x) for x in refs}
+    dangling = sorted((x for x in refs if x not in have and x not in skips),
+                      key=lambda x: (base(x), x))
+    early = [n for n in dangling if base(n) < EARLY_BELOW]
+    late = [n for n in dangling if base(n) >= EARLY_BELOW]
 
     print(f"реестр: {len(have)} строк, T-{lo}..T-{hi}")
     print(f"корпус ссылается на {len(refs)} различных номеров")
@@ -97,10 +143,11 @@ def main() -> int:
         print("   такая ссылка НЕ ПРОВЕРЯЕТСЯ: она неотличима на вид и не совпадает")
         print("   с латинской ни в одном сравнении — и потому невидима этой проверке")
     if gaps:
-        unused = [n for n in gaps if not refs.get(n)]
-        used = [n for n in gaps if refs.get(n)]
+        skip_bases = {base(x) for x in skips}
+        unused = [n for n in gaps if n not in ref_bases or n in skip_bases]
+        used = [n for n in gaps if n in ref_bases and n not in skip_bases]
         print(f"\nпропуски внутри диапазона: {gaps}")
-        print(f"   из них ни разу не упомянуты (просто неприсвоены): {unused}")
+        print(f"   из них не присвоены (объявлено реестром либо ни разу не упомянуты): {unused}")
         if used:
             print(f"   УПОМЯНУТЫ, но строки нет: {used}")
 
@@ -109,7 +156,7 @@ def main() -> int:
         for n in late:
             top = ", ".join(f"{Path(p).name}×{c}"
                             for p, c in where[n].most_common(3))
-            print(f"   T-{n}  ссылок {refs[n]}  {top}")
+            print(f"   T-{n:<7} ссылок {refs[n]:>3}  {top}")
 
     if early:
         total = sum(refs[n] for n in early)
@@ -117,7 +164,7 @@ def main() -> int:
         for n in early:
             top = ", ".join(f"{Path(p).name}×{c}"
                             for p, c in where[n].most_common(2))
-            print(f"   T-{n:<3} ссылок {refs[n]:>4}  {top}")
+            print(f"   T-{n:<7} ссылок {refs[n]:>4}  {top}")
         print("   Формулировки не восстанавливаются: полного источника нет.")
         print("   Инструмент сообщает, а не сочиняет — выдуманная строка")
         print("   реестра подделала бы полноту вместо того, чтобы её закрыть.")

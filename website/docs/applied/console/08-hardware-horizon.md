@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 title: "08 · The hardware horizon"
-description: "The honest staging of hardware, from measurement gadgets that tighten the estimate to the speculative frontier of directed coherence modulation. What each sensor grade buys, why measurement is a near extension of V1 while modulation is a genuine research frontier, and the hard boundary the theory itself draws — inter-level coupling is gate and rate-modulation, never a written message (T-257a) — which no rig can cross. Every claim tagged; nothing promised the theory cannot license."
+description: "The honest staging of hardware, from measurement gadgets that tighten the estimate to the speculative frontier of directed coherence modulation. What each sensor grade buys, why measurement is a near extension of V1 while modulation is a genuine research frontier, and the hard boundary the theory itself draws — inter-level coupling is gate and rate-modulation, never a written message (T-257) — which no rig can cross. Every claim tagged; nothing promised the theory cannot license."
 ---
 
 # 08 · The hardware horizon
@@ -55,7 +55,7 @@ The user's "measurement gadgets clipped to the body" are precisely the consumer/
 |---|---|---|---|
 | Near — measurement | sensor grades tightening $\widehat\Gamma$ | licensed channels only (T-257) | `[research]`, V1+ |
 | Far — modulation (feedback) | closed-loop neurofeedback on the minimal-intervention target | subject moves the state, not the device | `[speculative]` |
-| Far — modulation (stimulation) | tACS/tFUS rate/gate biasing | gate, not message (T-257a); ethics-gated | `[speculative]` |
+| Far — modulation (stimulation) | tACS/tFUS rate/gate biasing | gate, not message (T-257); ethics-gated | `[speculative]` |
 | Never | state upload / memory write / $\Gamma$ injection | impossible by T-257(a) | out of scope by theorem |
 
 **Where this leads.** [09 · Commercial model](/docs/applied/console/commercial) turns the use-case demand and this capability staging into a market, a business model, and a defensible position.

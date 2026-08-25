@@ -278,7 +278,7 @@ An individual Holon has 7 "ticks". But a composite system of $M$ Holons has $N_{
 
 ---
 
-## The Arrow of Time
+## The Arrow of Time {#t-53c}
 
 Why does time flow "forward" and not "backward"? Why do we remember the past but not the future? In classical physics the arrow of time is a puzzle: the laws are symmetric under time reversal. In UHM the arrow of time is a **structural necessity**.
 

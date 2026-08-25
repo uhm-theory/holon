@@ -99,7 +99,7 @@ The single artifact that makes this suite a specification rather than a brochure
 | Symbolic interop | back-projection; classification (T-256) | [T]+[I] | 04 |
 | Human "why/tasks" reading | archetype + Freedom + $\Gamma^*(\tau)$; birth-refusal | [T] + refusal | 05 |
 | Chronobiology anchor | licensed-channel ledger (T-257) | [T]/[C] | 03, 08 |
-| Modulation horizon | $\mathcal R$; correction; gate-not-message (T-257a) | [speculative]/[T-bound] | 08 |
+| Modulation horizon | $\mathcal R$; correction; gate-not-message (T-257) | [speculative]/[T-bound] | 08 |
 | Every guardrail | optical construction (T-256/T-257) + viability gate | [T]+[I] | 02, 10 |
 
 **Where this leads.** The next document, [02 · The kernel](/docs/applied/console/kernel), turns §3's observables into exact algorithms and the internal API that every domain module calls.

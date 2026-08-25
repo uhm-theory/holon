@@ -510,7 +510,7 @@ which is gauge-invariant, vanishes identically whenever the phase field is a cob
 
 ### Theorem (the explanatory gap is a vanishing covariance) [T] (T-302) {#теорема-разрыв}
 
-By T-295 all fourteen canonical Lindblad operators are diagonal, so on the decohered manifold $\kappa^{\text{coh}}=0$ **exactly**: the environment's stochastic channel has *zero* covariance with the coherence sector. Since the $\varphi$-vector quality lives entirely in that sector (T-301a), an external observer probing the dissipative channel obtains the spectrum — the intensity — and **exactly zero information** about the phase-carried quality.
+By T-295 all fourteen canonical Lindblad operators are diagonal, so on the decohered manifold $\kappa^{\text{coh}}=0$ **exactly**: the environment's stochastic channel has *zero* covariance with the coherence sector. Since the $\varphi$-vector quality lives entirely in that sector (T-301), an external observer probing the dissipative channel obtains the spectrum — the intensity — and **exactly zero information** about the phase-carried quality.
 
 This is the classical "explanatory gap" stated as a theorem rather than a lament. Its content is precise and, importantly, *limited*: the gap is not a gap in the mechanism — the mechanism is fully specified above — but a gap in one particular channel of access. What is impossible is reading quality off the noise an external measurement sees; what is possible is computing it from the state, which is what this theory does.
 
