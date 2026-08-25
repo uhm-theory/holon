@@ -94,9 +94,33 @@ def base(ident: str) -> int:
     return int(re.match(r"\d+", ident).group())
 
 
+#: Второй формат строки реестра: в таблицах «Level 1..6» номер стои́т в столбце
+#: «#» БЕЗ префикса «T-» («| 40b | R_th = 1/3 [T]: …»). Прежняя редакция этого
+#: не знала и потому объявляла беспризорными 177 строк — в том числе пять из
+#: шести номеров, которые аудит успел записать в «опоры без формулировки».
+#: Голое число засчитывается только внутри таблицы, чья шапка начинается с «#»:
+#: иначе счётчик любой другой таблицы сошёл бы за номер теоремы.
 def declared() -> set[str]:
     text = Path(REGISTRY).read_text(encoding="utf-8")
-    return {m.group(1) for m in ROW_RE.finditer(text)}
+    out = {m.group(1) for m in ROW_RE.finditer(text)}
+    numbered_table = False
+    for line in text.split("\n"):
+        if not line.startswith("|"):
+            if line.startswith("#"):
+                numbered_table = False
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if cells and cells[0] in ("#", "№"):
+            numbered_table = True
+            continue
+        if re.match(r"^\|\s*[-: ]+\|", line):
+            continue
+        if numbered_table and cells:
+            m = re.match(r"^\*{0,2}~{0,2}(\d{1,3}(?:\.\d+|[a-z])?)$",
+                         cells[0].strip("*~ "))
+            if m:
+                out.add(m.group(1))
+    return out
 
 
 def skipped() -> set[str]:

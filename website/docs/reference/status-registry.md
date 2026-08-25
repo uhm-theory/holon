@@ -18,13 +18,20 @@ Each UHM result carries one of seven statuses:
 :::
 
 :::warning What this registry does not cover {#ранние-номера}
-**Early numbers (below the registry):** T-1..T-49 — 54 distinct names, 421
-citations, no rows. The rows below run from **T-50** onward. Among the early
-names are load-bearing ones: **T-39a (127 citations)**, T-42a (75), T-48a (25),
-T-42e and T-38a (18 each), T-38b (13), T-39 (12), T-43d (11). These figures were
-recomputed after the checker learned that a letter is part of the name: the
-earlier text here said "T-39 (129 citations)" and was summing T-39 together with
-T-39a, two different results. Their statements are not recoverable in a form fit
+**Early numbers (below the registry):** T-1.1, T-1a, T-2a, T-2f, T-4.2, T-6.1,
+T-8.1, T-11.1, T-11.2, T-48b — ten variant numbers, 23 citations, no rows.
+
+This paragraph has twice said something much worse, and both times the fault was
+in the checker rather than in the registry. It said "twenty-three early numbers,
+T-39 with 129 citations", which was summing T-39 together with T-39a because the
+checker reduced every name to an integer. Corrected for that, it then said
+"T-1..T-49 — 54 distinct names, 421 citations, no rows" — and that was wrong too,
+because the registry writes rows in TWO formats: `| T-129a | …` and, in the Level
+1–6 tables, a bare number in the `#` column (`| 40b | R_th = 1/3 [T] …`). The
+second format carries 177 rows, and a checker that knew only the first reported
+them as missing. Counted correctly, the registry holds **392 rows spanning
+T-1..T-325**, and what actually lacks rows is the ten variant numbers named
+above. Their statements are not recoverable in a form fit
 for this table: no complete source exists, and the numbering of
 `math-foundations` is a *different* one (its T-42 is «G₂ ⊂ SO(7) ⊂ U(7)», while
 the corpus links T-42 to the Uniqueness Theorem of Holonomic Representation).
@@ -32,14 +39,15 @@ Inventing rows would counterfeit exactly the completeness that is missing, so
 the gap is named instead. Reader's practical rule: a `T-n` with `n < 50`
 resolves through the page it links to, not through this table.
 
-**Unstated supports (open debt):** T-4.2, T-11, T-12, T-13, T-40a, T-41e. These six numbers
-are used BY THIS REGISTRY as load-bearing steps — a status raised "to [C at T-4.2]", the
-inference chain "AP → c>0 → T-41b → T-11 → T-12 → T-13", the K = 3 justification "[T-40a,
-40b]", the pointer "see T-41e" — and no statement carrying any of those labels exists
-anywhere in the corpus, including the pages those very links target. This is a different gap
-from the early range: an early number is merely cited, whereas these are leaned on. The debt
-is named rather than papered over, `check_theorem_refs.py` reads this line, and the checker
-turns red again the moment a seventh such number appears.
+**Unstated supports (open debt):** T-4.2. This number is used BY THIS REGISTRY as a
+load-bearing step — a status raised "to [C at T-4.2]" — and no statement carrying that label
+exists anywhere in the corpus. This is a different gap from the early variants: those are
+merely cited, whereas this one is leaned on. `check_theorem_refs.py` reads this line and turns
+red the moment a second such number appears.
+
+An earlier version of this line named six numbers — T-4.2, T-11, T-12, T-13, T-40a, T-41e.
+Five of them do have rows, in the `#`-column format the checker could not yet read. Only
+T-4.2 stands.
 
 **Skipped numbers (never assigned):** T-167, T-168, T-169. They carry no row and
 are cited nowhere; the numbering simply skips them. This line is machine-read by
