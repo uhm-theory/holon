@@ -233,7 +233,7 @@ G-отображение — **не** уникальная проблема УГ
 | Уровень | Объект | Самомоделирование | Предел рекурсии |
 |---|---|---|---|
 | **Голоном** | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$ | SAD_MAX = 3 (Фано-контракция) |
-| **Теория** | $\mathrm{Th}_{\text{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ (T-55, неполнота Ловера) |
+| **Теория** | $\mathrm{Th}_{\text{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ (T-55, неполнота Лоувера) |
 | **Бимодуль** | $H_F$ как $(A, A^\circ)$-бимодуль | $J: H_F \to H_F$ (реальная структура) | $J^2 = +1$ (KO-dim 6) |
 
 На каждом уровне:

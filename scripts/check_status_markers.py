@@ -36,8 +36,12 @@ from status_markers import (  # noqa: E402
 )
 
 LOCALES = {
-    "en": "docs/**/*.md*",
-    "ru": "i18n/ru/docusaurus-plugin-content-docs/current/**/*.md*",
+    # Пути от каталога скрипта: из чужого каталога прибор находил НОЛЬ файлов
+    # и рапортовал «подозрительные: 0» — ноль дефектов при нулевом знаменателе
+    # есть не чистота, а молчание. Ниже добавлена и проверка знаменателя.
+    "en": str(Path(__file__).resolve().parent.parent / "website" / "docs" / "**" / "*.md*"),
+    "ru": str(Path(__file__).resolve().parent.parent / "website" / "i18n" / "ru"
+              / "docusaurus-plugin-content-docs" / "current" / "**" / "*.md*"),
 }
 # `[X]`, не являющееся ссылкой `[X](…)` и не определением ссылки `[X]:`
 MARKER_RE = re.compile(r"\[([A-ZА-ЯЁ✗])\](?![(:])")
@@ -167,9 +171,16 @@ def main() -> int:
 
     grand = {"чужая локаль": 0, "подозрительное": 0, "квалифицированный": 0}
     touched = 0
+    scanned = 0
     for locale, pattern in LOCALES.items():
         files = sorted(glob.glob(pattern, recursive=True))
+        # Знаменатель обязан быть назван: «0 дефектов» при 0 просмотренных файлов
+        # неотличимо от чистоты, и именно так прибор молчал, запущенный не оттуда.
+        if not files:
+            print(f"ОШИБКА: локаль {locale} — не найдено НИ ОДНОГО файла по {pattern}")
+            return 1
         per_locale = []
+        scanned += len(files)
         for path in files:
             hits = scan(path, locale)
             if hits:
@@ -192,7 +203,8 @@ def main() -> int:
             for path, _ in per_locale:
                 touched += apply_fix(path, locale, kinds)
 
-    print(f"\nчужая локаль: {grand['чужая локаль']}   "
+    print(f"\nпросмотрено файлов: {scanned}   "
+          f"чужая локаль: {grand['чужая локаль']}   "
           f"квалифицированные: {grand['квалифицированный']}   "
           f"подозрительные: {grand['подозрительное']}")
     if kinds:

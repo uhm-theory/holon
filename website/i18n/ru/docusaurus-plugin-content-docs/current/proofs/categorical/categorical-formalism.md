@@ -2820,7 +2820,7 @@ $$
 
 ### 16.2 Категориальная неполнота
 
-По теореме Ловера о неподвижной точке для декартово замкнутой ∞-категории $\mathrm{Sh}_\infty(\mathcal{C})$ (HTT, Prop. 6.1.0.6):
+По теореме Лоувера о неподвижной точке для декартово замкнутой ∞-категории $\mathrm{Sh}_\infty(\mathcal{C})$ (HTT, Prop. 6.1.0.6):
 
 $$
 \mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega
@@ -2930,4 +2930,4 @@ $$L_n \cong \|\mathbf{Exp}_\infty\|_n$$
 - [Протокол измерения Γ](/docs/applied/research/measurement-protocol) — операционализация для ИИ
 - [Физическое соответствие — Запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — полные доказательства NS1-NS3
 - [Трудная проблема — Феноменальный функтор](/docs/consciousness/foundations/two-aspect-monism#структурная-необходимость) — единственность FV и реляционная идентичность квалиа
-- [Следствия — самореферентное замыкание](/docs/core/foundations/consequences#самореферентное-замыкание) — Th_UHM = Sub_closed(Ω), неполнота Ловера, структурная ToE (T-54–T-56)
+- [Следствия — самореферентное замыкание](/docs/core/foundations/consequences#самореферентное-замыкание) — Th_UHM = Sub_closed(Ω), неполнота Лоувера, структурная ToE (T-54–T-56)

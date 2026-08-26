@@ -289,7 +289,7 @@ $$
 Тогда $\Lambda_{\text{obs}} = 8\pi G_N \cdot \rho_{\text{vac}}(T) > 0$. $\blacksquare$
 :::
 
-:::info Связь с неполнотой Ловера
+:::info Связь с неполнотой Лоувера
 Из [T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]: $\text{Th}_{\text{UHM}} \subsetneq \Omega$ — неполнота самомоделирования порождает информационный зазор $\|\Gamma - \varphi(\Gamma)\| > 0$, энергетический эквивалент которого — $\rho_{\text{vac}} > 0$. Полное доказательство: [Следствия из аксиом](/docs/core/foundations/consequences#теорема-лямбда-положительна).
 :::
 

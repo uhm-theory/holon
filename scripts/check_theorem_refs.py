@@ -53,8 +53,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_status_markers import mask  # noqa: E402
 
-REGISTRY = "docs/reference/status-registry.md"
-SOURCES = ["docs/**/*.md*"]
+# Пути считаются от каталога скрипта, а не от текущего: прибор, работающий
+# только из website/ и падающий трассировкой из корня, проверяет не корпус,
+# а привычку запускающего. Собственный каталог у скрипта есть всегда.
+_SITE = Path(__file__).resolve().parent.parent / "website"
+REGISTRY = str(_SITE / "docs" / "reference" / "status-registry.md")
+SOURCES = [str(_SITE / "docs" / "**" / "*.md*")]
 #: Строка реестра: `| T-123 | …` или `| T-123a | …` — возможно, жирная и/или зачёркнутая.
 ROW_RE = re.compile(r"^\|\s*\*{0,2}~{0,2}T-(\d+(?:\.\d+|[a-z])?)", re.M)
 #: Объявленный пропуск нумерации. Реестр называет номера, которые НЕ присвоены;
