@@ -323,6 +323,48 @@ def main() -> int:
     if self_seen == 0:
         print("  ПУСТО: ни одной заявки не найдено — шаблоны разошлись с текстом")
         self_bad.append(("—", "знаменатель пуст", 0, 1))
+    # --- ОДИН НОМЕР — ОДНА ФОРМУЛИРОВКА ---
+    # Реестр пишет строки в нескольких таблицах, и нумерация у них СКВОЗНАЯ:
+    # Level 1 идёт 1..48 с буквенными вариантами, Level 2 продолжает 39..52,
+    # Level 3 — 53..90. Оттого номера 39..52 стоя́т сразу в двух живых таблицах
+    # под РАЗНЫМИ формулировками, и цитата такого номера двусмысленна: читатель
+    # не знает, на какую из двух он сослался. Прибор не решает, какая верна —
+    # это дело автора корпуса, — но обязан назвать число и не дать ему расти
+    # молча. Зачёркнутые строки и раздел снятых результатов не в счёт: там
+    # переиспользование номера объявлено.
+    coll = collections.defaultdict(list)
+    _regt = Path(REGISTRY).read_text(encoding="utf-8")
+    sec = ""
+    for i, line in enumerate(_regt.split("\n"), 1):
+        if line.startswith("#"):
+            sec = line.strip("# ").strip()
+        if not line.startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if not cells or not re.fullmatch(r"~{0,2}(T-)?\d{1,3}[a-z]?~{0,2}", cells[0]):
+            continue
+        struck = cells[0].startswith("~~") or (len(cells) > 1 and cells[1].startswith("~~"))
+        if struck or "Retracted" in sec:
+            continue
+        body = re.sub(r"[^a-zа-я0-9]", "", (cells[1] if len(cells) > 1 else "").lower())[:60]
+        coll[cells[0].strip("~").replace("T-", "")].append(body)
+    collided = sorted(k for k, v in coll.items() if len(set(v)) > 1)
+    #: Объявление читается на ОБЕИХ локалях: реестр английский, его перевод
+    #: русский, и число обязано стоять в обоих — иначе локали разойдутся молча.
+    DECL = re.compile(r"\*\*(\d{1,3})\*\* (?:номеров несут по две живые строки"
+                      r"|numbers carry two live rows)")
+    said = DECL.search(_regt)
+    print(f"один номер — одна формулировка: столкновений {len(collided)}"
+          + (f"; объявлено {said.group(1)}" if said else "; в реестре не объявлено"))
+    if not said:
+        print("  реестр обязан назвать это число сам — молчание успехом не считается")
+        self_bad.append((REGISTRY, "столкновения не объявлены", len(collided), "—"))
+    elif int(said.group(1)) != len(collided):
+        print(f"  РАСХОЖДЕНИЕ: объявлено {said.group(1)}, посчитано {len(collided)}")
+        self_bad.append((REGISTRY, "столкновения", int(said.group(1)), len(collided)))
+    else:
+        print(f"  первые: {', '.join('T-' + k for k in collided[:8])}")
+
     if self_bad:
         return 1
     return 0

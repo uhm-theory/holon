@@ -39,6 +39,21 @@ Inventing rows would counterfeit exactly the completeness that is missing, so
 the gap is named instead. Reader's practical rule: a `T-n` with `n < 50`
 resolves through the page it links to, not through this table.
 
+**One number, two statements (open debt).** The registry writes rows in several tables, and
+their numbering is *continuous*: Level 1 runs 1..48 with lettered variants, Level 2 continues
+39..52, Level 3 continues 53..90. Because of that, **60** numbers carry two live rows with
+different statements — 18 across Level 1 and Level 3, 14 across the Universal-Property table
+and the main registry, 7 across Level 1 and Level 6, and so on. A citation of such a number is
+ambiguous: the reader cannot tell which of the two rows was meant. Struck-through rows and the
+Retracted section are not counted — there the reuse of a number is declared.
+
+The number is measured by `scripts/check_theorem_refs.py` on every run and must match the one
+written here; the checker deliberately does *not* decide which row is right, because renumbering
+is the author's call and propagates into every citation. A worked example of the cost: critical
+purity $P_{\text{crit}} = 2/7$ appears as row 5 of Level 1, is called `T-39a` in a code comment
+on its own proof page, and appears as `T-39` in a format example inside a fenced block. Three
+numbers for one theorem, none of them wrong locally.
+
 **Unstated supports (open debt):** T-4.2. This number is used BY THIS REGISTRY as a
 load-bearing step — a status raised "to [C at T-4.2]" — and no statement carrying that label
 exists anywhere in the corpus. This is a different gap from the early variants: those are
