@@ -517,7 +517,7 @@ The **mathematical claims** being tested are all [T] (proven theorems of UHM). T
 
 **Claim under test.** No-Zombie Theorem 8.1: viable system necessarily has $\mathrm{Coh}_E > 1/7$ ([theorems.md#теорема-81](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie)).
 
-**Protocol.** Take two SYNARC agents with identical initial $\Gamma_0$. In agent A2, ablate all E-coherences: $\gamma_{Ej}(0) = \gamma_{jE}(0) = 0$ for all $j \ne E$. Run minimal model $\mathcal M_\min$ ([Q6 protocol S2](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie)) for $\tau \in [0, 100\,\omega_0^{-1}]$ at $\gamma > \gamma_\mathrm{th}$.
+**Protocol.** Take two SYNARC agents with identical initial $\Gamma_0$. In agent A2, ablate all E-coherences: $\gamma_{Ej}(0) = \gamma_{jE}(0) = 0$ for all $j \ne E$. Run minimal model $\mathcal M_{\min}$ ([Q6 protocol S2](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie)) for $\tau \in [0, 100\,\omega_0^{-1}]$ at $\gamma > \gamma_\mathrm{th}$.
 
 **Pass criterion.** A1 stable with $P > 2/7$; A2 decays with $P(\tau) \to 1/7$ exponentially.
 
@@ -529,7 +529,7 @@ The **mathematical claims** being tested are all [T] (proven theorems of UHM). T
 
 **Claim under test.** Tricritical mean-field exponents [Theorem 5.2](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты), exact via Thom-Arnold $A_4$ rigidity ([Q4 mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности)).
 
-**Protocol.** Build agent at $N=7$, vary control parameter $\sigma_\max$ near critical $\sigma_c$. Measure order-parameter $m = \mathrm{Coh}_E - 1/7$ at each $\sigma$. Fit $m \sim |\sigma_c - \sigma|^\beta$.
+**Protocol.** Build agent at $N=7$, vary control parameter $\sigma_{\max}$ near critical $\sigma_c$. Measure order-parameter $m = \mathrm{Coh}_E - 1/7$ at each $\sigma$. Fit $m \sim |\sigma_c - \sigma|^\beta$.
 
 **Pass criterion.** $\beta = 1/4 \pm 0.05$ (95% CI). Independently verify Rushbrooke $\alpha + 2\beta + \gamma = 2$.
 

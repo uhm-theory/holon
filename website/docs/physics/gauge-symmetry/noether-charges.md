@@ -389,7 +389,9 @@ where $V_7$ is the 7-dimensional fundamental representation, $\mathfrak{g}_2$ is
 
 **Minimal polynomial and Cayley–Hamilton relation.** Since $F_{21}$ has exactly two distinct eigenvalues $2$ and $-1$:
 
-$$\boxed{F_{21}^2 = F_{21} + 2\,I_{21}} \tag{CH}$$
+$$
+\boxed{F_{21}^2 = F_{21} + 2\,I_{21}} \tag{CH}
+$$
 
 This relation is an algebraic fact following from the Fano structure BIBD$(7,3,1)$.
 

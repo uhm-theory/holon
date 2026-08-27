@@ -453,7 +453,7 @@ These results depend only on the spectrum of $\Gamma$, on combinatorial/algebrai
 | $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ | Spectral function, no metric input | [Viability](/docs/core/dynamics/viability) |
 | $P_\mathrm{crit} = 2/N = 2/7$ | Five independent derivations, all use spectral arithmetic alone | [Q3 / theorem-purity-critical.md](/docs/proofs/dynamics/theorem-purity-critical) |
 | $\mathrm{Spec}(\Gamma) = \{\lambda_k\}$ | Unitarily invariant | Standard |
-| $\omega_0 = \lambda_\min(H_\mathrm{eff})$ | Spectral property of $H_\mathrm{eff}$ | [Axiom Ω⁷ A4](/docs/core/foundations/axiom-omega) |
+| $\omega_0 = \lambda_{\min}(H_\mathrm{eff})$ | Spectral property of $H_\mathrm{eff}$ | [Axiom Ω⁷ A4](/docs/core/foundations/axiom-omega) |
 | $N = 7$ | Hurwitz + Adams + Hall (combinatorial-algebraic) | [Q7 / theorem-octonionic-derivation.md](/docs/proofs/minimality/theorem-octonionic-derivation) |
 | $G_2 = \mathrm{Aut}(\mathbb O)$, $\dim G_2 = 14$ | Algebraic structure of octonions | [§1.6](/docs/proofs/minimality/theorem-octonionic-derivation#группа-g2) |
 | $K = 3$ triadic decomposition | Structure of Lindblad operators on $\mathfrak{su}(7)$ | [T-40b](/docs/core/operators/lindblad-operators#триадная-декомпозиция) |

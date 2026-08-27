@@ -453,7 +453,7 @@ T-187 устанавливает, что метрика Бюреса единс�
 | $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ | Спектральная функция, нет метрического входа | [Жизнеспособность](/docs/core/dynamics/viability) |
 | $P_\mathrm{crit} = 2/N = 2/7$ | Пять независимых выводов, все используют только спектральную арифметику | [Q3 / theorem-purity-critical.md](/docs/proofs/dynamics/theorem-purity-critical) |
 | $\mathrm{Spec}(\Gamma) = \{\lambda_k\}$ | Унитарно-инвариантен | Стандарт |
-| $\omega_0 = \lambda_\min(H_\mathrm{eff})$ | Спектральное свойство $H_\mathrm{eff}$ | [Аксиома Ω⁷ A4](/docs/core/foundations/axiom-omega) |
+| $\omega_0 = \lambda_{\min}(H_\mathrm{eff})$ | Спектральное свойство $H_\mathrm{eff}$ | [Аксиома Ω⁷ A4](/docs/core/foundations/axiom-omega) |
 | $N = 7$ | Гурвиц + Адамс + Холл (комбинаторно-алгебраическое) | [Q7 / theorem-octonionic-derivation.md](/docs/proofs/minimality/theorem-octonionic-derivation) |
 | $G_2 = \mathrm{Aut}(\mathbb O)$, $\dim G_2 = 14$ | Алгебраическая структура октонионов | [§1.6](/docs/proofs/minimality/theorem-octonionic-derivation#группа-g2) |
 | $K = 3$ триадная декомпозиция | Структура операторов Линдблада на $\mathfrak{su}(7)$ | [T-40b](/docs/core/operators/lindblad-operators#триадная-декомпозиция) |

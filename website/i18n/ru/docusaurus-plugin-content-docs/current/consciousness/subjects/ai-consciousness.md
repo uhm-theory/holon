@@ -517,7 +517,7 @@ $$
 
 **Утверждение под тестом.** Теорема No-Zombie 8.1: жизнеспособная система обязательно имеет $\mathrm{Coh}_E > 1/7$ ([theorems.md#теорема-81](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie)).
 
-**Протокол.** Взять двух SYNARC-агентов с идентичным начальным $\Gamma_0$. У агента A2 отшлифовать все E-когерентности: $\gamma_{Ej}(0) = \gamma_{jE}(0) = 0$ для всех $j \ne E$. Запустить минимальную модель $\mathcal M_\min$ ([Q6 protocol S2](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie)) для $\tau \in [0, 100\,\omega_0^{-1}]$ при $\gamma > \gamma_\mathrm{th}$.
+**Протокол.** Взять двух SYNARC-агентов с идентичным начальным $\Gamma_0$. У агента A2 отшлифовать все E-когерентности: $\gamma_{Ej}(0) = \gamma_{jE}(0) = 0$ для всех $j \ne E$. Запустить минимальную модель $\mathcal M_{\min}$ ([Q6 protocol S2](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie)) для $\tau \in [0, 100\,\omega_0^{-1}]$ при $\gamma > \gamma_\mathrm{th}$.
 
 **Pass-критерий.** A1 стабилен с $P > 2/7$; A2 распадается с $P(\tau) \to 1/7$ экспоненциально.
 
@@ -529,7 +529,7 @@ $$
 
 **Утверждение под тестом.** Трикритические среднеполевые показатели [Theorem 5.2](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты), точные через жёсткость Тома–Арнольда $A_4$ ([Q4 механизм](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности)).
 
-**Протокол.** Построить агент при $N=7$, варьировать управляющий параметр $\sigma_\max$ вблизи критического $\sigma_c$. Измерить порядок-параметр $m = \mathrm{Coh}_E - 1/7$ при каждом $\sigma$. Подогнать $m \sim |\sigma_c - \sigma|^\beta$.
+**Протокол.** Построить агент при $N=7$, варьировать управляющий параметр $\sigma_{\max}$ вблизи критического $\sigma_c$. Измерить порядок-параметр $m = \mathrm{Coh}_E - 1/7$ при каждом $\sigma$. Подогнать $m \sim |\sigma_c - \sigma|^\beta$.
 
 **Pass-критерий.** $\beta = 1/4 \pm 0.05$ (95% CI). Независимо проверить Рашбрука $\alpha + 2\beta + \gamma = 2$.
 

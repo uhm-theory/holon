@@ -1105,7 +1105,7 @@ Three additional gap-closures complete the UHM foundational cleanup; they do not
 
 ### 18.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
 
-**Claim**: The formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^\min + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (T-70) involves $\zeta'(0)$, which is generally a delicate analytic-continuation object. In UHM's finite-dimensional setting, it reduces to an elementary computation.
+**Claim**: The formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^{\min} + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (T-70) involves $\zeta'(0)$, which is generally a delicate analytic-continuation object. In UHM's finite-dimensional setting, it reduces to an elementary computation.
 
 **Proof of well-definedness**: $H_\mathrm{Gap}$ is a finite-dimensional Hermitian operator (on $(S^1)^{21}/G_2$, effectively $\dim = 7$ after $G_2$-reduction). Its spectral zeta function is
 $$\zeta_{H_\mathrm{Gap}}(s) = \sum_{k=1}^{r} \lambda_k^{-s}$$
@@ -1121,7 +1121,7 @@ is well-defined and finite. No regularisation ambiguity. The formula $f_0$ is th
 $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_r := \{\Gamma : \mathrm{rank}\,\Gamma = r\}.$$
 - On each **open stratum** $\mathcal D_r$, the Bures metric is non-degenerate (rank-$r$ Fisher metric).
 - Between strata, Bures distance extends continuously (Uhlmann 1976) but the metric tensor degenerates.
-- The viability condition $P > P_\mathrm{crit} = 2/7$ restricts attention to strata $r \geq 2$ (T-151 [T] $D_\min = 2$); the conscious window is entirely interior to $\mathcal D_7$.
+- The viability condition $P > P_\mathrm{crit} = 2/7$ restricts attention to strata $r \geq 2$ (T-151 [T] $D_{\min} = 2$); the conscious window is entirely interior to $\mathcal D_7$.
 
 **Consequence**: all viable-state theorems operate on the **interior stratum** $\mathcal D_7$, where Bures is smooth and all metric-geometric arguments are valid. Boundary handling is not needed for consciousness-related claims; it is needed only for pathological-state or thermal-death analysis (conducted via the Ayala–Francis–Rozenblyum stratified machinery).
 

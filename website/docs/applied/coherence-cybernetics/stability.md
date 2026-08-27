@@ -244,7 +244,7 @@ The ingredients are exact: $\left.\frac{da}{dP}\right|_{2/7} = \frac{\sqrt6}{2}$
 
 **Step 5 — a cheap runtime formula, accurate to 1%.** Minimising over the shell at
 every tick is not practical. The *radial Frobenius* distance to the shell needs no
-optimisation at all: since $\|\Gam - I/7\|_F = \sqrt{P - 1/7}$ exactly (an
+optimisation at all: since $\|\Gamma - I/7\|_F = \sqrt{P - 1/7}$ exactly (an
 identity), the shell $\{P=2/7\}$ is the Frobenius sphere of radius $\sqrt{1/7}$
 about $I/7$, so the radial distance to it is $\sqrt{P-1/7} - \sqrt{1/7}$. Rescaling
 by the exact wall-limit ratio of the two coefficients,
