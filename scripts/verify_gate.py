@@ -16,7 +16,8 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-TOOLS = ["check_theorem_refs.py", "check_status_markers.py", "natal_startup_verify.py"]
+TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
+         "check_mixed_names.py", "natal_startup_verify.py"]
 
 
 def main() -> int:
