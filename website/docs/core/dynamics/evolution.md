@@ -719,7 +719,7 @@ For $\varphi(\Gamma) \approx \Gamma^*$ (fixed point almost reached):
 - $d_B^2(\Gamma, I/7) \approx 2(1 - 1/\sqrt{7P})$ for diagonal $\Gamma$
 - $\Delta F \approx d_B^2(\Gamma, I/7) \propto P - 1/7 \approx P_{\text{eq}} - P$
 
-**Status [Т]:** Each limiting case is derived from the canonical Bures definition $\Delta F = d_B^2(\Gamma, \Gamma_{\text{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))$ via standard approximations (linear response, small-deviation expansion of fidelity). The approximations are controlled: for cases 1, 3, 4 the error is $O(\|\delta\Gamma\|^3)$ (cubic in deviation); case 2 is exact dimensional analysis. The canonical definition (Bures) subsumes all four limits and is therefore the unique master definition.
+**Status [T]:** Each limiting case is derived from the canonical Bures definition $\Delta F = d_B^2(\Gamma, \Gamma_{\text{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))$ via standard approximations (linear response, small-deviation expansion of fidelity). The approximations are controlled: for cases 1, 3, 4 the error is $O(\|\delta\Gamma\|^3)$ (cubic in deviation); case 2 is exact dimensional analysis. The canonical definition (Bures) subsumes all four limits and is therefore the unique master definition.
 
 </details>
 
@@ -955,7 +955,7 @@ By [T-157 [T]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\O
 
 ### Genesis through environmental adjunction {#генезис-средовое-сопряжение}
 
-:::tip T-148 [Т]: Consciousness requires embodiment
+:::tip T-148 [T]: Consciousness requires embodiment
 An **isolated holon** at $\Gamma = I/7$ remains dead forever: $g_V(1/7) = 0$, $\mathcal{R} = 0$ (T-39a [T]). An **embodied holon** with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$. Detailed proof: [T-148](/docs/proofs/consciousness/substrate-closure#t-148).
 :::
 
@@ -965,7 +965,7 @@ An **isolated holon** at $\Gamma = I/7$ remains dead forever: $g_V(1/7) = 0$, $\
 Despite the nonlinearity, the full evolution equation **preserves positivity** $\Gamma \geq 0$ and normalization $\mathrm{Tr}(\Gamma) = 1$.
 :::
 
-**Interpolation formulation [Т]:**
+**Interpolation formulation [T]:**
 
 :::info Corollary of CPTP uniqueness
 The interpolation formulation is **not an ansatz** but a **consequence** of the theorem on uniqueness of linear CPTP relaxation: the replacement channel $T_\alpha(\Gamma) = (1-\alpha)\Gamma + \alpha\rho_*$ is the unique CPTP channel of the form $(1-\alpha)\mathrm{Id} + \alpha\mathcal{C}$ with $\mathcal{C}(\rho_*) = \rho_*$. See [§ Derivation of the regeneration form](#вывод-формы-регенерации).
@@ -1700,9 +1700,9 @@ See [Spacetime](../foundations/spacetime#стрела-времени) for geomet
 :::info Octonionic non-associativity and dynamics [I]
 In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), non-associativity of $\mathbb{O}$ formalizes a key property of the dynamics: the result of successive transformations depends on the order of grouping.
 
-**Associator** $[x, y, z] := (xy)z - x(yz)$ — a measure of non-associativity — vanishes for any pair of elements (Artin's theorem [Т]: $\mathbb{O}$ is **alternative**), but is nonzero for triples.
+**Associator** $[x, y, z] := (xy)z - x(yz)$ — a measure of non-associativity — vanishes for any pair of elements (Artin's theorem [T]: $\mathbb{O}$ is **alternative**), but is nonzero for triples.
 
-**Consequences [И]:**
+**Consequences [I]:**
 - **Alternativity:** Pairwise interactions of dimensions are associative, triple ones are not
 - **Moufang identities:** $((xy)z)y = x(y(zy))$ and analogues — structural constraints on dynamics
 - Bridge [T] (closed, T15)

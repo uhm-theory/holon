@@ -463,7 +463,7 @@ $$
 
 3. **Maximal dimension.** For a 3-manifold, the maximum isometry-group dimension is $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (attained only on spaces of constant curvature). Hence $\mathrm{Isom}(\Sigma^3)$ has exactly the maximal dimension 6, and $\Sigma^3$ is a space of constant curvature.
 
-4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [T], T-186(c) [Т]: $\Delta F > 0$ unconditionally) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$.
+4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [T], T-186(c) [T]: $\Delta F > 0$ unconditionally) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$.
 
 5. **Uniqueness (up to spherical space form).** Constant positive curvature + $\dim\mathrm{Isom}=6$ singles out the round metric; the **simply-connected** such 3-manifold is $S^3$ ($\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). If $\pi_1(\Sigma^3)\neq 1$, $\Sigma^3$ could be a spherical space form $S^3/\Gamma$ (e.g. $\mathbb{RP}^3=S^3/\mathbb{Z}_2$, which also has $\dim\mathrm{Isom}=6$). The vacuum's simple-connectivity — from the contractibility of the Gap configuration space (T-64 unique vacuum + $H^1=0$) — selects $\Sigma^3\cong S^3$. $\blacksquare$
 

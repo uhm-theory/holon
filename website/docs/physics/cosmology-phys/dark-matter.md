@@ -20,7 +20,7 @@ Gap theory provides a systematic framework for analysing dark matter candidates.
 
 ## 1. Criteria for a Candidate
 
-From observations (Planck 2018): $\Omega_{\mathrm{DM}} h^2 = 0.120 \pm 0.001$. A candidate must satisfy [O]:
+From observations (Planck 2018): $\Omega_{\mathrm{DM}} h^2 = 0.120 \pm 0.001$. A candidate must satisfy [D]:
 
 1. Electric neutrality and absence of colour charge
 2. Stability ($\tau \gg t_{\mathrm{Universe}} \sim 10^{10}$ yr)

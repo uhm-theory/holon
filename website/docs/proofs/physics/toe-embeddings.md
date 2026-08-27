@@ -552,7 +552,7 @@ Satisfaction of axioms (A1)-(A4) means that $A_{\text{Fano}}$ **is** a spin foam
 
 **Status:** [T] for axioms (A1)-(A4).
 
-**Remains [С]:** convergence to classical geometry in the semi-classical limit $j \to \infty$. This limit gives the Wigner asymptotic of 3$j$-symbols:
+**Remains [C]:** convergence to classical geometry in the semi-classical limit $j \to \infty$. This limit gives the Wigner asymptotic of 3$j$-symbols:
 
 $$
 \begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \sim \frac{1}{\sqrt{24\pi V_{\text{tet}}}} \cos\left(S_{\text{Regge}} + \frac{\pi}{4}\right) \quad \text{(Ponzano-Regge 1968)},
@@ -866,7 +866,7 @@ $$
 
 **Lemma 2.** $E[A_{\text{int}}] \simeq \mathrm{Sh}_\infty(\mathcal{C}, J_{\text{Bures}})$, where $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$.
 
-*Proof of Lemma 2.* The algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ has finite-dimensional irreducible representations $\mathbf{1}, \mathbf{3}, \bar{\mathbf{3}}$, realized on $\mathbb{C}, \mathbb{C}^3, \mathbb{C}^3$. The general representation: $\mathbb{C} \oplus \mathbb{C}^3 \oplus \mathbb{C}^3 = \mathbb{C}^7$. By T-53 [Т]:
+*Proof of Lemma 2.* The algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ has finite-dimensional irreducible representations $\mathbf{1}, \mathbf{3}, \bar{\mathbf{3}}$, realized on $\mathbb{C}, \mathbb{C}^3, \mathbb{C}^3$. The general representation: $\mathbb{C} \oplus \mathbb{C}^3 \oplus \mathbb{C}^3 = \mathbb{C}^7$. By T-53 [T]:
 
 $$
 \mathrm{Mod}(A_{\text{int}}) \simeq \mathcal{D}(\mathbb{C}^7) \quad \text{(as categories)}.

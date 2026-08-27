@@ -587,12 +587,12 @@ The entire chain is closed: every coefficient is determined via $\theta^*$ ([T-7
 
 Full chain for determining $\Lambda_{\text{CC}}$:
 
-1. **Zeta regularization** [Т]: $Z_\Phi(-2) = 0$ — winding contribution cancelled
+1. **Zeta regularization** [T]: $Z_\Phi(-2) = 0$ — winding contribution cancelled
 2. **$\Lambda > 0$ from autopoiesis** ([T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) [T]): sign determined structurally
 3. **O-sector dominance** ([](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [T]): $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$
 4. **Spectral formula** ([](#теорема-спектральная-лямбда) [T]): $\Lambda_{\text{CC}}$ via $\mathrm{Tr}(D_{\text{int}}^n)$
 5. **Canonical $f_0$** ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [T]): parameter determined from UV finiteness
-6. **SUSY compensation** [Т]: $\varepsilon^{12}$ from spectral action
+6. **SUSY compensation** [T]: $\varepsilon^{12}$ from spectral action
 
 No coefficient contains free parameters — all are determined via the fixed point $\theta^*$ of the self-consistent map $\mathcal{F}$ (T-79 [T]). Status C18: **structural formula [T]**, numerical precision — computational problem.
 

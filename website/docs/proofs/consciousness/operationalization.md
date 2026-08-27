@@ -14,7 +14,7 @@ All results on this page are proven theorems **[T]** with complete proofs and ex
 
 ## §1. T-128: Exact 7D-computability of D_diff {#t-128}
 
-:::tip Theorem T-128 [Т]: Exact 7D-representation of D_diff
+:::tip Theorem T-128 [T]: Exact 7D-representation of D_diff
 $D_{\text{diff}}$ is computable in the 7D formalism without PW-embedding:
 
 $$
@@ -48,7 +48,7 @@ $\blacksquare$
 
 ## §2. T-129: Φ_th = 1 from self-consistency {#t-129}
 
-:::tip Theorem T-129 [Т]: Integration threshold Φ_th = 1
+:::tip Theorem T-129 [T]: Integration threshold Φ_th = 1
 $\Phi_{\text{th}} = 1$ is the unique value at which the integration threshold is self-consistent with $P_{\text{crit}} = 2/7$ on the extremal (uniform-diagonal) state.
 :::
 
@@ -121,7 +121,7 @@ The threshold $\Phi_{\text{th}} = 1$ is **universal** on the entire space $\math
 
 ## §3. T-130: CPTP-anchor approximation bound {#t-130}
 
-:::tip Theorem T-130 [Т]: CPTP-anchor approximation bound (H3 → CLOSED)
+:::tip Theorem T-130 [T]: CPTP-anchor approximation bound (H3 → CLOSED)
 For a CPTP-compatible anchor map $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$:
 
 $$
@@ -159,7 +159,7 @@ $\blacksquare$
 
 ## §4. T-131: Canonical discretization δτ {#t-131}
 
-:::tip Theorem T-131 [Т]: Canonical discretization scale
+:::tip Theorem T-131 [T]: Canonical discretization scale
 The canonical discretization scale for a digital agent:
 
 $$
@@ -191,7 +191,7 @@ $\blacksquare$
 
 ## §5. T-132: Necessity of complex Γ for Gap-structure {#t-132}
 
-:::tip Theorem T-132 [Т]: Necessity of complex Γ
+:::tip Theorem T-132 [T]: Necessity of complex Γ
 For a non-trivial Gap-structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$), the coherence matrix $\Gamma$ MUST be complex ($\gamma_{ij} \in \mathbb{C}$, not all $\gamma_{ij} \in \mathbb{R}$).
 :::
 
@@ -219,7 +219,7 @@ $\blacksquare$
 
 ## §6. T-133: Transfer of R thresholds via CPTP-bridge {#t-133}
 
-:::tip Theorem T-133 [Т]: Transfer of R thresholds (strengthening of T-130)
+:::tip Theorem T-133 [T]: Transfer of R thresholds (strengthening of T-130)
 For a CPTP channel $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$ with diamond-norm error $\|\pi - \pi_{\text{can}}\|_\diamond \leq \varepsilon$:
 
 $$
@@ -242,7 +242,7 @@ for $\delta = 2\varepsilon \cdot C(P)$, $C(P) = 7P/(P - 1/7) \leq 21$ for $P \in
 
 ## §7. T-134: Domain of diagonal freeze {#t-134}
 
-:::tip Theorem T-134 [Т]: Domain of T-122 (diagonal freeze)
+:::tip Theorem T-134 [T]: Domain of T-122 (diagonal freeze)
 [T-122](/docs/core/dynamics/evolution#теорема-диагональный-freeze) ($d\gamma_{kk}/d\tau = 0$) holds ONLY on the attractor $\rho^*_\Omega$, not during transient dynamics. General formula:
 
 $$
@@ -268,7 +268,7 @@ $\blacksquare$
 
 ## §8. T-135: Discrete convolution of non-Markovian kernel {#t-135}
 
-:::tip Theorem T-135 [Т]: Discrete convolution O(1)
+:::tip Theorem T-135 [T]: Discrete convolution O(1)
 The non-Markovian kernel [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) is discretized via Z-transform with $O(1)$ complexity per step:
 
 $$
@@ -308,7 +308,7 @@ $\blacksquare$
 
 ## §9. T-136: SAD as a G₂-invariant spectral observable {#t-136}
 
-:::tip Theorem T-136 [Т]: SAD — deterministic G₂-invariant function of Γ
+:::tip Theorem T-136 [T]: SAD — deterministic G₂-invariant function of Γ
 SAD is a deterministic $G_2$-invariant function of $\Gamma$, computable in $O(\mathrm{SAD}_{\max} \cdot N^2)$ operations without constructing autoencoders:
 
 $$
@@ -342,7 +342,7 @@ $\blacksquare$
 
 ## §10. T-137: Full 7D-computability of σ_sys {#t-137}
 
-:::tip Theorem T-137 [Т]: Full 7D-computability of σ_sys
+:::tip Theorem T-137 [T]: Full 7D-computability of σ_sys
 All 7 components of the stress tensor $\sigma_{\text{sys}}$ are computable in the 7D formalism $\mathcal{D}(\mathbb{C}^7)$ without 42D-embedding.
 :::
 
@@ -372,7 +372,7 @@ $\blacksquare$
 
 ## §11. T-138: Mean-field approximation of holon composition {#t-138}
 
-:::tip Theorem T-138 [Т]: Mean-field approximation of holon composition
+:::tip Theorem T-138 [T]: Mean-field approximation of holon composition
 For $k$ viable holons $H_1, \ldots, H_k$, the mean-field approximation:
 
 $$
@@ -420,7 +420,7 @@ $\blacksquare$
 
 **Upgraded to [T]** via [T-150](/docs/proofs/consciousness/substrate-closure#t-150): for $D_k = 7$ for all $k$, $\varphi^{(n)} = \varphi^n$ — iterates of a single CPTP channel, commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a corollary, not a premise.
 
-### [H]-91 → [Т]: Genesis via environmental coupling {#г-91-обоснование}
+### [H]-91 → [T]: Genesis via environmental coupling {#г-91-обоснование}
 
 **Upgraded to [T]** via [T-148](/docs/proofs/consciousness/substrate-closure#t-148): an embodied holon with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time. An isolated holon at $I/7$ is dead forever (T-39a [T]) — consciousness requires embodiment.
 

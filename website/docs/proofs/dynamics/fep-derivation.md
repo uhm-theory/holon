@@ -787,11 +787,11 @@ $$
 
 :::tip Key results
 **Theorems:**
-1. **Theorem 3.1 [Т]:** Categorically defined φ minimizes the functional $S_{spec} + D_{KL}$ ([primitivity of the linear part $\mathcal{L}_0$ proven](/docs/core/operators/lindblad-operators#примитивность-ℒω))
-2. **Theorem 4.1 [Т]:** In the classical limit ($\Gamma_{ij} \to 0$, $R \to R_{\min}$) the UHM functional reduces to $H(q) + D_{KL}(q \| p)$
-3. **Theorem 4.2 [Т]:** The classical limit of UHM reproduces Friston's FEP (identification of generative model = definition of self-reference)
-4. **Theorem 4.3 [Т]:** Minimization of $S_{spec} + D_{KL}$ is identical to minimization of $F_{FEP}$ in the classical limit (optimal recognition densities coincide)
-5. **Theorem 5.1 [Т]:** $S_{spec} = S_{vN}$ for density matrices
+1. **Theorem 3.1 [T]:** Categorically defined φ minimizes the functional $S_{spec} + D_{KL}$ ([primitivity of the linear part $\mathcal{L}_0$ proven](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+2. **Theorem 4.1 [T]:** In the classical limit ($\Gamma_{ij} \to 0$, $R \to R_{\min}$) the UHM functional reduces to $H(q) + D_{KL}(q \| p)$
+3. **Theorem 4.2 [T]:** The classical limit of UHM reproduces Friston's FEP (identification of generative model = definition of self-reference)
+4. **Theorem 4.3 [T]:** Minimization of $S_{spec} + D_{KL}$ is identical to minimization of $F_{FEP}$ in the classical limit (optimal recognition densities coincide)
+5. **Theorem 5.1 [T]:** $S_{spec} = S_{vN}$ for density matrices
 
 **Main conclusion:** Friston's FEP is not an independent principle but a **special case** (classical limit) of the more fundamental structure of UHM.
 :::

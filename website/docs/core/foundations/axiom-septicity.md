@@ -359,7 +359,7 @@ $$
 \kappa_{\text{bootstrap}} = \frac{\omega_0}{N} = \frac{\omega_0}{7}
 $$
 
-**Status [O]:** The numerical value $\omega_0/N$ is motivated by a physical argument (one clock tick per full $N$-dimensional cycle) and categorical normalization ($\min_i(\gamma_{Oi}) = 1/N$) but **is not a strict theorem**: there is no proof that the adjunction-unit norm $\|\eta\|$ equals this number exactly. It is a **scale convention**, consistent with $P_{\text{crit}}$ and $\omega_0$.
+**Status [D]:** The numerical value $\omega_0/N$ is motivated by a physical argument (one clock tick per full $N$-dimensional cycle) and categorical normalization ($\min_i(\gamma_{Oi}) = 1/N$) but **is not a strict theorem**: there is no proof that the adjunction-unit norm $\|\eta\|$ equals this number exactly. It is a **scale convention**, consistent with $P_{\text{crit}}$ and $\omega_0$.
 :::
 
 **Definition (norm of the adjunction unit):**

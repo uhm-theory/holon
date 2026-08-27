@@ -304,7 +304,7 @@ Let $\mathcal{H}_4 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E
 - Regeneration $\mathcal{R}[\Gamma, E]$ is undefined
 
 *Violation of (QG):*
-Quantum foundation requires regeneration [Т]:
+Quantum foundation requires regeneration [T]:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)
@@ -591,7 +591,7 @@ This guarantees:
 - Non-zero vacuum energy
 - Possibility of free energy import
 
-**Verification of the regenerative term [Т]:**
+**Verification of the regenerative term [T]:**
 
 Regeneration is **fully derived** from the axioms ([derivation](/docs/core/dynamics/evolution#вывод-формы-регенерации)):
 
@@ -1035,11 +1035,11 @@ $$
 **Current status:** [T] — all steps in the chain are theorems. Condition (МП) — the principle of minimal representation ($\lambda = 1$) — is proven via T11–T13.
 
 **Key theorems of the T15 chain:**
-- **T5, T6 [Т]:** $S_7$-equivariance of the atomic dissipator → uniform contraction of coherences **unconditionally** (removes the dependence on (КГ) in step 4)
-- **T7 [Т]:** Autopoietic necessity $c > 0$ — the atomic dissipator is incompatible with viability
-- **T8, T9 [Т]:** Hamming code H(7,4) — the unique perfect code of length 7, support structure = PG(2,2)
-- **T10 [Т]:** Fano channel ($k=3$, $c=1/3$) — the unique optimal among admissible BIBD channels
-- **T11–T13 [Т]:** Proof of condition (МП) — $\lambda = 1$ follows from optimality and uniqueness of the perfect code
+- **T5, T6 [T]:** $S_7$-equivariance of the atomic dissipator → uniform contraction of coherences **unconditionally** (removes the dependence on (КГ) in step 4)
+- **T7 [T]:** Autopoietic necessity $c > 0$ — the atomic dissipator is incompatible with viability
+- **T8, T9 [T]:** Hamming code H(7,4) — the unique perfect code of length 7, support structure = PG(2,2)
+- **T10 [T]:** Fano channel ($k=3$, $c=1/3$) — the unique optimal among admissible BIBD channels
+- **T11–T13 [T]:** Proof of condition (МП) — $\lambda = 1$ follows from optimality and uniqueness of the perfect code
 
 **Cascading consequence:** P1, P2 — [T]. Track B (octonionic derivation) is fully rigorous.
 
@@ -1089,7 +1089,7 @@ This proof follows the standard of mathematical honesty:
 - Limits of applicability are stated
 - **Level of rigor is explicitly marked** ([T]/[C]/[P])
 
-The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [Т]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula ([T at first-order kinetics], Th. 15.3.1) and functional independence (Lemma 2.2).
+The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [T]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula ([T at first-order kinetics], Th. 15.3.1) and functional independence (Lemma 2.2).
 
 ---
 

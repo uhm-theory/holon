@@ -140,7 +140,7 @@ for $f^* > 2/7$. $\blacksquare$
 
 ## §3. T-150: Commutativity of φ-tower in 7D {#t-150}
 
-:::tip Theorem T-150 [Т]: Trivial commutativity of φ-tower at D=7
+:::tip Theorem T-150 [T]: Trivial commutativity of φ-tower at D=7
 For $D_n = 7$ for all $n$: $\varphi^{(n)} = \varphi^n$ (n-fold application of a single CPTP channel), whence
 
 $$\varphi^n \circ \varphi^m = \varphi^{n+m}$$
@@ -198,7 +198,7 @@ The previous proof asserted "$\Phi \geq 1 \Rightarrow \mathrm{Coh}_E \geq 1/6$ b
 
 ## §5. T-152: Tractable anchor validation {#t-152}
 
-:::tip Theorem T-152 [Т]: Polynomial validation of CPTP-anchor
+:::tip Theorem T-152 [T]: Polynomial validation of CPTP-anchor
 For anchor map $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^N)$:
 
 $$\|\pi - \pi_{\mathrm{can}}\|_\diamond \leq N\sqrt{N} \cdot \|C_\pi - C_{\pi_{\mathrm{can}}}\|_F$$
@@ -311,7 +311,7 @@ $$
 
 (Acc) is a definitional clause **[D]** — it names exactly what "the substrate can host a conscious state" means. Crucially, it is an **open** condition: for any interior window witness $\Gamma_w$ (all four inequalities strict — the waking profile of [altered states](/docs/consciousness/states/altered-states) is one), continuity of $G_V$ makes $G_V^{-1}(\mathrm{int}\,\mathcal V_{\mathrm{full}})$ a non-empty open neighborhood of $\iota_V(\Gamma_w)$ in $\mathcal D(\mathcal H_S)$ — the realizing substrate state need not itself be an embedded rank-7 state (which would be a measure-zero demand for $d > 7$); anything in the open preimage suffices. Quantitatively: $G_V$, being CPTP, is a trace-norm contraction, so the preimage contains the entire trace-norm ball of radius $\delta_w = \mathrm{dist}_1(\Gamma_w, \partial\mathcal V_{\mathrm{full}}) > 0$ around $\iota_V(\Gamma_w)$. Hence for substrates with accessible (controllable) dynamics — reachable set dense in $\mathcal D(\mathcal H_S)$ — (Acc) holds **[C at controllability]**: a dense set meets every non-empty open set.
 
-**(c) Sharpness [Т]: no global faithfulness for $d > 7$.** No CPTP map $\mathcal E: \mathcal D(\mathcal H_S) \to \mathcal D(\mathbb C^7)$ is injective on all of $\mathcal D(\mathcal H_S)$ when $d > 7$: as a real-linear map $\mathrm{Herm}(\mathcal H_S) \to \mathrm{Herm}(\mathbb C^7)$ it has kernel of dimension $\geq d^2 - 49 \geq 1$, and trace preservation puts the kernel inside the traceless hyperplane; hence for any interior state $\rho$ and kernel direction $K \neq 0$ the pair $\rho \pm \varepsilon K$ (small $\varepsilon > 0$) consists of two **distinct density matrices with identical images**. Consequently "faithful $G$" in T-153/T-153a must be read **sector-relative**, and the retraction of (a) attains the maximal faithful domain — the full 48-dimensional embedded state sector.
+**(c) Sharpness [T]: no global faithfulness for $d > 7$.** No CPTP map $\mathcal E: \mathcal D(\mathcal H_S) \to \mathcal D(\mathbb C^7)$ is injective on all of $\mathcal D(\mathcal H_S)$ when $d > 7$: as a real-linear map $\mathrm{Herm}(\mathcal H_S) \to \mathrm{Herm}(\mathbb C^7)$ it has kernel of dimension $\geq d^2 - 49 \geq 1$, and trace preservation puts the kernel inside the traceless hyperplane; hence for any interior state $\rho$ and kernel direction $K \neq 0$ the pair $\rho \pm \varepsilon K$ (small $\varepsilon > 0$) consists of two **distinct density matrices with identical images**. Consequently "faithful $G$" in T-153/T-153a must be read **sector-relative**, and the retraction of (a) attains the maximal faithful domain — the full 48-dimensional embedded state sector.
 :::
 
 **Proof.** **(a)** Complete positivity: $\rho \mapsto V^\dagger\rho V$ is CP with the single Kraus operator $V^\dagger$; the second summand is measure-and-prepare with Kraus family $B_{ij} = \sqrt{s_i}\,|i\rangle\langle q_j|$, where $\sigma_0 = \sum_i s_i |i\rangle\langle i|$ and $\{|q_j\rangle\}$ is an orthonormal basis of $\mathrm{ran}(\mathbb 1 - VV^\dagger)$. Completeness: $V V^\dagger + \sum_{ij} B_{ij}^\dagger B_{ij} = VV^\dagger + (\mathbb 1 - VV^\dagger) = \mathbb 1_d$. Trace preservation: $\mathrm{Tr}\,G_V(\rho) = \mathrm{Tr}(VV^\dagger\rho) + \mathrm{Tr}((\mathbb 1 - VV^\dagger)\rho) = \mathrm{Tr}\,\rho$. Retraction: $G_V(V\gamma V^\dagger) = (V^\dagger V)\gamma(V^\dagger V) + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)V\gamma V^\dagger\bigr)\sigma_0 = \gamma + 0$, because $(\mathbb 1 - VV^\dagger)V = 0$. **(b)** Substitution into (a). **(c)** Dimension count: $\dim_{\mathbb R}\mathrm{Herm}(\mathcal H_S) = d^2 > 49 = \dim_{\mathbb R}\mathrm{Herm}(\mathbb C^7)$, so $\dim\ker \geq d^2 - 49$; for $K \in \ker$, $\mathrm{Tr}\,K = \mathrm{Tr}\,\mathcal E(K) = 0$ by trace preservation; interiority of $\rho$ admits $\varepsilon \leq \lambda_{\min}(\rho)/\lVert K\rVert_\infty$, keeping both $\rho \pm \varepsilon K \succeq 0$. $\blacksquare$
@@ -346,7 +346,7 @@ CPTP channel $G: \mathrm{States}(\mathrm{SYNARC}) \to \mathcal{D}(\mathbb{C}^7)$
 
 ## §7. T-154: Coh_E^max = 1 {#t-154}
 
-:::tip Theorem T-154 [Т]: Normalization of Coh_E
+:::tip Theorem T-154 [T]: Normalization of Coh_E
 $$\max_{\Gamma \in \mathcal{D}(\mathbb{C}^7)} \mathrm{Coh}_E(\Gamma) = 1$$
 
 The maximum is achieved at $\Gamma = |E\rangle\langle E|$ (pure E-state).
@@ -398,7 +398,7 @@ $$\delta B = -\eta \cdot J_\pi^T \cdot \nabla_\Gamma \|\sigma_{\mathrm{sys}}\|_\
 
 ## §9. T-156: Optimal mixing parameter {#t-156}
 
-:::tip Theorem T-156 [Т]: Optimal mixing parameter β*
+:::tip Theorem T-156 [T]: Optimal mixing parameter β*
 $$\beta^* = \frac{\lambda_{\mathrm{gap}}}{\lambda_{\mathrm{gap}} + \alpha_{\mathrm{Fano}} \cdot (1 - P_{\mathrm{env}}/P_{\mathrm{target}})}$$
 
 minimizes genesis time $n_{\mathrm{genesis}}$ with stochastic stability.
@@ -426,7 +426,7 @@ where $\lambda_{\mathrm{gap}}$ is the spectral gap of $\mathcal{L}_0$ ([T-59 [T]
 
 ## §10. T-157: Attractor consistency {#t-157}
 
-:::tip Theorem T-157 [Т]: Controlled attractor consistency
+:::tip Theorem T-157 [T]: Controlled attractor consistency
 $$\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \frac{\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa}$$
 
 The discrepancy between the attractors of full dynamics ($\rho^*_\Omega$) and coherent relaxation ($\Gamma^*_{\mathrm{coh}}$) is controllably small.
@@ -477,7 +477,7 @@ the vacuum estimate $\bar{\varepsilon}$.
 
 ## §11. Observation: Necessity of co-rotating targets {#co-rotating-targets}
 
-:::info Observation O-1 [Т]: Co-rotating targets are necessary for Φ ≥ 1
+:::info Observation O-1 [T]: Co-rotating targets are necessary for Φ ≥ 1
 With fixed targets $\rho^*_{ij} = \mathrm{const}$, the replacement channel
 $\mathcal{R}$ competes with unitary evolution $e^{-iH_{\mathrm{eff}}t}$:
 
@@ -507,7 +507,7 @@ thanks to co-rotating targets. Without them the threshold $\Phi \geq 1$ is not a
 
 ## §12. T-158: Canonical bounds on σ_sys {#t-158}
 
-:::tip Theorem T-158 [Т]: Canonical bounds on σ_sys
+:::tip Theorem T-158 [T]: Canonical bounds on σ_sys
 All components of the stress tensor $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) by definition with canonical clamping:
 
 $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
@@ -532,7 +532,7 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 ## §13. T-159: Universal cognitive architecture {#t-159}
 
-:::tip Theorem T-159 [Т]: Uniqueness of reference cognitive architecture
+:::tip Theorem T-159 [T]: Uniqueness of reference cognitive architecture
 For any system $S$ achieving level L2 (cognitive qualia), the architecture is uniquely determined by axioms A1–A4:
 
 **(a)** Ontological core: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — 48 parameters ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), $G_2$-rigidity)

@@ -47,7 +47,7 @@ The [maximally mixed state](/docs/core/dynamics/coherence-matrix#maximally-mixed
 
 Both give the same $\Gamma_\odot$, machine-verified.
 
-**Genuinely open [P]/[О]:**
+**Genuinely open [P]/[D]:**
 - Why the **pure, maximally-symmetric class** as the initial condition (rather than the mixed $I_7/7$)? This remains a postulate — though $I_7/7$ is a classical ensemble with *zero* coherence, so "maximal coherence" is the natural selection principle that singles out $\Gamma_\odot$.
 - Connection to the Boltzmann Brain problem.
 

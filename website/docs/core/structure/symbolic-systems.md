@@ -544,7 +544,7 @@ N' \geq 7
 $$
 :::
 
-**Proof.** By [Theorem S](/docs/proofs/minimality/theorem-minimality-7) [Т]: $N = 7$ is the minimum dimensionality for (AP)+(PH)+(QG). Symbolic systems that describe autopoietic entities (chakras as "energy centres of a living being", Kabbalah as "the structure of the soul") implicitly assume all three conditions. Therefore $N' \geq 7$. $\blacksquare$
+**Proof.** By [Theorem S](/docs/proofs/minimality/theorem-minimality-7) [T]: $N = 7$ is the minimum dimensionality for (AP)+(PH)+(QG). Symbolic systems that describe autopoietic entities (chakras as "energy centres of a living being", Kabbalah as "the structure of the soul") implicitly assume all three conditions. Therefore $N' \geq 7$. $\blacksquare$
 
 ### 5.3 Information-theoretic characterisation of loss [T] {#информационная-утрата}
 
@@ -699,7 +699,7 @@ A symbolic system is not part of the $\Gamma$-formalism and not an approximation
 
 ### 10.3 Status honesty
 
-The *placement* (emergent interface, not core) is [D]-convention resting on [T]-anchors (lattice non-embedding, era-functions, Kepler bias, the Enc functor). The *generalisation to arbitrary holons* is a research direction [П]: it becomes testable exactly when a second nestedness is instrumented (a long-duration crew, a non-terrestrial holon, an artificial holon with its own periodic neighbourhood — the [environment mandate](/docs/applied/research/homoholograph#часть-xxiv-мир-как-холон) is the first step). Until then it earns its keep as the *organising frame* that already explains why traditions look the way they do — and why none of them could have been the core.
+The *placement* (emergent interface, not core) is [D]-convention resting on [T]-anchors (lattice non-embedding, era-functions, Kepler bias, the Enc functor). The *generalisation to arbitrary holons* is a research direction [P]: it becomes testable exactly when a second nestedness is instrumented (a long-duration crew, a non-terrestrial holon, an artificial holon with its own periodic neighbourhood — the [environment mandate](/docs/applied/research/homoholograph#часть-xxiv-мир-как-холон) is the first step). Until then it earns its keep as the *organising frame* that already explains why traditions look the way they do — and why none of them could have been the core.
 
 ---
 

@@ -996,7 +996,7 @@ $$
 
 where $B_B(\rho, r) = \{\sigma : d_B(\rho, \sigma) < r\}$ — open ball in the Bures metric.
 
-**Theorem 6.1 (Site axioms for DensityMat) [Т]:**
+**Theorem 6.1 (Site axioms for DensityMat) [T]:**
 
 The pair $(\mathbf{DensityMat}, J_{Bures})$ forms a **Grothendieck site** (Johnstone, *Sketches of an Elephant*, C2.1.9–12).
 
@@ -2272,7 +2272,7 @@ $$
 - $\pi_0$ — set of connected components
 - "non-trivial" — exclusion of zero/trivial paths
 
-**Finite-dimensional definition [Т]:** For $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
+**Finite-dimensional definition [T]:** For $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
 
 $$
 \mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1
@@ -2673,7 +2673,7 @@ The [structural derivation N=7](../minimality/theorem-octonionic-derivation) thr
 - **Associahedra (Stasheff polytopes):** Combinatorial spaces parameterizing ways of bracketing. For $n$ elements the associahedron $K_n$ has dimension $n-2$.
 - **$G_2$-categories:** Categories enriched over $G_2$-representations formalize $G_2$-covariance.
 
-**Connection to the UHM ∞-topos [С]:** The non-associativity of $\mathbb{O}$ may manifest as a nontrivial $A_\infty$-structure on the morphisms of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Bridge [T] (closed, T15).
+**Connection to the UHM ∞-topos [C]:** The non-associativity of $\mathbb{O}$ may manifest as a nontrivial $A_\infty$-structure on the morphisms of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Bridge [T] (closed, T15).
 :::
 
 ---

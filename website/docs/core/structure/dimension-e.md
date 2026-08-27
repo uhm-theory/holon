@@ -104,7 +104,7 @@ where $\mathrm{Tr}_{\bar{E}}$ is the partial trace over all dimensions except $E
 :::warning Morita equivalence
 The partial trace $\mathrm{Tr}_{-E}$ formally requires a tensor structure $\mathcal{H} = \mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$ (extended formalism: $\mathcal{H} = \mathbb{C}^{42}$). In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$, 7 is prime) direct factorisation is impossible.
 
-**However**, the sites $(\mathcal{C}_7, J_{\text{Bures}})$ and $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ are **Morita-equivalent** [Т]: the partial-trace functor $\mathrm{Tr}_{\text{PW}}: \mathcal{C}_{42} \to \mathcal{C}_7$ and the PW embedding $\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}$ induce an equivalence of sheaf categories $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$. Therefore **all** formulas are computable in 7D:
+**However**, the sites $(\mathcal{C}_7, J_{\text{Bures}})$ and $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ are **Morita-equivalent** [T]: the partial-trace functor $\mathrm{Tr}_{\text{PW}}: \mathcal{C}_{42} \to \mathcal{C}_7$ and the PW embedding $\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}$ induce an equivalence of sheaf categories $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$. Therefore **all** formulas are computable in 7D:
 
 - $\gamma_{EE}$ — diagonal element (population of E) — **[T]**
 - $\gamma_{Ei}$ — coherences with other dimensions — **[T]**
@@ -122,7 +122,7 @@ The partial trace $\mathrm{Tr}_{-E}$ formally requires a tensor structure $\math
 
 **Algorithm (4 steps):**
 
-1. **7D → 42D lift.** By Morita equivalence T-58 [Т]:
+1. **7D → 42D lift.** By Morita equivalence T-58 [T]:
 
 $$\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}, \quad \Gamma \mapsto \Gamma_{\text{total}} = \sum_{k=0}^{6} |k\rangle\langle k|_O \otimes \Gamma(\tau_k)$$
 
@@ -560,7 +560,7 @@ $$
 
 where $\mathrm{Coh}_E(\Gamma)$ — [E-coherence](/docs/core/foundations/axiom-septicity#e-coherence-definition) (HS-projection, **[T]**). This is a **linear** interpolation: $D_{\text{diff}}^{7D} \in [1, N]$.
 
-**Consistency [Т]:**
+**Consistency [T]:**
 
 The two formulas **exactly coincide** at the boundaries:
 - $\mathrm{Coh}_E = 0 \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = 1$ (pure state, one component)
@@ -613,7 +613,7 @@ with the separate viability condition $D_{\text{diff}} \geq D_{\min} = 2$.
 ### Octonionic context {#октонионный-контекст}
 
 :::note Octonionic correspondence [T]
-The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $E = e_5$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $E = e_5$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---

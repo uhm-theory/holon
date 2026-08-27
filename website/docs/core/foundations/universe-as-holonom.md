@@ -73,7 +73,7 @@ The master register of the vertical lives in [The epistemic vertical §6](/docs/
 | # | Hole | Status | Declared in |
 |---|---|---|---|
 | H1.1 | universal $\rho^*$: internal terminality over sub-holons | **[C]** (T-248) | §2 |
-| H1.2 | the Universe's stage $P$ — *value* | **[C]** — value closed by T-266 (Part A [Т-struct]: at terminal stage; Part B [С]: $P = 3/7$ to $\sim 10^{-60}$); residual [D] = exponent's $\omega_0$-dependence, distinct from the Λ-magnitude deficit | §4 |
+| H1.2 | the Universe's stage $P$ — *value* | **[C]** — value closed by T-266 (Part A [Т-struct]: at terminal stage; Part B [C]: $P = 3/7$ to $\sim 10^{-60}$); residual [D] = exponent's $\omega_0$-dependence, distinct from the Λ-magnitude deficit | §4 |
 | H1.3 | scale-freeness of the grammar | **closed** on the viable carrier (T-247); residue $=$ H1.2 | §3 |
 
 ## §7. Self-audit: the bare-mathematics test {#самоаудит}

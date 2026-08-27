@@ -610,7 +610,7 @@ where $D_A = D_{\mathrm{int}} + A + \varepsilon J A J^{-1}$ is the fluctuated Di
 
 **Proof.**
 
-**Step 1 (Identity $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \, \mathcal{G}_{\mathrm{total}}$).** From T-53 [Т]: $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$, $[D_{\mathrm{int}}]_{ii} = 0$ (block off-diagonal structure $O \leftrightarrow 3 \leftrightarrow \bar{3}$). Therefore:
+**Step 1 (Identity $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \, \mathcal{G}_{\mathrm{total}}$).** From T-53 [T]: $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$, $[D_{\mathrm{int}}]_{ii} = 0$ (block off-diagonal structure $O \leftrightarrow 3 \leftrightarrow \bar{3}$). Therefore:
 
 $$
 \mathrm{Tr}(D_{\mathrm{int}}^2) = \sum_{i \neq j} |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 \sum_{i \neq j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
@@ -1057,7 +1057,7 @@ $$
 \mathcal{M}_{\text{phys}} = (S^1)^{21}/G_2, \quad \dim(\mathcal{M}_{\text{phys}}) = 21 - 14 = 7
 $$
 
-From [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem) [Т]: 34 real parameters of $\Gamma$, of which 14 are gauge → 20 physical parameters of the matrix $\Gamma$. But the potential $V_{\text{Gap}}$ depends only on the **moduli** of coherences $|\gamma_{ij}|$ and the **phases** $\theta_{ij} = \arg(\gamma_{ij})$, with $G_2$ fixing phases through the Fano structure.
+From [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem) [T]: 34 real parameters of $\Gamma$, of which 14 are gauge → 20 physical parameters of the matrix $\Gamma$. But the potential $V_{\text{Gap}}$ depends only on the **moduli** of coherences $|\gamma_{ij}|$ and the **phases** $\theta_{ij} = \arg(\gamma_{ij})$, with $G_2$ fixing phases through the Fano structure.
 
 **Step 2 (Sector parametrization).** From the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [T] (see [spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)), the $G_2$-invariant potential depends only on 5 sector parameters:
 

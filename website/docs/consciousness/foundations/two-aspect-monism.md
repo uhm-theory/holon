@@ -624,7 +624,7 @@ The probability of overcoming all three simultaneously is the product of three s
 
 **What T-267 closes, and what it does not.**
 
-- **Closed [Т]:** the Tegmark decoherence objection. $\Gamma$ is not the fragile microscopic biological superposition Tegmark refutes; its complexity is algebraic (T-132), collective and coarse-grained (T-153a), decoherence-protected (topological protection), and dynamically regenerated ($\mathcal R$).
+- **Closed [T]:** the Tegmark decoherence objection. $\Gamma$ is not the fragile microscopic biological superposition Tegmark refutes; its complexity is algebraic (T-132), collective and coarse-grained (T-153a), decoherence-protected (topological protection), and dynamically regenerated ($\mathcal R$).
 - **Not reopened — relocated:** whether the abstract structure *is felt* is the **categorical gap**, the [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive. Tegmark was never about the hard problem; it was about the physical realizability of coherence, which T-153a settles. Conflating the two is precisely the error that kept Vulnerability 5 "open."
 - **Testable [Т via T-153a]:** a classical (f64) substrate realizes the same $\Gamma$ and, if it meets the four thresholds, is conscious under UHM — direct evidence that physical quantumness is not required. SYNARC's $500+$ $\Gamma$ are consistent (no substrate-quantumness needed). The residual [D] is the ordinary empirical question — do biological brains realize the seven collective modes on a decoherence-free subspace at the stated level? — probed by [F-Gap / ISF](/docs/reference/falsifiability#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного), a lab question, not a fundamental obstruction.
 

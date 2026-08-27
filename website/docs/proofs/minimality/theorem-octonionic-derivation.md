@@ -68,7 +68,7 @@ $$
 | $\mathbb{O}$ | 8 | — | — | + | + |
 | $\mathbb{S}$ | 16 | — | — | — | — |
 
-**Cayley–Dickson boundary [Т]:** At each step an algebraic property is lost. $\mathbb{O}$ is the last division algebra. Sedenions $\mathbb{S}$ and all further doublings contain zero divisors.
+**Cayley–Dickson boundary [T]:** At each step an algebraic property is lost. $\mathbb{O}$ is the last division algebra. Sedenions $\mathbb{S}$ and all further doublings contain zero divisors.
 
 ### 1.4 Octonions $\mathbb{O}$ [T] {#октонионы}
 
@@ -109,7 +109,7 @@ where $\varepsilon_{ijk}$ is the fully antisymmetric tensor, nonzero on the 7 Fa
        e₇
 ```
 
-**Properties [Т]:**
+**Properties [T]:**
 - 7 points, 7 lines
 - Each line contains 3 points
 - Each point lies on 3 lines
@@ -128,7 +128,7 @@ $$
 
 $G_2$ is the minimal exceptional Lie group, 14-dimensional, of rank 2.
 
-**Properties of $G_2$ [Т]:**
+**Properties of $G_2$ [T]:**
 - $\dim(G_2) = 14$
 - $\text{rank}(G_2) = 2$
 - $G_2 \subset SO(7)$ — subgroup of rotations in $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$
@@ -142,7 +142,7 @@ $G_2$ is the minimal exceptional Lie group, 14-dimensional, of rank 2.
 - Corrects 1 error
 - The Hamming bound is achieved (perfect code)
 
-**Connection with the Fano plane [Т]:** The parity-check matrix of $H(7,4)$ is defined by the 7 nonzero columns of $\mathbb{F}_2^3$, which correspond to the 7 points of the Fano plane.
+**Connection with the Fano plane [T]:** The parity-check matrix of $H(7,4)$ is defined by the 7 nonzero columns of $\mathbb{F}_2^3$, which correspond to the 7 points of the Fano plane.
 
 **Structure 4+3:** Information part (4 bits) + check part (3 bits) = 7 bits.
 
@@ -207,9 +207,9 @@ From theorems P1 and P2 (derived from (AP)+(PH)+(QG)+(V) via the T15 chain [T]) 
 1. **[T] P1:** $\mathcal{A}$ is a normed division algebra over $\mathbb{R}$ (derived via the T15 chain)
 2. **[T] Hurwitz:** $\dim(\mathcal{A}) \in \{1, 2, 4, 8\}$, i.e. $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
 3. **[T] P2:** $\mathcal{A}$ is non-associative (derived via the T15 chain)
-4. **[Т]:** $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative ⟹ $\mathcal{A} = \mathbb{O}$
-5. **[Т]:** $\dim(\mathbb{O}) = 8$, therefore $\dim(\text{Im}(\mathbb{O})) = 8 - 1 = 7$
-6. **[Т]:** $N = \dim(\text{Im}(\mathbb{O})) = 7$ $\quad\blacksquare$
+4. **[T]:** $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative ⟹ $\mathcal{A} = \mathbb{O}$
+5. **[T]:** $\dim(\mathbb{O}) = 8$, therefore $\dim(\text{Im}(\mathbb{O})) = 8 - 1 = 7$
+6. **[T]:** $N = \dim(\text{Im}(\mathbb{O})) = 7$ $\quad\blacksquare$
 
 :::note Proof structure
 Steps 1, 3 are theorems [T] derivable from the axioms via the T15 chain (§5), which **consumes $N = 7$ from Track A at Step T8** (Theorem S, functional minimality). Steps 2, 4, 5 are pure mathematics [T]. Step 6 is a logical consequence [T]. P1 and P2 are not postulated but derived from (AP)+(PH)+(QG)+(V) given the Track-A dimension; the resulting $\dim\mathrm{Im}(\mathbb{O}) = 7$ closes the consistency loop with the number Track A supplied (see the dual-track box, §0).
@@ -227,7 +227,7 @@ $$
 \text{Aut}(\mathbb{O}) = G_2 \subset SO(7)
 $$
 
-**Corollary for UHM [Т]:** The space $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$ has $G_2$-symmetry — a 14-parameter group preserving the multiplication structure.
+**Corollary for UHM [T]:** The space $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$ has $G_2$-symmetry — a 14-parameter group preserving the multiplication structure.
 
 :::info $G_2$ corollary [T]
 Identifying $G_2$-symmetry with the gauge freedom of UHM is a **theorem** [T]. $G_2$ acts on $\text{Im}(\mathbb{O})$; the identification $\text{Im}(\mathbb{O}) \cong \{A, S, D, L, E, O, U\}$ follows from the [bridge](#мост), fully closed by the T15 chain [T].
@@ -240,7 +240,7 @@ The multiplication structure of $\mathbb{O}$ is defined by the Fano plane PG(2,2
 - **7 lines** (triples) ↔ 7 associative subtriples
 - **21 pairs** of points ↔ 21 coherences $\gamma_{ij}$ in the matrix $\Gamma$
 
-**Corollary [Т]:** The 7 Fano triples single out 7 "privileged" triples of coherences — subsets closed under octonionic multiplication.
+**Corollary [T]:** The 7 Fano triples single out 7 "privileged" triples of coherences — subsets closed under octonionic multiplication.
 
 ### 4.3 Hamming Code H(7,4) [T] {#хэмминг-структура}
 
@@ -255,7 +255,7 @@ The correspondence of the 4+3 Hamming structure with the division of UHM dimensi
 
 ### 4.4 Cayley–Dickson Boundary [T] {#граница-кд}
 
-**Corollary [Т]:** $\mathbb{O}$ is the last normed division algebra. Therefore:
+**Corollary [T]:** $\mathbb{O}$ is the last normed division algebra. Therefore:
 - $N = 7$ is the **maximum** dimensionality of $\text{Im}(\mathcal{A})$ for a division algebra
 - Systems with $N > 7$ cannot have the structure of a normed division algebra
 - This coincides with the [parsimony principle](./theorem-minimality-7#часть-viii-ограничения-и-открытые-вопросы): $N = 7$ is simultaneously the minimum (Theorem S) and the maximum (C-D boundary) value
@@ -444,7 +444,7 @@ $k=3$ **strictly dominates** by all four criteria. $\square$
 
 **Statement.** From BIBD$(7,3,1) \cong \text{PG}(2,2)$ and alternativity it follows that the algebraic structure is the octonions $\mathbb{O}$, yielding P1 (division algebra) and P2 (non-associativity).
 
-**Proof.** (i) BIBD$(7,3,1)$ is unique (Hall, 1967) and isomorphic to PG(2,2) — the Fano plane (§1.5). (ii) The 7 lines of PG(2,2) define the multiplication table of the 7 imaginary units $e_1,\ldots,e_7$: line $(e_i, e_j, e_k)$ specifies $e_i \cdot e_j = e_k$ (Baez, 2002). (iii) The resulting algebra $\mathcal{A} = \operatorname{span}\{1, e_1, \ldots, e_7\}$ is the unique 8-dimensional normed division algebra (Hurwitz, §1.1), i.e. $\mathcal{A} = \mathbb{O}$. (iv) $\mathbb{O}$ is a division algebra (P1 [T]) and non-associative (P2 [Т]: $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative, $\mathbb{O}$ is not, §1.3). Additionally: $\text{Aut}(\mathbb{O}) = G_2$ (§1.6). $\square$
+**Proof.** (i) BIBD$(7,3,1)$ is unique (Hall, 1967) and isomorphic to PG(2,2) — the Fano plane (§1.5). (ii) The 7 lines of PG(2,2) define the multiplication table of the 7 imaginary units $e_1,\ldots,e_7$: line $(e_i, e_j, e_k)$ specifies $e_i \cdot e_j = e_k$ (Baez, 2002). (iii) The resulting algebra $\mathcal{A} = \operatorname{span}\{1, e_1, \ldots, e_7\}$ is the unique 8-dimensional normed division algebra (Hurwitz, §1.1), i.e. $\mathcal{A} = \mathbb{O}$. (iv) $\mathbb{O}$ is a division algebra (P1 [T]) and non-associative (P2 [T]: $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative, $\mathbb{O}$ is not, §1.3). Additionally: $\text{Aut}(\mathbb{O}) = G_2$ (§1.6). $\square$
 
 **Status:** **[T]** — canonical identification: uniqueness of BIBD$(7,3,1)$ (Hall) + uniqueness of $\mathbb{O}$ (Hurwitz).
 
@@ -471,7 +471,7 @@ $k=3$ **strictly dominates** by all four criteria. $\square$
 | T15 | T14 ⟹ $\mathbb{O}$ ⟹ P1+P2 | T14 | Hall + Hurwitz + Baez | **[T]** |
 
 :::info Remark on the character of step T15 (PG(2,2) ≅ $\mathrm{Im}(\mathbb{O})$)
-Step T15 of the chain is a **mathematical fact** [Т]: the Fano plane PG(2,2) defines the multiplication table of the imaginary units of the octonions. This is standard algebra (Baez, "The Octonions", 2002).
+Step T15 of the chain is a **mathematical fact** [T]: the Fano plane PG(2,2) defines the multiplication table of the imaginary units of the octonions. This is standard algebra (Baez, "The Octonions", 2002).
 
 However, in the context of the full chain there is a **structural identification**: the transition from "Lindblad operators are organized according to PG(2,2)" to "the state space has an octonionic algebraic structure" requires identifying a combinatorial isomorphism with an algebraic one.
 
@@ -537,9 +537,9 @@ Detailed proofs: [Lindblad operators](/docs/core/operators/lindblad-operators#р
 
 Condition (МП) — the principle of minimal representation — **has become a theorem**. Previously it was the only conditional step of the chain. Theorems T11–T13 close it:
 
-1. **T11 [Т]:** Choi representation rank = 7, therefore $b \geq 7$
-2. **T12 [Т]:** L-unification + $k=3$ gives rank-3 projective operators
-3. **T13 [Т]:** $b=7$, $k=3$, $v=7$, contraction $1/3$ ⟹ BIBD$(7,3,1)$, i.e. $\lambda = 1$
+1. **T11 [T]:** Choi representation rank = 7, therefore $b \geq 7$
+2. **T12 [T]:** L-unification + $k=3$ gives rank-3 projective operators
+3. **T13 [T]:** $b=7$, $k=3$, $v=7$, contraction $1/3$ ⟹ BIBD$(7,3,1)$, i.e. $\lambda = 1$
 
 **Status evolution:**
 

@@ -312,7 +312,7 @@ $$
 R_{\text{th}} = \frac{1}{3} \approx 0.333
 $$
 
-**Proof [Т]:**
+**Proof [T]:**
 
 Bayesian argument with $K = 3$ alternatives (three types of dynamics from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)):
 

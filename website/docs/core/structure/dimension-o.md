@@ -73,10 +73,10 @@ The Ground is an **aspect** of configuration $\Gamma$, not a separate entity. "T
 :::tip Functional uniqueness of O [T]
 Dimension $O$ is **necessary and functionally unique** by four independent arguments:
 
-1. **From the form of ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ requires a source with $\Delta F > 0$ for $g_V > 0$. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+1. **From the form of ℛ [T]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ requires a source with $\Delta F > 0$ for $g_V > 0$. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the $(\mathcal{D}_\Omega, \mathcal{R})$ duality loses its structure.
 3. **From Page–Wootters (A5):** O is the distinguished dimension for the tensor factorisation $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined.
-4. **Functional independence [Т]:** No other mathematical object (projector, observable, unitary operator, commutator, density matrix, trace) can perform the function of O (source/clock).
+4. **Functional independence [T]:** No other mathematical object (projector, observable, unitary operator, commutator, density matrix, trace) can perform the function of O (source/clock).
 
 Status: **[T]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 :::
@@ -456,7 +456,7 @@ When $\gamma_{Oi} \to 0$ for all $i$:
 ### Octonionic context {#октонионный-контекст}
 
 :::note Octonionic correspondence [T]
-The dimension corresponds to $e_7 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $O = e_7$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+The dimension corresponds to $e_7 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $O = e_7$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---

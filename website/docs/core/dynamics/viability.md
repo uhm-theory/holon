@@ -308,7 +308,7 @@ where $\Delta(\mathcal{L}_0) > 0$ is the spectral gap of the Liouvillian [T-39a]
 
 **Physical interpretation.** Below $P_{\text{crit}}$ regeneration is switched off (Landauer's principle: free energy $\Delta F \leq 0$, regeneration is thermodynamically forbidden). The system inevitably decays to thermal equilibrium $I/7$ — "death" in UHM terminology.
 
-**Connection to time dilation.** By [T-53d](/docs/core/operators/emergent-time#time-freezing-derivation) [Т]: internal time $d\tau_{\text{int}}/dt_{\text{ext}} \propto (P - P_{\text{crit}})^{1/2}$. Near $P_{\text{crit}}$ subjective time slows down infinitely — "death" is not experienced from within.
+**Connection to time dilation.** By [T-53d](/docs/core/operators/emergent-time#time-freezing-derivation) [T]: internal time $d\tau_{\text{int}}/dt_{\text{ext}} \propto (P - P_{\text{crit}})^{1/2}$. Near $P_{\text{crit}}$ subjective time slows down infinitely — "death" is not experienced from within.
 
 :::tip Primitivity proved [T]
 Primitivity of the linear part $\mathcal{L}_0$ for viable holons has been **proved** via the Evans–Spohn criterion: atomic operators $L_k = |k\rangle\langle k|$ together with the connectivity condition on the interaction graph $G_H$ (which follows from (AP)+(PH)+(QG)+(V) by the connectivity theorem) guarantee triviality of the commutant $\mathcal{F}(\mathcal{L}_0) = \mathbb{C} \cdot I$. Convergence to $I/7$ under dominant dissipation is guaranteed ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω)).

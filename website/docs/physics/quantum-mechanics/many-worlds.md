@@ -134,7 +134,7 @@ of clock-conditioned states co-present in one timeless $\Gamma$.
 The strict difference from MWI: this plurality is **temporal**
 (seven phases of one holon), not **modal** (alternative outcomes),
 and its cardinality is fixed by the algebra (7), not exponentiating
-with every interaction. Call it what it is [И]: *co-present moments,
+with every interaction. Call it what it is [I]: *co-present moments,
 not parallel worlds.*
 
 ### 2.6 "Where was Shor computed?" — UHM's answer [T]/[I]
@@ -292,17 +292,17 @@ complement.
    triad — three independent blockers, any one of which suffices.
    The topos is one; there is no outside for worlds to sit in
    ([T-55/T-56, No Outside](/docs/core/foundations/consequences#структурная-toe)).
-2. **Maximal kinship at Page–Wootters** [Т]: UHM is a
+2. **Maximal kinship at Page–Wootters** [T]: UHM is a
    relative-state theory *of time* — seven co-present
    clock-conditioned states of one $\Gamma$; Everett's machinery,
    capped cardinality, temporal not modal.
-3. **A genuine contribution to MWI's own programme** [Т]: the
+3. **A genuine contribution to MWI's own programme** [T]: the
    $\Omega$-atomic, $G_2$-rigid preferred basis — the missing answer
    to M4 — stands independently of whether one accepts branching.
 4. **The quantum-computation argument is answered without worlds**
-   [T]/[И]: coherences of one state are the resource; Freedom counts
+   [T]/[I]: coherences of one state are the resource; Freedom counts
    the flat directions and is bounded by 7.
-5. **One honest experimental fork** [П]: a law-level decoherence
+5. **One honest experimental fork** [P]: a law-level decoherence
    floor for living matter versus unitarity's unbounded
    interference — a real, eventually decidable disagreement.
 

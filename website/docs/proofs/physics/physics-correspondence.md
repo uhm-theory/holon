@@ -664,25 +664,25 @@ This limitation is **not unique** to UHM: string theory, loop quantum gravity, a
 :::info Compactification 11 → 4 + 7 [I]
 In the [structural derivation of N=7](../minimality/theorem-octonionic-derivation), the group $G_2 = \text{Aut}(\mathbb{O})$ arises. In M-theory, $G_2$-manifolds play a central role:
 
-**M-theory compactification [И]:**
+**M-theory compactification [I]:**
 11-dimensional M-theory admits a compactification $M^{11} = M^4 \times X^7$, where $X^7$ is a compact $G_2$-manifold (holonomy = $G_2$). This gives:
 - 4 non-compact dimensions → observable spacetime
 - 7 compact dimensions with $G_2$-holonomy → internal degrees of freedom
 - $\mathcal{N} = 1$ supersymmetry in 4D (the unique exceptional holonomy preserving exactly 1/8 of supercharges)
 
-**Numerical coincidence [И]:**
+**Numerical coincidence [I]:**
 - UHM: 7 Holon dimensions, $G_2$-symmetry
 - M-theory: 7 internal dimensions, $G_2$-holonomy
 - Dimensions coincide: $11 - 4 = 7 = \dim(\text{Im}(\mathbb{O}))$
 
-**Decomposition 42 [И]:**
+**Decomposition 42 [I]:**
 $\dim(\mathcal{H}_{total}) = 42 = 7 \times 6$ in UHM. In M-theory: $42 = \binom{9}{2} + 6$ arises in a number of contexts.
 
 :::tip Bridge [T] — fully closed (T15)
 This is a **substantive analogy**, proven by theorems T1–T15 (the bridge is fully closed). The formal connection between the 7D structure of UHM and the $G_2$-compactification of M-theory is an [open problem](../minimality/theorem-octonionic-derivation#открытые-проблемы). Bridge [T] (closed, T15).
 :::
 
-**Potential consequences [И]:**
+**Potential consequences [I]:**
 - If the connection is physical, the $G_2$-manifold determines the gauge group and mass spectrum in 4D
 - Singularities of the $G_2$-manifold → non-perturbative effects (condensates)
 - Joyce metric on $X^7$ → internal metric of the space of dimensions

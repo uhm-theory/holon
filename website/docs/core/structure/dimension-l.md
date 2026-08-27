@@ -53,7 +53,7 @@ In UHM the letter **L** is used for three related but distinct objects:
 | $L_k$ (with index) | Italic | **Lindblad operators** — dissipative channels |
 | $\mathcal{L}_\Omega$ (calligraphic) | Script | **Liouvillian** — full generator of evolution |
 
-This is **not a notational coincidence**, but a manifestation of L-unification [Т]: the subobject classifier $\Omega$ generates the logical structure (the L-dimension), from whose atoms the operators $L_k$ are derived, forming the generator $\mathcal{L}_\Omega$:
+This is **not a notational coincidence**, but a manifestation of L-unification [T]: the subobject classifier $\Omega$ generates the logical structure (the L-dimension), from whose atoms the operators $L_k$ are derived, forming the generator $\mathcal{L}_\Omega$:
 
 $$\Omega \xrightarrow{\text{logic}} L \xrightarrow{\text{atoms}} L_k \xrightarrow{\text{generator}} \mathcal{L}_\Omega$$
 
@@ -145,7 +145,7 @@ $$
 L(\Gamma) := \{p \in \Omega : p(\Gamma) = \top\}
 $$
 
-— the set of predicates true on $\Gamma$. The logical structure has **three levels** [Т]:
+— the set of predicates true on $\Gamma$. The logical structure has **three levels** [T]:
 
 | Level | Logic | Structure | Role |
 |-------|-------|-----------|------|
@@ -694,7 +694,7 @@ Note that L shares Fano line $\{D, L, U\}$ with [dimension D (Dynamics)](./dimen
 ### Octonionic context {#октонионный-контекст}
 
 :::note Octonionic correspondence [T]
-The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Key conclusions of the chapter {#ключевые-выводы}

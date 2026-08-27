@@ -114,7 +114,7 @@ Step (1) ⟹ (2) uses the Perron–Frobenius theorem for the **linear part** $\m
 - Universal property: $\text{Hom}(\varphi(X), S) \cong \text{Hom}(X, i(S))$ follows from idempotency ∎
 
 :::info Remark on completeness of equivalence
-**Direction (1)⟹(2)** follows from primitivity of the linear part $\mathcal{L}_0$ [Т]: the left adjoint $\varphi$ projects onto the invariant subspace, and primitivity provides the spectral gap and convergence of the linear dynamics. **Direction (2)⟹(1):** any minimizer of the variational functional under the CPTP condition is a stationary point, and the CPTP contraction φ guarantees uniqueness $= \varphi$. Thus (2)⟹(1) is also [T] via the categorical definition of φ. All three directions have status **[T]**.
+**Direction (1)⟹(2)** follows from primitivity of the linear part $\mathcal{L}_0$ [T]: the left adjoint $\varphi$ projects onto the invariant subspace, and primitivity provides the spectral gap and convergence of the linear dynamics. **Direction (2)⟹(1):** any minimizer of the variational functional under the CPTP condition is a stationary point, and the CPTP contraction φ guarantees uniqueness $= \varphi$. Thus (2)⟹(1) is also [T] via the categorical definition of φ. All three directions have status **[T]**.
 :::
 
 ---
@@ -1573,7 +1573,7 @@ The self-modeling operator $\varphi$ defines the target state of regeneration: $
 
 ### 9.1 Regeneration as striving toward the self-model
 
-The [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation for $\Gamma$ is **fully derived** from the axioms [Т]:
+The [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation for $\Gamma$ is **fully derived** from the axioms [T]:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)

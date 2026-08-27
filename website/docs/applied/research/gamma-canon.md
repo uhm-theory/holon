@@ -63,7 +63,7 @@ The seven Fano lines are the seven **closed functional circuits** of the state �
 | $\{U,O,S\}$ | ontological stability | **Foundation** | Archetype, Symmetry, Completeness | groundlessness |
 | $\{O,A,D\}$ | activity groundedness | **Action** | Spontaneity, Actualization, Genesis | fussiness: action in vain |
 
-Two structural facts make these seven triads the natural "words" of state description [Т]: (i) *coverage without redundancy* — every one of the 21 coherences belongs to exactly one triad (Steiner property), so the seven words partition the entire connective tissue of the state; (ii) *universal adjacency* — any two triads share exactly one dimension, so any two "plots" of a life connect through exactly one common "theme."
+Two structural facts make these seven triads the natural "words" of state description [T]: (i) *coverage without redundancy* — every one of the 21 coherences belongs to exactly one triad (Steiner property), so the seven words partition the entire connective tissue of the state; (ii) *universal adjacency* — any two triads share exactly one dimension, so any two "plots" of a life connect through exactly one common "theme."
 
 #### The one-theme law: bridges, thirds, and the dynamical face [T] {#закон-одной-темы}
 
@@ -101,7 +101,7 @@ Read the rows as claims — they are not platitudes: *knowledge passes into acti
 
 ### 1.4 Layer 3 — the grammar [T] {#слой-3}
 
-[Theorem T-114](/docs/core/operators/lindblad-operators#теорема-фано-грамматика) [Т]: the Markov chain on the seven lines with incidence-weighted transitions is ergodic and generates a regular language over the seven-triad alphabet. This is the Canon's grammar: **which circuit of life naturally follows which**. Sequences of triads are the Canon's *sentences* — **triadic sentences** (§10) — trajectories of the state through its seven modes. Ergodicity [T] guarantees no triad is a trap: from any mode every other mode remains reachable — a theorem where traditions could only offer reassurance.
+[Theorem T-114](/docs/core/operators/lindblad-operators#теорема-фано-грамматика) [T]: the Markov chain on the seven lines with incidence-weighted transitions is ergodic and generates a regular language over the seven-triad alphabet. This is the Canon's grammar: **which circuit of life naturally follows which**. Sequences of triads are the Canon's *sentences* — **triadic sentences** (§10) — trajectories of the state through its seven modes. Ergodicity [T] guarantees no triad is a trap: from any mode every other mode remains reachable — a theorem where traditions could only offer reassurance.
 
 ### 1.5 Layer 4 — the sixteen archetypes [T] {#слой-4}
 
@@ -122,7 +122,7 @@ The practice meaning is direct: **any state of the system is either archetypal o
 
 Triads and Fields form a strict duality: a Triad is a *doing* (three dimensions in circuit), its Field is the *world of that doing* (the four dimensions the circuit acts upon). Stillness and Pleroma are the lattice's poles — and §5 proves that *neither pole is habitable*.
 
-Resonances [И]: sixteen geomantic figures; sixteen MBTI types. The Canon does not endorse these systems; it notes that a 16-fold typology over a small basis has been rediscovered repeatedly, and offers the first version in which the sixteen are *derived* and carry a metric.
+Resonances [I]: sixteen geomantic figures; sixteen MBTI types. The Canon does not endorse these systems; it notes that a 16-fold typology over a small basis has been rediscovered repeatedly, and offers the first version in which the sixteen are *derived* and carry a metric.
 
 ### 1.6 Layer 5 — the vertical [T] {#слой-5}
 
@@ -143,9 +143,9 @@ The window inverts the default spiritual metaphor: the top of the vertical is **
 
 Two derived structures and one honest refusal:
 
-- **The cycle** [Т]: internal time is the $\mathbb{Z}_7$ Page–Wootters clock — seven-tick cyclic structure is native to the state space.
-- **The mode of the moment** [Т]: every instant of evolution decomposes into exactly three contributions — *preserving* (Hamiltonian), *dissolving* (dissipation toward noise), *regenerating* (restoration toward the self-model) — the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция). The Canon reads any period of a life by asking which of the three modes dominates. Every culture's trinity of world-process — creation, maintenance, dissolution — is a projection of this theorem [I].
-- **The refusal** [И]: UHM derives *no* mapping from calendar dates or birth moments onto $\Gamma$. Any such assignment is a convention. This is stated plainly because it is exactly the step astrology takes silently (§2).
+- **The cycle** [T]: internal time is the $\mathbb{Z}_7$ Page–Wootters clock — seven-tick cyclic structure is native to the state space.
+- **The mode of the moment** [T]: every instant of evolution decomposes into exactly three contributions — *preserving* (Hamiltonian), *dissolving* (dissipation toward noise), *regenerating* (restoration toward the self-model) — the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция). The Canon reads any period of a life by asking which of the three modes dominates. Every culture's trinity of world-process — creation, maintenance, dissolution — is a projection of this theorem [I].
+- **The refusal** [I]: UHM derives *no* mapping from calendar dates or birth moments onto $\Gamma$. Any such assignment is a convention. This is stated plainly because it is exactly the step astrology takes silently (§2).
 
 ---
 
@@ -280,13 +280,13 @@ The [one-theme law](#закон-одной-темы) turns disciplined self-trac
 3. **Scouting the third.** Before deliberately combining two qualities, name their third from the table — it is the hidden lever or the hidden cost of the pair, and it can be provisioned rather than discovered.
 4. **Hunter's rotation.** Each theme lives in exactly three theaters (the pencil of plots through it): stalking one theme is a three-beat tour of its theaters, ordered by the [T-114 grammar](#слой-3). One theme per week; three theaters per theme.
 
-Epistemic frame [О]: stalking here is a discipline of *self*-observation and self-steering — the Canon lends it geometry, not license; applied to others it leaves the Canon (§3.7). The instruments inherit their statuses: the tables are [T], their diagnostic readings are [I], and V7 (§11) states what would refute the practice claim.
+Epistemic frame [D]: stalking here is a discipline of *self*-observation and self-steering — the Canon lends it geometry, not license; applied to others it leaves the Canon (§3.7). The instruments inherit their statuses: the tables are [T], their diagnostic readings are [I], and V7 (§11) states what would refute the practice claim.
 
 ---
 
 ## 4. The holarchic ladder: the Canon at every scale [Т/И] {#холархия}
 
-The ultimate generalisation. The Canon's geometry is not a psychology — it is the state geometry of *any* autonomous holon, and [scale invariance](/docs/applied/coherence-cybernetics/predictions#предсказание-5) licenses one ladder from cell to cosmos. The **structure** of the ladder (same 28 cells, same triads, same thresholds at every rung) is [T]; the **content** of each rung's dimensions is a structured mapping [И]:
+The ultimate generalisation. The Canon's geometry is not a psychology — it is the state geometry of *any* autonomous holon, and [scale invariance](/docs/applied/coherence-cybernetics/predictions#предсказание-5) licenses one ladder from cell to cosmos. The **structure** of the ladder (same 28 cells, same triads, same thresholds at every rung) is [T]; the **content** of each rung's dimensions is a structured mapping [I]:
 
 | Rung | A distinguishes | S holds | D moves | L orders | E experiences | O feeds | U binds |
 |---|---|---|---|---|---|---|---|
@@ -329,7 +329,7 @@ Two poles of the archetype lattice anchor the rose: **Stillness** (limit 1 reach
 
 The Canon treats the contemplative traditions as what they empirically are: **multi-generational longitudinal studies** of specific regions of $\Gamma$-space, reported in pre-formal vocabulary. This reframing turns "ancient wisdom" into a **calibration corpus** (§10) for the Canon's [I]-anchors — the largest phenomenological dataset in existence, gathered over three millennia by schools that trained observers far beyond any modern study's protocol adherence.
 
-**Method.** A tradition's *stage ladder* is read as a **trajectory template**: a claimed reproducible path through Canon space. The template is transcribed into coordinates (which cells rise, in what order, which limits are approached) and becomes a testable prediction about practitioner cohorts (V6, §11). Four transcriptions [И]:
+**Method.** A tradition's *stage ladder* is read as a **trajectory template**: a claimed reproducible path through Canon space. The template is transcribed into coordinates (which cells rise, in what order, which limits are approached) and becomes a testable prediction about practitioner cohorts (V6, §11). Four transcriptions [I]:
 
 | Tradition's ladder | Canon transcription | Signature claim |
 |---|---|---|

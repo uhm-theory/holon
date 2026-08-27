@@ -228,7 +228,7 @@ The single most consequential fact for a solver: *the largest part of every gold
 
 This is the honest formalization of the question that motivated this document — *why does the universe remove obstacles before the bold?* In UHM the experience decomposes without residue [И over Т]:
 
-1. The viable window is an attractor [Т]: within its basin, the vector field works **for** any goal aligned with viability. Obstacles «dissolve» past the basin boundary because from there the drift finishes the road.
+1. The viable window is an attractor [T]: within its basin, the vector field works **for** any goal aligned with viability. Obstacles «dissolve» past the basin boundary because from there the drift finishes the road.
 2. A bold move is a *basin crossing*: a stress surge, honestly priced (the machine prints the heat), that relocates the state to where item 1 applies. Timid paths that never cross pay less per step and fight the field forever.
 3. The solitaire measures it (§6.1): from the same fog, timid decks came together 0% of the time within the horizon; decks allowed 25% bold moves — 25%, at slightly higher mean heat. Fortune favours the bold *because basins do*.
 4. And misalignment is punished the same way: a goal outside the viable cone means permanent $\sigma$-payment and eventual halt at the grey wall — the machine's starvation run (H23) is the minimal model of it.

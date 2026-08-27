@@ -167,7 +167,7 @@ UHM employs **two distinct forms** of the operators $L_k$ that should not be con
 
 **All physical results** (coherence contraction, $P_{\text{crit}} = 2/7$, $G_2$-covariance, formula for $\kappa_0$) use the **Fano form**. The atomic form serves as the foundation for proving primitivity of the linear part $\mathcal{L}_0$ [T] and $S_7$-equivariance [T], but is replaced by the Fano operators in physical computations.
 
-**The equivalence of the two forms** follows from the L-unification chain T11–T13 [Т]: Choi rank of the channel = 7 (T11) + projective decomposition from L-unification (T12) + forced BIBD$(7,3,1)$ (T13) prove that the atomic projectors $L_k^{\text{atom}}$ **uniquely generate** the Fano operators $L_p^{\text{Fano}}$ as the unique minimal composite decomposition. Details: [T11](#теорема-ранг-хои), [T12](#теорема-проективная-декомпозиция), [T13](#теорема-bibd-из-хои).
+**The equivalence of the two forms** follows from the L-unification chain T11–T13 [T]: Choi rank of the channel = 7 (T11) + projective decomposition from L-unification (T12) + forced BIBD$(7,3,1)$ (T13) prove that the atomic projectors $L_k^{\text{atom}}$ **uniquely generate** the Fano operators $L_p^{\text{Fano}}$ as the unique minimal composite decomposition. Details: [T11](#теорема-ранг-хои), [T12](#теорема-проективная-декомпозиция), [T13](#теорема-bibd-из-хои).
 :::
 
 #### Theorem (Uniqueness of the Fano form from axioms) [T] {#теорема-единственность-фано}
@@ -179,13 +179,13 @@ The Fano operators are the **unique** minimal composite Lindblad operators compa
 
 **Step 1 (Autopoiesis → $c > 0$).** From A1 (autopoiesis) one needs $c > 0$ ([T7](#теорема-необходимость-c) [T]): without an active Fano channel, regeneration is suppressed.
 
-**Step 2 ($c > 0$ → full pair coverage).** From [T2](#теорема-полнота-покрытия) [Т]: $c > 0$ requires that the interaction graph $G_H$ covers **all** pairs $(i,j)$ through at least one operator $L_p$.
+**Step 2 ($c > 0$ → full pair coverage).** From [T2](#теорема-полнота-покрытия) [T]: $c > 0$ requires that the interaction graph $G_H$ covers **all** pairs $(i,j)$ through at least one operator $L_p$.
 
-**Step 3 (Choi rank = 7).** From [T11](#теорема-ранг-хои) [Т]: the Choi matrix rank of the channel $\Phi_{k=3}$ equals 7.
+**Step 3 (Choi rank = 7).** From [T11](#теорема-ранг-хои) [T]: the Choi matrix rank of the channel $\Phi_{k=3}$ equals 7.
 
-**Step 4 (Optimal block $k = 3$).** From [T12](#теорема-проективная-декомпозиция) [Т]: the projective decomposition from L-unification requires rank-3 projectors (the minimal rank covering all pairs at $N = 7$).
+**Step 4 (Optimal block $k = 3$).** From [T12](#теорема-проективная-декомпозиция) [T]: the projective decomposition from L-unification requires rank-3 projectors (the minimal rank covering all pairs at $N = 7$).
 
-**Step 5 (BIBD uniqueness).** From [T13](#теорема-bibd-из-хои) [Т]: a system of $b = 7$ rank-$k = 3$ projectors on $\mathbb{C}^7$ with full pair coverage is a $\mathrm{BIBD}(7, 3, 1)$. By Fisher's inequality and the uniqueness of the projective plane of order 2 (Veblen–Wedderburn): $\mathrm{BIBD}(7,3,1) \cong PG(2,2)$ — **unique** up to isomorphism.
+**Step 5 (BIBD uniqueness).** From [T13](#теорема-bibd-из-хои) [T]: a system of $b = 7$ rank-$k = 3$ projectors on $\mathbb{C}^7$ with full pair coverage is a $\mathrm{BIBD}(7, 3, 1)$. By Fisher's inequality and the uniqueness of the projective plane of order 2 (Veblen–Wedderburn): $\mathrm{BIBD}(7,3,1) \cong PG(2,2)$ — **unique** up to isomorphism.
 
 **Step 6 (Relation to atomic).** The Fano projectors are expressed through the atomic ones: $\Pi_p = \sum_{k \in \text{line}_p} L_k^{\text{atom}}$. Conversely, the atomic operators are recovered from the Fano ones via: $L_k^{\text{atom}} = \frac{1}{3}\sum_{p : k \in \text{line}_p} \Pi_p - \frac{1}{3}I_7$ (from the involutory incidence matrix of the Fano plane). This is a bijective correspondence.
 
@@ -384,7 +384,7 @@ Status: **[T]**
 
 ### Cascading Corollaries of Primitivity
 
-The proof of primitivity closes **5 conditional results**, upgrading their status from [C] to [Т]:
+The proof of primitivity closes **5 conditional results**, upgrading their status from [C] to [T]:
 
 | Result | Old status | New status | Reason |
 |-----------|:---:|:---:|---|
@@ -512,7 +512,7 @@ $$
 
 **Proof.** For the BIBD channel $\Phi_{\mathcal{B}}(\Gamma) = \frac{1}{r}\sum_p \Pi_p\Gamma\Pi_p$: diagonal elements $[\Phi]_{ii} = \gamma_{ii}$ (each point in $r$ blocks), off-diagonal $[\Phi]_{ij} = \frac{\lambda}{r}\gamma_{ij} = \frac{k-1}{v-1}\gamma_{ij}$ (from the BIBD relation $r(k-1) = \lambda(v-1)$). The expression does not depend on $\lambda$. $\blacksquare$
 
-**Corollary T1.1.** For $v=7$, $k=3$: the contraction $c = 1/3$ is the same for the Fano channel ($\lambda=1$, $b=7$) and any $(7,3,\lambda)$-BIBD channel. The choice $\lambda=1$ is **forced** by Theorems T11–T13 [Т]: Choi rank of the channel = 7 (minimal decomposition), L-unification yields projective operators, and 7 rank-3 projectors with contraction 1/3 form a BIBD$(7,3,1)$.
+**Corollary T1.1.** For $v=7$, $k=3$: the contraction $c = 1/3$ is the same for the Fano channel ($\lambda=1$, $b=7$) and any $(7,3,\lambda)$-BIBD channel. The choice $\lambda=1$ is **forced** by Theorems T11–T13 [T]: Choi rank of the channel = 7 (minimal decomposition), L-unification yields projective operators, and 7 rank-3 projectors with contraction 1/3 form a BIBD$(7,3,1)$.
 
 #### Theorem T2: Full pair coverage [T] {#теорема-полнота-покрытия}
 

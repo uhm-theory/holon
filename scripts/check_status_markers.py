@@ -43,8 +43,19 @@ LOCALES = {
     "ru": str(Path(__file__).resolve().parent.parent / "website" / "i18n" / "ru"
               / "docusaurus-plugin-content-docs" / "current" / "**" / "*.md*"),
 }
-# `[X]`, не являющееся ссылкой `[X](…)` и не определением ссылки `[X]:`
-MARKER_RE = re.compile(r"\[([A-ZА-ЯЁ✗])\](?![(:])")
+# `[X]`, не являющееся ссылкой `[X](…)` и не определением ссылки `[X]:`.
+#
+# NB (ПРИБОР МОЛЧАЛ НА 138 МЕТКАХ): двоеточие исключалось БЕЗУСЛОВНО — «`[X]:`
+# есть определение ссылки Markdown». Но определение ссылки стои́т только В
+# НАЧАЛЕ СТРОКИ, а каноническая форма реестра статусов — ровно `[T]: описание`
+# в середине строки. Исключающее правило проглотило собственную форму корпуса,
+# и 138 меток чужой локали — кириллические Т/С/Г/О/И в английском реестре и
+# латинские в русском, неразличимые на вид — проходили вентиль молча, при том
+# что и таблицы глифов, и перевод, и маскировка работали верно. Словарь прибора
+# был у́же корпуса не в том, что́ он знал, а в том, что́ он ИСКЛЮЧАЛ.
+MARKER_RE = re.compile(r"\[([A-ZА-ЯЁ✗])\](?!\()")
+#: Определение ссылки Markdown: `[X]:` в НАЧАЛЕ строки. Только оно и исключается.
+LINKDEF_RE = re.compile(r"^\s{0,3}\[[A-ZА-ЯЁ✗]\]:", re.M)
 # Квалифицированная форма: `[Т при кинетике]`, `[C at α=2/3]`. Глиф и связка
 # механичны, а текст квалификатора — проза, и его переводит человек.
 QUALIFIED_RE = re.compile(r"\[([A-ZА-ЯЁ])(\s+)(at|при)(\s[^\]\n]{1,80})\]")
@@ -100,10 +111,13 @@ def scan(path: str, locale: str):
             line = masked[: m.start()].count("\n") + 1
             out.append((line, f"{ch} {conn}", f"{want_ch} {want_conn}",
                         "квалифицированный"))
+    linkdefs = {m.start() for m in LINKDEF_RE.finditer(masked)}
     for m in MARKER_RE.finditer(masked):
         ch = m.group(1)
         if ch in NOT_MARKERS or ch in legal:
             continue
+        if any(abs(m.start() - d) <= 3 for d in linkdefs):
+            continue          # настоящее определение ссылки в начале строки
         line = masked[: m.start()].count("\n") + 1
         if ch in SUSPECT:
             _, fix = SUSPECT[ch]
@@ -133,10 +147,13 @@ def apply_fix(path: str, locale: str, kinds: set[str]) -> int:
                 continue
             edits.append((m.start(1), len(ch) + len(sp) + len(conn),
                           f"{want_ch}{sp}{want_conn}"))
+    linkdefs = {m.start() for m in LINKDEF_RE.finditer(masked)}
     for m in MARKER_RE.finditer(masked):
         ch = m.group(1)
         if ch in NOT_MARKERS or ch in legal:
             continue
+        if any(abs(m.start() - d) <= 3 for d in linkdefs):
+            continue          # настоящее определение ссылки в начале строки
         if ch in SUSPECT:
             if "подозрительное" not in kinds:
                 continue

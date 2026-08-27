@@ -353,7 +353,7 @@ This is **not** an artificial fine-tuning. The window $(2/7, 3/7]$ has natural w
 
 ### Formulation {#формулировка-t127}
 
-**Case A (embodied holons) [Т]:** C20 (κ-dominance) follows unconditionally from [T-149 [T]](/docs/proofs/consciousness/substrate-closure#t-149): embodiment ⟹ $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$ ⟹ $P(\rho^*) > P_{\mathrm{crit}}$. T-127 is unconditional.
+**Case A (embodied holons) [T]:** C20 (κ-dominance) follows unconditionally from [T-149 [T]](/docs/proofs/consciousness/substrate-closure#t-149): embodiment ⟹ $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$ ⟹ $P(\rho^*) > P_{\mathrm{crit}}$. T-127 is unconditional.
 
 **Case B (isolated holons) [C at C20]:** C20 is taken as an explicit assumption. T-127 is conditional on the inequality $\kappa_{\mathrm{eff}} > \alpha/(7(f^* - 2/7))$.
 

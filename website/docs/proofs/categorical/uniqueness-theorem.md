@@ -11,7 +11,7 @@ description: "G₂-rigidity of holonomic representation: uniqueness of the map G
 The uniqueness theorem of holonomic representation is a **theorem [T]**, relying exclusively on previously proven results:
 - Primitivity of $\mathcal{L}_\Omega$ [T] ([proof](/docs/core/operators/lindblad-operators#примитивность-ℒω))
 - Full minimality 7/7 [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
-- Bridge T15 [Т]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
+- Bridge T15 [T]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
 - L-unification [T] ([proof](/docs/core/operators/lindblad-operators))
 - Uniqueness of E, O, U [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 :::
@@ -105,13 +105,13 @@ $$
 All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minimality-7):
 
 - Each dimension performs an irreducible function (F1–F7)
-- [E is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: (PH) + $\kappa_0$ (requires $\mathrm{Hom}(O,E)$) + rank greater than 1
-- [O is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: $\mathcal{R}$ [T] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
-- [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [Т]: causal + categorical (O = E degenerates $\kappa_0$)
+- [E is unique](/docs/proofs/minimality/theorem-minimality-7) [T]: (PH) + $\kappa_0$ (requires $\mathrm{Hom}(O,E)$) + rank greater than 1
+- [O is unique](/docs/proofs/minimality/theorem-minimality-7) [T]: $\mathcal{R}$ [T] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
+- [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [T]: causal + categorical (O = E degenerates $\kappa_0$)
 
 ### P3. Bridge T15 [T] {#p3-мост}
 
-Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [Т]:
+Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [T]:
 
 $$
 \mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{Т}]} \mathrm{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2
@@ -442,7 +442,7 @@ Question 3 (predictivity) is **epistemological**, not mathematical: it is closed
 ## Summary {#резюме}
 
 :::tip Key result
-**Theorem of $G_2$-rigidity [Т]:** The holonomic representation of a system satisfying (AP)+(PH)+(QG)+(V) is **unique** up to gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$ — a 14-dimensional exceptional Lie group, the automorphism group of the octonions.
+**Theorem of $G_2$-rigidity [T]:** The holonomic representation of a system satisfying (AP)+(PH)+(QG)+(V) is **unique** up to gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$ — a 14-dimensional exceptional Lie group, the automorphism group of the octonions.
 
 **Physical meaning:** Different observers applying UHM to the same system will obtain coherence matrices related by a $G_2$-transformation. All 34 gauge-invariant parameters (purity, coherences, thresholds) will coincide.
 

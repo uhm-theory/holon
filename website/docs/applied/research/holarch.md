@@ -278,7 +278,7 @@ same pattern *constructively* on every worked design: four targeted ablations �
 into background, collapse into one mode, cut the shared flows, unplug interiority —
 each break **exactly their own invariant** (HL04–HL06, DESIGN).
 
-**Robustness.** T-124d [Т]: all four measures respond $O(\varepsilon)$ to
+**Robustness.** T-124d [T]: all four measures respond $O(\varepsilon)$ to
 $O(\varepsilon)$ state noise — no threshold has divergent sensitivity, so a noisy
 telemetry pipeline cannot flip a verdict by itself.
 
@@ -488,10 +488,10 @@ in the corpus. Engineering translation:
 Three corpus results make a HOLARCH system *diagnosable by construction* — the
 capability no framework in §18 offers at all:
 
-1. **The alphabet is the code.** T-224 [Т]: seven axes with the Fano grammar are the
+1. **The alphabet is the code.** T-224 [T]: seven axes with the Fano grammar are the
    unique perfectly single-fault-localizable alphabet of their size — a failing
    aspect names itself.
-2. **The wiring is testable.** T-226 [Т]: fourteen parameter-free sum rules over the
+2. **The wiring is testable.** T-226 [T]: fourteen parameter-free sum rules over the
    21 pairwise decoherence rates hold *iff* the wiring is Fano — a conformance test
    that an implementation's coupling structure matches its declaration, for free.
 3. **Diagnosis compresses lawfully.** The Σ-pyramid 21 → 7 → 3 → 1

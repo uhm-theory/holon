@@ -248,11 +248,11 @@ $$
 \text{A2 (Bures metric)} \xrightarrow{T\text{-}187} \text{unique } J_B \xrightarrow{T\text{-}185} \text{cohesive structure } (\Pi \dashv \flat \dashv \sharp, \iota^* \dashv \mathrm{Inf}) \xrightarrow{T\text{-}186(a)} F \cong \&|_{\mathcal{D}}
 $$
 
-**Step 1.** By T-187 [Т]: A2 uniquely determines the Bures metric via four independent characterizations (Char-I Petz extremality, Char-II Uhlmann universality, Char-III SLD-Fisher saturation, Char-IV MaxEnt covariance T-189 [T]).
+**Step 1.** By T-187 [T]: A2 uniquely determines the Bures metric via four independent characterizations (Char-I Petz extremality, Char-II Uhlmann universality, Char-III SLD-Fisher saturation, Char-IV MaxEnt covariance T-189 [T]).
 
-**Step 2.** By T-185 [Т]: the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
+**Step 2.** By T-185 [T]: the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
 
-**Step 3.** By T-186(a) [Т]: the phenomenal functor $F \cong \&|_{\mathcal{D}}$ — experience is the infinitesimal flat modality restricted to density matrices. This is forced by the adjunction, not stipulated.
+**Step 3.** By T-186(a) [T]: the phenomenal functor $F \cong \&|_{\mathcal{D}}$ — experience is the infinitesimal flat modality restricted to density matrices. This is forced by the adjunction, not stipulated.
 
 **Therefore:** Given A2, the existence and structure of experience is a **theorem** (T-186). The only remaining interpretive element is A2 itself. But A2 is not a consciousness axiom — it is a **physics axiom** about the metric structure of quantum state space.
 
@@ -415,7 +415,7 @@ All five axioms A1–A5 of UHM are **theorems** — they are derivable from the 
 | **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | T-187 [T] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + **T-189 [T] (Char-IV MaxEnt covariance)**: the physical covariance of quantum fluctuations uniquely selects the Bures metric without information-geometric choice | [T] |
 | **A3** | $N = 7$ | Theorem S [T] (functional minimality 7/7) + T15 [T] (bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$) | [T] |
 | **A4** | $\omega_0 > 0$ | Trivial: $\omega_0 = 0$ implies no dynamics ($H_{\mathrm{eff}} = 0$), which violates (AP) (no autopoiesis without evolution). Therefore $\omega_0 > 0$ is a **necessary condition** for (AP), not an independent axiom | [T] |
-| **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87 [Т]: derived from A1–A4 via the spectral triple construction. The tensor factorization is forced by the KO-dimension 6 real structure (T-53 [T]) and the $G_2 \to SU(3)$ sector decomposition | [T] |
+| **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87 [T]: derived from A1–A4 via the spectral triple construction. The tensor factorization is forced by the KO-dimension 6 real structure (T-53 [T]) and the $G_2 \to SU(3)$ sector decomposition | [T] |
 
 **Chain of derivation:**
 
