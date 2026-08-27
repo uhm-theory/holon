@@ -341,29 +341,38 @@ def main() -> int:
         if not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if not cells or not re.fullmatch(r"~{0,2}(T-)?\d{1,3}[a-z]?~{0,2}", cells[0]):
+        if not cells or not re.fullmatch(r"~{0,2}\*{0,2}(T-)?\d{1,3}[a-z]?\*{0,2}~{0,2}", cells[0]):
             continue
         struck = cells[0].startswith("~~") or (len(cells) > 1 and cells[1].startswith("~~"))
         if struck or "Retracted" in sec:
             continue
-        body = re.sub(r"[^a-zа-я0-9]", "", (cells[1] if len(cells) > 1 else "").lower())[:60]
-        coll[cells[0].strip("~").replace("T-", "")].append(body)
-    collided = sorted(k for k, v in coll.items() if len(set(v)) > 1)
-    #: Объявление читается на ОБЕИХ локалях: реестр английский, его перевод
-    #: русский, и число обязано стоять в обоих — иначе локали разойдутся молча.
-    DECL = re.compile(r"\*\*(\d{1,3})\*\* (?:номеров несут по две живые строки"
-                      r"|numbers carry two live rows)")
-    said = DECL.search(_regt)
-    print(f"один номер — одна формулировка: столкновений {len(collided)}"
-          + (f"; объявлено {said.group(1)}" if said else "; в реестре не объявлено"))
-    if not said:
-        print("  реестр обязан назвать это число сам — молчание успехом не считается")
-        self_bad.append((REGISTRY, "столкновения не объявлены", len(collided), "—"))
-    elif int(said.group(1)) != len(collided):
-        print(f"  РАСХОЖДЕНИЕ: объявлено {said.group(1)}, посчитано {len(collided)}")
-        self_bad.append((REGISTRY, "столкновения", int(said.group(1)), len(collided)))
-    else:
-        print(f"  первые: {', '.join('T-' + k for k in collided[:8])}")
+        body = cells[1] if len(cells) > 1 else ""
+        coll[re.sub(r"[~*]|T-", "", cells[0])].append((sec, re.sub(r"[^a-zа-я0-9]", "", body.lower())[:60]))
+    #: Таблицы-СПУТНИКИ перечисляют не соперничающую формулировку, а сведения О
+    #: том же результате: внешнюю опору («Goderis–Verbeure–Vets 1989») или сводку
+    #: универсального свойства. Номер, встреченный в такой паре, не двусмыслен —
+    #: он просто назван дважды. Смешивать эти два случая нельзя: первая редакция
+    #: этой проверки смешала и объявила 60 там, где всего 63, а настоящих 35.
+    COMPANION = ("Framework-conditional", "Universal Property")
+    dup = {k: v for k, v in coll.items() if len({b for _, b in v}) > 1}
+    real = [k for k, v in dup.items()
+            if not any(any(c in s for c in COMPANION) for s, _ in v)]
+    D_ALL = re.compile(r"\*\*(\d{1,3})\*\* (?:номеров несут по две живые строки"
+                       r"|numbers carry two live rows)")
+    #: Число стои́т ВНУТРИ того же жирного пролёта, что и слова, — «**настоящих
+    #: столкновений 35**», — и шаблон, искавший «**» после слов, не совпадал.
+    D_REAL = re.compile(r"(?:настоящих столкновений|genuine collisions)[:\s]{1,3}(\d{1,3})")
+    said_all, said_real = D_ALL.search(_regt), D_REAL.search(_regt)
+    print(f"один номер — одна формулировка: всего {len(dup)}, настоящих {len(real)}"
+          + (f"; объявлено {said_all.group(1)}" if said_all else "; всего не объявлено")
+          + (f" и {said_real.group(1)}" if said_real else " и настоящих не объявлено"))
+    for got, said, name in ((len(dup), said_all, "всего"), (len(real), said_real, "настоящих")):
+        if said is None:
+            print(f"  реестр обязан назвать «{name}» сам — молчание успехом не считается")
+            self_bad.append((REGISTRY, f"столкновения ({name}) не объявлены", got, "—"))
+        elif int(said.group(1)) != got:
+            print(f"  РАСХОЖДЕНИЕ «{name}»: объявлено {said.group(1)}, посчитано {got}")
+            self_bad.append((REGISTRY, f"столкновения ({name})", int(said.group(1)), got))
 
     if self_bad:
         return 1

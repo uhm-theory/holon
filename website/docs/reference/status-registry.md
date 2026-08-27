@@ -41,11 +41,18 @@ resolves through the page it links to, not through this table.
 
 **One number, two statements (open debt).** The registry writes rows in several tables, and
 their numbering is *continuous*: Level 1 runs 1..48 with lettered variants, Level 2 continues
-39..52, Level 3 continues 53..90. Because of that, **60** numbers carry two live rows with
-different statements — 18 across Level 1 and Level 3, 14 across the Universal-Property table
-and the main registry, 7 across Level 1 and Level 6, and so on. A citation of such a number is
-ambiguous: the reader cannot tell which of the two rows was meant. Struck-through rows and the
-Retracted section are not counted — there the reuse of a number is declared.
+39..52, Level 3 continues 53..90, Level 5 continues 81..85, Level 6 continues 86..92. Because
+the ranges overlap, **63** numbers carry two live rows with different statements.
+
+Two kinds must not be conflated, and the first edition of this paragraph conflated them.
+**28** of the 63 pair a substantive row with a *companion* row — a table listing the external
+support of the same result (`Goderis–Verbeure–Vets 1989` under T-117, `Connes 2013
+reconstruction` under T-119) or the Universal-Property summary. There the number is not
+ambiguous; it is merely named twice. The remaining — **genuine collisions: 35** — pair two
+substantive tables: 18 across Level 1 and Level 3, 7 across Level 1 and Level 6, 5 across
+Level 1 and Level 5, 3 across Level 1 and Level 2. *There* a citation is ambiguous: the reader
+cannot tell which of the two rows was meant. Struck-through rows and the Retracted section are
+not counted — there the reuse of a number is declared.
 
 The number is measured by `scripts/check_theorem_refs.py` on every run and must match the one
 written here; the checker deliberately does *not* decide which row is right, because renumbering
