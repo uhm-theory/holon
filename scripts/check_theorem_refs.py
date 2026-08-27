@@ -274,6 +274,57 @@ def main() -> int:
     print(f"проверено ссылок {sum(refs.values())} на {len(refs)} различных номеров; "
           f"объявлено в реестре {len(have)}; висячих в рабочем диапазоне {len(late)}")
     print("все ссылки, кроме объявленного раннего диапазона, разрешаются")
+
+    # --- СЧЁТ О СЕБЕ: проза реестра обязана сходиться с самим реестром ---
+    # Прибор считал 392 строки и печатал это число — но с ПРОЗОЙ, которая тут же
+    # рядом говорит «the registry holds 392 rows spanning T-1..T-325», не сверял
+    # никто. Проверено подлогом: «399» вместо «392» проходило вентиль молча.
+    # Число, произнесённое о себе, стареет тише всех прочих: оно верно в день
+    # написания и остаётся выглядеть верным навсегда. Сверяются ОБЕ локали —
+    # русская страница правится отдельно от английской и расходится с ней сама
+    # собой, без чьего-либо умысла.
+    self_bad, self_seen = [], 0
+    nums_all = sorted({base(x) for x in have})
+    want = {"строк": len(have), "низ": nums_all[0], "верх": nums_all[-1]}
+    # NB (ПЕРВАЯ РЕДАКЦИЯ ЛОВИЛА НЕ ТО): шаблон диапазона брал ЛЮБОЕ «T-a–T-b»
+    # на странице и объявлял расхождением всякое содержательное упоминание вроде
+    # «T-112–T-113». Диапазон засчитывается только там, где он ЧАСТЬ ЗАЯВКИ О
+    # СЕБЕ, — то есть в окне сразу за счётом строк. Страж, ловящий чужое, хуже
+    # отсутствующего: его выключают целиком.
+    ROWS_RE = re.compile(r"\*\*(\d{2,4})\s+(?:rows|строк[аи]?)")
+    SPAN_RE = re.compile(r"T-(\d{1,3})\s*(?:\.\.|–|—|-)\s*T-(\d{1,3})")
+    PAGES = ("website/docs/reference/status-registry.md",
+             "website/i18n/ru/docusaurus-plugin-content-docs/current/"
+             "reference/status-registry.md")
+    for page in PAGES:
+        fp = Path(page)
+        if not fp.exists():
+            print(f"  ПРОПУСК: {page} — страницы нет, счёт о себе не сверен")
+            self_bad.append((page, "страница отсутствует", "", ""))
+            continue
+        txt = fp.read_text(encoding="utf-8")
+        for m in ROWS_RE.finditer(txt):
+            self_seen += 1
+            if int(m.group(1)) != want["строк"]:
+                self_bad.append((page, "строк", int(m.group(1)), want["строк"]))
+            win = txt[m.end(): m.end() + 160]
+            sp = SPAN_RE.search(win)
+            if sp:
+                self_seen += 1
+                got = (int(sp.group(1)), int(sp.group(2)))
+                if got != (want["низ"], want["верх"]):
+                    self_bad.append((page, "диапазон", f"T-{got[0]}..T-{got[1]}",
+                                     f"T-{want['низ']}..T-{want['верх']}"))
+    print(f"счёт реестра о себе: сверено заявок {self_seen} на {len(PAGES)} "
+          f"страницах (строк {want['строк']}, диапазон T-{want['низ']}..T-{want['верх']}); "
+          f"расходится {len(self_bad)}")
+    for b in self_bad:
+        print(f"  РАСХОЖДЕНИЕ: {b[0]} — «{b[1]}» сказано {b[2]}, реестр даёт {b[3]}")
+    if self_seen == 0:
+        print("  ПУСТО: ни одной заявки не найдено — шаблоны разошлись с текстом")
+        self_bad.append(("—", "знаменатель пуст", 0, 1))
+    if self_bad:
+        return 1
     return 0
 
 
