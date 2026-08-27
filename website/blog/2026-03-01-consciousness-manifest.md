@@ -182,7 +182,7 @@ If $\Gamma$ formalizes the internal state, then practices that change experience
 
 | Practice | Effect on $\Gamma$ | Formal interpretation | Status |
 |----------|--------------------|-----------------------------|:------:|
-| Mindfulness | $\uparrow |\gamma_{OE}|, |\gamma_{OU}|$ | Strengthening the O-E-U triangle → increase in $\kappa_0$ → maintaining $P > 2/7$ *indirectly*. Explains why "empty" meditation (without content) strengthens consciousness | [И] |
+| Mindfulness | $\uparrow \lvert \gamma_{OE}\rvert, \lvert \gamma_{OU}\rvert$ | Strengthening the O-E-U triangle → increase in $\kappa_0$ → maintaining $P > 2/7$ *indirectly*. Explains why "empty" meditation (without content) strengthens consciousness | [И] |
 | Koan (Zen) | $\varphi_{LE} \to 0$ | Targeted decoherence of the logic sector for expansion | [И] |
 | Yoga / dance | $\downarrow \sigma_D$ | Reduction of D-dimension stress (dynamics) through body practice | [И] |
 | Psychedelics | Perturbation $P \to P_{\text{crit}}$ | Temporary access to other attractors through perturbation | [И] |
