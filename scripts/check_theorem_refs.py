@@ -374,6 +374,60 @@ def main() -> int:
             print(f"  РАСХОЖДЕНИЕ «{name}»: объявлено {said.group(1)}, посчитано {got}")
             self_bad.append((REGISTRY, f"столкновения ({name})", int(said.group(1)), got))
 
+    # --- СТРОКА РЕЕСТРА ПРОТИВ СВОЕЙ ЖЕ СТРАНИЦЫ ---
+    # Строка реестра ссылается на раздел, где результат доказан. Если раздел с тех
+    # пор получил ИСПРАВЛЕНИЕ, а строка о нём молчит, реестр объявляет верным то,
+    # что страница уже отменила. Так и было со строкой T-151: она держала «direct
+    # consequence of T-129», тогда как её раздел несёт «the earlier unconditional
+    # derivation was invalid» с явным контрпримером.
+    #
+    # Две ловушки на пути, обе прожиты при постройке этой проверки.
+    # ПЕРВАЯ — ОМОНИМ: слово «retraction» в этом корпусе чаще математическое
+    # (ретракция симплекса на рог, ретракция OP² ⟶ CP⁶), и проба по СЛОВУ дала
+    # два ложных срабатывания. Редакционную ретракцию опознаём по ФОРМЕ ВРЕЗКИ.
+    # ВТОРАЯ — ГРАНИЦА РАЗДЕЛА: обрыв по «\n## » тянул раздел T-188 на тринадцать
+    # тысяч знаков и захватывал исправление СОСЕДНЕЙ теоремы. Граница берётся по
+    # уровню самого заголовка: раздел кончается на первом заголовке того же или
+    # старшего уровня.
+    RET_PAGE = re.compile(r":::(?:warning|danger|caution)\s+(?:Correction|Retraction)[^\n]*"
+                          r"|^#{1,6}[^\n]*\bRetraction\b[^\n]*$"
+                          r"|\*\*Retracted\*\*|\[\u2717\]", re.I | re.M)
+    RET_ROW = re.compile(r"corrected|retract|reframed|repaired|clarified|scope\b"
+                         r"|stratified|\[\u2717\]|Former\s+\w+\s*\[", re.I)
+    ROW_LINK = re.compile(r"\]\(/docs/([^)#]+)#([^)]+)\)")
+    ROW_NUM = re.compile(r"^\|\s*\*{0,2}(T-[0-9]+[a-z]?)\*{0,2}\s*\|([^\n]*)$", re.M)
+    stale, seen_anchor, seen_ret = [], 0, 0
+    for _num, _rest in ROW_NUM.findall(_regt):
+        _m = ROW_LINK.search(_rest)
+        if not _m:
+            continue
+        _f = _SITE / "docs" / (_m.group(1) + ".md")
+        if not _f.exists():
+            continue
+        _t = _f.read_text(encoding="utf-8", errors="ignore")
+        _i = _t.find("{#" + _m.group(2) + "}")
+        if _i < 0:
+            continue
+        seen_anchor += 1
+        _ls = _t.rfind("\n", 0, _i) + 1
+        _lvl = len(re.match(r"#*", _t[_ls:]).group(0)) or 6
+        _nxt = re.compile(r"^#{1,%d} " % _lvl, re.M).search(_t, _i + 1)
+        _seg = _t[_i: _nxt.start() if _nxt else len(_t)]
+        _r = RET_PAGE.search(_seg)
+        if _r:
+            seen_ret += 1
+            if not RET_ROW.search(_rest):
+                stale.append((_num, _m.group(1), " ".join(_r.group(0).split())[:80]))
+    print(f"строка реестра против своей страницы: якорных разделов {seen_anchor}, "
+          f"из них с редакционным исправлением {seen_ret}; строк, о нём молчащих: {len(stale)}")
+    for _n, _p, _r in stale:
+        print(f"  {_n} → {_p}: раздел несёт «{_r}», строка молчит")
+    if stale:
+        print("  правило: строка реестра не вправе объявлять верным то, "
+              "что её собственная страница отменила")
+        self_bad.append((REGISTRY, "строка молчит об исправлении своей страницы",
+                         len(stale), 0))
+
     if self_bad:
         return 1
     return 0
