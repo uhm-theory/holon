@@ -428,6 +428,38 @@ def main() -> int:
         self_bad.append((REGISTRY, "строка молчит об исправлении своей страницы",
                          len(stale), 0))
 
+    # === ССЫЛКА, НАЗВАННАЯ ЧУЖИМ КОРПУСОМ, ОБЯЗАНА ВЕСТИ В НЕГО ============
+    # Подпись ссылки есть обещание читателю: «math-foundations» значит, что
+    # клик приведёт в math-foundations. Найдено живьём: две ссылки, подписанные
+    # «math-foundations, Part XVIII, Thm. 11.6/11.8», вели на корень
+    # diakrisis.gst.st — узел чужого корпуса, скопированный из соседней ссылки.
+    # Ни один прибор этого не видел: адрес разрешается, страница существует,
+    # и лишь ПОДПИСЬ говорит не о том месте.
+    #
+    # Шов имеет две стороны, и стережёт каждую та, что ссылается.
+    HOSTS = {"math-foundations": "math-foundations", "diakrisis": "diakrisis"}
+    LINK = re.compile(r"\[([^\]\n]{1,120})\]\((https?://[^)\s]+)\)")
+    link_seen, link_named, link_bad = 0, 0, []
+    for _path in sorted(set(glob.glob(SOURCES[0], recursive=True))):
+        _txt = mask(open(_path, encoding="utf-8").read())
+        for _m in LINK.finditer(_txt):
+            link_seen += 1
+            _label, _url = _m.group(1).lower(), _m.group(2).lower()
+            _host = _url.split("//", 1)[1].split("/", 1)[0]
+            for _name, _needle in HOSTS.items():
+                if _name in _label:
+                    link_named += 1
+                    if _needle not in _host:
+                        link_bad.append((_path, _m.group(1)[:60], _host))
+                    break
+    print(f"подпись ссылки против её узла: внешних ссылок {link_seen}, "
+          f"из них названных чужим корпусом {link_named}; расходится {len(link_bad)}")
+    for _p, _lab, _h in link_bad:
+        print(f"  {_p}: «{_lab}» ведёт на {_h}")
+    if link_bad:
+        print("  правило: подпись ссылки есть обещание читателю о том, куда он попадёт")
+        self_bad.append(("ссылки", "подпись против узла", len(link_bad), 0))
+
     if self_bad:
         return 1
     return 0
