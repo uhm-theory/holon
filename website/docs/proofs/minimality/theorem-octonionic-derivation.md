@@ -480,7 +480,7 @@ This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hal
 **Status:** Each of the 15 steps is [T]. The complete chain is closed [T]. The structural identification PG(2,2) → $\mathbb{O}$ is fixed by **uniqueness** on both sides (Hall + Hurwitz), making it a **canonical identification**, not an arbitrary choice.
 :::
 
-:::warning Resolution of the ℝ⁷ → ℂ⁷ problem (complexification of octonions) {#complexification}
+:::warning Resolution of the ℝ⁷ → ℂ⁷ problem (complexification of octonions)
 **Problem.** Octonions $\mathbb{O}$ are a real algebra, $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Quantum mechanics requires $\mathbb{C}^7$. Complexification "doubles the degrees of freedom". How does the imaginary unit $i$ of quantum mechanics "coherently embed" into $\mathbb{O}$ without loss of the division algebra property?
 
 **Resolution [T]:**

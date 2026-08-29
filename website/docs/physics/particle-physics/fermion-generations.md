@@ -903,7 +903,7 @@ None of the structurally natural UHM-parameter identifications reproduce the obs
 
 ### Conclusion: empirical-input classification
 
-:::info Koide in UHM — empirical input, not derived prediction {#koide-empirical}
+:::info Koide in UHM — empirical input, not derived prediction
 **Rigorous statement**: UHM's $A_1 \times G_2$ branching of $\mathcal{J}_3(\mathbb{O})$ is **structurally compatible** with a three-mass spectrum of the form $\{m_s,\; m_d - v,\; m_d + v\}$ satisfying Koide's relation. However, the **specific values** $(m_e, m_\mu, m_\tau)$ — and hence the observed $K = 2/3$ — require an $A_1$-breaking pattern **not uniquely fixed** by the current UHM formulation.
 
 **Classification**: Koide is accepted as an **empirical input** compatible with UHM's generation structure, not a derived prediction.

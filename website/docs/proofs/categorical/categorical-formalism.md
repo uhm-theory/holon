@@ -2391,7 +2391,7 @@ $$
 
 #### 15.2.2 Lindblad operators as L_k = √χ_S {#l-ops-from-omega}
 
-:::warning Resolution of the logic conflict (Heyting vs. orthomodular) {#logic-conflict}
+:::warning Resolution of the logic conflict (Heyting vs. orthomodular)
 In any topos (including ∞-topoi) the subobject classifier Ω has the structure of a **Heyting algebra** (intuitionistic logic). Quantum projectors on ℂ⁷ form a **non-distributive orthomodular lattice** (non-commutative quantum logic, Kochen-Specker theorem). These logics are **incompatible** in full generality.
 
 **Resolution:** Operators $L_k$ are taken **not from full Ω**, but from the **decidable fragment**:

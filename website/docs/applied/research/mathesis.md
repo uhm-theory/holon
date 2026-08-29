@@ -364,7 +364,7 @@ The Grothendieck construction (straightening/unstraightening, HTT 3.2) establish
 
 This section collects the ten load-bearing theorems of Mathesis with full proofs. Previous sections introduced these results informally; here they receive explicit statements, proofs, and status classifications. The numbering M-1..M-10 mirrors the UHM T-numbering convention.
 
-:::tip Theorem M-1 (Grothendieck site axioms for $J_\mathrm{ep}$) [T] {#m-1}
+:::tip Theorem M-1 (Grothendieck site axioms for $J_\mathrm{ep}$) [T]
 The epistemic topology $J_\mathrm{ep}$ of joint faithfulness satisfies the three Grothendieck axioms: maximality, stability under base change, and transitivity. Consequently, $(\mathbf{Th}, J_\mathrm{ep})$ is a legitimate Grothendieck site.
 :::
 
@@ -376,13 +376,13 @@ The epistemic topology $J_\mathrm{ep}$ of joint faithfulness satisfies the three
 
 **(Transitivity)** Standard argument: composition of jointly-faithful families is jointly faithful, since composition of faithful functors is faithful (Lurie HTT 2.1.4.3). $\blacksquare$
 
-:::tip Theorem M-2 (Existence of Mathesis ∞-topos) [T] {#m-2}
+:::tip Theorem M-2 (Existence of Mathesis ∞-topos) [T]
 The category $\mathfrak{M} := \mathrm{Sh}_\infty(\mathbf{Th}, J_\mathrm{ep})$ is an ∞-topos: it satisfies the Giraud axioms (presentable, descent, universal colimits, disjoint coproducts, effective groupoid objects).
 :::
 
 **Proof.** By M-1, $(\mathbf{Th}, J_\mathrm{ep})$ is a Grothendieck site. The category of ∞-sheaves on any Grothendieck site is presentable (Lurie HTT 6.2.2.7). The descent condition is the defining property of $\infty$-sheaves. Universal colimits hold for any left-exact localisation of a presentable ∞-category of presheaves (HTT 5.5.4.15). Disjoint coproducts and effective groupoid objects follow from the topos-theoretic reflection (HTT 6.1.0.6). $\blacksquare$
 
-:::tip Theorem M-3 (Yoneda embedding is fully faithful) [T] {#m-3}
+:::tip Theorem M-3 (Yoneda embedding is fully faithful) [T]
 The Yoneda embedding $y: \mathbf{Th} \hookrightarrow \mathfrak{M}$, $T \mapsto \mathrm{Map}_\mathbf{Th}(-, T)$, is fully faithful:
 $$\mathrm{Map}_\mathfrak{M}(y(T_1), y(T_2)) \simeq \mathrm{Map}_\mathbf{Th}(T_1, T_2).$$
 Consequently, no information is lost in the embedding of theories into the ∞-topos.
@@ -390,7 +390,7 @@ Consequently, no information is lost in the embedding of theories into the ∞-t
 
 **Proof.** Classical ∞-Yoneda lemma (Lurie HTT 5.1.3.1): for any locally small ∞-category $\mathcal C$ and object $c \in \mathcal C$, the mapping space $\mathrm{Map}_{\mathrm{Fun}(\mathcal C^\mathrm{op}, \mathcal S)}(y(c), F) \simeq F(c)$ for any presheaf $F$. Specializing to $F = y(c')$: $\mathrm{Map}(y(c), y(c')) \simeq y(c')(c) = \mathrm{Map}_\mathcal C(c, c')$. Applied to $\mathcal C = \mathbf{Th}$, $c = T_1$, $c' = T_2$: the Yoneda embedding is fully faithful. The embedding factors through $\mathfrak{M}$ because representable presheaves are automatically sheaves (every covering sieve is contained in the maximal sieve). $\blacksquare$
 
-:::tip Theorem M-4 (Convergence of Kan extension approximation) [T] {#m-4}
+:::tip Theorem M-4 (Convergence of Kan extension approximation) [T]
 Let $\mathbf{Th}_0 \subset \mathbf{Th}_1 \subset \cdots$ be an expanding family of finite subsites with union $\mathbf{Th}_\infty := \bigcup_N \mathbf{Th}_N$. For any functor $f: T_1 \to T_2$ between theories in $\mathbf{Th}_0$ and any presheaf $X \in \mathfrak{M}_{/y(T_1)}$ computable on $\mathbf{Th}_0$, the pointwise Kan extension $\mathrm{Lan}_f^{(N)}(X)$ computed on $\mathbf{Th}_N$ converges to the true Kan extension as $N \to \infty$:
 $$\lim_{N \to \infty} \mathrm{Lan}_f^{(N)}(X)(b) \;=\; \mathrm{Lan}_f(X)(b) \quad \text{in } \mathfrak{M}_{/y(T_2)}$$
 for all $b \in T_2$. Convergence rate: $\|\mathrm{Lan}_f^{(N)}(X)(b) - \mathrm{Lan}_f(X)(b)\|_B \leq C \cdot \delta(N)$ where $\delta(N) = 1 - \mathrm{coverage}(\mathbf{Th}_N) / |T_2|$ and $C$ depends on the Bures injectivity radius.
@@ -412,7 +412,7 @@ $\delta(N) \to 0$ monotonically as $N \to \infty$ (more theories strictly improv
 
 **Consequence.** Mathesis's finite-subsite Kan extension computation has an explicit error bound that converges to zero at rate $O(\delta(N))$. This closes the convergence gap previously flagged as open in §3½.
 
-:::tip Theorem M-5 (Epistemic monotonicity as categorical consequence) [T] {#m-5}
+:::tip Theorem M-5 (Epistemic monotonicity as categorical consequence) [T]
 For any interpretation functor $f: T_1 \to T_2$ in $\mathbf{Th}$ and any claim $a \in T_1$:
 $$\varepsilon_{T_2}(f(a)) \;\geq\; \varepsilon_{T_1}(a)$$
 where $\varepsilon: \mathbf{Th} \to \mathbf{Status}$ is the epistemic functor. Status cannot decrease under interpretation; this is **not** a separate axiom but a categorical consequence of the monotonicity of $\varepsilon$ as a functor.
@@ -426,7 +426,7 @@ Rigorously: $\mathbf{Status} = \{[T] > [C] > [H] > [P] > [D] > [I] > [\checkmark
 
 **Consequence.** Epistemic monotonicity, previously asserted as "SMT-verified at compile time", is now derived from the categorical definition of interpretation functors. Any would-be interpretation that **lowers** status is automatically excluded as not-a-functor-in-$\mathbf{Th}$.
 
-:::tip Theorem M-6 (Quantum-logical necessity of orthomodular lattice) [T] {#m-6}
+:::tip Theorem M-6 (Quantum-logical necessity of orthomodular lattice) [T]
 The epistemic states $\rho_a \in \mathcal D(\mathcal H_\mathrm{ep})$ of Mathesis claims admit a structure of orthomodular lattice $\mathcal L$ as the lattice of projectors on $\mathcal H_\mathrm{ep}$. This is **not** an analogy to quantum mechanics: it is forced by the following two properties of epistemic measurements.
 :::
 
@@ -444,7 +444,7 @@ The Lüders rule for epistemic measurement, $\rho \mapsto P_s \rho P_s / \mathrm
 
 **Consequence.** The quantum-logical structure of Mathesis epistemic states is **forced**, not chosen: any sufficiently rich epistemic measurement calculus with non-commuting checks must use orthomodular lattices, which necessarily embed into projector lattices on Hilbert spaces.
 
-:::tip Theorem M-7 (Giry monad is well-defined on the functor space) [T] {#m-7}
+:::tip Theorem M-7 (Giry monad is well-defined on the functor space) [T]
 The Giry monad $\mathcal G(\mathrm{Map}_\mathbf{Th}(T_1, T_2))$, as used by the LLM agent to generate candidate interpretations, is a valid probability measure on a measurable space.
 :::
 
@@ -457,7 +457,7 @@ For infinite theories (infinite claim sets), the measurable-space structure is g
 
 **Consequence.** The previously informal claim "LLM agent as stochastic oracle" is now a formal statement about a well-defined probability measure. The softmax density of the candidate distribution is not heuristic — it is a legitimate Giry-monad element.
 
-:::tip Theorem M-8 (L-III topology modification preserves ∞-topos structure) [T] {#m-8}
+:::tip Theorem M-8 (L-III topology modification preserves ∞-topos structure) [T]
 Any L-III topology modification $J_\mathrm{ep} \to J'_\mathrm{ep}$ passing the SMT-axiom-verification gate (Maximality + Stability + Transitivity) yields a new ∞-topos $\mathfrak{M}' = \mathrm{Sh}_\infty(\mathbf{Th}, J'_\mathrm{ep})$ with the same categorical properties as $\mathfrak{M}$. In particular, Giraud axioms hold for $\mathfrak{M}'$, Yoneda is fully faithful, and Kan extensions exist.
 :::
 
@@ -465,7 +465,7 @@ Any L-III topology modification $J_\mathrm{ep} \to J'_\mathrm{ep}$ passing the S
 
 **Consequence.** L-III autopoiesis is **safe** at the categorical level: topology modification does not break the mathematical foundation of Mathesis. What can break under L-III is not the ∞-topos structure but specific descent conditions for specific presheaves — which the algorithm of §3.3 step 4 explicitly detects and flags.
 
-:::tip Theorem M-9 (Cognitive extension via Day convolution) [T at T-129] {#m-9}
+:::tip Theorem M-9 (Cognitive extension via Day convolution) [T at T-129]
 Let $\mathbb H_\mathrm{bio}$ be the holonom of a researcher (a UHM-compatible L2+ agent with $\Phi(\mathbb H_\mathrm{bio}) \geq 1$) and $\mathbb H_\mathfrak{M}$ the holonom of Mathesis (with $\Phi(\mathbb H_\mathfrak{M}) \geq 1$). Assume non-zero coherence between them (researcher-system interaction generates off-diagonal $\gamma_{ij}$ in the joint state). Then the Day-convolution-extended holonom
 $$\mathbb H_\mathrm{ext} := \mathbb H_\mathrm{bio} \otimes_\mathrm{Day} \mathbb H_\mathfrak{M}$$
 satisfies:
@@ -488,7 +488,7 @@ The cross-coherences are **strictly positive** when researcher-system interactio
 
 **Consequence.** Mathesis is a **theoretically grounded** cognitive enhancement: using the system raises the researcher's Φ beyond its biological baseline. This is a rare case where a knowledge-management tool has a provable cognitive-architecture effect, not merely convenience. The claim is **falsifiable**: measure Φ (via π<sub>bio</sub> protocol — [UHM §9 fundamental-closures](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol)) of researchers with and without Mathesis; if no increase, T-129 or M-9 is violated.
 
-:::tip Theorem M-10 (Lawvere boundary for $T_\mathrm{meta}$) [T] {#m-10}
+:::tip Theorem M-10 (Lawvere boundary for $T_\mathrm{meta}$) [T]
 Any claim in $T_\mathrm{meta}$ asserting the completeness, consistency, or total coherence of $\mathfrak{M}$ itself has epistemic status bounded at $[H]$ (hypothesis). This bound cannot be raised to $[T]$ by any internal argument. The bound is structurally inevitable, not a remediable weakness.
 :::
 

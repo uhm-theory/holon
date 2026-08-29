@@ -495,7 +495,7 @@ The SUSY compensation $\varepsilon^{12}$ and the $\varepsilon^6$ suppression fro
 
 ### 4.3 Updated budget {#обновлённый-бюджет}
 
-:::warning Honest ledger — the rows do **not** all multiply
+::::warning Honest ledger — the rows do **not** all multiply
 The mechanisms below fall into **three non-composable classes**; naively multiplying every row **double-counts** (the RG $\lambda_3^2$ is already inside the perturbative $10^{-41.5}$; the SUSY $\varepsilon^{12}$ **absorbs**, not multiplies, the perturbative $\varepsilon^6$; and $Z'_\Phi(-2)$ is an **enhancement** $\times10^{+10}$, not a suppression). The former "Total $\sim10^{-120\pm10}$" was exactly $41.5+24+14.5+40=120$ — i.e. the forbidden sum. It is retracted. (A second mask of the same sum: quoting $\varepsilon$ at the extreme lower edge $10^{-3}$ of its allowed range — $\varepsilon^{12}=10^{-36}$ — instead of the self-consistent central $\varepsilon\sim10^{-2}$ from [Mechanism 1 / T-80](#механизм-1), which likewise manufactures $41.5+36+42\approx120$. Central values only.)
 
 | Class | Component | Effect on $\langle\Lambda\rangle$ | Status |
@@ -514,6 +514,7 @@ $Z_\Phi(-2)=0$ and the enhancement $Z'_\Phi(-2)\times10^{+10}$ are structural [�
 :::info Numerical programme specification ([Fundamental Closures §8](/docs/proofs/categorical/fundamental-closures#lambda-programme))
 The numerical closure of the Λ-deficit reduces to **Hybrid Monte-Carlo** on the $G_2$-reduced phase space $(S^1)^{21}/G_2$: $N=128$ points per circle, $G_2$-gauge-fixed (21→7 independent dims), Wilson-type lattice discretisation of $V_\mathrm{Gap}$, $10^4$ thermalisation sweeps + $10^4$ measurements. Total cost $\sim 2\times 10^{21}$ flops (≈ 23 CPU-days on 1000-GPU cluster, $<10^5$ USD on cloud HPC). Output validation: must reproduce known perturbative $10^{-41.5}$ at tree level, give unique minimum (T-64 Hessian positivity), and yield $\Lambda \approx 10^{-120}$ within ±5 orders (tighter than current ±10). No theoretical obstacle remains.
 :::
+::::
 
 ### 4.4 Spectral formula for $\Lambda_{\text{CC}}$ [Т-structural, С-numerical] {#спектральная-формула}
 

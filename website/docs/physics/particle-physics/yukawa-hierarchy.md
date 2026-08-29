@@ -385,7 +385,7 @@ The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric
 
 #### Non-Perturbative Regime (C7) {#c7-nonperturbative}
 
-:::warning Non-perturbative regime of $\lambda_3$
+::::warning Non-perturbative regime of $\lambda_3$
 $\lambda_3 \approx 74 > 4\pi \approx 12.6$ — deeply in the non-perturbative regime. All loop computations involving $\lambda_3$ are formally unreliable: the perturbation theory series does not converge. Status of loop results: **[C at perturbativity]**. A non-perturbative approach (lattice or Bootstrap) is required for rigorous results.
 
 All loop computations depending on $\lambda_3$ (light generation masses, $\varepsilon_{\text{eff}}$, $m_b/m_t$, CKM angles) are in the **non-perturbative regime** and are formally unreliable.
@@ -427,7 +427,7 @@ The perturbation series converges in powers of $\varepsilon_{\text{eff}}$, **not
 *Ported from the RU mirror 2026-07-28: the resolution existed only in Russian, while this page still read «downgraded to [H]» — the two locales gave opposite verdicts on whether the loop results may be trusted.*
 
 **Corollary**: qualitative predictions (number of generations, mass hierarchy, CP violation) **do not depend** on the specific value of $\lambda_3$ — they follow from the combinatorics of the Fano plane. Quantitative predictions (exact mass ratios, mixing angles) **do depend** on it and require non-perturbative confirmation.
-:::
+::::
 
 ### 6.1 Phenomenological Constraint
 

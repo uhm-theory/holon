@@ -773,7 +773,7 @@ A company of 100 people underwent a seven-dimensional audit. Results (normalized
 
 **(b)** Find $\|\sigma\|_\infty$ and determine the intervention priority.
 
-**(c)** The company plans to invest $1M in one project. CC recommends directing it toward... what?
+**(c)** The company plans to invest \$1M in one project. CC recommends directing it toward... what?
 
 <details>
 <summary>Solution</summary>
@@ -782,7 +782,7 @@ A company of 100 people underwent a seven-dimensional audit. Results (normalized
 
 **(b)** $\|\sigma\|_\infty = 0.7$ (E: reflection culture — the weakest). Priority: strengthening reflection.
 
-**(c)** CC recommends: $1M on a reflection culture development program (retrospectives, coaching, psychological safety, 360-review). This will reduce $\sigma_E$, which through the chain $\mathrm{Coh}_E \uparrow \to \kappa \uparrow \to P \uparrow$ will improve *all* indicators. Investment in E — an investment with a multiplicative effect.
+**(c)** CC recommends: \$1M on a reflection culture development program (retrospectives, coaching, psychological safety, 360-review). This will reduce $\sigma_E$, which through the chain $\mathrm{Coh}_E \uparrow \to \kappa \uparrow \to P \uparrow$ will improve *all* indicators. Investment in E — an investment with a multiplicative effect.
 
 </details>
 

@@ -449,7 +449,7 @@ This is analogous to the principle of **minimal sufficiency** in medicine: treat
 
 ## 8. Experimental Protocol for Verifying $G_2$-Structure [P] {#протокол}
 
-:::caution Program: Operational Verification Protocol [P]
+::::caution Program: Operational Verification Protocol [P]
 
 :::warning Methodological Circularity [I]
 Step 2 of the protocol (mapping channels to 7 dimensions) **presupposes** a known mapping of neural channels onto holonomic dimensions, yet this mapping is itself the object of verification. The protocol results depend on the choice of mapping. To resolve the circularity, an **independent** method for establishing the correspondence between channels and dimensions is required (e.g., via task structure or anatomical criteria), or enumeration of possible mappings with selection of the optimal one by the criterion $\Delta_{G_2}^{(\text{exp})} \to \min$.
@@ -490,7 +490,7 @@ $$
 | $\Delta \approx 0$ | Full $G_2$-symmetry confirmed |
 | $0 < \Delta \ll 1$ | Weak violation — $\Delta \propto \alpha^*$ (depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure)) |
 | $\Delta \sim O(1)$ | Strong violation — $G_2$-reduction not applicable |
-:::
+::::
 
 ### 8.1 Expected Results
 

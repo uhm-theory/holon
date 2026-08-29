@@ -661,7 +661,7 @@ This limitation is **not unique** to UHM: string theory, loop quantum gravity, a
 
 ## $G_2$-Manifolds and M-Theory {#g2-многообразия}
 
-:::info Compactification 11 → 4 + 7 [I]
+::::info Compactification 11 → 4 + 7 [I]
 In the [structural derivation of N=7](../minimality/theorem-octonionic-derivation), the group $G_2 = \text{Aut}(\mathbb{O})$ arises. In M-theory, $G_2$-manifolds play a central role:
 
 **M-theory compactification [I]:**
@@ -688,7 +688,7 @@ This is a **substantive analogy**, proven by theorems T1–T15 (the bridge is fu
 - Joyce metric on $X^7$ → internal metric of the space of dimensions
 
 [More: structural derivation →](../minimality/theorem-octonionic-derivation)
-:::
+::::
 
 ---
 

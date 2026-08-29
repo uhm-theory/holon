@@ -16,8 +16,14 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+# Приборы делятся надвое по тому, ЧТО они читают. Четыре первых читают ИСХОДНИК;
+# пятый — СОБРАННУЮ СТРАНИЦУ, то есть то, что видит читатель, и живёт он рядом с
+# сайтом (website/scripts/), ибо без сборки бессмыслен. Между исходником и
+# читателем стои́т разметка, и она умеет молча съедать смысл: сборка при этом
+# рапортует об успехе.
 TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
          "check_mixed_names.py", "natal_startup_verify.py"]
+SITE_TOOLS = [Path("website") / "scripts" / "render_lint.py"]
 
 
 def main() -> int:
@@ -32,12 +38,26 @@ def main() -> int:
         r = subprocess.run([sys.executable, str(p)], capture_output=True, text=True)
         print(f"  {name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с")
         if r.returncode: failed.append(name)
+    for rel in SITE_TOOLS:
+        p = HERE.parent / rel
+        if not p.exists():
+            print(f"  {p.name:28}  НЕТ ФАЙЛА — это дефект, а не пропуск")
+            failed.append(p.name)
+            continue
+        t0 = time.time()
+        r = subprocess.run([sys.executable, str(p)], capture_output=True, text=True,
+                           cwd=str(p.parent.parent))
+        print(f"  {p.name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с")
+        if r.returncode:
+            failed.append(p.name)
+            print(r.stdout[-3000:])
+
     print()
     if failed:
-        print(f"ВЕНТИЛЬ ЗАКРЫТ: упало приборов {len(failed)} из {len(TOOLS)} — "
+        print(f"ВЕНТИЛЬ ЗАКРЫТ: упало приборов {len(failed)} из {len(TOOLS) + len(SITE_TOOLS)} — "
               + ", ".join(failed))
         return 1
-    print(f"ВЕНТИЛЬ ОТКРЫТ: все {len(TOOLS)} прибора чисты")
+    print(f"ВЕНТИЛЬ ОТКРЫТ: все {len(TOOLS) + len(SITE_TOOLS)} приборов чисты")
     return 0
 
 

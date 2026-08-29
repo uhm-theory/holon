@@ -233,7 +233,7 @@ $\mathrm{Coh}_E \in [0, 1]$ — доля E-вклада в чистоту чер
 
 В 42D-формализме определяется $P_E = \mathrm{Tr}(\rho_E^2)$ через частичный след — чистота E-сектора. 42D-формула «вырезает» E-подсистему и измеряет чистоту того, что осталось.
 
-:::info Согласование [Т/С] {#coh-e-bridge}
+:::info Согласование [Т/С]
 $\mathrm{Coh}_E$ (7D, [Т]) $\approx$ $P_E$ (42D, [С]) — согласованы через [условное ожидание Умегаки](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). Первичный формализм — **7D**. Полное описание: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition).
 :::
 

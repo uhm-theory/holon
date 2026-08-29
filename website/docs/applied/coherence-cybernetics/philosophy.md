@@ -410,7 +410,6 @@ CC provides **exact criteria** for the transition from unconsciousness to consci
 The key transition from description to prescription is a **convention** [D]: Good := $dP/d\tau > 0$ (see [Definition 1](/docs/consciousness/ethics-meaning/value-consciousness#определение-благо)). Hume's guillotine is not violated — "ought" is introduced by definition, not derived from "is."
 
 Ethical consequences for AI, medicine, and animal rights: [UHM Ethics → Moral theory](/docs/consciousness/ethics-meaning/value-consciousness#part-iv-moral-theory).
-:::
 
 ### 6.4 Ethical Consequences of an Exact Threshold: Medicine {#этика-медицина}
 

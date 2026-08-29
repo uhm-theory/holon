@@ -1219,7 +1219,6 @@ which **decreases to 0** under the Fano contraction and is the quantity that app
 - Condition $P > 2/7$ (viability) is necessary for existence of a nontrivial attractor $\rho^*$;
 - Consistent with Theorem 4.2 (L4 threshold $P > 6/7$): $R^{(n)} \to 1$ holds for all viable systems, but the FULL L4 structure (with $P > 6/7$) requires proximity to a pure state;
 - Lawvere incompleteness (T-55 [T]): despite $\lim R^{(n)} = 1$, **exact** achievement of $R^{(n)} = 1$ for finite $n$ is impossible.
-:::
 
 ### Physical interpretation
 

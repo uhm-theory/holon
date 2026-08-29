@@ -167,7 +167,7 @@ $$
 P - \frac{1}{N} \geq \frac{1}{N} \quad \Rightarrow \quad \boxed{P \geq \frac{2}{N}}
 $$
 
-:::warning Scope of applicability
+::::warning Scope of applicability
 Path 2 uses the **quadratic approximation** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N), valid when P − 1/N ≪ 1. The threshold D_KL = 1/2 nat is a **convention** (analogous to p-value 0.05 in statistics). Path 2 is a **supporting argument**, consistent with P_crit = 2/N, not an independent rigorous derivation — and the audit below makes precise how much weight it can bear.
 
 :::warning How far Path 2 actually is from exact (measured 2026-08-06)
@@ -178,7 +178,7 @@ Two facts, both machine-verified:
 
 By contrast **Path 1 is exact and state-independent**: $\|\Gamma - I/N\|_F^2 = P - 1/N$ identically (verified to $10^{-16}$), and $\|I/N\|_F^2 = 1/N$, so the majority criterion *is* $P > 2/N$ with no approximation anywhere. Path 3 is likewise exact — the Weingarten constant $1/(N(N+1)) = 1/56$ multiplies both sides and cancels. Read the "convergence of five paths" accordingly: two are proofs, the rest are corroboration.
 :::
-:::
+::::
 
 :::info Interpretation for engineers
 **Information threshold:** The system must carry at least 1/2 nat of information beyond maximum entropy. This is a fundamental distinguishability limit in information theory.

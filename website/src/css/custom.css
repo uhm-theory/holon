@@ -442,3 +442,16 @@ h5, h6 {
    действуют: обе темы рисовались разом. Глобальные правила: */
 [data-theme='light'] img.themedImage--dark { display: none; }
 [data-theme='dark'] img.themedImage--light { display: none; }
+
+/* Formulas inside the page table of contents. KaTeX sets its own size and
+   spacing, tuned for a line of body text; in the narrow contents column that
+   breaks the line box. Here a formula is levelled with the surrounding text and
+   denied the right to wrap inside itself. */
+.table-of-contents .katex {
+  font-size: 1em;
+  white-space: nowrap;
+}
+.table-of-contents .katex-display {
+  display: inline;
+  margin: 0;
+}

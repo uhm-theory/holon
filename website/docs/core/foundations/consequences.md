@@ -657,7 +657,7 @@ In UHM, free will is neither philosophical speculation nor subjective illusion b
 
 ### $\infty$-categorical motivation
 
-:::info Definition (freedom = dimension of the flat directions)
+::::info Definition (freedom = dimension of the flat directions)
 For configuration $\Gamma$, freedom is the **dimension of the zero-mode space** of the free-energy Hessian, plus one:
 
 $$
@@ -669,6 +669,7 @@ i.e. the number of independent directions in which the free energy $\mathcal{F}$
 :::warning Correction: not $\pi_0$ of a mapping space
 Note that $\pi_0(\mathrm{Map}(\Gamma,T)^{\text{non-trivial}})$ does **not** serve as the measure: $\mathrm{Map}(\Gamma,T)$ into the terminal object is **contractible**, so $\pi_0=1$ for every $\Gamma$ — it cannot equal $\dim\ker(\mathcal H_\Gamma)+1$. The correct categorical object is the **tangent dimension of the critical (zero-mode) manifold** of $\mathcal F$ at $\Gamma$, which is $\dim\ker(\mathcal H_\Gamma)$; the finite-dimensional formula above is the definition, and the $\infty$-categorical reading is this critical-manifold dimension, **not** $\pi_0$ of a contractible mapping space.
 :::
+::::
 
 **Freedom** is neither illusion nor a merely deterministic notion. In the $\infty$-categorical formalism, free will receives a strict mathematical definition:
 
@@ -712,7 +713,7 @@ States on $\partial\mathcal{D}(\mathbb{C}^7)$ (rank $< 7$) are excluded: primiti
 
 ### Theorem (Properties of Freedom) [T] {#freedom-свойства}
 
-:::warning Theorem (Properties of Freedom)
+::::warning Theorem (Properties of Freedom)
 
 **(a) Monotonicity:** For Markovian dynamics $\Gamma \to \mathcal{E}[\Gamma]$ (CPTP channel):
 
@@ -746,7 +747,7 @@ $$
 $$
 
 L0 systems have more zero modes (fewer constraints); L2 systems have fewer (reflexivity $R \geq 1/3$ pins the direction of $\varphi$).
-:::
+::::
 
 ### Relation to other notions
 

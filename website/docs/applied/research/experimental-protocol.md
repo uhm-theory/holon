@@ -293,14 +293,14 @@ where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefuln
 
 | Component | Model | Purpose | Budget |
 |-----------|-------|---------|--------|
-| TMS-EEG | Nexstim NBS System 5 + 60-ch eXimia | Causal perturbation + EEG | ~$300K |
-| HD-EEG | BioSemi ActiveTwo 128-ch | High-density EEG for spectral analysis | ~$80K |
+| TMS-EEG | Nexstim NBS System 5 + 60-ch eXimia | Causal perturbation + EEG | ~\$300K |
+| HD-EEG | BioSemi ActiveTwo 128-ch | High-density EEG for spectral analysis | ~\$80K |
 | fMRI | 3T (access via university centre) | Spatial localisation | By agreement |
-| HRV | Polar H10 + Empatica E4 | Autonomic correlates | ~$2K |
-| Polysomnography | Standard PSG kit | Sleep stages | ~$30K |
+| HRV | Polar H10 + Empatica E4 | Autonomic correlates | ~\$2K |
+| Polysomnography | Standard PSG kit | Sleep stages | ~\$30K |
 | Neuronavigation | MRI-compatible frameless navigator | TMS stimulation accuracy | Included with Nexstim |
 
-**Total equipment budget:** ~$420K (given fMRI access).
+**Total equipment budget:** ~\$420K (given fMRI access).
 
 ### 3.3. Experiment II.1: P_crit ↔ PCI* (key experiment) {#exp-2-1}
 
@@ -561,7 +561,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 
 ## 8. Context: comparison with adversarial collaboration {#context}
 
-In 2018–2025, the Templeton Foundation funded the COGITATE project ($30M) — adversarial collaboration IIT vs GWT vs HOT. Result (Nature, April 2025): **no theory fully confirmed**. IIT scored higher, but its key prediction (sustained synchronization) was not confirmed.
+In 2018–2025, the Templeton Foundation funded the COGITATE project (\$30M) — adversarial collaboration IIT vs GWT vs HOT. Result (Nature, April 2025): **no theory fully confirmed**. IIT scored higher, but its key prediction (sustained synchronization) was not confirmed.
 
 **Fundamental difference between UHM and IIT/GWT/HOT:**
 

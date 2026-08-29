@@ -4,6 +4,16 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+// KaTeX macros and the table-of-contents repair live in `plugins/`: the built-in
+// contents builder reduces a formula in a heading to its bare TeX, and the repair
+// rebuilds that entry from the heading itself, with the SAME macros as the page.
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const {katexMacros} = require('./plugins/katex-macros') as {
+  katexMacros: Record<string, string>;
+};
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const remarkTocKatex = require('./plugins/remark-toc-katex');
+
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const theoryVersion = require('./package.json').version as string;
 
@@ -74,8 +84,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [[rehypeKatex, {strict: false}]],
+          remarkPlugins: [remarkMath, remarkTocKatex],
+          rehypePlugins: [[rehypeKatex, {strict: false, macros: katexMacros}]],
           showLastUpdateTime: false,
           showLastUpdateAuthor: false,
         },
@@ -86,8 +96,8 @@ const config: Config = {
           postsPerPage: 10,
           blogSidebarTitle: 'Posts',
           blogSidebarCount: 'ALL',
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [[rehypeKatex, {strict: false}]],
+          remarkPlugins: [remarkMath, remarkTocKatex],
+          rehypePlugins: [[rehypeKatex, {strict: false, macros: katexMacros}]],
         },
         theme: {
           customCss: './src/css/custom.css',

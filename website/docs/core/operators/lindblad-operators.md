@@ -289,7 +289,7 @@ Equivalent spectral formulation: all eigenvalues $\lambda_k$ of the superoperato
 
 ### Primitivity Theorem
 
-:::tip Theorem T-39a: Primitivity of the linear part $\mathcal{L}_0$ [T]
+::::tip Theorem T-39a: Primitivity of the linear part $\mathcal{L}_0$ [T]
 Let $\mathcal{H} = \mathbb{C}^7$ be the state space of a holon satisfying (AP)+(PH)+(QG)+(V). Let $\mathcal{L}_0 = -i[H_{\text{eff}}, \cdot] + \mathcal{D}[\cdot]$ be the **linear** part of the Liouvillian (without the nonlinear regenerative term $\mathcal{R}$), with atomic operators $L_k = |k\rangle\langle k|$ and a connected interaction graph.
 
 Then $\mathcal{L}_0$ is primitive: the unique stationary state is $I/7$, and for any $\rho_0$:
@@ -303,7 +303,7 @@ Status: **[T]**
 :::warning Clarification: $\mathcal{L}_0$ vs $\mathcal{L}_\Omega$
 Primitivity is proved for the **linear part** $\mathcal{L}_0$. The full Liouvillian $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ includes nonlinear regeneration and may have a **nontrivial** stationary state $\rho^* \neq I/7$ (T-96 [T]). Primitivity of $\mathcal{L}_0$ guarantees uniqueness of $I/7$ for the dissipative part and a spectral gap $\Delta > 0$.
 :::
-:::
+::::
 
 **Proof.** We apply the Evans–Spohn criterion (Evans 1977, Spohn 1976):
 

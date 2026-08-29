@@ -797,7 +797,7 @@ This approach contrasts with typical urban planning, which often starts with inf
 
 ### Case Study 2: Organization — σ-Profile of a Company {#кейс-организация-полный}
 
-**System:** A medical company (200 employees) developing AI diagnostics for radiologists. Series B, $50M valuation. Problem: after a CTO change, innovation slowed, engineer turnover rose from 5% to 18%.
+**System:** A medical company (200 employees) developing AI diagnostics for radiologists. Series B, \$50M valuation. Problem: after a CTO change, innovation slowed, engineer turnover rose from 5% to 18%.
 
 **Building $\Gamma_{\text{org}}$.** Data sources:
 

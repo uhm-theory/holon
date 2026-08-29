@@ -808,7 +808,7 @@ The value $\Phi_{\text{th}} = 1$ is **proved from first principles** ([T-129 [T]
 
 ### Theorem (reflection threshold $R_{\text{th}} = 1/3$) {#теорема-порог-рефлексии}
 
-:::tip Theorem [T]+[I] (reflection threshold via Bayesian dominance)
+::::tip Theorem [T]+[I] (reflection threshold via Bayesian dominance)
 A system has **reflexive autonomy** (governed by its self-model, not noise or environment) iff
 
 $$R(\Gamma) := \frac{1}{7P(\Gamma)} \geq R_{\text{th}} = \frac{1}{3}$$
@@ -842,7 +842,7 @@ so together with $P > 2/7$ the window is the half-open $(2/7,\,3/7]$ — closed 
 A fourth type is ruled out: [L-unification](/docs/core/operators/lindblad-operators) (Thm. 15.1, [T]) forces uniqueness of classifier Ω, uniqueness of $\mathcal{D}_\Omega \dashv \mathcal{R}$, hence exhaustion by three types.
 
 Status: **[T]**
-:::
+::::
 
 **Full proof (plurality criterion).**
 

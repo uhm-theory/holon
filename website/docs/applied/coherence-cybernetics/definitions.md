@@ -233,7 +233,7 @@ Imagine the space of all $7 \times 7$ Hermitian matrices as a 49-dimensional spa
 
 In the 42D formalism, $P_E = \mathrm{Tr}(\rho_E^2)$ is defined via the partial trace — the purity of the E-sector. The 42D formula "cuts out" the E-subsystem and measures the purity of what remains.
 
-:::info Reconciliation [T/C] {#coh-e-bridge}
+:::info Reconciliation [T/C]
 $\mathrm{Coh}_E$ (7D, [T]) $\approx$ $P_E$ (42D, [C]) — reconciled via the [Umegaki conditional expectation](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). Primary formalism — **7D**. Full description: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition).
 :::
 

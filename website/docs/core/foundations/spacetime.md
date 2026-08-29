@@ -84,7 +84,7 @@ where:
 
 ### Local-global dichotomy {#локально-глобальная-дихотомия}
 
-:::warning Theorem (Local-global dichotomy) [T]
+::::warning Theorem (Local-global dichotomy) [T]
 For the base space $X = |N(\mathcal{C})|$:
 
 **Globally (monism):**
@@ -96,7 +96,7 @@ $$H^*_{loc}(X, T) \cong \tilde{H}^{*-1}(\text{Link}(T)) \cong \tilde{H}^{*-1}(S^
 :::note Link dimension
 Since $\dim(X)=6$ (the nerve of the $7$-stratum chain $S_0\subset\cdots\subset S_6$ realises as a $6$-simplex), the link of the point $T$ is $\mathrm{Link}(T)=S^{6-1}=S^{5}$, not $S^6$ ($S^6$ would require $\dim X=7$). The local cohomology $H^*_{loc}(X,T)\cong\tilde H^{*-1}(S^5)$ is nonzero in degree $6$, so the local-nontriviality conclusion $H^*_{loc}\neq 0$ is unchanged.
 :::
-:::
+::::
 
 **Interpretation:**
 

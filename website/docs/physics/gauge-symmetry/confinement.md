@@ -539,7 +539,7 @@ The second term is the anomalous contribution, absent classically. In the Gap fo
 
 ### 6.5 Cancellation of Gauge Anomalies (T-175b) [T] {#теорема-отмена-калибровочных-аномалий}
 
-:::tip Theorem (Cancellation of UHM gauge anomalies) [T] {#t-175b}
+:::tip Theorem (Cancellation of UHM gauge anomalies) [T]
 The UHM spectral triple ([T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) with unimodularity guarantees **complete cancellation** of the $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ gauge anomalies:
 
 $$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$

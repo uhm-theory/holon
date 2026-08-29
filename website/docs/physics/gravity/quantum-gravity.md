@@ -95,7 +95,7 @@ Derivation of the manifold $M^4$ from the categorical structure — **[T]** ([T-
 
 #### Theorem (Full spectral action of UHM) [T] {#теорема-полное-спектральное-действие}
 
-:::tip Theorem 2.2 (Low-energy limit → Einstein–Hilbert action) [T]
+::::tip Theorem 2.2 (Low-energy limit → Einstein–Hilbert action) [T]
 **Status [T]:** The full spectral triple $(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})$, where $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), satisfies Connes' axioms for spectral geometry. The manifold $M^4$ is **derived** from the categorical structure [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)). The spectral action $S = \mathrm{Tr}(f(D_A/\Lambda)) + \frac{1}{2}\langle J\psi, D_A\psi\rangle$ reproduces the Einstein–Hilbert action + Standard Model.
 
 **Proof (5 steps).**
@@ -266,7 +266,7 @@ T-53 [T] provides an **explicit** finite spectral triple. The existence conditio
 - $G_N \sim 1/(a_2\Lambda^2)$ **[T]**
 - Friedmann from Gap **[T]**
 - Information paradox: **[C]** (unitarity of the microscopic theory [T], but Gap description of the horizon — ansatz)
-:::
+::::
 
 :::info Connection with spectral self-closure
 The spectral action T-65 determines not only the Einstein equations on $M_4$, but also the potential $V_{\mathrm{Gap}}$ on the internal space $F_7$ — see [derivation](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [T]. Key identity: $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \mathcal{G}_{\mathrm{total}}$ connects coefficient $a_2$ with the total Gap, and coefficient $a_4$ with the cubic ($V_3$) and quartic ($V_4$) terms of the potential.
@@ -615,7 +615,6 @@ where $T_H = \hbar c^3 / (8\pi G M_{\text{BH}} k_B)$ is the Hawking temperature.
 7. **Refinement of the coefficient in the Gap term** of the formula $S_{\text{BH}}$ (§6.3): leading term $A/(4G_N)$ **[C under T-65, T-73, Wald]**; Gap correction coefficient $c_{\mathrm{Gap}} = f_4\omega_0^4/(360 \cdot 4G^2M^2)\sum|\gamma|^4\mathrm{Gap}^4$ — **[C under T-65, T-73, T-74]** (explicitly computed in §6.3); non-perturbative computation of $f_4$ and $\omega_0$ remains **[P]**
 8. **Nonlinear Einstein equations**: the fully nonlinear case (beyond the linearized approximation of §2.2) requires accounting for the back-reaction of curvature on the Gap dynamics. The linear case is solved [T]
 
-:::
 :::
 
 ---

@@ -169,7 +169,7 @@ The tension between normal and inverted hierarchy is **resolved** by the generat
 With this assignment, seesaw with $m_D \sim m_l$ gives the **normal** hierarchy: $m_{\nu_e} < m_{\nu_\mu} < m_{\nu_\tau}$.
 :::
 
-:::tip Theorem 3.1 (Neutrino mass predictions) [H]
+::::tip Theorem 3.1 (Neutrino mass predictions) [H]
 Computational task C17: minimization of $V_{\text{Gap}}$ on $(S^1)^{21}/G_2$. All formula components are defined [T].
 
 From the seesaw formula $m_\nu \approx m_D^2/M_R$ with $M_R \sim 10^{14}$ GeV and $m_D \sim m_l$ (charged lepton mass of the corresponding generation):
@@ -197,7 +197,7 @@ m_{\nu_1} \lesssim 0.004\;\text{eV}, \quad m_{\nu_2} \approx 0.0086 \; \text{eV}
 $$
 
 matching the oscillation data $\sqrt{\Delta m^2_{21}}\approx0.0086$ eV, $\sqrt{\Delta m^2_{32}}\approx0.050$ eV.
-:::
+::::
 
 ### 3.2 Comparison with experiment
 

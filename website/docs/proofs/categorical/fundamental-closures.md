@@ -264,7 +264,7 @@ Hence T-205 as stated is [T] under $\iota_\mathrm{max}$ + resource abstraction; 
 
 ## 7. T-216: Closed-form analytical ε<sub>eff</sub> {#t-216}
 
-:::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) — structure [T], value [C at T-64]
+::::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) — structure [T], value [C at T-64]
 
 The effective sectoral parameter ε<sub>eff</sub> arising in the Yukawa hierarchy admits the closed-form expression
 $$\varepsilon_\mathrm{eff} = \frac{4\,|\bar\gamma|_\mathrm{sect}}{9 \left(1 + \frac{\Sigma_0}{4}\right)}$$
@@ -275,7 +275,7 @@ where:
   :::danger Corrected 2026-08-07: $\{L,E,U\}$ is not a Fano line
   Earlier revisions set $N_{33}^\mathrm{Fano} = 1$, justified as "the single line $\{L,E,U\}$ of PG(2,2)". There is no such line. The seven canonical lines are $\{A,S,L\}, \{D,L,U\}, \{L,E,O\}, \{A,E,U\}, \{A,D,O\}, \{S,D,E\}, \{S,O,U\}$; the line through $L$ and $E$ is $\{L,E,O\}$, and the line through $E$ and $U$ is $\{A,E,U\}$. The triple $\{L,E,U\}$ is the $\bar{\mathbf 3}$ **sector**, not a line, and in fact **no** Fano line lies wholly inside either three-element sector — a line contained in a 3-element set would have to equal it, and neither $\{A,S,D\}$ nor $\{L,E,U\}$ is among the seven. **Root cause, found 2026-08-07.** The claim was not invented — it is true in the *wrong index order*. The canonical seven lines are exactly the translates $\{i, i+1, i+3\}$ of the difference set mod 7, but only under the octonionic assignment $O = e_7 \equiv 0$, $A = e_1$, $S = e_2$, $D = e_3$, $L = e_4$, $E = e_5$, $U = e_6$ — the assignment in the [octonionic correspondence table](/docs/core/structure/dimensions#октонионная-интерпретация). Under that assignment all seven lines match. Read the same construction off the dimension *listing* order $A{=}0, S{=}1, D{=}2, L{=}3, E{=}4, O{=}5, U{=}6$ and you get a **different** plane: four of the seven lines change, and among the spurious ones is precisely $\{L,E,U\}$. The two orders differ by transposing $O$ and $U$ — invisible in prose, fatal in combinatorics. Whenever a count depends on incidence, state which assignment is in force.
 
-Machine-verified against the canonical line set, which satisfies BIBD(7,3,1): 21 pairs, each on exactly one line, each point on exactly three.
+  Machine-verified against the canonical line set, which satisfies BIBD(7,3,1): 21 pairs, each on exactly one line, each point on exactly three.
   :::
 - $|\bar\gamma| = \frac{1}{21}\sum_{i < j}|\gamma_{ij}|$ — the sectoral average of off-diagonal coherences, evaluated at the vacuum $\theta^* \in (S^1)^{21}/G_2$.
 - $r_4 = V_4 / V_2|_{\theta^*}$ — the ratio of quartic to quadratic Gap potential at the minimum. **This is an identity, not an input**: with $\lambda_4 = \mu^2/(2\mathcal G^{(0)}_\mathrm{total})$ (Theorem 13.5) and the self-consistent equilibrium $\mathcal G^{(0)} = \mathcal G_\mathrm{total}|_{\theta^*}$, one has $V_4/V_2 = \mathcal G/(2\mathcal G^{(0)}) \equiv 1/2$ exactly — which is why $1 + r_4\Sigma_0/2 = 1 + \Sigma_0/4$.
@@ -283,7 +283,7 @@ Machine-verified against the canonical line set, which satisfies BIBD(7,3,1): 21
 
 Numerical evaluation: self-consistent minimisation from scratch (instrument E26, no fitted parameters, all constants from Theorem 13.5, amplitudes free within Cauchy–Schwarz) gives $|\bar\gamma|_\mathrm{sect} = 0.1314$, $\Sigma_0 = 0.1035$, hence **ε<sub>eff</sub> = 0.0569** against the phenomenological $0.0587$ — a $3\%$ agreement, closing the former two-orders gap.
 
-:::
+::::
 
 **Derivation (five-step, symbolic).**
 

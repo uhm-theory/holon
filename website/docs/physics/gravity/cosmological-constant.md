@@ -228,7 +228,7 @@ If SUSY compensation [H] does not hold, then UV terms $O(\Lambda^4)$ and $O(\Lam
 
 #### Structure of the Fermionic Sector {#структура-фермионного-сектора}
 
-:::note Compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H]
+::::note Compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H]
 
 **Problem.** The internal space is specified by spectral triple T-53 [T]: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, $H_{\text{int}} = \mathbb{C}^7$. The bosonic trace equals $\mathrm{Tr}(1)|_{\text{bos}} = 7$. For compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ one needs $\dim H_{\text{int}}^{\text{ferm}} = 7$.
 
@@ -257,7 +257,7 @@ via $G_2$-invariant Fano coupling (T-43d [T]) + three-loop nested product × one
 
 After T-219 the composition follows the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет): perturbative $10^{-41.5}$ [T] (already includes $\varepsilon^6$); sector-product SUSY $\varepsilon^{12}$ [T at T-64] **absorbs** $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; cohomological $\Lambda_\mathrm{global} = 0$ [T] (exact zero, separate class); sector-minimisation residual [C] (open programme) → honest bracket $\sim 10^{-53.5}$ to $10^{-93.5}$; the rest to $10^{-120}$ is open.
 :::
-:::
+::::
 
 :::info Status (post T-219)
 Structural formula $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[T]** (spectral action). Sector-product derivation **[T at T-64]** via [T-219](/docs/proofs/categorical/fundamental-closures#t-219). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]. Details: [full budget with proofs](/docs/proofs/gap/lambda-budget#спектральная-формула).
