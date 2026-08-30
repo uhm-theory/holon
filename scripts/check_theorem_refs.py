@@ -208,8 +208,36 @@ def main() -> int:
     early = [n for n in dangling if base(n) < EARLY_BELOW]
     late = [n for n in dangling if base(n) >= EARLY_BELOW]
 
-    print(f"реестр: {len(have)} строк, T-{lo}..T-{hi}")
+    print(f"реестр: {len(have)} номеров (различных имён), T-{lo}..T-{hi}")
     print(f"корпус ссылается на {len(refs)} различных номеров")
+
+    # ЧИСЛО РЕЕСТРА, ПРОИЗНЕСЁННОЕ ПРОЗОЙ, ПРОТИВ САМОГО РЕЕСТРА.
+    # Корпус называл свой реестр в двух местах — «273 теоремы реестра» и «269
+    # теорем реестра», — и оба числа отстали: реестр давно больше. Никто этого не
+    # видел, потому что числа помнились, а не считались. Правило перенесено из
+    # math-foundations (инвариант 46 линтера строгости): состояние реестра
+    # СЧИТАЕТСЯ по реестру, а не произносится по памяти.
+    # Заявка живёт на ДВУХ языках и в ДВУХ локалях: «273 registry theorems» в
+    # docs/ и «273 теоремы реестра» в i18n/ru/. Прибор, знающий один язык,
+    # объявил бы чистой половину корпуса — тот же порок одного формата.
+    SIZE_RE = re.compile(r"(\d{2,4})\s+(?:registry\s+(?:theorems|entries)"
+                         r"|(?:теорем\w*|строк\w*|номеров|имён)\s+реестра)")
+    _trees = [_SITE / "docs",
+              _SITE / "i18n" / "ru" / "docusaurus-plugin-content-docs" / "current"]
+    said_bad = []
+    for _tree in _trees:
+        if not _tree.is_dir():
+            continue
+        for f in sorted(_tree.rglob("*.md*")):
+            for ln, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+                for m in SIZE_RE.finditer(line):
+                    if int(m.group(1)) != len(have):
+                        said_bad.append((f"{f.relative_to(_SITE)}:{ln}", m.group(0)))
+    if said_bad:
+        print(f"\nЧИСЛО РЕЕСТРА, ПРОИЗНЕСЁННОЕ ПРОЗОЙ, РАЗОШЛОСЬ С РЕЕСТРОМ: {len(said_bad)}")
+        for loc, said in said_bad:
+            print(f"   {loc}: «{said}» — в реестре {len(have)}")
+        print("   правило: число реестра считается прибором, а не помнится текстом")
     if HOMOGLYPHS:
         total = sum(HOMOGLYPHS.values())
         print(f"\nКИРИЛЛИЧЕСКАЯ «Т» В НОМЕРЕ ТЕОРЕМЫ: {total} в {len(HOMOGLYPHS)} файлах")
@@ -262,7 +290,7 @@ def main() -> int:
         else:
             print("   все они объявлены реестром как открытый долг")
 
-    if late or undeclared_ghosts:
+    if late or undeclared_ghosts or said_bad:
         return 1
     if early and not (allow_early or early_declared):
         return 1
