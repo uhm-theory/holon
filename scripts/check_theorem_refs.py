@@ -363,6 +363,7 @@ def main() -> int:
     #: столкновений 35**», — и шаблон, искавший «**» после слов, не совпадал.
     D_REAL = re.compile(r"(?:настоящих столкновений|genuine collisions)[:\s]{1,3}(\d{1,3})")
     said_all, said_real = D_ALL.search(_regt), D_REAL.search(_regt)
+    print(f"файлов {len(sorted(set(glob.glob(SOURCES[0], recursive=True))))}")
     print(f"один номер — одна формулировка: всего {len(dup)}, настоящих {len(real)}"
           + (f"; объявлено {said_all.group(1)}" if said_all else "; всего не объявлено")
           + (f" и {said_real.group(1)}" if said_real else " и настоящих не объявлено"))

@@ -10,6 +10,7 @@ verify_gate.py — единая дверь корпуса holon: все приб
 Правило 0 дисциплины проверки (карта покрытия math-foundations §7.5b), применённое
 к аппарату целиком, а не к отдельному прибору.
 """
+import re
 import subprocess
 import sys
 import time
@@ -26,8 +27,26 @@ TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
 SITE_TOOLS = [Path("website") / "scripts" / "render_lint.py"]
 
 
+# ОХВАТ. Прибор, не назвавший, сколько файлов он прочитал, объявляет чистым
+# непрочитанное: сузься его обход на каталог — и «все приборы чисты» будет
+# значить чистоту на РАЗНЫХ кусках. Здесь, в отличие от корпуса math-foundations,
+# приборы читают РАЗНЫЕ деревья по существу (перевод, сайт, онтология), и потому
+# равенства охватов требовать нельзя — требуется, чтобы каждый его НАЗЫВАЛ.
+def scope_of(out: str):
+    m = (re.search(r"^файлов:? (\d+)", out or "", re.M)
+         or re.search(r"просмотрено файлов:?\s+(\d+)", out or ""))
+    return int(m.group(1)) if m else None
+
+
+#: приборы, которые корпус НЕ читают: это вычислительные свидетели, и охвата
+#: файлов у них нет по существу, а не по недосмотру
+NO_SCOPE = {"natal_startup_verify.py"}
+
+
 def main() -> int:
     failed = []
+    scope = {}
+    unnamed = []
     for name in TOOLS:
         p = HERE / name
         if not p.exists():
@@ -36,7 +55,11 @@ def main() -> int:
             continue
         t0 = time.time()
         r = subprocess.run([sys.executable, str(p)], capture_output=True, text=True)
-        print(f"  {name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с")
+        n = scope_of(r.stdout)
+        print(f"  {name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с"
+              + (f"  файлов {n}" if n is not None else "  охват не назван"))
+        if n is None and name not in NO_SCOPE: unnamed.append(name)
+        elif n is not None: scope[name] = n
         if r.returncode: failed.append(name)
     for rel in SITE_TOOLS:
         p = HERE.parent / rel
@@ -47,10 +70,20 @@ def main() -> int:
         t0 = time.time()
         r = subprocess.run([sys.executable, str(p)], capture_output=True, text=True,
                            cwd=str(p.parent.parent))
-        print(f"  {p.name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с")
+        n = scope_of(r.stdout)
+        print(f"  {p.name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с"
+              + (f"  файлов {n}" if n is not None else "  охват не назван"))
+        if n is None and p.name not in NO_SCOPE: unnamed.append(p.name)
+        elif n is not None: scope[p.name] = n
         if r.returncode:
             failed.append(p.name)
             print(r.stdout[-3000:])
+
+    if scope:
+        print("\nохват приборов: " + "; ".join(f"{k} — {v}" for k, v in scope.items()))
+    if unnamed:
+        print("ОХВАТ НЕ НАЗВАН: " + ", ".join(unnamed))
+        print("  правило: прибор, молчащий об охвате, объявляет чистым непрочитанное")
 
     print()
     if failed:

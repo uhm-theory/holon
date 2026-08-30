@@ -25,6 +25,10 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
 DOCS = ROOT / "docs"
+# ОХВАТ: страницы этого сайта пишутся и в `.md`, и в `.mdx`. Образец `*.md`
+# видел 177 файлов там, где их 178, — и страница `coherence-matrix.mdx` была
+# невидима проверке свежести: правь её посреди сборки, и прибор смолчит.
+# Расхождение нашлось сверкой охвата между приборами, а не чтением кода.
 # ОТМЕТКА СВЕЖЕСТИ. Сперва ею была `build/index.html` — и она ЛГАЛА. Страница
 # пишется в САМОМ КОНЦЕ сборки, а исходники читаются в начале; правка, сделанная
 # ПОСРЕДИ сборки, оказывается новее исходников, но старее итоговой страницы — и
@@ -119,7 +123,7 @@ def main() -> int:
         print("СБОРКА НЕ ДОВЕДЕНА ДО КОНЦА: страницы старше загрузки содержимого")
         print("  правило: прибор читает вывод завершившейся сборки, а не оборванной")
         return 1
-    stale = [f for f in DOCS.rglob("*.md") if f.stat().st_mtime > stamp.stat().st_mtime]
+    stale = [f for f in DOCS.rglob("*.md*") if f.stat().st_mtime > stamp.stat().st_mtime]
     if stale:
         print(f"СБОРКА СТАРШЕ ИСХОДНИКОВ: новее отметки {stamp.name} — файлов {len(stale)}")
         for f in sorted(stale)[:10]:
@@ -182,7 +186,8 @@ def main() -> int:
         bad += 1
         print(f"\nБАЗА ХРАПОВИКА УСТАРЕЛА: мест {toc_tex}, а записано {TOC_BASELINE}")
         print(f"  правило: опустите TOC_BASELINE до {toc_tex} — храповик обязан быть тугим")
-    print(f"\nстраниц {pages}; видимых знаков {chars}; "
+    print(f"\nфайлов {sum(1 for _ in DOCS.rglob('*.md*'))}; "
+          f"страниц {pages}; видимых знаков {chars}; "
           f"сырого TeX в оглавлениях {toc_tex} (база {TOC_BASELINE}) "
           f"в {len(toc_files)} страницах; "
           + "; ".join(f"{name} {len(found[name])}" for name, _, _ in CHECKS))

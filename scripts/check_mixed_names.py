@@ -57,7 +57,7 @@ def main() -> int:
                 for m in MIXED.finditer(line):
                     if m.group(1) in GIVEN_NAMES:
                         bad.append((f.relative_to(HERE), i, m.group(0)))
-    print(f"русских страниц: {seen}; имён в двух алфавитах: {len(bad)}")
+    print(f"файлов {seen}; имён в двух алфавитах: {len(bad)}")
     for path, i, w in bad[:20]:
         print(f"   {path}:{i}  «{w}»")
     if bad:
