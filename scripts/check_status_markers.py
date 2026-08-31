@@ -97,12 +97,23 @@ def mask(text: str) -> str:
     return "".join(restored)
 
 
-def scan(path: str, locale: str):
-    """Возвращает список (строка, глиф, нужный глиф, вид)."""
+def scan(path: str, locale: str, seen: dict | None = None):
+    """Возвращает список (строка, глиф, нужный глиф, вид).
+
+    Если передан `seen`, в него набирается ЗНАМЕНАТЕЛЬ: сколько меток прибор
+    вообще осмотрел и сколько из них квалифицированных. Без этого сводка
+    печатала три числа НАРУШЕНИЙ («чужая локаль: 0, квалифицированные: 0,
+    подозрительные: 0») рядом с числом файлов — и читались они как знаменатели.
+    Разница существенна: квалифицированных меток в корпусе 606, а строка
+    «квалифицированные: 0» говорила ровно обратное.
+    """
     text = Path(path).read_text(encoding="utf-8")
     masked = mask(text)
     legal = EN_GLYPHS if locale == "en" else RU_GLYPHS
     out = []
+    if seen is not None:
+        seen["квалифицированных"] += len(QUALIFIED_RE.findall(masked))
+        seen["меток"] += len(MARKER_RE.findall(masked))
     for m in QUALIFIED_RE.finditer(masked):
         ch, conn = m.group(1), m.group(3)
         want_ch = ch if ch in legal else translate(ch, locale)
@@ -187,6 +198,7 @@ def main() -> int:
         kinds.add("подозрительное")
 
     grand = {"чужая локаль": 0, "подозрительное": 0, "квалифицированный": 0}
+    seen = {"меток": 0, "квалифицированных": 0}
     touched = 0
     scanned = 0
     for locale, pattern in LOCALES.items():
@@ -199,7 +211,7 @@ def main() -> int:
         per_locale = []
         scanned += len(files)
         for path in files:
-            hits = scan(path, locale)
+            hits = scan(path, locale, seen)
             if hits:
                 per_locale.append((path, hits))
                 for _, _, _, kind in hits:
@@ -220,10 +232,15 @@ def main() -> int:
             for path, _ in per_locale:
                 touched += apply_fix(path, locale, kinds)
 
-    print(f"\nпросмотрено файлов: {scanned}   "
-          f"чужая локаль: {grand['чужая локаль']}   "
-          f"квалифицированные: {grand['квалифицированный']}   "
-          f"подозрительные: {grand['подозрительное']}")
+    print(f"\nпросмотрено файлов: {scanned}; осмотрено меток {seen['меток']}, "
+          f"из них квалифицированных {seen['квалифицированных']}")
+    print(f"НАРУШЕНИЙ — чужая локаль: {grand['чужая локаль']}; "
+          f"в квалифицированных: {grand['квалифицированный']}; "
+          f"подозрительных: {grand['подозрительное']}")
+    if seen["меток"] == 0:
+        print("ЗНАМЕНАТЕЛЬ ПУСТ: ни одной метки не осмотрено — "
+              "это не чистота, а молчание")
+        return 1
     if kinds:
         print(f"исправлено вхождений: {touched}")
         return 0

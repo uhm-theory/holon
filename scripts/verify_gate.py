@@ -32,10 +32,20 @@ SITE_TOOLS = [Path("website") / "scripts" / "render_lint.py"]
 # значить чистоту на РАЗНЫХ кусках. Здесь, в отличие от корпуса math-foundations,
 # приборы читают РАЗНЫЕ деревья по существу (перевод, сайт, онтология), и потому
 # равенства охватов требовать нельзя — требуется, чтобы каждый его НАЗЫВАЛ.
+# Знаменатель бывает ДВУХ валют. Линтер читает корпус и называет ФАЙЛЫ;
+# вычислительный свидетель корпуса не читает вовсе и называет ПРОВЕРКИ. Прежде
+# вентиль знал одну валюту и писал свидетелю «охват не назван» при честном
+# «TOTAL: 4/4 PASS» — правило требует НАЗВАТЬ знаменатель, а не назвать файлы.
 def scope_of(out: str):
     m = (re.search(r"^файлов:? (\d+)", out or "", re.M)
          or re.search(r"просмотрено файлов:?\s+(\d+)", out or ""))
-    return int(m.group(1)) if m else None
+    if m:
+        return int(m.group(1)), "файлов"
+    m = (re.search(r"TOTAL:\s*\d+/(\d+)\s*PASS", out or "")
+         or re.search(r"^проверок:? (\d+)", out or "", re.M))
+    if m:
+        return int(m.group(1)), "проверок"
+    return None
 
 
 #: приборы, которые корпус НЕ читают: это вычислительные свидетели, и охвата
@@ -57,9 +67,9 @@ def main() -> int:
         r = subprocess.run([sys.executable, str(p)], capture_output=True, text=True)
         n = scope_of(r.stdout)
         print(f"  {name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с"
-              + (f"  файлов {n}" if n is not None else "  охват не назван"))
+              + (f"  {n[1]} {n[0]}" if n is not None else "  охват не назван"))
         if n is None and name not in NO_SCOPE: unnamed.append(name)
-        elif n is not None: scope[name] = n
+        elif n is not None: scope[name] = f"{n[1]} {n[0]}"
         if r.returncode: failed.append(name)
     for rel in SITE_TOOLS:
         p = HERE.parent / rel
@@ -72,9 +82,9 @@ def main() -> int:
                            cwd=str(p.parent.parent))
         n = scope_of(r.stdout)
         print(f"  {p.name:28}  EXIT={r.returncode}  {time.time() - t0:5.1f} с"
-              + (f"  файлов {n}" if n is not None else "  охват не назван"))
+              + (f"  {n[1]} {n[0]}" if n is not None else "  охват не назван"))
         if n is None and p.name not in NO_SCOPE: unnamed.append(p.name)
-        elif n is not None: scope[p.name] = n
+        elif n is not None: scope[p.name] = f"{n[1]} {n[0]}"
         if r.returncode:
             failed.append(p.name)
             print(r.stdout[-3000:])
