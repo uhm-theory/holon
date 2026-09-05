@@ -33,7 +33,7 @@ them as missing. Counted correctly, the registry holds **392 rows spanning
 T-1..T-325**, and what actually lacks rows is the ten variant numbers named
 above. Their statements are not recoverable in a form fit
 for this table: no complete source exists, and the numbering of
-`math-foundations` is a *different* one (its T-42 is «G₂ ⊂ SO(7) ⊂ U(7)», while
+`math-foundations` is a *different* one (its T-42 is «G₂ ⊂ SO(7) ⊂ SU(7)», while
 the corpus links T-42 to the Uniqueness Theorem of Holonomic Representation).
 Inventing rows would counterfeit exactly the completeness that is missing, so
 the gap is named instead. Reader's practical rule: a `T-n` with `n < 50`
